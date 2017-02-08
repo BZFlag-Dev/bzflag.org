@@ -1,0 +1,135 @@
+* { margin: 0; padding: 0; }
+
+html {
+  background: white url('../images/random_earth_variations.png') top left repeat;
+  font-family: sans-serif;
+  color: white;
+  background-color: white;
+  font-size: 12pt;
+  overflow-y: scroll;
+}
+
+img { border-width: 0; }
+
+p { margin-bottom: 1em; }
+p:last-child { margin-bottom: 0; }
+
+#nav {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: url('../images/alpha50.png');
+  background: rgba(0,0,0,0.5);
+  padding: 5px 0;
+  font-size: 16pt;
+  z-index: 50;
+  text-align: center;
+}
+
+#nav ul {
+  list-style: none;
+  margin: 0 5px;
+}
+
+#nav li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+#nav a, #nav a:link, #nav:visited {
+  display: block;
+  color: white;
+  margin-bottom: 3px;
+  text-decoration: none;
+}
+
+#nav a:hover, #nav a:active {
+  margin-bottom: 0px;
+  border-bottom: 3px solid white;
+}
+
+#nav:hover {
+  background: url('../images/alpha75.png');
+  background: rgba(0,0,0,0.75);
+}
+
+#content, #footer {
+  -moz-box-shadow: 3px 3px 4px #111111;
+  -webkit-box-shadow: 3px 3px 4px #111111;
+  box-shadow: 3px 3px 4px #111111;
+  behavior: url(/css/PIE.htc);
+}
+
+#content {
+  position: relative;
+  width: 780px;
+  margin: 50px auto 15px;
+  padding: 10px;
+  background: url('../images/irongrip.png');
+  border: 2px solid black;
+  
+  -webkit-border-radius: 1px;
+  -webkit-border-top-left-radius: 64px;
+  -moz-border-radius: 1px;
+  -moz-border-radius-topleft: 64px;
+  border-radius: 1px;
+  border-top-left-radius: 64px;
+  border-radius: 64px 1px 1px 1px;
+}
+
+#content h1 {
+  margin-top: 10px;
+  margin-left: 64px;
+  text-shadow: 4px 4px 2px rgb(31, 31, 31);
+}
+#content h2 { text-shadow: 3px 3px 2px rgb(31, 31, 31); }
+
+#content h3 { text-shadow: 2px 2px 2px rgb(31, 31, 31); }
+
+h1, h2, h3, h4, h5, h6, #content div { margin-top: 10px; }
+
+#content #logo {
+  width: 64px;
+  height: 64px;
+  background-image: url('../images/logo_64.png');
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  margin: 0;
+}
+
+a:link, a:visited {
+  color: white;
+}
+
+a:hover, a:active {
+  color: rgb(200,200,200);
+}
+
+#content ul, #content li {
+  margin-left: 1em;
+}
+
+#content ul {
+  margin-bottom: 1em;
+}
+
+#content ul:last-child {
+  margin-bottom: 0;
+}
+
+ul.spaced li {
+  margin-bottom: 1em;
+}
+
+#footer {
+  width: 780px;
+  margin: 10px auto 15px;
+  padding: 10px;
+  background: url('../images/irongrip.png');
+  border: 2px solid black;
+  text-align: center;
+}

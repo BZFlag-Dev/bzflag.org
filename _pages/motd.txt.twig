@@ -1,0 +1,11 @@
+---
+---
+{% for motd in data.motd %}
+{{ motd.title }}
+Posted by {{ motd.author }} on {{ motd.pubDate }}
+{{ motd.description|raw }}
+BZFlag version: {{ motd.version }}
+{% if not loop.last %}
+
+{% endif %}
+{% endfor %}

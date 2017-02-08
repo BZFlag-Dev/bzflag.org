@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>BZFlag - {{ this.title }}</title>
+  <link rel="stylesheet" href="/css/style.css" />
+{% block head %}{% endblock %}
+  <script src="/js/modernizr-custom.js"></script>
+</head>
+<body>
+  <div id="nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/media">Media</a></li>
+      <li><a href="/downloads">Downloads</a></li>
+      <li><a href="http://wiki.bzflag.org/Getting_Started">Getting Started</a></li>
+      <li><a href="http://forums.bzflag.org/">Forums</a></li>
+      <li><a href="http://wiki.bzflag.org/">Wiki</a></li>
+      <li><a href="/help">Help</a></li>
+    </ul>
+  </div>
+{% block precontent %}{% endblock %}
+  <div id="content"{% if this.section %} class="{{ this.section }}"{% endif %}>
+    <div id="logo"></div>
+    <h1>{{ this.title }}</h1>
+{% block content %}{% endblock %}
+  </div>
+  <div id="footer">Copyright &copy; 2017 Scott Wichser. [ <a href="/credits">Credits</a> | <a href="/privacy">Privacy Policy</a> ]</div>
+{% block scripts %}{% endblock %}
+
+{% if data.piwik %}
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "{{ data.piwik.cookieDomain }}"]);
+  _paq.push(["setDomains", ["{{ data.piwik.domains|join("\", \"") }}"]]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "{{ data.piwik.baseURL }}";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "{{ data.piwik.siteID }}"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+{% endif %}
+
+</body>
+</html>

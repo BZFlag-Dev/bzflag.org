@@ -1,0 +1,70 @@
+---
+title: Downloads
+section: downloads
+
+platforms:
+  windows:
+    logo: windows.png
+    title: Windows
+  osx:
+    logo: osx.png
+    title: macOS
+  source:
+    logo: source.png
+    title: Source Code
+
+releases:
+  stable:
+    title: Latest Stable Release
+    version: 2.4.8
+    date: "2016-10-10"
+    downloads:
+      windows:
+        url: https://download.bzflag.org/bzflag/windows/2.4.8/bzflag-2.4.8.exe
+        platform: windows
+        description: Windows XP SP3 and up
+      osx:
+        url: https://download.bzflag.org/bzflag/osx/2.4.8/BZFlag-2.4.8-macOS.zip
+        platform: osx
+        description: 10.7+ Intel only
+      source:
+        url: https://download.bzflag.org/bzflag/source/2.4.8/
+        platform: source
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/css/download.css" />
+{% endblock %}
+
+{% block content %}
+
+{% for release in this.releases %}
+    <h2>{{ release.title }} ({{ release.date }})</h2>
+{% if release.description is defined %}
+    <div>{{ release.description }}</div>
+{% endif %}
+  
+{% for download in release.downloads %}
+    <a href="{{ download.url }}" class="download">
+      <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
+      <span class="os">{{ this.platforms[download.platform].title }}</span>
+{% if download.version is defined %}
+      <span class="version">Version {{ download.version }}</span>
+{% elseif release.version is defined %}
+      <span class="version">Version {{ release.version }}</span>
+{% endif %}
+      
+{% if download.description is defined %}
+      <span class="desc">{{ download.description }}</span>
+{% endif %}
+    </a>
+{% endfor %}
+  
+{% endfor %}
+    
+    <div>BZFlag is licensed under the <a href="https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING">LGPL 2.1 and MPL 2.0</a> and is free to use/distribute/modify as long as the terms of the license are followed.</div>
+    
+    <div>The source code repository is available on GitHub for <a href="https://github.com/BZFlag-Dev/bzflag">BZFlag</a> and our <a href="https://github.com/BZFlag-Dev">related sub-projects</a>.</div>
+{% endblock %}

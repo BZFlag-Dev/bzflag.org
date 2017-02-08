@@ -1,0 +1,5 @@
+cookieDomain: "*.example.com"
+domains:
+  - "*.example.com"
+baseURL: ://example.com/piwik/
+siteID: 1006

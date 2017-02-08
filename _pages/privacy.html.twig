@@ -1,0 +1,57 @@
+---
+title: Privacy
+section: privacy
+permalink: /privacy.html
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% set section = "privacy" %}
+{% set title = "Privacy" %}
+
+{% block content %}
+    <h2>Site Operator Contact Information</h2>
+    <div>
+      {{ data.privacy.operator.name }} (<a href="mailto:{{ data.privacy.operator.email }}">{{ data.privacy.operator.email }}</a>)<br />
+      <b>Email contact is preferred.</b> If you need to call me, you can send me an email requesting an actual phone number. Make sure to include a summary of what needs to be discussed.
+    </div>
+
+    <h2>Personal information collected and how it is used</h2>
+    <div>
+      <ul class="spaced">
+        <li><b>Username</b> - We collect and store a user created username (which could include part or all of the user's actual legal name), and is a unique identifier that the user creates, and is publically shown. Additionally, a unique numeric identifier is associated with all accounts, and this is also publically exposed.</li>
+        <li><b>Email Address</b> - We collect and store an email address in order to contact the user (with automated or manual methods), such as for password resets or message notifications. By default, it is not publically shown, but it can be set to display to the public.</li>
+        <li><b>Date of Birth</b> - We collect and store the date of birth at registration in order to determine if the user is under the age of 13, in which case COPPA guidelines would apply.</li>
+        <li><b>IM Contacts</b> - Other contact methods (such as AOL, MSN, ICQ) can be provided by the user, and these would be stored as well. These are publically shown by default.</li>
+        <li><b>IP Address</b> - We collect and store the IP addresses that are used to access our services. These are used for administrative purposes and to aid in preventing or blocking abuse. These are not publically exposed.</li>
+        <li><b>Browser Information</b> - We collect and store information about the user's browser, which can include the browser name and version, as well as basic information about the operating system. This is information that every browser sends to every website, and is generally recorded automatically in the web server logs.</li>
+        <li><b>User Generated Content</b> - Users are able to post user generated content that could include personal information in the form of text or files (such as images). Except in cases of private messages between users, this would generally be publically available.</li>
+      </ul>
+    </div>
+    <h2>Website Analytics</h2>
+    <div>
+      <p>We make use of a self-hosted copy of <a href="http://piwik.org/">Piwik</a>, an open-source web analytics platform. This platform records information such as IP addresses, browser information, and usernames, and it uses a tracking cookie with a unique ID to detect unique users between multiple browsing sessions. Because we host this software ourselves, we are not handing analytics data to a third-party company or organization. We may, however, publically release anonymized or aggregated statistics about visits and site activity.</p>
+      <p>There are a number of ways to opt-out of the tracking. In web browsers other than Internet Explorer, the platform respects the <a href="http://donottrack.us/">Do Not Track (DNT)</a> preference. So, if your browser supports and is configured to send a DNT header indicating you do not wish to be tracked, and you are not using Internet Explorer, Piwik will not track you. Alternative methods to opt-out would be to run a browser extension such as <a href="https://www.eff.org/privacybadger">Privacy Badger</a> or to use the opt-out checkbox below (that requires setting a cookie so that Piwik knows not to track you).</p>
+      <iframe style="background: #AAA; border: 1px solid black; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 5px; height: 100px; width: 768px;" src="http://apps.porteighty.org/piwik/index.php?module=CoreAdminHome&action=optOut&language=en"></iframe>
+    </div>
+    <h2>Information Disclosure</h2>
+    <div>
+      <p>We value your privacy, so we do our best to limit the disclosure of your personal information. As mentioned in the "Personal information collected and how it is used" section, some information will be exposed to the public.</p>
+      <p>At times, we may be required to disclose information for the purpose of preventing or combating abuse of our services, or due to a legal request (such as a court order). If such a situation arises, we will do our best to release as little information as possible to resolve the issue or request.</p>
+    </div>
+    <h2>Scope of policy</h2>
+    <div>
+      <p>This policy covers the following domain names or hostnames:</p>
+      <ul>
+        <li>bzflag.org</li>
+        <li>download.bzflag.org</li>
+        <li>forums.bzflag.org</li>
+        <li>images.bzflag.org</li>
+        <li>my.bzflag.org</li>
+        <li>wiki.bzflag.org</li>
+        <li>apps.porteighty.org (covering only the Piwik analytics platform for the above sites)</li>
+      </ul>
+      <p>Game servers for BZFlag are not run by the project and are thus not covered under our privacy policy. Game server may or may not have their own privacy policy.</p>
+      <p>Third-party leagues or fan sites are also not covered under our privacy policy and they may have their own privacy policy.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+a.download:link, a.download:visited {
+  margin: 4px;
+  padding: 6px;
+  background: #111;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+a.download:hover, a.download:active {
+  color: white;
+  background: #181818;
+}
+a.download img {
+  float: left;
+  margin-right: 20px;
+}
+a.download .os {
+  font-size: 44pt;
+  font-weight: 700;
+  display: block;
+}
+a.download .version,
+a.download .desc {
+  font-size: 16pt;
+  margin-left: 180px;
+  display: block;
+}

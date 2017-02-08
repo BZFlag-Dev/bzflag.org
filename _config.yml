@@ -1,0 +1,11 @@
+target: _site
+
+data:
+  - _data
+
+pageviews:
+  - _pages
+
+debug: false
+
+productName: BZFlag
