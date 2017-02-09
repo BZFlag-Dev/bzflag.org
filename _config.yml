@@ -6,6 +6,9 @@ data:
 pageviews:
   - _pages
 
+exclude:
+  - COPYING
+
 debug: false
 
 productName: BZFlag
