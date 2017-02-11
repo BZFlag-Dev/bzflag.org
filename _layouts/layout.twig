@@ -24,7 +24,7 @@
     <h1>{{ this.title }}</h1>
 {% block content %}{% endblock %}
   </div>
-  <div id="footer">Copyright &copy; 2017 Scott Wichser. [ <a href="/credits">Credits</a> | <a href="/privacy">Privacy Policy</a> ]</div>
+  <div id="footer">Copyright &copy; {{ "now"|date("Y") }} Scott Wichser. [ <a href="/credits">Credits</a> | <a href="/privacy">Privacy Policy</a> ]</div>
 {% block scripts %}{% endblock %}
 
 {% if data.piwik %}
