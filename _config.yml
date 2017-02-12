@@ -8,6 +8,7 @@ pageviews:
 
 exclude:
   - COPYING
+  - README.md
 
 debug: false
 
