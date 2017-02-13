@@ -8,7 +8,7 @@ This is the source files for the static BZFlag.org website. The [stakx](https://
 git clone https://github.com/stakx-io/stakx
 git clone https://github.com/BZFlag-Dev/bzflag.org
 cd bzflag.org
-../stakx/bin/stakx/build
+../stakx/bin/stakx build
 ```
 
 ## Web Server Configuration
