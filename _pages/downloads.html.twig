@@ -20,15 +20,15 @@ releases:
     date: "2016-10-10"
     downloads:
       windows:
-        url: https://download.bzflag.org/bzflag/windows/2.4.8/bzflag-2.4.8.exe
+        url: https://download.bzflag.org/bzflag/windows/%1$s/bzflag-%1$s.exe
         platform: windows
         description: Windows XP SP3 and up
       osx:
-        url: https://download.bzflag.org/bzflag/osx/2.4.8/BZFlag-2.4.8-macOS.zip
+        url: https://download.bzflag.org/bzflag/osx/%1$s/BZFlag-%1$s-macOS.zip
         platform: osx
         description: 10.7+ Intel only
       source:
-        url: https://download.bzflag.org/bzflag/source/2.4.8/
+        url: https://download.bzflag.org/bzflag/source/%1$s/
         platform: source
 ---
 
@@ -47,7 +47,7 @@ releases:
 {% endif %}
   
 {% for download in release.downloads %}
-    <a href="{{ download.url }}" class="download">
+    <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
       <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
       <span class="os">{{ this.platforms[download.platform].title }}</span>
 {% if download.version is defined %}
