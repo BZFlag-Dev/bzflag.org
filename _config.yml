@@ -12,4 +12,5 @@ exclude:
 
 debug: false
 
-productName: BZFlag
+# Include the .html extension in links so that you can test with a basic webserver configuration.
+localDevelopment: false
