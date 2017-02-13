@@ -45,7 +45,7 @@ releases:
 {% if release.description is defined %}
     <div>{{ release.description }}</div>
 {% endif %}
-  
+
 {% for download in release.downloads %}
     <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
       <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
@@ -55,16 +55,16 @@ releases:
 {% elseif release.version is defined %}
       <span class="version">Version {{ release.version }}</span>
 {% endif %}
-      
+
 {% if download.description is defined %}
       <span class="desc">{{ download.description }}</span>
 {% endif %}
     </a>
 {% endfor %}
-  
+
 {% endfor %}
-    
+
     <div>BZFlag is licensed under the <a href="https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING">LGPL 2.1 and MPL 2.0</a> and is free to use/distribute/modify as long as the terms of the license are followed.</div>
-    
+
     <div>The source code repository is available on GitHub for <a href="https://github.com/BZFlag-Dev/bzflag">BZFlag</a> and our <a href="https://github.com/BZFlag-Dev">related sub-projects</a>.</div>
 {% endblock %}

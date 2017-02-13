@@ -30,9 +30,9 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  
+
   height: 37px;
-  
+
   font-size: 32px;
   line-height: 32px;
   text-align: center;
@@ -42,7 +42,7 @@
   background: url('../images/alpha75.png');
   background: rgba(0,0,0,0.75);
   padding: 0 5px 5px;
-  
+
   -webkit-border-top-left-radius: 8px;
   -webkit-border-top-right-radius: 8px;
   -moz-border-radius-topleft: 8px;
