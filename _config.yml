@@ -6,6 +6,10 @@ data:
 pageviews:
   - _pages
 
+collections:
+  - name: documentation
+    folder: _documentation
+
 exclude:
   - COPYING
   - README.md

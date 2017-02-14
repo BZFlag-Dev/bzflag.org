@@ -89,7 +89,7 @@ p:last-child { margin-bottom: 0; }
 
 #content h3 { text-shadow: 2px 2px 2px rgb(31, 31, 31); }
 
-h1, h2, h3, h4, h5, h6, #content div { margin-top: 10px; }
+h1, h2, h3, h4, h5, h6, #content div, #content p { margin-top: 10px; }
 
 #content #logo {
   width: 64px;

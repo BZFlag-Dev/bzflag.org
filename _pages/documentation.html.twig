@@ -1,0 +1,13 @@
+---
+collection: documentation
+section: documentation
+permalink: /documentation/%docpath
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  {% if this.parent %}<div><a href="/documentation/{{ this.parent.docpath }}">{{ this.parent.title }}</a></div>{% endif %}
+
+  <div>{{ this.content }}</div>
+{% endblock %}
