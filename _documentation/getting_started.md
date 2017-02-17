@@ -29,15 +29,23 @@ The game has four main teams: Red, Green, Blue, and Purple. In the Free For All 
 
 There is also a Rogue class that is allowed to shoot any other tank, even other Rogues.
 
-In the Rabbit Chase game mode, team selection does not matter.  The server will automatically set the player's team to either Hunter or Rabbit. 
+In the Rabbit Chase game mode, team selection does not matter.  The server will automatically set the player's team to either Hunter or Rabbit.
+
+Servers can choose to limit the number of players per team or disable a team entirely.
 
 ### Game Modes
 
 #### Free For All (FFA)
 
+In Free For All, also known as Free-style, the objective is to shoot enemy tanks to earn points. The four main teams should not shoot other members of their team as this will result in a penalty. Rogue players are allowed to shoot any tank, even other Rogues. 
+
 #### Open (Teamless) Free For All (OpenFFA)
 
+In OpenFFA, the objective is to shoot other tanks to earn points. Teams do not matter, and all tanks are allowed to shoot other tanks.
+
 #### Capture The Flag (CTF)
+
+In CTF, each of the four main teams can have one or more team flag and one or more team base, both colored to match their team. For each team, the objective is to capture enemy team flags by grabbing them and bringing them back to their own base. Each team also tries to prevent the enemy team from capturing their own flag. 
 
 #### Rabbit Chase
 
