@@ -15,7 +15,19 @@ Download the latest release for Windows and run the installer file. Follow the i
 
 ### Installing on macOS
 
+Download the latest release for macOS. Open the Zip file if it does not open automatically. Drag BZFlag into the Applications folder.
+
+Using [brew](https://brew.sh/) and [brew cask](https://caskroom.github.io/), it is also possible to install BZFlag with `brew cask install bzflag`.
+
 ### Installing on Linux or BSD
+
+Note that many Linux distributions will lag behind our release cycle. Debian, for instance, only pushes new version of the game when they release a new major release of Debian every 2 or 3 years. For that reason, it is recommended to build from our latest source tar if the packaged version is older.
+
+To install the (possibly outdated) distribution packages:
+- For Debian and Debian-based distributions, such as Ubuntu or Mint: `apt-get install bzflag-client` or `apt-get install bzflag`
+- For RedHat-based distributions, such as CentOS or Fedora: `yum install bzflag` or `dnf install bzflag`
+- For openSUSE: `zypper install bzflag`
+- For Arch linux: `pacman -S bzflag`
 
 ## Optionally register a callsign
 
