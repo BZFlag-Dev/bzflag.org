@@ -15,6 +15,3 @@ exclude:
   - README.md
 
 debug: false
-
-# Include the .html extension in links so that you can test with a basic webserver configuration.
-localDevelopment: false

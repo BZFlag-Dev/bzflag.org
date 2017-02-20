@@ -10,12 +10,12 @@
   <div id="nav">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="/media{% if site.localDevelopment %}.html{% endif %}">Media</a></li>
-      <li><a href="/downloads{% if site.localDevelopment %}.html{% endif %}">Downloads</a></li>
-      <li><a href="http://wiki.bzflag.org/Getting_Started">Getting Started</a></li>
+      <li><a href="/media">Media</a></li>
+      <li><a href="/downloads">Downloads</a></li>
+      <li><a href="/documentation/getting_started">Getting Started</a></li>
       <li><a href="http://forums.bzflag.org/">Forums</a></li>
       <li><a href="http://wiki.bzflag.org/">Wiki</a></li>
-      <li><a href="/help{% if site.localDevelopment %}.html{% endif %}">Help</a></li>
+      <li><a href="/help">Help</a></li>
     </ul>
   </div>
 {% block precontent %}{% endblock %}
@@ -24,7 +24,7 @@
     <h1>{{ this.title }}</h1>
 {% block content %}{% endblock %}
   </div>
-  <div id="footer">Copyright &copy; {{ "now"|date("Y") }} Scott Wichser. [ <a href="/credits{% if site.localDevelopment %}.html{% endif %}">Credits</a> | <a href="/privacy{% if site.localDevelopment %}.html{% endif %}">Privacy Policy</a> ]</div>
+  <div id="footer">Copyright &copy; {{ "now"|date("Y") }} Scott Wichser. [ <a href="/credits">Credits</a> | <a href="/privacy">Privacy Policy</a> ]</div>
 {% block scripts %}{% endblock %}
 
 {% if data.piwik %}
