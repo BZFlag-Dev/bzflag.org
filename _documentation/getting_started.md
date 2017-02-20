@@ -67,7 +67,23 @@ In this mode, a single Rabbit is chosen by the server. All of the other players 
 
 ### Flags
 
-### Controls 
+There are two main types of flags: team flags and super flags. Team flags only show up in the CTF game mode. Super flags are the white flags. There are good super flags that provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile. There are also bad super flags that disable parts of the tank or reduce performance of the tank. Examples of bad flag effects include radar jamming, reversed controls, left turn only, a bouncy tank. Bad flags cannot be dropped manually and will normally have either a timer or will require finding an antidote flag.
+
+### Controls
+
+Here are some of the basic controls. These can be customized in the Options > Input Settings menu > Change Key Mapping menu.
+
+- Spawn: i key or right mouse button
+- Movement: Use the mouse or the arrow keys.
+- Shoot: Enter key or left mouse button
+- Jump: Tab key
+- Drop flag: spacebar or middle mouse button
+- Radar zoom: 1, 2, and 3 keys, or shift + mouse wheel
+- Send chat to all: n key
+- Send chat to team: m key
+- Toggle scoreboard: s key
+
+The full list of keys can be viewed in the Help menu in-game or in the Change Key Mapping menu mentioned above.
 
 ### User Interface
 
