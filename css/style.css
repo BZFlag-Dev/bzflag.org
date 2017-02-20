@@ -1,10 +1,9 @@
 * { margin: 0; padding: 0; }
 
 html {
-  background: white url('../images/random_earth_variations.png') top left repeat;
+  background: #181818 url('../images/random_earth_variations.png') top left repeat;
   font-family: sans-serif;
   color: white;
-  background-color: white;
   font-size: 12pt;
   overflow-y: scroll;
 }
@@ -47,7 +46,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 #nav a:hover, #nav a:active {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   border-bottom: 3px solid white;
 }
 
@@ -88,6 +87,8 @@ p:last-child { margin-bottom: 0; }
 #content h2 { text-shadow: 3px 3px 2px rgb(31, 31, 31); }
 
 #content h3 { text-shadow: 2px 2px 2px rgb(31, 31, 31); }
+
+#content h4 { text-shadow: 1px 1px 1px rgb(31, 31, 31); font-style: italic; }
 
 h1, h2, h3, h4, h5, h6, #content div, #content p { margin-top: 10px; }
 
