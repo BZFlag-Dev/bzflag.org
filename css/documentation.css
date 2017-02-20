@@ -1,0 +1,14 @@
+code {
+  background-color: black;
+  color: #AAAAAA;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+img {
+  border: 2px solid black;
+  -moz-box-shadow: 3px 3px 4px #111111;
+  -webkit-box-shadow: 3px 3px 4px #111111;
+  box-shadow: 3px 3px 4px #111111;
+  behavior: url(/css/PIE.htc);
+}
