@@ -9,7 +9,7 @@ Getting started with BZFlag is easy. This short guide will show how to get start
 
 Our [downloads](/downloads) page includes an installer for Windows and a ZIP package for macOS. We also offer a source code download primarily for Linux and BSD users.
 
-### Installing on windows
+### Installing on Windows
 
 Download the latest release for Windows and run the installer file. Follow the installation prompts to install the game.
 
@@ -17,9 +17,9 @@ Download the latest release for Windows and run the installer file. Follow the i
 
 Download the latest release for macOS. Open the Zip file if it does not open automatically. Drag BZFlag into the Applications folder.
 
-Using [brew](https://brew.sh/) and [brew cask](https://caskroom.github.io/), it is also possible to install BZFlag with `brew cask install bzflag`.
+Using [brew](https://brew.sh/) and [brew cask](https://caskroom.github.io/), it is also possible to install BZFlag with: `brew cask install bzflag`
 
-### Installing on Linux or BSD
+### Installing on Linux
 
 Note that many Linux distributions will lag behind our release cycle. Debian, for instance, only pushes new version of the game when they release a new major release of Debian every 2 or 3 years. For that reason, it is recommended to build from our latest source tar if the packaged version is older.
 
@@ -31,7 +31,7 @@ To install the (possibly outdated) distribution packages:
 
 ## Optionally register a callsign
 
-BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that other players can not use registered callsigns. To register a callsign, visit our [forums](https://forums.bzflag.org) and register an account. The username and password on the forums will be used as callsign and password in the game.
+BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that players can not use another player's registered callsign. To register a callsign, visit our [forums](https://forums.bzflag.org) and register an account. The username and password on the forums will be used as callsign and password in the game.
 
 ## Game Mechanics
 
@@ -46,6 +46,8 @@ In the Rabbit Chase game mode, team selection does not matter.  The server will 
 Servers can choose to limit the number of players per team or disable a team entirely.
 
 ### Game Modes
+
+There are four main game modes. Some servers may use custom plugins to create variations of these game modes.
 
 #### Free For All (FFA)
 
