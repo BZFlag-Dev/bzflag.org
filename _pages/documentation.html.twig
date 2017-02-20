@@ -2,12 +2,17 @@
 collection: documentation
 section: documentation
 permalink: /documentation/%docpath
+parent:
 ---
 
 {% extends "_layouts/layout.twig" %}
 
+{% block head %}
+  <link rel="stylesheet" href="/css/documentation.css" />
+{% endblock %}
+
 {% block content %}
   {% if this.parent %}<div><a href="/documentation/{{ this.parent.docpath }}">{{ this.parent.title }}</a></div>{% endif %}
 
-  <div>{{ this.content }}</div>
+  {{ this.content }}
 {% endblock %}
