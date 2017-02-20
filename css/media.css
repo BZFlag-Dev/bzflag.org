@@ -13,3 +13,8 @@
   display: inline-block;
   vertical-align: bottom;
 }
+
+#content div, #content p {
+  margin-left: 0;
+  margin-right: 0;
+}
