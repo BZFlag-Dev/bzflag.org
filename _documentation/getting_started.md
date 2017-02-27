@@ -67,7 +67,7 @@ In this mode, a single Rabbit is chosen by the server. All of the other players 
 
 ### Flags
 
-There are two main types of flags: team flags and super flags. Team flags only show up in the CTF game mode. Super flags are the white flags. There are good super flags that provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile. There are also bad super flags that disable parts of the tank or reduce performance of the tank. Examples of bad flag effects include radar jamming, reversed controls, left turn only, a bouncy tank. Bad flags cannot be dropped manually and will normally have either a timer or will require finding an antidote flag.
+There are two main types of flags: team flags and super flags. Team flags only show up in the CTF game mode. Super flags are the white flags. There are good super flags that provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile. There are also bad super flags that disable parts of the tank or reduce performance of the tank. Examples of bad flag effects include radar jamming, reversed controls, left turn only, and a bouncy tank. Bad flags cannot be dropped manually and will normally have either a timer or will require finding an antidote flag.
 
 ### Controls
 
