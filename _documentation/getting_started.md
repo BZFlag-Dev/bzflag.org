@@ -73,18 +73,25 @@ There are two main types of flags: team flags and super flags. Team flags only s
 
 Here are some of the basic controls. These can be customized in the Options > Input Settings menu > Change Key Mapping menu.
 
-- Spawn: i key or right mouse button
+#### Tank
+- Spawn: <kbd>i</kbd> key or right mouse button
 - Movement: Use the mouse or the arrow keys.
-- Shoot: Enter key or left mouse button
-- Jump: Tab key
-- Drop flag: spacebar or middle mouse button
-- Radar zoom: 1, 2, and 3 keys, or shift + mouse wheel
-- Send chat to all: n key
-- Send chat to team: m key
-- Toggle scoreboard: s key
+- Shoot: <kbd>Enter</kbd> key or left mouse button
+- Jump: <kbd>Tab</kbd> key
+- Drop flag: <kbd>Space</kbd> key or middle mouse button
+
+#### Heads Up Display (the text and visual components that appear in front of the 3D view)
+- Radar zoom: <kbd>1</kbd>, <kbd>2</kbd>, and <kbd>3</kbd> keys, or <kbd>shift</kbd> + mouse wheel
+- Toggle scoreboard: <kbd>s</kbd> key
+
+#### Chat and the control panel
+- Send chat to all: <kbd>n</kbd> key
+- Send chat to team: <kbd>m</kbd> key
 
 The full list of keys can be viewed in the Help menu in-game or in the Change Key Mapping menu mentioned above.
 
 ### User Interface
+
+This is also known as the Heads Up Display or HUD.
 
 [![User Interface Layout](/images/documentation/user_interface_layout_small.jpg)](/images/documentation/user_interface_layout.jpg)
