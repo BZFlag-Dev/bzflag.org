@@ -79,6 +79,7 @@ Here are some of the basic controls. These can be customized in the Options > In
 - Shoot: <kbd>Enter</kbd> key or left mouse button
 - Jump: <kbd>Tab</kbd> key
 - Drop flag: <kbd>Space</kbd> key or middle mouse button
+- Identify player / lock on (with Guided Missile flag): <kbd>i</kbd> key or right mouse button
 
 #### Heads Up Display (the text and visual components that appear in front of the 3D view)
 - Radar zoom: <kbd>1</kbd>, <kbd>2</kbd>, and <kbd>3</kbd> keys, or <kbd>shift</kbd> + mouse wheel
