@@ -149,3 +149,7 @@ video {
   box-shadow: 3px 3px 4px #111111;
   behavior: url(/css/PIE.htc);
 }
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
