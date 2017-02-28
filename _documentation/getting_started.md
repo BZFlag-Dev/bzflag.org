@@ -87,6 +87,8 @@ Here are some of the basic controls. These can be customized in the Options > In
 #### Chat and the control panel
 - Send chat to all: <kbd>n</kbd> key
 - Send chat to team: <kbd>m</kbd> key
+- Send chat to nemesis (last person that was killed by or killed the player): <kbd>,</kbd> (comma) key
+- Send chat to recipient (last person that was messaged by or messaged the player): <kbd>.</kbd> (period) key
 
 The full list of keys can be viewed in the Help menu in-game or in the Change Key Mapping menu mentioned above.
 
