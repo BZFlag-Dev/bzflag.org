@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8" />
-  <title>BZFlag - {{ this.title }}</title>
+  <title>{% if this.title %}{{ this.title }} - {% endif %}{% if this.sectiontitle %}{{ this.sectiontitle }} - {% endif %}BZFlag</title>
   <link rel="stylesheet" href="/css/style.css" />
 {% block head %}{% endblock %}
 </head>
