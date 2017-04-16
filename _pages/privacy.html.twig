@@ -28,12 +28,14 @@ permalink: /privacy.html
         <li><b>User Generated Content</b> - Users are able to post user generated content that could include personal information in the form of text or files (such as images). Except in cases of private messages between users, this would generally be publically available.</li>
       </ul>
     </div>
+{% if data.piwik %}
     <h2>Website Analytics</h2>
     <div>
       <p>We make use of a self-hosted copy of <a href="http://piwik.org/">Piwik</a>, an open-source web analytics platform. This platform records information such as IP addresses, browser information, and usernames, and it uses a tracking cookie with a unique ID to detect unique users between multiple browsing sessions. Because we host this software ourselves, we are not handing analytics data to a third-party company or organization. We may, however, publically release anonymized or aggregated statistics about visits and site activity.</p>
       <p>There are a number of ways to opt-out of the tracking. In web browsers other than Internet Explorer, the platform respects the <a href="http://donottrack.us/">Do Not Track (DNT)</a> preference. So, if your browser supports and is configured to send a DNT header indicating you do not wish to be tracked, and you are not using Internet Explorer, Piwik will not track you. Alternative methods to opt-out would be to run a browser extension such as <a href="https://www.eff.org/privacybadger">Privacy Badger</a> or to use the opt-out checkbox below (that requires setting a cookie so that Piwik knows not to track you).</p>
-      <iframe style="background: #AAA; border: 1px solid black; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 5px; height: 100px; width: 768px;" src="http://apps.porteighty.org/piwik/index.php?module=CoreAdminHome&action=optOut&language=en"></iframe>
+      <iframe style="border: 1px solid black; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 5px; height: 120px; width: 740px;" src="{ data.piwik.baseURL }index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite={ data.piwik.siteID }&amp;language=en"></iframe>
     </div>
+{% endif %}
     <h2>Information Disclosure</h2>
     <div>
       <p>We value your privacy, so we do our best to limit the disclosure of your personal information. As mentioned in the "Personal information collected and how it is used" section, some information will be exposed to the public.</p>
@@ -49,7 +51,9 @@ permalink: /privacy.html
         <li>images.bzflag.org</li>
         <li>my.bzflag.org</li>
         <li>wiki.bzflag.org</li>
+{% if data.piwik %}
         <li>apps.porteighty.org (covering only the Piwik analytics platform for the above sites)</li>
+{% endif %}
       </ul>
       <p>Game servers for BZFlag are not run by the project and are thus not covered under our privacy policy. Game server may or may not have their own privacy policy.</p>
       <p>Third-party leagues or fan sites are also not covered under our privacy policy and they may have their own privacy policy.</p>

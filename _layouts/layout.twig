@@ -40,7 +40,7 @@
   _paq.push(["enableLinkTracking"]);
 
   (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "{{ data.piwik.baseURL }}";
+    var u="{{ data.piwik.baseURL }}";
     _paq.push(["setTrackerUrl", u+"piwik.php"]);
     _paq.push(["setSiteId", "{{ data.piwik.siteID }}"]);
     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
