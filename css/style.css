@@ -143,7 +143,3 @@ video {
   -webkit-box-shadow: 3px 3px 4px #111111;
   box-shadow: 3px 3px 4px #111111;
 }
-
-video::-webkit-media-controls-start-playback-button {
-  display: none !important;
-}

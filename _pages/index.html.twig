@@ -7,7 +7,8 @@ permalink: /index.html
 {% extends "_layouts/layout.twig" %}
 
 {% block head %}
-  <link rel="stylesheet" href="/css/home.css" />
+  <style>#content{padding-bottom:1.5em;}.plyr__play-large{cursor:pointer;}div.plyr__controls{display:none;}</style>
+  <link rel="stylesheet" href="/css/plyr.css" />
 {% endblock %}
 
 {% block content %}
@@ -21,16 +22,6 @@ permalink: /index.html
 {% endblock %}
 
 {% block scripts %}
-  <script src="/js/mootools-core-1.6.0-compressed.js"></script>
-  <script>
-    document.addEvent('domready', function() {
-      var container = document.id('teaserdiv');
-      container.addClass('paused');
-      var video = document.id('teaser');
-      video.controls = false;
-      container.addEvent('click', function() { (video.paused)?video.play():video.pause(); });
-      video.addEventListener('play', function() { container.removeClass('paused'); });
-      video.addEventListener('pause', function() { container.addClass('paused'); });
-    });
-  </script>
+  <script src="/js/plyr.js"></script>
+  <script>plyr.setup({iconUrl:'/images/plyr.svg',controls:['play-large'],disableContextMenu:false});</script>
 {% endblock %}
