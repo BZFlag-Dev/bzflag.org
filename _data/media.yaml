@@ -1,0 +1,55 @@
+screenshots:
+  url_formats:
+    full: "/images/screenshots/%s.jpg"
+    thumbnail: "/images/screenshots/%s_t.jpg"
+  thumbnail_size:
+    width: 240
+    height: 150
+  items:
+    - dantes_inferno_01
+    - dantes_inferno_02
+    - dantes_inferno_03
+    - aa_bridge_crossing_01
+    - aa_bridge_crossing_02
+    - aa_bridge_crossing_03
+    - channel_crossing_01
+    - channel_crossing_02
+    - channel_crossing_03
+    - churchyard_01
+    - churchyard_02
+    - churchyard_03
+    - clay_hills_01
+    - clay_hills_02
+    - clay_hills_03
+    - collaborator_2010_01
+    - delirious_city_01
+    - delirious_city_02
+    - delirious_city_03
+    - delirious_city_04
+    - delirious_city_05
+    - delirious_city_06
+    - desert_war_01
+    - gamma_quadrant_01
+    - gamma_quadrant_02
+    - h2o_01
+    - h2o_02
+    - h2o_03
+    - h2o_04
+    - h2o_05
+    - high_rise_havoc_01
+    - home_sweet_home_01
+    - home_sweet_home_02
+    - japanese_castles_01
+    - metropolis_01
+    - mystic_valley_01
+    - mystic_valley_02
+    - pandemonium_01
+    - pandemonium_02
+    - pandemonium_03
+    - space_invaders_01
+    - the_battle_of_midway_island_01
+    - the_battle_of_midway_island_02
+    - the_battle_of_midway_island_04
+    - xenon_ctf_01
+    - xenon_ctf_02
+    - xenon_ctf_03

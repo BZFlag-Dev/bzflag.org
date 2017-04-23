@@ -1,5 +1,4 @@
-.media a:link, .media a:visited {
-  text-decoration: none;
+figure {
   display: inline-block;
   margin: 4px;
   padding: 6px;
@@ -9,12 +8,16 @@
   border-radius: 4px;
 }
 
-.media img {
+figure > a:link, figure > a:visited {
+  text-decoration: none;
+}
+
+figure img {
   display: inline-block;
   vertical-align: bottom;
 }
 
-#content div, #content p {
+#content > div {
   margin-left: 0;
   margin-right: 0;
 }
