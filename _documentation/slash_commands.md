@@ -69,11 +69,28 @@ Packet loss may exhibit similar issues to jitter (tank movement will not be as s
 ###```/flaghistory```
 ###```/report```
 ###```/help```
-<h3 id="questionmark">```/?```</h3>
+<h3 id="questionmark"><code>/?</code></h3>
 
 ###```/grouplist```
 ###```/showgroup```
 ###```/groupperms```
+###```/showperms [callsign]```
+
+This command lists the current permissions assigned to the user. It optionally allows a callsign to be specified after it to show the permissions for another player if the user has the SHOWOTHERS permission, which is generally reserved for admins. Here is an example of the output:
+
+```
+[SERVER->] Permissions for: BobTheTank
+[SERVER->] actionMessage
+[SERVER->] adminMessageReceive
+[SERVER->] adminMessageSend
+[SERVER->] antiban
+[SERVER->] antideregister
+[SERVER->] antikick
+[SERVER->] antikill
+[SERVER->] antipoll
+[SERVER->] antipollban
+...
+```
 
 ###```/poll```
 ###```/vote```
@@ -110,15 +127,41 @@ There are several ways to ban players from a server. Every type of ban needs to 
 ###```/kick```
 ###```/kill```
 ###```/mute```
+###```/unmute```
 
 ###```/countdown```
 ###```/modcount```
 ###```/flag```
 ###```/sendhelp```
+The sendhelp command allows sending a help topic to a specific user. It will show up in their chat box. This is commonly used to send the server rules to a player if they are misbehaving. This command requires that the server owner has set up help files. A list of possible help pages can be listed by using the /help command.
+
+Example command:
+
+```/sendhelp someplayer rules```
+
+Example output for the one running the command:
+
+```[Admin] SERVER: Help topic rules was sent to SomePlayer by BobTheTank.```
+
+And SomePlayer would see, for example:
+
+```
+[SERVER->] Help: Rules
+[SERVER->] ---
+[SERVER->] Please be nice to everyone. Do not swear, cheat, or
+kill teammates.
+[SERVER->] The admins have the right to mute, kick and ban
+those who do not follow the above rules.
+```
 
 ###```/veto```
 
 ###```/viewreports```
+
+Some servers are configured to allow reports.  Players can leave reports with the /report command. Admins may be able to view these reports. Some of these reports may require the server owner's help in tracking down a problem, but there are times when an admin/cop can handle an issue. By using the /viewreports command, an admin can view all the reports that have been left on the server.
+
+**NOTE:** The server owner will have to be the one to manually clear out old reports. There is no integrated mechanism to clear them out, so it needs direct file-system access. This should be done periodically. 
+
 ###```/record```
 ###```/replay```
 
