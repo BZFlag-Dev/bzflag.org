@@ -1,6 +1,20 @@
 code {
   background-color: black;
   color: #AAAAAA;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+pre {
+  padding: 3px;
+  margin-left: 1em;
+  margin-right: 1em;
+  background-color: black;
+}
+
+pre code {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 img {
