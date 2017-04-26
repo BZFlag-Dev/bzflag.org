@@ -35,7 +35,7 @@ Example output:
 
 ```
 [SERVER->] SomePlayer : 0s
-[SERVER->] SixFeetUnder : 16s
+[SERVER->] Six Feet Under : 16s
 [SERVER->] BobTheTank : 13s paused 13s
 ```
 
@@ -124,10 +124,52 @@ There are several ways to ban players from a server. Every type of ban needs to 
 ###```/idlist```
 ###```/playerlist```
 
-###```/kick```
+The playerlist command will provide the slot number, callsign, IP address, and hostname of every user on the server. This information can then be used for bans. Here is an example of the output:
+
+```
+[SERVER->] [0]SomePlayer : 192.168.4.3 (look.at.my.fancy.host.name) udp+
+[SERVER->] [1]BobTheTank : 10.49.34.53 (somehost.somedomain.org) udp+
+```
+
+In this instance, 1 is the slot number, “BobTheTank” is the player’s name, 10.49.34.53 is the IP address, and somehost.somedomain.org is the hostname. At the end, there should also be a "udp+" shown. This means that the player has a UDP connection established in both directions.
+
+**NOTE:** Although it is possible to use the slot number to issue kicks and bans, this is not recommended as it is too easy to kick/ban the wrong person. It is easy to mistype, or the target may leave and someone else may join into the same slot while the ban/kick command is being typed.
+
+###```/kick <slot# | callsign> [reason]```
+
+The kick command will remove a specific player from the server. This is typically used after a verbal warning. Either the slot # or callsign is required, optionally followed by a kick reason.
+
+Example without spaces in the callsign:
+
+```/kick SomePlayer Please stop killing your teammates.```
+
+Example with spaces in the callsign:
+
+```/kick "Six Feet Under" Profanity is not allowed on this server.```
+
 ###```/kill```
-###```/mute```
-###```/unmute```
+###```/mute <slot# | callsign>```
+###```/unmute <slot# | callsign>```
+
+The mute and unmute commands can be used as a step before a kick or ban is necessary. If someone is using profanity, for instance, a mute can put a temporary stop to that so that the player can be warned. When a player is muted, they can only send chat messages to the admin channel. The unmute command will remove the mute from a player. To use the mute or unmute command, provide the username or player slot.
+
+For example, using the following command:
+
+```/mute SomePlayer```
+
+would show this to the admin:
+
+```
+[SERVER->] player id #0 "SomePlayer" is now muted.
+```
+
+and this to SomePlayer:
+
+```
+[SERVER->] You have been muted by BobTheTank.
+```
+
+It would also show similar messages when unmuting someone.
 
 ###```/countdown```
 ###```/modcount```
