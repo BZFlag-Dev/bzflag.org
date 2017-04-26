@@ -200,7 +200,7 @@ Here is an example of the output:
 [SERVER->] #9   i:V   p:-1  r:1  g:1  s:1  p:{-43.1, -134.5, 0.0}
 ```
 
-The ```i:``` show the abbreviation of the flag. The ```p:``` shows the player slot number of the player that holds the flag, with -1 indicating that nobody is holding it. The ```r:``` shows if it is a required flag, meaning it is not one that was randomly picked to spawn. The ```g:``` shows how many "grabs" of the flag are left before it would respawn in a new location.
+The # is the flag ID, which can be useful for resetting a single flag. The ```i:``` show the abbreviation of the flag. The ```p:``` shows the player slot number of the player that holds the flag, with -1 indicating that nobody is holding it. The ```r:``` shows if it is a required flag, meaning it is not one that was randomly picked to spawn. The ```g:``` shows how many "grabs" of the flag are left before it would respawn in a new location.
 
 The ```s:``` indicates the flag status, with:
 * 0 meaning the flag does not exist
@@ -234,15 +234,13 @@ This would reset all flags that are not being held by players.
 
 This would reset all team flags.
 
+```/flag reset <flag ID>```
+
+Using the output of ```/flag show```, it is possible to reset a single specific flag. For example, ```/flag reset #5``` would reset the flag with a flag ID of 5.
+
 ```/flag reset <flag abbreviation>```
 
-It is also possible to reset specific types of flags. By passing a flag abbreviation, it will reset any flag of that type. To reset team flags for a single team, use G* for Green, B* for Blue, R* for Red, and P* for Purple. A the list of flag abbreviations are on the [flags](/documentation/flags) documentation page.
-
-Example:
-
-```/flag reset G*```
-
-This would reset all green team flags. 
+It is also possible to reset specific types of flags. By passing a flag abbreviation, it will reset any flag of that type. To reset team flags for a single team, use G* for Green, B* for Blue, R* for Red, and P* for Purple. A the list of flag abbreviations are on the [flags](/documentation/flags) documentation page. For example, ```/flag reset G*``` would reset all the Green team flags.
 
 ```/flag take <slot# | player name>```
 
