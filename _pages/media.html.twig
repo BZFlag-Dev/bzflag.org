@@ -8,7 +8,6 @@ permalink: /media.html
 
 {% block head %}
   <link rel="stylesheet" href="/css/milkbox.css" />
-  <link rel="stylesheet" href="/css/media.css" />
 {% endblock %}
 
 {% block content %}
@@ -16,12 +15,13 @@ permalink: /media.html
 
     <div class="screenshots" itemscope itemtype="http://schema.org/ImageGallery">
 
-      {% for screenshot in data.media.screenshots.items %}<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+      {% for screenshot in data.media.screenshots.items -%}
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
         <a href="{{ data.media.screenshots.url_formats.full|format(screenshot) }}" itemprop="contentUrl" data-milkbox="media">
-          <img src="{{ data.media.screenshots.url_formats.thumbnail|format(screenshot) }}" width="{{ data.media.screenshots.thumbnail_size.width }}" height="{{ data.media.screenshots.thumbnail_size.height }}" itemprop="thumbnail" alt="" />
+          <img src="{{ data.media.screenshots.url_formats.thumbnail|format(screenshot) }}" itemprop="thumbnail" alt="" />
         </a>
-      </figure
-      >{% endfor %}
+      </figure>
+      {%- endfor %}
 
     </div>
 {% endblock %}

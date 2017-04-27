@@ -34,37 +34,35 @@ releases:
 
 {% extends "_layouts/layout.twig" %}
 
-{% block head %}
-  <link rel="stylesheet" href="/css/download.css" />
-{% endblock %}
-
 {% block content %}
 
-{% for release in this.releases %}
-    <h2>{{ release.title }} ({{ release.date }})</h2>
-{% if release.description is defined %}
-    <div>{{ release.description }}</div>
-{% endif %}
+  {% for release in this.releases %}
+      <h2>{{ release.title }} ({{ release.date }})</h2>
 
-{% for download in release.downloads %}
-    <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
-      <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
-      <span class="os">{{ this.platforms[download.platform].title }}</span>
-{% if download.version is defined %}
-      <span class="version">Version {{ download.version }}</span>
-{% elseif release.version is defined %}
-      <span class="version">Version {{ release.version }}</span>
-{% endif %}
+      {% if release.description is defined %}
+          <div>{{ release.description }}</div>
+      {% endif %}
 
-{% if download.description is defined %}
-      <span class="desc">{{ download.description }}</span>
-{% endif %}
-    </a>
-{% endfor %}
+      {% for download in release.downloads %}
+        <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
+          <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
+          <p class="os">{{ this.platforms[download.platform].title }}</p>
+          
+          {% if download.version is defined %}
+            <p class="version">Version {{ download.version }}</p>
+          {% elseif release.version is defined %}
+            <p class="version">Version {{ release.version }}</p>
+          {% endif %}
 
-{% endfor %}
+          {% if download.description is defined %}
+            <p class="desc">{{ download.description }}</p>
+          {% endif %}
+        </a>
+      {% endfor %}
 
-    <div>BZFlag is licensed under the <a href="https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING">LGPL 2.1 and MPL 2.0</a> and is free to use/distribute/modify as long as the terms of the license are followed.</div>
+    {% endfor %}
 
-    <div>The source code repository is available on GitHub for <a href="https://github.com/BZFlag-Dev/bzflag">BZFlag</a> and our <a href="https://github.com/BZFlag-Dev">related sub-projects</a>.</div>
+    <p>BZFlag is licensed under the <a href="https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING">LGPL 2.1 and MPL 2.0</a> and is free to use/distribute/modify as long as the terms of the license are followed.</p>
+
+    <p>The source code repository is available on GitHub for <a href="https://github.com/BZFlag-Dev/bzflag">BZFlag</a> and our <a href="https://github.com/BZFlag-Dev">related sub-projects</a>.</p>
 {% endblock %}

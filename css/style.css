@@ -1,8 +1,11 @@
 * { margin: 0; padding: 0; }
+*, *:before, *:after { box-sizing: inherit; }
 
 html {
   background: #181818 url('../images/random_earth_variations.png') top left repeat;
+  box-sizing: border-box;
   font-family: sans-serif;
+  line-height: 1.4em;
   color: white;
   font-size: 12pt;
   overflow-y: scroll;
@@ -10,8 +13,10 @@ html {
 
 img { border-width: 0; }
 
-p { margin-bottom: 1em; }
-p:last-child { margin-bottom: 0; }
+p { 
+  margin-bottom: 16px; 
+  margin-top: 16px;
+}
 
 #nav {
   position: absolute;
@@ -63,7 +68,7 @@ p:last-child { margin-bottom: 0; }
   position: relative;
   width: 780px;
   margin: 50px auto 15px;
-  padding: 0.5em;
+  padding: 1.5em;
   background: url('../images/irongrip.png');
   border: 2px solid black;
 
@@ -73,8 +78,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 #content h1 {
-  margin-top: 10px;
-  margin-left: 64px;
+  margin-left: 45px;
   text-shadow: 4px 4px 2px rgb(31, 31, 31);
 }
 #content h2 { text-shadow: 3px 3px 2px rgb(31, 31, 31); }
@@ -83,12 +87,17 @@ p:last-child { margin-bottom: 0; }
 
 #content h4 { text-shadow: 1px 1px 1px rgb(31, 31, 31); font-style: italic; }
 
-h1, h2, h3, h4, h5, h6, #content div, #content p { margin-top: 10px; }
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.75em;
+}
 
-#content div, #content p {
-  margin-left: 1em;
-  margin-right: 1em;
-  line-height: 1.4em;
+#content table {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+#content p:last-child {
+  margin-bottom: 0;
 }
 
 #content #logo {
@@ -140,4 +149,108 @@ video {
   -moz-box-shadow: 3px 3px 4px #111111;
   -webkit-box-shadow: 3px 3px 4px #111111;
   box-shadow: 3px 3px 4px #111111;
+}
+
+figure {
+  display: inline-block;
+  padding: 3px;
+  width: 33.333%;
+}
+
+figure > a:link, figure > a:visited {
+  text-decoration: none;
+}
+
+figure img {
+  border: 6px solid #111;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+}
+
+a.download:link, a.download:visited {
+  margin: 4px 0;
+  padding: 10px;
+  background: #111;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+
+a.download:hover, a.download:active {
+  color: white;
+  background: #181818;
+}
+
+a.download img {
+  float: left;
+  margin-right: 20px;
+}
+
+a.download .os,
+a.download .desc,
+a.download .version {
+  line-height: normal;
+  margin-bottom: 5px;
+}
+
+a.download .os {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+a.download .version,
+a.download .desc {
+  font-size: 16pt;
+  margin-left: 180px;
+}
+
+code {
+  background-color: black;
+  color: #AAAAAA;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+pre {
+  padding: 15px;
+  background-color: black;
+  overflow: auto;
+  white-space: pre;
+  width: 100%;
+  word-wrap: normal;
+}
+
+pre code {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+img {
+  border: 2px solid black;
+  -moz-box-shadow: 3px 3px 4px #111111;
+  -webkit-box-shadow: 3px 3px 4px #111111;
+  box-shadow: 3px 3px 4px #111111;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0 0.5em;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 4px;
+  white-space: nowrap;
 }
