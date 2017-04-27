@@ -9,6 +9,8 @@ pageviews:
 collections:
   - name: documentation
     folder: _documentation
+  - name: api_events
+    folder: _apiEvents
 
 exclude:
   - COPYING
