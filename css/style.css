@@ -91,6 +91,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75em;
 }
 
+h2, h3 {
+  border-bottom: 1px solid #8e8e8e;
+  padding-bottom: 0.4em;
+}
+
 #content table {
   margin-bottom: 16px;
   width: 100%;
