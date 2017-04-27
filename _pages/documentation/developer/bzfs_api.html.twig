@@ -30,7 +30,7 @@ parent:
           <tr>
             <td>{{ param.dataType }}</td>
             <td><code>{{ param.name }}</code></td>
-            <td>{{ param.description }}</td>
+            <td>{{ param.description | markdown }}</td>
           </tr>
         {% endfor %}
       </tbody>

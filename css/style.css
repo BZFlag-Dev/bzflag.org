@@ -253,3 +253,32 @@ kbd {
   border-radius: 4px;
   white-space: nowrap;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+table p {
+  margin: 0;
+}
+
+table td {
+  border: 1px solid #8e8e8e;
+  padding: 10px;
+}
+
+table th {
+  padding-bottom: 10px;
+}
+
+table td:first-child {
+  border-left-color: transparent;
+}
+
+table td:last-child {
+  border-right-color: transparent;
+}
+
+table tr:last-child td {
+  border-bottom-color: transparent;
+}
