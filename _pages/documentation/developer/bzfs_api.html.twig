@@ -1,0 +1,52 @@
+---
+collection: api_events
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/%basename.html
+title: %basename
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  {{ this.content }}
+
+  {% if this.dataType %}
+    <h2>Object Type</h2>
+    <p>{{ this.dataType }}</p>
+
+    <h2>Parameters</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for param in this.parameters %}
+          <tr>
+            <td>{{ param.dataType }}</td>
+            <td><code>{{ param.name }}</code></td>
+            <td>{{ param.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2>Example</h2>
+    {% markdown %}
+    ```cpp
+    {{ this.dataType }} *dataObject = ({{ this.dataType }}*)eventData;
+
+    // Data
+    // ---
+    {% for param in this.parameters -%}
+    // {{ "(%-13s" | format(param.dataType ~ ')') }} {{ param.name }} - {{ param.description }}
+    {% endfor %}
+    ```
+    {% endmarkdown %}
+  {% endif %}
+{% endblock %}
