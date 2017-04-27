@@ -135,11 +135,58 @@ Range bans have a higher possibility of banning innocent players as it is bannin
 ###```/idban <slot# | +bzid | callsign> <duration> <reason>```
 
 ###```/unban <ip address>```
+
+The unban command can only remove IP bans. The /banlist command will show exact address or range that was banned. The unban command must be passed the exact IP or range that was banned. Example:
+ 
+```/unban 192.168.4.3```
+ 
+Or to unban a range:
+ 
+```/unban 172.16.0.0/26```
+
 ###```/hostunban <hostname>```
 ###```/idunban <bzid>```
 
 ###```/banlist```
+
+The banlist command will list all active IP bans. This will include most (if not all) of the bans from the masterban list. Bans from the masterban list will display "(m)" after the banned address. For each ban, it will list the IP that is banned, duration remaining, reason, and the one who created the ban.
+
+Here is an example of what a masterban would look like. Notice the (m) after the IP address:
+
+```
+[SERVER->] 127.0.0.1 (m) banned by: bzflag developers
+[SERVER->] reason: web service abuse
+```
+
+And here is an example of a regular ban that was created by an admin or cop on the server. Notice that it shows a duration in this example. If the ban is permement (duration set to 0, “forever”, or “max”) it will not show a duration:
+
+```
+[SERVER->] 192.168.4.3 (256.1 minutes) banned by: BobTheTank
+[SERVER->] reason: Please try to be respectful to other players next time you are here.
+```
+
+A ban list can get quite long. It is possible to pass a filter to the /banlist command that will search for a specific word or phrase. It will search the reason as well as the name of the admin who created the ban. The example below would only list bans that contain the word "cheat":
+
+```/banlist cheat```
+
 ###```/checkip <ip address>```
+
+This command will check if an IP address is banned. This only checks IP bans, so even if it says that an IP is not banned, there still might be a host ban or an ID ban preventing a player from joining. Examples:
+
+```/checkip 127.0.0.1```
+
+```
+[SERVER->] 127.0.0.1 is not banned.
+```
+
+```/checkip 192.168.4.3```
+
+````
+[SERVER->] 192.168.4.3 is banned:
+[SERVER->] 192.168.4.3 (256.1 minutes) banned by: BobTheTank
+[SERVER->]    reason: Please try to be respectful to other players next time you are here.
+```
+
 ###```/hostbanlist```
 ###```/idbanlist```
 ###```/masterban <flush | reload | list>```
