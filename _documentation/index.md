@@ -13,4 +13,4 @@ docpath: index.html
 ## Sections
 - Map Making
 - Server Hosting
-- Development
+- [Development](/documentation/developer)
