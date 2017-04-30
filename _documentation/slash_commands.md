@@ -333,7 +333,7 @@ There are two ways to ban a range of addresses: using an asterisk (*) wildcard c
 
 Range bans have a higher possibility of banning innocent players as it is banning a (sometimes large) chunk of the Internet. So, in some cases it may be necessary to work with the server owner to fine tune the range bans or to whitelist innocent player accounts.
 
-###```/banlist```
+###```/banlist [filter]```
 
 The banlist command will list all active IP bans. This will include most (if not all) of the bans from the masterban list. Bans from the masterban list will display "(m)" after the banned address. For each ban, it will list the IP that is banned, duration remaining, reason, and the one who created the ban.
 
@@ -375,7 +375,7 @@ This command will check if an IP address is banned. This only checks IP bans, so
 
 ###```/unban <ip address>```
 
-The unban command can only remove IP bans. The /banlist command will show exact address or range that was banned. The unban command must be passed the exact IP or range that was banned. Example:
+The unban command can remove IP bans. The ```/banlist``` command will show the exact address or range that was banned. The unban command must be passed the exact IP or range that was banned. Example:
  
 ```/unban 192.168.4.3```
  
@@ -384,14 +384,67 @@ Or to unban a range:
 ```/unban 172.16.0.0/26```
 
 ###```/hostban <hostname> <duration> <reason>```
-###```/hostbanlist```
+
+The hostban command is used to ban players by their hostname. Most players will have a hostname, which can be viewed with the ```/playerlist``` command. This can be used to more easily ban a specific ISP or part of an ISP. Here are some examples:
+
+```/hostban static-34-28.example.com 2w Profanity is not allowed.```
+
+```/hostban *.example.org 1d Repeated teamkilling and rejoining.```
+
+**NOTE:** In some situations, a player might not get the rejected message if they are host banned. Instead, when they try to connect, it will just hang during the join process and never show them the ban reason. This is due to a bug in the game server that sometimes causes the connection to be closed before the reject message is sent. So, if possible, avoid using hostbans.
+
+###```/hostbanlist [filter]```
+
+The hostbanlist command will list all active host bans. For each ban, it will list the IP that is banned, duration remaining (unless it is a permanent ban), reason, and the one who created the ban. As with the banlist command, the hostbanlist command allows adding a filter to search for specific entries.
+
+Here is an example of the output:
+
+```
+[SERVER->] static-34-28.example.com (10058.6 minutes)  banned by: BobTheTank
+[SERVER->]    reason: Profanity is not allowed.
+```
+
 ###```/hostunban <hostname>```
 
+The hostunban command can remove host bans. The ```/hostbanlist``` command will show the exact hostname (wildcard or otherwise) that was banned. The hostunban command must be passed the exact hostname that was banned. Example:
+
+```/hostunban *.example.org```
 
 ###```/idlist```
-###```/idban <slot# | +bzid | callsign> <duration> <reason>```
+
+The idlist command will display the global ID (also known as their bzid) of the players on the server. Unregistered players will not show a global ID. Example of the output:
+
+```
+[SERVER->] CasualFriday         : 
+[SERVER->] SomePlayer           : 179
+```
+
+###```/idban <slot# | callsign | +bzid> <duration> <reason>```
+
+This command is not used as often. When a registered player is IP banned by callsign or slot number, it adds a corresponding ID ban as well. Also, an ID ban only blocks a single account, so a user can either switch to a different account, or just use an unregistered name. ID bans are more useful on servers that require a registered account to spawn or talk.
+
+Here's an example:
+
+```/idban SomePlayer 2w Repeated teamkilling after several warnings.```
+
+It is also possible to ban a BZID after the user has already left, either obtained from /idlist while they were on or the server log files. So in the case of SomePlayer, their BZID is 179. Including a plus (+) sign before the number indicates it is specifying a BZID instead of a callsign.
+
+```/idban +179 2w Repeated teamkilling after server warnings.```
+
 ###```/idbanlist```
+
+This will list any current ID bans that are active. Again, it optionally allows filtering out the list to search for specific entries. Example output:
+
+```
+[SERVER->] 179 (1439.0 minutes) banned by: BobTheTank
+[SERVER->]    reason: (SomePlayer) Repeated teamkilling after server warnings.
+```
+
 ###```/idunban <bzid>```
+
+The idunban command removes an ID ban. Provide the ID to unban.
+
+```/idunban 179```
 
 ###```/masterban <flush | reload | list>```
 
