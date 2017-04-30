@@ -63,11 +63,32 @@ Packet loss may exhibit similar issues to jitter (tank movement will not be as s
 
 ###```/msg```
 ###```/serverquery```
-###```/part```
-###```/quit```
+
+This command show the version string of the game server.
+
+###```/part [message]```
+
+This command causes the client to disconnect from the server. Optionally, a message to display to other players can be specified.
+
+```/part Gonna switch servers```
+
+###```/quit [message]```
+
+This command causes the client to exit completely. Optionally, a message to display to other players can be specified.
+
+```/quit Back to reality...```
+
 ###```/uptime```
+
+This command shows how long much time has elapsed since the game server was started.
+
 ###```/flaghistory```
-###```/report```
+###```/report [message]```
+
+Some servers allow leaving reports that the admins or owner can view later. For instance, it would be possible to report some form of abuse on the server so it can later be reviewed.
+
+```/report SomePlayer was using profanity on the server.```
+
 ###```/help```
 <h3 id="questionmark"><code>/?</code></h3>
 
@@ -96,8 +117,12 @@ This command lists the current permissions assigned to the user. It optionally a
 ###```/vote```
 
 ###```/date```
+
+This command shows the current date on the game server.
+
 ###```/time```
 
+This command shows the current time on the game server.
 
 ## Admin commands
 
