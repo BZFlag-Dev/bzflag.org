@@ -13,10 +13,10 @@ parent:
   {{ this.content }}
 
   {% if this.dataType %}
-    <h2>Object Type</h2>
+    <h2 id="object-type">Object Type</h2>
     <p>{{ this.dataType }}</p>
 
-    <h2>Parameters</h2>
+    <h2 id="parameters">Parameters</h2>
     <table>
       <thead>
         <tr>
@@ -36,7 +36,7 @@ parent:
       </tbody>
     </table>
 
-    <h2>Example</h2>
+    <h2 id="example">Example</h2>
     {% markdown %}
     ```cpp
     {{ this.dataType }} *dataObject = ({{ this.dataType }}*)eventData;
