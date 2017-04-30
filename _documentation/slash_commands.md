@@ -299,10 +299,8 @@ And SomePlayer would see, for example:
 ```
 [SERVER->] Help: Rules
 [SERVER->] ---
-[SERVER->] Please be nice to everyone. Do not swear, cheat, or
-kill teammates.
-[SERVER->] The admins have the right to mute, kick and ban
-those who do not follow the above rules.
+[SERVER->] Please be nice to everyone. Do not swear, cheat, or kill teammates.
+[SERVER->] The admins have the right to mute, kick and ban those who do not follow the above rules.
 ```
 
 ### Ban durations

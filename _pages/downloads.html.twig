@@ -22,7 +22,7 @@ releases:
       windows:
         url: https://download.bzflag.org/bzflag/windows/%1$s/bzflag-%1$s.exe
         platform: windows
-        description: Windows Vista and up
+        description: Windows Vista/7/8.1/10
       macos:
         url: https://download.bzflag.org/bzflag/osx/%1$s/BZFlag-%1$s-macOS.zip
         platform: macos
@@ -36,32 +36,29 @@ releases:
 
 {% block content %}
 
-  {% for release in this.releases %}
-      <h2>{{ release.title }} ({{ release.date }})</h2>
+{% for release in this.releases %}
+    <h2>{{ release.title }} ({{ release.date }})</h2>
 
-      {% if release.description is defined %}
-          <div>{{ release.description }}</div>
-      {% endif %}
+{% if release.description is defined %}
+    <div>{{ release.description }}</div>
 
-      {% for download in release.downloads %}
-        <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
-          <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
-          <p class="os">{{ this.platforms[download.platform].title }}</p>
-          
-          {% if download.version is defined %}
-            <p class="version">Version {{ download.version }}</p>
-          {% elseif release.version is defined %}
-            <p class="version">Version {{ release.version }}</p>
-          {% endif %}
+{% endif %}
+{% for download in release.downloads %}
+    <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
+      <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
+      <p class="os">{{ this.platforms[download.platform].title }}</p>
+{% if download.version is defined %}
+      <p class="version">Version {{ download.version }}</p>
+{% elseif release.version is defined %}
+      <p class="version">Version {{ release.version }}</p>
+{% endif %}
+{% if download.description is defined %}
+      <p class="desc">{{ download.description }}</p>
+{% endif %}
+    </a>
+{% endfor %}
 
-          {% if download.description is defined %}
-            <p class="desc">{{ download.description }}</p>
-          {% endif %}
-        </a>
-      {% endfor %}
-
-    {% endfor %}
-
+{% endfor %}
     <p>BZFlag is licensed under the <a href="https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING">LGPL 2.1 and MPL 2.0</a> and is free to use/distribute/modify as long as the terms of the license are followed.</p>
 
     <p>The source code repository is available on GitHub for <a href="https://github.com/BZFlag-Dev/bzflag">BZFlag</a> and our <a href="https://github.com/BZFlag-Dev">related sub-projects</a>.</p>
