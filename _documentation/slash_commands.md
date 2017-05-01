@@ -280,8 +280,71 @@ SERVER: Countdown resumed
 
 This command allows adding or removing time from a timed match. For example, ```/modcount +30``` would add 30 seconds and ```/modcount -60``` would subtract 60 seconds.
 
-###```/record```
-###```/replay```
+###```/record <start | stop | size | list | rate>```
+
+The record command is used on normal game servers to control the recording of replay files.
+
+```/record start```
+
+
+
+```/record stop```
+
+
+
+```/record size```
+
+
+
+```/record rate```
+
+
+
+```/record stats```
+
+
+
+```/record list```
+
+This displays a list of existing replay files.
+
+```/record save <filename>```
+
+The record save command save the current replay buffer to the specified file.
+
+```/record file```
+
+###```/replay ...```
+
+The replay command is only for a replay servers, which are servers are dedicated to the purpose of playing back game replays. The replay command has several subcommands to list, load, and playback a replay file.
+
+```/replay list [-t | -n | --] [pattern]```
+
+The replay list command will display a list of available replay files to play back. Passing -t will sort by time and -n will sort by name. A search pattern can also be provided. If the pattern needs to start with hyphen, -- can be provided before the pattern to indicate that it is the end of the options. For example, ```/replay list -- -something-to-search-for```
+
+```/replay load <filename | #index>```
+
+The replay load command will load a specific replay file into the game server's memory. After a load, all users connected to the replay server must rejoin.
+
+```/replay play```
+
+This starts the playback of replay file.
+
+```/replay loop```
+
+This plays the replay in a continuous loop.
+
+```/replay skip <+seconds | -seconds>```
+
+The replay skip command allows skipping forward or backward by roughly the number of seconds specified.
+
+```/replay stats```
+
+The replay stats command shows information such as the replay duration and position.
+
+```/replay pause```
+
+The replay pause command pauses the playback of a replay. A subsequent ```/replay play``` will resume the playback.
 
 ###```/veto```
 
@@ -296,7 +359,7 @@ The playerlist command will provide the slot number, callsign, IP address, and h
 [SERVER->] [1]BobTheTank : 10.49.34.53 (somehost.somedomain.org) udp+
 ```
 
-So, in the second line of text above, 1 is the slot number, “BobTheTank” is the player’s name, 10.49.34.53 is the IP address, and somehost.somedomain.org is the hostname. At the end, there should also be a "udp+" shown. This means that the player has a UDP connection established in both directions.
+So, in the second line of text above, 1 is the slot number, "BobTheTank" is the player's name, 10.49.34.53 is the IP address, and somehost.somedomain.org is the hostname. At the end, there should also be a "udp+" shown. This means that the player has a UDP connection established in both directions.
 
 **NOTE:** Although it is possible to use the slot number to issue kicks and bans, this is not recommended as it is too easy to kick/ban the wrong person. It is easy to mistype, or the target may leave and someone else may join into the same slot while the ban/kick command is being typed.
 
@@ -462,7 +525,7 @@ Examples:
 
 ```/ban 192.168.4.3 1w Teamkilling is not allowed. You have been warned repeatedly.```
 
-There are also times when a player will rejoin with a different, but similar IP address. This is an issue with dynamic IP addresses. An Internet Service Provider (ISP) will rarely give each user their own dedicated (aka “static”) IP address. When their modem connects, they get an address from a pool of available addresses. This can cover a huge range of addresses in some cases, which may require you to ban a range if things get bad enough.
+There are also times when a player will rejoin with a different, but similar IP address. This is an issue with dynamic IP addresses. An Internet Service Provider (ISP) will rarely give each user their own dedicated (aka "static") IP address. When their modem connects, they get an address from a pool of available addresses. This can cover a huge range of addresses in some cases, which may require banning a range if things get bad enough.
 
 There are two ways to ban a range of addresses: using an asterisk (*) wildcard character or [CIDR notation](http://www.subnet-calculator.com/cidr.php). CIDR notation has been available since BZFlag 2.4.4, and allows for more granular ranges to be specified. Example:
 
@@ -485,7 +548,7 @@ Here is an example of what a masterban would look like. Notice the (m) after the
 [SERVER->] reason: web service abuse
 ```
 
-And here is an example of a regular ban that was created by an admin or cop on the server. Notice that it shows a duration in this example. If the ban is permement (duration set to 0, “forever”, or “max”) it will not show a duration:
+And here is an example of a regular ban that was created by an admin or cop on the server. Notice that it shows a duration in this example. If the ban is permement (duration set to 0, "forever", or "max") it will not show a duration:
 
 ```
 [SERVER->] 192.168.4.3 (256.1 minutes) banned by: BobTheTank
