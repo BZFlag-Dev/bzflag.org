@@ -61,7 +61,16 @@ Jitter is a variation in this lag time. If someone has jitter, their movement wi
 
 Packet loss may exhibit similar issues to jitter (tank movement will not be as smooth) but it usually has fewer but larger "jumps" in the movement. This is almost always caused by a poor Internet connection, and can again be more common with WiFi.
 
-###```/msg```
+###```/msg <target> <message>```
+
+The msg command allows sending a chat message. The target can be a player's name, or the special values >team or >all to send to the team or to all players. Here are some examples:
+
+```/msg BobTheTank Hello Bob, how is your day going?```
+
+```/msg >team Alright team, let's go get their flag!```
+
+```/msg >all Hello everyone!```
+
 ###```/serverquery```
 
 This command show the version string of the game server.
@@ -83,18 +92,95 @@ This command causes the client to exit completely. Optionally, a message to disp
 This command shows how long much time has elapsed since the game server was started.
 
 ###```/flaghistory```
+
+The flaghistory commands shows the last 10 flag types that each player has held. Here is an example of output:
+
+```
+[SERVER->] BobTheTank       : (V) (MQ) (V) (IB) (SW) (IB) (L) (TH) (N) (TH)
+[SERVER->] SomePlayer       : (SE) (SH) (ID) (L) (SR) (SR) (IB) (L) (F) (ST)
+[SERVER->] Six Feet Under   : (T) (TH) (SE) (T) (OO) (TH) (WG) (WG) (SH) (OO)
+```
+
 ###```/report [message]```
 
 Some servers allow leaving reports that the admins or owner can view later. For instance, it would be possible to report some form of abuse on the server so it can later be reviewed.
 
 ```/report SomePlayer was using profanity on the server.```
 
-###```/help```
+###```/help [page]```
+
+The help command, when used alone, will show a list of available help pages. For example, running ```/help``` may show something like the following:
+
+```
+[SERVER->] Available help pages (use /help <page>)
+[SERVER->] rules
+[SERVER->] tips
+```
+
+In the above example, two pages are available. Here is what the output of ```/help rules``` may look like:
+
+```
+[SERVER->] Help: Rules
+[SERVER->] ---
+[SERVER->] Please be nice to everyone. Do not swear, cheat, or kill teammates.
+[SERVER->] The admins have the right to mute, kick and ban those who do not follow the above rules.
+```
+
 <h3 id="questionmark"><code>/?</code></h3>
 
+There is also in-game help for the various server commands. Running ```/?``` by itself will display all the commands along with a simple one-line explanation for each. As an example:
+
+```
+[SERVER->] /? - display the list of server-side commands
+[SERVER->] /ban <#slot|PlayerName|"Player Name"|ip> <duration> <reason>  - ban a player, ip or ip range off the server
+[SERVER->] /banlist [pattern] - List the IPs currently banned from this server
+[SERVER->] /checkip <ip> - check if IP is banned and print corresponding ban info
+[SERVER->] /countdown - start the countdown sequence for a timed game
+[SERVER->] /date - display current server time
+[SERVER->] /flag <reset|up|show> - reset, remove or show the flags
+[SERVER->] /flaghistory - list what flags players have grabbed in the past
+...
+```
+
+Part or all of a command followed by a question mark will show only matching commands. For instance, ```/lag?``` will output:
+```
+[SERVER->] /lagdrop [count] - display or set the number of lag warings before a player is kicked
+[SERVER->] /lagstats - list network delays, jitter and number of lost resp. out of order packets by player
+[SERVER->] /lagwarn [milliseconds] - display or set the maximum allowed lag time
+```
+
+And ```/lagstats?``` will output:
+
+```
+[SERVER->] /lagstats - list network delays, jitter and number of lost resp. out of order packets by player
+```
+
 ###```/grouplist```
-###```/showgroup```
-###```/groupperms```
+
+The grouplist command shows all the groups that the server has assigned any permissions to. Here is an example of the output:
+
+```
+[SERVER->] Group List:
+[SERVER->] SOMESERVER.ADMIN
+[SERVER->] SOMESERVER.COP
+[SERVER->] EVERYONE
+[SERVER->] LOCAL.ADMIN
+[SERVER->] VERIFIED
+```
+
+###```/showgroup [callsign]```
+
+This command lists the current groups assigned to the player. It optionally allows a callsign to be specified after it to show the permissions for another player if the user has the SHOWOTHERS permission, which is generally reserved for admins. Here is an example of the output:
+
+```
+[SERVER->] Global Groups (only extras) for BobTheTank: EVERYONE VERIFIED SOMESERVER.ADMIN
+[SERVER->] Local groups for ZAPPER!: EVERYONE VERIFIED 
+```
+
+###```/groupperms [group]```
+
+This command lists all the permissions for every group on the server. It optionally allows a group name to be specified after it to show the permissions for that single group.
+
 ###```/showperms [callsign]```
 
 This command lists the current permissions assigned to the user. It optionally allows a callsign to be specified after it to show the permissions for another player if the user has the SHOWOTHERS permission, which is generally reserved for admins. Here is an example of the output:
@@ -113,8 +199,31 @@ This command lists the current permissions assigned to the user. It optionally a
 ...
 ```
 
-###```/poll```
-###```/vote```
+###```/poll <flagreset | kill | kick | ban | ...> [target]```
+
+To allow players to remove problem players from a server when an admin is not around, the game provides a poll system. Generally this is restricted registered users only to limit abuse. To start a poll, there must be a minimum number of players that are able to vote. By default, 3 players (counting the one starting the poll) must be able to vote for a poll to be started. The default poll duration is 60 seconds, and the default percentage of "yes" votes required to pass the poll is 50.1%. Additionally, by default, a individual player is only able to run a poll once every 5 minutes.
+
+The built-in poll types are flagreset, kill, kick, and ban. The kill, kick, and ban poll types all require that a player callsign is specified. As of BZFlag 2.4.10, the server can also add additional poll types through the user of plugins. The servers running such as a plugin will need to provide their own instructions for use. Here are some examples of the built-in poll types.
+
+```/poll flagreset```
+
+This would start a poll to reset all the flags on the map.
+
+```/poll kill SomePlayer```
+
+This would start a poll to kill SomePlayer.
+
+```/poll kick SomePlayer```
+
+This would start a poll to kick SomePlayer from the server.
+
+```/poll ban SomePlayer```
+
+This would start a poll to ban SomePlayer from the server. The ban duration by default is 5 hours.
+
+###```/vote <yes | no>```
+
+Voting on an active poll generally requires a registered account. Using ```/vote yes``` or ```/vote no``` will cast a vote.
 
 ###```/date```
 
@@ -134,8 +243,42 @@ Some servers are configured to allow reports.  Players can leave reports with th
 
 **NOTE:** The server owner will have to be the one to manually clear out old reports. There is no integrated mechanism to clear them out, so it needs direct file-system access. This should be done periodically.
 
-###```/countdown```
-###```/modcount``` 
+###```/countdown [seconds | pause | resume | cancel]```
+
+The countdown command can be used to control a timed match. If it is run without any additional option and the server is configured for manual timed matches, it will start the countdown with whatever time limit had been set. By default there will be a 10 second delay before the timed match begins. If a number of seconds is provided, up to 120, the countdown before the timed match will use that value instead.
+
+So, a ```/countdown 5``` would output:
+
+```
+SERVER: Team scores reset, countdown started by BobTheTank.
+SERVER: Match begins in about 10 secs
+SERVER: Match duration is 10 mins
+SERVER: Start your engines!......
+SERVER: 5...
+SERVER: 4...
+SERVER: 3...
+SERVER: 2...
+SERVER: 1...
+SERVER: The match has started!...Good Luck Teams!
+```
+
+The ```/countdown cancel``` command can be used during the countdown before the timed match starts to abort the match. The ```/countdown pause``` and ```/countdown resume``` commands can be used to pause and resume a timed match. Here is the output from pausing and resuming a match:
+
+```
+SERVER: Countdown paused by BobTheTank
+Game Paused
+SERVER: Countdown is being resumed by BobTheTank
+SERVER: 5...
+SERVER: 4...
+SERVER: 3...
+SERVER: 2...
+SERVER: 1...
+SERVER: Countdown resumed
+```
+
+###```/modcount <+seconds | -seconds>``` 
+
+This command allows adding or removing time from a timed match. For example, ```/modcount +30``` would add 30 seconds and ```/modcount -60``` would subtract 60 seconds.
 
 ###```/record```
 ###```/replay```
@@ -446,29 +589,110 @@ The idunban command removes an ID ban. Provide the ID to unban.
 
 ###```/masterban <flush | reload | list>```
 
+The masterban list is a secondary ban list that defaults to a ban list managed by the BZFlag developers. The URL for the list can be customized by the server owner, however. The masterban command can be used to flush (which removes all master ban), reload, or list the masterbans.
 
 ## Server owner commands
 
 These are commands that generally only the server owner has access to as they allow configuration changes to the server.
 
-###```/idletime```
-###```/lagwarn```
-###```/lagdrop```
-###```/jitterwarn```
-###```/jitterdrop```
-###```/packetlosswarn```
-###```/packetlossdrop```
+###```/idletime [value]```
 
-###```/set```
-###```/reset```
+This views or sets the amount of time, in seconds, that a non-observer is allowed to be idle on the server (paused or dead).
+
+###```/lagwarn [value]```
+
+This views or sets the amount of latency between the client and server, in milliseconds, that a player is allowed to have before warnings are issued to the player. A common value would be 200 to 300 ms.
+
+###```/lagdrop [value]```
+
+This views or sets the number of warnings for high lag (latency) that a player is issued before the server kicks the player. A common value is 3.
+
+###```/jitterwarn [value]```
+
+This views or sets the amount of jitter (which is variation in latency), in milliseconds, that a player is allowed to have before warnings are issued to the player. A common value would be 10 to 15 ms.
+
+###```/jitterdrop [value]```
+
+This views or sets the number of warnings for high jitter (variation in latency) that a player is issued before the server kicks the player. A common value is 3.
+
+###```/packetlosswarn [value]```
+
+This views or sets the percentage of packets lost or received out-of-order that a player is allowed to have before warnings are issued to the player. A common value is 1 to 2 percent.
+
+###```/packetlossdrop [value]```
+
+This views or sets the number of warnings for high packet loss that a player is issued before the server kicks the player. A common value is 3.
+
+###```/set [variable] [value]```
+
+This command shows or sets BZDB variables, server settings which control aspects of the gameplay (such as tank speed, gravity, and some flag attributes).
+
+The sample output here is a bit harder to read than in-game because it lacks colors. In the output, there will be three values. The first value is the computed (and effective) value. The second is the value or equation that defines the computed value, which can reference other variables and make use of basic math operators. The third is the default value or equation for that variable, based on the client's default values.
+
+If no variable is specified, it will print out all variables and their values. So, ```/set``` would output:
+
+```
+BobTheTank: /set _*  
+BobTheTank: /set _agilityAdVel 2.25 2.25 2.25
+BobTheTank: /set _agilityTimeWindow 1 1.0 1.0
+BobTheTank: /set _agilityVelDelta 0.3 0.3 0.3
+BobTheTank: /set _ambientLight -nan none none
+BobTheTank: /set _angleTolerance 0.05 0.05 0.05
+BobTheTank: /set _angularAd 1.5 1.5 1.5
+...
+```
+
+If a specific variable is specified without a value, it will print that specific variable's value. So, ```/set _shotSpeed``` would output:
+
+```
+BobTheTank: /set _shotSpeed
+BobTheTank: /set _shotSpeed 100 100.0 100.0
+```
+
+If a wildcard character (an asterisk) is used as part of the variable name, it will show any variables that match that pattern and their values. So, ```/set _tank*``` outputs:
+
+```
+BobTheTank: /set _tank*
+BobTheTank: /set _tankAngVel 0.785398 0.785398 0.785398
+BobTheTank: /set _tankExplosionSize 21 3.5 * _tankLength 3.5 * _tankLength
+BobTheTank: /set _tankHeight 2.05 2.05 2.05
+BobTheTank: /set _tankLength 6 6.0 6.0
+BobTheTank: /set _tankRadius 4.32 0.72 * _tankLength 0.72 * _tankLength
+BobTheTank: /set _tankSpeed 25 25.0 25.0
+BobTheTank: /set _tankWidth 2.8 2.8 2.8
+```
+
+And finally, if a specific variable and a value is specified, it will set the variable's value. So, ```/set _shotSpeed 150``` would output:
+
+```
+[SERVER->] _shotSpeed set
+SERVER: Variable Modification Notice by BobTheTank of set _shotSpeed 150
+```
+
+###```/reset <variable>```
+
+This command resets BZDB variables, server settings which control aspects of the gameplay. It must be passed either a specific variable or an asterisk (*), the latter of which would reset *all* variables.
 
 ###```/handicap```
-###```/setgroup```
-###```/removegroup```
-###```/reload```
 
-###```/serverdebug```
+For servers that make use of the handicap feature that gives advantages to players with lower scores and disadvantages to those with higher scores, this command lists the handicap values by player.
+
+###```/reload <all | groups | bans | helpfiles | badwords>```
+
+The reload command allows reloading various files that the server uses. This is useful in cases where the files have been edited and the server cannot be restarted (such as when players are online). Depending on the keyword passed, either the groups file, bans file, help pages, badwords, or all of the files are read from the disk again. Note that only help files that were already configured will be reloaded. To add or remove help pages, a game server restart is still necessary.
+
+###```/serverdebug <level>```
+
+This command alters the debug level of the server, which controls how much output is written to the terminal running the server. Valid values are 0 through 4, though it is recommended to keep it at 3 or lower.
 
 ###```/gameover```
+
+This command ends the current game. If the server is configured to shut down at the end of a game, this will shut the server down. Otherwise, players will be required to rejoin to continue playing.
+
 ###```/superkill```
+
+This command removes every player from the server (including the admin that issued it).
+
 ###```/shutdownserver```
+
+This command kicks all the players and shuts the game server down.
