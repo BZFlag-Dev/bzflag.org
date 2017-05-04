@@ -1,5 +1,6 @@
 ---
 dataType: bz_TeamScoreChangeEventData_V1
+plugins: ~
 parameters:
   - dataType: bz_eTeamType
     description: The team that had a change of score.

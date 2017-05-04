@@ -1,5 +1,8 @@
 ---
 dataType: bz_ChatEventData_V2
+plugins:
+  - chathistory
+  - logDetail
 parameters:
   - dataType: int
     description: The player ID sending the message.

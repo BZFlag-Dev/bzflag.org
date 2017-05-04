@@ -1,5 +1,18 @@
 ---
 dataType: bz_PlayerJoinPartEventData_V1
+plugins:
+  - HoldTheFlag
+  - Phoenix
+  - fairCTF
+  - keepaway
+  - koth
+  - logDetail
+  - nagware
+  - playHistoryTracker
+  - pushstats
+  - rabbitTimer
+  - regFlag
+  - serverControl
 parameters:
   - dataType: int
     description: The player ID that is leaving

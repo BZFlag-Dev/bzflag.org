@@ -1,5 +1,7 @@
 ---
 dataType: bz_ListServerUpdateEvent_V1
+plugins:
+  - pushstats
 parameters:
   - dataType: bz_ApiString
     description: The public address of the server, as specified with the `-publicaddr` command-line option.

@@ -1,5 +1,6 @@
 ---
 dataType: bz_PlayerScoreChangeEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: Player that has had a change of score.

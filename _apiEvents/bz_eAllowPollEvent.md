@@ -1,5 +1,6 @@
 ---
 dataType: bz_AllowPollEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The player ID attempting to start a poll

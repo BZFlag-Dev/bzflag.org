@@ -1,5 +1,6 @@
 ---
 dataType: bz_PollStartEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The player ID who started the poll

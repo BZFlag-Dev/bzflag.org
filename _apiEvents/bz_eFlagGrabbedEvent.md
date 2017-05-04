@@ -1,5 +1,8 @@
 ---
 dataType: bz_FlagGrabbedEventData_V1
+plugins:
+  - customflagsample
+  - flagStay
 parameters:
   - dataType: int
     description: The player that grabbed the flag

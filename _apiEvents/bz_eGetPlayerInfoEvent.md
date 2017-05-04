@@ -1,5 +1,7 @@
 ---
 dataType: bz_GetPlayerInfoEventData_V1
+plugins:
+  - superUser
 parameters:
   - dataType: int
     description: The playerID the record refers too.

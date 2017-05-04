@@ -1,5 +1,15 @@
 ---
 dataType: bz_PlayerDieEventData_V1
+plugins:
+  - Phoenix
+  - RogueGenocide
+  - customflagsample
+  - keepaway
+  - koth
+  - playHistoryTracker
+  - rabbitTimer
+  - rabidRabbit
+  - shockwaveDeath
 parameters:
   - dataType: int
     description: ID of the player who was killed.

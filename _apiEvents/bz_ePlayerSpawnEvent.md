@@ -1,5 +1,6 @@
 ---
 dataType: bz_PlayerSpawnEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: ID of the player who was added to the world.

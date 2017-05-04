@@ -1,5 +1,6 @@
 ---
 dataType: bz_BZDBChangeData_V1
+plugins: ~
 parameters:
   - dataType: bz_ApiString
     description: The variable that was changed

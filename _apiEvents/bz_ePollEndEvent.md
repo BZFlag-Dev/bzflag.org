@@ -1,5 +1,6 @@
 ---
 dataType: bz_PollEndEventData_V1
+plugins: ~
 parameters:
   - dataType: bool
     description: Whether or not the poll was successful

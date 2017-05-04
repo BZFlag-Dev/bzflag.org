@@ -1,5 +1,7 @@
 ---
 dataType: bz_MessageFilteredEventData_V1
+plugins:
+  - logDetail
 parameters:
   - dataType: int
     description: The player who sent the filtered message

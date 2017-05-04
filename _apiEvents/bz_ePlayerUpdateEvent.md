@@ -1,5 +1,11 @@
 ---
 dataType: bz_PlayerUpdateEventData_V1
+plugins:
+  - CustomZoneSample
+  - flagStay
+  - keepaway
+  - koth
+  - timedctf
 parameters:
   - dataType: int
     description: ID of the player that sent the update

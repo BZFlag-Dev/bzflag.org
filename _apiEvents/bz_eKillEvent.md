@@ -1,5 +1,6 @@
 ---
 dataType: bz_KillEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The ID of the player who sent the /kill command

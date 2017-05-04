@@ -1,5 +1,6 @@
 ---
 dataType: bz_PollVoteEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The player ID casting a vote

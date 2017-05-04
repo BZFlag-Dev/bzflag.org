@@ -1,5 +1,6 @@
 ---
 dataType: bz_ChatEventData_V2
+plugins: ~
 parameters:
   - dataType: int
     description: The player ID sending the message.

@@ -1,5 +1,8 @@
 ---
 dataType: bz_PlayerPausedEventData_V1
+plugins:
+  - keepaway
+  - koth
 parameters:
   - dataType: int
     description: ID of the player who paused.

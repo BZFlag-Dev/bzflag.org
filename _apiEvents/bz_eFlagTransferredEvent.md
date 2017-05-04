@@ -1,5 +1,8 @@
 ---
 dataType: bz_FlagTransferredEventData_V1
+plugins:
+  - customflagsample
+  - thiefControl
 parameters:
   - dataType: int
     description: The ID of the player that stole the flag

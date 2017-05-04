@@ -1,5 +1,6 @@
 ---
 dataType: bz_AllowCTFCaptureEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The ID of the player making the capture

@@ -1,5 +1,7 @@
 ---
 dataType: bz_eServerMsgEvent_V1
+plugins:
+  - logDetail
 parameters:
   - dataType: int
     description: ID of the player receiving the message

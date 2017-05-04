@@ -1,5 +1,6 @@
 ---
 dataType: bz_PollVetoEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The player ID who vetoed the poll; this is set to BZ_SERVER if it was done through bz_vetoPoll()

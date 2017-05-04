@@ -1,5 +1,6 @@
 ---
 dataType: bz_GetAutoTeamEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: ID of the player that is being added to the game.

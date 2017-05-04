@@ -1,5 +1,7 @@
 ---
 dataType: bz_ShotFiredEventData_V1
+plugins:
+  - customflagsample
 parameters:
   - dataType: int
     description: ID of the player that fired the shot

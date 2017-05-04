@@ -1,5 +1,6 @@
 ---
 dataType: bz_NewNonPlayerConnectionEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The ID of the connection

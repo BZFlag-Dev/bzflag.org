@@ -1,5 +1,8 @@
 ---
 dataType: bz_GetPlayerSpawnPosEventData_V1
+plugins:
+  - Phoenix
+  - airspawn
 parameters:
   - dataType: int
     description: ID of the player that is requesting the spawn position.

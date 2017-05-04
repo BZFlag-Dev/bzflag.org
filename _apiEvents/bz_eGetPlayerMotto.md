@@ -1,5 +1,6 @@
 ---
 dataType: bz_GetPlayerMottoData_V2
+plugins: ~
 parameters:
   - dataType: bz_ApiString
     description: The motto of the joining player. This value may ve overwritten to change the motto of a player.

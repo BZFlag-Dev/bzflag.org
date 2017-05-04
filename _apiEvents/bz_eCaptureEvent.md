@@ -1,5 +1,9 @@
 ---
 dataType: bz_CTFCaptureEventData_V1
+plugins:
+  - HoldTheFlag
+  - Phoenix
+  - timedctf
 parameters:
   - dataType: bz_eTeamType
     description: The team whose flag was captured.

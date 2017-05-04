@@ -1,5 +1,18 @@
 ---
 dataType: bz_PlayerJoinPartEventData_V1
+plugins:
+  - HoldTheFlag
+  - TimeLimit
+  - fairCTF
+  - keepaway
+  - koth
+  - logDetail
+  - nagware
+  - playHistoryTracker
+  - regFlag
+  - serverControl
+  - superUser
+  - timedctf
 parameters:
   - dataType: int
     description: The player ID that is joining

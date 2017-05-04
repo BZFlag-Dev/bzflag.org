@@ -1,5 +1,7 @@
 ---
 dataType: bz_PlayerAuthEvent_V1
+plugins:
+  - logDetail
 parameters:
   - dataType: int
     description: The ID of the player who's authorization changed

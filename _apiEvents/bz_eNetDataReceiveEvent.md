@@ -1,5 +1,6 @@
 ---
 dataType: bz_NetTransferEventData_V1
+plugins: ~
 parameters:
   - dataType: bool
     description: Whether data is sent or recieved

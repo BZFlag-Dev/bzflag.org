@@ -1,5 +1,6 @@
 ---
 dataType: bz_GamePauseResumeEventData_V1
+plugins: ~
 parameters:
   - dataType: bz_ApiString
     description: The callsign of whoever triggered the event. By default, it's "SERVER"

@@ -1,5 +1,7 @@
 ---
 dataType: bz_FlagDroppedEventData_V1
+plugins:
+  - customflagsample
 parameters:
   - dataType: int
     description: The player that dropped the flag

@@ -1,5 +1,6 @@
 ---
 dataType: bz_MsgDebugEventData_V1
+plugins: ~
 parameters:
   - dataType: char[2]
     description: A 2-byte message code to identify what the data is.

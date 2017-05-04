@@ -1,5 +1,6 @@
 ---
 dataType: bz_ReportFiledEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The player ID that is filing the report.

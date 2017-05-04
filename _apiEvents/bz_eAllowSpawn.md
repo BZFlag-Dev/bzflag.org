@@ -1,5 +1,6 @@
 ---
 dataType: bz_AllowSpawnData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: This value is the player ID for the joining player.

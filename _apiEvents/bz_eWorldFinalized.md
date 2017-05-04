@@ -1,5 +1,8 @@
 ---
 dataType: ''
+plugins:
+  - fastmap
+  - serverSidePlayerSample
 parameters: []
 ---
 

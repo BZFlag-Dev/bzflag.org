@@ -1,5 +1,6 @@
 ---
 dataType: bz_LoggingEventData_V1
+plugins: ~
 parameters:
   - dataType: int
     description: The debug level that this debug message is being triggered at. `-d` corresponds to level 1, `-dd` to level 2, etc.

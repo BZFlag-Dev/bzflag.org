@@ -1,5 +1,6 @@
 ---
 dataType: bz_eNetDataSendEvent_V1
+plugins: ~
 parameters:
   - dataType: bool
     description: Whether data is sent or recieved

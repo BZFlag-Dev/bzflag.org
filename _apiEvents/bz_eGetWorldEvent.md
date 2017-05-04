@@ -1,5 +1,7 @@
 ---
 dataType: bz_GetWorldEventData_V1
+plugins:
+  - pushstats
 parameters:
   - dataType: bool
     description: The value representing the state of the world generation. If another

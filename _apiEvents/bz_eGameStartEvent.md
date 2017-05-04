@@ -1,5 +1,9 @@
 ---
 dataType: bz_GameStartEndEventData_V1
+plugins:
+  - HoldTheFlag
+  - nagware
+  - recordmatch
 parameters:
   - dataType: double
     description: The duration (in seconds) of the game.

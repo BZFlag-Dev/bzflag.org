@@ -1,5 +1,7 @@
 ---
 dataType: bz_SlashCommandEventData_V1
+plugins:
+  - logDetail
 parameters:
   - dataType: int
     description: The player who sent the slash command

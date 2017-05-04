@@ -1,5 +1,8 @@
 ---
 dataType: bz_AllowFlagGrabData_V1
+plugins:
+  - fairCTF
+  - regFlag
 parameters:
   - dataType: int
     description: The ID of the player who is grabbing the flag
