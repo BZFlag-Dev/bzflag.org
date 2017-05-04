@@ -17,3 +17,7 @@ exclude:
   - README.md
 
 debug: false
+
+github:
+  dev_repo: BZFlag-Dev/bzflag
+  dev_branch: 2.4
