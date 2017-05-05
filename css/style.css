@@ -233,6 +233,11 @@ pre code {
   padding: 0;
 }
 
+code.hljs {
+  white-space: pre; 
+  overflow-x: scroll; 
+}
+
 div.media img, div.documentation img {
   border: 2px solid black;
   -moz-box-shadow: 3px 3px 4px #111111;
