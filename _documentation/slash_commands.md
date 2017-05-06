@@ -13,6 +13,8 @@ Additionally, pressing <kbd>o</kbd> key will bring up a menu at the bottom of th
 
 ## Player commands
 
+There commands are generally available to normal players, though some servers may restrict some of them to registered players.
+
 ###```/highlight <pattern>```
 
 The highlight command is a client-side command that can be used to highlight messages in the message panel. A word or regular expression is used to match messages that will be highlighted based on the highlight setting configured (which can be underlined or flashing). Only a single highlight pattern can be set, so running the command a second time will replace the existing pattern. 
@@ -280,55 +282,91 @@ SERVER: Countdown resumed
 
 This command allows adding or removing time from a timed match. For example, ```/modcount +30``` would add 30 seconds and ```/modcount -60``` would subtract 60 seconds.
 
-###```/record <start | stop | size | list | rate>```
+###```/record ...```
 
-The record command is used on normal game servers to control the recording of replay files.
+The record command is used on normal game servers to control the recording of replay files. The record command has several subcommands to control the recording of replay files. 
 
 ```/record start```
 
+This command will begin recording to the recording memory buffer. If the recording starts to exceed the buffer size, the oldest data will be purged. If the ```-recbuf``` server configuration is specified, the server will automatically begin recording into the memory buffer when started, making this command unnecessary.
 
+```/record save <filename> [seconds]```
+
+The record save command will save the current recording buffer to the specified file. So, for example, using ```/record save manualsave``` would write the replay to "manualsave" and display a message similar to:
+
+```
+[SERVER->] Record buffer saved to: recordings\manualsave
+```
+
+It is also possible to save a recent portion of the recording buffer by specifying a number of seconds after the filename. For example, to save the last 30 seconds, use ```/record save somefile 30```. Because of how the recording system works, this will generally save a slightly larger duration.
 
 ```/record stop```
 
+This command will stop a recording and discard the contents of the memory buffer.
 
+```/record file <filename>```
 
-```/record size```
+This command will begin writing a recording to a specific file. This can exceed the buffer size and it is writing directly to disk. It must be stopped with ```/record stop``` at some point.
 
+```/record size <Megabytes>```
 
+This command will change the buffer size in memory. The minimum size is 1MB, and the default is 16MB. It is typically set on the server from the command line or the configuration file using the ```-recbuf``` parameter.
 
-```/record rate```
+```/record rate <seconds>```
 
-
+This controls how often a full set of states (variables, teams, flags, players, rabbit, game time) is written to the replay file. This defaults to 10 seconds, and supports a value between 1 and 30 seconds. A lower value use more storage but may help when seeking through replays.
 
 ```/record stats```
 
+While recording, this command will show statistics about the recording. For example:
 
+```
+[SERVER->] Buffered:  28470 bytes / 154 packets / 49.7 seconds
+```
 
-```/record list```
+```/record list [-t | -n | --] [pattern]```
 
-This displays a list of existing replay files.
+This displays a list of existing replay files. See the ```/replay list``` documentation below for information about sorting and filtering. Here is an example of the output:
 
-```/record save <filename>```
-
-The record save command save the current replay buffer to the specified file.
-
-```/record file```
+```
+[SERVER->] dir:  recordings\
+[SERVER->] #01:  manualsave                      [     35.2 seconds]
+[SERVER->] #02:  tofile                          [     19.8 seconds]
+```
 
 ###```/replay ...```
 
-The replay command is only for a replay servers, which are servers are dedicated to the purpose of playing back game replays. The replay command has several subcommands to list, load, and playback a replay file.
+The replay command is only for a replay servers, which are servers are dedicated to the purpose of playing back game replays. The replay command has several subcommands to list, load, and control playback of a replay file.
 
 ```/replay list [-t | -n | --] [pattern]```
 
-The replay list command will display a list of available replay files to play back. Passing -t will sort by time and -n will sort by name. A search pattern can also be provided. If the pattern needs to start with hyphen, -- can be provided before the pattern to indicate that it is the end of the options. For example, ```/replay list -- -something-to-search-for```
+The replay list command will display a list of available replay files to play back. Passing -t will sort by time and -n will sort by name. A search pattern can also be provided. If the pattern needs to start with hyphen, -- can be provided before the pattern to indicate that it is the end of the options. For example, ```/replay list -- -something-to-search-for```. Here is an example of the output:
+
+```
+[SERVER->] dir:  recordings\
+[SERVER->] #01:  manualsave                      [     35.2 seconds]
+[SERVER->] #02:  tofile                          [     19.8 seconds]
+```
 
 ```/replay load <filename | #index>```
 
-The replay load command will load a specific replay file into the game server's memory. After a load, all users connected to the replay server must rejoin.
+The replay load command will load a specific replay file into the game server's memory. **After loading a replay that contains a different map, all users connected to the replay server must rejoin.** For example, ```/replay load manualsave``` results in:
+
+```
+SERVER: An incompatible recording has been loaded
+SERVER: Please rejoin or face the consequences (client crashes)
+[SERVER->] Loaded file:  recordings\manualsave
+[SERVER->]   author:     BobTheTank ()
+[SERVER->]   protocol:   BZFS0221
+[SERVER->]   server:     2.4.10.20170315-MAINT-linux-gnu-SDL
+[SERVER->]   seconds:    35.2
+[SERVER->]   start:      Fri May  5 03:36:02 2017
+[SERVER->]   end:        Fri May  5 03:36:37 2017
+```
 
 ```/replay play```
 
-This starts the playback of replay file.
+This starts the playback of replay file. It make take several seconds before activity appears.
 
 ```/replay loop```
 
@@ -336,11 +374,26 @@ This plays the replay in a continuous loop.
 
 ```/replay skip <+seconds | -seconds>```
 
-The replay skip command allows skipping forward or backward by roughly the number of seconds specified.
+The replay skip command allows skipping forward or backward by roughly the number of seconds specified. The amount that it skips will normally not be exactly what was asked as it skips to a point where the full set of data has been written, which defaults to 10 seconds. So, it may be necessary to skip back further than expected if intending to replay a section of the recording. For example, with ```/record skip -4```, it might actually jump back 7 seconds:
+
+```
+BobTheTank: [REPLAY] skipped -7.0 seconds (asked -4)
+```
+
+During playback, there may also be instances where the replay server mentions there is no activity for a period of time. Using the ```/replay skip``` command with a small duration can be used to skip ahead to the next period of activity. For example:
+
+```
+SERVER: No activity for the next 335.3 seconds
+BobTheTank: [REPLAY] skipped 326.8 seconds (asked 1)
+```
 
 ```/replay stats```
 
-The replay stats command shows information such as the replay duration and position.
+The replay stats command shows information such as the replay duration and position. Here is an example of the output:
+
+```
+[SERVER->] Replay Date:  Fri May  5 03:36:26 2017  [68.53 %]  (24.1 secs / 35.2 secs)
+```
 
 ```/replay pause```
 
