@@ -8,7 +8,7 @@ docpath: index.html
 - Tactics
 - Customization
 - [Flags](/documentation/flags)
-- Slash Commands
+- [Slash Commands](/documentation/slash_commands)
 
 ## Sections
 - Map Making
