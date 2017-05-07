@@ -1,5 +1,6 @@
 ---
 dataType: bz_HostBanEventData_V1
+since: 2.4.0
 plugins: ~
 parameters:
   - dataType: int

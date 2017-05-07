@@ -1,5 +1,6 @@
 ---
 dataType: bz_GamePauseResumeEventData_V1
+since: 2.4.4
 plugins: ~
 parameters:
   - dataType: bz_ApiString

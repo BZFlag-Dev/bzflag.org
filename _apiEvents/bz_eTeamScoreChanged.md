@@ -1,5 +1,6 @@
 ---
 dataType: bz_TeamScoreChangeEventData_V1
+since: 2.4.0
 plugins: ~
 parameters:
   - dataType: bz_eTeamType

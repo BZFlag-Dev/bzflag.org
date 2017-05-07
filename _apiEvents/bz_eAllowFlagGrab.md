@@ -1,5 +1,6 @@
 ---
 dataType: bz_AllowFlagGrabData_V1
+since: 2.4.2
 plugins:
   - fairCTF
   - regFlag

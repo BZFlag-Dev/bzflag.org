@@ -1,5 +1,6 @@
 ---
 dataType: ''
+since: 2.4.0
 plugins:
   - fastmap
   - serverSidePlayerSample

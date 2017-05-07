@@ -1,5 +1,6 @@
 ---
 dataType: bz_PollVetoEventData_V1
+since: 2.4.10
 plugins: ~
 parameters:
   - dataType: int

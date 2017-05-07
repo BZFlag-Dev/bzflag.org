@@ -1,5 +1,5 @@
 ---
-collection: api_events
+collection: bzfs_api_events
 section: documentation
 sectiontitle: Plug-in API
 permalink: /documentation/developer/bzfs_api/%basename.html
@@ -10,6 +10,8 @@ parent:
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
+  <p><span class="since">Available since {{ this.since }}</span></p>
+
   {{ this.content }}
 
   {% if this.dataType %}

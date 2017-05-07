@@ -1,5 +1,6 @@
 ---
 dataType: bz_GetPlayerSpawnPosEventData_V1
+since: 2.4.0
 plugins:
   - Phoenix
   - airspawn

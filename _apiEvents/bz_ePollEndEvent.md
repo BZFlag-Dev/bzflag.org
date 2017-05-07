@@ -1,5 +1,6 @@
 ---
 dataType: bz_PollEndEventData_V1
+since: 2.4.10
 plugins: ~
 parameters:
   - dataType: bool

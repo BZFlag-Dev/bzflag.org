@@ -1,5 +1,6 @@
 ---
-dataType: bz_PlayerAuthEvent_V1
+dataType: bz_PlayerAuthEventData_V1
+since: 2.4.0
 plugins:
   - logDetail
 parameters:

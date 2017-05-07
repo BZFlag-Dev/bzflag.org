@@ -9,7 +9,7 @@ pageviews:
 collections:
   - name: documentation
     folder: _documentation
-  - name: api_events
+  - name: bzfs_api_events
     folder: _apiEvents
 
 exclude:
