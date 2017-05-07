@@ -7,10 +7,10 @@ pageviews:
   - _pages
 
 collections:
-  - name: documentation
-    folder: _documentation
+  - name: user_documentation
+    folder: _documentation/user
   - name: bzfs_api_events
-    folder: _apiEvents
+    folder: _documentation/developer/bzfs_api_events
 
 exclude:
   - COPYING

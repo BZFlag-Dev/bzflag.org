@@ -1,23 +1,16 @@
 ---
 section: documentation
-sectiontitle: Developer Docs
+sectiontitle: Documentation
 permalink: /documentation/developer/
-title: Developer API
+title: Developer
 parent:
 ---
 
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-    {% markdown %}
-    ## Plug-in API
-
-    ### Plug-in Events
-
-    API events are BZFS callbacks that plug-ins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.
-
-    {% for event in collections.api_events -%}
-    - [{{ event.basename }}]({{ url(this.permalink ~ 'bzfs_api/' ~ (event.basename | lower)) }})
-    {% endfor %}
-    {% endmarkdown %}
+    <p>The section contains documentation that is relevant for those wanting to compile the game or develop enhancements or additions for the game.</p>
+    <ul>
+      <li><a href="/documentation/developer/bzfs_api/">bzfs API</a></li>
+    </ul>
 {% endblock %}
