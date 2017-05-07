@@ -9,9 +9,15 @@ pageviews:
 collections:
   - name: documentation
     folder: _documentation
+  - name: bzfs_api_events
+    folder: _apiEvents
 
 exclude:
   - COPYING
   - README.md
 
 debug: false
+
+github:
+  dev_repo: BZFlag-Dev/bzflag
+  dev_branch: 2.4

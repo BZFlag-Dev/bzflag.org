@@ -1,0 +1,70 @@
+---
+collection: bzfs_api_events
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/%basename.html
+title: %basename
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  <p><span class="since">Available since {{ this.since }}</span></p>
+
+  {{ this.content }}
+
+  {% if this.dataType %}
+    <h2 id="object-type">Object Type</h2>
+    <p>{{ this.dataType }}</p>
+
+    <h2 id="parameters">Parameters</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for param in this.parameters %}
+          <tr>
+            <td>{{ param.dataType }}</td>
+            <td><code>{{ param.name }}</code></td>
+            <td>{{ param.description | markdown }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h2 id="plug-in-usage">Plug-in Usage</h2>
+
+    {% if this.plugins %}
+      <p>Here's a list of plug-ins part of the official distribution that makes use of this event:</p>
+      
+      <ul>
+        {% for plugin in this.plugins %}
+          <li><a href="https://github.com/{{ site.github.dev_repo }}/tree/{{ site.github.dev_branch }}/plugins/{{ plugin }}/">{{ plugin }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>There are no plug-ins in the official distribution that make use of this event. Browse the <a href="https://forums.bzflag.org/viewforum.php?f=79">Plug-in Releases</a> forum for plug-ins which may make use of this event.</p>
+    {% endif %}
+
+    <h2 id="example">Plug-in Example</h2>
+    {% markdown %}
+    This block of code can be used to get started when implementing the `Event()` function of your plug-in.
+
+    ```cpp
+    {{ this.dataType }} *dataObject = ({{ this.dataType }}*)eventData;
+
+    // Data
+    // ---
+    {% for param in this.parameters -%}
+    // {{ "(%-13s" | format(param.dataType ~ ')') }} {{ param.name }} - {{ param.description }}
+    {% endfor %}
+    ```
+    {% endmarkdown %}
+  {% endif %}
+{% endblock %}
