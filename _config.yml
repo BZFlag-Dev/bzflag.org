@@ -11,6 +11,8 @@ collections:
     folder: _documentation/user
   - name: bzfs_api_events
     folder: _documentation/developer/bzfs_api_events
+  - name: bzfs_api_objects
+    folder: _documentation/developer/bzfs_api_objects
 
 exclude:
   - COPYING

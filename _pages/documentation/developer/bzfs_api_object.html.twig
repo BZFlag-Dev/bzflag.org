@@ -1,0 +1,40 @@
+---
+collection: bzfs_api_objects
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/%basename.html
+title: %basename
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  <p><span class="since">Available since {{ this.since }}</span></p>
+
+  {% markdown %}
+  {{ this.content }}
+
+  {% if this.constructor %}
+  ## Constructors
+
+  ```cpp
+  {% for c in this.constructor -%}
+  {{ this.basename }} ( {{ c | join(', ') }} )
+  {% endfor %}
+  ```
+  {% endif %}
+
+  {% if this.functions %}
+  ## Member Functions
+
+  {% for f in this.functions %}
+  {%- set types = f.params | default([]) | select('dataType', false, false) -%}
+  {%- set names = f.params | default([]) | select('name', false, false) -%}
+  `{{ f.returnType }} {{ f.name }} ( {{ types | zip(names, ' ') | join(', ') }} )`
+
+  {% endfor %}
+
+  {% endif %}
+  {% endmarkdown %}
+{% endblock %}
