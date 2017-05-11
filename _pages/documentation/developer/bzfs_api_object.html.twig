@@ -12,29 +12,51 @@ parent:
 {% block content %}
   <p><span class="since">Available since {{ this.since }}</span></p>
 
-  {% markdown %}
   {{ this.content }}
 
   {% if this.constructor %}
-  ## Constructors
+    <h2 id="constructors">Constructors</h2>
 
-  ```cpp
-  {% for c in this.constructor -%}
-  {{ this.basename }} ( {{ c | join(', ') }} )
-  {% endfor %}
-  ```
+    {% markdown %}
+    ```cpp
+    {% for c in this.constructor -%}
+    {{ this.basename }} ({{ c | join(', ') }})
+    {% endfor %}
+    ```
+    {% endmarkdown %}
   {% endif %}
 
   {% if this.functions %}
-  ## Member Functions
+    <h2 id="member-functions">Member Functions</h2>
 
-  {% for f in this.functions %}
-  {%- set types = f.params | default([]) | select('dataType', false, false) -%}
-  {%- set names = f.params | default([]) | select('name', false, false) -%}
-  `{{ f.returnType }} {{ f.name }} ( {{ types | zip(names, ' ') | join(', ') }} )`
+    {% for f in this.functions %}
+      {%- set types = f.params | default([]) | select('dataType', false, false) -%}
+      {%- set names = f.params | default([]) | select('name', false, false) -%}
 
-  {% endfor %}
+      <h3>{{ f.returnType }} {{ f.name }} ({{ types | zip(names, ' ') | join(', ') }})</h3>
 
+      <p>{{ f.description }}</p>
+
+      {% if f.params %}
+        <table>
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for p in f.params if not p.hide %}
+              <tr>
+                <td>{{ p.dataType }}</td>
+                <td><code>{{ p. name }}</code></td>
+                <td>{{ p.description }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    {% endfor %}
   {% endif %}
-  {% endmarkdown %}
 {% endblock %}

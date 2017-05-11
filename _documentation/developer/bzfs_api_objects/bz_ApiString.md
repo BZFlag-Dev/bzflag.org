@@ -54,7 +54,8 @@ functions:
         name: fmt
       - 
         dataType: ...
-        description: Depending on `fmt`, the function may expect a sequence of additional arguments to repalce a format specifier
+        description: Depending on `fmt`, the function may expect a sequence of additional arguments to replace a format specifier
+        hide: true
   - 
     returnType: void
     description: Find all instances of `target` and replace it with `with`
