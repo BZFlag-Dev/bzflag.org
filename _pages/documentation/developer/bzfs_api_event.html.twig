@@ -30,7 +30,15 @@ parent:
       <tbody>
         {% for param in this.parameters %}
           <tr>
-            <td>{{ param.dataType }}</td>
+            <td>
+              {% if collections.bzfs_api_objects[param.dataType] is defined %}
+                <a href="{{ url(collections.bzfs_api_objects[param.dataType]) | replace({'.html': ''}) }}">
+                  {{ param.dataType }}
+                </a>
+              {% else %}
+                {{ param.dataType }}
+              {% endif %}
+            </td>
             <td><code>{{ param.name }}</code></td>
             <td>{{ param.description | markdown }}</td>
           </tr>
@@ -42,7 +50,7 @@ parent:
 
     {% if this.plugins %}
       <p>Here's a list of plug-ins part of the official distribution that makes use of this event:</p>
-      
+
       <ul>
         {% for plugin in this.plugins %}
           <li><a href="https://github.com/{{ site.github.dev_repo }}/tree/{{ site.github.dev_branch }}/plugins/{{ plugin }}/">{{ plugin }}</a></li>
