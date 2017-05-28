@@ -8,6 +8,7 @@ parent:
 ---
 
 {% extends "_layouts/layout.twig" %}
+{% from "_includes/api_utils.html.twig" import api_object %}
 
 {% block content %}
   <p><span class="since">Available since {{ this.since }}</span></p>
@@ -30,15 +31,7 @@ parent:
       <tbody>
         {% for param in this.parameters %}
           <tr>
-            <td>
-              {% if collections.bzfs_api_objects[param.dataType] is defined %}
-                <a href="{{ url(collections.bzfs_api_objects[param.dataType]) | replace({'.html': ''}) }}">
-                  {{ param.dataType }}
-                </a>
-              {% else %}
-                {{ param.dataType }}
-              {% endif %}
-            </td>
+            <td>{{ api_object(param.dataType) }}</td>
             <td><code>{{ param.name }}</code></td>
             <td>{{ param.description | markdown }}</td>
           </tr>

@@ -1,0 +1,9 @@
+{% macro api_object(dataType) %}
+  {% if collections.bzfs_api_objects[dataType] is defined %}
+    <a href="{{ url(collections.bzfs_api_objects[dataType]) | replace({'.html': ''}) }}">
+      {{ dataType }}
+    </a>
+  {% else %}
+    {{ dataType }}
+  {% endif %}
+{% endmacro %}
