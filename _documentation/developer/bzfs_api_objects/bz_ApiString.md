@@ -10,23 +10,23 @@ operators:
     operator: '='
     returnType: "bz_ApiString&"
     params:
-      - ["const bz_ApiString&"]
-      - ["const std::string&"]
-      - ["const char*"]
+      - "const bz_ApiString&"
+      - "const std::string&"
+      - "const char*"
   - 
     operator: '=='
     returnType: bool
     params:
-      - ["const bz_ApiString&"]
-      - ["const std::string&"]
-      - ["const char*"]
+      - "const bz_ApiString&"
+      - "const std::string&"
+      - "const char*"
   -
     operator: '!='
     returnType: bool
     params:
-      - ["const bz_ApiString&"]
-      - ["const std::string&"]
-      - ["const char*"]
+      - "const bz_ApiString&"
+      - "const std::string&"
+      - "const char*"
 functions:
   - 
     returnType: unsigned int

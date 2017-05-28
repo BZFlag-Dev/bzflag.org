@@ -26,6 +26,21 @@ parent:
     {% endmarkdown %}
   {% endif %}
 
+  {% if this.operators %}
+    <h2 id="operators">Operators</h2>
+
+    {% for o in this.operators %}
+      <h3>{{ o.operator }}</h3>
+      <p><strong>Return type</strong>: <code>{{ o.returnType }}</code></p>
+      <p><strong>Supported data types</strong>:</p>
+      <ul>
+        {% for p in o.params %}
+          <li><code>{{ p }}</code></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  {% endif %}
+
   {% if this.functions %}
     <h2 id="member-functions">Member Functions</h2>
 
