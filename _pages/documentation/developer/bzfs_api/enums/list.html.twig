@@ -1,0 +1,19 @@
+---
+section: documentation
+sectiontitle: Developer Docs
+permalink: /documentation/developer/bzfs_api/enums/
+title: bzfs API Enumerators
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  <p>bzfs plugin API enumerators are used throughout the API as constants.</p>
+
+  <ul>
+    {% for enum in collections.bzfs_api_enums -%}
+      <li><a href="{{ url(collections['bzfs_api_enums'][ enum.basename ]) | replace({'.html': ''}) }}">{{ enum.basename }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

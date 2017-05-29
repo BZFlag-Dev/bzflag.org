@@ -1,21 +1,19 @@
 ---
 section: documentation
 sectiontitle: Developer Docs
-permalink: /documentation/developer/bzfs_api/index.html
-title: bzfs API
+permalink: /documentation/developer/bzfs_api/events/
+title: bzfs API Events
 parent:
 ---
 
 {% extends "_layouts/layout.twig" %}
 
 {% block content %}
-  <h2>bzfs Plugin Events</h2>
-
   <p>bzfs plugin API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
 
   <ul>
-  {% for event in collections.bzfs_api_events -%}
-    <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) | replace({'.html': ''}) }}">{{ event.basename }}</a></li>
-  {% endfor %}
+    {% for event in collections.bzfs_api_events -%}
+      <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) | replace({'.html': ''}) }}">{{ event.basename }}</a></li>
+    {% endfor %}
   </ul>
 {% endblock %}
