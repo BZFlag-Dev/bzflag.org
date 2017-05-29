@@ -13,6 +13,8 @@ collections:
     folder: _documentation/developer/bzfs_api_events
   - name: bzfs_api_objects
     folder: _documentation/developer/bzfs_api_objects
+  - name: bzfs_api_enums
+    folder: _documentation/developer/bzfs_api_enums
 
 exclude:
   - COPYING
