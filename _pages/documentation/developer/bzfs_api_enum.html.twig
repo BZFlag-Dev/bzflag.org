@@ -1,0 +1,23 @@
+---
+collection: bzfs_api_enums
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/%basename.html
+title: %basename
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  <p><span class="since">Available since {{ this.since }}</span></p>
+
+  {{ this.content }}
+
+  <h2 id="enumerations">Enumerations</h2>
+  <ul>
+    {% for e in this.enumerations %}
+      <li>{{ e }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
