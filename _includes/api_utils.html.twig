@@ -1,6 +1,14 @@
 {% macro api_object(dataType) %}
+  {%- set object_url = '' -%}
+
   {% if collections.bzfs_api_objects[dataType] is defined %}
-    <a href="{{ url(collections.bzfs_api_objects[dataType]) | replace({'.html': ''}) }}">
+    {% set object_url = url(collections.bzfs_api_objects[dataType]) %}
+  {% elseif collections.bzfs_api_enums[dataType] is defined %}
+    {% set object_url = url(collections.bzfs_api_enums[dataType]) %}
+  {% endif %}
+
+  {% if object_url %}
+    <a href="{{ object_url | replace({'.html': ''}) }}">
       {{ dataType }}
     </a>
   {% else %}
