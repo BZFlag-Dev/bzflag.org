@@ -8,6 +8,7 @@ parent:
 ---
 
 {% extends "_layouts/layout.twig" %}
+{% from "_includes/api_utils.html.twig" import api_object %}
 
 {% block content %}
   <p><span class="since">Available since {{ this.since }}</span></p>
@@ -64,7 +65,7 @@ parent:
           <tbody>
             {% for p in f.params if not p.hide %}
               <tr>
-                <td>{{ p.dataType }}</td>
+                <td>{{ api_object(p.dataType) }}</td>
                 <td><code>{{ p. name }}</code></td>
                 <td>{{ p.description }}</td>
               </tr>
