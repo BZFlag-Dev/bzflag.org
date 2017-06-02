@@ -1,0 +1,53 @@
+---
+collection: bzfs_api_functions
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/functions/%basename.html
+title: %basename
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+{% from "_includes/api_utils.html.twig" import api_object %}
+
+{% block content %}
+  <p><span class="since">Available since {{ this.since }}</span></p>
+
+  {{ this.content }}
+
+  <h2 id="usage">Usage</h2>
+
+  {% for overload in this.signatures %}
+    {%- set types = overload | default([]) | select('dataType', false, false) -%}
+    {%- set names = overload | default([]) | select('name', false, false) -%}
+    {%- set defaults = overload | default([]) | select('default', false, false, false) -%}
+
+    {% markdown %}
+    ```cpp
+    {{ this.basename }}({{ types | zip(names, ' ') | zip(defaults, ' = ') | join(', ') }})
+    ```
+    {% endmarkdown %}
+
+    <table>
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in overload %}
+          <tr>
+            <td>{{ api_object(p.dataType) }}</td>
+            <td><code>{{ p. name }}</code></td>
+            <td>{{ p.description }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endfor %}
+
+  <h2 id="returns">Returns</h2>
+  <p>{{ api_object(this.returns.dataType) }} - {{ this.returns.description }}</p>
+{% endblock %}
