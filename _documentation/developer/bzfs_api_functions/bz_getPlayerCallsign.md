@@ -1,6 +1,5 @@
 ---
 since: 2.4.0
-group: Player Information
 signatures:
   -
     - dataType: int

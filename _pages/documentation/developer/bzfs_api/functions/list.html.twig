@@ -11,14 +11,13 @@ parent:
 {% block content %}
   <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
 
-  {% set fxn_grps = collections.bzfs_api_functions | group('group') %}
-  {% for group in fxn_grps | keys %}
-    <h2 id="{{ group | lower | replace({' ': '_'}) }}">{{ group }}</h2>
+  {% for section in data.api_functions %}
+    <h2 id="{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</h2>
     <ul>
-      {% for function in fxn_grps[group] %}
+      {% for function in section.functions %}
         <li>
-          <a href="{{ url(collections['bzfs_api_functions'][ function.basename ]) | replace({'.html': ''}) }}">
-            {{ function.basename }}()
+          <a href="{{ url(collections['bzfs_api_functions'][ function ]) | replace({'.html': ''}) }}">
+            {{ function }}()
           </a>
         </li>
       {% endfor %}

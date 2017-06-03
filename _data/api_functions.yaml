@@ -1,0 +1,8 @@
+- title: Player Information
+  functions:
+    - bz_getAdmin
+    - bz_getPlayerCallsign
+    - bz_getPlayerFlag
+    - bz_getPlayerIPAddress
+    - bz_getPlayerTeam
+    - bz_hasPerm
