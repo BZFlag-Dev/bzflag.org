@@ -24,7 +24,7 @@ parent:
 
     {% markdown %}
     ```cpp
-    {{ this.basename }}({{ types | zip(names, ' ') | zip(defaults, ' = ') | join(', ') }})
+    {{ this.returns.dataType }} {{ this.basename }}({{ types | zip(names, ' ') | zip(defaults, ' = ') | join(', ') }})
     ```
     {% endmarkdown %}
 
@@ -48,6 +48,8 @@ parent:
     </table>
   {% endfor %}
 
-  <h2 id="returns">Returns</h2>
-  <p>{{ api_object(this.returns.dataType) }} - {{ this.returns.description }}</p>
+  {% if this.returns.dataType != 'void' %}
+    <h2 id="returns">Returns</h2>
+    <p>{{ api_object(this.returns.dataType) }} - {{ this.returns.description }}</p>
+  {% endif %}
 {% endblock %}
