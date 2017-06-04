@@ -6,3 +6,11 @@
     - bz_getPlayerIPAddress
     - bz_getPlayerTeam
     - bz_hasPerm
+- title: Player State
+  functions:
+    - bz_getPlayerCurrentState
+    - bz_isPlayerPaused
+    - bz_isPlayerSpawnable
+    - bz_setPlayerSpawnable
+    - bz_getPlayerSpawnAtBase
+    - bz_setPlayerSpawnAtBase
