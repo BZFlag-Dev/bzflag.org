@@ -1,5 +1,5 @@
 ---
-dataType: bz_GameStartEndEventData_V1
+dataType: bz_GameStartEndEventData_V2
 since: 2.4.0
 plugins:
   - HoldTheFlag
