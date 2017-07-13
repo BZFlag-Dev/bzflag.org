@@ -10,6 +10,12 @@ parameters:
   - dataType: double
     description: The duration (in seconds) of the game.
     name: duration
+  - dataType: int
+    description: The player who triggered the event. If it was triggered automatically, this value will be the server ID (253)
+    name: playerID
+  - dataType: bool
+    description: Set to true if the game was ended with /gameover or /superkill or via the API
+    name: gameOver
   - dataType: double
     description: The server time the event occurred (in seconds).
     name: eventTime

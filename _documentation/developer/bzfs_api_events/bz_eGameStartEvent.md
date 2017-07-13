@@ -9,6 +9,12 @@ parameters:
   - dataType: double
     description: The duration (in seconds) of the game.
     name: duration
+  - dataType: int
+    description: The player who started the /countdown. If no player is tied to this event, this defaults to -1
+    name: playerID
+  - dataType: bool
+    description: Always false in the start event
+    name: gameOver
   - dataType: double
     description: The server time the event occurred (in seconds).
     name: eventTime
