@@ -14,3 +14,9 @@
     - bz_setPlayerSpawnable
     - bz_getPlayerSpawnAtBase
     - bz_setPlayerSpawnAtBase
+- title: Player Records
+  functions:
+    - bz_getPlayerByIndex
+    - bz_getPlayerBySlotOrCallsign
+    - bz_updatePlayerData
+    - bz_freePlayerRecord
