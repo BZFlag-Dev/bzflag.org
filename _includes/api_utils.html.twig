@@ -1,17 +1,20 @@
 {% macro api_object(dataType) %}
   {%- set object_url = '' -%}
+  {%- set object = (dataType[-1:1] == '*') ? dataType[:-1] : dataType -%}
+  {%- set group = '' -%}
 
-  {% if collections.bzfs_api_objects[dataType] is defined %}
-    {% set object_url = url(collections.bzfs_api_objects[dataType]) %}
-  {% elseif collections.bzfs_api_enums[dataType] is defined %}
-    {% set object_url = url(collections.bzfs_api_enums[dataType]) %}
-  {% endif %}
+  {% for grouping in ['events', 'objects', 'enums', 'functions'] %}
+    {% if collections['bzfs_api_' ~ grouping][object] is defined %}
+      {% set group = grouping %}
+      {% set object_url = url(collections['bzfs_api_' ~ grouping][object]) %}
+    {% endif %}
+  {% endfor %}
 
-  {% if object_url %}
+  {%- if object_url -%}
     <a href="{{ object_url | replace({'.html': ''}) }}">
-      {{ dataType }}
+      {{- dataType -}}{{- (group == 'functions') ? '()' : '' -}}
     </a>
-  {% else %}
-    {{ dataType }}
-  {% endif %}
+  {%- else -%}
+    {{- dataType -}}
+  {%- endif -%}
 {% endmacro %}
