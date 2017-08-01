@@ -31,17 +31,15 @@ parent:
     <table>
       <thead>
         <tr>
-          <th>Data Type</th>
-          <th>Name</th>
-          <th>Description</th>
+          <th colspan="3" class="text-left">Parameters</th>
         </tr>
       </thead>
       <tbody>
         {% for p in overload %}
           <tr>
-            <td>{{ api_object(p.dataType) }}</td>
+            <td class="method-docs__datatype">{{ api_object(p.dataType) }}</td>
             <td><code>{{ p. name }}</code></td>
-            <td>{{ p.description }}</td>
+            <td>{{ p.description | markdown }}</td>
           </tr>
         {% endfor %}
       </tbody>
