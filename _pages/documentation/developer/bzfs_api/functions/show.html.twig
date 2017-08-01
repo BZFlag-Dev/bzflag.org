@@ -28,22 +28,24 @@ parent:
     ```
     {% endmarkdown %}
 
-    <table>
-      <thead>
-        <tr>
-          <th colspan="3" class="text-left">Parameters</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for p in overload %}
+    {% if overload is not empty %}
+      <table>
+        <thead>
           <tr>
-            <td class="method-docs__datatype">{{ api_object(p.dataType) }}</td>
-            <td><code>{{ p. name }}</code></td>
-            <td>{{ p.description | markdown }}</td>
+            <th colspan="3" class="text-left">Parameters</th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {% for p in overload %}
+            <tr>
+              <td class="method-docs__datatype">{{ api_object(p.dataType) }}</td>
+              <td><code>{{ p. name }}</code></td>
+              <td>{{ p.description | markdown }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
   {% endfor %}
 
   {% if this.returns.dataType != 'void' %}
