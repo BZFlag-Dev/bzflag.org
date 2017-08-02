@@ -1,3 +1,11 @@
+- title: API Lists
+  functions:
+    - bz_newFloatList
+    - bz_deleteFloatList
+    - bz_newIntList
+    - bz_deleteIntList
+    - bz_newStringList
+    - bz_deleteStringList
 - title: Player Information
   functions:
     - bz_getAdmin
@@ -5,7 +13,6 @@
     - bz_getPlayerFlag
     - bz_getPlayerIPAddress
     - bz_getPlayerTeam
-    - bz_hasPerm
 - title: Player State
   functions:
     - bz_getPlayerCurrentState
@@ -20,3 +27,26 @@
     - bz_getPlayerBySlotOrCallsign
     - bz_updatePlayerData
     - bz_freePlayerRecord
+- title: Player Lists
+  functions:
+    - bz_getPlayerIndexList
+- title: Player Permissions
+  functions:
+    - bz_hasPerm
+    - bz_grantPerm
+    - bz_revokePerm
+    - bz_validAdminPassword
+    - bz_setPlayerOperator
+- title: Team Management
+  functions:
+    - bz_getTeamPlayerLimit
+    - bz_getTeamCount
+    - bz_getTeamScore
+    - bz_getTeamWins
+    - bz_getTeamLosses
+    - bz_setTeamWins
+    - bz_setTeamLosses
+    - bz_incrementTeamWins
+    - bz_incrementTeamLosses
+    - bz_resetTeamScore
+    - bz_resetTeamScores
