@@ -17,14 +17,15 @@ parent:
 
   <h2 id="usage">Usage</h2>
 
-  {% for overload in this.signatures %}
+  {% for key, overload in this.signatures %}
     {%- set types = overload | default([]) | select('dataType', false, false) -%}
     {%- set names = overload | default([]) | select('name', false, false) -%}
     {%- set defaults = overload | default([]) | select('default', false, false, false) -%}
+    {%- set returnType = (this.returns | keys | first matches '/^\\d+$/') ? this.returns[key].dataType : this.returns.dataType -%}
 
     {% markdown %}
     ```cpp
-    {{ this.returns.dataType }} {{ this.basename }}({{ types | zip(names, ' ') | zip(defaults, ' = ') | join(', ') }})
+    {{ returnType }} {{ this.basename }}({{ types | zip(names, ' ') | zip(defaults, ' = ') | join(', ') }})
     ```
     {% endmarkdown %}
 
@@ -50,6 +51,13 @@ parent:
 
   {% if this.returns.dataType != 'void' %}
     <h2 id="returns">Returns</h2>
-    <p>{{ api_object(this.returns.dataType) }} - {{ this.returns.description }}</p>
+
+    {% if this.returns | keys | first matches '/^\\d+$/' %}
+      {% for return in this.returns %}
+        <p>{{ api_object(return.dataType) }} - {{ return.description }}</p>
+      {% endfor %}
+    {% else %}
+      <p>{{ api_object(this.returns.dataType) }} - {{ this.returns.description }}</p>
+    {% endif %}
   {% endif %}
 {% endblock %}
