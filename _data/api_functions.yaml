@@ -37,6 +37,16 @@
     - bz_revokePerm
     - bz_validAdminPassword
     - bz_setPlayerOperator
+- title: Player Score
+  functions:
+    - bz_incrementPlayerWins
+    - bz_setPlayerWins
+    - bz_incrementPlayerLosses
+    - bz_setPlayerLosses
+    - bz_incrementPlayerTKs
+    - bz_setPlayerTKs
+    - bz_resetPlayerScore
+    - bz_getPlayerRank
 - title: Team Management
   functions:
     - bz_getTeamPlayerLimit
