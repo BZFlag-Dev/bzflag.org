@@ -67,3 +67,8 @@
     - bz_incrementTeamLosses
     - bz_resetTeamScore
     - bz_resetTeamScores
+- title: Group Management
+  functions:
+    - bz_getGroupList
+    - bz_getGroupPerms
+    - bz_groupAllowPerm
