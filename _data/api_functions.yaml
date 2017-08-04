@@ -47,6 +47,13 @@
     - bz_setPlayerTKs
     - bz_resetPlayerScore
     - bz_getPlayerRank
+- title: Player Latency
+  functions:
+    - bz_getPlayerLag
+    - bz_getPlayerJitter
+    - bz_getPlayerPacketloss
+    - bz_getIdleTime
+    - bz_getPausedTime
 - title: Team Management
   functions:
     - bz_getTeamPlayerLimit
