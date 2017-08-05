@@ -76,3 +76,19 @@
   functions:
     - bz_sendTextMessage
     - bz_sendTextMessagef
+- title: Server Management
+  functions:
+    - bz_restart
+    - bz_shutdown
+    - bz_superkill
+    - bz_gameOver
+    - bz_reloadLocalBans
+    - bz_reloadMasterBans
+    - bz_reloadGroups
+    - bz_reloadUsers
+    - bz_reloadHelp
+    - bz_reloadBadwords
+    - bz_getPlayerCount
+    - bz_getShotMismatch
+    - bz_setShotMismatch
+    - bz_isAutoTeamEnabled
