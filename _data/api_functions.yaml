@@ -72,3 +72,7 @@
     - bz_getGroupList
     - bz_getGroupPerms
     - bz_groupAllowPerm
+- title: Chat Messages
+  functions:
+    - bz_sendTextMessage
+    - bz_sendTextMessagef
