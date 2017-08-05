@@ -37,7 +37,7 @@ parent:
           </tr>
         </thead>
         <tbody>
-          {% for p in overload %}
+          {% for p in overload if not p.hide %}
             <tr>
               <td class="method-docs__datatype">{{ api_object(p.dataType) }}</td>
               <td><code>{{ p. name }}</code></td>
