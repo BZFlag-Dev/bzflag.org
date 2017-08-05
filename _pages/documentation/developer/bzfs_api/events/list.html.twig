@@ -12,7 +12,7 @@ parent:
   <p>bzfs plugin API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
 
   <ul>
-    {% for event in collections.bzfs_api_events -%}
+    {% for event in collections.bzfs_api_events | order('basename') -%}
       <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) | replace({'.html': ''}) }}">{{ event.basename }}</a></li>
     {% endfor %}
   </ul>
