@@ -12,9 +12,6 @@ parameters:
   - dataType: float
     description: The speed of the shot fired
     name: speed
-  - dataType: float
-    description: The duration for the shot to live on the server
-    name: lifetime
   - dataType: float[3]
     description: The position of where the shot was fired (x, y, z coordinates)
     name: pos
