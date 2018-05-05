@@ -11,7 +11,7 @@ parameters:
   - dataType: int
     description: The flag ID that was grabbed
     name: flagID
-  - dataType: bz_ApiString
+  - dataType: const char*
     description: The flag abbreviation of the flag that was grabbed
     name: flagType
   - dataType: float[3]
