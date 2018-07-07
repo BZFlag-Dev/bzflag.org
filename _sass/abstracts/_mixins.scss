@@ -1,0 +1,12 @@
+@mixin respond-up($breakpoint) {
+  $min-width: map-get($breakpoints, $breakpoint);
+
+  @if $min-width == 0 {
+    @content;
+  }
+  @else {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  }
+}

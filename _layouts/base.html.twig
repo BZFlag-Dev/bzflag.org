@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="{{ url('/assets/css/styles.css') }}">
+
+        <title>{% if this.title %}{{ this.title }} - {% endif %}{% if this.sectiontitle %}{{ this.sectiontitle }} - {% endif %}BZFlag</title>
+    </head>
+
+    <body>
+        {% block content_root %}{% endblock %}
+
+        {% include "_includes/footer.html.twig" %}
+
+        {% if data.piwik %}
+            <!-- Piwik -->
+            <script type="text/javascript">
+                var _paq = _paq || [];
+                _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+                _paq.push(["setCookieDomain", "{{ data.piwik.cookieDomain }}"]);
+                _paq.push(["setDomains", ["{{ data.piwik.domains | join('", "') }}"]]);
+                _paq.push(["trackPageView"]);
+                _paq.push(["enableLinkTracking"]);
+
+                (function() {
+                    var u="{{ data.piwik.baseURL }}";
+                    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+                    _paq.push(["setSiteId", "{{ data.piwik.siteID }}"]);
+                    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+                    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+                })();
+            </script>
+            <!-- End Piwik Code -->
+        {% endif %}
+    </body>
+</html>

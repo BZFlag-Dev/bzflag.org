@@ -1,0 +1,11 @@
+$directions: 'top', 'right', 'bottom', 'left';
+
+.b {
+  border: $border-default;
+}
+
+@each $direction in $directions {
+  .b-#{$direction} {
+    border-#{$direction}: $border-default !important;
+  }
+}
