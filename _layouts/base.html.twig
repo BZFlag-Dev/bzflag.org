@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,6 +13,8 @@
         {% block content_root %}{% endblock %}
 
         {% include "_includes/footer.html.twig" %}
+
+        <script src="{{ url('/assets/js/main.js') }}"></script>
 
         {% if data.piwik %}
             <!-- Piwik -->

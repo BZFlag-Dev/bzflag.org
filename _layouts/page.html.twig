@@ -1,6 +1,8 @@
 {% extends '_layouts/base.html.twig' %}
 
 {% block content_root %}
+    {% include '_includes/navigation.html.twig' %}
+
     <div class="container background-dark py-3">
         {% block content %}{% endblock %}
     </div>

@@ -1,0 +1,18 @@
+.site-header {
+  background-color: rgba(#252529, 0.8);
+  position: relative;
+}
+
+.site-header__brand {
+  align-items: center;
+  display: flex;
+
+  img {
+    margin-right: 5px;
+    width: 30px;
+  }
+
+  span {
+    font-size: 1.5em;
+  }
+}

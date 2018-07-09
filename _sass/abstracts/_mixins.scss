@@ -1,12 +1,49 @@
-@mixin respond-up($breakpoint) {
-  $min-width: map-get($breakpoints, $breakpoint);
+/// Core logic for generating a @media query blocks.
+///
+/// @access private
+///
+/// @param {Map} $breakpoint
+/// @param {String} $query
 
-  @if $min-width == 0 {
+@mixin _respond($breakpoint, $query) {
+  $breakpoint-down: ($query == 'down');
+  $min-width: map-get($breakpoints, $breakpoint);
+  $media-query: if($breakpoint-down, 'max-width', 'min-width');
+
+  @if $breakpoint-down {
+    $min-width: $min-width - 0.02px;
+  }
+
+  @if $min-width == 0 or $min-width == null {
     @content;
   }
   @else {
-    @media (min-width: $min-width) {
+    @media (#{$media-query}: $min-width) {
       @content;
     }
+  }
+}
+
+/// Any CSS that should *only* occur below a certain breakpoint.
+///
+/// @access public
+///
+/// @param {String} $breakpoint
+
+@mixin respond-down($breakpoint) {
+  @include _respond($breakpoint, 'down') {
+    @content;
+  }
+}
+
+/// Any CSS that should occur above a certain breakpoint.
+///
+/// @access public
+///
+/// @param {String} $breakpoint
+
+@mixin respond-up($breakpoint) {
+  @include _respond($breakpoint, 'up') {
+    @content;
   }
 }
