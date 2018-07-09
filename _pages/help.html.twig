@@ -8,16 +8,23 @@ permalink: /help.html
 
 {% from _self import card_block %}
 
-{% macro card_block(image, header, content) %}
-    <div class="col-md-6 col-lg-4">
+{% macro card_block(image, header, link, content) %}
+    <div class="col-md-6 col-lg-4 mb-5 mb-md-4 mb-lg-3">
         <article class="c-card">
-            <header class="background-light">
+            <header class="background-light mb-2">
                 <img src="{{ url('/assets/images/pages/help/' ~ image ~ '.svg') }}"
-                    alt=""
+                     alt="{{ image | capitalize }} icon"
                 >
             </header>
             <div>
-                <h2>{{ header }}</h2>
+                <h2 class="m-0">
+                    {% if link %}
+                        {%- set url = (link.permalink or link[0] == '/') ? url(link) | replace({'.html': ''}) : link -%}
+                        <a href="{{- url -}}">{{- header -}}</a>
+                    {% else %}
+                        {{- header -}}
+                    {% endif %}
+                </h2>
                 {% spaceless %}{{ content }}{% endspaceless %}
             </div>
         </article>
@@ -26,43 +33,64 @@ permalink: /help.html
 
 {% block content %}
     <h1>Help</h1>
-    <p>
+    <p class="mb-5">
       There are lots of ways to get help with BZFlag! Many of these are also useful if you want to help contribute to the game in some way.
     </p>
 
     <div class="row">
+        {% set getting_started_content %}
+            <p>New to the game and want to get started quickly? Check out our Getting Started guide!</p>
+        {% endset %}
         {{ card_block(
             'question',
             'Getting Started',
-            '<p>New to the game and want to get started quickly? Check out our Getting Started guide!</p>'
+            collections.user_documentation['getting_started'],
+            getting_started_content
         ) }}
 
+        {% set forums_content %}
+            <p>BZFlag hosts a forum for registered users. This also serves as a player registration system for the game.</p>
+        {% endset %}
         {{ card_block(
             'megaphone',
             'Forums',
-            '<p>BZFlag hosts a forum for registered users. This also serves as a player registration system for the game.</p>'
+            'https://forums.bzflag.org',
+            forums_content
         ) }}
 
         {% set irc_content %}
             <p>BZFlag has the following IRC channels on Freenode (irc.freenode.net):</p>
 
             <ul>
-                <li>#BZFlag (development and support)</li>
-                <li>#BZFlag-chat (general player talk)</li>
+                <li><a href="http://webchat.freenode.net/?channels=bzflag">#BZFlag</a> (development and support)</li>
+                <li><a href="http://webchat.freenode.net/?channels=bzflag-chat">#BZFlag-chat</a> (general player talk)</li>
             </ul>
         {% endset %}
-        {{ card_block('chat-bubbles', 'IRC', irc_content) }}
+        {{ card_block(
+            'chat-bubbles', 
+            'IRC',
+            'http://webchat.freenode.net/',
+            irc_content
+        ) }}
 
+        {% set docs_content %}
+            <p>The game is documented via a series of manual pages (or man pages).</p>
+        {% endset %}
         {{ card_block(
             'book',
             'Documentation',
-            '<p>The game is documented via a series of manual pages (or man pages).</p>'
+            '/documentation',
+            docs_content
         ) }}
 
+        {% set bug_tracker_content %}
+            <p>If none of these methods provide a resolution to your problem, the project maintains a issue tracker on GitHub where an issue can be opened.</p>
+        {% endset %}
         {{ card_block(
             'bug',
             'Bug Tracker',
-            '<p>If none of these methods provide a resolution to your problem, the project maintains a issue tracker on GitHub where an issue can be opened.</p>'
+            'https://github.com/bzflag-dev/bzflag/issues',
+            bug_tracker_content
         ) }}
     </div>
 {% endblock %}
