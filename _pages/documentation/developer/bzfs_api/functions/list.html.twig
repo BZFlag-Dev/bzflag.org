@@ -6,21 +6,35 @@ title: bzfs API Functions
 parent:
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% block aside %}
+    <div class="position-sticky position-top-1">
+        <h2 class="mt-0">Categories</h2>
+        <ul>
+            {% for section in data.api_functions %}
+                <li><a href="#{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block content %}
-  <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
+    <h2 class="mt-0">BZFS API Functions</h2>
+    <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
 
-  {% for section in data.api_functions %}
-    <h2 id="{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</h2>
-    <ul>
-      {% for function in section.functions %}
-        <li>
-          <a href="{{ url(collections['bzfs_api_functions'][ function ]) | replace({'.html': ''}) }}">
-            {{ function }}()
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
+    {% for section in data.api_functions %}
+        <h3 id="{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</h3>
+        <ul>
+            {% for function in section.functions %}
+                <li>
+                    <a href="{{ url(collections['bzfs_api_functions'][function]) | replace({'.html': ''}) }}"
+                       class="text-decoration-none"
+                    >
+                        <code>{{- function -}}()</code>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
 {% endblock %}

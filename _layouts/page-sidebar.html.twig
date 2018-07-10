@@ -1,0 +1,17 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block content_root %}
+    {% include '_includes/navigation.html.twig' %}
+
+    <main class="container background-dark py-3">
+        <div class="row">
+            <aside class="col-lg-3 b-lg-right position-static">
+                {% block aside %}{% endblock %}
+            </aside>
+
+            <div class="col-lg-9">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
