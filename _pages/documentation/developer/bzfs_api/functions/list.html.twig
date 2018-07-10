@@ -1,0 +1,26 @@
+---
+section: documentation
+sectiontitle: Developer Docs
+permalink: /documentation/developer/bzfs_api/functions/
+title: bzfs API Functions
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
+
+  {% for section in data.api_functions %}
+    <h2 id="{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</h2>
+    <ul>
+      {% for function in section.functions %}
+        <li>
+          <a href="{{ url(collections['bzfs_api_functions'][ function ]) | replace({'.html': ''}) }}">
+            {{ function }}()
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}

@@ -90,8 +90,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #content table {
-  margin-bottom: 16px;
-  width: 100%;
+  margin: 0 auto 16px;
+  width: 96%;
 }
 
 #content p:last-child {
@@ -234,8 +234,8 @@ pre code {
 }
 
 code.hljs {
-  white-space: pre; 
-  overflow-x: scroll; 
+  white-space: pre;
+  overflow-x: scroll;
 }
 
 div.media img, div.documentation img {
@@ -292,4 +292,20 @@ table tr:last-child td {
   background: #111;
   border-radius: 4px;
   padding: 4px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.method-docs {
+  padding-left: 30px;
+}
+
+.method-docs p {
+  margin-bottom: 2em;
+}
+
+.method-docs__datatype {
+  white-space: nowrap;
 }

@@ -2,12 +2,13 @@
 collection: bzfs_api_events
 section: documentation
 sectiontitle: Plug-in API
-permalink: /documentation/developer/bzfs_api/%basename.html
+permalink: /documentation/developer/bzfs_api/events/%basename.html
 title: %basename
 parent:
 ---
 
 {% extends "_layouts/layout.twig" %}
+{% from "_includes/api_utils.html.twig" import api_object %}
 
 {% block content %}
   <p><span class="since">Available since {{ this.since }}</span></p>
@@ -30,7 +31,7 @@ parent:
       <tbody>
         {% for param in this.parameters %}
           <tr>
-            <td>{{ param.dataType }}</td>
+            <td>{{ api_object(param.dataType) }}</td>
             <td><code>{{ param.name }}</code></td>
             <td>{{ param.description | markdown }}</td>
           </tr>
@@ -42,7 +43,7 @@ parent:
 
     {% if this.plugins %}
       <p>Here's a list of plug-ins part of the official distribution that makes use of this event:</p>
-      
+
       <ul>
         {% for plugin in this.plugins %}
           <li><a href="https://github.com/{{ site.github.dev_repo }}/tree/{{ site.github.dev_branch }}/plugins/{{ plugin }}/">{{ plugin }}</a></li>

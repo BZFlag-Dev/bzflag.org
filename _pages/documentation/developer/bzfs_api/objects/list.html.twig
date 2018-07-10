@@ -1,0 +1,19 @@
+---
+section: documentation
+sectiontitle: Developer Docs
+permalink: /documentation/developer/bzfs_api/objects/
+title: bzfs API Objects
+parent:
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+  <p>bzfs plugin API objects are used throughout the API to ensure compatability across the DLL boundary.</p>
+
+  <ul>
+    {% for object in collections.bzfs_api_objects -%}
+      <li><a href="{{ url(collections['bzfs_api_objects'][ object.basename ]) | replace({'.html': ''}) }}">{{ object.basename }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
