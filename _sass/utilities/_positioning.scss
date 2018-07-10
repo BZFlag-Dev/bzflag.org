@@ -1,0 +1,10 @@
+$_directions: top, right, bottom, left;
+$_positions: 0, 1rem, 1.25rem, 1.5rem;
+
+@each $direction in $_directions {
+    @for $i from 1 through length($_positions) {
+        .position-#{$direction}-#{$i - 1} {
+            #{$direction}: nth($_positions, $i);
+        }
+    }
+}

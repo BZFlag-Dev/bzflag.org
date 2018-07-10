@@ -1,11 +1,15 @@
-$directions: 'top', 'right', 'bottom', 'left';
+$_directions: 'top', 'right', 'bottom', 'left';
 
-.b {
-  border: $border-default;
+@include responsify('.b%infix') {
+  border: $border-default !important;
 }
 
-@each $direction in $directions {
-  .b-#{$direction} {
+@each $direction in $_directions {
+  $placeholders: (
+    direction: $direction,
+  );
+
+  @include responsify('.b%infix-%direction', $placeholders) {
     border-#{$direction}: $border-default !important;
   }
 }

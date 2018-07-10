@@ -1,0 +1,64 @@
+/// Replace `$search` with `$replace` in `$string`
+///
+/// @author Hugo Giraudel
+///
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+///
+/// @return {String} - Updated string
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+/// A mixin that will create versions of a class for each breakpoint
+///
+/// @access public
+/// @author Vladimir "allejo" Jimenez
+/// @content The CSS rules the class will have
+/// @link https://github.com/allejo/bzion/blob/master/assets/css/abstracts/_responsify.scss
+///
+/// @param {String} $name - The name of the class using placeholders starting with '%'; a '%infix' placeholder will place the breakpoint initials
+/// @param {Map} $placeholders [()] - A map of placeholders that will be used to replace in the class name template
+///
+/// @example scss
+///   @each $alignment in (left, center, right) {
+///       $placeholders: (
+///           align: $alignment,
+///       );
+///
+///       @include responsify('.text-%align%infix', $placeholders) {
+///           text-align: $alignment;
+///       }
+///  }
+///
+/// @example css
+///   /* One of the generated classes; it'll generate for the rest of the break points */
+///   @media (min-width: 992px) {
+///       .text-left-lg { text-align: left; }
+///   }
+
+@mixin responsify($name, $placeholders: ()) {
+  @each $bp in map-keys($breakpoints) {
+    $className: $name;
+
+    @each $placeholder, $value in $placeholders {
+      $className: str-replace($className, '%' + $placeholder, $value);
+    }
+
+    $className: str-replace($className, '%infix', if($bp == 'xs', '', '-' + $bp));
+
+    @include respond-up($bp) {
+      #{$className} {
+        @content;
+      }
+    }
+  }
+}
