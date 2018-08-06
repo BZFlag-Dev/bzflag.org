@@ -111,3 +111,10 @@
     - bz_getFlagPosition
     - bz_moveFlag
     - bz_RegisterCustomFlag
+- title: Shot Management
+  functions:
+    - bz_setShotMetaData
+    - bz_shotHasMetaData
+    - bz_getShotMetaDataI
+    - bz_getShotMetaDataS
+    - bz_getShotGUID
