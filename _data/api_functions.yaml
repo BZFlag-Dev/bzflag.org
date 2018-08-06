@@ -92,3 +92,22 @@
     - bz_getShotMismatch
     - bz_setShotMismatch
     - bz_isAutoTeamEnabled
+- title: Map Management
+  functions:
+    - bz_setClientWorldDownloadURL
+    - bz_getClientWorldDownloadURL
+    - bz_saveWorldCacheFile
+- title: Flag Management
+  functions:
+    - bz_givePlayerFlag
+    - bz_removePlayerFlag
+    - bz_resetFlags
+    - bz_getNumFlags
+    - bz_getFlagName
+    - bz_resetFlag
+    - bz_flagPlayer
+    - bz_getPlayerFlag
+    - bz_getPlayerFlagID
+    - bz_getFlagPosition
+    - bz_moveFlag
+    - bz_RegisterCustomFlag
