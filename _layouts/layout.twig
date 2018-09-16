@@ -3,6 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <title>{% if this.title %}{{ this.title }} - {% endif %}{% if this.sectiontitle %}{{ this.sectiontitle }} - {% endif %}BZFlag</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+{% if this.metadescription %}
+  <meta name="description" content="{{ this.metadescription|escape('html') }}" />
+{% endif %}
   <link rel="stylesheet" href="/css/hljs.css" />
   <link rel="stylesheet" href="/css/style.css" />
 {% block head %}{% endblock %}
