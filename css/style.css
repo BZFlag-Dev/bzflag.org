@@ -140,16 +140,15 @@ a:hover, a:active {
 
 #teaserdiv {
   width: 720px;
-  height: 400px;
   margin: 0 auto;
-}
-
-video {
-  outline: 0;
   border: 2px solid black;
   -moz-box-shadow: 3px 3px 4px #111111;
   -webkit-box-shadow: 3px 3px 4px #111111;
   box-shadow: 3px 3px 4px #111111;
+}
+
+video {
+  outline: 0;
 }
 
 div.media figure {
