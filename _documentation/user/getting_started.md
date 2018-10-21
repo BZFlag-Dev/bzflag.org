@@ -31,7 +31,7 @@ To install the (possibly outdated) distribution packages:
 
 ## Optionally register a callsign
 
-BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that players can not use another player's registered callsign. To register a callsign, visit our [forums](https://forums.bzflag.org) and register an account. The username and password on the forums will be used as callsign and password in the game.
+BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that players can not use another player's registered callsign. To register a callsign, visit our [forums](https://forums.bzflag.org/) and register an account. The username and password on the forums will be used as callsign and password in the game.
 
 ## Game Mechanics
 
