@@ -1,6 +1,6 @@
 ---
 title: Flags
-docpath: flags.html
+docpath: flags/
 ---
 
 There are two types of flags in BZFlag: team flags and super flags. Team flags only show up in the Capture The Flag game mode.

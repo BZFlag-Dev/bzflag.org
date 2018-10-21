@@ -1,6 +1,6 @@
 ---
 title: Slash Commands
-docpath: slash_commands.html
+docpath: slash_commands/
 ---
 
 ## Introduction
@@ -532,7 +532,7 @@ Using the output of ```/flag show```, it is possible to reset a single specific 
 
 ```/flag reset <flag abbreviation>```
 
-It is also possible to reset specific types of flags. By passing a flag abbreviation, it will reset any flag of that type. To reset team flags for a single team, use G* for Green, B* for Blue, R* for Red, and P* for Purple. A the list of flag abbreviations are on the [flags](/documentation/flags) documentation page. For example, ```/flag reset G*``` would reset all the Green team flags.
+It is also possible to reset specific types of flags. By passing a flag abbreviation, it will reset any flag of that type. To reset team flags for a single team, use G* for Green, B* for Blue, R* for Red, and P* for Purple. A the list of flag abbreviations are on the [flags](/documentation/flags/) documentation page. For example, ```/flag reset G*``` would reset all the Green team flags.
 
 ```/flag take <slot# | player name>```
 

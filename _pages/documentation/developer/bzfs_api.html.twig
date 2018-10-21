@@ -1,7 +1,7 @@
 ---
 section: documentation
 sectiontitle: Developer Docs
-permalink: /documentation/developer/bzfs_api/index.html
+permalink: /documentation/developer/bzfs_api/
 title: bzfs API
 parent:
 ---
@@ -15,7 +15,7 @@ parent:
 
   <ul>
   {% for event in collections.bzfs_api_events -%}
-    <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) | replace({'.html': ''}) }}">{{ event.basename }}</a></li>
+    <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) }}">{{ event.basename }}</a></li>
   {% endfor %}
   </ul>
 {% endblock %}
