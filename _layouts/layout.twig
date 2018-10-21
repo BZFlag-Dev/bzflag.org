@@ -1,11 +1,15 @@
+{% if title is not defined and this.title is defined %}{% set title = this.title %}{% endif %}
+{% if sectiontitle is not defined and this.sectiontitle is defined %}{% set sectiontitle = this.sectiontitle %}{% endif %}
+{% if metadescription is not defined and this.metadescription is defined %}{% set metadescription = this.metadescription %}{% endif %}
+{% if section is not defined and this.section is defined %}{% set section = this.section %}{% endif %}
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
   <meta charset="utf-8" />
-  <title>{% if this.title %}{{ this.title }} - {% endif %}{% if this.sectiontitle %}{{ this.sectiontitle }} - {% endif %}BZFlag</title>
+  <title>{% if title %}{{ title }} - {% endif %}{% if sectiontitle %}{{ sectiontitle }} - {% endif %}BZFlag</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-{% if this.metadescription %}
-  <meta name="description" content="{{ this.metadescription|escape('html') }}" />
+{% if metadescription %}
+  <meta name="description" content="{{ metadescription|escape('html') }}" />
 {% endif %}
   <link rel="stylesheet" href="/css/hljs.css" />
   <link rel="stylesheet" href="/css/style.css" />
@@ -25,9 +29,9 @@
     </ul>
   </div>
 {% block precontent %}{% endblock %}
-  <div id="content"{% if this.section %} class="{{ this.section }}"{% endif %}>
+  <div id="content"{% if section %} class="{{ section }}"{% endif %}>
     <div id="logo"></div>
-    <h1>{{ this.title }}</h1>
+    <h1>{{ title }}</h1>
 {% block content %}{% endblock %}
   </div>
   <div id="footer">Copyright &copy; {{ "now"|date("Y") }} BZFlag &amp; Associates. [ <a href="/credits/">Credits</a> | <a href="/privacy/">Privacy Policy</a> ]</div>

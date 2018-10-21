@@ -1,0 +1,24 @@
+---
+permalink: /downloads/archive/
+title: Download Archive
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% block content %}
+
+<h2>Active Projects</h2>
+<ul>
+{% for shortname, project in data.projectinfo if project.active %}
+  <li><a href="/downloads/archive/{{ shortname }}/">{{ project.name }}</a> - {{ project.short_description }}</li>
+{% endfor %}
+</ul>
+
+<h2>Legacy Projects</h2>
+<ul>
+{% for shortname, project in data.projectinfo if not project.active %}
+  <li><a href="/downloads/archive/{{ shortname }}/">{{ project.name }}</a> - {{ project.short_description }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

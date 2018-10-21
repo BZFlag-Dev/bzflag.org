@@ -1,0 +1,64 @@
+version: '1.7e6'
+changelog: |
+  * new HUD! - David Trowbridge, Tim Riker, many others
+  * added temporary bans (minutes) - Dave Brosius
+  * Can now build entire win32 installer from VC Workspace - Dave Brosius
+  * non-listserver connection gave 0.0.0.0 as host: fixed - Dave Brosius
+  * added private messages - Frank Thilo
+  * modified / added roaming support for observers - Frank Thilo
+  * added /idlekick server option - Frank Thilo
+  * fix /ban and add /unban - Frank Thilo
+  * allow both -mp # and -mp #,#,#,#,# - Frank Thilo
+  * CTF flag returning to base fixes - Frank Thilo
+  * sort teams by score, sort in self - Janne Hassinen, Tim Riker
+  * observer hack, should be a team - Frank Thilo
+  * /countdown, /lagwarn - Frank Thilo
+  * PatchId fixes - Frank Thilo, Tim Riker
+  * New lag measurement using pings - Frank Thilo
+  * Reassign keyboard menu is now in two columns - Dave Brosius
+  * Fix MsgMessage and CLIENTQUERY handling - Frank Thilo
+  * -ban - David Trowbridge, Dave Brosius, Tim Riker
+  * Mac OSX work - Kevin Avila <kevin@hzsystems.com>
+  * -cr random ctf maps - Tim Riker, Frank Thilo
+  * bots in building fix - Tim Riker, Harry Dodgson
+  * Pause and not responding on HUD - Frank Thilo
+  * Message History buffer - Dave Brosius (cleaned by Tim Riker)
+  * Nemesis set on direct receive - Frank Thilo
+  * LT and RT command line aliases for shell impaired - Tim Riker
+  * radar shade flags by altitude - Tim Riker (reworked from Jeremiah)
+  * different kill msgs - Sal Gonzalez, Tim Riker
+  * brighter radar colors - Tim Riker with much input from others
+  * team colored shock wave - Tim Riker
+  * team colored lasers - Dave Brosius
+  * turn off ctf, if bases not found in world file - Dave Brosius
+  * patchid optimization for new clients - Dave Brosius
+  * udp request fix for later clients - Tim Riker
+  * MsgEnter should not be patched for ID - Frank Thilo
+  * Removed superfluous buffer copies in bzfs buffer sends - Dave Brosius
+  * Better pack/unpack code for vectors [3] - Dave Brosius
+  * Fix Teamflag drop over building when building at 0,0,0 - Dave Brosius
+  * Fix flags spawning in pyramids - Dave Brosius
+  * Fix client crashes with UNKNOWNS - Valery Fouques
+  * fix patchMessage for MsgAlive - Dave Brosius
+  * fix find closest flag (ID) with flags on buildings - Dave Brosius
+  * scale flags bases on elevation - Tim Riker
+  * don't scale radar based on screen res - Tim Riker
+  * flag radar updated - Tim Riker
+  * new admin commands - Tim Riker
+  * -pr for reconnect port (two port tcp) - Tim Riker
+date: '2002-06-19'
+downloads:
+    windows:
+        -
+            filename: bzflag17e6.exe
+    macos:
+        -
+            filename: BZFlag-OSX-1.7e6.tar.gz
+    irix:
+        -
+            filename: bzflag.17e6_o32.tardist
+        -
+            filename: bzflag.17e6_n32.tardist
+    source:
+        -
+            filename: bzflag-1.7e6.tgz

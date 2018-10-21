@@ -1,0 +1,41 @@
+version: 1.7g0
+codename: 'Holy Dancing Monkeys'
+changelog: |
+  * -tkkr auto team killer - Dave Brosius
+  * world file caching - Colin Bayer, Dave Brosius, others
+  * optional tank labels for roaming - Frank Thilo, Tim Riker
+  * draw tank lights correctly for (T)(N)(O) tanks - Dave Brosius
+  * new GUI options menu - Frank Thilo
+  * exclude observers from /idlestats list - Frank Thilo
+  * server based scoring - Dave Brosius, Tim Riker
+  * max. number of observers now defaults to 3 instead of 0 - Frank Thilo
+  * Use high water marks for player cnts to reduce looping - Dave Brosius
+  * new bzfs option -tk: team killers do not die - Frank Thilo
+  * misc @observer mode fixes - Andrew Greig
+  * Improved Mac OS X support - Kevin Avila
+  * disallow dud flags (eg jump in a jump world) - Dave Brosius
+  * self destruct key, for stuck tanks - Dave Brosius
+  * team killers die - Tim Riker
+  * increase max player and robot counts - Tim Riker
+  * Fix 'Change Key Mapping' arrowkeys - Andrew Greig
+  * show the time in upper right if no flag
+  * opacity in config - Dave Brosius, Tim Riker
+  * [UN]SILENCE - Dave Brosius, Tim Riker
+  * revert lag falling patch - Tim Riker, Dave Brosius
+  * teamgrab.wav - Dave Brosius
+  * improved texture mapping - unknown
+  * possible win32 installer bug - Chris Walters
+  * gcc 3.1+ patches - David Trowbridge
+date: '2002-12-08'
+downloads:
+    windows:
+        -
+            filename: bzflag-17g0.exe
+    macos:
+        -
+            filename: BZFlag-1.7g0r7.dmg
+        -
+            filename: BZFlag-1.7g0r6.dmg
+    source:
+        -
+            filename: bzflag-1.7g0.tgz

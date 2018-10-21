@@ -1,0 +1,10 @@
+version: 1.6.2
+changelog: ''
+date: '2004-01-20'
+downloads:
+    windows:
+        -
+            filename: BZEdit_1.6.2_Installer.exe
+    source:
+        -
+            filename: bzeditWin321.6.2_source.zip
