@@ -47,7 +47,7 @@ releases:
 {% endif %}
 {% for download in release.downloads %}
     <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
-      <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" />
+      <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" alt="" />
       <p class="os">{{ this.platforms[download.platform].title }}</p>
 {% if download.version is defined %}
       <p class="version">Version {{ download.version }}</p>

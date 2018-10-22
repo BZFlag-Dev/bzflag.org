@@ -15,7 +15,7 @@ projects:
 
 {% block content %}
 
-<p>{{ attribute(data.projectinfo, this.iterators.projects).description | markdown }}</p><br />
+{{ attribute(data.projectinfo, this.iterators.projects).description | markdown }}<br />
 
 <h2>Release History</h2>
 <ul>
