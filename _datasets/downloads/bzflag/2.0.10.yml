@@ -50,7 +50,7 @@ changelog: |
   * Give everyone notice of pause messages - Jeff Myers
   * Fix for /silence command - Skeeve
   * Fix mousebox edge positioning - Mark Thomas
-  * Fixed on spanish localization - xukosky@yahoo.es
+  * Fixed on spanish localization - xukosky
   * Instructions to fix sound on ALSA added - Tupone Alfredo
   * Change filename format for easier location of matches - uso
   * Adding jitter kick and related admin commands - Thomas Stauer

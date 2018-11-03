@@ -1,6 +1,6 @@
 version: '1.7e0'
 changelog: |
-  * Tim Riker <Tim@Rikers.org> now maintainer
+  * Tim Riker now maintainer
   * build now 3 digits so alpha sorts work (until we hit 1.10? ;-)
   * copyright and naming changes
   * save flaghelp and score state
