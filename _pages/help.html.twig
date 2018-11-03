@@ -19,7 +19,7 @@ permalink: /help/
             <div>
                 <h2 class="m-0">
                     {% if link %}
-                        {%- set url = (link.permalink or link[0] == '/') ? url(link) | replace({'.html': ''}) : link -%}
+                        {%- set url = (link.permalink or link[0] == '/') ? url(link) : link -%}
                         <a href="{{- url -}}">{{- header -}}</a>
                     {% else %}
                         {{- header -}}

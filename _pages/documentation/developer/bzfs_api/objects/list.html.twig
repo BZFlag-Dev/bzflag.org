@@ -13,7 +13,7 @@ parent:
 
   <ul>
     {% for object in collections.bzfs_api_objects -%}
-      <li><a href="{{ url(collections['bzfs_api_objects'][ object.basename ]) | replace({'.html': ''}) }}">{{ object.basename }}</a></li>
+      <li><a href="{{ url(collections['bzfs_api_objects'][ object.basename ]) }}">{{ object.basename }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

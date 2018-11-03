@@ -13,7 +13,7 @@ parent:
 
   <ul>
     {% for enum in collections.bzfs_api_enums -%}
-      <li><a href="{{ url(collections['bzfs_api_enums'][ enum.basename ]) | replace({'.html': ''}) }}">{{ enum.basename }}</a></li>
+      <li><a href="{{ url(collections['bzfs_api_enums'][ enum.basename ]) }}">{{ enum.basename }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

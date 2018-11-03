@@ -28,7 +28,7 @@ parent:
         <ul>
             {% for function in section.functions %}
                 <li>
-                    <a href="{{ url(collections['bzfs_api_functions'][function]) | replace({'.html': ''}) }}"
+                    <a href="{{ url(collections['bzfs_api_functions'][function])  }}"
                        class="text-decoration-none"
                     >
                         <code>{{- function -}}()</code>
