@@ -1,0 +1,80 @@
+version: 1.10.0
+codename: 'Break the world'
+changelog: |
+  * control spawn on buildings with -sb - Frank Thilo
+  * Initial Docbook documentation - Sean Morrison
+  * Persistent bans with -banfile <filename> - Lars Luthman
+  * Streamroll collision detection is now compressed in height - Alfredo Tupone
+  * Rendering options are actuated immediately - Alfredo Tupone
+  * Height of base thickness (in world files) goes over the wire - Alfredo Tupone
+  * Fixed collision-detection for many cases - Alfredo Tupone
+    * falling through floor when lagging
+    * being stuck when tank expands
+    * shot going into the ground
+    * collision with pyramids
+  * Avoiding stuck on connection - Alfredo Tupone
+  * Web/Database based list server - Alfredo Tupone, ...
+  * Fixed bugs in the bzfs manual and the bzfs help output - KR (through Lars)
+  * Save world files from the client - Dave Brosius
+  * Drop flags on pause after timeout - Sean Morrison
+  * Set size of shots on radar - Sean Morrison
+  * Server spawn positions - Dave Brosius
+  * Added client-side automatic team selection - Alfredo Tupone, Sean Morrison
+  * Calc jitter based on client timestamps in MsgPlayerUpdate - Frank Thilo
+  * Add /reset var server cmd - Dave Brosius
+  * Add /set var value server cmd - Dave Brosius
+  * improved /ban /banlist added reason and time parsing - Dennis Pedersen
+  * Shortened GM to 0.95 normal shot (tunable) - Tim Riker
+  * tarball now supports "rpm -tb <foo>.tar.gz" - Tim Riker
+  * bzfs uses 1 port instead of 2 - Alfredo Tupone
+  * bzflag is officially assigned port 5154 as default - IANA, Tim Riker
+  * bots (-solo) game is by far more playable - Alfredo Tupone
+  * Added client-side chat filtering - Sean Morrison
+  * Configuration files and cache is stored in ~/.bzf/ on *IX - Lars Luthman
+  * Added team ID to shots for TK reasons (1.9.2) - Jeff Myers
+  * Changed version numbers to be xx.xx.xx and display the build OS & Date - Jeff Myers & others for auto tools
+  * Added voting system with /poll, /vote, and /veto commands - Sean Morrison
+  * Added bzadmin - Lars Luthman
+  * Munitions now bounce off buildings/ground in z direction - Dave Brosius
+  * World object and -worldsize parameters - Jeff Myers
+  * Server side world parm (bzdb) file [clo] - Dave Brosius
+  * MsgTeamUpdate, MsgFlagUpdate coalesced - Dave Brosius
+  * Burrow Flag - Dave Brosius
+  * Observer is a first class team - Dave Brosius
+  * AutoPilot from 1.8 - Dave Brosius
+  * Thief Flag - Dave Brosius
+  * MsgPlayerUpdate now has order, reject ooo packets - Dave Brosius
+  * Removed old UDP queueing code and headers - Micah Dowty
+  * Convert closed FlagIds to flexible FlagType's - Micah Dowty, Dave Brosius, Tim Riker
+  * Add back PNG support from 1.8 - Dave Brosius, Sean Morrison
+  * Add back BZDB from 1.8 - David Trowbridge, Dave Brosius
+  * Seer, Masquerade Flags - Dave Brosius
+  * Don't broadcast single player messages - Dave Brosius
+  * Customizable map size in maps - Jeff Myers
+  * Drive and Shoot thru options in maps - Jeff Myers
+  * Show Team kill score in Scoreboard - Dave Brosius
+  * Beginnings of flag 'negotiation' - Dave Brosius
+  * Pass reason in MsgKilled, add support for SR noise - Dave Brosius
+  * Remove unnecessary MsgScore from player to server - Dave Brosius
+  * Remove old lag pings - Dave Brosius
+  * BeOS port - François Revol
+  * Collision detection fixes - David Trowbridge, Jeff Myers
+  * PlayerId -> ubyte - David Trowbridge, Frank Thilo
+  * Get rid of reconnect port - David Trowbridge
+  * Hunt opponent in HUD - Adam Krell, David Trowbridge
+  * Flag system cleanup - Dave Brosius
+  * Server-side callsign and improved chat filtering - Sean Morrison
+  * Rabbit game style - David Trowbridge, Dave Brosius
+date: '2003-12-09'
+downloads:
+    windows:
+        -
+            filename: bzflag-1.10.0-1.W32.exe
+    macos:
+        -
+            filename: BZFlag_1.10.0.dmg
+    source:
+        -
+            filename: bzflag-1.10.20031209.zip
+        -
+            filename: bzflag-1.10.20031209.tar.gz

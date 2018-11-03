@@ -1,0 +1,57 @@
+version: 1.7g2
+codename: 'Steely Eyed Banana'
+changelog: |
+  * public release now under LGPL v2.1 - Tim Riker
+  * change LICENSE to COPYING - Tim Riker
+  * server administration stuff - Jeff Myers, Frank Thilo, David Trowbridge
+  * admin-by-keys - Michael Hoffman
+  * /help messages - Michael Hoffman, David Trowbridge
+  * New super-bullet texture - Justin Zaun, Jeff Mills, David Trowbridge
+  * IRIX fixes - David Trowbridge
+  * cygwin/mingw32 fixes - Tupone Alfredo
+  * Solaris fixes - David Trowbridge
+  * OSX Fixes - Sean Morrison, David Wollner
+  * server list cache - Michael Hoffman
+  * E-mail field fixes - Lars Luthman
+  * colorized console - Anonymous, David Trowbridge
+  * automake/autoconf - Tupone Alfredo, David Trowbridge, Tim Riker
+  * check for unknown message types - Frank Thilo
+  * check incoming TCP for oversized messages and dump player - Frank Thilo
+  * multiline server and ad messages with '\n' - Lars Luthman
+  * -speedtol server option: specify tolerance for speed kick - Jeff Myers
+  * /report server command - Lars Luthman
+  * -sl server option: shot limit for flags - Michael Hoffman
+  * limit /password tries - Jeff Myers
+  * -tftimeout server option - Lars Luthman
+  * put observers to the bottom of the scoreboard - Lars Luthman
+  * resize mouse boxes - Frank Thilo
+  * choose [un]silence - Michael Hoffman, Tim Riker
+  * flag on radar/view on/off - Michael Hoffman, Tim Riker
+  * -badword server support - Dave Brosius
+  * resize radar/msg area - Frank Thilo
+  * Drop team flags where player last was on exit - Dave Brosius
+  * tanks driving too fast are kicked - Dave Brosius
+  * remove non-printable characters in callsign in server - Frank Thilo
+  * +f sw{5} syntax to add a bunch of flags - Dave Brosius
+  * tanks which jump too high get kicked - Dave Brosius
+  * server drops bogus shots (anti cheating) - Tim Riker, Dave Brosius, Frank Thilo
+  * i18n support in client - Dave Brosius, Isak Styf
+  * Optional config file interface for bzfs settings - Dave Brosius
+  * inline editing of text fields (<- ->) - Dave Brosius, Frank Thilo
+  * extend admin command -> /flag reset unused - Dave Brosius
+date: '2003-06-17'
+downloads:
+    windows:
+        -
+            filename: bzflag17g2.exe
+    macos:
+        -
+            filename: BZFlag_1.7g2.dmg
+    irix:
+        -
+            filename: bzflag.17g2_n32.tardist
+    source:
+        -
+            filename: bzflag-1.7g2.tar.gz
+        -
+            filename: bzflag17g2.zip

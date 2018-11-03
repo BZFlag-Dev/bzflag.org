@@ -1,0 +1,34 @@
+version: 2.4.8
+codename: 'Sixteen'
+changesummary: |
+  This release just had some more minor fixes
+  - Increase the range of the volume slider (which I think means the volume slider has a more noticeable effect now)
+  - Send a notification when a BZDB variable is reset
+  - Add an indicator to the server list when a server has team killing disabled
+  - Reduce CPU usage on Windows when the client is minimized (like how it used to be prior to 2.4.6)
+  - Added a Russian transliteration of the translation we had in 2.99.x
+changelog: |
+  * Add Russian transliteration - Ruslan Hihin, Aleksandr Lahin
+  * Fix a regression in 2.4.6 where the client would not reduce CPU usage when minimized on Windows - Scott Wichser
+  * On autotools platforms, try to use SDL2, then SDL1, and then fall back to native platform code. Allow specifying an SDL version as well. - Scott Wichser
+  * Prevent some more bzfs options from being specified in a world file - Scott Wichser
+  * Cleaned up some GCC6 warnings - Scott Wichser
+  * Spawn all players on base when a timed game starts - Konstantinos Kanavouras
+  * Add indicator for -noTeamKill servers on server list - Konstantinos Kanavouras
+  * Send a notification to admins when a BZDB variable is reset - Konstantinos Kanavouras
+  * Increase the range of the volume slider - Konstantinos Kanavouras
+date: '2016-10-10'
+downloads:
+    windows:
+        -
+            filename: bzflag-2.4.8.exe
+    macos:
+        -
+            filename: BZFlag-2.4.8-macOS.zip
+    source:
+        -
+            filename: bzflag-2.4.8.tar.gz
+        -
+            filename: bzflag-2.4.8.tar.bz2
+        -
+            filename: bzflag-2.4.8.zip

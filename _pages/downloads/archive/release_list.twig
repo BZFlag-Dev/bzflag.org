@@ -1,0 +1,34 @@
+---
+permalink: /downloads/archive/%projects/
+projects:
+  - bzflag
+  - bzeditw32
+---
+
+{% extends "_layouts/layout.twig" %}
+
+{% if attribute(data.projectinfo, this.iterators.projects).name is defined %}
+  {% set title = attribute(data.projectinfo, this.iterators.projects).name %}
+{% endif %}
+{% set sectiontitle = 'Download Archive' %}
+
+
+{% block content %}
+
+{{ attribute(data.projectinfo, this.iterators.projects).description | markdown }}<br />
+
+<h2>Release History</h2>
+<ul>
+{% for release in attribute(data, 'downloads_' ~ this.iterators.projects) | order('date', 'DESC') %}
+  <li>
+    <a href="/downloads/archive/{{ this.iterators.projects }}/{{ release.version }}/">{{ release.version }}{% if release.codename %} "{{ release.codename }}"{% endif %}{% if release.date %} ({{ release.date }}){% endif %}</a>{% if release.changesummary %}<br />
+    {%- markdown %}
+    {{ release.changesummary }}
+    {% endmarkdown -%}
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+

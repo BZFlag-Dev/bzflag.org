@@ -1,0 +1,10 @@
+version: 1.6.4
+changelog: ''
+date: '2005-03-11'
+downloads:
+    windows:
+        -
+            filename: BZEditW32_1.6.4-1_Installer.exe
+    source:
+        -
+            filename: BZEditW32_1.6.4_Source.zip

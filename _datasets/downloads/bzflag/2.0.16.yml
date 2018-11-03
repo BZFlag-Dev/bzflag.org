@@ -1,0 +1,30 @@
+version: 2.0.16
+codename: "No Foolin'"
+changelog: |
+  * Fix command line options in Windows launcher - Scott Wichser
+  * Fix regression in protocol handling by server - Jeff Makey, Scott Wichser
+  * Add bullet tails as seen out the viewport - trepan
+  * Add observer mouse controls for roaming and tracking modes - trepan
+  * Add the /forceradar client-side command for observers - trepan
+  * Minor cleanup of source and build system - Jeff Makey
+  * Explicitly link to the dl library when needed - Jeff Makey
+  * Remove unused dependency on Xi library - Jeff Makey
+  * Clarify copyright assignment terms for developers - Jeff Myers
+  * Allow only one Enter message per player instance - Jeff Makey
+  * Add TimeLimit plugin - Steven Mertens
+  * Remove broken vocaliser and obsolete torBlock plugins - Jeff Myers
+date: '2010-04-01'
+downloads:
+    windows:
+        -
+            filename: bzflag-2.0.16.exe
+    macos:
+        -
+            filename: BZFlag-2.0.16.dmg
+    source:
+        -
+            filename: bzflag-2.0.16.tar.bz2
+        -
+            filename: bzflag-2.0.16.tar.gz
+        -
+            filename: bzflag-2.0.16.zip

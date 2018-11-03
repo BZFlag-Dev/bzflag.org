@@ -13,7 +13,7 @@ parent:
 
   <ul>
     {% for event in collections.bzfs_api_events | order('basename') -%}
-      <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) | replace({'.html': ''}) }}">{{ event.basename }}</a></li>
+    <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) }}">{{ event.basename }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

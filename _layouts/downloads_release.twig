@@ -1,0 +1,62 @@
+{% extends "_layouts/layout.twig" %}
+
+{% set sectiontitle = 'Download Archive' %}
+{% set title = title ~ ' ' ~ this.version %}
+
+{% block content %}
+
+  {% if this.date %}
+  <div>
+    <h2>Release Date</h2>
+    <p>{{ this.date }}</p>
+  </div><br />
+  {% endif %}
+  {% if this.codename %}
+  <div>
+    <h2>Release Name</h2>
+    <p><strong>{{ this.title }} "{{ this.codename }}"</strong></p>
+  </div><br />
+  {% endif %}
+  {% if this.changesummary -%}
+  <div>
+    <h2>Change Summary</h2>
+    {%- markdown %}
+    {{ this.changesummary }}
+    {% endmarkdown -%}
+  </div>
+  {% endif %}
+  {% if this.changelog -%}
+  <div>
+    <h2>Change Log</h2>
+    {%- markdown %}
+    {{ this.changelog }}
+    {% endmarkdown -%}
+  </div>
+  {% endif -%}
+  <div style="margin-bottom: 1em">
+  {% for platform, files in this.downloads %}
+    {% if platform == 'windows' %}
+      <h2>Windows</h2>
+    {% elseif platform == 'macos' %}
+      <h2>macOS</h2>
+    {% elseif platform == 'irix' %}
+      <h2>IRIX</h2>
+    {% elseif platform == 'source' %}
+      <h2>Source</h2>
+    {% else %}
+      <h2>{{ platform }}</h2>
+    {% endif %}
+
+    <p>
+    {% for file in files %}
+      {% if file.url %}
+      <a href="{{ file.url }}">{{ file.filename | format(this.version) }}</a><br />
+      {% else %}
+      <a href="https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | format(this.version) }}">{{ file.filename | format(this.version) }}</a><br />
+      {% endif %}
+    {% endfor %}
+    </p>
+  {% endfor %}
+  </div>
+
+{% endblock %}

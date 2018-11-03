@@ -1,0 +1,38 @@
+version: 2.4.10
+codename: 'This is How We Roll'
+changesummary: |
+  This release had a few additional features and some minor fixes.
+  - Multisampling support under SDL 2 on macOS
+  - Added an option to invert one or both joystick axes
+  - Add ability to reload badwords list with '/reload badwords'
+  - It is possible for bzfs plugins to register new types of polls
+  - Fix high DPI handling on Windows (again, since it broke when we switched to using SDL2)
+changelog: |
+  * Fix high DPI handling on Windows (again) - Scott Wichser
+  * Custom slash commands respect double quotes when tokenizing - Vladimir Jimenez
+  * Make /help page names case-insensitive - Vladimir Jimenez
+  * Extend bz_ePlayerDieEventData to v2 to hold flag held when killed - Jeff Myers
+  * Add bzfs API hooks for polls and allow custom poll types - Vladimir Jimenez
+  * Reduce DNS cache time of list server hostname - Scott Wichser
+  * Fix bz_addURLJob() to correctly handle default NULL handler - Vladimir Jimenez
+  * TextUtils::url_encode and TextUtils::url_decode now use cURL's functions; this change fixes a crash bug with bz_urlEncode() - Vladimir Jimenez
+  * Add bz_reloadBadwords() to API - Vladimir Jimenez
+  * Add ability to reload badwords list with '/reload badwords' - Vladimir Jimenez
+  * Source code now dual licensed under the MPL 2.0 or LGPL 2.1 - Tim Riker
+  * Added an option to invert one or both joystick axes - Joshua Bodine
+  * Multisampling support under SDL 2 on macOS - Joshua Bodine
+date: '2017-03-12'
+downloads:
+    windows:
+        -
+            filename: bzflag-2.4.10.exe
+    macos:
+        -
+            filename: BZFlag-2.4.10-macOS.zip
+    source:
+        -
+            filename: bzflag-2.4.10.zip
+        -
+            filename: bzflag-2.4.10.tar.bz2
+        -
+            filename: bzflag-2.4.10.tar.gz

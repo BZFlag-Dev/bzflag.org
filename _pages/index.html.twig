@@ -1,7 +1,8 @@
 ---
 title: Home
 section: home
-permalink: /index.html
+permalink: /
+metadescription: BZFlag is a free 3D online multi-player multi-platform tank battle game.
 ---
 
 {% extends "_layouts/layout.twig" %}
@@ -12,9 +13,9 @@ permalink: /index.html
 {% endblock %}
 
 {% block content %}
-    <p>BZFlag is a 3D networked multi-player multi-platform tank battle game. It runs on Windows, macOS, Linux, BSD, and other platforms. It was one of the most popular games ever on Silicon Graphics machines and continues to be developed and improved to this day.</p>
+    <p>BZFlag is a free 3D online multi-player multi-platform tank battle game. It runs on Windows, macOS, Linux, BSD, and other platforms. It was one of the most popular games ever on Silicon Graphics machines and continues to be developed and improved to this day.</p>
     <div id="teaserdiv">
-      <video width="720" height="400" id="teaser" loop="loop" preload="none" poster="/images/videothumb/bzteaser.jpg" controls="controls">
+      <video id="teaser" width="720" height="400" loop="loop" preload="none" poster="/images/videothumb/bzteaser.jpg" controls="controls">
         <source src="/vid/bzteaser.mp4" type="video/mp4" />
         <source src="/vid/bzteaser.webm" type="video/webm" />
       </video>
@@ -23,5 +24,5 @@ permalink: /index.html
 
 {% block scripts %}
   <script src="/js/plyr.js"></script>
-  <script>plyr.setup({iconUrl:'/images/plyr.svg',controls:['play-large'],disableContextMenu:false});</script>
+  <script>const player = new Plyr('#teaser', {iconUrl:'/images/plyr.svg',blankVideo:'/vid/blank.mp4',controls:['play-large'],disableContextMenu:false});</script>
 {% endblock %}

@@ -3,6 +3,12 @@ target: _site
 data:
   - _data
 
+datasets:
+  - name: downloads_bzflag
+    folder: _datasets/downloads/bzflag
+  - name: downloads_bzeditw32
+    folder: _datasets/downloads/bzeditw32
+
 pageviews:
   - _pages
 

@@ -1,0 +1,58 @@
+version: 2.0.2
+codename: 'Queen of Maybe'
+changelog: |
+  * Added TALK, MUTE, UNMUTE permissions - Angelina Carlton
+  * Added /mute, /unmute commands - Angelina Carlton
+  * Automatic team try to fix bad player behaviour - Alfredo Tupone
+  * bzadmin does not require opengl headers - Alfredo Tupone
+  * bzfs handle both -mp specification - Alfredo Tupone
+  * bzfs correctly handles ban time - Alfredo Tupone, Julio Jimenez
+  * bzfs no more put jittered players as Not Responding - Alfredo Tupone
+  * bzfs stop shot from dead player - Alfredo Tupone
+  * Roaming switching between player goes even on Dead Player - Alfredo Tupone
+  * Fixed bzfs crash associated to "Error adding player" - Alfredo Tupone
+  * bzflag count a single -1 score for a tk (like server does) - Alfredo Tupone
+  * Fixes on hostban handling - Alfredo Tupone
+  * Fixed force feedback on Windows - Scott Wichser
+  * New Kick/Ban options using slot numbers (rendered in client) - Julio Jimenez
+  * Added EndShot cheat detection - Julio Jimenez
+  * Avoid spawning on top of tanks with SR or BU - Daniel Remenak
+  * Add fine-grained permissions control of polling - Daniel Remenak
+  * Fixed loading of colormapped PNGs - Daniel Remenak
+  * Add SPAWN permission, remove -requireidentify - Steve Krenzel, Tim Riker
+  * A /say command for server messages - Julio Jimenez, Frank Evers
+  * Rejoin permission for avoiding _rejoinTime limit - Frank Evers, Julio Jimenez
+  * A player will auto ghost if they use global authentication - Steve Krenzel
+  * Server announces who started a countdown - Angelina Carlton
+  * Fixed server start menu for windows - Daniel Remenak
+  * Message spam checking bug fixed - Alfredo Tupone
+  * Fixed no flag on building - Alfredo Tupone
+  * Fixed MsgQueryPlayer eventually sending AddPlayer to all - Alfredo Tupone
+  * Removing kicking player for missing packet - Alfredo Tupone
+  * Player is unpaused when coming alive - Alfredo Tupone
+  * Observer of winner not updating the flag fixed - Alfredo Tupone
+  * Fixed 2 flag per team selecting ctf on world & CommandLine - Alfredo Tupone
+  * Fixed lag warning counted twice - Alfredo Tupone
+  * Allow user to select which physical joystick axes to use - Daniel Remenak
+  * Fix a number of server crash bugs - Daniel Remenak
+  * ctf make restarting on base even when dead - Anonymous
+  * Fixed weirdness on Console Panel when disabling chat display - Alfredo Tupone
+  * Fixed a segfault with SDL and no audio - Alfredo Tupone
+  * bzadmin wipes argv to hide possible password - Tim Riker
+  * Lagstats and Playerlist no longer filtered - Steve Krenzel
+  * print errors in red - Frank Thilo
+  * simple scroll indicator for control panel - Frank Thilo
+  * antiban perm actually counters a server ban now - Steve Krenzel
+date: '2005-03-18'
+downloads:
+    windows:
+        -
+            filename: bzflag-2.0.2.exe
+    macos:
+        -
+            filename: BZFlag_2.0.2.dmg
+    source:
+        -
+            filename: bzflag-2.0.2.20050318.tar.gz
+        -
+            filename: bzflag-2.0.2.20050318.tar.bz2

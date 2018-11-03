@@ -116,11 +116,11 @@ a:hover, a:active {
   color: rgb(200,200,200);
 }
 
-#content ul {
+#content ul, #content ol {
   margin: 0 0 1em 1em;
 }
 
-#content p + ul {
+#content p + ul, #content p + ol {
   margin-top: -0.4em;
   margin-left: 1.5em;
 }
@@ -140,16 +140,15 @@ a:hover, a:active {
 
 #teaserdiv {
   width: 720px;
-  height: 400px;
   margin: 0 auto;
-}
-
-video {
-  outline: 0;
   border: 2px solid black;
   -moz-box-shadow: 3px 3px 4px #111111;
   -webkit-box-shadow: 3px 3px 4px #111111;
   box-shadow: 3px 3px 4px #111111;
+}
+
+video {
+  outline: 0;
 }
 
 div.media figure {

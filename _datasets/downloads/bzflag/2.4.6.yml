@@ -1,0 +1,39 @@
+version: 2.4.6
+codename: 'Eight, Our Codebase is Overweight'
+changesummary: |
+  This release consists of a few new features for clients and fixes issues on Windows 10 with AMD drivers.
+  - Plug-in documentation has been rewritten and updated to be more user-friendly
+  - RogueGenocide plug-in now defaults to ignoring self-kills
+  - Fixes to keypad keys when using SDL2; they are now handled correctly
+  - Timestamps can now be saved with /savemsg using the '-t' option; e.g. '/savemsg -t'
+  - View timestamps of when console messages were sent, can be configured through Options > GUI Settings > Timestamps in console
+  - New cycleRadar and cyclePanel key bindings were added
+changelog: |
+  * regFlag plugin now uses bz_eAllowFlagGrab event - Scott Wichser
+  * RogueGenocide plugin defaults to ignoring rogue self-kills - Scott Wichser
+  * Standardize and update the documentation for bundled plugins - Scott Wichser
+  * Add bz_getRandomPoint to API - Vladimir Jimenez
+  * Correctly handle the keypad keys with SDL2 - Jeff Makey, Scott Wichser
+  * Implement SOURCE_DATE_EPOCH spec in our autoconf system to work towards reproducible builds - Scott Wichser, Jeff Makey
+  * Include a timestamp in the /savemsgs output filename - Scott Wichser
+  * Added -t option to /savemsgs to add timestamps to messages - Scott Wichser
+  * Added a GUI option to show timestamps on the messages - Scott Wichser
+  * For SDL2, restore the original gamma on exit and reapply desired gamma on window recreation - Scott Wichser
+  * Use SDL2 on Windows for the window/display management - Scott Wichser
+  * Remove hiddenAdmin plugin - Vladimir Jimenez
+  * Add a cycleRadar and cyclePanel key binding command - Joshua Bodine
+date: '2016-06-26'
+downloads:
+    windows:
+        -
+            filename: bzflag-2.4.6.exe
+    macos:
+        -
+            filename: BZFlag-2.4.6-MacOSX.zip
+    source:
+        -
+            filename: bzflag-2.4.6.tar.bz2
+        -
+            filename: bzflag-2.4.6.tar.gz
+        -
+            filename: bzflag-2.4.6.zip

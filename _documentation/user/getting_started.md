@@ -1,13 +1,13 @@
 ---
 title: Getting Started
-docpath: getting_started.html
+docpath: getting_started/
 ---
 
 Getting started with BZFlag is easy. This short guide will show how to get started.
 
 ## Downloading and installing the game
 
-Our [downloads](/downloads) page includes an installer for Windows and a ZIP package for macOS. We also offer a source code download primarily for Linux and BSD users.
+Our [downloads](/downloads/) page includes an installer for Windows and a ZIP package for macOS. We also offer a source code download primarily for Linux and BSD users.
 
 ### Installing on Windows
 
@@ -31,7 +31,7 @@ To install the (possibly outdated) distribution packages:
 
 ## Optionally register a callsign
 
-BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that players can not use another player's registered callsign. To register a callsign, visit our [forums](https://forums.bzflag.org) and register an account. The username and password on the forums will be used as callsign and password in the game.
+BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that players can not use another player's registered callsign. To register a callsign, visit our [forums](https://forums.bzflag.org/) and register an account. The username and password on the forums will be used as callsign and password in the game.
 
 ## Game Mechanics
 
@@ -69,7 +69,7 @@ In this mode, a single Rabbit is chosen by the server. All of the other players 
 
 There are two main types of flags: team flags and super flags. Team flags only show up in the CTF game mode. Super flags are the white flags. There are good super flags that provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile. There are also bad super flags that disable parts of the tank or reduce performance of the tank. Examples of bad flag effects include radar jamming, reversed controls, left turn only, and a bouncy tank. Bad flags cannot be dropped manually and will normally have either a timer or will require finding an antidote flag.
 
-View the [flags](/documentation/flags) documentation for a list of all official flags and their description. It is possible game servers to run plugins that add custom flags or modify the behavior of existing flags. 
+View the [flags](/documentation/flags/) documentation for a list of all official flags and their description. It is possible game servers to run plugins that add custom flags or modify the behavior of existing flags. 
 
 ### Controls
 

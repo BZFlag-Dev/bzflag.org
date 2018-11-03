@@ -1,7 +1,7 @@
 ---
 title: Help
 section: help
-permalink: /help.html
+permalink: /help/
 ---
 
 {% extends "_layouts/page.html.twig" %}
@@ -54,7 +54,7 @@ permalink: /help.html
         {{ card_block(
             'megaphone',
             'Forums',
-            'https://forums.bzflag.org',
+            'https://forums.bzflag.org/',
             forums_content
         ) }}
 
@@ -62,14 +62,14 @@ permalink: /help.html
             <p>BZFlag has the following IRC channels on Freenode (irc.freenode.net):</p>
 
             <ul>
-                <li><a href="http://webchat.freenode.net/?channels=bzflag">#BZFlag</a> (development and support)</li>
-                <li><a href="http://webchat.freenode.net/?channels=bzflag-chat">#BZFlag-chat</a> (general player talk)</li>
+                <li><a href="https://webchat.freenode.net/?channels=bzflag">#BZFlag</a> (development and support)</li>
+                <li><a href="https://webchat.freenode.net/?channels=bzflag-chat">#BZFlag-chat</a> (general player talk)</li>
             </ul>
         {% endset %}
         {{ card_block(
-            'chat-bubbles', 
+            'chat-bubbles',
             'IRC',
-            'http://webchat.freenode.net/',
+            'https://webchat.freenode.net/',
             irc_content
         ) }}
 
@@ -79,7 +79,7 @@ permalink: /help.html
         {{ card_block(
             'book',
             'Documentation',
-            '/documentation',
+            '/documentation/',
             docs_content
         ) }}
 
