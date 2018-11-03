@@ -18,7 +18,7 @@ changelog: |
   * Reassign keyboard menu is now in two columns - Dave Brosius
   * Fix MsgMessage and CLIENTQUERY handling - Frank Thilo
   * -ban - David Trowbridge, Dave Brosius, Tim Riker
-  * Mac OSX work - Kevin Avila <kevin@hzsystems.com>
+  * Mac OSX work - Kevin Avila
   * -cr random ctf maps - Tim Riker, Frank Thilo
   * bots in building fix - Tim Riker, Harry Dodgson
   * Pause and not responding on HUD - Frank Thilo
