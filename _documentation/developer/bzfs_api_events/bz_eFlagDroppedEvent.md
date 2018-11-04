@@ -1,6 +1,7 @@
 ---
 dataType: bz_FlagDroppedEventData_V1
 since: 2.4.0
+category: Flags
 plugins:
   - customflagsample
 parameters:

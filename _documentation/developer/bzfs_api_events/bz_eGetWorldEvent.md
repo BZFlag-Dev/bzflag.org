@@ -1,6 +1,7 @@
 ---
 dataType: bz_GetWorldEventData_V1
 since: 2.4.0
+category: World
 plugins:
   - pushstats
 parameters:

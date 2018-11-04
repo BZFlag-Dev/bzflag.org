@@ -1,6 +1,7 @@
 ---
 dataType: bz_ServerShotFiredEventData_V1
 since: 2.4.14
+category: Shots
 plugins: ~
 parameters:
   - dataType: uint32_t

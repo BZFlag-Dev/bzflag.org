@@ -1,6 +1,7 @@
 ---
 dataType: bz_PollVoteEventData_V1
 since: 2.4.10
+category: Polls
 plugins: ~
 parameters:
   - dataType: int

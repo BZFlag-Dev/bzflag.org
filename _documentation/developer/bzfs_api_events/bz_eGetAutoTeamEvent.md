@@ -1,6 +1,7 @@
 ---
 dataType: bz_GetAutoTeamEventData_V1
 since: 2.4.0
+category: Player
 plugins: ~
 parameters:
   - dataType: int

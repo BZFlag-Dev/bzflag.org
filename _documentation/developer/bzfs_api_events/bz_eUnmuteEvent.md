@@ -1,6 +1,7 @@
 ---
 dataType: bz_MuteEventData_V1
 since: 2.4.12
+category: Administrative
 plugins: ~
 parameters:
   - dataType: int

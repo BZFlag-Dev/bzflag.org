@@ -1,6 +1,7 @@
 ---
 dataType: bz_GameStartEndEventData_V2
 since: 2.4.0
+category: Countdown Timer
 plugins:
   - HoldTheFlag
   - TimeLimit

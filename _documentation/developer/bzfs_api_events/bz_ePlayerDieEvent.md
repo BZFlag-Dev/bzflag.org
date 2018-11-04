@@ -1,6 +1,7 @@
 ---
 dataType: bz_PlayerDieEventData_V2
 since: 2.4.0
+category: Player
 plugins:
   - Phoenix
   - RogueGenocide

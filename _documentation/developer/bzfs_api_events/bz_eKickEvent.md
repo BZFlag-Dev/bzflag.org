@@ -1,6 +1,7 @@
 ---
 dataType: bz_KickEventData_V1
 since: 2.4.0
+category: Administrative
 plugins: ~
 parameters:
   - dataType: int

@@ -1,6 +1,7 @@
 ---
 dataType: bz_SlashCommandEventData_V1
 since: 2.4.0
+category: Slash Commands
 plugins:
   - logDetail
 parameters:

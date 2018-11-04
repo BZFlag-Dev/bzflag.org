@@ -1,6 +1,7 @@
 ---
 dataType: bz_MsgDebugEventData_V1
 since: 2.4.0
+category: Logging
 plugins: ~
 parameters:
   - dataType: char[2]

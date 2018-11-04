@@ -1,6 +1,7 @@
 ---
 dataType: bz_AutoPilotData_V1
 since: 2.4.12
+category: Player
 plugins: ~
 parameters:
   - dataType: int

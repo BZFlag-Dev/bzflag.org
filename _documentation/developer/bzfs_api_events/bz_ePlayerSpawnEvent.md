@@ -1,6 +1,7 @@
 ---
 dataType: bz_PlayerSpawnEventData_V1
 since: 2.4.0
+category: Player Spawns
 plugins: ~
 parameters:
   - dataType: int

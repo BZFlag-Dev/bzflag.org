@@ -1,6 +1,7 @@
 ---
 dataType: bz_ShotFiredEventData_V1
 since: 2.4.0
+category: Shots
 plugins:
   - customflagsample
 parameters:

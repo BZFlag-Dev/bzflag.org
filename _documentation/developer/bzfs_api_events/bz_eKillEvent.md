@@ -1,6 +1,7 @@
 ---
 dataType: bz_KillEventData_V1
 since: 2.4.0
+category: Administrative
 plugins: ~
 parameters:
   - dataType: int
@@ -17,4 +18,4 @@ parameters:
     name: eventTime
 ---
 
-This event is triggered when a player sends the /kill Slash Command to kill another player
+This event is triggered when a player uses the /kill Slash Command to kill another player

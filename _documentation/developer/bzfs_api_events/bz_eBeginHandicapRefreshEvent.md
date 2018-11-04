@@ -1,6 +1,7 @@
 ---
 dataType: ''
 since: 2.4.12
+category: Handicap
 plugins: ~
 parameters: []
 ---

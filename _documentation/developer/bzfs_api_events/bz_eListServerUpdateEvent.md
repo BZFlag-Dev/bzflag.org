@@ -1,6 +1,7 @@
 ---
 dataType: bz_ListServerUpdateEvent_V1
 since: 2.4.0
+category: Other
 plugins:
   - pushstats
 parameters:

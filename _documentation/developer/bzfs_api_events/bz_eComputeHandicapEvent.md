@@ -1,6 +1,7 @@
 ---
 dataType: bz_ComputeHandicap_V1
 since: 2.4.12
+category: Handicap
 plugins: ~
 parameters:
   - dataType: int

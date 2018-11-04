@@ -6,14 +6,35 @@ title: bzfs API Events
 parent:
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% block aside %}
+    <div class="position-sticky position-top-1">
+        <h2 class="mt-0">Categories</h2>
+        <ul>
+            {% for category in collections.bzfs_api_events | select('category') | sort %}
+                <li><a href="#{{ category | lower | replace({' ': '_'}) }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
 
 {% block content %}
-  <p>bzfs plugin API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
+    <h2 class="mt-0">BZFS API Events</h2>
+    <p>These API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
 
-  <ul>
-    {% for event in collections.bzfs_api_events | order('basename') -%}
-    <li><a href="{{ url(collections['bzfs_api_events'][ event.basename ]) }}">{{ event.basename }}</a></li>
+    {% for category in collections.bzfs_api_events | select('category') | sort %}
+        <h3 id="{{ category | lower | replace({' ': '_'}) }}">{{ category }}</h3>
+        <ul>
+            {% for event in collections.bzfs_api_events | where('category', '==', category) | keys | sort %}
+                <li>
+                    <a href="{{ url(collections['bzfs_api_events'][event]) }}"
+                       class="text-decoration-none"
+                    >
+                        <code>{{- event -}}</code>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
     {% endfor %}
-  </ul>
 {% endblock %}

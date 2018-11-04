@@ -1,6 +1,7 @@
 ---
 dataType: bz_ChatEventData_V2
 since: 2.4.4
+category: Chat
 plugins:
   - chathistory
   - logDetail

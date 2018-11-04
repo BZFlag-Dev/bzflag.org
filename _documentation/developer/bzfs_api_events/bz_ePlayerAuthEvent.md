@@ -1,6 +1,7 @@
 ---
 dataType: bz_PlayerAuthEventData_V1
 since: 2.4.0
+category: Player
 plugins:
   - logDetail
 parameters:

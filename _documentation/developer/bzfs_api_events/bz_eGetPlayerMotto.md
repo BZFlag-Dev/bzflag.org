@@ -1,6 +1,7 @@
 ---
 dataType: bz_GetPlayerMottoData_V2
 since: 2.4.4
+category: Player
 plugins: ~
 parameters:
   - dataType: bz_ApiString
