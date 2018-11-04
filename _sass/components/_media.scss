@@ -1,0 +1,14 @@
+.c-media-screenshot {
+  figure {
+    display: inline-block;
+  }
+
+  figure > a:link, figure > a:visited {
+    text-decoration: none;
+  }
+
+  figure img {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}

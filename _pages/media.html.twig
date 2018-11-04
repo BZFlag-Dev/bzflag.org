@@ -4,56 +4,29 @@ section: media
 permalink: /media/
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 
-{% block head %}
-  <link rel="stylesheet" href="/css/milkbox.css" />
-{% endblock %}
+{% from _self import media_screenshot_block %}
+
+{% macro media_screenshot_block(screenshot) %}
+    <div class="col-md-6 col-lg-4 mb-5 mb-md-4 mb-lg-3">
+        <figure class="c-media-screenshot" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ url(data.media.screenshots.url_formats.full|format(screenshot)) }}" itemprop="contentUrl">
+                <img src="{{ url(data.media.screenshots.url_formats.thumbnail|format(screenshot)) }}" itemprop="thumbnail" alt="" />
+            </a>
+        </figure>
+    </div>
+{% endmacro %}
 
 {% block content %}
-   <h2>Screenshots</h2>
+    <h1>Screenshots</h1>
+    <p class="mb-5">
+        The map system of BZFlag allows for a wide variety of styles.
+    </p>
 
-    <div class="screenshots" itemscope itemtype="http://schema.org/ImageGallery">
-
+    <div class="row" itemscope itemtype="http://schema.org/ImageGallery">
       {% for screenshot in data.media.screenshots.items -%}
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="{{ data.media.screenshots.url_formats.full|format(screenshot) }}" itemprop="contentUrl" data-milkbox="media">
-          <img src="{{ data.media.screenshots.url_formats.thumbnail|format(screenshot) }}" itemprop="thumbnail" alt="" />
-        </a>
-      </figure>
+        {{ media_screenshot_block(screenshot) }}
       {%- endfor %}
-
     </div>
-{% endblock %}
-
-{% block scripts %}
-  <script src="/js/mootools-core-1.6.0-compressed.js"></script>
-  <script src="/js/mootools-more-1.6.0-compressed.js"></script>
-  <script src="/js/milkbox-yc.js"></script>
-  <script>
-    var milkbox;
-    Milkbox = new Class({
-      Extends: Milkbox,
-      checkFileType:function(file,type){
-        if (type === "html") {
-          var href = (typeOf(file) !== 'string') ? file.href : file;
-          if (href.test(/(youtube-nocookie|youtube)\.com\/embed/))
-            return true;
-        }
-
-        return this.parent(file, type);
-      }
-    });
-
-    MilkboxGallery = new Class({
-      Extends: MilkboxGallery,
-      check_extension:function(string){
-        return (string.test(/(youtube-nocookie|youtube)\.com\/embed/) || this.parent(string));
-      }
-    });
-
-    window.addEvent('domready', function(){
-      milkbox = new Milkbox({ centered:true });
-    });
-  </script>
 {% endblock %}
