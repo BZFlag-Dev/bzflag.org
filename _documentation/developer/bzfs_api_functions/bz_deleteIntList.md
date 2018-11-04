@@ -1,5 +1,6 @@
 ---
 since: 2.4.0
+category: API Lists
 signatures:
   - 
     - dataType: bz_APIIntList*

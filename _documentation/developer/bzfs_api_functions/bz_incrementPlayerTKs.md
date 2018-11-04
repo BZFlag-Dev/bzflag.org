@@ -1,5 +1,6 @@
 ---
 since: 2.4.4
+category: Player Score
 signatures:
   -
     - dataType: int

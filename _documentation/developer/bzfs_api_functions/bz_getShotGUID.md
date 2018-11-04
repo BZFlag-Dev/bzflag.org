@@ -1,5 +1,6 @@
 ---
 since: 2.4.4
+category: Shot Management
 signatures:
   -
     - dataType: int

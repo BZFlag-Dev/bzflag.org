@@ -12,8 +12,8 @@ parent:
     <div class="position-sticky position-top-1">
         <h2 class="mt-0">Categories</h2>
         <ul>
-            {% for section in data.api_functions %}
-                <li><a href="#{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</a></li>
+            {% for category in collections.bzfs_api_functions | select('category') | sort %}
+                <li><a href="#{{ category | lower | replace({' ': '_'}) }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -23,12 +23,12 @@ parent:
     <h2 class="mt-0">BZFS API Functions</h2>
     <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
 
-    {% for section in data.api_functions %}
-        <h3 id="{{ section.title | lower | replace({' ': '_'}) }}">{{ section.title }}</h3>
+    {% for category in collections.bzfs_api_functions | select('category') | sort %}
+        <h3 id="{{ category | lower | replace({' ': '_'}) }}">{{ category }}</h3>
         <ul>
-            {% for function in section.functions %}
+            {% for function in collections.bzfs_api_functions | where('category', '==', category) | keys | sort %}
                 <li>
-                    <a href="{{ url(collections['bzfs_api_functions'][function])  }}"
+                    <a href="{{ url(collections['bzfs_api_functions'][function]) }}"
                        class="text-decoration-none"
                     >
                         <code>{{- function -}}()</code>

@@ -1,5 +1,6 @@
 ---
 since: 2.4.6
+category: Shot Management
 signatures:
   -
     - dataType: const uint32_t

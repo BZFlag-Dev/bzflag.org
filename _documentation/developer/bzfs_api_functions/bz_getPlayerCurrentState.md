@@ -1,5 +1,6 @@
 ---
 since: 2.4.0
+category: Player State
 signatures:
   -
     - dataType: int
