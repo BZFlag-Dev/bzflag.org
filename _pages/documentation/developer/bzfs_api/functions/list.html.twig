@@ -23,15 +23,18 @@ parent:
     <h2 class="mt-0">BZFS API Functions</h2>
     <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
 
-    {% for category in collections.bzfs_api_functions | select('category') | sort %}
+    {% set functions = collections.bzfs_api_functions | group('category') %}
+    {% set categories = functions | keys | sort %}
+
+    {% for category in categories %}
         <h3 id="{{ category | lower | replace({' ': '_'}) }}">{{ category }}</h3>
         <ul>
-            {% for function in collections.bzfs_api_functions | where('category', '==', category) | keys | sort %}
+            {% for function in functions[category] | order('filename') %}
                 <li>
-                    <a href="{{ url(collections['bzfs_api_functions'][function]) }}"
+                    <a href="{{ url(function) }}"
                        class="text-decoration-none"
                     >
-                        <code>{{- function -}}()</code>
+                        <code>{{- function.basename -}}()</code>
                     </a>
                 </li>
             {% endfor %}
