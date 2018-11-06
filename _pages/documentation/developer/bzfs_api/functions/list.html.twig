@@ -13,7 +13,7 @@ parent:
         <h2 class="mt-0">Categories</h2>
         <ul>
             {% for category in collections.bzfs_api_functions | select('category') | sort %}
-                <li><a href="#{{ category | lower | replace({' ': '_'}) }}">{{ category }}</a></li>
+                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -27,7 +27,7 @@ parent:
     {% set categories = functions | keys | sort %}
 
     {% for category in categories %}
-        <h3 id="{{ category | lower | replace({' ': '_'}) }}">{{ category }}</h3>
+        <h3 id="{{ category | slug }}">{{ category }}</h3>
         <ul>
             {% for function in functions[category] | order('filename') %}
                 <li>
