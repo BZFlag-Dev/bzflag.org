@@ -8,12 +8,15 @@ parent:
 
 {% extends "_layouts/page-sidebar.html.twig" %}
 
+{% set events = collections.bzfs_api_events | group('category') %}
+{% set categories = events | keys | sort %}
+
 {% block aside %}
     <div class="position-sticky position-top-1">
         <h2 class="mt-0">Categories</h2>
         <ul>
-            {% for category in collections.bzfs_api_events | select('category') | sort %}
-                <li><a href="#{{ category | lower | replace({' ': '_'}) }}">{{ category }}</a></li>
+            {% for category in categories %}
+                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
     </div>
@@ -23,15 +26,15 @@ parent:
     <h2 class="mt-0">BZFS API Events</h2>
     <p>These API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
 
-    {% for category in collections.bzfs_api_events | select('category') | sort %}
-        <h3 id="{{ category | lower | replace({' ': '_'}) }}">{{ category }}</h3>
+    {% for category in categories %}
+        <h3 id="{{ category | slug }}">{{ category }}</h3>
         <ul>
-            {% for event in collections.bzfs_api_events | where('category', '==', category) | keys | sort %}
+            {% for event in events[category] | order('filename') %}
                 <li>
-                    <a href="{{ url(collections['bzfs_api_events'][event]) }}"
+                    <a href="{{ url(event) }}"
                        class="text-decoration-none"
                     >
-                        <code>{{- event -}}</code>
+                        <code>{{- event.basename -}}()</code>
                     </a>
                 </li>
             {% endfor %}

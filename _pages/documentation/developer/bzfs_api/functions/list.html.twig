@@ -8,11 +8,14 @@ parent:
 
 {% extends "_layouts/page-sidebar.html.twig" %}
 
+{% set functions = collections.bzfs_api_functions | group('category') %}
+{% set categories = functions | keys | sort %}
+
 {% block aside %}
     <div class="position-sticky position-top-1">
         <h2 class="mt-0">Categories</h2>
         <ul>
-            {% for category in collections.bzfs_api_functions | select('category') | sort %}
+            {% for category in categories %}
                 <li><a href="#{{ category | slug }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
@@ -22,9 +25,6 @@ parent:
 {% block content %}
     <h2 class="mt-0">BZFS API Functions</h2>
     <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
-
-    {% set functions = collections.bzfs_api_functions | group('category') %}
-    {% set categories = functions | keys | sort %}
 
     {% for category in categories %}
         <h3 id="{{ category | slug }}">{{ category }}</h3>
