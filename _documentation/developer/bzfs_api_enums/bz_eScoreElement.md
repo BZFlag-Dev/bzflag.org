@@ -1,5 +1,6 @@
 ---
 since: 2.4.0
+category: Enumerations
 enumerations:
   - bz_eWins
   - bz_eLosses
