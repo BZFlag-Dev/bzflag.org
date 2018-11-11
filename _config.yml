@@ -17,12 +17,10 @@ collections:
     folder: _documentation/user
   - name: bzfs_api_events
     folder: _documentation/developer/bzfs_api_events
-  - name: bzfs_api_objects
-    folder: _documentation/developer/bzfs_api_objects
-  - name: bzfs_api_enums
-    folder: _documentation/developer/bzfs_api_enums
   - name: bzfs_api_functions
     folder: _documentation/developer/bzfs_api_functions
+  - name: bzfs_api_types
+    folder: _documentation/developer/bzfs_api_types
 
 exclude:
   - COPYING

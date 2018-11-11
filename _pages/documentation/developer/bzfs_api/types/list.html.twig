@@ -1,0 +1,47 @@
+---
+section: documentation
+sectiontitle: Developer Docs
+permalink: /documentation/developer/bzfs_api/types/
+title: bzfs API Types
+parent:
+---
+
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% set types = collections.bzfs_api_types | group('category') %}
+{% set categories = types | keys | sort %}
+
+{% block aside %}
+    <div class="position-sticky position-top-1">
+        <h2 class="mt-0">Categories</h2>
+        <ul>
+            {% for category in categories %}
+                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <h2 class="mt-0">BZFS API Types</h2>
+    <p>
+        The bzfs API types consist of enumerations and objects. Enumerations are used to define the possible choices that
+        can be passed around, such as the possible teams. Objects are used for storing information and are used
+        throughout the API to ensure compatability across the DLL boundary.
+    </p>
+
+    {% for category in categories %}
+        <h3 id="{{ category | slug }}">{{ category }}</h3>
+        <ul>
+            {% for type in types[category] | order('filename') %}
+                <li>
+                    <a href="{{ url(type) }}"
+                       class="text-decoration-none"
+                    >
+                        <code>{{- type.basename -}}</code>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
