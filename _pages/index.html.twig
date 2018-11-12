@@ -14,7 +14,14 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
 
             <div class="mx-sm-3 mx-md-5">
                 <div class="c-video-player">
-                    <video id="teaser" width="720" height="400" loop="loop" preload="none" poster="/images/videothumb/bzteaser.jpg" controls="controls">
+                    <video id="teaser"
+                           width="720"
+                           height="400"
+                           loop="loop"
+                           preload="none"
+                           poster="/images/videothumb/bzteaser.jpg"
+                           controls="controls"
+                    >
                         <source src="/vid/bzteaser.mp4" type="video/mp4" />
                         <source src="/vid/bzteaser.webm" type="video/webm" />
                     </video>
@@ -28,7 +35,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
             <div>
                 <div class="row">
                     {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
-                        <article class="col-md-6 col-lg-4 mb-3 mb-lg-0">
+                        <article class="col-md-6 col-lg-4 mb-4 mb-lg-0">
                             <a href="{{ announcement.url }}"
                                class="c-hover-card"
                             >
@@ -60,6 +67,33 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
             </div>
         </section>
     </div>
+
+    <section class="my-5">
+        <div class="c-theater">
+            <div class="c-theater__image">
+                <img src="{{ url('/assets/images/pages/index/flying_tank.jpg') }}"
+                    alt="">
+            </div>
+
+            <div class="container">
+                <div class="c-theater__stage">
+                    <p class="m-0 text-muted">
+                        <strong><small>A bird? A plane? Nope!</small></strong>
+                    </p>
+                    <p class="h2 line-height-1 mt-0">It's a Flying Tank</p>
+
+                    <p class="mb-0">
+                        The M1 Abrams comes in weighing approximately 62 metric
+                        tons. Our tanks? Well, they're light as a feather! There's
+                        no obstacle you won't be able to jump. Need to jump even
+                        higher? We've got you covered. Our tanks can have wings
+                        letting you jump while in mid-air! Who needs to be bullet
+                        proof when you can jump out of the way?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}
 
 {% block scripts %}
