@@ -1,26 +1,44 @@
 /// Native `url(..)` function wrapper
+///
 /// @param {String} $base - base URL for the asset
 /// @param {String} $type - asset type folder (e.g. `fonts/`)
 /// @param {String} $path - asset path
-/// @return {Url}
+////
+/// @return {Url} A url() ready value
 @function asset($base, $type, $path) {
   @return url($base + $type + $path);
 }
 
 /// Returns URL to an image based on its path
+///
 /// @param {String} $path - image path
 /// @param {String} $base [$base-url] - base URL
-/// @return {Url}
+///
 /// @require $base-url
+///
+/// @return {Url} A url() ready value
 @function image($path, $base: $base-url) {
   @return asset($base, 'images/', $path);
 }
 
 /// Returns URL to a font based on its path
+///
 /// @param {String} $path - font path
 /// @param {String} $base [$base-url] - base URL
-/// @return {Url}
+///
 /// @require $base-url
+///
+/// @return {Url} A url() ready value
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
+}
+
+/// Converts a pixel value into an em
+///
+/// @param {Number} $pixel - A value in pixels to convert
+/// @param {Number} $base-size [16px] - The default conversion rate
+///
+/// @return {Number} The corresponding em value
+@function em($pixels, $base-size: 16px) {
+  @return ($pixels / $base-size) * 1em;
 }
