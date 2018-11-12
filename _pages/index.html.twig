@@ -5,24 +5,73 @@ permalink: /
 metadescription: BZFlag is a free 3D online multi-player multi-platform tank battle game.
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/base.html.twig" %}
 
-{% block head %}
-  <style>#content{padding-bottom:1.5em;}.plyr__play-large{cursor:pointer;}div.plyr__controls{display:none;}</style>
-  <link rel="stylesheet" href="/css/plyr.css" />
-{% endblock %}
+{% block content_root %}
+    <div class="container">
+        <section class="my-5">
+            <h2 class="sr-only">Gameplay Trailer</h2>
 
-{% block content %}
-    <p>BZFlag is a free 3D online multi-player multi-platform tank battle game. It runs on Windows, macOS, Linux, BSD, and other platforms. It was one of the most popular games ever on Silicon Graphics machines and continues to be developed and improved to this day.</p>
-    <div id="teaserdiv">
-      <video id="teaser" width="720" height="400" loop="loop" preload="none" poster="/images/videothumb/bzteaser.jpg" controls="controls">
-        <source src="/vid/bzteaser.mp4" type="video/mp4" />
-        <source src="/vid/bzteaser.webm" type="video/webm" />
-      </video>
+            <div class="mx-sm-3 mx-md-5">
+                <div class="c-video-player">
+                    <video id="teaser" width="720" height="400" loop="loop" preload="none" poster="/images/videothumb/bzteaser.jpg" controls="controls">
+                        <source src="/vid/bzteaser.mp4" type="video/mp4" />
+                        <source src="/vid/bzteaser.webm" type="video/webm" />
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <h2 class="text-center">Project News</h2>
+
+            <div>
+                <div class="row">
+                    {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
+                        <article class="col-md-4">
+                            <a href="{{ announcement.url }}"
+                               class="c-announcement"
+                            >
+                                <img class="c-announcement__thumbnail"
+                                     src="{{ url('/assets/images/announcements/' ~ announcement.basename) }}.jpg"
+                                     alt=""
+                                >
+                                <div class="c-announcement__body">
+                                    <p class="c-announcement__date">
+                                        <small>
+                                            <time datetime="{{ announcement.date | date }}">
+                                                {{- announcement.date | date('F d, Y') -}}
+                                            </time>
+                                        </small>
+                                    </p>
+                                    <h3 class="c-announcement__title">{{ announcement.title }}</h3>
+                                    <p class="c-announcement__meta">
+                                        <small>
+                                            by {{ announcement.author }}
+                                            &bull;
+                                            {{ announcement.category }}
+                                        </small>
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
     </div>
 {% endblock %}
 
 {% block scripts %}
-  <script src="/js/plyr.js"></script>
-  <script>const player = new Plyr('#teaser', {iconUrl:'/images/plyr.svg',blankVideo:'/vid/blank.mp4',controls:['play-large'],disableContextMenu:false});</script>
+    <script src="{{ url('/assets/js/plyr.js') }}"></script>
+    <script>
+        const player = new Plyr('#teaser', {
+            iconUrl: '{{ url("/assets/images/plyr.svg") }}',
+            blankVideo: '{{ url("/assets/vid/blank.mp4") }}',
+            controls: [
+                'play-large'
+            ],
+            disableContextMenu: false
+        });
+    </script>
 {% endblock %}

@@ -1,0 +1,44 @@
+.c-announcement {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.c-announcement__thumbnail {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.c-announcement__body {
+  @extend .p-3;
+
+  background-color: rgba(#000, 0.6);
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(#000, 0.4);
+  }
+}
+
+.c-announcement__date,
+.c-announcement__title,
+.c-announcement__meta {
+  color: #fff;
+  margin: 0;
+}
+
+.c-announcement__date {
+  margin-top: auto;
+}
+
+.c-announcement__meta {
+  line-height: 12px;
+}

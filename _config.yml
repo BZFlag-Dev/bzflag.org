@@ -4,6 +4,8 @@ data:
   - _data
 
 datasets:
+  - name: announcements
+    folder: _datasets/announcements
   - name: downloads_bzflag
     folder: _datasets/downloads/bzflag
   - name: downloads_bzeditw32
@@ -26,8 +28,11 @@ exclude:
   - COPYING
   - README.md
 
-debug: false
+debug: true
 
+url: https://www.bzflag.org
+baseurl: /
+description: BZFlag is a free 3D online multi-player multi-platform tank battle game.
 github:
   dev_repo: BZFlag-Dev/bzflag
   dev_branch: 2.4
