@@ -1,13 +1,12 @@
 .c-media-screenshot {
-  figure {
-    display: inline-block;
-  }
+  display: inline-block;
 
-  figure > a:link, figure > a:visited {
+  & > a:link,
+  & > a:visited {
     text-decoration: none;
   }
 
-  figure img {
+  img {
     display: inline-block;
     vertical-align: bottom;
   }
