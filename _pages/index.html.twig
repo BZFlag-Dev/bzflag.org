@@ -80,20 +80,114 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                     <p class="m-0 text-muted">
                         <strong><small>A bird? A plane? Nope!</small></strong>
                     </p>
-                    <p class="h2 line-height-1 mt-0">It's a Flying Tank</p>
+                    <h2 class="line-height-1 mt-0">It's a Flying Tank</h2>
 
                     <p class="mb-0">
-                        The M1 Abrams comes in weighing approximately 62 metric
-                        tons. Our tanks? Well, they're light as a feather! There's
-                        no obstacle you won't be able to jump. Need to jump even
-                        higher? We've got you covered. Our tanks can have wings
-                        letting you jump while in mid-air! Who needs to be bullet
+                        The M1 Abrams comes in weighing approximately 62 metric tons. Our tanks? Well, they're light as
+                        a feather! There's no obstacle you won't be able to jump. Need to jump even higher? We've got
+                        you covered. Our tanks can have wings letting you jump while in mid-air! Who needs to be bullet
                         proof when you can jump out of the way?
                     </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="container">
+        <section class="my-5">
+            <header class="row">
+                <div class="col-lg-7">
+                    <p class="m-0 text-muted">
+                        <strong>Okay, so imagine this</strong>
+                    </p>
+                    <h2 class="line-height-1 mt-0">Tanks with Super Powers</h2>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quos rerum dignissimos, eveniet exercitationem perferendis consequatur vel mollitia dolor sint vitae possimus blanditiis voluptatem id eos dolorem quae sit assumenda.</p>
+                </div>
+            </header>
+
+            {% set super_flags = [
+                {
+                    inverted: false,
+                    preview: {
+                        image: 'https://placehold.it/550x350',
+                        description: 'Tank shooting a laser beam from long distance',
+                    },
+                    shot_type: {
+                        image: 'blue_laser.png',
+                        description: 'Blue team laser beam',
+                    },
+                    heading: 'Lasers',
+                    description: "
+                        It's not camping, it's strategic placement. When was the last time you saw a sniper be the first
+                        to run into battle? Your tanks can be equiped with lasers capable of firing across the entire
+                        map to kill enemies instantly.
+                    ",
+                },
+                {
+                    inverted: true,
+                    preview: {
+                        image: 'https://placehold.it/550x350',
+                        description: 'Tank shooting a guided missile',
+                    },
+                    shot_type: {
+                        image: 'guided_missile.png',
+                        description: 'Guided missile shot type',
+                    },
+                    heading: 'Guided Missiles',
+                    description: "
+                        You can hide but you can't run. Good luck trying to evade guided missiles. See a tank trying to
+                        run away? Lock on. And fire! Guided missiles will follow your target until it hits something or
+                        is outmaneuvered.
+                    ",
+                },
+                {
+                    inverted: false,
+                    preview: {
+                        image: 'https://placehold.it/550x350',
+                        description: 'A super bullet going through builds',
+                    },
+                    shot_type: {
+                        image: 'blue_super_bolt.png',
+                        description: 'Super bullet shot type',
+                    },
+                    heading: 'Super Bullets',
+                    description: "
+                        You can run but you can't hide. With a powerful radar displaying enemy positions and bullets
+                        that go through walls, there's no enemy you can't hit and no place you can safely hide.
+                    ",
+                }
+            ] %}
+
+            {% for flag in super_flags %}
+                <article class="my-5">
+                    <div class="row">
+                        <div class="col-md mb-3 mb-lg-0 text-center">
+                            <img src="{{ flag.preview.image }}"
+                                class="d-block mx-auto"
+                                alt="{{ flag.preview.description }}">
+                        </div>
+                        <div class="col-md {% if flag.inverted %}order-lg-first{% endif %}">
+                            <div class="d-flex align-items-center h-100">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ url('/assets/images/pages/index/' ~ flag.shot_type.image) }}"
+                                             class="mr-3"
+                                             alt="{{ flag.shot_type.description }}"
+                                        >
+
+                                        <h3 class="my-0">{{ flag.heading }}</h3>
+                                    </div>
+
+                                    <p>{{ flag.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+    </div>
 {% endblock %}
 
 {% block scripts %}
