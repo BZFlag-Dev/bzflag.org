@@ -30,22 +30,22 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                     {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
                         <article class="col-md-6 col-lg-4 mb-3 mb-lg-0">
                             <a href="{{ announcement.url }}"
-                               class="c-announcement"
+                               class="c-hover-card"
                             >
-                                <img class="c-announcement__thumbnail"
+                                <img class="c-hover-card__thumbnail"
                                      src="{{ url('/assets/images/announcements/' ~ announcement.basename) }}.jpg"
                                      alt=""
                                 >
-                                <div class="c-announcement__body">
-                                    <p class="c-announcement__date">
+                                <div class="c-hover-card__body">
+                                    <p class="c-hover-card__date">
                                         <small>
                                             <time datetime="{{ announcement.date | date }}">
                                                 {{- announcement.date | date('F d, Y') -}}
                                             </time>
                                         </small>
                                     </p>
-                                    <h3 class="c-announcement__title">{{ announcement.title }}</h3>
-                                    <p class="c-announcement__meta">
+                                    <h3 class="c-hover-card__title">{{ announcement.title }}</h3>
+                                    <p class="c-hover-card__meta">
                                         <small>
                                             by {{ announcement.author }}
                                             &bull;
