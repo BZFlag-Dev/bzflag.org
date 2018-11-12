@@ -1,7 +1,7 @@
 links:
   - url: /
     name: Home
-  - url: /media
+  - url: /media/
     name: Media
   - url: /downloads
     name: Downloads
@@ -9,5 +9,5 @@ links:
     name: Forums
   - url: /documentation
     name: Documentation
-  - url: /help
+  - url: /help/
     name: Help
