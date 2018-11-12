@@ -3,7 +3,9 @@
 {% block content_root %}
     {% include '_includes/navigation.html.twig' %}
 
-    <main class="container background-dark py-3">
-        {% block content %}{% endblock %}
+    <main class="container background-dark">
+        <div class="p-3">
+            {% block content %}{% endblock %}
+        </div>
     </main>
 {% endblock %}
