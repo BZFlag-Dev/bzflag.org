@@ -1,5 +1,5 @@
 .c-hover-card {
-  box-shadow: 0px 2px 8px 1px #000000;
+  box-shadow: $box-shadow;
   display: block;
   position: relative;
   overflow: hidden;
@@ -59,6 +59,8 @@
   margin-top: auto;
 }
 
-.c-hover-card__meta {
-  line-height: 12px;
+.c-hover-card__title {
+  @extend .my-1;
+
+  line-height: 1;
 }
