@@ -28,7 +28,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
             <div>
                 <div class="row">
                     {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
-                        <article class="col-md-4">
+                        <article class="col-md-6 col-lg-4 mb-3 mb-lg-0">
                             <a href="{{ announcement.url }}"
                                class="c-announcement"
                             >
