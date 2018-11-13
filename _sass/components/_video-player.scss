@@ -1,5 +1,6 @@
 .c-video-player {
-  @extend .p-4;
+  @extend .p-3;
+  @extend .p-md-4;
 
   background-color: rgba(#000, 0.2);
   box-shadow: $box-shadow;
