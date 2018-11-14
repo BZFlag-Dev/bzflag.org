@@ -1,5 +1,5 @@
 ---
-since: 2.4.0
+since: 2.4.4
 category: Flag Management
 signatures:
   -
