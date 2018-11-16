@@ -7,7 +7,95 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
 
 {% extends "_layouts/base.html.twig" %}
 
+{% set download_keys = {
+    windows: 'Windows',
+    macos: 'macOS',
+} %}
+{% set latest_release = data.downloads_bzflag | order('date', 'DESC') | first %}
+
 {% block content_root %}
+    <section class="container">
+        <div class="my-5">
+            <div class="text-center">
+                {% for platform in ['macos', 'windows'] %}
+                    {% set download_url -%}
+                        https://download.bzflag.org/bzflag/{{ platform }}/{{ latest_release.version }}
+                    {%- endset %}
+                    {% set downloads = latest_release.downloads[platform] | select('filename') %}
+                    {% set platform_name = download_keys[platform] %}
+
+                    {% set filename  = downloads | first | format(latest_release.version) %}
+                    {% set extension = downloads | first | split('.') | slice(1) | join('.') %}
+
+                    <div class="d-sm-inline-block mb-3 mb-sm-0 {% if not loop.last %}mr-sm-3{% endif %}">
+                        <div class="d-flex justify-content-center c-button-group" role="group">
+                            <a href="{{ download_url }}/{{ filename }}" class="c-button">
+                                <div class="d-flex align-items-center">
+                                    <div class="text-center">
+                                        <div>
+                                            <strong>
+                                                <span class="sr-only">Download for</span>
+                                                {{ download_keys[platform] }} (.{{ extension }})
+                                            </strong>
+                                        </div>
+                                        <div class="line-height-1">
+                                            <small>version {{ latest_release.version }}</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="ml-3">
+                                        <img src="{{ url('/assets/images/' ~ platform_name ~ '.svg') }}"
+                                             alt="{{ platform_name }} logo"
+                                             class="d-block"
+                                             style="width: 55px;"
+                                             aria-hidden="true"
+                                        >
+                                    </div>
+                                </div>
+                            </a>
+
+                            {% set other_downloads = downloads | slice(1) %}
+
+                            {% for od in other_downloads %}
+                                {% set extension = od | split('.') | slice(1) | join('') %}
+
+                                <a href="{{ download_url }}/{{ od | format(latest_release.version) }}"
+                                   class="c-button d-flex align-items-center"
+                                >
+                                    <span class="sr-only">Download as {{ extension }} for {{ platform_name }}</span>
+                                    <strong aria-hidden="true">.{{- extension -}}</strong>
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="my-3">
+                <div class="text-center">
+                    <p class="d-sm-inline mb-0 mr-sm-1">Download source as</p>
+                    <ul class="d-inline list-inline">
+                        {% for format in latest_release.downloads.source | select('filename') %}
+                            {% set download_url -%}
+                                https://download.bzflag.org/bzflag/source/{{ latest_release.version }}
+                            {%- endset %}
+                            {% set filename  = format | format(latest_release.version) %}
+                            {% set extension = format | split('.') | slice(1) | join('.') %}
+                            <li class="list-inline-item">
+                                <a href="{{ download_url }}/{{ filename }}">
+                                    .{{ extension }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <p class="m-0 text-center">
+                    <small>Released on {{ latest_release.date | date('F m, Y') }}</small>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <section class="my-5">
             <h2 class="sr-only">Gameplay Trailer</h2>
