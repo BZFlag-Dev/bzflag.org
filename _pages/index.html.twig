@@ -7,16 +7,6 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
 
 {% extends "_layouts/base.html.twig" %}
 
-{% set download_keys = {
-    windows: 'Windows',
-    macos: 'macOS',
-} %}
-{% set latest_releases = {
-    windows: data.downloads_bzflag | where('downloads.windows', '!=', null) | order('date', 'DESC') | first,
-    macos: data.downloads_bzflag | where('downloads.macos', '!=', null) | order('date', 'DESC') | first,
-    source: data.downloads_bzflag | where('downloads.source', '!=', null) | order('date', 'DESC') | first
-} %}
-
 {% block content_root %}
     <section class="landing-jumbotron">
         {% include "_includes/navigation.html.twig" %}
@@ -29,83 +19,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
 
     <section class="container">
         <div class="my-5">
-            <div class="text-center">
-                {% for platform in ['macos', 'windows'] %}
-                    {% set download_url -%}
-                        https://download.bzflag.org/bzflag/{{ platform }}/{{ latest_releases[platform].version }}
-                    {%- endset %}
-                    {% set downloads = latest_releases[platform].downloads[platform] | select('filename') %}
-                    {% set platform_name = download_keys[platform] %}
-
-                    {% set filename  = downloads | first | replace({'@VER@': latest_releases[platform].version}) %}
-                    {% set extension = downloads | first | split('.') | slice(1) | join('.') %}
-
-                    <div class="d-sm-inline-block mb-3 mb-sm-0 {% if not loop.last %}mr-sm-3{% endif %}">
-                        <div class="d-flex justify-content-center c-button-group" role="group">
-                            <a href="{{ download_url }}/{{ filename }}" class="c-button">
-                                <div class="d-flex align-items-center">
-                                    <div class="text-center">
-                                        <div>
-                                            <strong>
-                                                <span class="sr-only">Download for</span>
-                                                {{ download_keys[platform] }} (.{{ extension }})
-                                            </strong>
-                                        </div>
-                                        <div class="line-height-1">
-                                            <small>version {{ latest_releases[platform].version }}</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="ml-3">
-                                        <img src="{{ url('/assets/images/' ~ platform_name ~ '.svg') }}"
-                                             alt="{{ platform_name }} logo"
-                                             class="d-block"
-                                             style="width: 55px;"
-                                             aria-hidden="true"
-                                        >
-                                    </div>
-                                </div>
-                            </a>
-
-                            {% set other_downloads = downloads | slice(1) %}
-
-                            {% for od in other_downloads %}
-                                {% set extension = od | split('.') | slice(1) | join('') %}
-
-                                <a href="{{ download_url }}/{{ od | replace({'@VER@': latest_releases[platform].version}) }}"
-                                   class="c-button d-flex align-items-center"
-                                >
-                                    <span class="sr-only">Download as {{ extension }} for {{ platform_name }}</span>
-                                    <strong aria-hidden="true">.{{- extension -}}</strong>
-                                </a>
-                            {% endfor %}
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-
-            <div class="my-3">
-                <div class="text-center">
-                    <p class="d-sm-inline mb-0 mr-sm-1">Download {{ latest_releases.source.version }} source as</p>
-                    <ul class="d-inline list-inline">
-                        {% for format in latest_releases.source.downloads.source | select('filename') %}
-                            {% set download_url -%}
-                                https://download.bzflag.org/bzflag/source/{{ latest_releases.source.version }}
-                            {%- endset %}
-                            {% set filename  = format | replace({'@VER@': latest_releases.source.version}) %}
-                            {% set extension = format | split('.') | slice(1) | join('.') %}
-                            <li class="list-inline-item">
-                                <a href="{{ download_url }}/{{ filename }}">
-                                    .{{ extension }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <p class="m-0 text-center">
-                    <small>Released on {{ latest_releases.source.date | date('F m, Y') }}</small>
-                </p>
-            </div>
+            {% include "_includes/latest_downloads.html.twig" %}
         </div>
     </section>
 
