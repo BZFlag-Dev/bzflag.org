@@ -7,10 +7,11 @@ title: %basename
 parent:
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 {% from "_includes/api_utils.html.twig" import api_object %}
 
 {% block content %}
+  <h1>{{ this.basename }}</h1>
   <p><span class="since">Available since {{ this.since }}</span></p>
 
   {{ this.content }}
@@ -68,4 +69,12 @@ parent:
     ```
     {% endmarkdown %}
   {% endif %}
+
+    <h2>Other {{ this.category }} Events</h2>
+    <ul>
+        {% for event in collections.bzfs_api_events | where('category', '==', this.category) | where('basename', '!=', this.basename) | order('filename') %}
+            <li><a href="{{ url(event) }}/">{{ event.basename }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="../">Back to bzfs API Events</a>
 {% endblock %}

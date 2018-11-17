@@ -19,22 +19,23 @@ parent:
                 <li><a href="#{{ category | slug }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
+        <a href="../">Back to bzfs API</a>
     </div>
 {% endblock %}
 
 {% block content %}
-    <h2 class="mt-0">BZFS API Functions</h2>
+    <h1 class="mt-0">BZFS API Functions</h1>
     <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
 
     {% for category in categories %}
-        <h3 id="{{ category | slug }}">{{ category }}</h3>
+        <h2 id="{{ category | slug }}">{{ category }}</h2>
         <ul>
             {% for function in functions[category] | order('filename') %}
                 <li>
                     <a href="{{ url(function) }}"
-                       class="text-decoration-none"
+                       class="text-decoration-none pre"
                     >
-                        <code>{{- function.basename -}}()</code>
+                        {{- function.basename -}}()
                     </a>
                 </li>
             {% endfor %}

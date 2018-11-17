@@ -19,22 +19,23 @@ parent:
                 <li><a href="#{{ category | slug }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
+        <a href="../">Back to bzfs API</a>
     </div>
 {% endblock %}
 
 {% block content %}
-    <h2 class="mt-0">BZFS API Events</h2>
+    <h1 class="mt-0">BZFS API Events</h1>
     <p>These API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
 
     {% for category in categories %}
-        <h3 id="{{ category | slug }}">{{ category }}</h3>
+        <h2 id="{{ category | slug }}">{{ category }}</h2>
         <ul>
             {% for event in events[category] | order('filename') %}
                 <li>
                     <a href="{{ url(event) }}"
-                       class="text-decoration-none"
+                       class="text-decoration-none pre"
                     >
-                        <code>{{- event.basename -}}</code>
+                        {{- event.basename -}}
                     </a>
                 </li>
             {% endfor %}

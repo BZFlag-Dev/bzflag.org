@@ -19,11 +19,12 @@ parent:
                 <li><a href="#{{ category | slug }}">{{ category }}</a></li>
             {% endfor %}
         </ul>
+        <a href="../">Back to bzfs API</a>
     </div>
 {% endblock %}
 
 {% block content %}
-    <h2 class="mt-0">BZFS API Types</h2>
+    <h1 class="mt-0">BZFS API Types</h1>
     <p>
         The bzfs API types consist of enumerations and objects. Enumerations are used to define the possible choices that
         can be passed around, such as the possible teams. Objects are used for storing information and are used
@@ -31,14 +32,14 @@ parent:
     </p>
 
     {% for category in categories %}
-        <h3 id="{{ category | slug }}">{{ category }}</h3>
+        <h2 id="{{ category | slug }}">{{ category }}</h2>
         <ul>
             {% for type in types[category] | order('filename') %}
                 <li>
                     <a href="{{ url(type) }}"
-                       class="text-decoration-none"
+                       class="text-decoration-none pre"
                     >
-                        <code>{{- type.basename -}}</code>
+                        {{- type.basename -}}
                     </a>
                 </li>
             {% endfor %}
