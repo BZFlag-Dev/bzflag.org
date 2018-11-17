@@ -3,7 +3,7 @@ links:
     name: Home
   - url: /media/
     name: Media
-  - url: /downloads
+  - url: /downloads/
     name: Downloads
   - url: https://forums.bzflag.org
     name: Forums

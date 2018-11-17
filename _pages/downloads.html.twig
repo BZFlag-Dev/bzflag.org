@@ -3,67 +3,35 @@ title: Downloads
 section: downloads
 permalink: /downloads/
 metadescription: BZFlag is available as a free download. Pre-built packages are available for Windows and macOS.
-
-platforms:
-  windows:
-    logo: windows.png
-    title: Windows
-  macos:
-    logo: macos.png
-    title: macOS
-  source:
-    logo: source.png
-    title: Source Code
-
-releases:
-  stable:
-    title: Latest Stable Release
-    version: 2.4.18
-    date: "2018-09-23"
-    downloads:
-      windows:
-        url: https://download.bzflag.org/bzflag/windows/%1$s/bzflag-%1$s.exe
-        platform: windows
-        description: Windows Vista/7/8.1/10
-      macos:
-        url: https://download.bzflag.org/bzflag/macos/%1$s/BZFlag-%1$s-macOS.zip
-        platform: macos
-        description: 10.7+ Intel only
-      source:
-        url: https://download.bzflag.org/bzflag/source/%1$s/
-        platform: source
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 
 {% block content %}
+    {% include "_includes/latest_downloads.html.twig" %}
 
-{% for release in this.releases %}
-    <h2>{{ release.title }} ({{ release.date }})</h2>
+    {% set latest_release = data.downloads_bzflag | order('date', 'DESC') | first %}
 
-{% if release.description is defined %}
-    <div>{{ release.description }}</div>
+    {% markdown %}
+        ## Release Summary
 
-{% endif %}
-{% for download in release.downloads %}
-    <a href="{% if download.version is defined %}{{ download.url | format(download.version) }}{% else %}{{ download.url | format(release.version) }}{% endif %}" class="download">
-      <img src="/images/download/{{ this.platforms[download.platform].logo }}" width="128" height="128" alt="" />
-      <p class="os">{{ this.platforms[download.platform].title }}</p>
-{% if download.version is defined %}
-      <p class="version">Version {{ download.version }}</p>
-{% elseif release.version is defined %}
-      <p class="version">Version {{ release.version }}</p>
-{% endif %}
-{% if download.description is defined %}
-      <p class="desc">{{ download.description }}</p>
-{% endif %}
-    </a>
-{% endfor %}
+        {{ latest_release.changesummary }}
 
-{% endfor %}
-    <p><em>Previous releases are available in the <a href="/downloads/archive/">download archive</a> and on <a href="https://github.com/BZFlag-Dev/bzflag/releases">GitHub</a>.</em></p>
+        ## Changelog
 
-    <p>BZFlag is licensed under the <a href="https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING">LGPL 2.1 and MPL 2.0</a> and is free to use/distribute/modify as long as the terms of the license are followed.</p>
+        {{ latest_release.changelog }}
 
-    <p>The source code repository is available on GitHub for <a href="https://github.com/BZFlag-Dev/bzflag">BZFlag</a> and our <a href="https://github.com/BZFlag-Dev">related sub-projects</a>.</p>
+        ## Licensing
+
+        BZFlag is licensed under the [LGPL 2.1 and MPL 2.0](https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING)
+        and is free to use/distribute/modify as long as the terms of the license are followed.
+
+        ## Other Releases
+
+        The source code repository is available on GitHub for [BZFlag](https://github.com/BZFlag-Dev/bzflag) and our
+        [related sub-projects](https://github.com/BZFlag-Dev).
+
+        Previous releases are available in the [download archive]({{ url(pages['Download Archive']) }}) and on
+        [GitHub](https://github.com/BZFlag-Dev/bzflag/releases).
+    {% endmarkdown %}
 {% endblock %}
