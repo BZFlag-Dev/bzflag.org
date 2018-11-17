@@ -2,7 +2,7 @@ version: 2.4.16
 codename: 'Reduce, Reuse, Replay'
 changesummary: |
   This release primarily fixes a bug introduced in 2.4.14 that corrupted replay file headers. This release reverts that change, and can also read the corrupted header for replays made with the bad code.
-  
+
   **NOTE: Sound in the the Windows version of this release does not work. This will be fixed in the 2.4.18 release.**<br /><br />
 changelog: |
   * Send MsgFlagGrab before API event is called - Jeff Myers, Vladimir Jimenez
@@ -15,14 +15,14 @@ date: '2018-09-23'
 downloads:
     windows:
         -
-            filename: bzflag-%1$s.exe
+            filename: bzflag-@VER@.exe
     macos:
         -
-            filename: BZFlag-%1$s-macOS.zip
+            filename: BZFlag-@VER@-macOS.zip
     source:
         -
-            filename: bzflag-%1$s.tar.bz2
+            filename: bzflag-@VER@.tar.bz2
         -
-            filename: bzflag-%1$s.tar.gz
+            filename: bzflag-@VER@.tar.gz
         -
-            filename: bzflag-%1$s.zip
+            filename: bzflag-@VER@.zip

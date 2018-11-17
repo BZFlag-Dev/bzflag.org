@@ -11,7 +11,11 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
     windows: 'Windows',
     macos: 'macOS',
 } %}
-{% set latest_release = data.downloads_bzflag | order('date', 'DESC') | first %}
+{% set latest_releases = {
+    windows: data.downloads_bzflag | where('downloads.windows', '!=', null) | order('date', 'DESC') | first,
+    macos: data.downloads_bzflag | where('downloads.macos', '!=', null) | order('date', 'DESC') | first,
+    source: data.downloads_bzflag | where('downloads.source', '!=', null) | order('date', 'DESC') | first
+} %}
 
 {% block content_root %}
     <section class="landing-jumbotron">
@@ -28,12 +32,12 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
             <div class="text-center">
                 {% for platform in ['macos', 'windows'] %}
                     {% set download_url -%}
-                        https://download.bzflag.org/bzflag/{{ platform }}/{{ latest_release.version }}
+                        https://download.bzflag.org/bzflag/{{ platform }}/{{ latest_releases[platform].version }}
                     {%- endset %}
-                    {% set downloads = latest_release.downloads[platform] | select('filename') %}
+                    {% set downloads = latest_releases[platform].downloads[platform] | select('filename') %}
                     {% set platform_name = download_keys[platform] %}
 
-                    {% set filename  = downloads | first | format(latest_release.version) %}
+                    {% set filename  = downloads | first | replace({'@VER@': latest_releases[platform].version}) %}
                     {% set extension = downloads | first | split('.') | slice(1) | join('.') %}
 
                     <div class="d-sm-inline-block mb-3 mb-sm-0 {% if not loop.last %}mr-sm-3{% endif %}">
@@ -48,7 +52,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                                             </strong>
                                         </div>
                                         <div class="line-height-1">
-                                            <small>version {{ latest_release.version }}</small>
+                                            <small>version {{ latest_releases[platform].version }}</small>
                                         </div>
                                     </div>
 
@@ -68,7 +72,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                             {% for od in other_downloads %}
                                 {% set extension = od | split('.') | slice(1) | join('') %}
 
-                                <a href="{{ download_url }}/{{ od | format(latest_release.version) }}"
+                                <a href="{{ download_url }}/{{ od | replace({'@VER@': latest_releases[platform].version}) }}"
                                    class="c-button d-flex align-items-center"
                                 >
                                     <span class="sr-only">Download as {{ extension }} for {{ platform_name }}</span>
@@ -82,13 +86,13 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
 
             <div class="my-3">
                 <div class="text-center">
-                    <p class="d-sm-inline mb-0 mr-sm-1">Download source as</p>
+                    <p class="d-sm-inline mb-0 mr-sm-1">Download {{ latest_releases.source.version }} source as</p>
                     <ul class="d-inline list-inline">
-                        {% for format in latest_release.downloads.source | select('filename') %}
+                        {% for format in latest_releases.source.downloads.source | select('filename') %}
                             {% set download_url -%}
-                                https://download.bzflag.org/bzflag/source/{{ latest_release.version }}
+                                https://download.bzflag.org/bzflag/source/{{ latest_releases.source.version }}
                             {%- endset %}
-                            {% set filename  = format | format(latest_release.version) %}
+                            {% set filename  = format | replace({'@VER@': latest_releases.source.version}) %}
                             {% set extension = format | split('.') | slice(1) | join('.') %}
                             <li class="list-inline-item">
                                 <a href="{{ download_url }}/{{ filename }}">
@@ -99,7 +103,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                     </ul>
                 </div>
                 <p class="m-0 text-center">
-                    <small>Released on {{ latest_release.date | date('F m, Y') }}</small>
+                    <small>Released on {{ latest_releases.source.date | date('F m, Y') }}</small>
                 </p>
             </div>
         </div>

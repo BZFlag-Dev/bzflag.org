@@ -8,14 +8,14 @@ date: '2018-10-18'
 downloads:
     windows:
         -
-            filename: bzflag-%1$s.exe
+            filename: bzflag-@VER@.exe
     macos:
         -
-            filename: BZFlag-%1$s-macOS.zip
+            filename: BZFlag-@VER@-macOS.zip
     source:
         -
-            filename: bzflag-%1$s.tar.bz2
+            filename: bzflag-@VER@.tar.bz2
         -
-            filename: bzflag-%1$s.tar.gz
+            filename: bzflag-@VER@.tar.gz
         -
-            filename: bzflag-%1$s.zip
+            filename: bzflag-@VER@.zip
