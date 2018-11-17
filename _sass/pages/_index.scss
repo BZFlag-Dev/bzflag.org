@@ -1,0 +1,12 @@
+.landing-jumbotron {
+    height: 500px;
+    position: relative;
+}
+
+.landing-jumbotron__image {
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -1;
+}
