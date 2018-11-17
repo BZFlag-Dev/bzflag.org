@@ -1,0 +1,40 @@
+///
+/// Create the linear-gradient call for creating scrim gradients
+///
+/// @author Joey Nichols
+/// @link https://css-tricks.com/easing-linear-gradients/
+///
+/// @param {Color} $startColor [#000] - The color to start the gradient with
+/// @param {String} $direction ['to bottom'] - The direction this gradient will follow
+///
+/// @return {linear-gradient}
+///
+@function scrim-gradient($startColor: #000, $direction: 'to bottom') {
+  $scrimCoordinates: (
+    0: 1,
+    19: 0.738,
+    34: 0.541,
+    47: 0.382,
+    56.5: 0.278,
+    65: 0.194,
+    73: 0.126,
+    80.2: 0.075,
+    86.1: 0.042,
+    91: 0.021,
+    95.2: 0.008,
+    98.2: 0.002,
+    100: 0
+  );
+
+  $hue: hue($startColor);
+  $saturation: saturation($startColor);
+  $lightness: lightness($startColor);
+  $stops: ();
+
+  @each $colorStop, $alphaValue in $scrimCoordinates {
+    $stop: hsla($hue, $saturation, $lightness, $alphaValue) percentage(str-to-number($colorStop) / 100);
+    $stops: append($stops, $stop, comma);
+  }
+
+  @return linear-gradient(unquote($direction), $stops);
+}

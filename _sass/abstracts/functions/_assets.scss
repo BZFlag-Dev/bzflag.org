@@ -32,13 +32,3 @@
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
 }
-
-/// Converts a pixel value into an em
-///
-/// @param {Number} $pixel - A value in pixels to convert
-/// @param {Number} $base-size [16px] - The default conversion rate
-///
-/// @return {Number} The corresponding em value
-@function em($pixels, $base-size: 16px) {
-  @return ($pixels / $base-size) * 1em;
-}

@@ -1,6 +1,10 @@
 .site-header {
-  background-color: rgba(#252529, 0.8);
+  background: scrim-gradient();
   position: relative;
+
+  a {
+    text-shadow: 0 1px 10px rgba(0,0,0,.5), 0 0 30px rgba(0,0,0,.9)
+  }
 }
 
 .site-header__brand {

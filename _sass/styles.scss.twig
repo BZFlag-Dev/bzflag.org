@@ -3,10 +3,17 @@ permalink: /assets/css/styles.css
 ---
 
 @import 'abstracts/variables';
-@import 'abstracts/functions';
-@import 'abstracts/mixins';
 
-@import 'abstracts/responsify';
+// Core functions required by internal Sass functions to return Sass values
+@import 'abstracts/functions/math';
+@import 'abstracts/functions/strings';
+
+// Functions charged with return CSS values
+@import 'abstracts/functions/assets';
+@import 'abstracts/functions/gradients';
+@import 'abstracts/functions/responsify';
+
+@import 'abstracts/mixins';
 
 @import 'vendor/bootstrap';
 @import 'vendor/plyr';
@@ -25,6 +32,8 @@ permalink: /assets/css/styles.css
 @import 'components/media';
 @import 'components/theater';
 @import 'components/video-player';
+
+@import 'pages/index';
 
 @import 'utilities/border-helpers';
 @import 'utilities/positioning';
