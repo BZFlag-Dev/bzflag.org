@@ -1,21 +1,29 @@
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 
 {% set sectiontitle = 'Download Archive' %}
 {% set title = title ~ ' ' ~ this.version %}
 
+{% set download_keys = {
+    windows: 'Windows',
+    macos: 'macOS',
+    irix: 'IRIX',
+    source: 'Source',
+} %}
+
 {% block content %}
+    <h1>{{ title }}</h1>
 
   {% if this.date %}
   <div>
     <h2>Release Date</h2>
     <p>{{ this.date }}</p>
-  </div><br />
+  </div>
   {% endif %}
   {% if this.codename %}
   <div>
     <h2>Release Name</h2>
     <p><strong>{{ this.title }} "{{ this.codename }}"</strong></p>
-  </div><br />
+  </div>
   {% endif %}
   {% if this.changesummary -%}
   <div>
@@ -33,26 +41,15 @@
     {% endmarkdown -%}
   </div>
   {% endif -%}
-  <div style="margin-bottom: 1em">
+  <div class="mb-2">
   {% for platform, files in this.downloads %}
-    {% if platform == 'windows' %}
-      <h2>Windows</h2>
-    {% elseif platform == 'macos' %}
-      <h2>macOS</h2>
-    {% elseif platform == 'irix' %}
-      <h2>IRIX</h2>
-    {% elseif platform == 'source' %}
-      <h2>Source</h2>
-    {% else %}
-      <h2>{{ platform }}</h2>
-    {% endif %}
-
+    <h2 class="mb-1">{{ download_keys[platform] | default(platform) }}</h2>
     <p>
     {% for file in files %}
       {% if file.url %}
-      <a href="{{ file.url }}">{{ file.filename | format(this.version) }}</a><br />
+      <a href="{{ file.url }}">{{ file.filename | replace({'@VER@': this.version}) }}</a><br />
       {% else %}
-      <a href="https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | format(this.version) }}">{{ file.filename | format(this.version) }}</a><br />
+      <a href="https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | replace({'@VER@': this.version}) }}">{{ file.filename | replace({'@VER@': this.version}) }}</a><br />
       {% endif %}
     {% endfor %}
     </p>

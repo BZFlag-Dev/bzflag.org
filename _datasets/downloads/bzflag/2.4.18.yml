@@ -1,7 +1,7 @@
 version: 2.4.18
 codename: 'Can You Hear What I Hear?'
 changesummary: |
-  This release just fixes audio on Windows.<br /><br />
+  This release just fixes audio on Windows.
 changelog: |
   * Fix DirectSound initialization order so that sound on Windows works again - Scott Wichser
 date: '2018-10-18'

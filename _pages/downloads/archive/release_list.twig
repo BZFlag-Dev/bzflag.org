@@ -5,7 +5,7 @@ projects:
   - bzeditw32
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 
 {% if attribute(data.projectinfo, this.iterators.projects).name is defined %}
   {% set title = attribute(data.projectinfo, this.iterators.projects).name %}
@@ -14,8 +14,9 @@ projects:
 
 
 {% block content %}
+    <h1>{{ title }}</h1>
 
-{{ attribute(data.projectinfo, this.iterators.projects).description | markdown }}<br />
+{{ attribute(data.projectinfo, this.iterators.projects).description | markdown }}
 
 <h2>Release History</h2>
 <ul>

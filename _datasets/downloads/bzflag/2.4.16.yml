@@ -3,7 +3,7 @@ codename: 'Reduce, Reuse, Replay'
 changesummary: |
   This release primarily fixes a bug introduced in 2.4.14 that corrupted replay file headers. This release reverts that change, and can also read the corrupted header for replays made with the bad code.
 
-  **NOTE: Sound in the the Windows version of this release does not work. This will be fixed in the 2.4.18 release.**<br /><br />
+  **NOTE: Sound in the the Windows version of this release does not work. This will be fixed in the 2.4.18 release.**
 changelog: |
   * Send MsgFlagGrab before API event is called - Jeff Myers, Vladimir Jimenez
   * Correctly unmuted when paused and killed by server - Alfredo Tupone
