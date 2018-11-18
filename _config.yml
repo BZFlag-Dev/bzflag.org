@@ -6,6 +6,8 @@ data:
 datasets:
     - name: announcements
       folder: _datasets/announcements
+    - name: projects
+      folder: _datasets/projects
     - name: downloads_bzflag
       folder: _datasets/downloads/bzflag
     - name: downloads_bzeditw32

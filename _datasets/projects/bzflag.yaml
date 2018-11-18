@@ -1,0 +1,6 @@
+name: BZFlag
+active: true
+short_description: Our main project, a 3D online multiplayer tank battle game
+description: |
+    BZFlag is a free 3D online multi-player multi-platform tank battle game. It
+    runs on Windows, macOS, Linux, BSD, and other platforms.

@@ -59,39 +59,4 @@
             </p>
         {% endfor %}
     </div>
-
-    {% if this.changelog -%}
-        <div>
-            <h2>Change Log</h2>
-            {%- markdown %}
-            {{ this.changelog }}
-            {% endmarkdown -%}
-        </div>
-    {% endif -%}
-
-    <div style="margin-bottom: 1em">
-        {% for platform, files in this.downloads %}
-            {% if platform == 'windows' %}
-                <h2>Windows</h2>
-            {% elseif platform == 'macos' %}
-                <h2>macOS</h2>
-            {% elseif platform == 'irix' %}
-                <h2>IRIX</h2>
-            {% elseif platform == 'source' %}
-                <h2>Source</h2>
-            {% else %}
-                <h2>{{ platform }}</h2>
-            {% endif %}
-
-            <p>
-                {% for file in files %}
-                    {% if file.url %}
-                        <a href="{{ file.url }}">{{ file.filename | format(this.version) }}</a><br />
-                    {% else %}
-                        <a href="https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | format(this.version) }}">{{ file.filename | format(this.version) }}</a><br />
-                    {% endif %}
-                {% endfor %}
-            </p>
-        {% endfor %}
-    </div>
 {% endblock %}

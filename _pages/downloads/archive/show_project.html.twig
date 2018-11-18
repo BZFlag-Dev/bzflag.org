@@ -1,0 +1,36 @@
+---
+dataset: projects
+permalink: /downloads/archive/%basename/
+metadescription: %description
+title: %name
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% block content %}
+    <h1>{{ this.name }}</h1>
+
+    {{ this.description | markdown }}
+
+    <h2 id="release-history">Release History</h2>
+
+    <ul>
+        {% for release in attribute(data, 'downloads_' ~ this.basename) | order('date', 'DESC') %}
+            <li>
+                <p class="m-0">
+                    <a href="/downloads/archive/{{ this.basename }}/{{ release.version }}/">
+                        {{ release.version }}
+                        {% if release.codename %} "{{ release.codename }}"{% endif %}
+                        {% if release.date %} ({{ release.date }}){% endif %}
+                    </a>
+                </p>
+
+                {% if release.changesummary %}
+                    <div class="my-3">
+                        {{ release.changesummary | markdown }}
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
