@@ -31,7 +31,7 @@ downloads:
     windows:
         - filename: bzflag-17g0.exe
     macos:
-        - filename: BZFlag-1.7g0r7.dmg
-        - filename: BZFlag-1.7g0r6.dmg
+        - filename: BZFlag-@VER@r7.dmg
+        - filename: BZFlag-@VER@r6.dmg
     source:
-        - filename: bzflag-1.7g0.tgz
+        - filename: bzflag-@VER@.tgz

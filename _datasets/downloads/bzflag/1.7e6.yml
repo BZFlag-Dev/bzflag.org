@@ -51,9 +51,9 @@ downloads:
     windows:
         - filename: bzflag17e6.exe
     macos:
-        - filename: BZFlag-OSX-1.7e6.tar.gz
+        - filename: BZFlag-OSX-@VER@.tar.gz
     irix:
         - filename: bzflag.17e6_o32.tardist
         - filename: bzflag.17e6_n32.tardist
     source:
-        - filename: bzflag-1.7e6.tgz
+        - filename: bzflag-@VER@.tgz

@@ -3,6 +3,6 @@ changelog: ''
 date: '2005-03-11'
 downloads:
     windows:
-        - filename: BZEditW32_1.6.4-1_Installer.exe
+        - filename: BZEditW32_@VER@-1_Installer.exe
     source:
-        - filename: BZEditW32_1.6.4_Source.zip
+        - filename: BZEditW32_@VER@_Source.zip

@@ -7,10 +7,10 @@ changelog: |
 date: '2004-10-05'
 downloads:
     windows:
-        - filename: bzflag-1.10.8.W32.exe
+        - filename: bzflag-@VER@.W32.exe
     macos:
-        - filename: BZFlag_1.10.8.dmg
+        - filename: BZFlag_@VER@.dmg
     source:
-        - filename: bzflag-1.10.8.20041007.tar.gz
-        - filename: bzflag-1.10.8.20041005.zip
-        - filename: bzflag-1.10.8.20041007.tar.bz2
+        - filename: bzflag-@VER@.20041007.tar.gz
+        - filename: bzflag-@VER@.20041005.zip
+        - filename: bzflag-@VER@.20041007.tar.bz2

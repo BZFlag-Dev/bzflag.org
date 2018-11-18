@@ -51,12 +51,12 @@ changelog: |
 date: '2011-07-03'
 downloads:
     windows:
-        - filename: bzflag-2.4.0_32Bit.exe
-        - filename: bzflag-2.4.0_64Bit.exe
+        - filename: bzflag-@VER@_32Bit.exe
+        - filename: bzflag-@VER@_64Bit.exe
     macos:
-        - filename: BZFlag-2.4.0.zip
+        - filename: BZFlag-@VER@.zip
     source:
-        - filename: bzflag-2.4.0.tar.gz
-        - filename: bzflag-2.4.0.zip
-        - filename: bzflag-2.4.0.tar.bz2
-        - filename: bzflag-2.4.0_Windows.zip
+        - filename: bzflag-@VER@.tar.gz
+        - filename: bzflag-@VER@.zip
+        - filename: bzflag-@VER@.tar.bz2
+        - filename: bzflag-@VER@_Windows.zip

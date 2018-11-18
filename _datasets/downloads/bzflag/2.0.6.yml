@@ -33,10 +33,10 @@ changelog: |
 date: '2006-04-09'
 downloads:
     windows:
-        - filename: bzflag-2.0.6-20060409.exe
+        - filename: bzflag-@VER@-20060409.exe
     macos:
-        - filename: BZFlag_2.0.6_ppc_10.3.dmg
+        - filename: BZFlag_@VER@_ppc_10.3.dmg
     source:
-        - filename: bzflag-2.0.6.tar.bz2
-        - filename: bzflag-2.0.6-20060409.zip
-        - filename: bzflag-2.0.6.tar.gz
+        - filename: bzflag-@VER@.tar.bz2
+        - filename: bzflag-@VER@-20060409.zip
+        - filename: bzflag-@VER@.tar.gz

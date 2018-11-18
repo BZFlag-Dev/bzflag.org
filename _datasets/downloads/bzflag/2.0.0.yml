@@ -133,10 +133,10 @@ changelog: |
 date: '2005-01-17'
 downloads:
     windows:
-        - filename: bzflag-2.0.0.exe
+        - filename: bzflag-@VER@.exe
     macos:
-        - filename: BZFlag_2.0.0.dmg
+        - filename: BZFlag_@VER@.dmg
     source:
-        - filename: bzflag-2.0.0-20050118.zip
-        - filename: bzflag-2.0.0.20050117.tar.bz2
-        - filename: bzflag-2.0.0.20050117.tar.gz
+        - filename: bzflag-@VER@-20050118.zip
+        - filename: bzflag-@VER@.20050117.tar.bz2
+        - filename: bzflag-@VER@.20050117.tar.gz

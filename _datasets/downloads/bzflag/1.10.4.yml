@@ -66,15 +66,15 @@ changelog: |
 date: '2004-01-24'
 downloads:
     windows:
-        - filename: bzflag-1.10.4-0.W32.exe
-        - filename: bzflag-1.10.4-0-high_res.W32.exe
-        - filename: alternate_data-1.10.4-0.zip
+        - filename: bzflag-@VER@-0.W32.exe
+        - filename: bzflag-@VER@-0-high_res.W32.exe
+        - filename: alternate_data-@VER@-0.zip
     macos:
-        - filename: BZFlag_1.10.4.dmg
+        - filename: BZFlag_@VER@.dmg
     irix:
-        - filename: bzflag-1.10.4_n32.tardist
-        - filename: bzflag-1.10.4_n32.tar.gz
+        - filename: bzflag-@VER@_n32.tardist
+        - filename: bzflag-@VER@_n32.tar.gz
     source:
-        - filename: bzflag-1.10.4.20040124.zip
-        - filename: bzflag-1.10.4.20040125.tar.gz
-        - filename: bzflag-1.10.4.20040125.tar.bz2
+        - filename: bzflag-@VER@.20040124.zip
+        - filename: bzflag-@VER@.20040125.tar.gz
+        - filename: bzflag-@VER@.20040125.tar.bz2

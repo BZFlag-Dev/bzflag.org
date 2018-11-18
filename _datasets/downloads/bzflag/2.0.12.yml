@@ -26,6 +26,6 @@ changelog: |
 date: '2008-06-25'
 downloads:
     source:
-        - filename: bzflag-2.0.12.zip
-        - filename: bzflag-2.0.12.tar.gz
-        - filename: bzflag-2.0.12.tar.bz2
+        - filename: bzflag-@VER@.zip
+        - filename: bzflag-@VER@.tar.gz
+        - filename: bzflag-@VER@.tar.bz2

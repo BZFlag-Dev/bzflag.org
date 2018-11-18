@@ -43,4 +43,4 @@ downloads:
         - filename: bzflag.17e4_o32.tardist
         - filename: bzflag.17e4_n32.tardist
     source:
-        - filename: bzflag-1.7e4.tgz
+        - filename: bzflag-@VER@.tgz

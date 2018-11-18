@@ -19,13 +19,13 @@ changelog: |
 date: '2004-05-14'
 downloads:
     windows:
-        - filename: bzflag-1.10.6-1.W32_high_res.exe
-        - filename: bzflag-1.10.6-1.W32.exe
+        - filename: bzflag-@VER@-1.W32_high_res.exe
+        - filename: bzflag-@VER@-1.W32.exe
     macos:
-        - filename: BZFlag_1.10.6.dmg
+        - filename: BZFlag_@VER@.dmg
     irix:
-        - filename: bzflag-1.10.6_n32.tar.gz
+        - filename: bzflag-@VER@_n32.tar.gz
     source:
-        - filename: bzflag-1.10.6.20040515.tar.gz
-        - filename: bzflag-1.10.6.20040615.zip
-        - filename: bzflag-1.10.6.20040515.tar.bz2
+        - filename: bzflag-@VER@.20040515.tar.gz
+        - filename: bzflag-@VER@.20040615.zip
+        - filename: bzflag-@VER@.20040515.tar.bz2

@@ -30,10 +30,10 @@ changelog: |
 date: '2003-12-23'
 downloads:
     windows:
-        - filename: bzflag-1.10.2-1.W32.exe
+        - filename: bzflag-@VER@-1.W32.exe
     macos:
-        - filename: BZFlag_1.10.2.dmg
+        - filename: BZFlag_@VER@.dmg
     source:
-        - filename: bzflag-1.10.2.zip
-        - filename: bzflag-1.10.2.tar.gz
-        - filename: bzflag-1.10.2.tar.bz2
+        - filename: bzflag-@VER@.zip
+        - filename: bzflag-@VER@.tar.gz
+        - filename: bzflag-@VER@.tar.bz2

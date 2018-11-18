@@ -38,10 +38,10 @@ changelog: |
 date: '2018-05-02'
 downloads:
     windows:
-        - filename: bzflag-2.4.14.exe
+        - filename: bzflag-@VER@.exe
     macos:
-        - filename: BZFlag-2.4.14-macOS.zip
+        - filename: BZFlag-@VER@-macOS.zip
     source:
-        - filename: bzflag-2.4.14.tar.bz2
-        - filename: bzflag-2.4.14.tar.gz
-        - filename: bzflag-2.4.14.zip
+        - filename: bzflag-@VER@.tar.bz2
+        - filename: bzflag-@VER@.tar.gz
+        - filename: bzflag-@VER@.zip

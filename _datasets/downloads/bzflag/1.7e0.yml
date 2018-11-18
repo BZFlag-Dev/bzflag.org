@@ -21,4 +21,4 @@ downloads:
     windows:
         - filename: bzflag17e0.exe
     source:
-        - filename: bzflag-1.7e0.tgz
+        - filename: bzflag-@VER@.tgz

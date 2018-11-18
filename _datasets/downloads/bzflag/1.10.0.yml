@@ -68,9 +68,9 @@ changelog: |
 date: '2003-12-09'
 downloads:
     windows:
-        - filename: bzflag-1.10.0-1.W32.exe
+        - filename: bzflag-@VER@-1.W32.exe
     macos:
-        - filename: BZFlag_1.10.0.dmg
+        - filename: BZFlag_@VER@.dmg
     source:
         - filename: bzflag-1.10.20031209.zip
         - filename: bzflag-1.10.20031209.tar.gz

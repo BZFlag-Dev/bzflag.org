@@ -67,10 +67,10 @@ changelog: |
 date: '2007-11-16'
 downloads:
     windows:
-        - filename: bzflag-2.0.10.exe
+        - filename: bzflag-@VER@.exe
     macos:
-        - filename: BZFlag-2.0.10.dmg
+        - filename: BZFlag-@VER@.dmg
     source:
-        - filename: bzflag-2.0.10.zip
-        - filename: bzflag-2.0.10.tar.gz
-        - filename: bzflag-2.0.10.tar.bz2
+        - filename: bzflag-@VER@.zip
+        - filename: bzflag-@VER@.tar.gz
+        - filename: bzflag-@VER@.tar.bz2

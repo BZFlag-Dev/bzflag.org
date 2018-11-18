@@ -12,6 +12,6 @@ downloads:
         - filename: bzflag17e2.exe
     irix:
         - filename: bzflag.17e2_o32.tardist
-        - filename: bzflag-1.7e2_n32.tardist
+        - filename: bzflag-@VER@_n32.tardist
     source:
-        - filename: bzflag-1.7e2.tgz
+        - filename: bzflag-@VER@.tgz
