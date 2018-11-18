@@ -1,4 +1,5 @@
 version: 2.0.0
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=2669
 codename: "Falcor's Despair"
 changelog: |
     * Added a .desktop file - David Trowbridge

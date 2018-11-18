@@ -1,4 +1,5 @@
 version: 2.4.12
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19720
 codename: 'Silence is Golden'
 changesummary: |
     This release had a few additional features and some minor fixes.

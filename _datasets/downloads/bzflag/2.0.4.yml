@@ -1,4 +1,5 @@
 version: 2.0.4
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=5405
 codename: 'Shiny'
 changelog: |
     * Fixed server join bug when cached worlds disappear - Sean Morrison

@@ -1,4 +1,5 @@
 version: 2.4.18
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=20030
 codename: 'Can You Hear What I Hear?'
 changesummary: |
     This release just fixes audio on Windows.

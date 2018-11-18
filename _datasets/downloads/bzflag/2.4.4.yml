@@ -1,4 +1,5 @@
 version: 2.4.4
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19186
 codename: 'Be My Valentank'
 changesummary: |
     This release encompasses several years of effort and a variety of fixes and improvements. Some of the more notable changes are as follows:

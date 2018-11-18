@@ -1,4 +1,5 @@
 version: 2.4.8
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19294
 codename: 'Sixteen'
 changesummary: |
     This release just had some more minor fixes

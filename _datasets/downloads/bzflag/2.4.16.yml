@@ -1,4 +1,5 @@
 version: 2.4.16
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=20026
 codename: 'Reduce, Reuse, Replay'
 changesummary: |
     This release primarily fixes a bug introduced in 2.4.14 that corrupted replay file headers. This release reverts that change, and can also read the corrupted header for replays made with the bad code.

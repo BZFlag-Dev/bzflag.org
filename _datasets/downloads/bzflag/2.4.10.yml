@@ -1,4 +1,5 @@
 version: 2.4.10
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19401
 codename: 'This is How We Roll'
 changesummary: |
     This release had a few additional features and some minor fixes.

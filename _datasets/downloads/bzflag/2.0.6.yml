@@ -1,4 +1,5 @@
 version: 2.0.6
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=7613
 codename: 'Good enough for now'
 changelog: |
     * game variables no longer accept invalid values. - Jeff Myers

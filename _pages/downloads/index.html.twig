@@ -17,6 +17,10 @@ metadescription: BZFlag is available as a free download. Pre-built packages are 
 
         {{ latest_release.changesummary }}
 
+        {% if latest_release.discussion -%}
+            [Join the discussion &raquo;]({{ latest_release.discussion }})
+        {%- endif %}
+
         ## Changelog
 
         {{ latest_release.changelog }}

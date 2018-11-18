@@ -1,4 +1,5 @@
 version: 2.0.14
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=16031
 codename: "This isn't the release you are looking for."
 changelog: |
     * Add Options -> Display -> AntiFlicker option - trepan

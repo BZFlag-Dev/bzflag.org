@@ -1,4 +1,5 @@
 version: 2.4.6
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19241
 codename: 'Eight, Our Codebase is Overweight'
 changesummary: |
     This release consists of a few new features for clients and fixes issues on Windows 10 with AMD drivers.

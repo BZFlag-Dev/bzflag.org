@@ -1,4 +1,5 @@
 version: 2.0.8
+discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=7942
 codename: "Oops, Happy Mother's Day"
 changelog: |
     * Add a plugin to record matches - Jeff Myers.
