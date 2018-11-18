@@ -1,79 +1,79 @@
 code {
-  background-color: black;
-  color: #AAAAAA;
-  padding-left: 3px;
-  padding-right: 3px;
+    background-color: black;
+    color: #aaaaaa;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 pre {
-  padding: 3px;
-  background-color: black;
-  white-space: pre;
-  word-wrap: break-word;
-  margin: 0.7em 1em;
+    padding: 3px;
+    background-color: black;
+    white-space: pre;
+    word-wrap: break-word;
+    margin: 0.7em 1em;
 }
 
 .pre {
-  font-family: monospace;
+    font-family: monospace;
 }
 
 pre code {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: pre-wrap;
-  padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: pre-wrap;
+    padding: 0;
 }
 
 code.hljs {
-  white-space: pre;
-  overflow-x: scroll;
+    white-space: pre;
+    overflow-x: scroll;
 }
 
 kbd {
-  display: inline-block;
-  padding: 0 0.5em;
-  font-weight: bold;
-  font-family: sans-serif;
-  color: black;
-  background-color: white;
-  border: 1px solid black;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 4px;
-  white-space: nowrap;
+    display: inline-block;
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 4px;
+    white-space: nowrap;
 }
 
 table {
-  border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 table p {
-  margin: 0;
+    margin: 0;
 }
 
 table td {
-  border: 1px solid #8e8e8e;
-  padding: 10px;
+    border: 1px solid #8e8e8e;
+    padding: 10px;
 }
 
 table th {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 table td:first-child {
-  border-left-color: transparent;
+    border-left-color: transparent;
 }
 
 table td:last-child {
-  border-right-color: transparent;
+    border-right-color: transparent;
 }
 
 table tr:last-child td {
-  border-bottom-color: transparent;
+    border-bottom-color: transparent;
 }
 
 .since {
-  background: #111;
-  border-radius: 4px;
-  padding: 4px;
+    background: #111;
+    border-radius: 4px;
+    padding: 4px;
 }

@@ -1,22 +1,22 @@
 .site-header {
-  background: scrim-gradient();
-  position: relative;
+    background: scrim-gradient();
+    position: relative;
 
-  a {
-    text-shadow: 0 1px 10px rgba(0,0,0,.5), 0 0 30px rgba(0,0,0,.9)
-  }
+    a {
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 0, 0, 0.9);
+    }
 }
 
 .site-header__brand {
-  align-items: center;
-  display: flex;
+    align-items: center;
+    display: flex;
 
-  img {
-    margin-right: 5px;
-    width: 30px;
-  }
+    img {
+        margin-right: 5px;
+        width: 30px;
+    }
 
-  span {
-    font-size: 1.5em;
-  }
+    span {
+        font-size: 1.5em;
+    }
 }

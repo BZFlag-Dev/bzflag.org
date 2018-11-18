@@ -1,3 +1,4 @@
+///
 /// A mixin that will create versions of a class for each breakpoint
 ///
 /// @access public
@@ -24,21 +25,21 @@
 ///   @media (min-width: 992px) {
 ///       .text-left-lg { text-align: left; }
 ///   }
-
+///
 @mixin responsify($name, $placeholders: ()) {
-  @each $bp in map-keys($breakpoints) {
-    $className: $name;
+    @each $bp in map-keys($breakpoints) {
+        $className: $name;
 
-    @each $placeholder, $value in $placeholders {
-      $className: str-replace($className, '%' + $placeholder, $value);
+        @each $placeholder, $value in $placeholders {
+            $className: str-replace($className, '%' + $placeholder, $value);
+        }
+
+        $className: str-replace($className, '%infix', if($bp == 'xs', '', '-' + $bp));
+
+        @include respond-up($bp) {
+            #{$className} {
+                @content;
+            }
+        }
     }
-
-    $className: str-replace($className, '%infix', if($bp == 'xs', '', '-' + $bp));
-
-    @include respond-up($bp) {
-      #{$className} {
-        @content;
-      }
-    }
-  }
 }

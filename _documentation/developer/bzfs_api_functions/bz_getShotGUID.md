@@ -2,18 +2,17 @@
 since: 2.4.4
 category: Shot Management
 signatures:
-  -
-    - dataType: int
-      name: fromPlayer
-      description: The player ID who fired the shot
-      default: ~
-    - dataType: int
-      name: shotID
-      description: The local shot ID relative to the player
-      default: ~
+    - - dataType: int
+        name: fromPlayer
+        description: The player ID who fired the shot
+        default: ~
+      - dataType: int
+        name: shotID
+        description: The local shot ID relative to the player
+        default: ~
 returns:
-  dataType: uint32_t
-  description: The GUID for the shot; 0 if the shot does not exist
+    dataType: uint32_t
+    description: The GUID for the shot; 0 if the shot does not exist
 ---
 
 Get the globally unique identifier (GUID) for the specified shot.

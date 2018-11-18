@@ -7,36 +7,33 @@ permalink: /credits/
 {% extends "_layouts/page.html.twig" %}
 
 {% block content %}
-    <h1>Credits</h1>
-    <p>This website uses various third-party resources. These are documented here.</p>
+    {% markdown %}
+        # Credits
 
-    <h2>Graphics</h2>
+        This website uses various third-party resources. These are documented here.
 
-    <ul>
-      <li>The BZFlag logo (the red tank icon) and the favicon (the blue tank icon) is copyright Tim Riker and licensed under the LGPL.</li>
-      <li>Operating system logos are copyright and/or trademark their respective owners.</li>
-      <li><a href="https://thenounproject.com/icon/147531/">Megaphone by Creative Stall</a> from the Noun Project - CC-BY 3.0 US License</li>
-      <li><a href="https://thenounproject.com/icon/83827/">debug by Lemon Liu</a> from the Noun Project - CC-BY 3.0 US License</li>
-      <li><a href="https://thenounproject.com/icon/1230262/">Book by Deemak Daksina</a> from the Noun Project - CC-BY 3.0 US License</li>
-      <li><a href="https://thenounproject.com/icon/790491/">FAQ by ProSymbols</a> from the Noun Project - CC-BY 3.0 US License</li>
-      <li><a href="https://thenounproject.com/icon/888687/">chat icon</a> from the Starter Icons Collection from the Noun Project - Public Domain</li>
-      <li><a href="https://thenounproject.com/term/apple/1426926/">Apple by zidney</a> from the Noun Project - CC-BY 3.0 US License</li>
-      <li><a href="https://commons.wikimedia.org/wiki/File:Windows_logo_-_2012.svg">Windows Logo</a> - Public Domain</li>
-    </ul>
+        ## Graphics
 
-    <h2>JavaScript</h2>
+        - The BZFlag logo (the red tank icon) and the favicon (the blue tank icon) is copyright Tim Riker and licensed under the LGPL.
+        - Operating system logos are copyright and/or trademark their respective owners.
+        - [Megaphone by Creative Stall](https://thenounproject.com/icon/147531/) from the Noun Project - CC-BY 3.0 US License
+        - [debug by Lemon Liu](https://thenounproject.com/icon/83827/) from the Noun Project - CC-BY 3.0 US License
+        - [Book by Deemak Daksina](https://thenounproject.com/icon/1230262/) from the Noun Project - CC-BY 3.0 US License
+        - [FAQ by ProSymbols](https://thenounproject.com/icon/790491/) from the Noun Project - CC-BY 3.0 US License
+        - [chat icon](https://thenounproject.com/icon/888687/) from the Starter Icons Collection from the Noun Project - Public Domain
+        - [Apple by zidney](https://thenounproject.com/term/apple/1426926/) from the Noun Project - CC-BY 3.0 US License
+        - [Windows Logo](https://commons.wikimedia.org/wiki/File:Windows_logo_-_2012.svg) - Public Domain
 
-    <ul>
-      <li><a href="https://mootools.net/">MooTools</a> - MIT License</li>
-      <li><a href="http://ryanflorence.com/slideshow/">MooTools SlideShow</a> - MIT License</li>
-      <li><a href="https://mootools.net/forge/p/loop">Loop</a> - MIT License</li>
-      <li><a href="https://web.archive.org/web/20150916150833/http://reghellin.com:80/milkbox/">Milkbox</a> - MIT License</li>
-      <li><a href="https://github.com/selz/plyr">Plyr</a> - MIT License</li>
-    </ul>
+        ## JavaScript
 
-    <h2>Other</h2>
+        - [MooTools](https://mootools.net/) - MIT License
+        - [MooTools SlideShow](http://ryanflorence.com/slideshow/) - MIT License
+        - [Loop](https://mootools.net/forge/p/loop) - MIT License
+        - [Milkbox](https://web.archive.org/web/20150916150833/http://reghellin.com:80/milkbox/) - MIT License
+        - [Plyr](https://github.com/selz/plyr) - MIT License
 
-    <ul>
-      <li><a href="https://highlightjs.org/">highlight.js (just the monokai.css file for styling)</a> - BSD 3-Clause "New" or "Revised" License</li>
-    </ul>
+        ## Other
+
+        - [highlight.js (just the monokai.css file for styling)](https://highlightjs.org/) - BSD 3-Clause "New" or "Revised" License
+    {% endmarkdown %}
 {% endblock %}

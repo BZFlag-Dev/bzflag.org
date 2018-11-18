@@ -1,24 +1,19 @@
 version: 2.0.8
 codename: "Oops, Happy Mother's Day"
 changelog: |
-  * Add a plugin to record matches - Jeff Myers.
-  * Add an option to send out a UDP heartbeat message for observers behind flakey routers - Jeff Myers
-  * Replaced admin message sound - Sean Morrison
-  * Client and server now close http connections correctly - Daniel Remenak
-  * Fixed crash when rogue autopilot picks up a team flag - Daniel Remenak
-  * Fixed spawnpoint selection regression - Sean Morrison
+    * Add a plugin to record matches - Jeff Myers.
+    * Add an option to send out a UDP heartbeat message for observers behind flakey routers - Jeff Myers
+    * Replaced admin message sound - Sean Morrison
+    * Client and server now close http connections correctly - Daniel Remenak
+    * Fixed crash when rogue autopilot picks up a team flag - Daniel Remenak
+    * Fixed spawnpoint selection regression - Sean Morrison
 date: '2006-05-13'
 downloads:
     windows:
-        -
-            filename: bzflag-2.0.8.exe
+        - filename: bzflag-2.0.8.exe
     macos:
-        -
-            filename: BZFlag-2.0.8.dmg
+        - filename: BZFlag-2.0.8.dmg
     source:
-        -
-            filename: bzflag-2.0.8.tar.gz
-        -
-            filename: bzflag-2.0.8.zip
-        -
-            filename: bzflag-2.0.8.tar.bz2
+        - filename: bzflag-2.0.8.tar.gz
+        - filename: bzflag-2.0.8.zip
+        - filename: bzflag-2.0.8.tar.bz2

@@ -2,14 +2,13 @@
 since: 2.4.0
 category: Player Records
 signatures:
-  -
-    - dataType: const char*
-      description: "The callsign of a player or the slot number (e.g. #2) of the player **with** the pound sign (#)"
-      name: name
-      default: ~
+    - - dataType: const char*
+        description: 'The callsign of a player or the slot number (e.g. #2) of the player **with** the pound sign (#)'
+        name: name
+        default: ~
 returns:
-  dataType: bz_BasePlayerRecord*
-  description: A pointer to the player record or NULL
+    dataType: bz_BasePlayerRecord*
+    description: A pointer to the player record or NULL
 ---
 
 {% from '_includes/api_utils.html.twig' import api_object %}

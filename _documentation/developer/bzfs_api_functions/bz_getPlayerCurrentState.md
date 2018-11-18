@@ -2,18 +2,17 @@
 since: 2.4.0
 category: Player State
 signatures:
-  -
-    - dataType: int
-      description: The id of the player to target
-      name: playerID
-      default: ~
-    - dataType: bz_PlayerUpdateState
-      description: A reference to a bz_PlayerUpdateState object to put the player state information into.
-      name: "&state"
-      default: ~
+    - - dataType: int
+        description: The id of the player to target
+        name: playerID
+        default: ~
+      - dataType: bz_PlayerUpdateState
+        description: A reference to a bz_PlayerUpdateState object to put the player state information into.
+        name: '&state'
+        default: ~
 returns:
-  dataType: void
-  description: ~
+    dataType: void
+    description: ~
 ---
 
 Gets the specified player's current state. This includes information about how fast they're traveling, if they're in the air, if they're rotating, and more.

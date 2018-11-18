@@ -1,34 +1,32 @@
 version: '1.7e1'
 changelog: |
-  * optional UDP unicast networking, back-compatible w/ old TCP method - frank
-  * GM now leave smoke trail - frank
-  * Explosions are larger - frank
-  * Scrollback and Line wrap (use pageup/down keys) - Digit1
-  * radar tank dots are larger - frank
-  * robots have playerxx names and player's email - Tim Riker
-  * colorize console messages - Tim Riker
-  * robots score when killing 'owner' - Frank Thilo
-  * flags under high buildings - Jeremiah Moss
-  * "world" section in world from file - Jeremiah Moss
-  * dim paused/nr tanks on radar - Frank Thilo
-  * fix bzfls for servers on non-5155 - Tim Riker
-  * pgup/pgdn support in help menu - Kris Verbeeck
-  * stop using signal() as suggested by Frank Thilo - Tim Riker
-  * Triple buffering support (actually n way buffering) - XiGraphics
-  * Joystick support - XiGraphics
-  * teleporter shot handling improved - chestal
-  * udp network code reworking to select() on one server port - Tim Riker
-  * rogue tank placement on enter - chestal
-  * pseudo variable height buildings in cf mode - Tim Riker
-  * don't drain and flush audio on solaris - frank
-  * alpha Macintosh port - Darrell Walisser
-  * quick message support - Kris Verbeeck
-  * /kick and /lagstats server messages, -passwd - Frank Thilo
+    * optional UDP unicast networking, back-compatible w/ old TCP method - frank
+    * GM now leave smoke trail - frank
+    * Explosions are larger - frank
+    * Scrollback and Line wrap (use pageup/down keys) - Digit1
+    * radar tank dots are larger - frank
+    * robots have playerxx names and player's email - Tim Riker
+    * colorize console messages - Tim Riker
+    * robots score when killing 'owner' - Frank Thilo
+    * flags under high buildings - Jeremiah Moss
+    * "world" section in world from file - Jeremiah Moss
+    * dim paused/nr tanks on radar - Frank Thilo
+    * fix bzfls for servers on non-5155 - Tim Riker
+    * pgup/pgdn support in help menu - Kris Verbeeck
+    * stop using signal() as suggested by Frank Thilo - Tim Riker
+    * Triple buffering support (actually n way buffering) - XiGraphics
+    * Joystick support - XiGraphics
+    * teleporter shot handling improved - chestal
+    * udp network code reworking to select() on one server port - Tim Riker
+    * rogue tank placement on enter - chestal
+    * pseudo variable height buildings in cf mode - Tim Riker
+    * don't drain and flush audio on solaris - frank
+    * alpha Macintosh port - Darrell Walisser
+    * quick message support - Kris Verbeeck
+    * /kick and /lagstats server messages, -passwd - Frank Thilo
 date: '2001-03-10'
 downloads:
     windows:
-        -
-            filename: bzflag17e1.exe
+        - filename: bzflag17e1.exe
     source:
-        -
-            filename: bzflag-1.7e1.tgz
+        - filename: bzflag-1.7e1.tgz

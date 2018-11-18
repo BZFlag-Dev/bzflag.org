@@ -1,23 +1,23 @@
 .site-footer {
-  a {
-    color: $color-text-primary;
-    font-size: 0.85em;
-    text-decoration: none;
-  }
+    a {
+        color: $color-text-primary;
+        font-size: 0.85em;
+        text-decoration: none;
+    }
 }
 
 .site-footer__links {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 
-  li {
-    display: inline-block;
+    li {
+        display: inline-block;
 
-    &:not(:last-child) {
-      &::after {
-        content: '•';
-        padding: 0 5px;
-      }
+        &:not(:last-child) {
+            &::after {
+                content: '•';
+                padding: 0 5px;
+            }
+        }
     }
-  }
 }

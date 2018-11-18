@@ -1,50 +1,46 @@
 version: '1.7e4'
 changelog: |
-  * ::memset() instead of bzero() - Björn Augustsson
-  * win32 audio thread fix for win2k - crs
-  * send to nemesis - Dave Brosius, Frank Thilo
-  * USB joystick support - Nick Sayer
-  * new (faster?) radar jamming code - Mathias Gumz
-  * sort by score - Colin Bayer, Dave Brosius, Tim Riker
-  * world file rad -> deg - Tim Riker
-  * add player flag display to HUD - Tim Riker (prompted by Colin Bayer)
-  * random height pyramids too - Tim Riker
-  * dim rogue color when blind - Colin Bayer
-  * colorize shots on radar - Colin Bayer
-  * keyboard movement - Pier Donini
-  * win32 connect thread - Valery Fouques
-  * new sounds - Dave Brosius
-  * warnings - Dave Brosius
-  * safer placement - Frank Thilo
-  * don't color shots when CB - Valery Fouques
-  * jump while typing - Valery Fouques
-  * don't lock on paused or not responding - Valery Fouques
-  * -lagdrop server option - Colin Bayer
-  * fix team flag display - Colin Bayer
-  * add rogue team and radar colors to config - Valery Fouques
-  * Shots as lines on radar - Valery Fouques, Tim Riker
-  * CTF world from file - Colin Bayer, Tim Riker
-  * patch playerIds to prepare for one tcp port - Tim Riker
-  * missile sound effect - Dave Brosius
-  * udp first then multicast, IRIX fix? (use -i <> for multicast) - Tim Riker
-  * enhanced radar - Jeremiah Moss
-  * don't relay read in player read - Frank Thilo, Tim Riker
-  * -fb flags on box buildings - Tim Riker, Colin Bayer
-  * networking code fixes - Tim Riker, Frank Thilo, etc.
-  * new admin commands - Tim Riker
-  * enhance SR - Tim Riker, Dave Brosius
-  * rotated/elevated bases - David Trowbridge, Tim Riker
-  * GM lock alert msg/sound - Tim Riker (prompted by Colin Bayer)
+    * ::memset() instead of bzero() - Björn Augustsson
+    * win32 audio thread fix for win2k - crs
+    * send to nemesis - Dave Brosius, Frank Thilo
+    * USB joystick support - Nick Sayer
+    * new (faster?) radar jamming code - Mathias Gumz
+    * sort by score - Colin Bayer, Dave Brosius, Tim Riker
+    * world file rad -> deg - Tim Riker
+    * add player flag display to HUD - Tim Riker (prompted by Colin Bayer)
+    * random height pyramids too - Tim Riker
+    * dim rogue color when blind - Colin Bayer
+    * colorize shots on radar - Colin Bayer
+    * keyboard movement - Pier Donini
+    * win32 connect thread - Valery Fouques
+    * new sounds - Dave Brosius
+    * warnings - Dave Brosius
+    * safer placement - Frank Thilo
+    * don't color shots when CB - Valery Fouques
+    * jump while typing - Valery Fouques
+    * don't lock on paused or not responding - Valery Fouques
+    * -lagdrop server option - Colin Bayer
+    * fix team flag display - Colin Bayer
+    * add rogue team and radar colors to config - Valery Fouques
+    * Shots as lines on radar - Valery Fouques, Tim Riker
+    * CTF world from file - Colin Bayer, Tim Riker
+    * patch playerIds to prepare for one tcp port - Tim Riker
+    * missile sound effect - Dave Brosius
+    * udp first then multicast, IRIX fix? (use -i <> for multicast) - Tim Riker
+    * enhanced radar - Jeremiah Moss
+    * don't relay read in player read - Frank Thilo, Tim Riker
+    * -fb flags on box buildings - Tim Riker, Colin Bayer
+    * networking code fixes - Tim Riker, Frank Thilo, etc.
+    * new admin commands - Tim Riker
+    * enhance SR - Tim Riker, Dave Brosius
+    * rotated/elevated bases - David Trowbridge, Tim Riker
+    * GM lock alert msg/sound - Tim Riker (prompted by Colin Bayer)
 date: '2001-11-27'
 downloads:
     windows:
-        -
-            filename: bzflag17e4.exe
+        - filename: bzflag17e4.exe
     irix:
-        -
-            filename: bzflag.17e4_o32.tardist
-        -
-            filename: bzflag.17e4_n32.tardist
+        - filename: bzflag.17e4_o32.tardist
+        - filename: bzflag.17e4_n32.tardist
     source:
-        -
-            filename: bzflag-1.7e4.tgz
+        - filename: bzflag-1.7e4.tgz

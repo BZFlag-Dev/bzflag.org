@@ -2,30 +2,29 @@
 since: 2.4.0
 category: Flag Management
 signatures:
-  -
-    - dataType: const char*
-      name: abbr
-      description: The desired flag abbreviation. Must be unique and be 1 or 2 characters
-      default: ~
-    - dataType: const char*
-      name: name
-      description: The desired flag name. Max length 32 characters
-      default: ~
-    - dataType: const char*
-      name: helpString
-      description: The desired help string. Max length 128 characters
-      default: ~
-    - dataType: bz_eShotType
-      name: shotType
-      description: The default shot type for the flag
-      default: ~
-    - dataType: bz_eFlagQuality
-      name: quality
-      description: The flag's quality (good/bad)
-      default: ~
+    - - dataType: const char*
+        name: abbr
+        description: The desired flag abbreviation. Must be unique and be 1 or 2 characters
+        default: ~
+      - dataType: const char*
+        name: name
+        description: The desired flag name. Max length 32 characters
+        default: ~
+      - dataType: const char*
+        name: helpString
+        description: The desired help string. Max length 128 characters
+        default: ~
+      - dataType: bz_eShotType
+        name: shotType
+        description: The default shot type for the flag
+        default: ~
+      - dataType: bz_eFlagQuality
+        name: quality
+        description: The flag's quality (good/bad)
+        default: ~
 returns:
-  dataType: bool
-  description: If the flag was registered successfully.
+    dataType: bool
+    description: If the flag was registered successfully.
 ---
 
 Create a custom flag type with its behavior defined by a plug-in.

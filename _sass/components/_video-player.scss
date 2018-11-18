@@ -1,13 +1,13 @@
 .c-video-player {
-  @extend .p-3;
-  @extend .p-md-4;
+    @extend .p-3;
+    @extend .p-md-4;
 
-  background-color: rgba(#000, 0.2);
-  box-shadow: $box-shadow;
+    background-color: rgba(#000, 0.2);
+    box-shadow: $box-shadow;
 }
 
 // plyr overrides
 
 .plyr__control--overlaid {
-  background: rgba(#000, 0.7);
+    background: rgba(#000, 0.7);
 }

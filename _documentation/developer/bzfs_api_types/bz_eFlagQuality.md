@@ -2,8 +2,8 @@
 since: 2.4.0
 category: Enumerations
 enumerations:
-  - eGoodFlag
-  - eBadFlag
+    - eGoodFlag
+    - eBadFlag
 ---
 
 The bz_eFlagQuality is used to define what type custom flags will be by default. The quality determines how the flag behaves when the player is holding it.

@@ -2,10 +2,10 @@
 since: 2.4.0
 category: Group Management
 signatures:
-  - []
+    - []
 returns:
-  dataType: bz_APIStringList*
-  description: A pointer to a string list containing the names of the loaded groups
+    dataType: bz_APIStringList*
+    description: A pointer to a string list containing the names of the loaded groups
 ---
 
 {% from '_includes/api_utils.html.twig' import api_object %}

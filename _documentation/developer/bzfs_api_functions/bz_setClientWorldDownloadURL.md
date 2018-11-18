@@ -2,14 +2,13 @@
 since: 2.4.0
 category: World Management
 signatures:
-  -
-    - dataType: const char*
-      name: URL
-      description: The URL to be sent to connecting clients for the cached map
-      default: ~
+    - - dataType: const char*
+        name: URL
+        description: The URL to be sent to connecting clients for the cached map
+        default: ~
 returns:
-  dataType: void
-  description: ~
+    dataType: void
+    description: ~
 ---
 
 {% from '_includes/api_utils.html.twig' import api_object %}

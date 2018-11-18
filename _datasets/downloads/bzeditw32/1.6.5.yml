@@ -3,8 +3,6 @@ changelog: ''
 date: '2005-07-08'
 downloads:
     windows:
-        -
-            filename: BZEditW32_1.6.5.exe
+        - filename: BZEditW32_1.6.5.exe
     source:
-        -
-            filename: BZEditW32_1.6.5_Source.zip
+        - filename: BZEditW32_1.6.5_Source.zip

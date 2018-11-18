@@ -2,35 +2,33 @@
 since: 2.4.0
 category: Chat Messages
 signatures:
-  -
-    - dataType: int
-      name: from
-      description: From who the message will be
-      default: ~
-    - dataType: int
-      name: to
-      description: The player ID that will be receiving the message. To send messages to all players, use the `BZ_ALLUSERS` constant.
-      default: ~
-    - dataType: const char*
-      name: message
-      description: The message to send
-      default: ~
-  -
-    - dataType: int
-      name: from
-      description: From who the message will be
-      default: ~
-    - dataType: bz_eTeamType
-      name: to
-      description: The team to send the message to
-      default: ~
-    - dataType: const char*
-      name: message
-      description: The message to send
-      default: ~
+    - - dataType: int
+        name: from
+        description: From who the message will be
+        default: ~
+      - dataType: int
+        name: to
+        description: The player ID that will be receiving the message. To send messages to all players, use the `BZ_ALLUSERS` constant.
+        default: ~
+      - dataType: const char*
+        name: message
+        description: The message to send
+        default: ~
+    - - dataType: int
+        name: from
+        description: From who the message will be
+        default: ~
+      - dataType: bz_eTeamType
+        name: to
+        description: The team to send the message to
+        default: ~
+      - dataType: const char*
+        name: message
+        description: The message to send
+        default: ~
 returns:
-  dataType: bool
-  description: Returns false if the message failed to send
+    dataType: bool
+    description: Returns false if the message failed to send
 ---
 
 Send a message to a player or team.

@@ -1,13 +1,13 @@
 links:
-  - url: /
-    name: Home
-  - url: /media/
-    name: Media
-  - url: /downloads/
-    name: Downloads
-  - url: https://forums.bzflag.org
-    name: Forums
-  - url: /documentation
-    name: Documentation
-  - url: /help/
-    name: Help
+    - url: /
+      name: Home
+    - url: /media/
+      name: Media
+    - url: /downloads/
+      name: Downloads
+    - url: https://forums.bzflag.org
+      name: Forums
+    - url: /documentation
+      name: Documentation
+    - url: /help/
+      name: Help

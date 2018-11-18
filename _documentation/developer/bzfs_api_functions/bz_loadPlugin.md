@@ -2,18 +2,17 @@
 since: 2.4.0
 category: Plug-in Management
 signatures:
-  -
-    - dataType: const char*
-      name: path
-      description: ~
-      default: ~
-    - dataType: const char*
-      name: params
-      description: ~
-      default: ~
+    - - dataType: const char*
+        name: path
+        description: ~
+        default: ~
+      - dataType: const char*
+        name: params
+        description: ~
+        default: ~
 returns:
-  dataType: bool
-  description: ~
+    dataType: bool
+    description: ~
 ---
 
 This function needs a description. Please feel free to contribute a description to this function.

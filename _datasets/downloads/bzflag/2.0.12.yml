@@ -1,34 +1,31 @@
 version: 2.0.12
 codename: 'The release without a name.'
 changelog: |
-  * Fix build with -ffast-math avoiding use of isnan for fog - Alfredo Tupone
-  * libGLEW requirement controlled by --with-glew - Alfredo Tupone
-  * Actually build with SDL_Image, if required - Alfredo Tupone
-  * Remove extra dir separator from cache entries - Jeff Myers
-  * Configurable "defaultFOV" (60 deg) for widescreen users - Jeff Myers
-  * Adjust shown coordinate for observers - Jeff Myers
-  * Use the foghack only if the config says - Jeff Myers
-  * Queue spawns after flag captures - l4m3rthanyou, pacman97
-  * Fix kill callback when is coming from server - Jeff Myers
-  * Fix intermix of chat messages and api callback - Jeff Myers
-  * Various permission fixes - Jeff Myers
-  * Plugins path fixed - Jeff Makey
-  * Kerberos and thread removed (never used) - Alfredo Tupone
-  * Event log fixed - Jeff Myers
-  * Workaround to a driver bug - Jeff Myers
-  * Correctly interface with c-ares 1.5.1 and lower - Alfredo Tupone
-  * Not showing a "new rabbit" message when player ID == NoPlayer - Scott Wichser
-  * gcc-4.3 fixes - Tim Riker, Alfredo Tupone
-  * MacOSX: Consistent search of resource files - Sean Morrison
-  * MacOSX: update the project to XCode 2.4.1 - Sean Morrison
-  * Added _countdownResumeDelay to control resume delay. - Thomas Stauer
-  * Slot numbers on scoreboard now appear regardless of hideAdmin - Joshua Bodine
+    * Fix build with -ffast-math avoiding use of isnan for fog - Alfredo Tupone
+    * libGLEW requirement controlled by --with-glew - Alfredo Tupone
+    * Actually build with SDL_Image, if required - Alfredo Tupone
+    * Remove extra dir separator from cache entries - Jeff Myers
+    * Configurable "defaultFOV" (60 deg) for widescreen users - Jeff Myers
+    * Adjust shown coordinate for observers - Jeff Myers
+    * Use the foghack only if the config says - Jeff Myers
+    * Queue spawns after flag captures - l4m3rthanyou, pacman97
+    * Fix kill callback when is coming from server - Jeff Myers
+    * Fix intermix of chat messages and api callback - Jeff Myers
+    * Various permission fixes - Jeff Myers
+    * Plugins path fixed - Jeff Makey
+    * Kerberos and thread removed (never used) - Alfredo Tupone
+    * Event log fixed - Jeff Myers
+    * Workaround to a driver bug - Jeff Myers
+    * Correctly interface with c-ares 1.5.1 and lower - Alfredo Tupone
+    * Not showing a "new rabbit" message when player ID == NoPlayer - Scott Wichser
+    * gcc-4.3 fixes - Tim Riker, Alfredo Tupone
+    * MacOSX: Consistent search of resource files - Sean Morrison
+    * MacOSX: update the project to XCode 2.4.1 - Sean Morrison
+    * Added _countdownResumeDelay to control resume delay. - Thomas Stauer
+    * Slot numbers on scoreboard now appear regardless of hideAdmin - Joshua Bodine
 date: '2008-06-25'
 downloads:
     source:
-        -
-            filename: bzflag-2.0.12.zip
-        -
-            filename: bzflag-2.0.12.tar.gz
-        -
-            filename: bzflag-2.0.12.tar.bz2
+        - filename: bzflag-2.0.12.zip
+        - filename: bzflag-2.0.12.tar.gz
+        - filename: bzflag-2.0.12.tar.bz2

@@ -1,67 +1,67 @@
 $_default-nav-breakpoint: 'lg';
 
 .c-hamburger {
-  position: absolute;
-  right: 0;
-  top: 0;
-  
-  @include respond-up($_default-nav-breakpoint) {
-    display: none;
-  }
+    position: absolute;
+    right: 0;
+    top: 0;
 
-  &[aria-expanded="true"] ~ nav .site-navigation__links {
-    display: block;
-  }
+    @include respond-up($_default-nav-breakpoint) {
+        display: none;
+    }
+
+    &[aria-expanded='true'] ~ nav .site-navigation__links {
+        display: block;
+    }
 }
 
 .site-navigation {
-  text-align: right;
+    text-align: right;
 }
 
 .site-navigation__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-  @include respond-down($_default-nav-breakpoint) {
-    margin-top: 15px;
-    text-align: left;
-  }
-
-  @include respond-up($_default-nav-breakpoint) {
-    display: block !important;
-  }
-
-  li {
     @include respond-down($_default-nav-breakpoint) {
-      border-top: $border-default;
-      padding-bottom: 10px;
-      padding-top: 10px;
+        margin-top: 15px;
+        text-align: left;
     }
 
     @include respond-up($_default-nav-breakpoint) {
-      display: inline-block;
-      font-size: 1.1em;
-      margin-left: 15px;
+        display: block !important;
     }
 
-    &:first-child {
-      margin-left: 0;
-    }
-  }
+    li {
+        @include respond-down($_default-nav-breakpoint) {
+            border-top: $border-default;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
 
-  a {
-    color: $color-text-primary;
-    text-decoration: none;
-  }
+        @include respond-up($_default-nav-breakpoint) {
+            display: inline-block;
+            font-size: 1.1em;
+            margin-left: 15px;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    a {
+        color: $color-text-primary;
+        text-decoration: none;
+    }
 }
 
 // Only "collapse" our menu links if we have JavaScript enabled to "expand" them
 .js .site-navigation__links {
-  display: none;
+    display: none;
 }
 
 // If JS is disabled, we'd have no way to expand our links so hide the menu toggle button
 .no-js .c-hamburger {
-  display: none;
+    display: none;
 }

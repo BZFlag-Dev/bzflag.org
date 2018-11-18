@@ -1,38 +1,31 @@
 version: 1.10.6
 codename: 'the little hop'
 changelog: |
-  * Fixed the little hop on spawn at some sites - Alfredo Tupone
-  * Fixed issue of players add/removing others from groups - Alfredo Tupone
-  * Fixed false positive filter matches involving apostrophes - Sean Morrison
-  * Curing ghost/duplicated/ungettable flag - Alfredo Tupone
-  * Fixed 0 height flag, no more flags inside buildings - Alfredo Tupone
-  * Observers see Masquerade tank with their true color - Alfredo Tupone
-  * Password file now supports callsigns with non alphanumerics - Alfredo Tupone
-  * Support for building BZAdmin with PDCurses on Windows - Daniel Remenak
-  * Correctly read PNG textures with multiple IDAT chunks - Daniel Remenak
-  * Add aggressive filtering support for all platforms - Sean Morrison
-  * bans based on hostmask (/hostban, ...) when adns is available - Nils McCarthy
-  * Fixed bug that allowed empty callsigns - Frank Thilo
-  * server option to disallow autopilot - Nils McCarthy
-  * Bots drive around corners faster - Frank Thilo
-  * Bots aim better, try to evade shots - Frank Thilo
+    * Fixed the little hop on spawn at some sites - Alfredo Tupone
+    * Fixed issue of players add/removing others from groups - Alfredo Tupone
+    * Fixed false positive filter matches involving apostrophes - Sean Morrison
+    * Curing ghost/duplicated/ungettable flag - Alfredo Tupone
+    * Fixed 0 height flag, no more flags inside buildings - Alfredo Tupone
+    * Observers see Masquerade tank with their true color - Alfredo Tupone
+    * Password file now supports callsigns with non alphanumerics - Alfredo Tupone
+    * Support for building BZAdmin with PDCurses on Windows - Daniel Remenak
+    * Correctly read PNG textures with multiple IDAT chunks - Daniel Remenak
+    * Add aggressive filtering support for all platforms - Sean Morrison
+    * bans based on hostmask (/hostban, ...) when adns is available - Nils McCarthy
+    * Fixed bug that allowed empty callsigns - Frank Thilo
+    * server option to disallow autopilot - Nils McCarthy
+    * Bots drive around corners faster - Frank Thilo
+    * Bots aim better, try to evade shots - Frank Thilo
 date: '2004-05-14'
 downloads:
     windows:
-        -
-            filename: bzflag-1.10.6-1.W32_high_res.exe
-        -
-            filename: bzflag-1.10.6-1.W32.exe
+        - filename: bzflag-1.10.6-1.W32_high_res.exe
+        - filename: bzflag-1.10.6-1.W32.exe
     macos:
-        -
-            filename: BZFlag_1.10.6.dmg
+        - filename: BZFlag_1.10.6.dmg
     irix:
-        -
-            filename: bzflag-1.10.6_n32.tar.gz
+        - filename: bzflag-1.10.6_n32.tar.gz
     source:
-        -
-            filename: bzflag-1.10.6.20040515.tar.gz
-        -
-            filename: bzflag-1.10.6.20040615.zip
-        -
-            filename: bzflag-1.10.6.20040515.tar.bz2
+        - filename: bzflag-1.10.6.20040515.tar.gz
+        - filename: bzflag-1.10.6.20040615.zip
+        - filename: bzflag-1.10.6.20040515.tar.bz2

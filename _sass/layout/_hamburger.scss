@@ -1,92 +1,90 @@
 // Courtesy of http://callmenick.com/post/animating-css-only-hamburger-menu-icons
 
 .c-hamburger {
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  cursor: pointer;
-  display: block;
-  height: $hamburger-height;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  transition:
-    background $hamburger-transistion-duration,
-    left $hamburger-transistion-duration;
-  width: $hamburger-width;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    height: $hamburger-height;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    transition: background $hamburger-transistion-duration, left $hamburger-transistion-duration;
+    width: $hamburger-width;
 }
 
 .c-hamburger span {
-  background: $hamburger-color;
-  display: block;
-  height: $hamburger-bar-thickness;
-  left: $hamburger-padding;
-  position: absolute;
-  right: $hamburger-padding;
-  top: ($hamburger-height / 2) - ($hamburger-bar-thickness / 2);
+    background: $hamburger-color;
+    display: block;
+    height: $hamburger-bar-thickness;
+    left: $hamburger-padding;
+    position: absolute;
+    right: $hamburger-padding;
+    top: ($hamburger-height / 2) - ($hamburger-bar-thickness / 2);
 }
 
 .c-hamburger span::before,
 .c-hamburger span::after {
-  background-color: $hamburger-color;
-  content: "";
-  display: block;
-  height: $hamburger-bar-thickness;
-  left: 0;
-  position: absolute;
-  width: 100%;
+    background-color: $hamburger-color;
+    content: '';
+    display: block;
+    height: $hamburger-bar-thickness;
+    left: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .c-hamburger span::before {
-  top: -$hamburger-bar-thickness - $hamburger-bar-padding;
+    top: -$hamburger-bar-thickness - $hamburger-bar-padding;
 }
 
 .c-hamburger span::after {
-  bottom: -$hamburger-bar-thickness - $hamburger-bar-padding;
+    bottom: -$hamburger-bar-thickness - $hamburger-bar-padding;
 }
 
 // Hamburger to "x"
 
 .c-hamburger--htx span {
-  transition: background 0s $hamburger-transistion-duration;
+    transition: background 0s $hamburger-transistion-duration;
 }
 
 .c-hamburger--htx span::before,
 .c-hamburger--htx span::after {
-  transition-duration: $hamburger-transistion-duration, $hamburger-transistion-duration;
-  transition-delay: $hamburger-transistion-duration, 0s;
+    transition-duration: $hamburger-transistion-duration, $hamburger-transistion-duration;
+    transition-delay: $hamburger-transistion-duration, 0s;
 }
 
 .c-hamburger--htx span::before {
-  transition-property: top, transform;
+    transition-property: top, transform;
 }
 
 .c-hamburger--htx span::after {
-  transition-property: bottom, transform;
+    transition-property: bottom, transform;
 }
 
 // Active state, i.e. menu open
 
 .c-hamburger--htx {
-  &[aria-expanded="true"] {
-    span {
-      background: none;
+    &[aria-expanded='true'] {
+        span {
+            background: none;
 
-      &::before {
-        top: 0;
-        transform: rotate(45deg);
-      }
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+            }
 
-      &::after {
-        bottom: 0;
-        transform: rotate(-45deg);
-      }
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
 
-      &::before,
-      &::after {
-        transition-delay: 0s, $hamburger-transistion-duration;
-      }
+            &::before,
+            &::after {
+                transition-delay: 0s, $hamburger-transistion-duration;
+            }
+        }
     }
-  }
 }

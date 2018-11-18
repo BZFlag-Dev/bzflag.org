@@ -1,51 +1,47 @@
 version: 2.4.14
 codename: 'Hello Motto'
 changesummary: |
-  This release had several fixes and some new features.
-  - The mute/kill/kick/ban messages no longer display admin callsigns, and the ban message shows the remaining ban time.
-  - World weapon API has been revamped, including new bz_eServerShotFiredEvent and bz_eAllowServerShotFiredEvent events.
-  - New showMotto permission to control which players are allowed to set a motto.
-  - Custom BZDB variables defined by plugins no longer require using -setforced to set them from configuration file.
-  - The number pad keys are now treated uniquely for key mapping with SDL2.
-  - Antialiasing now works when starting the client windowed.
+    This release had several fixes and some new features.
+
+    - The mute/kill/kick/ban messages no longer display admin callsigns, and the ban message shows the remaining ban time.
+    - World weapon API has been revamped, including new bz_eServerShotFiredEvent and bz_eAllowServerShotFiredEvent events.
+    - New showMotto permission to control which players are allowed to set a motto.
+    - Custom BZDB variables defined by plugins no longer require using -setforced to set them from configuration file.
+    - The number pad keys are now treated uniquely for key mapping with SDL2.
+    - Antialiasing now works when starting the client windowed.
 changelog: |
-  * Add new bz_eAllowServerShotFiredEvent to the API - Vladimir Jimenez
-  * Fix antialiasing when starting the client windowed - Joshua Bodine
-  * Update the Windows icon file to include larger icons - Scott Wichser
-  * Treat the number pad keys uniquely for key mapping with SDL2 - Scott Wichser
-  * Better cpu selection for x86_64 - Alfredo Tupone
-  * Fix build with enable-profile - Alfredo Tupone
-  * Add safety check when getting flags (bzfs) - Alfredo Tupone
-  * Add min/../max to drawTime - Alfredo Tupone
-  * Fix the -configdir option for the client - Scott Wichser
-  * Upgrade Windows projects to Visual Studio 2017 - Scott Wichser, Jeff Myers
-  * Improve support for custom BZDB vars in plug-ins - Vladimir Jimenez
-  * Fix truncation warnings - Jeff Makey, Alfredo Tupone
-  * Add new bz_ePermissionModificationEvent to the API - Vladimir Jimenez
-  * Introduce new 'showMotto' permission - Vladimir Jimenez
-  * Fix gcc warnings and code formatting - Jeff Myers, Scott Wichser
-  * Remove old BitmapFont renderer - Scott Wichser
-  * Add new bz_eServerShotFiredEvent to the API - Vladimir Jimenez
-  * Revamp the world weapon API entirely - Vladimir Jimenez
-  * Add PLAYER-MOTTO output to logDetail plugin - Scott Wichser
-  * Display remaining ban time when a banned player connects - Vladimir Jimenez
-  * Punitive messages no longer display admin callsigns - Vladimir Jimenez
-  * Slash commands in the API now know destination channel - Jeff Myers
-  * Allow building with lcc compiler on e2k-alt-linux - Joshua Bodine
-  * Fix ability to bind a key with a modifier through menu - Joshua Bodine
-  * Disallow -helpmsg from world files - Vladimir Jimenez
+    * Add new bz_eAllowServerShotFiredEvent to the API - Vladimir Jimenez
+    * Fix antialiasing when starting the client windowed - Joshua Bodine
+    * Update the Windows icon file to include larger icons - Scott Wichser
+    * Treat the number pad keys uniquely for key mapping with SDL2 - Scott Wichser
+    * Better cpu selection for x86_64 - Alfredo Tupone
+    * Fix build with enable-profile - Alfredo Tupone
+    * Add safety check when getting flags (bzfs) - Alfredo Tupone
+    * Add min/../max to drawTime - Alfredo Tupone
+    * Fix the -configdir option for the client - Scott Wichser
+    * Upgrade Windows projects to Visual Studio 2017 - Scott Wichser, Jeff Myers
+    * Improve support for custom BZDB vars in plug-ins - Vladimir Jimenez
+    * Fix truncation warnings - Jeff Makey, Alfredo Tupone
+    * Add new bz_ePermissionModificationEvent to the API - Vladimir Jimenez
+    * Introduce new 'showMotto' permission - Vladimir Jimenez
+    * Fix gcc warnings and code formatting - Jeff Myers, Scott Wichser
+    * Remove old BitmapFont renderer - Scott Wichser
+    * Add new bz_eServerShotFiredEvent to the API - Vladimir Jimenez
+    * Revamp the world weapon API entirely - Vladimir Jimenez
+    * Add PLAYER-MOTTO output to logDetail plugin - Scott Wichser
+    * Display remaining ban time when a banned player connects - Vladimir Jimenez
+    * Punitive messages no longer display admin callsigns - Vladimir Jimenez
+    * Slash commands in the API now know destination channel - Jeff Myers
+    * Allow building with lcc compiler on e2k-alt-linux - Joshua Bodine
+    * Fix ability to bind a key with a modifier through menu - Joshua Bodine
+    * Disallow -helpmsg from world files - Vladimir Jimenez
 date: '2018-05-02'
 downloads:
     windows:
-        -
-            filename: bzflag-2.4.14.exe
+        - filename: bzflag-2.4.14.exe
     macos:
-        -
-            filename: BZFlag-2.4.14-macOS.zip
+        - filename: BZFlag-2.4.14-macOS.zip
     source:
-        -
-            filename: bzflag-2.4.14.tar.bz2
-        -
-            filename: bzflag-2.4.14.tar.gz
-        -
-            filename: bzflag-2.4.14.zip
+        - filename: bzflag-2.4.14.tar.bz2
+        - filename: bzflag-2.4.14.tar.gz
+        - filename: bzflag-2.4.14.zip

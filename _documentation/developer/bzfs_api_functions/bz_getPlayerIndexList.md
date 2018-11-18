@@ -2,19 +2,16 @@
 since: 2.4.0
 category: Player Lists
 signatures:
-  - []
-  -
-    - dataType: bz_APIIntList*
-      description: A pointer for an already created list
-      name: playerList
-      default: ~
+    - []
+    - - dataType: bz_APIIntList*
+        description: A pointer for an already created list
+        name: playerList
+        default: ~
 returns:
-  -
-    dataType: bz_APIIntList*
-    description: A pointer to an integer list of player IDs
-  - 
-    dataType: bool
-    description: True if the player list was created with the given pointer
+    - dataType: bz_APIIntList*
+      description: A pointer to an integer list of player IDs
+    - dataType: bool
+      description: True if the player list was created with the given pointer
 ---
 
 {% from '_includes/api_utils.html.twig' import api_object %}

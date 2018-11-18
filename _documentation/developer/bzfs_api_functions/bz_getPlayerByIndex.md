@@ -2,14 +2,13 @@
 since: 2.4.0
 category: Player Records
 signatures:
-  -
-    - dataType: int
-      description: The id of the player
-      name: index
-      default: ~
+    - - dataType: int
+        description: The id of the player
+        name: index
+        default: ~
 returns:
-  dataType: bz_BasePlayerRecord*
-  description: A pointer to the player record or NULL
+    dataType: bz_BasePlayerRecord*
+    description: A pointer to the player record or NULL
 ---
 
 {% from '_includes/api_utils.html.twig' import api_object %}

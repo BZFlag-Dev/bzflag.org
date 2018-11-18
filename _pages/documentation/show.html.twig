@@ -9,8 +9,8 @@ parent:
 {% extends "_layouts/page.html.twig" %}
 
 {% block content %}
-  <h1>{{ this.title }}</h1>
-  {% if this.parent %}<div><a href="/documentation/{{ this.parent.docpath }}/">{{ this.parent.title }}</a></div>{% endif %}
+    <h1>{{ this.title }}</h1>
+    {% if this.parent %}<div><a href="/documentation/{{ this.parent.docpath }}/">{{ this.parent.title }}</a></div>{% endif %}
 
-  {{ this.content }}
+    {{ this.content }}
 {% endblock %}

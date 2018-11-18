@@ -1,89 +1,80 @@
 version: 1.10.4
 codename: 'not a smurf'
 changelog: |
-  * Allow user to define quickMessages via the menu system - Frank Thilo
-  * Defaults vars are written to config but commented out - Dave Brosius
-  * Added -show and -hide options to bzadmin for messages - Lars Luthman
-  * Added support for more message types to bzadmin - Ian Agar, Lars Luthman
-  * Added menu w/ BZDB editor and playerlist to bzadmin curses UI - Lars Luthman
-  * can freeze tod in client, if allowed, via -time hh:mm:ss - Tupone Alfredo
-  * Allow variable number team flags per team with +f bzfs option - Dave Brosius
-  * Added private and team chat sounds - Sean Morrison
-  * Specify a world file on the Start Server menu gui - Sean Morrison
-  * Server sends warning to privmsg sender to an invalid target - Lars Luthman
-  * bots now fully handle collision check - Tupone Alfredo
-  * -filterCallsigns filters email too now - Lars Luthman
-  * allow multiple team flags per team thru -c 5 - Dave Brosius
-  * -maxidle handles idle / paused players the same - Frank Thilo
-  * Added optional density to generated maps - Sean Morrison, Frank Thilo
-  * Add pause time to /idlestats - Sean Morrison
-  * Notify players when reassigned to a different team on join - Sean Morrison
-  * Allow multiple bases per team - Dave Brosius
-  * Use cyan for observer messages in old console color mode - Frank Thilo
-  * Config file based auto-identify - Tupone Alfredo, Sean Morrison, Frank Thilo
-  * List Server checks ip of requesting server - Tupone Alfredo
-  * AutoPilot does not base path on stealth echo anymore - Dave Brosius
-  * Alt-Tab & resolution changes does not mess up the screen - Tupone Alfredo
-  * No shooting allowed if OO flag is lost in a building - Tupone Alfredo
-  * Killed player stop drifting & clean dirty tank pieces - Tupone Alfredo
-  * Rabbit score changed and values displayed on HUD - Tupone Alfredo
-  * Sound samples are resampled since bzflag doesn't - Tupone Alfredo
-  * Unclean client disconnects are recognized earlier - Tupone Alfredo
-  * Async communication between bzfs and list server - Tupone Alfredo
-  * Added bzfs -rabbit option selection algorithm support - Nils McCarthy
-  * Added the REQUIREIDENTIFY permission - Nils McCarthy
-  * Added bzfs option to deny clients that do not identify - Nils McCarthy
-  * Color carried team flags according to their team - Sean Morrison
-  * Start of better spawn positions based on tanks - Dave Brosius
-  * PNG image writing for screenshots - Daniel Remenak
-  * Texture Manager only loads textures when needed - Jeff Myers
-  * Renamed and reorganized texture resources - Jeff Myers
-  * BZDB alternate image dir added - Jeff Myers
-  * Improved transparent proxy support - Alfredo Tupone, Sean Morrison
-  * Ground Texture Repeat added to BZDB, default increased to 0.1 - Jeff Myers
-  * Added ability to have and use per-team colored textures - Jeff Myers
-  * Added support for colored and zoned ground textures - Jeff Myers
-  * Hunter tanks try to use "hunter" texture if found - Jeff Myers
-  * Hunter tanks are colored orange color if not using a texture - Jeff Myers
-  * Menu uses its own image for the arrow, menu_arrow.png - Jeff Myers
-  * Rename team based datafiles to have the team in the name - Jeff Myers
-  * Map objects search for colored textures and use them if found - Jeff Myers
-  * Bases search for colored team textures and use them if found - Jeff Myers
-  * Added object-specified texture support for tanks & maps - Jeff Myers
-  * Menu Arrow supports animations - Jeff Myers
-  * Base wall and top textures - Jeff Myers
-  * Hunter name used for kill, lock, and info messages - Jeff Myers
-  * Increase resolution of textures to look better - Jeff Myers
-  * Add experimental quality setting for enhanced effects - Jeff Myers
-  * Tunf off tank LOD, and ground grid for experimental quality - Jeff Myers
-  * Add sides to the body of the hightank model - Jeff Myers
-  * Improve flag texture for high and experimental quality levels - Jeff Myers
-  * Increase moon segments for exp. quality - Jeff Myers
-  * Replace flag texture with one from pyBZFlag - Jeff Myers
-  * Added ability to set flagpole width for exp. quality level - Jeff Myers
-  * Don't do teleporter fog when roaming as an observer - Jeff Myers
-  * Pull many world textures from pyBZFlag - Jeff Myers
+    * Allow user to define quickMessages via the menu system - Frank Thilo
+    * Defaults vars are written to config but commented out - Dave Brosius
+    * Added -show and -hide options to bzadmin for messages - Lars Luthman
+    * Added support for more message types to bzadmin - Ian Agar, Lars Luthman
+    * Added menu w/ BZDB editor and playerlist to bzadmin curses UI - Lars Luthman
+    * can freeze tod in client, if allowed, via -time hh:mm:ss - Tupone Alfredo
+    * Allow variable number team flags per team with +f bzfs option - Dave Brosius
+    * Added private and team chat sounds - Sean Morrison
+    * Specify a world file on the Start Server menu gui - Sean Morrison
+    * Server sends warning to privmsg sender to an invalid target - Lars Luthman
+    * bots now fully handle collision check - Tupone Alfredo
+    * -filterCallsigns filters email too now - Lars Luthman
+    * allow multiple team flags per team thru -c 5 - Dave Brosius
+    * -maxidle handles idle / paused players the same - Frank Thilo
+    * Added optional density to generated maps - Sean Morrison, Frank Thilo
+    * Add pause time to /idlestats - Sean Morrison
+    * Notify players when reassigned to a different team on join - Sean Morrison
+    * Allow multiple bases per team - Dave Brosius
+    * Use cyan for observer messages in old console color mode - Frank Thilo
+    * Config file based auto-identify - Tupone Alfredo, Sean Morrison, Frank Thilo
+    * List Server checks ip of requesting server - Tupone Alfredo
+    * AutoPilot does not base path on stealth echo anymore - Dave Brosius
+    * Alt-Tab & resolution changes does not mess up the screen - Tupone Alfredo
+    * No shooting allowed if OO flag is lost in a building - Tupone Alfredo
+    * Killed player stop drifting & clean dirty tank pieces - Tupone Alfredo
+    * Rabbit score changed and values displayed on HUD - Tupone Alfredo
+    * Sound samples are resampled since bzflag doesn't - Tupone Alfredo
+    * Unclean client disconnects are recognized earlier - Tupone Alfredo
+    * Async communication between bzfs and list server - Tupone Alfredo
+    * Added bzfs -rabbit option selection algorithm support - Nils McCarthy
+    * Added the REQUIREIDENTIFY permission - Nils McCarthy
+    * Added bzfs option to deny clients that do not identify - Nils McCarthy
+    * Color carried team flags according to their team - Sean Morrison
+    * Start of better spawn positions based on tanks - Dave Brosius
+    * PNG image writing for screenshots - Daniel Remenak
+    * Texture Manager only loads textures when needed - Jeff Myers
+    * Renamed and reorganized texture resources - Jeff Myers
+    * BZDB alternate image dir added - Jeff Myers
+    * Improved transparent proxy support - Alfredo Tupone, Sean Morrison
+    * Ground Texture Repeat added to BZDB, default increased to 0.1 - Jeff Myers
+    * Added ability to have and use per-team colored textures - Jeff Myers
+    * Added support for colored and zoned ground textures - Jeff Myers
+    * Hunter tanks try to use "hunter" texture if found - Jeff Myers
+    * Hunter tanks are colored orange color if not using a texture - Jeff Myers
+    * Menu uses its own image for the arrow, menu_arrow.png - Jeff Myers
+    * Rename team based datafiles to have the team in the name - Jeff Myers
+    * Map objects search for colored textures and use them if found - Jeff Myers
+    * Bases search for colored team textures and use them if found - Jeff Myers
+    * Added object-specified texture support for tanks & maps - Jeff Myers
+    * Menu Arrow supports animations - Jeff Myers
+    * Base wall and top textures - Jeff Myers
+    * Hunter name used for kill, lock, and info messages - Jeff Myers
+    * Increase resolution of textures to look better - Jeff Myers
+    * Add experimental quality setting for enhanced effects - Jeff Myers
+    * Tunf off tank LOD, and ground grid for experimental quality - Jeff Myers
+    * Add sides to the body of the hightank model - Jeff Myers
+    * Improve flag texture for high and experimental quality levels - Jeff Myers
+    * Increase moon segments for exp. quality - Jeff Myers
+    * Replace flag texture with one from pyBZFlag - Jeff Myers
+    * Added ability to set flagpole width for exp. quality level - Jeff Myers
+    * Don't do teleporter fog when roaming as an observer - Jeff Myers
+    * Pull many world textures from pyBZFlag - Jeff Myers
 date: '2004-01-24'
 downloads:
     windows:
-        -
-            filename: bzflag-1.10.4-0.W32.exe
-        -
-            filename: bzflag-1.10.4-0-high_res.W32.exe
-        -
-            filename: alternate_data-1.10.4-0.zip
+        - filename: bzflag-1.10.4-0.W32.exe
+        - filename: bzflag-1.10.4-0-high_res.W32.exe
+        - filename: alternate_data-1.10.4-0.zip
     macos:
-        -
-            filename: BZFlag_1.10.4.dmg
+        - filename: BZFlag_1.10.4.dmg
     irix:
-        -
-            filename: bzflag-1.10.4_n32.tardist
-        -
-            filename: bzflag-1.10.4_n32.tar.gz
+        - filename: bzflag-1.10.4_n32.tardist
+        - filename: bzflag-1.10.4_n32.tar.gz
     source:
-        -
-            filename: bzflag-1.10.4.20040124.zip
-        -
-            filename: bzflag-1.10.4.20040125.tar.gz
-        -
-            filename: bzflag-1.10.4.20040125.tar.bz2
+        - filename: bzflag-1.10.4.20040124.zip
+        - filename: bzflag-1.10.4.20040125.tar.gz
+        - filename: bzflag-1.10.4.20040125.tar.bz2

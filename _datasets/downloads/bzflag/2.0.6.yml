@@ -1,47 +1,42 @@
 version: 2.0.6
 codename: 'Good enough for now'
 changelog: |
-  * game variables no longer accept invalid values. - Jeff Myers
-  * Special Effects use tank (was team) color - Karsten Behrmann, Jeff Myers
-  * /reset uses the values from the config and the map as default - Jeff Myers
-  * Sreenshots now remember where they left off - Jeff Myers, Thomas Sowell
-  * Have windows dump std::error out to a file - Jeff Myers
-  * Various API enhancements - Jeff Myers and others ( from patches )
-  * Not applauding when capturing his own flag - Alfredo Tupone
-  * Fixing crash on invalid captured flag - Alfredo Tupone
-  * Fixed bots on a public server - Alfredo Tupone
-  * Don't send admin the server password when wrong - Alfredo Tupone
-  * Client config file can be saved on request - Alfredo Tupone
-  * Allow for longer help files (50 lines) - Angelina Carlton
-  * Allow selective /reload of databases - Bernt Hansen
-  * Fix wrong kick if pausing having V and moving - Julio Jimenez
-  * Prevent long distance tank warping through walls - Sean Morrison
-  * Display paused state when screen capturing while playing - Sean Morrison
-  * Added new logDetail plugin - Bernt Hansen
-  * Fixed issue with denial-of-service message attacks - Sean Morrison
-  * Support for -window on Mac command line executions - Sean Morrison
-  * Show slot numbers in lagstats (if admin) - Mark Thomas, Mike Weisenborn
-  * FPS limit energy saver option for laptops - Karsten Behrmann, Sean Morrison
-  * Send admin channel warning if /password fails - Garrett Padera, Jeff Myers
-  * Known players not authenticated are detected - Tupone Alfredo
-  * Added /checkip command - Frank Thilo
-  * "Enable Local Shot/Spawn Effects" affects "Driving with" - Daniel Remenak
-  * Show shot reload indicators when driving with a tank - Daniel Remenak
-  * Fix misc/bzfquery.pl to handle MsgGameTime - Tegan, Mark Thomas
-  * Simple server list searching - Daniel Remenak
-  * Added GUI option for email display length - Mark Thomas
+    * game variables no longer accept invalid values. - Jeff Myers
+    * Special Effects use tank (was team) color - Karsten Behrmann, Jeff Myers
+    * /reset uses the values from the config and the map as default - Jeff Myers
+    * Sreenshots now remember where they left off - Jeff Myers, Thomas Sowell
+    * Have windows dump std::error out to a file - Jeff Myers
+    * Various API enhancements - Jeff Myers and others ( from patches )
+    * Not applauding when capturing his own flag - Alfredo Tupone
+    * Fixing crash on invalid captured flag - Alfredo Tupone
+    * Fixed bots on a public server - Alfredo Tupone
+    * Don't send admin the server password when wrong - Alfredo Tupone
+    * Client config file can be saved on request - Alfredo Tupone
+    * Allow for longer help files (50 lines) - Angelina Carlton
+    * Allow selective /reload of databases - Bernt Hansen
+    * Fix wrong kick if pausing having V and moving - Julio Jimenez
+    * Prevent long distance tank warping through walls - Sean Morrison
+    * Display paused state when screen capturing while playing - Sean Morrison
+    * Added new logDetail plugin - Bernt Hansen
+    * Fixed issue with denial-of-service message attacks - Sean Morrison
+    * Support for -window on Mac command line executions - Sean Morrison
+    * Show slot numbers in lagstats (if admin) - Mark Thomas, Mike Weisenborn
+    * FPS limit energy saver option for laptops - Karsten Behrmann, Sean Morrison
+    * Send admin channel warning if /password fails - Garrett Padera, Jeff Myers
+    * Known players not authenticated are detected - Tupone Alfredo
+    * Added /checkip command - Frank Thilo
+    * "Enable Local Shot/Spawn Effects" affects "Driving with" - Daniel Remenak
+    * Show shot reload indicators when driving with a tank - Daniel Remenak
+    * Fix misc/bzfquery.pl to handle MsgGameTime - Tegan, Mark Thomas
+    * Simple server list searching - Daniel Remenak
+    * Added GUI option for email display length - Mark Thomas
 date: '2006-04-09'
 downloads:
     windows:
-        -
-            filename: bzflag-2.0.6-20060409.exe
+        - filename: bzflag-2.0.6-20060409.exe
     macos:
-        -
-            filename: BZFlag_2.0.6_ppc_10.3.dmg
+        - filename: BZFlag_2.0.6_ppc_10.3.dmg
     source:
-        -
-            filename: bzflag-2.0.6.tar.bz2
-        -
-            filename: bzflag-2.0.6-20060409.zip
-        -
-            filename: bzflag-2.0.6.tar.gz
+        - filename: bzflag-2.0.6.tar.bz2
+        - filename: bzflag-2.0.6-20060409.zip
+        - filename: bzflag-2.0.6.tar.gz

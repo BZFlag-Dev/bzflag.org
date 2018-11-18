@@ -1,68 +1,62 @@
 version: 2.4.0
 codename: 'Wake the Dead'
 changesummary: |
-  This is a new major release of the game that is incompatible with the previous 2.0.x version of the game. Some of the major features include:
-  * The ability to turn off teamkilling on the server
-  * The OpenFFA game mode which is a teamless FFA, meaning you can shoot anyone regardless of color
-  * Per-object ricochet, which lets map authors selectively enable ricochet for individual objects
-  * Removal of local authentication
-  * Ability for the server to force flags to be hidden on the radar
-  * Fog can not be turned off
-  * The screenshot code does not lag the client badly anymore
-  * The ID flag identification was moved to the server
-  * Public servers must have a -publickey
-  * Polls only count users that are able to vote
+    This is a new major release of the game that is incompatible with the previous 2.0.x version of the game. Some of the major features include:
+
+    * The ability to turn off teamkilling on the server
+    * The OpenFFA game mode which is a teamless FFA, meaning you can shoot anyone regardless of color
+    * Per-object ricochet, which lets map authors selectively enable ricochet for individual objects
+    * Removal of local authentication
+    * Ability for the server to force flags to be hidden on the radar
+    * Fog can not be turned off
+    * The screenshot code does not lag the client badly anymore
+    * The ID flag identification was moved to the server
+    * Public servers must have a -publickey
+    * Polls only count users that are able to vote
 changelog: |
-  * Shot messages are synchronized with position - Alfredo Tupone
-  * Added /playerlist for everyone - Thomas Stauer
-  * Added message type for properly handling /me actions - Scott Wichser
-  * Added BZDB option to hide flags on radar server side - David Anderson
-  * Removed /setpass /register /identify - David Anderson
-  * Handicap is computed on the server - Alfredo Tupone, Bernt Hansen
-  * Allow plugins to register custom flag types - Daniel Remenak
-  * Forced *image.bzflag.org for image downloads until user sets
-    otherwise - David Anderson
-  * Accepted patch from McSpider, added OpenFFA - David Anderson
-  * Removed -requireUDP, now it is always required - David Anderson
-  * Accepted patch from McSpider, removed client option to turn off fog - David Anderson
-  * Accepted patch from McSpider, added -noTeamKills option - David Anderson
-  * Removed -3Dfx, -no3Dfx. Moved -geometry ->  -window <geometry-spec> - David Anderson
-  * Add ricochet on a per object basis for .bzw files - trepan, David Anderson
-  * serverControl plugin- Add option to ignore observers for server shutdowns - Bernt Hansen
-  * serverControl plugin- Only report ban file access errors once - Bernt Hansen
-  * serverControl plugin- Limit filesystem checks to once every 3 seconds - Bernt Hansen
-  * LogDetail plugin-Add SERVER-MAPNAME with the public server description - Bernt Hansen
-  * The bzfs -time command line option allows end time - Scott Wichser, Ian Agar
-  * screenshots now compressed asynchronously - Daniel Remenak, randomparticle
-  * Add /serverdebug command and plugin API - Bernt Hansen
-  * Add bzfs -utc command line option to log timestamps using universal time - Bernt Hansen
-  * Fix buffer overrun when using -ts micros on Linux - trepan, Bernt Hansen
-  * Only players with POLL permission are eligible to vote - Bernt Hansen
-  * Only allow a single end shot credit for holding the shield flag - Bernt Hansen
-  * Do not inform hunters of stealthy prey - Ian Agar
-  * All scores are controlled completely by the server - Daniel Remenak
-  * Relabel player "email" string as "motto" - Jeff Makey
-  * Require TALK privilege for player motto to be broadcast - Jeff Makey
-  * Always require valid authentication for registered names - Jeff Myers, Scott Wichser
-  * Move flag identification server side - Alfredo Tupone, Jeff Myers, Frank Evers, Scott Wichser
-  * GM sanity checks - Alfredo Tupone
-  * Added the -publickey requirement for publicly listed servers (and renamed the bzfs -public option to -publictitle) - trepan, Jeff Myers
+    * Shot messages are synchronized with position - Alfredo Tupone
+    * Added /playerlist for everyone - Thomas Stauer
+    * Added message type for properly handling /me actions - Scott Wichser
+    * Added BZDB option to hide flags on radar server side - David Anderson
+    * Removed /setpass /register /identify - David Anderson
+    * Handicap is computed on the server - Alfredo Tupone, Bernt Hansen
+    * Allow plugins to register custom flag types - Daniel Remenak
+    * Forced *image.bzflag.org for image downloads until user sets
+      otherwise - David Anderson
+    * Accepted patch from McSpider, added OpenFFA - David Anderson
+    * Removed -requireUDP, now it is always required - David Anderson
+    * Accepted patch from McSpider, removed client option to turn off fog - David Anderson
+    * Accepted patch from McSpider, added -noTeamKills option - David Anderson
+    * Removed -3Dfx, -no3Dfx. Moved -geometry ->  -window <geometry-spec> - David Anderson
+    * Add ricochet on a per object basis for .bzw files - trepan, David Anderson
+    * serverControl plugin- Add option to ignore observers for server shutdowns - Bernt Hansen
+    * serverControl plugin- Only report ban file access errors once - Bernt Hansen
+    * serverControl plugin- Limit filesystem checks to once every 3 seconds - Bernt Hansen
+    * LogDetail plugin-Add SERVER-MAPNAME with the public server description - Bernt Hansen
+    * The bzfs -time command line option allows end time - Scott Wichser, Ian Agar
+    * screenshots now compressed asynchronously - Daniel Remenak, randomparticle
+    * Add /serverdebug command and plugin API - Bernt Hansen
+    * Add bzfs -utc command line option to log timestamps using universal time - Bernt Hansen
+    * Fix buffer overrun when using -ts micros on Linux - trepan, Bernt Hansen
+    * Only players with POLL permission are eligible to vote - Bernt Hansen
+    * Only allow a single end shot credit for holding the shield flag - Bernt Hansen
+    * Do not inform hunters of stealthy prey - Ian Agar
+    * All scores are controlled completely by the server - Daniel Remenak
+    * Relabel player "email" string as "motto" - Jeff Makey
+    * Require TALK privilege for player motto to be broadcast - Jeff Makey
+    * Always require valid authentication for registered names - Jeff Myers, Scott Wichser
+    * Move flag identification server side - Alfredo Tupone, Jeff Myers, Frank Evers, Scott Wichser
+    * GM sanity checks - Alfredo Tupone
+    * Added the -publickey requirement for publicly listed servers (and renamed the bzfs -public option to -publictitle) - trepan, Jeff Myers
 date: '2011-07-03'
 downloads:
     windows:
-        -
-            filename: bzflag-2.4.0_32Bit.exe
-        -
-            filename: bzflag-2.4.0_64Bit.exe
+        - filename: bzflag-2.4.0_32Bit.exe
+        - filename: bzflag-2.4.0_64Bit.exe
     macos:
-        -
-            filename: BZFlag-2.4.0.zip
+        - filename: BZFlag-2.4.0.zip
     source:
-        -
-            filename: bzflag-2.4.0.tar.gz
-        -
-            filename: bzflag-2.4.0.zip
-        -
-            filename: bzflag-2.4.0.tar.bz2
-        -
-            filename: bzflag-2.4.0_Windows.zip
+        - filename: bzflag-2.4.0.tar.gz
+        - filename: bzflag-2.4.0.zip
+        - filename: bzflag-2.4.0.tar.bz2
+        - filename: bzflag-2.4.0_Windows.zip

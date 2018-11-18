@@ -1,13 +1,13 @@
 .c-media-screenshot {
-  display: inline-block;
-
-  & > a:link,
-  & > a:visited {
-    text-decoration: none;
-  }
-
-  img {
     display: inline-block;
-    vertical-align: bottom;
-  }
+
+    & > a:link,
+    & > a:visited {
+        text-decoration: none;
+    }
+
+    img {
+        display: inline-block;
+        vertical-align: bottom;
+    }
 }

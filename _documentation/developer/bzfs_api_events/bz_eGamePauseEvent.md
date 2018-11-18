@@ -4,12 +4,12 @@ since: 2.4.4
 category: Countdown Timer
 plugins: ~
 parameters:
-  - dataType: bz_ApiString
-    description: The callsign of whoever triggered the event. By default, it's "SERVER"
-    name: actionBy
-  - dataType: double
-    description: The server time the event occurred (in seconds).
-    name: eventTime
+    - dataType: bz_ApiString
+      description: The callsign of whoever triggered the event. By default, it's "SERVER"
+      name: actionBy
+    - dataType: double
+      description: The server time the event occurred (in seconds).
+      name: eventTime
 ---
 
 This event is triggered when a timed game is paused

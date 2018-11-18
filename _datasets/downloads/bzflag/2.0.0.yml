@@ -1,147 +1,142 @@
 version: 2.0.0
 codename: "Falcor's Despair"
 changelog: |
-  * Added a .desktop file - David Trowbridge
-  * Tool for converting obj to bzw - Jeff Myers
-  * Addition of converted ProFont font - Andrew Keyser
-  * Added a file syntax section to bzw.5 - Fred Cods
-  * Added a bzw.5 manpage to document world file format - Sean Morrison
-  * Added /quit command - Angelina Carlton
-  * Display player addr on join to admins - Sean Morrison
-  * Make -debug a public client option - Frank Thilo
-  * Communicate autopilot state, display in scoreboard - Frank Thilo
-  * Observer counts and match times added to game queries - David Vuorio
-  * Central authentication - Tim Riker
-  * Avoid transfer flag cheat - Alfredo Tupone
-  * Cheat client flag obfuscation and hiding - Alfredo Tupone
-  * Added strong authentication via Kerberos - Alfredo Tupone
-  * BZFlag renders frames and accepts commands during joining - Alfredo Tupone
-  * Lag is computed only after entering game - Alfredo Tupone
-  * CTF world used for FFA make bases into boxes - Alfredo Tupone
-  * Allow elevated bases even without -fb - Alfredo Tupone
-  * Added optional duration option to /countdown - Sean Morrison
-  * Added shot mismatch cheat auto-kicking - Julio Jimenez
-  * Improved double-jump response - Anonymous
-  * Added physics drivers - Anonymous
-  * Unlimited altimeter height - Steve Krenzel
-  * Added /uptime command to print elapsed running time - Angelina Carlton
-  * Countdown command now shows players 10 sec countdown - Angelina Carlton
-  * Added a flapping sound for the wings flag - Sean Morrison
-  * Adding ability to load world from url (http, ftp, file) - Alfredo Tupone
-  * Reduce network load by buffering UDP packet (no delay) - Alfredo Tupone
-  * Allow server to control lat and long (-synclocation) - Daniel Remenak
-  * Added tank spawn expansion effect - Anonymous
-  * Added tank squishiness - Anonymous, Dave Brosius
-  * Added animated effects for T, N, TH, O, and CL flags - Anonymous
-  * BZAdmin now tells more specific reasons why it could not connect - Ian Agar
-  * MOTD from the master server - Jeff Myers, Daniel Remenak, Frank Thilo
-  * Add generic URL retrieval class - Jeff Myers, Alfredo Tupone
-  * Windows Multimedia and DirectInput joystick support - Daniel Remenak
-  * bzfs can now announce to multiple public list servers - Sean Morrison
-  * Global public server bans - Jeff M., Alfredo T., Daniel R., Sean M., Bryan J.
-  * Linux event device joystick and force feedback support - Micah Dowty
-  * Inform banned users of reason, originator, and source on login - Jeff Myers
-  * Added the SHORTBAN bzfs privilege - Anonymous, Daniel Leeds
-  * Added /date and /time to request server date and time - Ian Agar
-  * Added arc, cone, and sphere map objects - Anonymous
-  * Added user specified dynamic colors - Anonymous
-  * Added user specified texture matrices - Anonymous
-  * Improved BSP splitting algorithm - Anonymous
-  * Added /part command for disconnecting from server - Angelina Carlton
-  * Show status while trying to connect & download world - Daniel Remenak
-  * Update old configs to avoid broken keybindings - Daniel Remenak
-  * Config files are stored per-version, using older when needed - Jeff Myers
-  * Faster tank and shot collision detection using an octree - Anonymous
-  * Better linewrapping for control panel - Daniel Remenak
-  * Configurable font size for control panel and scoreboard - Daniel Remenak
-  * Textures are now reloaded on a mode change for optimal quality - Jeff Myers
-  * Automatic team joins changed to encourage team-play - Alfredo Tupone
-  * Fixed dropping flag while jumping from high places - Alfredo Tupone
-  * Lag stats are now sorted by lag value - Alfredo Tupone
-  * OpenGL context reloading bug fixed on SDL - Alfredo Tupone
-  * Roaming switch between player is now consistent - Alfredo Tupone
-  * Compensating jitter in Dead reckoning - Alfredo Tupone
-  * Ping packet loss are like high lag for warn/kick - Alfredo Tupone
-  * ColorBlindness now disable hunt flashing on radar - Alfredo Tupone
-  * SDL is made default platform, static and shared linkage - Alfredo Tupone
-  * Fixed bug where players get stuck on flipped pyramids - Alfredo Tupone
-  * Compressed map data going over the network and into caches - Anonymous
-  * Options to disable certain /poll's entirely on a server - Simon Richard Grint
-  * Lighting menu option now has "None / Fast / Best" - Anonymous
-  * Dev-C++ project files - Ian Agar, Daniel Remenak, Jeff Myers
-  * Shot accuracy statistics dialog - Daniel Remenak
-  * Faster zbuffer graphics using octree and dynamic occluders - Anonymous
-  * Faster startup times by making the SceneDatabase on the fly - Anonymous
-  * Autocompletion for commands & callsigns (ala bzadmin) - Ian Agar, Frank Thilo
-  * /clientquery can now be requested on single individuals - Ian Agar
-  * Added support for irc-like /me actions and /msg messages - Sean Morrison
-  * Seer flag now can see Invisible Bullets - Anonymous
-  * Added admin message sounds - Cameron Mandrake, Sean Morrison
-  * Better shot reflections for non-square pyramids - Anonymous
-  * Fixed collision detection impalement problem - Anonymous
-  * anti perm for pollkick, pollban, kick, ban, deregister - Sean Morrison
-  * antipoll bzfs anti perm to protect against poll kick/bans - Andrew Heyn
-  * Server Start Menu now selects Rabbit Chase styles - Ian Agar
-  * Tabbed Message Panel - Scott Wichser, Sean Morrison, Alfredo Tupone
-  * Fonts settable via BZDB - Daniel Remenak
-  * New font management system and fonts - Daniel Remenak, Jeff Myers
-  * Reduce network utilization (tolerance) - Alfredo Tupone, Sean Morrison
-  * WorldWeapons and EntryZones are saved client-side - Anonymous
-  * Improved client map saves using map 'options' - Anonymous
-  * Autopilot is now capable of playing CTF - Ian Agar
-  * bzadmin can now send and receive team and admin messages - Lars Luthman
-  * Added waterLevel (water-like feature for maps) - Anonymous
-  * Added _noShadows (to disable shadows on a server) - Anonymous
-  * bzadmin's curses menu will now update automagically - Lars Luthman
-  * Added message filter editor for bzadmin using menu or cmds - Lars Luthman
-  * Added team flag safety zones - Anonymous
-  * Added MsgScoreOver and MsgTimeUpdate to BZAdmin - Ian Agar
-  * Have BZAdmin allow whitespace in callsign and host - Ian Agar
-  * Prevent message flooding/spamming - Ian Agar
-  * Consolidated polling system bzfs options (-poll) - Ian Agar, Sean Morrison
-  * Improved server pause cheat detection and reporting - Ian Agar, Sean Morrison
-  * Changed the way Roaming keys drives the Observer - Alfredo Tupone
-  * Fixing cross-correlation between driving keys - Alfredo Tupone
-  * Added configuration of driving keys - Alfredo Tupone
-  * Server is now valgrind-happy - Alfredo Tupone, Daniel Remenak, Sean Morrison
-  * Limit quick rejoins - Anonymous
-  * Added 'options' section to world maps - Anonymous
-  * Added the '-set <name> <value>' option to bzfs - Anonymous
-  * Throw away bad or early links in world files - Tim Riker
-  * Added Record/Replay feature - Anonymous
-  * Added Random teleporter destinations - Anonymous
-  * Poll to reset flags and Poll-cheating prevention - Ian Agar
-  * Flag and Tank Entry Zones - Dave Brosius
-  * Spawn improvements - Dave Brosius, Daniel Remenak
-  * Added MAC's Agility (aka Dodge) flag - Sean Morrison
-  * QuickTurn flag symbol changed from A to QT - Sean Morrison
-  * Added MAC's handicap game style - Sean Morrison
-  * Added ReverseControls bad flag - Sean Morrison
-  * Added Wings good flag - Dave Brosius
-  * Added BZDB variables to allow for more realistic friction - Nils McCarthy
-  * Added ForwardOnly and ReverseOnly bad flags - Sean Morrison
-  * No Jumping and Trigger Happy flags - Nils McCarthy
-  * server option to disallow autopilot - Nils McCarthy
-  * SDL interface to audio/video/input - Tupone Alfredo
-  * /clientquery (was CLIENTQUERY) moved to server - Daniel Remenak
-  * "Leave Game" menu item to leave a game without quitting - Daniel Remenak
-  * Allow user to force input device to that of their choosing - Daniel Remenak
-  * Tanks can drive over bumps - Dave Brosius
-  * Remove Building scene nodes laying on the ground (or lower) - Dave Brosius
-  * Rip out ref counted texture system, TM controls this now - Dave Brosius
-  * Added Admin Message Queue - Michael Hoffman
+    * Added a .desktop file - David Trowbridge
+    * Tool for converting obj to bzw - Jeff Myers
+    * Addition of converted ProFont font - Andrew Keyser
+    * Added a file syntax section to bzw.5 - Fred Cods
+    * Added a bzw.5 manpage to document world file format - Sean Morrison
+    * Added /quit command - Angelina Carlton
+    * Display player addr on join to admins - Sean Morrison
+    * Make -debug a public client option - Frank Thilo
+    * Communicate autopilot state, display in scoreboard - Frank Thilo
+    * Observer counts and match times added to game queries - David Vuorio
+    * Central authentication - Tim Riker
+    * Avoid transfer flag cheat - Alfredo Tupone
+    * Cheat client flag obfuscation and hiding - Alfredo Tupone
+    * Added strong authentication via Kerberos - Alfredo Tupone
+    * BZFlag renders frames and accepts commands during joining - Alfredo Tupone
+    * Lag is computed only after entering game - Alfredo Tupone
+    * CTF world used for FFA make bases into boxes - Alfredo Tupone
+    * Allow elevated bases even without -fb - Alfredo Tupone
+    * Added optional duration option to /countdown - Sean Morrison
+    * Added shot mismatch cheat auto-kicking - Julio Jimenez
+    * Improved double-jump response - Anonymous
+    * Added physics drivers - Anonymous
+    * Unlimited altimeter height - Steve Krenzel
+    * Added /uptime command to print elapsed running time - Angelina Carlton
+    * Countdown command now shows players 10 sec countdown - Angelina Carlton
+    * Added a flapping sound for the wings flag - Sean Morrison
+    * Adding ability to load world from url (http, ftp, file) - Alfredo Tupone
+    * Reduce network load by buffering UDP packet (no delay) - Alfredo Tupone
+    * Allow server to control lat and long (-synclocation) - Daniel Remenak
+    * Added tank spawn expansion effect - Anonymous
+    * Added tank squishiness - Anonymous, Dave Brosius
+    * Added animated effects for T, N, TH, O, and CL flags - Anonymous
+    * BZAdmin now tells more specific reasons why it could not connect - Ian Agar
+    * MOTD from the master server - Jeff Myers, Daniel Remenak, Frank Thilo
+    * Add generic URL retrieval class - Jeff Myers, Alfredo Tupone
+    * Windows Multimedia and DirectInput joystick support - Daniel Remenak
+    * bzfs can now announce to multiple public list servers - Sean Morrison
+    * Global public server bans - Jeff M., Alfredo T., Daniel R., Sean M., Bryan J.
+    * Linux event device joystick and force feedback support - Micah Dowty
+    * Inform banned users of reason, originator, and source on login - Jeff Myers
+    * Added the SHORTBAN bzfs privilege - Anonymous, Daniel Leeds
+    * Added /date and /time to request server date and time - Ian Agar
+    * Added arc, cone, and sphere map objects - Anonymous
+    * Added user specified dynamic colors - Anonymous
+    * Added user specified texture matrices - Anonymous
+    * Improved BSP splitting algorithm - Anonymous
+    * Added /part command for disconnecting from server - Angelina Carlton
+    * Show status while trying to connect & download world - Daniel Remenak
+    * Update old configs to avoid broken keybindings - Daniel Remenak
+    * Config files are stored per-version, using older when needed - Jeff Myers
+    * Faster tank and shot collision detection using an octree - Anonymous
+    * Better linewrapping for control panel - Daniel Remenak
+    * Configurable font size for control panel and scoreboard - Daniel Remenak
+    * Textures are now reloaded on a mode change for optimal quality - Jeff Myers
+    * Automatic team joins changed to encourage team-play - Alfredo Tupone
+    * Fixed dropping flag while jumping from high places - Alfredo Tupone
+    * Lag stats are now sorted by lag value - Alfredo Tupone
+    * OpenGL context reloading bug fixed on SDL - Alfredo Tupone
+    * Roaming switch between player is now consistent - Alfredo Tupone
+    * Compensating jitter in Dead reckoning - Alfredo Tupone
+    * Ping packet loss are like high lag for warn/kick - Alfredo Tupone
+    * ColorBlindness now disable hunt flashing on radar - Alfredo Tupone
+    * SDL is made default platform, static and shared linkage - Alfredo Tupone
+    * Fixed bug where players get stuck on flipped pyramids - Alfredo Tupone
+    * Compressed map data going over the network and into caches - Anonymous
+    * Options to disable certain /poll's entirely on a server - Simon Richard Grint
+    * Lighting menu option now has "None / Fast / Best" - Anonymous
+    * Dev-C++ project files - Ian Agar, Daniel Remenak, Jeff Myers
+    * Shot accuracy statistics dialog - Daniel Remenak
+    * Faster zbuffer graphics using octree and dynamic occluders - Anonymous
+    * Faster startup times by making the SceneDatabase on the fly - Anonymous
+    * Autocompletion for commands & callsigns (ala bzadmin) - Ian Agar, Frank Thilo
+    * /clientquery can now be requested on single individuals - Ian Agar
+    * Added support for irc-like /me actions and /msg messages - Sean Morrison
+    * Seer flag now can see Invisible Bullets - Anonymous
+    * Added admin message sounds - Cameron Mandrake, Sean Morrison
+    * Better shot reflections for non-square pyramids - Anonymous
+    * Fixed collision detection impalement problem - Anonymous
+    * anti perm for pollkick, pollban, kick, ban, deregister - Sean Morrison
+    * antipoll bzfs anti perm to protect against poll kick/bans - Andrew Heyn
+    * Server Start Menu now selects Rabbit Chase styles - Ian Agar
+    * Tabbed Message Panel - Scott Wichser, Sean Morrison, Alfredo Tupone
+    * Fonts settable via BZDB - Daniel Remenak
+    * New font management system and fonts - Daniel Remenak, Jeff Myers
+    * Reduce network utilization (tolerance) - Alfredo Tupone, Sean Morrison
+    * WorldWeapons and EntryZones are saved client-side - Anonymous
+    * Improved client map saves using map 'options' - Anonymous
+    * Autopilot is now capable of playing CTF - Ian Agar
+    * bzadmin can now send and receive team and admin messages - Lars Luthman
+    * Added waterLevel (water-like feature for maps) - Anonymous
+    * Added _noShadows (to disable shadows on a server) - Anonymous
+    * bzadmin's curses menu will now update automagically - Lars Luthman
+    * Added message filter editor for bzadmin using menu or cmds - Lars Luthman
+    * Added team flag safety zones - Anonymous
+    * Added MsgScoreOver and MsgTimeUpdate to BZAdmin - Ian Agar
+    * Have BZAdmin allow whitespace in callsign and host - Ian Agar
+    * Prevent message flooding/spamming - Ian Agar
+    * Consolidated polling system bzfs options (-poll) - Ian Agar, Sean Morrison
+    * Improved server pause cheat detection and reporting - Ian Agar, Sean Morrison
+    * Changed the way Roaming keys drives the Observer - Alfredo Tupone
+    * Fixing cross-correlation between driving keys - Alfredo Tupone
+    * Added configuration of driving keys - Alfredo Tupone
+    * Server is now valgrind-happy - Alfredo Tupone, Daniel Remenak, Sean Morrison
+    * Limit quick rejoins - Anonymous
+    * Added 'options' section to world maps - Anonymous
+    * Added the '-set <name> <value>' option to bzfs - Anonymous
+    * Throw away bad or early links in world files - Tim Riker
+    * Added Record/Replay feature - Anonymous
+    * Added Random teleporter destinations - Anonymous
+    * Poll to reset flags and Poll-cheating prevention - Ian Agar
+    * Flag and Tank Entry Zones - Dave Brosius
+    * Spawn improvements - Dave Brosius, Daniel Remenak
+    * Added MAC's Agility (aka Dodge) flag - Sean Morrison
+    * QuickTurn flag symbol changed from A to QT - Sean Morrison
+    * Added MAC's handicap game style - Sean Morrison
+    * Added ReverseControls bad flag - Sean Morrison
+    * Added Wings good flag - Dave Brosius
+    * Added BZDB variables to allow for more realistic friction - Nils McCarthy
+    * Added ForwardOnly and ReverseOnly bad flags - Sean Morrison
+    * No Jumping and Trigger Happy flags - Nils McCarthy
+    * server option to disallow autopilot - Nils McCarthy
+    * SDL interface to audio/video/input - Tupone Alfredo
+    * /clientquery (was CLIENTQUERY) moved to server - Daniel Remenak
+    * "Leave Game" menu item to leave a game without quitting - Daniel Remenak
+    * Allow user to force input device to that of their choosing - Daniel Remenak
+    * Tanks can drive over bumps - Dave Brosius
+    * Remove Building scene nodes laying on the ground (or lower) - Dave Brosius
+    * Rip out ref counted texture system, TM controls this now - Dave Brosius
+    * Added Admin Message Queue - Michael Hoffman
 date: '2005-01-17'
 downloads:
     windows:
-        -
-            filename: bzflag-2.0.0.exe
+        - filename: bzflag-2.0.0.exe
     macos:
-        -
-            filename: BZFlag_2.0.0.dmg
+        - filename: BZFlag_2.0.0.dmg
     source:
-        -
-            filename: bzflag-2.0.0-20050118.zip
-        -
-            filename: bzflag-2.0.0.20050117.tar.bz2
-        -
-            filename: bzflag-2.0.0.20050117.tar.gz
+        - filename: bzflag-2.0.0-20050118.zip
+        - filename: bzflag-2.0.0.20050117.tar.bz2
+        - filename: bzflag-2.0.0.20050117.tar.gz
