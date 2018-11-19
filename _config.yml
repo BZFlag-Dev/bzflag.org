@@ -29,8 +29,9 @@ collections:
 exclude:
     - COPYING
     - README.md
+    - /\.psd$/
 
-debug: true
+debug: false
 
 url: https://www.bzflag.org
 baseurl: /
