@@ -7,7 +7,7 @@ links:
       name: Downloads
     - url: https://forums.bzflag.org
       name: Forums
-    - url: /documentation
+    - url: /documentation/
       name: Documentation
     - url: /help/
       name: Help
