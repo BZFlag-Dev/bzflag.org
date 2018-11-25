@@ -103,4 +103,4 @@ The full list of keys can be viewed in the Help menu in-game or in the Change Ke
 
 This is also known as the Heads Up Display or HUD.
 
-[![User Interface Layout](/images/documentation/user_interface_layout_small.jpg)](/images/documentation/user_interface_layout.jpg)
+[![User Interface Layout](/assets/images/documentation/user_interface_layout_small.jpg)](/assets/images/documentation/user_interface_layout.jpg)

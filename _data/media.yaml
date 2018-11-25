@@ -1,7 +1,7 @@
 screenshots:
     url_formats:
-        full: '/images/screenshots/%s.jpg'
-        thumbnail: '/images/screenshots/%s_t.jpg'
+        full: '/assets/images/media/screenshots/%s.jpg'
+        thumbnail: '/assets/images/media/screenshots/%s_t.jpg'
     thumbnail_size:
         width: 240
         height: 150

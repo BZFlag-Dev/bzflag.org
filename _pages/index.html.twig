@@ -34,11 +34,11 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                            height="400"
                            loop="loop"
                            preload="none"
-                           poster="/images/videothumb/bzteaser.jpg"
+                           poster="{{ url('/assets/images/home/bzteaser.jpg') }}"
                            controls="controls"
                     >
-                        <source src="/vid/bzteaser.mp4" type="video/mp4" />
-                        <source src="/vid/bzteaser.webm" type="video/webm" />
+                        <source src="{{ url('/assets/videos/home/bzteaser.mp4') }}" type="video/mp4" />
+                        <source src="{{ url('/assets/videos/home/bzteaser.webm') }}" type="video/webm" />
                     </video>
                 </div>
             </div>
@@ -86,7 +86,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
     <section class="my-5">
         <div class="c-theater">
             <div class="c-theater__image">
-                <img src="{{ url('/assets/images/pages/index/flying_tank.jpg') }}"
+                <img src="{{ url('/assets/images/home/flying_tank.jpg') }}"
                     alt="">
             </div>
 
@@ -191,7 +191,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                             <div class="d-flex align-items-center h-100">
                                 <div>
                                     <div class="d-flex align-items-center">
-                                        <img src="{{ url('/assets/images/pages/index/' ~ flag.shot_type.image) }}"
+                                        <img src="{{ url('/assets/images/home/' ~ flag.shot_type.image) }}"
                                              class="mr-3"
                                              alt="{{ flag.shot_type.description }}"
                                         >
@@ -215,7 +215,7 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
     <script>
         const player = new Plyr('#teaser', {
             iconUrl: '{{ url("/assets/images/plyr.svg") }}',
-            blankVideo: '{{ url("/assets/vid/blank.mp4") }}',
+            blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
             controls: [
                 'play-large'
             ],
