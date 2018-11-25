@@ -114,8 +114,8 @@ downloads:
     windows:
         - filename: bzfinst.exe
     irix:
-        - filename: bzflag-@VER@.n32.tardist
-        - filename: bzflag-@VER@.o32.tardist
+        - filename: bzflag-1.7d.9.n32.tardist
+        - filename: bzflag-1.7d.9.o32.tardist
     source:
         - filename: LICENSE
-        - filename: bzflag-@VER@.src.tar.gz
+        - filename: bzflag-1.7d.9.src.tar.gz
