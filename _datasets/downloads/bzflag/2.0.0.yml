@@ -107,7 +107,7 @@ changelog: |
     * Server is now valgrind-happy - Alfredo Tupone, Daniel Remenak, Sean Morrison
     * Limit quick rejoins - Anonymous
     * Added 'options' section to world maps - Anonymous
-    * Added the '-set <name> <value>' option to bzfs - Anonymous
+    * Added the '-set &lt;name&gt; &lt;value&gt;' option to bzfs - Anonymous
     * Throw away bad or early links in world files - Tim Riker
     * Added Record/Replay feature - Anonymous
     * Added Random teleporter destinations - Anonymous

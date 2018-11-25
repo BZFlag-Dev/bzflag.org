@@ -37,8 +37,8 @@ changelog: |
     * server drops bogus shots (anti cheating) - Tim Riker, Dave Brosius, Frank Thilo
     * i18n support in client - Dave Brosius, Isak Styf
     * Optional config file interface for bzfs settings - Dave Brosius
-    * inline editing of text fields (<- ->) - Dave Brosius, Frank Thilo
-    * extend admin command -> /flag reset unused - Dave Brosius
+    * inline editing of text fields (&lt;- -&gt;) - Dave Brosius, Frank Thilo
+    * extend admin command -&gt; /flag reset unused - Dave Brosius
 date: '2003-06-17'
 downloads:
     windows:

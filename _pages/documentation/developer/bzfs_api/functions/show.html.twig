@@ -55,10 +55,14 @@ parent:
 
         {% if this.returns | keys | first matches '/^\\d+$/' %}
             {% for return in this.returns %}
-                <p>{{ api_object(return.dataType) }} - {{ return.description | markdown }}</p>
+                {% markdown %}
+                {{ api_object(return.dataType) }}{% if return.description %} - {{ return.description }}{% endif %}
+                {% endmarkdown %}
             {% endfor %}
         {% else %}
-            <p>{{ api_object(this.returns.dataType) }} - {{ this.returns.description | markdown }}</p>
+            {% markdown %}
+            {{ api_object(this.returns.dataType) }}{% if this.returns.description %} - {{ this.returns.description }}{% endif %}
+            {% endmarkdown %}
         {% endif %}
     {% endif %}
 

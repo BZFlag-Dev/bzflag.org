@@ -17,7 +17,7 @@
                 <p class="sr-only">toggle menu</p>
             </button>
 
-            <nav class="col-lg site-navigation" role="navigation">
+            <nav class="col-lg site-navigation">
                 <ul id="navigation" class="site-navigation__links">
                     {% for link in data.navigation.links %}
                         {%- set url = link.url[0] == '/' ? url(link.url) : link.url -%}

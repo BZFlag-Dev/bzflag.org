@@ -61,8 +61,8 @@ metadescription: BZFlag is a free 3D online multi-player multi-platform tank bat
                                 <div class="c-hover-card__body">
                                     <p class="c-hover-card__date">
                                         <small>
-                                            <time datetime="{{ announcement.date | date }}">
-                                                {{- announcement.date | date('F d, Y') -}}
+                                            <time datetime="{{ announcement.date | date("Y-m-d\\TH:i\\Z", 'UTC') }}">
+                                                {{- announcement.date | date('F d, Y', 'UTC') -}}
                                             </time>
                                         </small>
                                     </p>

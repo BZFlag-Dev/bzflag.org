@@ -3,7 +3,7 @@ codename: 'Break the world'
 changelog: |
     * control spawn on buildings with -sb - Frank Thilo
     * Initial Docbook documentation - Sean Morrison
-    * Persistent bans with -banfile <filename> - Lars Luthman
+    * Persistent bans with -banfile &lt;filename&gt; - Lars Luthman
     * Streamroll collision detection is now compressed in height - Alfredo Tupone
     * Rendering options are actuated immediately - Alfredo Tupone
     * Height of base thickness (in world files) goes over the wire - Alfredo Tupone
@@ -25,7 +25,7 @@ changelog: |
     * Add /set var value server cmd - Dave Brosius
     * improved /ban /banlist added reason and time parsing - Dennis Pedersen
     * Shortened GM to 0.95 normal shot (tunable) - Tim Riker
-    * tarball now supports "rpm -tb <foo>.tar.gz" - Tim Riker
+    * tarball now supports "rpm -tb &lt;foo&gt;.tar.gz" - Tim Riker
     * bzfs uses 1 port instead of 2 - Alfredo Tupone
     * bzflag is officially assigned port 5154 as default - IANA, Tim Riker
     * bots (-solo) game is by far more playable - Alfredo Tupone
@@ -59,7 +59,7 @@ changelog: |
     * Remove old lag pings - Dave Brosius
     * BeOS port - François Revol
     * Collision detection fixes - David Trowbridge, Jeff Myers
-    * PlayerId -> ubyte - David Trowbridge, Frank Thilo
+    * PlayerId -&gt; ubyte - David Trowbridge, Frank Thilo
     * Get rid of reconnect port - David Trowbridge
     * Hunt opponent in HUD - Adam Krell, David Trowbridge
     * Flag system cleanup - Dave Brosius

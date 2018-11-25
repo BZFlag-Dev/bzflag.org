@@ -6,7 +6,7 @@ changelog: |
     * USB joystick support - Nick Sayer
     * new (faster?) radar jamming code - Mathias Gumz
     * sort by score - Colin Bayer, Dave Brosius, Tim Riker
-    * world file rad -> deg - Tim Riker
+    * world file rad -&gt; deg - Tim Riker
     * add player flag display to HUD - Tim Riker (prompted by Colin Bayer)
     * random height pyramids too - Tim Riker
     * dim rogue color when blind - Colin Bayer
@@ -26,7 +26,7 @@ changelog: |
     * CTF world from file - Colin Bayer, Tim Riker
     * patch playerIds to prepare for one tcp port - Tim Riker
     * missile sound effect - Dave Brosius
-    * udp first then multicast, IRIX fix? (use -i <> for multicast) - Tim Riker
+    * udp first then multicast, IRIX fix? (use -i &lt;&gt; for multicast) - Tim Riker
     * enhanced radar - Jeremiah Moss
     * don't relay read in player read - Frank Thilo, Tim Riker
     * -fb flags on box buildings - Tim Riker, Colin Bayer
