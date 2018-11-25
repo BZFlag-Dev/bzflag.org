@@ -1,0 +1,37 @@
+---
+collection: flags
+section: documentation
+sectiontitle: Flags
+permalink: /documentation/flags/%basename/
+title: %name Flag
+parent:
+---
+
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% set flags = collections.flags | where('type', '==', this.type) %}
+
+{% block aside %}
+    <h2 class="mt-0">{{ this.type }} Flags</h2>
+    <ul>
+        {% for flag in flags | order('filename') %}
+            <li>
+                <a href="{{ url(flag) }}"
+                   class="text-decoration-none"
+                >
+                    {{- flag.name -}}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ url(pages['Flags']) }}">Back to Flags</a></p>
+{% endblock %}
+
+{% block content %}
+    <h1 class="mt-0">{{ this.name }} Flag</h1>
+
+    <p>Abbreviation: {{ this.abbreviation }}</p>
+
+    {{ this.content | markdown }}
+{% endblock %}

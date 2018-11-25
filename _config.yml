@@ -18,7 +18,9 @@ pageviews:
 
 collections:
     - name: user_documentation
-      folder: _documentation/user
+      folder: _documentation/user/pages
+    - name: flags
+      folder: _documentation/user/flags
     - name: bzfs_api_events
       folder: _documentation/developer/bzfs_api_events
     - name: bzfs_api_functions
