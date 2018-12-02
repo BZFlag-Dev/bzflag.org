@@ -1,0 +1,17 @@
+$oses: 'linux', 'macos', 'unix', 'unknown', 'windows';
+
+@each $os in $oses {
+    .os-#{$os} .hide-#{$os} {
+        display: none;
+    }
+
+    .os-#{$os} {
+        @each $_os in $oses {
+            @if $os != $_os {
+                .show-#{$_os} {
+                    display: none;
+                }
+            }
+        }
+    }
+}

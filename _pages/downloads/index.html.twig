@@ -8,6 +8,40 @@ metadescription: BZFlag is available as a free download. Pre-built packages are 
 {% extends "_layouts/page.html.twig" %}
 
 {% block content %}
+    <div class="row mb-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="show-macos">
+                <p class="text-center">
+                    If you use <a href="https://brew.sh/">Homebrew</a> on macOS, you may download BZFlag via the
+                    <code>brew</code> command.
+                </p>
+
+                {% include "_includes/terminal.html.twig" with { command: 'brew cask install bzflag', os: 'macos' } %}
+            </div>
+
+            <div class="show-linux">
+                <p>
+                    If you use <a href="https://flatpak.org/">Flatpak</a> on your Linux system, you may install BZFlag
+                    through the <code>flatpak</code> command. Otherwise, you will need to compile your own binaries from
+                    source.
+                </p>
+
+                {% include "_includes/terminal.html.twig" with { command: 'flatpak install flathub org.bzflag.BZFlag', os: 'linux' } %}
+            </div>
+
+            {# Since we're not officially maintaining the Chocolatey version yet; let's not officially advertise it #}
+            {# @todo remove the 'd-none' once we've taken it over #}
+            <div class="d-none show-windows">
+                <p class="text-center">
+                    If you use <a href="https://chocolatey.org/">Chocolatey</a> on your machine, you may download BZFlag
+                    via the <code>choco</code> command.
+                </p>
+
+                {% include "_includes/terminal.html.twig" with { command: 'choco install bzflag', os: 'windows' } %}
+            </div>
+        </div>
+    </div>
+
     {% include "_includes/latest_downloads.html.twig" %}
 
     {% set latest_release = data.downloads_bzflag | order('date', 'DESC') | first %}
