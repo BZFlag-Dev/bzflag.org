@@ -1,6 +1,8 @@
 ///
 /// Native `url(..)` function wrapper
 ///
+/// @link https://github.com/HugoGiraudel/sass-boilerplate
+///
 /// @param {String} $base - base URL for the asset
 /// @param {String} $type - asset type folder (e.g. `fonts/`)
 /// @param {String} $path - asset path
@@ -13,6 +15,8 @@
 
 ///
 /// Returns URL to an image based on its path
+///
+/// @link https://github.com/HugoGiraudel/sass-boilerplate
 ///
 /// @param {String} $path - image path
 /// @param {String} $base [$base-url] - base URL
@@ -27,6 +31,8 @@
 
 ///
 /// Returns URL to a font based on its path
+///
+/// @link https://github.com/HugoGiraudel/sass-boilerplate
 ///
 /// @param {String} $path - font path
 /// @param {String} $base [$base-url] - base URL
