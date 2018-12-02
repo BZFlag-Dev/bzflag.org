@@ -13,6 +13,9 @@ downloads:
     macos:
         - filename: BZFlag-@VER@-macOS.zip
           requirements: 10.7+ Intel only
+    flatpak:
+        - url: https://flathub.org/apps/details/org.bzflag.BZFlag
+          requirements: ~
     source:
         - filename: bzflag-@VER@.tar.bz2
         - filename: bzflag-@VER@.tar.gz

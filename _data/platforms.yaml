@@ -1,0 +1,12 @@
+flatpak:
+    desc: Linux (via Flatpak)
+    logo: Flatpak
+    os: linux
+
+macos:
+    desc: macOS
+    os: macos
+
+windows:
+    desc: Windows
+    os: windows
