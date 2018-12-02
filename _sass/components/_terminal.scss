@@ -1,0 +1,170 @@
+.c-terminal {
+    @extend .my-3;
+}
+
+.c-terminal__button {
+    position: relative;
+}
+
+.c-terminal[data-os="linux"],
+.c-terminal[data-os="macos"] {
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
+    .c-terminal__header {
+        padding: 3px 7px;
+    }
+
+    .c-terminal__button {
+        border-radius: 50%;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+    }
+
+    .c-terminal__prompt::after {
+        content: '$ ';
+    }
+}
+
+.c-terminal[data-os="linux"],
+.c-terminal[data-os="windows"] {
+    .c-terminal__button {
+        &::before,
+        &::after {
+            content: '';
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.c-terminal[data-os="linux"] .c-terminal__button:nth-child(1)::before,
+.c-terminal[data-os="linux"] .c-terminal__button:nth-child(1)::after,
+.c-terminal[data-os="windows"] .c-terminal__button:nth-child(3)::before,
+.c-terminal[data-os="windows"] .c-terminal__button:nth-child(3)::after {
+    top: 25%;
+}
+
+.c-terminal[data-os="linux"] .c-terminal__button:nth-child(1)::before,
+.c-terminal[data-os="windows"] .c-terminal__button:nth-child(3)::before {
+    transform: rotate(-45deg);
+}
+
+.c-terminal[data-os="linux"] .c-terminal__button:nth-child(1)::after,
+.c-terminal[data-os="windows"] .c-terminal__button:nth-child(3)::after {
+    transform: rotate(45deg);
+}
+
+.c-terminal[data-os="linux"] {
+    background: linear-gradient(#5A574F, #3F3E39);
+
+    .c-terminal__button {
+        &:nth-child(1) {
+            background: linear-gradient(#F07C5A, #E0501E);
+
+            &::before,
+            &::after {
+                border-left: 1px solid rgba(#000, 0.5);
+                height: 8px;
+            }
+        }
+
+        &:nth-child(n+2) {
+            background: linear-gradient(#898883, #5C5B57);
+        }
+
+        &:nth-child(2) {
+            &::after {
+                border-bottom: 1px solid rgba(#000, 0.5);
+                height: 1px;
+                width: 8px;
+            }
+        }
+
+        &:nth-child(3) {
+            &::after {
+                border: 1px solid rgba(#000, 0.5);
+                height: 6px;
+                width: 8px;
+            }
+        }
+    }
+}
+
+.c-terminal[data-os="windows"] {
+    .c-terminal__button {
+        &:nth-child(1) {
+            &::after {
+                border-bottom: 2px solid rgba(#000, 0.5);
+                width: 10px;
+            }
+        }
+
+        &:nth-child(2) {
+            &::after {
+                border: 2px solid rgba(#000, 0.5);
+                height: 8px;
+                width: 12px;
+            }
+        }
+
+        &:nth-child(3) {
+            &::before,
+            &::after {
+                border-left: 2px solid #fff;
+                height: 13px;
+            }
+        }
+    }
+}
+
+.c-terminal[data-os="macos"] {
+    background: linear-gradient(#424346, #37383a);
+
+    .c-terminal__button {
+        border: 1px solid rgba(#000, 0.5);
+
+        &:nth-child(1) {
+            background-color: #ff6058;
+        }
+
+        &:nth-child(2) {
+            background-color: #ffbd2e;
+        }
+
+        &:nth-child(3) {
+            background-color: #28ca40;
+        }
+    }
+}
+
+.c-terminal[data-os="windows"] {
+    .c-terminal__prompt::after {
+        content: 'C:\\> ';
+    }
+
+    .c-terminal__header {
+        background-color: rgba(#fff, 0.4);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .c-terminal__button {
+        height: 30px;
+        width: 40px;
+
+        &:nth-child(3) {
+            background-color: red;
+        }
+    }
+}
+
+.c-terminal__body {
+    @extend .p-3;
+
+    background-color: #202020;
+    font-family: $font-stack-monospace;
+}
