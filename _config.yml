@@ -30,6 +30,7 @@ collections:
 
 exclude:
     - COPYING
+    - LICENSES.md
     - README.md
     - /\.psd$/
 
