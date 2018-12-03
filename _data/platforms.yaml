@@ -1,6 +1,5 @@
 flatpak:
     desc: Linux (via Flatpak)
-    logo: Flatpak
     os: linux
 
 macos:
