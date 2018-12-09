@@ -10,7 +10,7 @@
         {% set platform_name = data.platforms[platform] %}
         {% set download_list = latest_releases[platform].downloads[platform] %}
 
-        <div class="d-sm-inline-block mb-3 mb-sm-0 {% if not loop.last %}mr-sm-3{% endif %}">
+        <div class="d-sm-inline-block mb-3 {% if not loop.last %}mr-sm-3{% endif %}">
             <div class="d-flex justify-content-center c-button-group" role="group">
                 {% set downloads = download_list | select('filename') %}
                 {% set isSelfHosted = downloads is not empty %}
@@ -86,7 +86,7 @@
     {% endfor %}
 </div>
 
-<div class="my-3">
+<div class="mb-3">
     <div class="text-center">
         <p class="d-sm-inline mb-0 mr-sm-1">Download {{ latest_releases.source.version }} source as</p>
         <ul class="d-inline list-inline">
