@@ -10,7 +10,7 @@
         {% set platform_name = data.platforms[platform] %}
         {% set download_list = latest_releases[platform].downloads[platform] %}
 
-        <div class="d-sm-inline-block mb-3 {% if not loop.last %}mr-sm-3{% endif %}">
+        <div class="d-md-inline-block mb-3 {% if not loop.last %}mr-md-3{% endif %}">
             <div class="d-flex justify-content-center c-button-group" role="group">
                 {% set downloads = download_list | select('filename') %}
                 {% set isSelfHosted = downloads is not empty %}
@@ -36,8 +36,8 @@
                     {% set download_url %}{{ downloads | first }}{% endset %}
                 {% endif %}
 
-                <a href="{{ download_url }}" class="c-button">
-                    <div class="d-flex align-items-center">
+                <a href="{{ download_url }}" class="c-button d-block w-100">
+                    <div class="d-flex align-items-center justify-content-center">
                         <div class="text-center">
                             <div>
                                 <strong>
