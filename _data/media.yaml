@@ -3,101 +3,110 @@ screenshots:
         full: '/assets/images/media/screenshots/%s.jpg'
         thumbnail: '/assets/images/media/screenshots/%s_t.jpg'
     thumbnail_size:
-        width: 240
-        height: 150
-    items:
-        - filename: dantes_inferno_01
-          caption: Dante's Inferno by Zechariah
-        - filename: dantes_inferno_02
-          caption: Dante's Inferno by Zechariah
-        - filename: dantes_inferno_03
-          caption: Dante's Inferno by Zechariah
-        - filename: aa_bridge_crossing_01
-          caption: A*A Bridge Crossing by Teppic
-        - filename: aa_bridge_crossing_02
-          caption: A*A Bridge Crossing by Teppic
-        - filename: aa_bridge_crossing_03
-          caption: A*A Bridge Crossing by Teppic
-        - filename: channel_crossing_01
-          caption: Channel Crossing by LouMan
-        - filename: channel_crossing_02
-          caption: Channel Crossing by LouMan
-        - filename: channel_crossing_03
-          caption: Channel Crossing by LouMan
-        - filename: churchyard_01
-          caption: Churchyard by LouMan
-        - filename: churchyard_02
-          caption: Churchyard by LouMan
-        - filename: churchyard_03
-          caption: Churchyard by LouMan
-        - filename: clay_hills_01
-          caption: Clay Hills by ahs3
-        - filename: clay_hills_02
-          caption: Clay Hills by ahs3
-        - filename: clay_hills_03
-          caption: Clay Hills by ahs3
-        - filename: collaborator_2010_01
-          caption: Collaborator 2010 by <a href="https://forums.bzflag.org/viewtopic.php?f=64&t=16835">a bunch of players</a>
-        - filename: delirious_city_01
-          caption: Delirious City By KTL
-        - filename: delirious_city_02
-          caption: Delirious City By KTL
-        - filename: delirious_city_03
-          caption: Delirious City By KTL
-        - filename: delirious_city_04
-          caption: Delirious City By KTL
-        - filename: delirious_city_05
-          caption: Delirious City By KTL
-        - filename: delirious_city_06
-          caption: Delirious City By KTL
-        - filename: desert_war_01
-          caption: Desert War by The Purple Panzer
-        - filename: gamma_quadrant_01
-          caption: Gamma Quadrant by LouMan
-        - filename: gamma_quadrant_02
-          caption: Gamma Quadrant by LouMan
-        - filename: h2o_01
-          caption: H2O by LouMan
-        - filename: h2o_02
-          caption: H2O by LouMan
-        - filename: h2o_03
-          caption: H2O by LouMan
-        - filename: h2o_04
-          caption: H2O by LouMan
-        - filename: h2o_05
-          caption: H2O by LouMan
-        - filename: high_rise_havoc_01
-          caption: High Rise Havoc by LouMan
-        - filename: home_sweet_home_01
-          caption: Home Sweet Home by LouMan
-        - filename: home_sweet_home_02
-          caption: Home Sweet Home by LouMan
-        - filename: japanese_castles_01
-          caption: Japanese Castles by krungthai
-        - filename: metropolis_01
-          caption: Metropolis by LouMan
-        - filename: mystic_valley_01
-          caption: Mystic Valley by LouMan
-        - filename: mystic_valley_02
-          caption: Mystic Valley by LouMan
-        - filename: pandemonium_01
-          caption: Pandemonium by LouMan
-        - filename: pandemonium_02
-          caption: Pandemonium by LouMan
-        - filename: pandemonium_03
-          caption: Pandemonium by LouMan
-        - filename: space_invaders_01
-          caption: Space Invaders by Mari Iijima
-        - filename: the_battle_of_midway_island_01
-          caption: The Battle of Midway Island by Jefenry
-        - filename: the_battle_of_midway_island_02
-          caption: The Battle of Midway Island by Jefenry
-        - filename: the_battle_of_midway_island_04
-          caption: The Battle of Midway Island by Jefenry
-        - filename: xenon_ctf_01
-          caption: Xenon by LouMan
-        - filename: xenon_ctf_02
-          caption: Xenon by LouMan
-        - filename: xenon_ctf_03
-          caption: Xenon by LouMan
-
+        width: 400
+        height: 250
+    maps:
+        - name: Dante's Inferno
+          author: Zechariah
+          images:
+              - filename: dantes_inferno_01
+              - filename: dantes_inferno_02
+              - filename: dantes_inferno_03
+        - name: A*A Bridge Crossing
+          author: Teppic
+          images:
+              - filename: aa_bridge_crossing_01
+              - filename: aa_bridge_crossing_02
+              - filename: aa_bridge_crossing_03
+        - name: Channel Crossing
+          author: LouMan
+          images:
+              - filename: channel_crossing_01
+              - filename: channel_crossing_02
+              - filename: channel_crossing_03
+        - name: Churchyard
+          author: LouMan
+          images:
+              - filename: churchyard_01
+              - filename: churchyard_02
+              - filename: churchyard_03
+        - name: Clay Hills
+          author: ahs3
+          images:
+              - filename: clay_hills_01
+              - filename: clay_hills_02
+              - filename: clay_hills_03
+        - name: Collaborator 2010
+          caption: A collaboration between <a href="https://forums.bzflag.org/viewtopic.php?f=64&t=16835">a bunch of players</a>.
+          images:
+              - filename: collaborator_2010_01
+        - name: Delirious City
+          author: KTL
+          images:
+              - filename: delirious_city_01
+              - filename: delirious_city_02
+              - filename: delirious_city_03
+              - filename: delirious_city_04
+              - filename: delirious_city_05
+              - filename: delirious_city_06
+        - name: Desert War
+          author: The Purple Panzer
+          images:
+              - filename: desert_war_01
+        - name: Gamma Quadrant
+          author: LouMan
+          images:
+              - filename: gamma_quadrant_01
+              - filename: gamma_quadrant_02
+        - name: H2O
+          author: LouMan
+          images:
+              - filename: h2o_01
+              - filename: h2o_02
+              - filename: h2o_03
+              - filename: h2o_04
+              - filename: h2o_05
+        - name: High Rise Havoc
+          author: LouMan
+          images:
+              - filename: high_rise_havoc_01
+        - name: Home Sweet Home
+          author: LouMan
+          images:
+              - filename: home_sweet_home_01
+              - filename: home_sweet_home_02
+        - name: Japanese Castles
+          author: krungthai
+          images:
+              - filename: japanese_castles_01
+        - name: Metropolis
+          author: LouMan
+          images:
+              - filename: metropolis_01
+        - name: Mystic Valley
+          author: LouMan
+          images:
+              - filename: mystic_valley_01
+              - filename: mystic_valley_02
+        - name: Pandemonium
+          author: LouMan
+          images:
+              - filename: pandemonium_01
+              - filename: pandemonium_02
+              - filename: pandemonium_03
+        - name: The Battle of Midway Island
+          author: Jefenry
+          images:
+              - filename: the_battle_of_midway_island_01
+              - filename: the_battle_of_midway_island_02
+              - filename: the_battle_of_midway_island_04
+        - name: Space Invaders
+          author: Mari Iijima
+          images:
+              - filename: space_invaders_01
+        - name: Xenon
+          author: LouMan
+          images:
+              - filename: xenon_ctf_01
+              - filename: xenon_ctf_02
+              - filename: xenon_ctf_03

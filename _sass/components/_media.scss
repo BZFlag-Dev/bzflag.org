@@ -1,13 +1,11 @@
 .c-media-screenshot {
-    display: inline-block;
-
-    & > a:link,
-    & > a:visited {
-        text-decoration: none;
+    figcaption {
+        text-align: center;
     }
 
     img {
-        display: inline-block;
-        vertical-align: bottom;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
     }
 }

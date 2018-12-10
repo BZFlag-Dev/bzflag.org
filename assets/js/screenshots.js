@@ -73,5 +73,5 @@
             ps.init();
       };
 
-      init('.screenshots', openPS);
+      init('.js-screenshots', openPS);
 })();

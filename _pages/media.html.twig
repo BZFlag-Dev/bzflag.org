@@ -9,26 +9,57 @@ permalink: /media/
 {% from _self import media_screenshot_block %}
 
 {% macro media_screenshot_block(screenshot) %}
-    <div class="c-media-screenshot col-md-6 col-lg-4 mb-5 mb-md-4 mb-lg-3">
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="{{ url(data.media.screenshots.url_formats.full|format(screenshot.filename)) }}" itemprop="contentUrl" data-size="1920x1200">
-                <img src="{{ url(data.media.screenshots.url_formats.thumbnail|format(screenshot.filename)) }}" itemprop="thumbnail" alt="{{ screenshot.caption | striptags }}" />
+    <div class="col-md-6 col-lg-4">
+        <figure class="c-media-screenshot"
+                itemprop="associatedMedia"
+                itemscope
+                itemtype="http://schema.org/ImageObject"
+        >
+            <a href="{{ url(data.media.screenshots.url_formats.full | format(screenshot.filename)) }}"
+               itemprop="contentUrl"
+               data-size="1920x1200"
+            >
+                <img src="{{ url(data.media.screenshots.url_formats.thumbnail | format(screenshot.filename)) }}"
+                     itemprop="thumbnail"
+                     alt="{{ screenshot.caption | striptags }}"
+                />
             </a>
-            {% if screenshot.caption %}<figcaption itemprop="caption description">{{ screenshot.caption }}</figcaption>{% endif %}
+
+            {% if screenshot.caption %}
+                <figcaption itemprop="caption description">{{ screenshot.caption }}</figcaption>
+            {% endif %}
         </figure>
     </div>
 {% endmacro %}
 
 {% block content %}
-    <h1>Screenshots</h1>
-    <p class="mb-5">
-        The map system of BZFlag allows for a wide variety of styles.
+    <h1>Map Gallery</h1>
+    <p class="mb-3">
+        The BZFlag community consists of talented map designers whom take
+        advantage of BZFlag's open map system allowing for a wide variety of
+        styles.
     </p>
 
-    <div class="row screenshots" itemscope itemtype="http://schema.org/ImageGallery">
-        {% for screenshot in data.media.screenshots.items -%}
-            {{ media_screenshot_block(screenshot) }}
-        {%- endfor %}
+    <div class="js-screenshots" itemscope itemtype="http://schema.org/ImageGallery">
+        {% for map in data.media.screenshots.maps %}
+            <div>
+                <h2>{{ map.name }}</h2>
+
+                {%- if map.author -%}
+                    <p class="mb-3"><strong>Author:</strong> {{ map.author }}</p>
+                {%- endif -%}
+
+                {% if map.caption %}
+                    {{ map.caption | markdown }}
+                {% endif %}
+
+                <div class="row">
+                    {% for screenshot in map.images %}
+                        {{ media_screenshot_block(screenshot) }}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
     </div>
 
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
