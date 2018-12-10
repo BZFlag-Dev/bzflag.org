@@ -73,7 +73,7 @@ parent:
     <h2>Other {{ this.category }} Events</h2>
     <ul>
         {% for event in collections.bzfs_api_events | where('category', '==', this.category) | where('basename', '!=', this.basename) | order('filename') %}
-            <li><a href="{{ url(event) }}/">{{ event.basename }}</a></li>
+            <li><a href="{{ url(event) }}">{{ event.basename }}</a></li>
         {% endfor %}
     </ul>
 

@@ -69,7 +69,7 @@ parent:
     <h2>Other {{ this.category }} Functions</h2>
     <ul>
         {% for function in collections.bzfs_api_functions | where('category', '==', this.category) | where('basename', '!=', this.basename) | order('filename') %}
-            <li><a href="{{ url(function) }}/">{{ function.basename }}()</a></li>
+            <li><a href="{{ url(function) }}">{{ function.basename }}()</a></li>
         {% endfor %}
     </ul>
 

@@ -119,7 +119,7 @@ parent:
     <h2>Other {{ this.category }}</h2>
     <ul>
         {% for type in collections.bzfs_api_types | where('category', '==', this.category) | where('basename', '!=', this.basename) | order('filename') %}
-            <li><a href="{{ url(type) }}/">{{ type.basename }}</a></li>
+            <li><a href="{{ url(type) }}">{{ type.basename }}</a></li>
         {% endfor %}
     </ul>
 
