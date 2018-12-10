@@ -1,0 +1,37 @@
+$types: (
+    m: margin,
+    p: padding,
+);
+
+$directions: (
+    t: top,
+    r: right,
+    b: bottom,
+    l: left,
+    x: (left, right),
+    y: (top, bottom)
+);
+
+@each $t_abbv, $type in $types {
+    @each $d_abbv, $rules in $directions {
+        @each $s_abbv, $spacing in $spacings {
+            $placeholders: (
+                type: $t_abbv,
+                dir: $d_abbv,
+                value: $s_abbv
+            );
+
+            @include responsify('.%type%infix-%value', $placeholders) {
+                @each $rule in $rules {
+                    #{$type}: $spacing !important;
+                }
+            }
+
+            @include responsify('.%type%dir%infix-%value', $placeholders) {
+                @each $rule in $rules {
+                    #{$type}-#{$rule}: $spacing !important;
+                }
+            }
+        }
+    }
+}
