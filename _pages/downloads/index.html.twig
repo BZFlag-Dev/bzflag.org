@@ -14,7 +14,8 @@ opengraph:
             <div class="show-macos">
                 <p class="text-center">
                     If you use <a href="https://brew.sh/">Homebrew</a> on macOS, you may download BZFlag via the
-                    <code>brew</code> command.
+                    <code>brew</code> command. Alternatively, you may download our binary below and drag the .app into
+                    your Applications directory.
                 </p>
 
                 {% include "_includes/terminal.html.twig" with { command: 'brew cask install bzflag', os: 'macos' } %}
@@ -23,16 +24,17 @@ opengraph:
             <div class="show-linux">
                 <p>
                     If you use <a href="https://flatpak.org/">Flatpak</a> on your Linux system, you may install BZFlag
-                    through the <code>flatpak</code> command. Otherwise, you will need to compile your own binaries from
-                    source.
+                    through the <code>flatpak</code> command. Alternatively, you may install from your package manager
+                    or compile from source.
                 </p>
 
                 {% include "_includes/terminal.html.twig" with { command: 'flatpak install flathub org.bzflag.BZFlag', os: 'linux' } %}
             </div>
 
             {# Since we're not officially maintaining the Chocolatey version yet; let's not officially advertise it #}
-            {# @todo remove the 'd-none' once we've taken it over #}
-            <div class="d-none show-windows">
+            {# @todo uncomment once we've taken it over #}
+            {#
+            <div class="show-windows">
                 <p class="text-center">
                     If you use <a href="https://chocolatey.org/">Chocolatey</a> on your machine, you may download BZFlag
                     via the <code>choco</code> command.
@@ -40,6 +42,7 @@ opengraph:
 
                 {% include "_includes/terminal.html.twig" with { command: 'choco install bzflag', os: 'windows' } %}
             </div>
+            #}
         </div>
     </div>
 
