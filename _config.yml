@@ -42,3 +42,5 @@ description: BZFlag is a free 3D online multi-player multi-platform tank battle 
 github:
     dev_repo: BZFlag-Dev/bzflag
     dev_branch: 2.4
+opengraph:
+    image: /assets/images/opengraph.jpg
