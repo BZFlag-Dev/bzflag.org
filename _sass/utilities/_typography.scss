@@ -1,0 +1,22 @@
+@each $key, $val in $font-sizes {
+    #{$key},
+    .#{$key} {
+        font-size: em($val);
+    }
+}
+
+.line-height-1 {
+    line-height: 1;
+}
+
+.text-monospace {
+    font-family: $font-stack-monospace !important;
+}
+
+.text-sans-serif {
+    font-family: $font-stack-sans-serif !important;
+}
+
+.text-muted {
+    opacity: 0.7 !important;
+}
