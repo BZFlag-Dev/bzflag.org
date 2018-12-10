@@ -49,3 +49,57 @@
         @content;
     }
 }
+
+///
+/// Generate CSS rules for spacing types (margin/padding) based on the
+/// abbreviations and values used in the Bootstrap classes (e.g. `my-md-1`).
+///
+/// @access private
+///
+/// @param {String} $space_type 'margin' or 'padding'
+/// @param {String} $direction  't', 'r', 'b', 'l', 'x', 'y'
+/// @param {String} $value      '0', '1', '2', '3', '4', '5', 'auto'
+/// @param {String} $breakpoint 'xs', 'sm', 'md', 'lg', 'xl'
+///
+@mixin _spacing($space_type, $direction, $value, $breakpoint) {
+    @include respond-up($breakpoint) {
+        @if $direction == null {
+            #{$space_type}: map-get($spacing, $value);
+        }
+        @else {
+            @each $direction in map-get($spacing_directions, $direction) {
+                #{$space_type}-#{$direction}: map-get($spacing, $value);
+            }
+        }
+    }
+}
+
+///
+/// Add margin based on the Bootstrap class convention.
+///
+/// This mixin will **not** add an `!important` like the Bootstrap classes.
+///
+/// @access public
+///
+/// @param {String} $direction  't', 'r', 'b', 'l', 'x', 'y'
+/// @param {String} $value      '0', '1', '2', '3', '4', '5', 'auto'
+/// @param {String} $breakpoint 'xs', 'sm', 'md', 'lg', 'xl'
+///
+@mixin margin($direction: null, $value: 0, $breakpoint: xs) {
+    @include _spacing('margin', $direction, $value, $breakpoint);
+}
+
+///
+/// Add padding based on the Bootstrap class convention.
+///
+/// This mixin will **not** add an `!important` like the Bootstrap classes.
+///
+/// @access public
+///
+/// @param {String} $direction  't', 'r', 'b', 'l', 'x', 'y'
+/// @param {String} $value      '0', '1', '2', '3', '4', '5', 'auto'
+/// @param {String} $breakpoint 'xs', 'sm', 'md', 'lg', 'xl'
+///
+@mixin padding($direction: null, $value: 0, $breakpoint: xs) {
+    @include _spacing('padding', $direction, $value, $breakpoint);
+}

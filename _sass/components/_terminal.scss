@@ -1,5 +1,5 @@
 .c-terminal {
-    @extend .my-3;
+    @include margin(y, 3);
 }
 
 .c-terminal__button {
@@ -163,7 +163,7 @@
 }
 
 .c-terminal__body {
-    @extend .p-3;
+    @include padding(null, 3);
 
     background-color: #202020;
     font-family: $font-stack-monospace;

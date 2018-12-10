@@ -33,7 +33,7 @@
 }
 
 .c-hover-card__body {
-    @extend .p-3;
+    @include padding(null, 3);
 
     background-color: rgba(#000, 0.6);
     display: flex;
@@ -58,7 +58,7 @@
 }
 
 .c-hover-card__title {
-    @extend .my-1;
+    @include margin(y, 1);
 
     line-height: 1;
 }

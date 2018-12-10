@@ -24,7 +24,7 @@
 }
 
 .c-theater__stage {
-    @extend .p-3;
+    @include padding(null, 3);
 
     background-color: rgba(#ffffff, 0.9);
     box-shadow: $box-shadow;
