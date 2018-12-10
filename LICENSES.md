@@ -13,7 +13,7 @@ Documentation and video/image assets created for the website should be licensed 
 - assets/images/media/
 - assets/images/screenshots/
 
-### GNU LGPL 2.0
+### GNU LGPL 2.1
 - assets/images/home/blue_laser.png
 - assets/images/home/blue_super_bullet.png
 - assets/images/home/guided_missile.png
@@ -21,7 +21,7 @@ Documentation and video/image assets created for the website should be licensed 
 - favicon.ico
 
 ### MIT License
-- assets/js/main.js
+- assets/js/main.js (except for the getOS function)
 - assets/js/screenshots.js
 - _data
 - _datasets
@@ -74,6 +74,7 @@ Documentation and video/image assets created for the website should be licensed 
 - Operating system logos are copyright and/or trademark their respective owners.
 - [highlight.js (just the monokai.css file for styling)](https://highlightjs.org/) - BSD 3-Clause "New" or "Revised" License
 	- _sass/vendor/highlightjs/
+- assets/js/main.js - [(the getOS function only)](https://stackoverflow.com/a/38241481) by [Vladyslav Turak](https://stackoverflow.com/users/4815056/vladyslav-turak) - CC BY-SA 3.0 Unported
 
 ---
 
