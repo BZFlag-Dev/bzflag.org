@@ -25,6 +25,19 @@
     </head>
 
     <body>
+        {% if this.jumbotron %}
+            <section class="page-jumbotron">
+                {% include "_includes/navigation.html.twig" %}
+
+                <img src="{{ url(this.jumbotron.image) }}"
+                     alt="{{ this.jumbotron.alt }}"
+                     class="page-jumbotron__image"
+                >
+            </section>
+        {% else %}
+            {% include "_includes/navigation.html.twig" %}
+        {% endif %}
+
         {% block content_root %}{% endblock %}
 
         {% include "_includes/footer.html.twig" %}

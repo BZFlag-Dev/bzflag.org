@@ -1,0 +1,18 @@
+.page-jumbotron {
+    overflow: hidden;
+}
+
+.page-jumbotron__image {
+    height: 300px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+
+    @include respond-up(md) {
+        height: 400px;
+    }
+
+    @include respond-up(lg) {
+        height: 500px;
+    }
+}

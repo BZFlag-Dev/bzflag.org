@@ -2,6 +2,9 @@
 title: Home
 section: home
 permalink: /
+jumbotron:
+    image: https://placehold.it/1920x500
+    alt: ~
 opengraph:
     title: BZFlag
     description: BZFlag is a free 3D online multi-player tank battle game available on Linux, macOS, and Windows.
@@ -10,15 +13,6 @@ opengraph:
 {% extends "_layouts/base.html.twig" %}
 
 {% block content_root %}
-    <section class="landing-jumbotron">
-        {% include "_includes/navigation.html.twig" %}
-
-        <img src="https://placehold.it/1920x500"
-             alt=""
-             class="landing-jumbotron__image"
-        >
-    </section>
-
     <section class="container">
         <div class="my-5">
             {% include "_includes/latest_downloads.html.twig" %}

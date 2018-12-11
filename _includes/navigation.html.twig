@@ -8,22 +8,21 @@
                 <span>BZFlag</span>
             </div>
 
-            <div id="menu-toggle"
+            <button id="menu-toggle"
                     class="c-hamburger c-hamburger--htx"
                     aria-expanded="false"
                     aria-controls="navigation"
-                    role="button"
             >
                 <span></span>
-                <p class="sr-only">toggle menu</p>
-            </div>
+                <span class="sr-only">Mobile menu</span>
+            </button>
 
             <nav class="col-lg site-navigation">
-                <ul id="navigation" class="site-navigation__links">
+                <ul id="navigation" class="site-navigation__links" role="menu">
                     {% for link in data.navigation.links %}
                         {%- set url = link.url[0] == '/' ? url(link.url) : link.url -%}
                         <li>
-                            <a href="{{ url }}">
+                            <a href="{{ url }}" role="menuitem">
                                 {{- link.name -}}
                             </a>
                         </li>

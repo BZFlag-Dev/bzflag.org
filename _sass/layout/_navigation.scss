@@ -2,7 +2,7 @@ $_default-nav-breakpoint: 'lg';
 
 .c-hamburger {
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 0;
 
     @include respond-up($_default-nav-breakpoint) {
@@ -35,8 +35,6 @@ $_default-nav-breakpoint: 'lg';
     li {
         @include respond-down($_default-nav-breakpoint) {
             border-top: $border-default;
-            padding-bottom: 10px;
-            padding-top: 10px;
         }
 
         @include respond-up($_default-nav-breakpoint) {
@@ -52,7 +50,13 @@ $_default-nav-breakpoint: 'lg';
 
     a {
         color: $color-text-primary;
+        display: block;
         text-decoration: none;
+
+        @include respond-down($_default-nav-breakpoint) {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
     }
 }
 
