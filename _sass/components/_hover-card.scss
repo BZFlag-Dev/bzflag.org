@@ -3,12 +3,11 @@
     display: block;
     position: relative;
     overflow: hidden;
-    text-decoration: none;
     transition: box-shadow 0.2s;
 
     &:focus,
     &:hover {
-        box-shadow: 0px 4px 8px 3px rgba(#000, 0.8);
+        box-shadow: 0 4px 8px 3px rgba(#000, 0.8);
 
         .c-hover-card__thumbnail {
             min-height: 110%;
@@ -61,4 +60,14 @@
     @include margin(y, 1);
 
     line-height: 1;
+}
+
+// Special overrides for anchors that use the .c-hover-card class. This is
+// necessary since anchors have rules that supersede classes due to specificity.
+a.c-hover-card {
+    &,
+    &:focus,
+    &:hover {
+        text-decoration: none;
+    }
 }

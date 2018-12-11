@@ -29,3 +29,14 @@
         }
     }
 }
+
+// Special overrides for anchors that use the .c-button class. This is necessary
+// since anchors have rules that supersede classes due to specificity.
+a.c-button {
+    &,
+    &:focus,
+    &:hover {
+        color: $color-primary;
+        text-decoration: none;
+    }
+}
