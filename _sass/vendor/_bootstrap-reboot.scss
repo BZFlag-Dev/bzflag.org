@@ -131,14 +131,14 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: $color-text-anchor;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0056b3;
+  color: darken($color-text-anchor, 10%);
   text-decoration: underline;
 }
 
@@ -328,4 +328,3 @@ template {
 [hidden] {
   display: none !important;
 }
-/*# sourceMappingURL=bootstrap-reboot.css.map */
