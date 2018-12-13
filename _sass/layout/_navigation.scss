@@ -3,7 +3,7 @@ $_default-nav-breakpoint: 'lg';
 .c-hamburger {
     position: absolute;
     right: 5px;
-    top: 0;
+    top: -5px;
 
     @include respond-up($_default-nav-breakpoint) {
         display: none;

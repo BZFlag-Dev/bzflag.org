@@ -14,7 +14,11 @@
 
     img {
         margin-right: 5px;
-        width: 30px;
+        width: 160px;
+
+        @include respond-up(md) {
+            width: 200px;
+        }
     }
 
     span {
