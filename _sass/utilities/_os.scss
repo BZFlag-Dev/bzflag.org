@@ -1,17 +1,13 @@
-$oses: 'linux', 'macos', 'unix', 'unknown', 'windows';
+$oses: 'android', 'ios', 'linux', 'macos', 'unknown', 'windows';
 
 @each $os in $oses {
     .os-#{$os} .hide-#{$os} {
         display: none;
     }
 
-    .os-#{$os} {
-        @each $_os in $oses {
-            @if $os != $_os {
-                .show-#{$_os} {
-                    display: none;
-                }
-            }
+    html:not(.os-#{$os}) {
+        .show-#{$os} {
+            display: none;
         }
     }
 }
