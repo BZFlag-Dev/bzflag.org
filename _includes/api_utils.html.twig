@@ -3,7 +3,7 @@
     {%- set object = (dataType[-1:1] == '*') ? dataType[:-1] : dataType -%}
     {%- set group = '' -%}
 
-    {% for grouping in ['events', 'objects', 'enums', 'functions'] %}
+    {% for grouping in ['events', 'types', 'functions'] %}
         {% if collections['bzfs_api_' ~ grouping][object] is defined %}
             {% set group = grouping %}
             {% set object_url = url(collections['bzfs_api_' ~ grouping][object]) %}
