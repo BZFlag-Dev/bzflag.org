@@ -22,9 +22,16 @@ parameters:
     - dataType: bool
       description: Whether or not to allow the capture
       name: allow
+    - dataType: bool
+      description: Whether or not tanks on the losing team should explode
+      name: killTeam
     - dataType: double
-      description: The server time at which the event occurred (in seconds).
+      description: The server time at which the event occurred (in seconds)
       name: eventTime
 ---
 
 This event is called each time a team flag is about to be captured. By setting `allow` to false, the capture event will not occur.
+
+## Known Issues
+
+- The `killTeam` boolean is broken in 2.4; this will be fixed in the 2.6 (see [issue #184](https://github.com/BZFlag-Dev/bzflag/issues/184))
