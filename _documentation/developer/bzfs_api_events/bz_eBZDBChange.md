@@ -1,6 +1,8 @@
 ---
-dataType: bz_BZDBChangeData_V1
-since: 2.4.0
+dataType:
+    current: bz_BZDBChangeData_V1
+    since: 2.4.0
+    legacy: ~
 category: Administrative
 plugins: ~
 parameters:

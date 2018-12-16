@@ -1,6 +1,8 @@
 ---
-dataType: bz_PollVetoEventData_V1
-since: 2.4.10
+dataType:
+    current: bz_PollVetoEventData_V1
+    since: 2.4.10
+    legacy: ~
 category: Polls
 plugins: ~
 parameters:

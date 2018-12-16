@@ -1,6 +1,10 @@
 ---
-dataType: bz_GetPlayerMottoData_V2
-since: 2.4.4
+dataType:
+    current: bz_GetPlayerMottoData_V2
+    since: 2.4.4
+    legacy:
+        - dataType: bz_GetPlayerMottoData_V1
+          since: 2.4.0
 category: Player
 plugins: ~
 parameters:
@@ -10,6 +14,7 @@ parameters:
     - dataType: bz_BasePlayerRecord
       description: The player record for the player using the motto.
       name: record
+      since: V2
     - dataType: double
       description: The server time the event occurred (in seconds).
       name: eventTime

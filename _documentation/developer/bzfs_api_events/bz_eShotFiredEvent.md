@@ -1,6 +1,8 @@
 ---
-dataType: bz_ShotFiredEventData_V1
-since: 2.4.0
+dataType:
+    current: bz_ShotFiredEventData_V1
+    since: 2.4.0
+    legacy: ~
 category: Shots
 plugins:
     - customflagsample

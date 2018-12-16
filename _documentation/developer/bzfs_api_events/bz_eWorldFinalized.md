@@ -1,6 +1,8 @@
 ---
-dataType: ''
-since: 2.4.0
+dataType:
+    current: ''
+    since: 2.4.0
+    legacy: ~
 category: World
 plugins:
     - fastmap

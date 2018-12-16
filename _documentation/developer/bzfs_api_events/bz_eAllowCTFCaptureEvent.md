@@ -1,6 +1,8 @@
 ---
-dataType: bz_AllowCTFCaptureEventData_V1
-since: 2.4.0
+dataType:
+    current: bz_AllowCTFCaptureEventData_V1
+    since: 2.4.0
+    legacy: ~
 category: Capture The Flag
 plugins: ~
 parameters:

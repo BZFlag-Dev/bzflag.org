@@ -1,6 +1,10 @@
 ---
-dataType: bz_ChatEventData_V2
-since: 2.4.4
+dataType:
+    current: bz_ChatEventData_V2
+    since: 2.4.4
+    legacy:
+        - dataType: bz_ChatEventData_V1
+          since: 2.4.0
 category: Chat
 plugins:
     - chathistory

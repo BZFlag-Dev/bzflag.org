@@ -12,13 +12,36 @@ parent:
 
 {% block content %}
     <h1>{{ this.basename }}</h1>
-    <p><span class="code text-sans-serif">Available since {{ this.since }}</span></p>
 
-    {{ this.content }}
+    {{ this.content | markdown }}
 
     {% if this.dataType %}
-        <h2 id="object-type">Object Type</h2>
-        <p>{{ this.dataType }}</p>
+        <h2 id="object-type">Data Object Type</h2>
+        <p>
+            <span class="code text-sans-serif"
+                  title="Available since"
+            >
+                {{- this.dataType.since -}}
+            </span>
+
+            <span>{{ this.dataType.current }}</span>
+        </p>
+
+        {% if this.dataType.legacy %}
+            <h3 id="deprecated-object-type" class="h4">Deprecated Types</h3>
+            <p>These data object types have been deprecated in favor of more recent versions, which contain more or corrected information.</p>
+            <ul>
+                {% for legacy_version in this.dataType.legacy %}
+                    <li>
+                        <span class="code text-sans-serif" title="Available since">
+                            {{- legacy_version.since -}}
+                        </span>
+
+                        {{ legacy_version.dataType }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
 
         <h2 id="parameters">Parameters</h2>
         <p>These are the values accessible in the <code>bz_EventData</code> variable that's made available in the <code>Event</code> method.</p>
@@ -35,7 +58,17 @@ parent:
                     <tr>
                         <td class="text-monospace">{{- api_object(param.dataType) -}}</td>
                         <td><code>{{- param.name -}}</code></td>
-                        <td>{{- param.description | markdown -}}</td>
+                        <td>
+                            {% markdown %}
+                                {{- param.description -}}
+
+                                {% if param.since %}
+                                    <small>
+                                        (_available since {{ param.since }} of the event_)
+                                    </small>
+                                {% endif %}
+                            {% endmarkdown %}
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -60,7 +93,7 @@ parent:
         This block of code can be used to get started when implementing the `Event()` function of your plug-in.
 
         ```cpp
-        {{ this.dataType }} *dataObject = ({{ this.dataType }}*)eventData;
+        {{ this.dataType.current }}* dataObject = ({{ this.dataType.current }}*)eventData;
 
         // Data
         // ---

@@ -1,6 +1,8 @@
 ---
-dataType: bz_TickEventData_V1
-since: 2.4.0
+dataType:
+    current: bz_TickEventData_V1
+    since: 2.4.0
+    legacy: ~
 category: Other
 plugins:
     - autoFlagReset

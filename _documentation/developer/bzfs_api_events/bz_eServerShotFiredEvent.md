@@ -1,6 +1,8 @@
 ---
-dataType: bz_ServerShotFiredEventData_V1
-since: 2.4.14
+dataType:
+    current: bz_ServerShotFiredEventData_V1
+    since: 2.4.14
+    legacy: ~
 category: Shots
 plugins: ~
 parameters:

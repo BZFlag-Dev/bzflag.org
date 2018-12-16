@@ -1,6 +1,8 @@
 ---
-dataType: bz_TeamScoreChangeEventData_V1
-since: 2.4.0
+dataType:
+    current: bz_TeamScoreChangeEventData_V1
+    since: 2.4.0
+    legacy: ~
 category: Score
 plugins: ~
 parameters:

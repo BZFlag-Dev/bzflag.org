@@ -1,6 +1,8 @@
 ---
-dataType: bz_ComputeHandicap_V1
-since: 2.4.12
+dataType:
+    current: bz_ComputeHandicap_V1
+    since: 2.4.12
+    legacy: ~
 category: Handicap
 plugins: ~
 parameters:

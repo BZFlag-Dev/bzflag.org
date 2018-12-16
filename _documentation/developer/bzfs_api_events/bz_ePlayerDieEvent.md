@@ -1,6 +1,10 @@
 ---
-dataType: bz_PlayerDieEventData_V2
-since: 2.4.0
+dataType:
+    current: bz_PlayerDieEventData_V2
+    since: 2.4.10
+    legacy:
+        - dataType: bz_PlayerDieEventData_V1
+          since: 2.4.0
 category: Player
 plugins:
     - Phoenix
@@ -29,8 +33,9 @@ parameters:
       description: The flag name the owner of the shot had when the shot was fired.
       name: flagKilledWith
     - dataType: int
-      description: (since 2.4.10) The ID of the flag the victim was holding when they died.
+      description: The ID of the flag the victim was holding when they died.
       name: flagHeldWhenKilled
+      since: V2
     - dataType: int
       description: The shot ID that killed the player, if the player was not killed by a shot, the id will be -1.
       name: shotID
