@@ -18,9 +18,12 @@ parameters:
     - dataType: unsigned char*
       description: The packet data
       name: data
+    - dataType: int
+      description: The ID of the player this data is relating to
+      name: playerID
     - dataType: double
       description: The current server time
-      name: eventData
+      name: eventTime
 ---
 
 This event is called each time net data is received
