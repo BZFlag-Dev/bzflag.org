@@ -10,6 +10,9 @@ parameters:
     - dataType: int
       description: ID of the player that fired the shot
       name: playerID
+    - dataType: int
+      description: (UNUSED) Value exists, however it is never set.
+      name: shotID
     - dataType: bool
       description: Whether or not the shot has been modified. Shot type will not change unless this is set to 1 (true).
       name: changed
