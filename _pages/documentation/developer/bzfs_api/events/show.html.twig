@@ -21,6 +21,7 @@ parent:
         <p>{{ this.dataType }}</p>
 
         <h2 id="parameters">Parameters</h2>
+        <p>These are the values accessible in the <code>bz_EventData</code> variable that's made available in the <code>Event</code> method.</p>
         <table>
             <thead>
                 <tr>
@@ -32,9 +33,9 @@ parent:
             <tbody>
                 {% for param in this.parameters %}
                     <tr>
-                        <td>{{ api_object(param.dataType) }}</td>
-                        <td><code>{{ param.name }}</code></td>
-                        <td>{{ param.description | markdown }}</td>
+                        <td class="text-monospace">{{- api_object(param.dataType) -}}</td>
+                        <td><code>{{- param.name -}}</code></td>
+                        <td>{{- param.description | markdown -}}</td>
                     </tr>
                 {% endfor %}
             </tbody>

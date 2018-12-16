@@ -1,0 +1,42 @@
+table {
+    @include margin(x, auto);
+
+    border-collapse: collapse;
+    width: 100%;
+
+    @include respond-up(lg) {
+        width: 90%;
+    }
+
+    thead tr {
+        background-color: rgba(#000, 0.2);
+    }
+
+    td, th {
+        @include padding(null, 3);
+
+        border: $border-default;
+
+        &:first-child {
+            border-left-color: transparent;
+        }
+
+        &:last-child {
+            border-right-color: transparent;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    tr {
+        &:last-child td {
+            border-bottom-color: transparent;
+        }
+
+        &:nth-child(even) {
+            background-color: rgba(#fff, 0.05);
+        }
+    }
+}
