@@ -1,0 +1,6 @@
+# stakx configuration file for building the site in development mode
+
+import:
+    - _config.yml
+
+debug: true
