@@ -12,7 +12,7 @@ parent:
 {% set categories = functions | keys | sort %}
 
 {% block aside %}
-    <div class="position-sticky position-top-1">
+    <div class="position-sticky position-top-1 scrollable-sidebar">
         <h2 class="mt-0">Categories</h2>
         <ul>
             {% for category in categories %}
@@ -33,7 +33,7 @@ parent:
             {% for function in functions[category] | order('filename') %}
                 <li>
                     <a href="{{ url(function) }}"
-                       class="text-decoration-none pre"
+                       class="text-decoration-none"
                     >
                         {{- function.basename -}}()
                     </a>
