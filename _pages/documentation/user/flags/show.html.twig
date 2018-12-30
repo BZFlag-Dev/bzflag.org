@@ -34,4 +34,35 @@ parent:
     <p>Abbreviation: {{ this.abbreviation }}</p>
 
     {{ this.content | markdown }}
+
+    {% if this.video %}
+        <div class="c-video-player">
+            <video id="video"
+                   width="100%"
+                   loop="loop"
+                   preload="none"
+                   poster="{{ url('/assets/images/documentation/flags/' ~ this.basename ~ '.jpg') }}"
+                   controls="controls"
+            >
+                <source src="{{ url('/assets/videos/documentation/flags/' ~ this.basename ~ '.mp4') }}" type="video/mp4" />
+                <source src="{{ url('/assets/videos/documentation/flags/' ~ this.basename ~ '.webm') }}" type="video/webm" />
+            </video>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    {% if this.video %}
+    <script src="{{ url('/assets/js/plyr.js') }}"></script>
+    <script>
+        const player = new Plyr('#video', {
+            iconUrl: '{{ url("/assets/images/plyr.svg") }}',
+            blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
+            controls: [
+                'play', 'progress', 'fullscreen'
+            ],
+            disableContextMenu: false
+        });
+    </script>
+    {% endif %}
 {% endblock %}
