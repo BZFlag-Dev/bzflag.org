@@ -9,45 +9,56 @@ opengraph:
 {% extends "_layouts/page.html.twig" %}
 
 {% block content %}
+  <h1>Contributing</h1>
   <h2>Reporting Bugs/Issues</h2>
 
   <p>
-    If you find a problem with the game you can report it to our development team. If you are unsure of the source of the problem, feel free to discuss the problem on our development/support IRC channel at #BZFlag on the Freenode network (<a href="https://webchat.freenode.net/?channels=bzflag">Launch Web IRC Client</a>) or on our <a href="https://forums.bzflag.org/">public forums</a>. Otherwise, you can post the issue to our <a href="https://github.com/BZFlag-Dev/bzflag/issues">BZFlag project issue tracker</a> on GitHub. There are also separate issue trackers for the other related projects such as our websites. You will find all our official projects at our <a href="https://github.com/BZFlag-Dev/">GitHub organization page</a>.
+    If you find a problem with the game you can report it to our development team. If you are unsure of the source of the problem, feel free to discuss the problem on our development/support IRC channel at <a href="https://webchat.freenode.net/?channels=bzflag">#BZFlag on the irc.freenode.net network</a> or on our <a href="https://forums.bzflag.org/">public forums</a>. Otherwise, you can post the issue to our <a href="https://github.com/BZFlag-Dev/bzflag/issues">BZFlag project issue tracker</a> on GitHub. There are also separate issue trackers for the other related projects such as our websites. You will find all our official projects at our <a href="https://github.com/BZFlag-Dev/">GitHub organization page</a>.
   </p>
 
   <h2>Contributing Changes</h2>
 
   <p>
-    You may wish to contribute code, documentation, or art to BZFlag. With Git and GitHub, this is reasonably easy, but we'll try to walk you through best practices. This will allow you to work on multiple independent changes at the same time, keeping them in separate branches. The example below assumes you want to contribute to the <em>master</em> branch and creates a new branch called <em>feature/betterui</em> in your fork.
+    With Git and GitHub, contributing to a project is reasonably easy, but we'll try to walk you through best practices. This will allow you to work on multiple independent changes at the same time, keeping them in separate "topic branches". The example below assumes you want to contribute to the <strong>master</strong> branch and creates a new topic branch called <strong>feature/betterui</strong> in your fork.
   </p>
 
   <ol>
     <li>You will need to fork our GitHub repository the first time you want to contribute changes. You can use this same fork for later changes. Sign in to your GitHub account, go to our <a href="https://github.com/BZFlag-Dev/bzflag">GitHub repository</a>, and click the Fork button.</li>
-    <li>Now that you have a fork of our code, you need to clone it to your computer so you can work on it. Run:<br /><code>git clone https://github.com/<em>yourusername</em>/bzflag</code></li>
+    <li>Now that you have a fork of our code, you need to clone it to your computer so you can work on it. Run:<br /><code>git clone https://github.com/<strong>YourUserName</strong>/bzflag</code></li>
     <li>In order to later merge changes from our official repository, add an upstream remote:<br /><code>git remote add upstream https://github.com/BZFlag-Dev/bzflag</code></li>
-    <li>Next, check out the upstream branch you are intending to submit changes to.<br><code>git checkout <em>master</em></code></li>
-    <li><strong>Do not</strong> work directly in the branches that the official repository has created (such as 2.4 or master). Instead, create your own branches that describe the change you are trying to make. For instance, if you were trying to add an improved user interface, your branch could be called <em>feature/betterui</em>. Create and checkout that new branch with:<br /><code>git checkout -b <em>feature/betterui</em></code></li>
-    <li>Now make changes to files and then <code>git add <em>FilesYouModified</em></code> to stage the changes.</li>
+    <li>Next, check out the upstream branch you are intending to submit changes to.<br><code>git checkout <strong>master</strong></code></li>
+    <li><strong>Do not</strong> work directly in the branches that the official repository has created (such as 2.4 or master). Instead, create your own topic branch that describes the change you are trying to make. For instance, if you were trying to add an improved user interface, your branch could be called <strong>feature/betterui</strong>. Create and checkout that new branch with:<br /><code>git checkout -b <strong>feature/betterui</strong></code></li>
+    <li>Now make changes to files and then <code>git add <strong>FilesYouModified</strong></code> to stage the changes.</li>
     <li>Once you have some changes staged, you can commit those changes to your local clone. An editor will appear where you can write a message that describes the changes you have made.<br /><code>git commit</code></li>
-    <li>Once you have one or more commits applied to your branch, you can push these changes back up to your fork on GitHub.<br /><code>git push -u origin <em>feature/betterui</em></code></li>
-    <li>You can repeat the process of editing files, committing, and pushing until you are ready to submit your changes back to the official repository. For this, you would create a pull request on github. After creating a pull request, you can continue to push new changes to your branch and this will update the changes on the PR.</li>
+    <li>Once you have one or more commits applied to your branch, you can push these changes back up to your fork on GitHub.<br /><code>git push -u origin <strong>feature/betterui</strong></code></li>
+      <li>You can repeat the process of editing files, committing, and pushing until you are ready to submit your changes back to the official repository. For this, you would create a pull request (known as a PR) on GitHub. After creating a pull request, you can continue to push new changes to your branch and this will update the changes on the PR. GitHub provides a page that talks <a href="https://help.github.com/articles/about-pull-requests/" rel="nofollow">about pull requests</a>.</li>
   </ol>
 
   <h2>Keeping your fork in sync</h2>
 
   <p>
-    As new changes are pushed to the official BZFlag project repositories, your fork will become outdated.  The steps below will allow you to update your fork and bring in any new changes. The branches <em>master</em> and <em>feature/betterui</em> below are examples, with feature/betterui being a branch off of master. If you are working with another base branch, such as 2.4, or you want to update multiple branches in your fork, adjust as necessary.
+    As new changes are pushed to the official BZFlag project repositories, your fork will become outdated.  The steps below will allow you to update your fork and bring in any new changes. The branches <strong>master</strong> and <strong>feature/betterui</strong> below are examples, with feature/betterui being a branch off of master. If you are working with another base branch, such as 2.4, or you want to update multiple branches in your fork, adjust as necessary.
   </p>
 
   <ol>
-    <li>Checkout the branch name matching the upstream branch you would like to update<br /><code>git checkout <em>master</em></code></li>
+    <li>Checkout the branch name matching the upstream branch you would like to update<br /><code>git checkout <strong>master</strong></code></li>
     <li>Fetch upstream changes<br /><code>git fetch upstream</code></li>
-    <li>Merge upstream changes into your fork<br /><code>git merge --ff-only upstream/<em>master</em></code></li>
-    <li>Push new changes to your fork<br /><code>git push origin <em>master</em></code></li>
-    <li>Checkout your branch you wish to merge changes into<br /><code>git checkout <em>feature/betterui</em></code></li>
-    <li>Rebase your branch against the branch it is based on<br /><code>git rebase <em>master</em></code></li>
+    <li>Merge upstream changes into your fork<br /><code>git merge --ff-only upstream/<strong>master</strong></code></li>
+    <li>Push new changes to your fork<br /><code>git push origin <strong>master</strong></code></li>
+    <li>Checkout your branch you wish to merge changes into<br /><code>git checkout <strong>feature/betterui</strong></code></li>
+    <li>Rebase your branch against the branch it is based on<br /><code>git rebase <strong>master</strong></code></li>
     <li>If there are any conflicts, you must resolve those.</li>
-    <li>Push the rebased branch<br /><code>git push --force origin <em>feature/betterui</em></code></li>
+    <li>Push the rebased branch<br /><code>git push --force origin <strong>feature/betterui</strong></code></li>
   </ol>
 
+  <h2>More Information</h2>
+
+  <p>GitHub has some documentation and guides for working with repositories.</p>
+
+  <ul>
+    <li><a href="https://help.github.com/articles/fork-a-repo/" rel="nofollow">Fork a repo</a></li>
+    <li><a href="https://guides.github.com/activities/forking/" rel="nofollow">Forking projects</a></li>
+  </ul>
+
+  <p>There's also an online interactive site called <a href="https://learngitbranching.js.org/" rel="nofollow">Learn Git Branching</a>.</p>
 {% endblock %}
