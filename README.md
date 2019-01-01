@@ -17,6 +17,13 @@ cd bzflag.org
 ./path/to/stakx build -c _config-dev.yml
 ```
 
+## Fetching assets
+
+We host some additional assets, such as videos, outside of the Git repository. To fetch those, run:
+```
+./fetch-assets.sh
+```
+
 ## Web Server Configuration
 
 The web server needs to be configured to:
