@@ -33,6 +33,7 @@ exclude:
     - LICENSES.md
     - README.md
     - /\.psd$/
+    - /\.sh$/
 
 debug: false
 
