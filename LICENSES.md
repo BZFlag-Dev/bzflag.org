@@ -9,6 +9,7 @@ Documentation and video/image assets created for the website should be licensed 
 - assets/images/announcements/
 - assets/images/documentation/
 - assets/images/hexatal-camo.png
+- assets/images/opengraph.jpg
 - assets/images/home/bzteaser.jpg
 - assets/images/home/flying_tank.jpg
 - assets/images/media/
@@ -18,7 +19,7 @@ Documentation and video/image assets created for the website should be licensed 
 - assets/images/home/blue_laser.png
 - assets/images/home/blue_super_bullet.png
 - assets/images/home/guided_missile.png
-- assets/bzflag.svg
+- assets/bzflag-logo-combo.svg (the logo part of the SVG, not the font)
 - favicon.ico
 
 ### MIT License
@@ -35,6 +36,7 @@ Documentation and video/image assets created for the website should be licensed 
 - _sass/components/
 - _sass/layout/_background.scss
 - _sass/layout/_base.scss
+- _sass/layout/_documentation.scss
 - _sass/layout/_footer.scss
 - _sass/layout/_header.scss
 - _sass/layout/_navigation.scss
@@ -55,6 +57,7 @@ Documentation and video/image assets created for the website should be licensed 
 - [_sass/abstracts/functions/_strings.scss](https://github.com/HugoGiraudel/SassyStrings)
 - [Bootstrap](https://getbootstrap.com/)
 	- _sass/_bootstrap.scss
+	- _sass/vendor/_bootstrap-reboot.scss
 - [PhotoSwipe](http://photoswipe.com/) by Dmitry Semenov - MIT License (with one exception: "Do not create a public WordPress plugin based on it")
 	- assets/images/photoswipe/
 	- assets/js/photoswipe*.js
