@@ -8,6 +8,7 @@ Documentation and video/image assets created for the website should be licensed 
 - _documentation/
 - assets/images/announcements/
 - assets/images/documentation/
+- assets/images/hexatal-camo.png
 - assets/images/home/bzteaser.jpg
 - assets/images/home/flying_tank.jpg
 - assets/images/media/
@@ -75,14 +76,3 @@ Documentation and video/image assets created for the website should be licensed 
 - [highlight.js (just the monokai.css file for styling)](https://highlightjs.org/) - BSD 3-Clause "New" or "Revised" License
 	- _sass/vendor/highlightjs/
 - assets/js/main.js - [(the getOS function only)](https://stackoverflow.com/a/38241481) by [Vladyslav Turak](https://stackoverflow.com/users/4815056/vladyslav-turak) - CC BY-SA 3.0 Unported
-
----
-
-## To be replaced
-
-These assets will be replaced.
-
-### Creative Commons CC BY-NC-SA 3.0
-- assets/images/hexatal-camo.jpg
-- assets/photoshop/hexatal-camo.psd
-
