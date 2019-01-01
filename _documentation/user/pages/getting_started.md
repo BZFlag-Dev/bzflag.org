@@ -5,31 +5,6 @@ docpath: getting_started/
 
 Getting started with BZFlag is easy. This short guide will show how to get started.
 
-## Downloading and installing the game
-
-Our [downloads](/downloads/) page includes an installer for Windows and a ZIP package for macOS. We also offer a source code download primarily for Linux and BSD users.
-
-### Installing on Windows
-
-Download the latest release for Windows and run the installer file. Follow the installation prompts to install the game.
-
-### Installing on macOS
-
-Download the latest release for macOS. Open the Zip file if it does not open automatically. Drag BZFlag into the Applications folder.
-
-Using [brew](https://brew.sh/) and [brew cask](https://caskroom.github.io/), it is also possible to install BZFlag with: `brew cask install bzflag`
-
-### Installing on Linux
-
-Note that many Linux distributions will lag behind our release cycle. Debian, for instance, only pushes new version of the game when they release a new major release of Debian every 2 or 3 years. For that reason, it is recommended to build from our latest source tar if the packaged version is older.
-
-To install the (possibly outdated) distribution packages:
-
-- For Debian and Debian-based distributions, such as Ubuntu or Mint: `apt-get install bzflag-client` or `apt-get install bzflag`
-- For RedHat-based distributions, such as CentOS or Fedora: `yum install bzflag` or `dnf install bzflag`
-- For openSUSE: `zypper install bzflag`
-- For Arch linux: `pacman -S bzflag`
-
 ## Optionally register a callsign
 
 BZFlag allows players to register their name, also known as their callsign. Some servers provide additional benefits for registered users, such as being allows to vote in polls. Another benefit is that players can not use another player's registered callsign. To register a callsign, visit our [forums](https://forums.bzflag.org/) and register an account. The username and password on the forums will be used as callsign and password in the game.
