@@ -44,6 +44,7 @@ Documentation and video/image assets created for the website should be licensed 
 - _sass/pages/
 - _sass/utilities/
 - _sass/styles.scss.twig
+- _sources/hexagonal-camo.php
 
 ---
 
