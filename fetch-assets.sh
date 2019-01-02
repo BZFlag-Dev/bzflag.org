@@ -1,6 +1,8 @@
 #!/bin/sh
 FLAGS="laser"
 
+mkdir -p assets/videos
+wget -c -O assets/videos/blank.mp4 https://github.com/sampotts/plyr/raw/master/dist/blank.mp4
 
 mkdir -p assets/videos/home
 wget -c -O assets/videos/home/bzteaser.mp4 https://f002.backblazeb2.com/file/bzflag-media/videos/home/bzteaser.mp4
