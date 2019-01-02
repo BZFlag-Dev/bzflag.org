@@ -1,5 +1,5 @@
 version: 2.4.4
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19186
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=19186'
 codename: 'Be My Valentank'
 changesummary: |
     This release encompasses several years of effort and a variety of fixes and improvements. Some of the more notable changes are as follows:
@@ -138,9 +138,14 @@ date: '2016-02-14'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: 96830ec356d809a593f53aa66d0218e95be9ec6768ef2d13fbf1cff0e12838bb
     macos:
         - filename: BZFlag-@VER@-MacOSX.zip
+          sha256: c832896a65cd3a0bdca62fce8a0fff800c15970dfde75e9f8285e49a01dafc77
     source:
         - filename: bzflag-@VER@.tar.gz
+          sha256: ea7f46007d38ae726722328c565cdf3124f5f0e9fcedc0c2b9ccdd3d8fd25793
         - filename: bzflag-@VER@.tar.bz2
+          sha256: 5842941e53440d2e88c955ddb594964fc5145912f61100832d224c1a017e2ecb
         - filename: bzflag-@VER@.zip
+          sha256: 5f696ce2ad5476e5fcd625e9424e68eefcec4dfe45f57ff8bde6215e8c9f2f45

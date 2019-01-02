@@ -1,5 +1,5 @@
 version: 2.4.6
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19241
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=19241'
 codename: 'Eight, Our Codebase is Overweight'
 changesummary: |
     This release consists of a few new features for clients and fixes issues on Windows 10 with AMD drivers.
@@ -28,9 +28,14 @@ date: '2016-06-26'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: dfccaf17f233e0d9c735605f6225b1ab93d0e02ee9df9f07266ff7adffab164a
     macos:
         - filename: BZFlag-@VER@-MacOSX.zip
+          sha256: 718b520498294e0083dcff7faf277dcda8fa512a11bf2b852ffc7617f01bfb3e
     source:
         - filename: bzflag-@VER@.tar.bz2
+          sha256: a44506828d09fe26f06658aae7f579080ecbaef5bd19a938dfed604e0c8afb45
         - filename: bzflag-@VER@.tar.gz
+          sha256: cad0f8302e152ab2da1b2f2f2baaf1fb7e0d6c16a32c8ad3c64b93c72beee405
         - filename: bzflag-@VER@.zip
+          sha256: 5e9162697d5e5a5a3337d938f610af2aa7e9792d6018cac2533fbdb96e6cf99c

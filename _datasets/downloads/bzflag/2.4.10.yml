@@ -1,5 +1,5 @@
 version: 2.4.10
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19401
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=19401'
 codename: 'This is How We Roll'
 changesummary: |
     This release had a few additional features and some minor fixes.
@@ -27,9 +27,14 @@ date: '2017-03-12'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: a33119abacf6b896e523c777bbf918d042d8618be9dbf0369644fb49009f2ecf
     macos:
         - filename: BZFlag-@VER@-macOS.zip
+          sha256: 7e7147380f03e51acf5f12353454f539a25ccc3b90a853b8cf8fcabc11b0afc0
     source:
         - filename: bzflag-@VER@.zip
+          sha256: 2178a37174bea834e71a685c033ec8e0ccbfd513c87e8788fe29040791047dd6
         - filename: bzflag-@VER@.tar.bz2
+          sha256: 0a47454ae4b2fea494581962a554ceb8195084c4d96e97aa572a5fa774699efa
         - filename: bzflag-@VER@.tar.gz
+          sha256: d634edbf12380aa592a848ac3c9dcf1463b6912f52ef0d55568190faee754c1f

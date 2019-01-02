@@ -1,5 +1,5 @@
 version: 2.4.18
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=20030
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=20030'
 codename: 'Can You Hear What I Hear?'
 changesummary: |
     This release just fixes audio on Windows.
@@ -9,14 +9,20 @@ date: '2018-10-18'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
-          requirements: Windows Vista/7/8.1/10
+          requirements: 'Windows Vista/7/8.1/10'
+          sha256: c534de10abeb38c9ca6d104c1c395ec75bed37953ac4803583f30ddec528a46d
     macos:
         - filename: BZFlag-@VER@-macOS.zip
-          requirements: 10.7+ Intel only
+          requirements: '10.7+ Intel only'
+          sha256: 268151bebde80144c3fc6cb742e8024b822b3cf97e822e278cb4e2f546681e65
     flatpak:
-        - url: https://flathub.org/apps/details/org.bzflag.BZFlag
-          requirements: ~
+        - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
+          requirements: null
+          sha256: null
     source:
         - filename: bzflag-@VER@.tar.bz2
+          sha256: 9d0d512f3a09a207ab399a8dc4807224564cdc7a9346b702fec80d5b7918bfbe
         - filename: bzflag-@VER@.tar.gz
+          sha256: 4fea867d8394f99a6275ac9562108bc83da6c0a001104d4734068dd1ad84804d
         - filename: bzflag-@VER@.zip
+          sha256: 9714797f16298a54c47d4a4b463dd3f82b79e841564a52292d681a5142ff8b5b

@@ -1,5 +1,5 @@
 version: 2.4.12
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19720
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=19720'
 codename: 'Silence is Golden'
 changesummary: |
     This release had a few additional features and some minor fixes.
@@ -35,9 +35,14 @@ date: '2017-10-29'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: 5d26decc56338af9d6bc5d9fd54e827f8ad9983de4ba66fae034d18259714662
     macos:
         - filename: BZFlag-@VER@-macOS.zip
+          sha256: 5bf28fab219bae32cdfd32765289b3454b7e658ffe49d05ea49c2c03d6749fe7
     source:
         - filename: bzflag-@VER@.tar.bz2
+          sha256: a8a13a58648798a6f6f969a2911cf21377fe45964f2edf46a327d1370ff1000d
         - filename: bzflag-@VER@.tar.gz
+          sha256: 4af05a3c5e92c8c4fb96bb178c08daa2e33858d976e8fe96a3a77fd521dfa8e9
         - filename: bzflag-@VER@.zip
+          sha256: 72d4fcb4ef7c0fe604e32ca90ed697daabc2d054ae0e93f38c4e7a53bd7cbbd8

@@ -1,5 +1,5 @@
 version: 2.4.14
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19953
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=19953'
 codename: 'Hello Motto'
 changesummary: |
     This release had several fixes and some new features.
@@ -40,9 +40,14 @@ date: '2018-05-02'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: da150ab0bd3c25150fd632eb58e38fca6b7dd78e3f646a0f2affcef5d61b7e11
     macos:
         - filename: BZFlag-@VER@-macOS.zip
+          sha256: 1a4a7c498e276ad3762fe0c8d6bed5e5664bb6548b09081af25da0e308fb4c4b
     source:
         - filename: bzflag-@VER@.tar.bz2
+          sha256: b56c777c71d4d1df55446f9de6e9e92801b29d81c39669087ba680ce6645cff5
         - filename: bzflag-@VER@.tar.gz
+          sha256: 80089192c39416b73b6dd3fa7f48775f6d7453f001e347a5afc1b5c52fbe5611
         - filename: bzflag-@VER@.zip
+          sha256: 70ce67f157fba1a37a3ca33d380ad7f31634ee894f42ba488a1609df23d560fe

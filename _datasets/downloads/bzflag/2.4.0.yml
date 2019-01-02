@@ -1,5 +1,5 @@
 version: 2.4.0
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=17477
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=17477'
 codename: 'Wake the Dead'
 changesummary: |
     This is a new major release of the game that is incompatible with the previous 2.0.x version of the game. Some of the major features include:
@@ -53,11 +53,18 @@ date: '2011-07-03'
 downloads:
     windows:
         - filename: bzflag-@VER@_32Bit.exe
+          sha256: 828535c1bf64336ff1de2c1d303ef531395aafdfa2e75185a392c227d9f24dd1
         - filename: bzflag-@VER@_64Bit.exe
+          sha256: bcdc9be2d291cefadfa9aa8c1c13afe46d613f36abc825fef08bf7501c585894
     macos:
         - filename: BZFlag-@VER@.zip
+          sha256: 9be043a902824b9e61a9d07ebb04ec554bb9b08f7f18c92001e52b0107b3ad0a
     source:
         - filename: bzflag-@VER@.tar.gz
+          sha256: cf5ac8109e5e52cae610893f9e7240b602fc81cef58b9cb79747f6575c60cf0f
         - filename: bzflag-@VER@.zip
+          sha256: a1851fdff3720494cbd8597b971914f89ab699bd5cea69f3108835be005f70fc
         - filename: bzflag-@VER@.tar.bz2
+          sha256: 424cec6fe2b23ce88a9975612799c0e3831bbe85f0b1524faadfb93e7c0ad452
         - filename: bzflag-@VER@_Windows.zip
+          sha256: 1291c804c84a7de8b18f86e662033769326cef23225fb456dff8bc81033b79a9

@@ -30,8 +30,12 @@ date: '2002-12-08'
 downloads:
     windows:
         - filename: bzflag-17g0.exe
+          sha256: c1b217a4105489acc57d362a9846775057296c9051bd5c1c6190a0521066590e
     macos:
         - filename: BZFlag-@VER@r7.dmg
+          sha256: aed1beb95f34038d3765c6cbeaf2921227ec27049157334361d069e82f53a9a1
         - filename: BZFlag-@VER@r6.dmg
+          sha256: 15c5e87dae5a4e983c3a82416169c441fa822c1efd7dca9b4efcb1a55dca9c00
     source:
         - filename: bzflag-@VER@.tgz
+          sha256: a6ced78d25402a44ea2d3aac29b09be0fb899a6f40c7da3ce35856c6f3564b40

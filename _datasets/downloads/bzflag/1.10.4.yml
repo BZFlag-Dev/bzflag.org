@@ -67,14 +67,23 @@ date: '2004-01-24'
 downloads:
     windows:
         - filename: bzflag-@VER@-0.W32.exe
+          sha256: aa6cb4dd59bff378888cb2a4b736b277df408f91f2c72ada9bfb5a9cf2804ed1
         - filename: bzflag-@VER@-0-high_res.W32.exe
+          sha256: 135d44f904a93b3c6fd8a227a21e3c32f5154c9c3db5f8d6d06392a971c4b55f
         - filename: alternate_data-@VER@-0.zip
+          sha256: f41814f63c7b54b09e351fb65fd31f260958649296d39519c63c19e7b31ac29a
     macos:
         - filename: BZFlag_@VER@.dmg
+          sha256: 232e428240850d6d8ee812103480ac3210b0a37f6ea974b4a39761464de25bda
     irix:
         - filename: bzflag-@VER@_n32.tardist
+          sha256: 4340ce157c0fc5d98cfa8152a0a0cbfc97e63da704ec4beaf4ca5a01902edb12
         - filename: bzflag-@VER@_n32.tar.gz
+          sha256: 323b8b1cba51209d1c2c398453fd696edd972554b0ee8962facbc04bd894992d
     source:
         - filename: bzflag-@VER@.20040124.zip
+          sha256: 485962a8259bbda9183b191442e67706f9e94fb5271a6c5a5b2b2095a84fcda1
         - filename: bzflag-@VER@.20040125.tar.gz
+          sha256: 241666e823d7019f97bf9784222254a56f499495393ce3a257208bb5b98571eb
         - filename: bzflag-@VER@.20040125.tar.bz2
+          sha256: 9e752334fe92b0c537a41dc26edf4ad01fd5c7585bf1404b3ce7d0fd8539b911

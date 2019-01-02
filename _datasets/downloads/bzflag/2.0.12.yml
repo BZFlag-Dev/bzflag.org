@@ -27,5 +27,8 @@ date: '2008-06-25'
 downloads:
     source:
         - filename: bzflag-@VER@.zip
+          sha256: f1a8aa2d8ae22a913d4138541a9867878745a74b988883db98a51bffa05647e4
         - filename: bzflag-@VER@.tar.gz
+          sha256: e9d498b86d4886d07d5c7380ebb15901e02ef1c850e60ccbb2483f397e6f1013
         - filename: bzflag-@VER@.tar.bz2
+          sha256: e6c9edc128e481f73572c4648e919036c6bc484c1a63f9cdd9740118f39d689a

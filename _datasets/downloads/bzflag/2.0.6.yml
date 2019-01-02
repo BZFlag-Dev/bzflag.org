@@ -1,5 +1,5 @@
 version: 2.0.6
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=7613
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=7613'
 codename: 'Good enough for now'
 changelog: |
     * game variables no longer accept invalid values. - Jeff Myers
@@ -35,9 +35,14 @@ date: '2006-04-09'
 downloads:
     windows:
         - filename: bzflag-@VER@-20060409.exe
+          sha256: e6e9fca33427edfc453b0ede645ec3372961272f8d4e4a16675ab7c6267aaf8a
     macos:
         - filename: BZFlag_@VER@_ppc_10.3.dmg
+          sha256: 06c70bc915a3f189abc5a277b940e4d149ace2d9c8506a66143477bc662555d3
     source:
         - filename: bzflag-@VER@.tar.bz2
+          sha256: c7bb749bc6379c04c84c9833e39885904b835dd06bdf9cc6dc39387166cc0fad
         - filename: bzflag-@VER@-20060409.zip
+          sha256: 89e38a3280381ff951a55351412872c415e17cbe0a6f5e02cffba770fa3062e8
         - filename: bzflag-@VER@.tar.gz
+          sha256: 3429c479ae4ff2e9246bd1b5678def0a46cf03f82297820b325b67bbd0981e2b

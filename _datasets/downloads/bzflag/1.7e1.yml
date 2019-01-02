@@ -28,5 +28,7 @@ date: '2001-03-10'
 downloads:
     windows:
         - filename: bzflag17e1.exe
+          sha256: e5f6556b9e8d90711ef6b3f5e883c772455ee848403340a0ed6e6188b9337d5b
     source:
         - filename: bzflag-@VER@.tgz
+          sha256: cf79f845e8e764b5cd3ae0ec056a67ed56b22ffee4e83ab3571f702399fb3b4a

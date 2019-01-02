@@ -113,9 +113,14 @@ date: '2000-02-01'
 downloads:
     windows:
         - filename: bzfinst.exe
+          sha256: 2fb3da31c25a724a751463a38f60bd2c7b76cfce9b7d6d1c04d2c7182fa7d79d
     irix:
         - filename: bzflag-1.7d.9.n32.tardist
+          sha256: 0054045707ce8308280536655a1ccd1d935ddfd26243c0fe981e2b34fd382b48
         - filename: bzflag-1.7d.9.o32.tardist
+          sha256: 16e628f1761dc448fd4372764570821c4dc1d92d989914d83e754578de99e7d7
     source:
         - filename: LICENSE
+          sha256: dcc100d4161cc0b7177545ab6e47216f84857cda3843847c792a25289852dcaa
         - filename: bzflag-1.7d.9.src.tar.gz
+          sha256: 09de4b8611fe024cd25f4fe7cf9b77b976ac309ff7b83d6dd917ca24549804f9

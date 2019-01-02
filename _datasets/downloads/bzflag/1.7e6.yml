@@ -50,10 +50,15 @@ date: '2002-06-19'
 downloads:
     windows:
         - filename: bzflag17e6.exe
+          sha256: d001aa6d7ce828c16ce724dd6aa887dc037e38144fa3aa89ee8a3c0525be5331
     macos:
         - filename: BZFlag-OSX-@VER@.tar.gz
+          sha256: fbb33582b7dfd7a27a5c4c59196cc9ef27cc0b2162db3d20ca26fe8a0d5e1377
     irix:
         - filename: bzflag.17e6_o32.tardist
+          sha256: 65aac21348e0dc8b533923b6af746efce67afcb265bc8e5461170e1dfb212182
         - filename: bzflag.17e6_n32.tardist
+          sha256: b21d4f2f85730e407892b225d079ff011befee363f7101f91d412fe84348cede
     source:
         - filename: bzflag-@VER@.tgz
+          sha256: c9097a79a979316179ac429733917e6f5a97bfea1073163047ee2fae98ee8f24

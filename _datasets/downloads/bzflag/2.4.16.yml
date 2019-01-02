@@ -1,5 +1,5 @@
 version: 2.4.16
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=20026
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=20026'
 codename: 'Reduce, Reuse, Replay'
 changesummary: |
     This release primarily fixes a bug introduced in 2.4.14 that corrupted replay file headers. This release reverts that change, and can also read the corrupted header for replays made with the bad code.
@@ -16,9 +16,14 @@ date: '2018-09-23'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: 1c47575e2ee2505f62c83b2cf1e4f8dcca023fba639186dfdc4a373f53932757
     macos:
         - filename: BZFlag-@VER@-macOS.zip
+          sha256: c90eeecfde87d35e1d14b2be865b291fb1223a6c7ef5345ea4b7ae0a3fc035e6
     source:
         - filename: bzflag-@VER@.tar.bz2
+          sha256: ef6166b8d2962ac1dde84bf2ee5899de2c9737006f3e27d60ddf13faa48bc203
         - filename: bzflag-@VER@.tar.gz
+          sha256: 5b7b44e7f54d61ffd9e96ae129e4e417b96ab2bfb5ecc81ac73d96983ee1638b
         - filename: bzflag-@VER@.zip
+          sha256: 338ebc40c9665d8b375fe725c4c28e18e2054371341a0b788739584289850f85

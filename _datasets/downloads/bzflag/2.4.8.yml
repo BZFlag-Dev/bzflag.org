@@ -1,5 +1,5 @@
 version: 2.4.8
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=19294
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=19294'
 codename: 'Sixteen'
 changesummary: |
     This release just had some more minor fixes
@@ -23,9 +23,14 @@ date: '2016-10-10'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: addc7c47f311adb99af7c8084fcad2acbab28aa327aa4c5a0854f523cc99875f
     macos:
         - filename: BZFlag-@VER@-macOS.zip
+          sha256: 3b4bdd1b98565b998ff7b6915670cb30b81358203aed27423afb0a5f2bd3a5a9
     source:
         - filename: bzflag-@VER@.tar.gz
+          sha256: b6e0fb769dd72fa20e813d16e1e03d915898290acb597ae9c26c816f61632da6
         - filename: bzflag-@VER@.tar.bz2
+          sha256: 43ca4d1775dac4180feb67cc4450b5db82aab9a63e460ac769c8f40d22e03122
         - filename: bzflag-@VER@.zip
+          sha256: 67688159140cce3ffbee1ccbf6626c4162cc58d48c8844ca5ed92c47f5679a8a

@@ -10,8 +10,12 @@ date: '2001-04-17'
 downloads:
     windows:
         - filename: bzflag17e2.exe
+          sha256: 6f1d3c707ea37bc9a083ce75189e525f489f6fa5bd0567554d0937baf55a38bf
     irix:
         - filename: bzflag.17e2_o32.tardist
+          sha256: 4c9b16d90a8199a5b7723de888345f931efaaf385c1b40f0c2ae35e51a4b4df5
         - filename: bzflag-@VER@_n32.tardist
+          sha256: e5565be36e9eef79a1b65f8b2a801549be747b6fbf1723e71d13e8df82781271
     source:
         - filename: bzflag-@VER@.tgz
+          sha256: 77c6ddfecbbdce3b9d65a8ca24d714827637d3efc1a96a31eb6d8dd8a205b2e4

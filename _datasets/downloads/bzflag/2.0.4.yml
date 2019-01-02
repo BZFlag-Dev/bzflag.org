@@ -1,5 +1,5 @@
 version: 2.0.4
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=5405
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=5405'
 codename: 'Shiny'
 changelog: |
     * Fixed server join bug when cached worlds disappear - Sean Morrison
@@ -75,9 +75,14 @@ date: '2005-09-30'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: 9d14198ffd8b5210eda2f645e093b1e37a5a27412b396f1ffa149dff4deae768
     macos:
         - filename: BZFlag_@VER@.dmg
+          sha256: 79895155e3f1ce66ff7a570bdec65d13753de98453fbe281440c05835c720172
     source:
         - filename: bzflag-@VER@.20050930.tar.gz
+          sha256: 42e1d1b50471aae16d564253d948febd32f2423e51129da30d7a969733e00b58
         - filename: bzflag-@VER@-20050930.zip
+          sha256: bedf03f11cf30498249a360cfcbf4df75e344c1378f87fb269ac5474a281e899
         - filename: bzflag-@VER@.20050930.tar.bz2
+          sha256: 496e8ea90bd2ae0e1f76cf160ab4c219f579d118edad345b33b3b085747e5e69

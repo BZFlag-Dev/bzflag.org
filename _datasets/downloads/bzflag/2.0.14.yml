@@ -1,5 +1,5 @@
 version: 2.0.14
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=16031
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=16031'
 codename: "This isn't the release you are looking for."
 changelog: |
     * Add Options -> Display -> AntiFlicker option - trepan
@@ -28,9 +28,14 @@ date: '2010-02-15'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: d5a45c7f3104ce67579335cd5b634decefdbd3bb41cd88d886222d58325427a8
     macos:
         - filename: BZFlag-@VER@.dmg
+          sha256: 88a3e12e87ec0ba9a140b707c6bb7f168cf08d4bfa8079dc023287c8bf9456e5
     source:
         - filename: bzflag-@VER@.tar.gz
+          sha256: 2a643ec42844d0d10bfdc0a3a1e75612b35095836d5fd976869f2c68a1d1bdec
         - filename: bzflag-@VER@.tar.bz2
+          sha256: c85bb8efd2f9aea0fdd7ca208b6b72d349b05c7b431ad41288a6f72100bc7553
         - filename: bzflag-@VER@.zip
+          sha256: 3d0afd9855876b294b200911ecc7ac53ec6996673d19de8e4cc05c5466814507

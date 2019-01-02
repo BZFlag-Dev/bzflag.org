@@ -1,5 +1,5 @@
 version: 2.0.2
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=3234
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=3234'
 codename: 'Queen of Maybe'
 changelog: |
     * Added TALK, MUTE, UNMUTE permissions - Angelina Carlton
@@ -48,8 +48,12 @@ date: '2005-03-18'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: e6b2232ffead3e7cd582a0d1e63fede6e37b670c06935f85b06d994a34e64f4f
     macos:
         - filename: BZFlag_@VER@.dmg
+          sha256: 0f12869a7a551ed03d4cad9d9ba7237f169ee0bd26e143b4fe1658d0f987ee27
     source:
         - filename: bzflag-@VER@.20050318.tar.gz
+          sha256: 442861a740a97803f5e483abea927e5a4b4a8be07f587d8a62023f35d208a709
         - filename: bzflag-@VER@.20050318.tar.bz2
+          sha256: 17b9c979855828be0051082254ecee502c06618f3524c9aed38cd930227ed820

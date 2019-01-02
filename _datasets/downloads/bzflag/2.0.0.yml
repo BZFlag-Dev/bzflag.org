@@ -1,5 +1,5 @@
 version: 2.0.0
-discussion: https://forums.bzflag.org/viewtopic.php?f=62&t=2669
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=2669'
 codename: "Falcor's Despair"
 changelog: |
     * Added a .desktop file - David Trowbridge
@@ -135,9 +135,14 @@ date: '2005-01-17'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
+          sha256: 1ef9f3cc81f3cdb08831170ce78f40df2042c6b881ced1c6534bc5128b6296e6
     macos:
         - filename: BZFlag_@VER@.dmg
+          sha256: a5028b9732528da77f3e50b4d7da074b679d6f38dfa94e25c3a3035097cf3543
     source:
         - filename: bzflag-@VER@-20050118.zip
+          sha256: 3ba91fb8253d31c4f0649607ae0b1814fae73344e925924019c6f3a8256b4903
         - filename: bzflag-@VER@.20050117.tar.bz2
+          sha256: 441d8c47192b0a0a430b93b2eae32e16d55b54c562efd549c330fffc12fba845
         - filename: bzflag-@VER@.20050117.tar.gz
+          sha256: d506152915d5b137bb89df21e4f526e3230b3c8a607e86940537f1fdf5bd80d3
