@@ -8,7 +8,7 @@ Documentation and video/image assets created for the website should be licensed 
 - _documentation/
 - assets/images/announcements/
 - assets/images/documentation/
-- assets/images/hexatal-camo.png
+- assets/images/hexagonal-camo.png
 - assets/images/opengraph.jpg
 - assets/images/home/bzteaser.jpg
 - assets/images/home/flying_tank.jpg
