@@ -13,50 +13,64 @@
 {% block content %}
     <h1>{{ title }}</h1>
 
-    {% if this.date %}
-        <div>
-            <h2>Release Date</h2>
-            <p>{{ this.date }}</p>
-        </div>
-    {% endif %}
+    <dl>
+        {% if this.date %}
+            <dt>Release Date</dt>
+            <dd>
+                <time datetime="{{ this.date | date('Y-m-d') }}">{{ this.date | date('F d, Y') }}</time>
+            </dd>
+        {% endif %}
 
-    {% if this.codename %}
-        <div>
-            <h2>Release Name</h2>
-            <p><strong>{{ this.title }} "{{ this.codename }}"</strong></p>
-        </div>
-    {% endif %}
+        {% if this.codename %}
+            <dt>Release Name</dt>
+            <dd>
+                {{ this.title }} "{{ this.codename }}"
+            </dd>
+        {% endif %}
+    </dl>
 
-    {% if this.changesummary -%}
-        <div>
-            <h2>Change Summary</h2>
-            {%- markdown %}
-            {{ this.changesummary }}
-            {% endmarkdown -%}
-        </div>
+    {% if this.changesummary %}
+        <section>
+            <h2 id="change-summary">Change Summary</h2>
+
+            {{ this.changesummary | markdown }}
+        </section>
     {% endif %}
 
     {% if this.changelog -%}
-        <div>
-            <h2>Change Log</h2>
-            {%- markdown %}
-            {{ this.changelog }}
-            {% endmarkdown -%}
-        </div>
+        <section>
+            <h2 id="changelog">Change Log</h2>
+
+            {{ this.changelog | markdown }}
+        </section>
     {% endif -%}
 
-    <div class="mb-2">
-        {% for platform, files in this.downloads %}
-            <h2 class="mb-1">{{ download_keys[platform] | default(platform) }}</h2>
-            <p>
-            {% for file in files %}
-                {% if file.url %}
-                    <a href="{{ file.url }}">{{ file.filename | replace({'@VER@': this.version}) }}</a><br />
-                {% else %}
-                    <a href="https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | replace({'@VER@': this.version}) }}">{{ file.filename | replace({'@VER@': this.version}) }}</a><br />
-                {% endif %}
-            {% endfor %}
-            </p>
+    <section class="mb-2">
+        <h2 id="downloads">Downloads</h2>
+
+        {% for platform, files in this.downloads if download_keys[platform] %}
+            <h3 class="h4 mb-1">{{ download_keys[platform] | default(platform) }}</h3>
+            <ul>
+                {% for file in files %}
+                    <li>
+                        {% set file_url -%}
+                            {%- if file.url -%}
+                                {{ file.url }}
+                            {%- else -%}
+                                https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | replace({'@VER@': this.version}) }}
+                            {%- endif -%}
+                        {%- endset %}
+
+                        <a href="{{ file_url }}">
+                            {{ file.filename | replace({'@VER@': this.version}) }}
+                        </a>
+
+                        {% if file.sha256 %}
+                            - {{ file.sha256 }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
         {% endfor %}
-    </div>
+    </section>
 {% endblock %}
