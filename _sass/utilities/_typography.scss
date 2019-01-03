@@ -9,6 +9,11 @@
     line-height: 1;
 }
 
+small,
+.small {
+    font-size: 0.85em;
+}
+
 .text-monospace {
     font-family: $font-stack-monospace !important;
 }
