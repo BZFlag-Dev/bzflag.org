@@ -41,6 +41,11 @@ url: https://www.bzflag.org
 baseurl: /
 description: BZFlag is a free 3D online multi-player multi-platform tank battle game.
 github:
+    # For the site source
+    site_repo: BZFlag-Dev/bzflag.org
+    site_branch: redesign
+
+    # For the core project
     dev_repo: BZFlag-Dev/bzflag
     dev_branch: 2.4
 opengraph:

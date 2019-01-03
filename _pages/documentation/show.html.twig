@@ -13,4 +13,6 @@ parent:
     {% if this.parent %}<div><a href="/documentation/{{ this.parent.docpath }}/">{{ this.parent.title }}</a></div>{% endif %}
 
     {{ this.content }}
+
+    {% include "_includes/edit_me.html.twig" %}
 {% endblock %}
