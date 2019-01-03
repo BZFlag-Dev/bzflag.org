@@ -18,6 +18,16 @@
     }
 }
 
+.c-button--inverse {
+    background-color: transparent;
+    border: 1px solid $color-text-anchor;
+    color: $color-text-primary;
+}
+
+.c-button--skinny {
+    @include padding(y, 1);
+}
+
 .c-button-group {
     .c-button {
         background-color: transparent;
@@ -32,11 +42,21 @@
 
 // Special overrides for anchors that use the .c-button class. This is necessary
 // since anchors have rules that supersede classes due to specificity.
-a.c-button {
-    &,
-    &:focus,
-    &:hover {
-        color: $color-primary;
-        text-decoration: none;
+a {
+    &.c-button {
+        &,
+        &:focus,
+        &:hover {
+            color: $color-primary;
+            text-decoration: none;
+        }
+    }
+
+    &.c-button--inverse {
+        &,
+        &:focus,
+        &:hover {
+            color: $color-text-anchor;
+        }
     }
 }
