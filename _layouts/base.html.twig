@@ -16,7 +16,7 @@
 
         {% include "_includes/open_graph.html.twig" %}
 
-        <link rel="stylesheet" href="{{ url('/assets/css/styles.css') }}" />
+        <link rel="stylesheet" href="{{ url('/assets/css/styles.css') }}?cache_busting={{ 'now' | date('U') }}" />
         <link rel="canonical" href="https://www.bzflag.org{{ url(this.permalink) }}" />
 
         <title>{{ page_title }}</title>
@@ -44,7 +44,7 @@
 
         {% block scripts %}{% endblock %}
 
-        <script src="{{ url('/assets/js/main.js') }}"></script>
+        <script src="{{ url('/assets/js/main.js') }}?cache_busting={{ 'now' | date('U') }}"></script>
 
         {% if data.piwik %}
             <!-- Piwik -->
