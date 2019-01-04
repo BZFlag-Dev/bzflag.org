@@ -1,17 +1,27 @@
 {% extends '_layouts/base.html.twig' %}
 
 {% block content_root %}
-    <main class="container background-dark">
+    <div class="container background-dark">
         <div class="py-3 px-md-3">
             <div class="row">
-                <aside class="col-lg-3 b-lg-right position-static">
+                <aside class="col-lg-3 mt-4 mt-lg-0 position-static order-1 order-lg-0">
                     {% block aside %}{% endblock %}
                 </aside>
 
-                <div class="col-lg-9 s-documentation">
+                <main class="col-lg-9 b-lg-left s-documentation order-0 order-lg-1">
                     {% block content %}{% endblock %}
-                </div>
+                </main>
             </div>
+
+            {% if this.editable %}
+                {# The grid system here is being used so we can make it line up with the grid above (the main content) #}
+                {# of the page. This way, our borders will connect perfectly and make it appear to be connected. #}
+                <div class="row">
+                    <div class="b-lg-left col offset-lg-3">
+                        {% include "_includes/edit_me.html.twig" %}
+                    </div>
+                </div>
+            {% endif %}
         </div>
-    </main>
+    </div>
 {% endblock %}
