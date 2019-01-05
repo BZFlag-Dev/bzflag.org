@@ -1,21 +1,21 @@
 @each $t_abbv, $type in $spacing_types {
-    @each $d_abbv, $rules in $spacing_directions {
-        @each $s_abbv, $value in $spacing {
-            $placeholders: (
-                type: $t_abbv,
-                dir: $d_abbv,
-                value: $s_abbv
-            );
+    @each $bp in map-keys($breakpoints) {
+        $breakpoint: $bp;
 
-            @include responsify('.%type%infix-%value', $placeholders) {
-                @each $rule in $rules {
+        @include respond-up($bp) {
+            @each $s_abbv, $value in $spacing {
+                $infix: if($breakpoint == 'xs', '', '-' + $breakpoint);
+
+                .#{$t_abbv}#{$infix}-#{$s_abbv} {
                     #{$type}: $value !important;
                 }
-            }
 
-            @include responsify('.%type%dir%infix-%value', $placeholders) {
-                @each $rule in $rules {
-                    #{$type}-#{$rule}: $value !important;
+                @each $d_abbv, $rules in $spacing_directions {
+                    .#{$t_abbv}#{$d_abbv}#{$infix}-#{$s_abbv} {
+                        @each $rule in $rules {
+                            #{$type}-#{$rule}: $value !important;
+                        }
+                    }
                 }
             }
         }

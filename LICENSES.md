@@ -51,7 +51,6 @@ Documentation and video/image assets created for the website should be licensed 
 ## Third-Party
 
 ### MIT License
-- [_sass/abstracts/functions/_responsify.scss](https://github.com/allejo/bzion/blob/master/assets/css/abstracts/_responsify.scss) ([license has been changed to MIT](https://github.com/allejo/bzion/issues/199))
 - [_sass/layout/_hamburger.scss](https://github.com/callmenick/Animating-Hamburger-Icons)
 - [_sass/abstracts/functions/_assets.scss](https://github.com/HugoGiraudel/sass-boilerplate)
 - [_sass/abstracts/functions/_gradients.scss](https://codepen.io/joeyquarters/pen/dWJYdV/?editors=0100) ([CodePen's terms state that public pens are MIT licensed](https://blog.codepen.io/legal/licensing/))
