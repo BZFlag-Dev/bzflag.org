@@ -23,7 +23,11 @@
     }
 
     .c-terminal__prompt::after {
-        content: attr(data-folder) ' $ ';
+        content: attr(data-folder) '$ ';
+    }
+
+    .c-terminal__prompt[data-admin="true"]::after {
+        content: attr(data-folder) '# ';
     }
 }
 

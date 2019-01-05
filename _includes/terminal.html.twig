@@ -10,6 +10,7 @@
             <span
                 class="c-terminal__prompt"
                 {% if folder %}data-folder="{{ folder }}"{% endif %}
+                {% if admin %}data-admin="true"{% endif %}
                 aria-hidden="true"
             ></span>{{ command }}
         {% else %}
