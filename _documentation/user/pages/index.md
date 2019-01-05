@@ -3,14 +3,13 @@ title: Documentation
 docpath: /
 ---
 
-## Topics
+## Player
 
 - **[Getting Started](/documentation/getting_started/)**
-- Tactics
 - [Flags](/documentation/flags/)
 - [Slash Commands](/documentation/slash_commands/)
 
-## Sections
+## Developer
 
-- Map Making
-- [Development](/documentation/developer/)
+- [bzfs API](/documentation/developer/bzfs_api)
+- [Contributing to the project](/documentation/developer/contributing)
