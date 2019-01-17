@@ -23,7 +23,7 @@
     }
 
     .c-terminal__prompt::after {
-        content: '$ ';
+        content: attr(data-folder) ' $ ';
     }
 }
 
@@ -143,7 +143,7 @@
 
 .c-terminal[data-os="windows"] {
     .c-terminal__prompt::after {
-        content: 'C:\\> ';
+        content: 'C:\\' attr(data-folder) '> ';
     }
 
     .c-terminal__header {

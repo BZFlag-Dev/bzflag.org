@@ -7,7 +7,11 @@
 
     <div class="c-terminal__body">
         {% if command %}
-            <span class="c-terminal__prompt" aria-hidden="true"></span>{{ command }}
+            <span
+                class="c-terminal__prompt"
+                {% if folder %}data-folder="{{ folder }}"{% endif %}
+                aria-hidden="true"
+            ></span>{{ command }}
         {% else %}
             {{ body | raw }}
         {% endif %}
