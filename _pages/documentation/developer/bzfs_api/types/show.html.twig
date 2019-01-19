@@ -41,14 +41,16 @@ parent:
             <h2 id="operators">Operators</h2>
 
             {% for o in this.operators %}
-                <h3>{{ o.operator }}</h3>
+                <h3 class="text-monospace">{{ o.operator }}</h3>
                 <p><strong>Return type</strong>: <code>{{ o.returnType }}</code></p>
                 <p><strong>Supported data types</strong>:</p>
-                <ul>
                     {% for p in o.params %}
-                        <li><code>{{ p }}</code></li>
+                        {% markdown %}
+                            ```cpp
+                            {{ p }}
+                            ```
+                        {% endmarkdown %}
                     {% endfor %}
-                </ul>
             {% endfor %}
         {% endif %}
 
