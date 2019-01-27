@@ -34,7 +34,6 @@ exclude:
     - COPYING
     - LICENSES.md
     - README.md
-    - /\.psd$/
     - /\.sh$/
 
 debug: false
