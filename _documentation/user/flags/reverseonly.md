@@ -5,7 +5,7 @@ type: Bad
 summary: Can't drive forward.
 ---
 
-The ReverseOnly flag prevents driving forward and increases difficulties in avoiding shots.
+The ReverseOnly (RO) flag prevents driving forward and increases difficulties in avoiding shots.
 
 ## Tactics 
 
