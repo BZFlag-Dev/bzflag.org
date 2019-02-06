@@ -5,14 +5,15 @@ type: Good
 summary: See stealthed, cloaked and masquerading tanks as normal.
 ---
 
-The Seer (SE) flag allows the player to see the tanks holding the [Stealth (ST)](../stealth/), [Cloaking (CL)](../cloaking/), or [Masquerade (MQ)](../masquerade/) flags as normal.
+The Seer (SE) flag allows the player to see through tanks camouflaging themselves or their shots either from in the window or radar of other players. This flag nullifies the effects of the following flags for the beholder:
 
-Its power is therefore to nullify the effects of those three flags for the holder, rather than bringing out a unique power-up itself.
+- [Cloaking (CL)](../cloaking/)
+- [Invisible Bullet (IB)](../invisible-bullet/)
+- [Masquerade (MQ)](../masquerade/)
+- [Stealth (ST)](../stealth/)
 
 ## Tactics
 
-As the flag disables the effect of three other specific flags for the holder, the usage of Seer is highly situational.
+Unlike most other good flags, Seer does not add any effect when battling against tanks that have non-camouflaging flags. As this flag disables the effect of other specific flags for the holder, the usage of Seer is highly situational.
 
-In general, a player would prefer a flag that gives a power-up itself rather than nullify that of some others, as a power-up can effect most players on the map, while Seer does not add any effect when battling against tanks that have flags other than the three affected by Seer.
-
-As such, the usage is usually limited to the situations where either a holder of one of the three affected flags is in close proximity to the player holding Seer, or the majority of the tanks on the map are holding one of the three affected flags.
+The Seer flag can be extremely useful when used on a map where most tanks carry the [Stealth (ST)](../stealth/) flag as it would give the holder an advantage of knowing where all the stealthed enemies are located. Using the Seer flag is also beneficial when there are stealthed tanks camping in your team's base or when a pesky rabbit starts hiding in a Rabbit Hunt game mode. While holding the Seer flag, it is also common to communicate with your teammates and direct them in the direction of stealthed tanks.
