@@ -11,6 +11,6 @@ A lot of maps utilize the default ricochet option to already allow the effect of
 
 ## Tactics
 
-Ricochet is potent on maps filled with objects, usually boxes, behind which a tank can hide from direct fire from the opponent, all while attempting to shoot them down by using the objects as proxies off of which own bullets bounce in hopes of hitting the opponent.
+Ricochet is potent on maps filled with objects, usually boxes, behind which a tank can hide from direct enemy fire, all while attempting to shoot them down by using the objects as proxies off of which own bullets bounce in hopes of hitting the opponent.
 
-Efficiently utilizing the Ricochet flag requires a high amount of estimating of the bullet's trajectory by planning the path before the shot, usually through the use of radar. Complexity behind the estimation increases with each additional bounce required to reach the target.
+Efficiently utilizing the Ricochet flag requires a high amount of estimating the bullet's trajectory by planning the path before it is shot, usually through the use of radar. Complexity behind the estimation increases with each additional bounce required to reach the target.
