@@ -3,6 +3,8 @@ name: Wide Angle
 abbreviation: WA
 type: Bad
 summary: Fish-eye lens distorts view.
+bzdb:
+  - _wideAngleAng
 ---
 
 The Wide Angle (WA) flag causes a tank's viewing perspective from the outside window to increase dramatically, distorting the outside view. This causes it to become difficult to judge distances and location correctly.

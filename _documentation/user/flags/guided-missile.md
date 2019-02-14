@@ -3,6 +3,11 @@ name: Guided Missile
 abbreviation: GM
 type: Good
 summary: Shots track a target. Lock on with right button. Can lock on or retarget after firing.
+bzdb:
+  - _gmActivationTime
+  - _gmAdLife
+  - _gmSize
+  - _gmTurnAngle
 ---
 
 The Guided Missile (GM) flag provides a locking system and changes the shot type to a missile. Using the lock/identify key when looking at another player will lock onto that tank. Any active or fired missiles will attempt to seek to the targeted tank. The lock target can be set before or after firing and can be changed.

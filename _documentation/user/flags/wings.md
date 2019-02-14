@@ -24,7 +24,7 @@ Despite being a flying tank, [guided missiles](../guided-missile/) will follow t
 
 ## Server Settings
 
-- `wingsGravity` - how much gravity affects tanks with the WG flag
-- `wingsJumpCount` - the number of jumps a tank with the wings flag can do before returning to the ground
-- `wingsJumpVelocity` - the initial velocity of a jump with wings, in world units/sec.
-- `wingsSlideTime` - when in the air, the tanks will slide for this long.
+- `_wingsGravity` - how much gravity affects tanks with the WG flag
+- `_wingsJumpCount` - the number of jumps a tank with the wings flag can do before returning to the ground
+- `_wingsJumpVelocity` - the initial velocity of a jump with wings, in world units/sec.
+- `_wingsSlideTime` - when in the air, the tanks will slide for this long.

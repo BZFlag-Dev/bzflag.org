@@ -3,6 +3,10 @@ name: Momentum
 abbreviation: M
 type: Bad
 summary: Tank has inertia. Acceleration is limited.
+bzdb:
+  - _momentumLinAcc
+  - _momentumAngAcc
+  - _momentumFriction
 ---
 
 The Momentum (M) flag causes a tank to have difficulties slowing down, speeding up, or turning, which may ruin timing on jumps, make turns less predictable, and increase difficulties in dodging shots.

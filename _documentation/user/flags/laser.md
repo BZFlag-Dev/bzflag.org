@@ -4,10 +4,13 @@ abbreviation: L
 type: Good
 summary: Shoots a laser. Infinite speed and range but long reload time.
 video: true
+bzdb:
+  - _laserAdLife
+  - _laserAdRate
+  - _laserAdVel
 ---
 
 The Laser (L) flag shoots a beam of light with infinite speed (but finite range), bouncing off obstacles if ricochet is enabled. Unlike most other shot types, a single shot can kill multiple players.
-
 
 ## Tactics
 

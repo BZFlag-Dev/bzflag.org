@@ -3,6 +3,8 @@ name: Obesity
 abbreviation: O
 type: Bad
 summary: Tank becomes very large. Can't fit through teleporters.
+bzdb:
+  - _obeseFactor
 ---
 
 The Obesity (O) flag increases the size of the tank and makes dodging shots much harder due to the increased size.
