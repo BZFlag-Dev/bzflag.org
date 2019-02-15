@@ -11,11 +11,11 @@ It manages to identify the nearest flag only if said flag is also in the range s
 
 ## Tactics
 
-Identify can be utlized as a means of speeding up the flag choosing process or avoiding of potential bad flags.
+Identify can be utilized as a means of speeding up the flag choosing process or avoiding of potential bad flags.
 
-Since the tank holding Identify doesn't have to completely reach the destination flag to check its type, it can shorten the distance the tank has to travel to learn the contents of all the flags, should there be a mass of flags in a single place. In return, doing so can also speed up the process of finding the desired flag.
+Since the tank holding Identify does not have to completely reach the destination flag to check its type, it can shorten the distance the tank has to travel to learn the contents of all the flags, should there be a mass of flags in a single place. In return, doing so can also speed up the process of finding the desired flag.
 
-On maps with bad flags, Identify allows the player to identify and avoid them entirely, preventing negative effects from bring applied to the player.
+On maps with bad flags, Identify allows the player to identify and avoid them entirely, preventing negative effects from being applied to the player.
 
 ## Server Settings
 
