@@ -4,11 +4,11 @@ category: String Operations
 signatures:
     - - dataType: const char*
         name: str
-        description: ~
+        description: String to be hashed.
         default: ~
 returns:
     dataType: const char*
-    description: ~
+    description: The MD5 hash of `str`.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Creates an MD5 hash of the `str` argument provided.

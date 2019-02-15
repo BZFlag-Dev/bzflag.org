@@ -4,11 +4,11 @@ category: Plug-in Management
 signatures:
     - - dataType: const char*
         name: path
-        description: ~
+        description: Path to the plug-in to be unloaded.
         default: ~
 returns:
     dataType: bool
-    description: ~
+    description: `true` if it succeeded, `false` if it didn't.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Unloads a plug-in based on arguments provided.

@@ -4,15 +4,15 @@ category: Plug-in Management
 signatures:
     - - dataType: const char*
         name: path
-        description: ~
+        description: Path to the plug-in to be loaded.
         default: ~
       - dataType: const char*
         name: params
-        description: ~
+        description: Parameters to be passed to the plug-in.
         default: ~
 returns:
     dataType: bool
-    description: ~
+    description: `true` if it succeeded, otherwise `false`.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Loads a plug-in based on arguments provided. Returns `true` if successfully loaded, `false` if not.
