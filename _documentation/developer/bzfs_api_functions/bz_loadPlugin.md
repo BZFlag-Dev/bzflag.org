@@ -15,4 +15,4 @@ returns:
     description: `true` if it succeeded, otherwise `false`.
 ---
 
-Loads a plug-in based on arguments provided. Returns `true` if successfully loaded, `false` if not.
+Loads a plug-in based on arguments provided.
