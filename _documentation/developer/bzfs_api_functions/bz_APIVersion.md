@@ -8,4 +8,4 @@ returns:
     description: BZAPI version.
 ---
 
-Useful for checking API version requirements a plug-in may have.
+Returns the BZAPI version (`BZ_API_VERSION`). It is used by bzfs so it can safely fail to load plug-ins compiled with an older version of bzfs.
