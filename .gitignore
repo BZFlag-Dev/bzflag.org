@@ -3,5 +3,8 @@
 /_data/privacy.yaml
 /_data/piwik.yaml
 /.idea/
+*.dll
+*.dylib
 *.mp4
+*.so
 *.webm
