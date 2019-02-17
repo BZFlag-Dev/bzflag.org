@@ -1,0 +1,97 @@
+---
+title: Getting Started
+permalink: /getting-started/
+---
+
+{% extends "_layouts/base.html.twig" %}
+
+{% block content_root %}
+    <div class="container">
+        <h1>Getting Started</h1>
+
+        <section class="row my-5">
+            <div class="col-md-7">
+                <header>
+                    <p class="m-0 text-muted">
+                        <strong><small>What's in a name?</small></strong>
+                    </p>
+                    <h2 class="line-height-1 mt-0 mb-3">Register a Callsign</h2>
+                </header>
+
+                <p>
+                    BZFlag allows players to register their name, also known as their callsign. Some servers provide
+                    additional benefits for registered users, such as being allows to vote in polls. Another benefit is
+                    that players can not use another player's registered callsign. To register a callsign, visit our
+                    forums and register an account. The username and password on the forums will be used as callsign and
+                    password in the game.
+                </p>
+
+                <a href="https://forums.bzflag.org/" class="c-button">Register on our forums</a>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <header>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <img src="{{ url('/assets/images/getting-started/colored-tanks-lineup.png') }}"
+                             alt="Colored tanked from left to right: red, green, blue, purple"
+                             class="img-fluid"
+                        >
+                    </div>
+                </div>
+
+                <h2 class="mt-5 text-center">Colored Teams</h2>
+            </header>
+
+            <p>
+                The game has four main teams: Red, Green, Blue, and Purple. In the Free For All and Capture The Flag
+                game modes, each of those teams work together to fight the other teams. Teammates should not shoot each
+                other in those modes. In the Open Free For All game mode, the teams do not matter and it is allowed to
+                shoot any tank for points.
+            </p>
+
+            <p>
+                Servers can choose to limit the number of players per team or disable a team entirely.
+            </p>
+
+            <div class="row my-5">
+                <div class="col-md-4">
+                    <img src="{{ url('/assets/images/getting-started/rogue-tanks.png') }}"
+                         alt="Two rogue tanks"
+                         class="img-fluid"
+                    >
+                </div>
+                <div class="col-md-8">
+                    <p class="m-0 text-muted">
+                        <strong><small>Got loyalty problems?</small></strong>
+                    </p>
+                    <h2 class="line-height-1 mt-0 mb-3">Rogue Class</h2>
+
+                    <p>
+                        Like the feeling of having no loyalties to anyone? Want to shoot every possible tank you see?
+                        The rogue class lets you play as a tank who's abandoned all its ties to any team and can shoot
+                        any tank, even other rogues.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <img src="{{ url('/assets/images/getting-started/rabbit-hunters.png') }}"
+                         alt="Two hunter tanks pursuing a rabbit tank"
+                         class="img-fluid"
+                    >
+                </div>
+            </div>
+
+            <h2 class="mt-5 text-center">Rabbit Chase</h2>
+
+            <p>
+                In this mode, a single Rabbit is chosen by the server. All of the other players will be Hunters. The
+                Rabbit has the opportunity to score the most points, but it is also the most vulnerable. When the Rabbit
+                is killed, a new Rabbit is selected by the server.
+            </p>
+        </section>
+    </div>
+{% endblock %}
