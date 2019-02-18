@@ -5,7 +5,7 @@ signatures:
     - []
 returns:
     dataType: const char*
-    description: ~
+    description: The protocol version.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Returns BZFlag protocol version. Example: `0221`.

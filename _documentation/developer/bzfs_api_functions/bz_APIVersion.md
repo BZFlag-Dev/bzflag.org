@@ -5,7 +5,9 @@ signatures:
     - []
 returns:
     dataType: int
-    description: ~
+    description: BZAPI version.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+The internal API version is used by bzfs so it can safely fail to load plugins that were compiled with older versions of bzfs that had a different API version. This value is only changed during protocol breaks or when something changes in the API such as the signature for an existing function or properties of API objects.
+
+Most plug-ins won't have the need to make use of this information.

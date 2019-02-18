@@ -5,7 +5,7 @@ signatures:
     - []
 returns:
     dataType: const char*
-    description: ~
+    description: The protocol version with "BZFS" added to the front.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Returns the server's protocol version. Example: `BZFS0221`.
