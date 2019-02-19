@@ -6,10 +6,8 @@ Each SSG configuration must have two comments at the top of the file:
 
 ```ini
 # roampos: <x> <y> <z> <rot> <elev>
-# world: <bzw file>
-# options: N/A
+# bzfs: <bzfs options>
 ```
 
 - The `roampos` values so we can replicate the photos again in the future
-- The `world` value has the name of the BZW file used for the photo
-- The `options` values has any extra BZFS options that should be fed when starting the photoshoot server
+- The `bzfs` values contains the additional cli flags needed to be passed to set up the photoshoot server. Be sure to load the SSG plugin and configuration file in addition to the options listed in this section
