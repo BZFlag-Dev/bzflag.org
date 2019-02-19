@@ -1,0 +1,25 @@
+options
+  -c
+  -mp 0,1,1,0,0,10
+
+  # We're using the green team, so we gotta do a blue screen
+  -set _mirror blue
+  -set _skyColor blue
+end
+
+base
+  position -999 -999 0
+  color 2
+end
+
+base
+  position 0 0 5
+  size 5 5 1
+  color 1
+end
+
+zone
+  position 0 0 6
+  size 0.1 0.1 0.1
+  zoneflag R*
+end
