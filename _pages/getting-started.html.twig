@@ -82,15 +82,22 @@ permalink: /getting-started/
         <section>
             <h2 class="border-y line-height-1 my-5 py-3 text-center">Game Modes</h2>
 
-            <div class="row">
+            <div class="row my-5">
                 <div class="col-md-6">
                     <article>
                         <header>
-                            <img src="{{ url('/assets/images/getting-started/ctf-scene.png') }}"
-                                 alt="Red tank capturing the green team flag"
-                                 class="img-fluid mb-5"
-                            >
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <img src="{{ url('/assets/images/getting-started/ctf-scene.png') }}"
+                                         alt="Red tank capturing the green team flag"
+                                         class="img-fluid mb-3"
+                                    >
+                                </div>
+                            </div>
 
+                            <p class="mb-0 text-muted">
+                                <strong><small>It's all about the flag</small></strong>
+                            </p>
                             <h3 class="h2 line-height-1 mb-3">Capture the Flag (CTF)</h3>
                         </header>
 
@@ -99,30 +106,67 @@ permalink: /getting-started/
                         </p>
                     </article>
                 </div>
-                <div class="col-md-6"></div>
-            </div>
 
-            <article class="my-5">
-                <header>
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
+                <div class="col-md-6 flex-column align-self-end">
+                    <article>
+                        <header>
                             <img src="{{ url('/assets/images/getting-started/rabbit-hunters.png') }}"
                                  alt="Two hunter tanks pursuing a rabbit tank"
-                                 class="img-fluid"
+                                 class="img-fluid mb-3"
                             >
-                        </div>
-                    </div>
 
-                    <p class="mt-5 mb-0 text-muted">
-                        <strong><small>It's always rabbit season</small></strong>
+                            <p class="mb-0 text-muted">
+                                <strong><small>It's always rabbit season</small></strong>
+                            </p>
+                            <h3 class="h2 line-height-1 mb-3">Rabbit Chase</h3>
+                        </header>
+
+                        <p>
+                            In this mode, a single Rabbit is chosen by the server. All of the other players will be Hunters. The Rabbit has the opportunity to score the most points, but it is also the most vulnerable. When the Rabbit is killed, a new Rabbit is selected by the server.
+                        </p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="row my-5">
+                <article class="col-md-8 offset-md-2">
+                    <header>
+                        <img src="{{ url('/assets/images/getting-started/ffa-tanks.png') }}"
+                             alt="Two red tanks on the left facing off with two blue tanks"
+                             class="img-fluid mb-3"
+                        >
+
+                        <p class="mb-0 text-muted">
+                            <strong><small>No flags, just kills</small></strong>
+                        </p>
+                        <h3 class="h2 line-height-1 mb-3">Free For All (FFA)</h3>
+                    </header>
+
+                    <p>
+                        In Free For All, also known as Free-style, the objective is to shoot enemy tanks to earn points. The four main teams should not shoot other members of their team as this will result in a penalty. Rogue players are allowed to shoot any tank, even other Rogues.
                     </p>
-                    <h3 class="h2 line-height-1 mb-3">Rabbit Chase</h3>
-                </header>
+                </article>
+            </div>
 
-                <p>
-                    In this mode, a single Rabbit is chosen by the server. All of the other players will be Hunters. The Rabbit has the opportunity to score the most points, but it is also the most vulnerable. When the Rabbit is killed, a new Rabbit is selected by the server.
-                </p>
-            </article>
+            <div class="row my-5">
+                <article class="col-md-8 offset-md-2">
+                    <header>
+                        <img src="{{ url('/assets/images/getting-started/offa-tanks.png') }}"
+                             alt="Four purple team tanks facing off against each other"
+                             class="img-fluid mb-3"
+                        >
+
+                        <p class="m-0 text-muted">
+                            <strong><small>Friendly fire? Hah!</small></strong>
+                        </p>
+                        <h3 class="h2 line-height-1 mb-3">Open FFA</h3>
+                    </header>
+
+                    <p>
+                        In OpenFFA, the objective is to shoot other tanks to earn points. Teams do not matter, and all tanks are allowed to shoot other tanks.
+                    </p>
+                </article>
+            </div>
         </section>
 
         <section>
