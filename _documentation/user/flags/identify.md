@@ -17,7 +17,7 @@ Since the tank holding Identify does not have to completely reach the destinatio
 
 On maps with bad flags, Identify allows the player to identify and avoid them entirely, preventing negative effects from being applied to the player.
 
-On maps where flags reset quickly after being dropped, Identify can serve as a risk-free way to first identify the types of all flags within a patch and then choose the desired one among them, removing the gamble and dilemma whether the flag will remain where dropped and whether the next flag will actually be better suited than the current.
+On maps where flags reset quickly after being dropped, Identify can serve as a risk-free way to first identify the types of all flags within a patch and then choose the desired one among them. This removes the risk of possibly losing a preferred flag after dropping it in hopes of finding something better.
 
 ## Server Settings
 
