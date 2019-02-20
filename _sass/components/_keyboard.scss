@@ -1,0 +1,86 @@
+.c-keyboard {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.c-keyboard--disabled {
+    .c-keyboard__key {
+        opacity: 0.5;
+    }
+
+    .c-keyboard__key--active {
+        opacity: 1;
+    }
+}
+
+.c-keyboard__row {
+    display: flex;
+    margin-bottom: $keyboard-buffer;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-keyboard__key {
+    height: $keyboard-key-size;
+    width: $keyboard-key-size;
+
+    background-color: #1D1E21;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: $keyboard-buffer;
+    padding: $keyboard-key-padding;
+    position: relative;
+    text-align: center;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.c-keyboard__key[data-shift] {
+    &::before {
+        content: attr(data-shift);
+        font-size: 0.6rem;
+        position: absolute;
+        top: $keyboard-key-padding;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.c-keyboard__key {
+    &.ctrl,
+    &.del,
+    &.tab {
+        width: $keyboard-key-size * 1.5;
+    }
+
+    &.space {
+        color: transparent;
+        width: 330px;
+    }
+
+    &.alt,
+    &.meta,
+    &.enter,
+    &.caps,
+    &.shift {
+        flex-grow: 1;
+    }
+
+    &[data-align] {
+        font-size: 0.8em;
+    }
+
+    &[data-align="left"] {
+        text-align: left;
+    }
+
+    &[data-align="right"] {
+        text-align: right;
+    }
+}
