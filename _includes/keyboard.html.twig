@@ -1,0 +1,107 @@
+{% set keys = [
+    [
+        ['`', '~'],
+        ['1', '!'],
+        ['2', '@'],
+        ['3', '#'],
+        ['4', '$'],
+        ['5', '%'],
+        ['6', '^'],
+        ['7', '&'],
+        ['8', '*'],
+        ['9', '('],
+        ['0', ')'],
+        ['-', '_'],
+        ['=', '+'],
+        ['delete', null, 'right'],
+    ],
+    [
+        ['tab', null, 'left'],
+        ['Q'],
+        ['W'],
+        ['E'],
+        ['R'],
+        ['T'],
+        ['Y'],
+        ['U'],
+        ['I'],
+        ['O'],
+        ['P'],
+        ['[', '{'],
+        [']', '}'],
+        ['\\', '|'],
+    ],
+    [
+        ['caps', null, 'left'],
+        ['A'],
+        ['S'],
+        ['D'],
+        ['F'],
+        ['G'],
+        ['H'],
+        ['J'],
+        ['K'],
+        ['L'],
+        [';', ':'],
+        ["'", '"'],
+        ['enter', null, 'right'],
+    ],
+    [
+        ['shift', null, 'left'],
+        ['Z'],
+        ['X'],
+        ['C'],
+        ['V'],
+        ['B'],
+        ['N'],
+        ['M'],
+        [',', '<'],
+        ['.', '>'],
+        ['/', '?'],
+        ['shift', null, 'right'],
+    ],
+    [
+        ['ctrl', null, 'left'],
+        ['meta', null, 'left'],
+        ['alt', null, 'left'],
+        ['space', null],
+        ['alt', null, 'right'],
+        ['meta', null, 'right'],
+        ['ctrl', null, 'right'],
+    ],
+] %}
+
+{% set active_keys = active_keys ?? [] %}
+{% set disabled = disabled ?? false %}
+
+{% set class_prefix = class_prefix ?? 'c-keyboard' %}
+{% set key_tag = key_tag ?? 'kbd' %}
+
+{# Hide this from screenreaders because it's just a visual aid #}
+<div class="{{ class_prefix }} {{ disabled ? class_prefix ~ '--disabled' : '' }}" aria-hidden="true">
+    {% for row in keys %}
+        <div class="{{ class_prefix }}__row">
+            {% for key in row %}
+                {% set key_classes = [
+                    class_prefix ~ '__key',
+                ] %}
+
+                {% if key[0] in active_keys %}
+                    {% set key_classes = key_classes | merge([class_prefix ~ '__key--active']) %}
+                {% endif %}
+
+                {% if key[0] | length > 1 %}
+                    {% set key_classes = key_classes | merge([ (key[0] | lower) ]) %}
+                {% endif %}
+
+                <{{ key_tag }}
+                    class="{{ key_classes | join(' ') }}"
+                    {% if key[1] %}data-shift="{{ key[1] | e }}"{% endif %}
+                    {% if key[2] %}data-align="{{ key[2] }}"{% endif %}
+                >
+                    {{ key[0] }}
+                </{{ key_tag }}>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>

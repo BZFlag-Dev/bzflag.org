@@ -1,6 +1,9 @@
 .c-keyboard {
+    background-color: #4e4e4e;
+    border-radius: $border-radius;
     display: inline-flex;
     flex-direction: column;
+    padding: 5px;
 }
 
 .c-keyboard--disabled {
@@ -26,9 +29,9 @@
     height: $keyboard-key-size;
     width: $keyboard-key-size;
 
-    background-color: #1D1E21;
-    border-radius: 3px;
-    display: flex;
+    background-color: $color-dark;
+    border-radius: $border-radius;
+    display: inline-flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-left: $keyboard-buffer;
@@ -54,7 +57,7 @@
 
 .c-keyboard__key {
     &.ctrl,
-    &.del,
+    &.delete,
     &.tab {
         width: $keyboard-key-size * 1.5;
     }
