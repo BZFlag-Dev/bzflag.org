@@ -232,16 +232,31 @@ permalink: /getting-started/
                                 <div class="col-sm-4">
                                     <div class="text-center">
                                         <p class="mb-2 strong">Spawn</p>
-                                        <kbd class="c-keyboard__key">I</kbd>
+
+                                        <div class="row">
+                                            <div class="col-6 text-center">
+                                                <kbd class="c-keyboard__key">I</kbd>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                {% include '_includes/mouse.html.twig' with { pressed: 'right' } %}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="text-center">
                                         <p class="mb-2 strong">Shoot</p>
-                                        <kbd class="c-keyboard__key enter" data-align="right">
-                                            enter
-                                        </kbd>
+                                        <div class="row">
+                                            <div class="col-6 text-center">
+                                                <kbd class="c-keyboard__key enter" data-align="right">
+                                                    enter
+                                                </kbd>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                {% include '_includes/mouse.html.twig' with { pressed: 'left' } %}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -255,14 +270,32 @@ permalink: /getting-started/
                                 </div>
                             </div>
 
-                            <div class="text-center mt-3">
-                                <p class="mb-2 strong">
-                                    Identify / Lock On
-                                    <abbr title="with Guided Missile flag">*</abbr>
-                                    player
-                                    <span class="sr-only">with Guided Missile flag</span>
-                                </p>
-                                <kbd class="c-keyboard__key">I</kbd>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="text-center mt-3">
+                                        <p class="mb-2 strong">
+                                            Identify / Lock On
+                                            <abbr title="with Guided Missile flag">*</abbr>
+                                            player
+                                            <span class="sr-only">with Guided Missile flag</span>
+                                        </p>
+                                        <kbd class="c-keyboard__key">I</kbd>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-center mt-3">
+                                        <p class="mb-2 strong">Drop Flag</p>
+
+                                        <div class="row">
+                                            <div class="col-6 text-center">
+                                                <kbd class="c-keyboard__key">Space</kbd>
+                                            </div>
+                                            <div class="col-6 text-center">
+                                                {% include '_includes/mouse.html.twig' with { pressed: 'middle' } %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </article>
@@ -284,6 +317,12 @@ permalink: /getting-started/
                                         <kbd class="c-keyboard__key" data-shift="!">1</kbd>
                                         <kbd class="c-keyboard__key" data-shift="@">2</kbd>
                                         <kbd class="c-keyboard__key" data-shift="#">3</kbd>
+
+                                        <p class="my-3 text-center">or</p>
+
+                                        <kbd class="c-keyboard__key shift">shift</kbd>
+                                        <span>+</span>
+                                        {% include '_includes/mouse.html.twig' with { pressed: 'scroll' } %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
