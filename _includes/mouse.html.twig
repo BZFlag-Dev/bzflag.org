@@ -1,0 +1,19 @@
+{% set literal -%}
+    {%- if pressed == 'left' or pressed == 'right' or pressed == 'middle' -%}
+        {{ pressed | title }} mouse button
+    {%- elseif pressed == 'scroll' -%}
+        Scroll with scroll wheel
+    {%- endif -%}
+{%- endset %}
+
+<div class="c-mouse"
+     aria-hidden="true"
+     data-pressed="{{ pressed ?? 'none' }}"
+     title="{{ literal }}"
+>
+    <div class="c-mouse__left"></div>
+    <div class="c-mouse__right"></div>
+    <div class="c-mouse__scroll"></div>
+</div>
+
+<span class="sr-only">{{ literal }}</span>

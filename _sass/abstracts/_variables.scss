@@ -75,6 +75,16 @@ $keyboard-key-size: 50px;
 $keyboard-key-padding: 6px;
 
 // -----------------------------------------------------------------------------
+// Virtual CSS Mouse Settings
+// -----------------------------------------------------------------------------
+
+$mouse-color: $color-dark;
+$mouse-color-highlight: #ffffff;
+$mouse-outline: 1px solid $mouse-color-highlight;
+$mouse-height: 50px;
+$mouse-width: 30px;
+
+// -----------------------------------------------------------------------------
 // Hamburger Icon Settings
 // -----------------------------------------------------------------------------
 

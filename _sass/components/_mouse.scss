@@ -1,0 +1,58 @@
+.c-mouse {
+    background-color: $mouse-color;
+    border: $mouse-outline;
+    border-radius: $mouse-width;
+    display: inline-block;
+    height: $mouse-height;
+    position: relative;
+    width: $mouse-width;
+}
+
+.c-mouse[data-pressed="left"] {
+    .c-mouse__left {
+        background-color: $mouse-color-highlight;
+    }
+}
+
+.c-mouse[data-pressed="right"] {
+    .c-mouse__right {
+        background-color: $mouse-color-highlight;
+    }
+}
+
+.c-mouse[data-pressed="middle"],
+.c-mouse[data-pressed="scroll"] {
+    .c-mouse__scroll {
+        background-color: $mouse-color-highlight;
+    }
+}
+
+.c-mouse__right,
+.c-mouse__left {
+    position: absolute;
+    height: $mouse-width / 2;
+    top: 0;
+    width: $mouse-width / 2;
+}
+
+.c-mouse__left {
+    border-radius: $mouse-width 0 0 0;
+    left: 0;
+}
+
+.c-mouse__right {
+    border-radius: 0 $mouse-width 0 0;
+    right: 0;
+}
+
+.c-mouse__scroll {
+    background-color: $mouse-color;
+    border: $mouse-outline;
+    border-radius: 5px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10px;
+    width: 4px;
+}
