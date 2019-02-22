@@ -1,3 +1,49 @@
+{% macro keyboard_gen(keys, active_keys, disabled, class_prefix, key_tag, custom_class) %}
+    {% set active_keys = active_keys ?? [] %}
+    {% set disabled = disabled ?? false %}
+    {% set class_prefix = class_prefix ?? 'c-keyboard' %}
+    {% set key_tag = key_tag ?? 'kbd' %}
+
+    <div class="{{ custom_class ?? class_prefix }} {{ disabled ? class_prefix ~ '--disabled' : '' }}">
+        {% for row in keys %}
+            <div class="{{ class_prefix }}__row">
+                {% for key in row %}
+                    {% set key_classes = [
+                        class_prefix ~ '__key',
+                    ] %}
+
+                    {% if key[0] in active_keys or key.short in active_keys %}
+                        {% set key_classes = key_classes | merge([class_prefix ~ '__key--active']) %}
+                    {% endif %}
+
+                    {% if key[0] | length > 1 or key.short %}
+                        {% set key_classes = key_classes | merge([ (key[0] | default(key.short) | lower) ]) %}
+                    {% endif %}
+
+                    <{{ key_tag }}
+                        class="{{ key_classes | join(' ') }}"
+                        {% if key[1] %}data-shift="{{ key[1] | e }}"{% endif %}
+                        {% if key[2] %}data-align="{{ key[2] }}"{% endif %}
+                        {% if key.desc %}title="{{ key.desc }}"{% endif %}
+                    >
+                        <span
+                            {% if key.desc %}aria-hidden="true" {% endif %}
+                        >
+                            {{- key[0] | default(key.char) -}}
+                        </span>
+
+                        {% if key.desc %}
+                            <span class="sr-only">{{ key.desc }}</span>
+                        {% endif %}
+                    </{{ key_tag }}>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% from _self import keyboard_gen %}
+
 {% set keys = [
     [
         ['`', '~'],
@@ -71,37 +117,10 @@
     ],
 ] %}
 
-{% set active_keys = active_keys ?? [] %}
-{% set disabled = disabled ?? false %}
-
-{% set class_prefix = class_prefix ?? 'c-keyboard' %}
-{% set key_tag = key_tag ?? 'kbd' %}
-
-{# Hide this from screenreaders because it's just a visual aid #}
-<div class="{{ class_prefix }} {{ disabled ? class_prefix ~ '--disabled' : '' }}" aria-hidden="true">
-    {% for row in keys %}
-        <div class="{{ class_prefix }}__row">
-            {% for key in row %}
-                {% set key_classes = [
-                    class_prefix ~ '__key',
-                ] %}
-
-                {% if key[0] in active_keys %}
-                    {% set key_classes = key_classes | merge([class_prefix ~ '__key--active']) %}
-                {% endif %}
-
-                {% if key[0] | length > 1 %}
-                    {% set key_classes = key_classes | merge([ (key[0] | lower) ]) %}
-                {% endif %}
-
-                <{{ key_tag }}
-                    class="{{ key_classes | join(' ') }}"
-                    {% if key[1] %}data-shift="{{ key[1] | e }}"{% endif %}
-                    {% if key[2] %}data-align="{{ key[2] }}"{% endif %}
-                >
-                    {{ key[0] }}
-                </{{ key_tag }}>
-            {% endfor %}
-        </div>
-    {% endfor %}
-</div>
+{{ keyboard_gen(
+    keys,
+    active_keys,
+    disabled,
+    class_prefix,
+    key_tag
+) }}

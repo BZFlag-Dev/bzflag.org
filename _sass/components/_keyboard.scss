@@ -87,3 +87,11 @@
         text-align: right;
     }
 }
+
+.c-keyboard-arrows {
+    display: inline-block;
+
+    .c-keyboard__key.up {
+        margin: 0 auto;
+    }
+}

@@ -200,12 +200,22 @@ permalink: /getting-started/
             <h2 class="c-page-split">Controls</h2>
 
             <div class="text-center my-5">
-                {% include '_includes/keyboard.html.twig' with {
-                    active_keys: [
-                        '1', '2', '3', 'tab', 'I', 'S', 'enter', 'N', 'M', ',', '.', 'space',
-                    ],
-                    disabled: true,
-                } %}
+                <div class="d-flex align-items-end justify-content-center">
+                    {# Hide these from screenreaders because it's just a visual aid #}
+
+                    <div class="px-2" aria-hidden="true">
+                        {% include '_includes/keyboard.html.twig' with {
+                            active_keys: [
+                                '1', '2', '3', 'tab', 'I', 'S', 'enter', 'N', 'M', ',', '.', 'space',
+                            ],
+                            disabled: true,
+                        } %}
+                    </div>
+
+                    <div class="px-3" aria-hidden="true">
+                        {% include '_includes/keyboard_arrows.html.twig' %}
+                    </div>
+                </div>
             </div>
 
             <p>
@@ -292,6 +302,12 @@ permalink: /getting-started/
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="text-center">
+                                <p class="mb-2 strong">Movement</p>
+
+                                {% include '_includes/keyboard_arrows.html.twig' %}
                             </div>
                         </div>
                     </article>

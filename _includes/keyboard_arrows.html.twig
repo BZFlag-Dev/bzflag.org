@@ -1,0 +1,37 @@
+{% from '_includes/keyboard.html.twig' import keyboard_gen %}
+
+{% set keys = [
+    [
+        {
+            char: '▲',
+            desc: 'Up Arrow',
+            short: 'up',
+        },
+    ],
+    [
+        {
+            char: '◀',
+            desc: 'Left Arrow',
+            short: 'left',
+        },
+        {
+            char: '▼',
+            desc: 'Down Arrow',
+            short: 'down',
+        },
+        {
+            char: '▶',
+            desc: 'Right Arrow',
+            short: 'right',
+        },
+    ],
+] %}
+
+{{ keyboard_gen(
+    keys,
+    active_keys,
+    disabled,
+    class_prefix,
+    key_tag,
+    'c-keyboard-arrows'
+) }}
