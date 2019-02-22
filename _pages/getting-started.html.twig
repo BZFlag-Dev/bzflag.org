@@ -385,5 +385,75 @@ permalink: /getting-started/
                 </div>
             </div>
         </section>
+
+        <section>
+            <h2 class="border-y line-height-1 my-5 py-3 text-center">User Interface</h2>
+
+            <article class="s-documentation my-5">
+                <img src="{{ url('/assets/images/getting-started/user-interface-layout.jpg') }}"
+                     alt="The Heads Up Display available in the game"
+                     class="img-fluid mb-3"
+                >
+
+                <p>
+                    The Heads Up Display (HUD) consists of many components as seen in the image above. Don't worry, some of the components may not be straightforward and need some explaining.
+                </p>
+
+                {% markdown %}
+                    ### Scoreboard
+
+                    The scoreboard is sorted by the player with the highest kill/death ratio at the top; the sorting algorithm can be changed via `Options` > `GUI Settings` > `Scoreboard Sort`. The scoreboard consists of three main section:
+
+                    1. **Score** - From left to right, the columns in this section are:
+                       - Net total of kills minus deaths
+                       - Kills/Deaths count
+                       - In the brackets, the amount of teamkills the player has performed
+                    2. **Kills** - Your personal kills/deaths ratio against this player. If there's only a single number, that's your name and it's the amount of times you've killed yourself.
+                    3. **Players** - From left to right, the columns
+                       - The player's status on the server
+                         - `+` : the player has a registered account
+                         - `-` : the player is playing with a registered account but isn't authenticated
+                         - `@` : the player is an administrator on the server
+                         - No symbol means the player is playing with an unregistered account
+                       - The ID a player is assigned on the server; this value is only visible to server administrators
+                       - The player's callsign followed by a slash (`/`) and the abbreviation of the flag they're currently carrying
+                {% endmarkdown %}
+
+                {% markdown %}
+                    ### Team Scores
+
+                    This section shows the score of each colored team and the amount of players currently on each team. Depending on the game mode the server is currently set to, the scores for teams will vary.
+
+                    - CTF: The amount of captures a team has made vs the amount of times the team was captured
+                    - FFA: The combined total of kills and deaths of every player on said team
+
+                    These scores will only reset to 0 when every player on said team has left.
+                {% endmarkdown %}
+
+                {% markdown %}
+                    ### Radar
+
+                    One of the game's most powerful features is an all-seeing radar allowing you see every tank, shot, and object on the playing field. There are flags that allow tanks to camouflage themselves in enemies' radars, so don't fall into a false sense of security.
+                {% endmarkdown %}
+
+                {% markdown %}
+                    ### Control Panel
+
+                    This component displays every thing that is happening on the server including:
+
+                    - Which flags players are grabbing or dropping
+                    - Players joining and leaving
+                    - Player deaths
+                    - Chat messages
+
+                    This component can filter out a specific type of message as seen in the tabs on the upper right:
+
+                    - `All` : <kbd>Shift</kbd> + <kbd>F1</kbd>
+                    - `Chat` : <kbd>Shift</kbd> + <kbd>F2</kbd>
+                    - `Server` : <kbd>Shift</kbd> + <kbd>F3</kbd>
+                    - `Misc` : <kbd>Shift</kbd> + <kbd>F4</kbd>
+                {% endmarkdown %}
+            </article>
+        </section>
     </div>
 {% endblock %}
