@@ -50,12 +50,13 @@ $spacing_directions: (
 );
 
 $font-sizes: (
-    h1: 34px,
-    h2: 30px,
-    h3: 26px,
-    h4: 22px,
-    h5: 18px,
-    h6: 16px
+    h1: em(34px),
+    h2: em(30px),
+    h3: em(26px),
+    h4: em(22px),
+    h5: em(18px),
+    h6: em(16px),
+    small: 0.85em,
 );
 
 $breakpoints: (
