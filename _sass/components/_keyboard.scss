@@ -4,6 +4,28 @@
     display: inline-flex;
     flex-direction: column;
     padding: 5px;
+
+    .c-keyboard__key {
+        &.ctrl,
+        &.delete,
+        &.tab {
+            width: $keyboard-key-size * 1.5;
+        }
+
+        &.space {
+            color: transparent;
+            width: 330px;
+        }
+
+        &.alt,
+        &.meta,
+        &.enter,
+        &.caps,
+        &.shift {
+            flex-grow: 1;
+            width: auto;
+        }
+    }
 }
 
 .c-keyboard--disabled {
@@ -58,33 +80,24 @@
 .c-keyboard__key {
     &.ctrl,
     &.delete,
-    &.tab {
-        width: $keyboard-key-size * 1.5;
-    }
-
-    &.space {
-        color: transparent;
-        width: 330px;
-    }
-
+    &.tab,
+    &.space,
     &.alt,
     &.meta,
     &.enter,
     &.caps,
     &.shift {
-        flex-grow: 1;
+        width: 80px;
     }
 
     &[data-align] {
         font-size: 0.8em;
     }
 
-    &[data-align="left"] {
-        text-align: left;
-    }
-
-    &[data-align="right"] {
-        text-align: right;
+    @each $direction in (left, center, right) {
+        &[data-align="#{$direction}"] {
+            text-align: $direction;
+        }
     }
 }
 
