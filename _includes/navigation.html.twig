@@ -19,11 +19,11 @@
             </button>
 
             <nav class="col-lg site-navigation">
-                <ul id="navigation" class="site-navigation__links" role="menu">
+                <ul id="navigation" class="site-navigation__links">
                     {% for link in data.navigation.links %}
                         {%- set url = link.url[0] == '/' ? url(link.url) : link.url -%}
                         <li>
-                            <a href="{{ url }}" role="menuitem">
+                            <a href="{{ url }}">
                                 {{- link.name -}}
                             </a>
                         </li>
