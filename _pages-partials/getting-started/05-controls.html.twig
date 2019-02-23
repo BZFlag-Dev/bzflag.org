@@ -1,7 +1,7 @@
 <section>
     <h2 id="controls" class="c-page-split">Controls</h2>
 
-    <div class="text-center my-5">
+    <div class="text-center my-5 hide-xs show-xl">
         <div class="d-flex align-items-end justify-content-center">
             {# Hide these from screenreaders because it's just a visual aid #}
 
@@ -28,92 +28,97 @@
         The full list of keys can be viewed in the Help menu in-game or in the Change Key Mapping menu.
     </p>
 
-    <div class="row">
-        <div class="col-md-6">
-            <article>
-                <h3 id="tank-controls" class="border-b pb-1 mb-3">Tank Controls</h3>
+    <article class="mb-4">
+        <h3 id="tank-controls" class="border-b pb-1 mb-3">Tank Controls</h3>
 
-                <p>Basic controls for moving your tank and playing.</p>
+        <p>Basic controls for moving your tank and playing.</p>
 
-                <div class="c-well my-3">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Spawn</p>
-
-                                <div class="row">
-                                    <div class="col-6 text-center">
-                                        <kbd class="c-keyboard__key">I</kbd>
-                                    </div>
-                                    <div class="col-6 text-center">
-                                        {% include '_includes/mouse.html.twig' with { pressed: 'right' } %}
-                                    </div>
-                                </div>
+        <div class="c-well my-3">
+            <div class="row text-center">
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Movement</p>
+                        <div class="controls">
+                            <div class="control">
+                                {% include '_includes/keyboard_arrows.html.twig' %}
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Spawn</p>
 
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Shoot</p>
-                                <div class="row">
-                                    <div class="col-6 text-center">
-                                        <kbd class="c-keyboard__key enter" data-align="right">
-                                            enter
-                                        </kbd>
-                                    </div>
-                                    <div class="col-6 text-center">
-                                        {% include '_includes/mouse.html.twig' with { pressed: 'left' } %}
-                                    </div>
-                                </div>
+                        <div class="controls">
+                            <div class="control">
+                                <kbd class="c-keyboard__key">I</kbd>
+                            </div>
+                            <div class="control">
+                                {% include '_includes/mouse.html.twig' with { pressed: 'right' } %}
                             </div>
                         </div>
-
-                        <div class="col-sm-4">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Jump</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Shoot</p>
+                        <div class="controls">
+                            <div class="control">
+                                <kbd class="c-keyboard__key enter" data-align="right">
+                                    enter
+                                </kbd>
+                            </div>
+                            <div class="control">
+                                {% include '_includes/mouse.html.twig' with { pressed: 'left' } %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Jump</p>
+                        <div class="controls">
+                            <div class="control">
                                 <kbd class="c-keyboard__key tab" data-align="left">
                                     tab
                                 </kbd>
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="text-center mt-3">
-                                <p class="mb-2 strong">
-                                    Identify / Lock On
-                                    <abbr title="with Guided Missile flag">*</abbr>
-                                    player
-                                    <span class="sr-only">with Guided Missile flag</span>
-                                </p>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">
+                            Identify / Lock On
+                            <abbr title="with Guided Missile flag">*</abbr>
+                            player
+                            <span class="sr-only">with Guided Missile flag</span>
+                        </p>
+                        <div class="controls">
+                            <div class="control">
                                 <kbd class="c-keyboard__key">I</kbd>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="text-center mt-3">
-                                <p class="mb-2 strong">Drop Flag</p>
-
-                                <div class="row">
-                                    <div class="col-6 text-center">
-                                        <kbd class="c-keyboard__key space" data-align="center">space</kbd>
-                                    </div>
-                                    <div class="col-6 text-center">
-                                        {% include '_includes/mouse.html.twig' with { pressed: 'middle' } %}
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="kb-control-group">
+                        <p class="title">Drop Flag</p>
+                        <div class="controls">
+                            <div class="control">
+                                <kbd class="c-keyboard__key space" data-align="center">space</kbd>
+                            </div>
+                            <div class="control">
+                                {% include '_includes/mouse.html.twig' with { pressed: 'middle' } %}
                             </div>
                         </div>
                     </div>
-
-                    <div class="text-center">
-                        <p class="mb-2 strong">Movement</p>
-
-                        {% include '_includes/keyboard_arrows.html.twig' %}
-                    </div>
                 </div>
-            </article>
+            </div>
         </div>
+    </article>
+
+    <div class="row">
         <div class="col-md-6">
             <article>
                 <h3 id="hud-controls" class="border-b pb-1 mb-3">Heads Up Display (HUD)</h3>
@@ -123,27 +128,35 @@
                 </p>
 
                 <div class="c-well my-3">
-                    <div class="row my-3">
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Radar Zoom</p>
+                    <div class="row">
+                        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Radar Zoom</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        <kbd class="c-keyboard__key" data-shift="!">1</kbd>
+                                        <kbd class="c-keyboard__key" data-shift="@">2</kbd>
+                                        <kbd class="c-keyboard__key" data-shift="#">3</kbd>
 
-                                <kbd class="c-keyboard__key" data-shift="!">1</kbd>
-                                <kbd class="c-keyboard__key" data-shift="@">2</kbd>
-                                <kbd class="c-keyboard__key" data-shift="#">3</kbd>
+                                        <p class="my-3 text-center">or</p>
 
-                                <p class="my-3 text-center">or</p>
-
-                                <kbd class="c-keyboard__key shift" data-align="left">shift</kbd>
-                                <span>+</span>
-                                {% include '_includes/mouse.html.twig' with { pressed: 'scroll' } %}
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <kbd class="c-keyboard__key shift" data-align="left">shift</kbd>
+                                            <span class="px-2">+</span>
+                                            {% include '_includes/mouse.html.twig' with { pressed: 'scroll' } %}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Toggle Scoreboard</p>
-
-                                <kbd class="c-keyboard__key">S</kbd>
+                        <div class="col-lg-6 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Toggle Scoreboard</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        <kbd class="c-keyboard__key">S</kbd>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -161,36 +174,48 @@
 
                 <div class="c-well my-3">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Send Chat to All</p>
-
-                                <kbd class="c-keyboard__key">N</kbd>
+                        <div class="col-sm-6 mb-4 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Send Chat to All</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        <kbd class="c-keyboard__key">N</kbd>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <p class="mb-2 strong">Send Chat to Teammates</p>
-
-                                <kbd class="c-keyboard__key">M</kbd>
+                        <div class="col-sm-6 mb-4 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Send Chat to Teammates</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        <kbd class="c-keyboard__key">M</kbd>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <p class="mb-2 strong">
+                        <div class="col-sm-6 mb-4 mb-sm-0 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">
                                     Send Chat to <abbr title="last player that was killed by or killed you">Nemesis</abbr>
                                 </p>
-
-                                <kbd class="c-keyboard__key" data-shift="<">,</kbd>
+                                <div class="controls">
+                                    <div class="control">
+                                        <kbd class="c-keyboard__key" data-shift="<">,</kbd>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                <p class="mb-2 strong">
+                        <div class="col-sm-6 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">
                                     Send Chat to <abbr title="last person that was messaged by or messaged you">Recipient</abbr>
                                 </p>
-
-                                <kbd class="c-keyboard__key" data-shift=">">.</kbd>
+                                <div class="controls">
+                                    <div class="control">
+                                        <kbd class="c-keyboard__key" data-shift=">">.</kbd>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

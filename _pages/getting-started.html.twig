@@ -33,10 +33,10 @@ permalink: /getting-started/
 
 {% block content_root %}
     <div class="container">
-        <h1>Getting Started</h1>
+        <div class="mt-3">
+            <h2 class="h4">Table of Contents</h2>
 
-        <div>
-            {{ getting_started_body | toc }}
+            {{ getting_started_body | toc(hMax=2) }}
         </div>
 
         {{ getting_started_body }}

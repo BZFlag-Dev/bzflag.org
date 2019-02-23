@@ -1,0 +1,19 @@
+.kb-control-group {
+    display: inline-block;
+    text-align: center;
+
+    .title {
+        @include margin(b, 3);
+
+        font-size: map-get($font-sizes, 'h4');
+    }
+
+    .controls {
+        display: flex;
+        justify-content: center;
+
+        .control {
+            @include padding(x, 3);
+        }
+    }
+}
