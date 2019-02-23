@@ -5,7 +5,6 @@ docpath: /
 
 ## Player
 
-- **[Getting Started](/documentation/getting_started/)**
 - [Flags](/documentation/flags/)
 - [Slash Commands](/documentation/slash_commands/)
 
