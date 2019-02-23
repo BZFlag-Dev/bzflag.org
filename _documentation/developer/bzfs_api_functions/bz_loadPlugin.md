@@ -12,7 +12,7 @@ signatures:
         default: ~
 returns:
     dataType: bool
-    description: `true` if it succeeded, otherwise `false`.
+    description: "`true` if it succeeded, otherwise `false`."
 ---
 
 Loads a plug-in based on arguments provided.

@@ -8,7 +8,7 @@ signatures:
         default: ~
 returns:
     dataType: bool
-    description: `true` if it succeeded, `false` if it didn't.
+    description: "`true` if it succeeded, `false` if it didn't."
 ---
 
 Unloads a plug-in based on arguments provided.
