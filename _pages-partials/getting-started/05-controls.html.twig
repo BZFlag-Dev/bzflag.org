@@ -1,0 +1,201 @@
+<section>
+    <h2 id="controls" class="c-page-split">Controls</h2>
+
+    <div class="text-center my-5">
+        <div class="d-flex align-items-end justify-content-center">
+            {# Hide these from screenreaders because it's just a visual aid #}
+
+            <div class="px-2" aria-hidden="true">
+                {% include '_includes/keyboard.html.twig' with {
+                    active_keys: [
+                        '1', '2', '3', 'tab', 'I', 'S', 'enter', 'N', 'M', ',', '.', 'space',
+                    ],
+                    disabled: true,
+                } %}
+            </div>
+
+            <div class="px-3" aria-hidden="true">
+                {% include '_includes/keyboard_arrows.html.twig' %}
+            </div>
+        </div>
+    </div>
+
+    <p>
+        Here are some of the basic controls. These can be customized in the <code>Options</code> &gt; <code>Input Settings</code> &gt; <code>Change Key Mapping</code> menu.
+    </p>
+
+    <p>
+        The full list of keys can be viewed in the Help menu in-game or in the Change Key Mapping menu.
+    </p>
+
+    <div class="row">
+        <div class="col-md-6">
+            <article>
+                <h3 id="tank-controls" class="border-b pb-1 mb-3">Tank Controls</h3>
+
+                <p>Basic controls for moving your tank and playing.</p>
+
+                <div class="c-well my-3">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Spawn</p>
+
+                                <div class="row">
+                                    <div class="col-6 text-center">
+                                        <kbd class="c-keyboard__key">I</kbd>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        {% include '_includes/mouse.html.twig' with { pressed: 'right' } %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Shoot</p>
+                                <div class="row">
+                                    <div class="col-6 text-center">
+                                        <kbd class="c-keyboard__key enter" data-align="right">
+                                            enter
+                                        </kbd>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        {% include '_includes/mouse.html.twig' with { pressed: 'left' } %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Jump</p>
+                                <kbd class="c-keyboard__key tab" data-align="left">
+                                    tab
+                                </kbd>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center mt-3">
+                                <p class="mb-2 strong">
+                                    Identify / Lock On
+                                    <abbr title="with Guided Missile flag">*</abbr>
+                                    player
+                                    <span class="sr-only">with Guided Missile flag</span>
+                                </p>
+                                <kbd class="c-keyboard__key">I</kbd>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center mt-3">
+                                <p class="mb-2 strong">Drop Flag</p>
+
+                                <div class="row">
+                                    <div class="col-6 text-center">
+                                        <kbd class="c-keyboard__key space" data-align="center">space</kbd>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        {% include '_includes/mouse.html.twig' with { pressed: 'middle' } %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <p class="mb-2 strong">Movement</p>
+
+                        {% include '_includes/keyboard_arrows.html.twig' %}
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="col-md-6">
+            <article>
+                <h3 id="hud-controls" class="border-b pb-1 mb-3">Heads Up Display (HUD)</h3>
+
+                <p>
+                    The text and visual components that appear in front of the 3D view.
+                </p>
+
+                <div class="c-well my-3">
+                    <div class="row my-3">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Radar Zoom</p>
+
+                                <kbd class="c-keyboard__key" data-shift="!">1</kbd>
+                                <kbd class="c-keyboard__key" data-shift="@">2</kbd>
+                                <kbd class="c-keyboard__key" data-shift="#">3</kbd>
+
+                                <p class="my-3 text-center">or</p>
+
+                                <kbd class="c-keyboard__key shift" data-align="left">shift</kbd>
+                                <span>+</span>
+                                {% include '_includes/mouse.html.twig' with { pressed: 'scroll' } %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Toggle Scoreboard</p>
+
+                                <kbd class="c-keyboard__key">S</kbd>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-6">
+            <article>
+                <h3 id="messaging-controls" class="border-b pb-1 mb-3">Messaging</h3>
+
+                <p>
+                    Be able to communicate with your teammates for excellent teamwork.
+                </p>
+
+                <div class="c-well my-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Send Chat to All</p>
+
+                                <kbd class="c-keyboard__key">N</kbd>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <p class="mb-2 strong">Send Chat to Teammates</p>
+
+                                <kbd class="c-keyboard__key">M</kbd>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <p class="mb-2 strong">
+                                    Send Chat to <abbr title="last player that was killed by or killed you">Nemesis</abbr>
+                                </p>
+
+                                <kbd class="c-keyboard__key" data-shift="<">,</kbd>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-center">
+                                <p class="mb-2 strong">
+                                    Send Chat to <abbr title="last person that was messaged by or messaged you">Recipient</abbr>
+                                </p>
+
+                                <kbd class="c-keyboard__key" data-shift=">">.</kbd>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
