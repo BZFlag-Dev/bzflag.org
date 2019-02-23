@@ -1,0 +1,13 @@
+@each $breakpoint in map-keys($breakpoints) {
+    .hide-#{$breakpoint} {
+        @include respond-up($breakpoint) {
+            display: none !important;
+        }
+    }
+
+    .show-#{$breakpoint} {
+        @include respond-up($breakpoint) {
+            display: block !important;
+        }
+    }
+}
