@@ -27,6 +27,16 @@
     }
 }
 
+// Visually differentiate between a mouse scrolling action vs a mouse wheel click
+.c-mouse[data-pressed="scroll"] {
+    .c-mouse__scroll {
+        animation-name: mouse-scroll;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-out;
+    }
+}
+
 .c-mouse__right,
 .c-mouse__left {
     position: absolute;
@@ -55,4 +65,20 @@
     transform: translateX(-50%);
     height: 10px;
     width: 4px;
+}
+
+@keyframes mouse-scroll {
+    0% {
+        opacity: 0.3;
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+    }
 }
