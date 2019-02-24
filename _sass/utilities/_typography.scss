@@ -1,7 +1,7 @@
 @each $key, $val in $font-sizes {
     #{$key},
     .#{$key} {
-        font-size: em($val);
+        font-size: $val;
     }
 }
 
@@ -9,9 +9,17 @@
     line-height: 1;
 }
 
-small,
-.small {
-    font-size: 0.85em;
+abbr[title],
+.tooltip[title] {
+    border-bottom: 0;
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+b,
+strong,
+.strong {
+    font-weight: bolder;
 }
 
 .text-monospace {
@@ -23,5 +31,5 @@ small,
 }
 
 .text-muted {
-    opacity: 0.7 !important;
+    @include text-muted(true);
 }

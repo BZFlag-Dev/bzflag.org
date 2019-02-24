@@ -1,0 +1,170 @@
+{% macro keyboard_key(key, tag, classes) %}
+    {% set keyboard_keys = {
+        '`': ['`', '~'],
+        '1': ['1', '!'],
+        '2': ['2', '@'],
+        '3': ['3', '#'],
+        '4': ['4', '$'],
+        '5': ['5', '%'],
+        '6': ['6', '^'],
+        '7': ['7', '&'],
+        '8': ['8', '*'],
+        '9': ['9', '('],
+        '0': ['0', ')'],
+        '-': ['-', '_'],
+        '=': ['=', '+'],
+        'delete': ['delete', null, 'right'],
+        'tab': ['tab', null, 'left'],
+        'q': ['Q'],
+        'w': ['W'],
+        'e': ['E'],
+        'r': ['R'],
+        't': ['T'],
+        'y': ['Y'],
+        'u': ['U'],
+        'i': ['I'],
+        'o': ['O'],
+        'p': ['P'],
+        '[': ['[', '{'],
+        ']': [']', '}'],
+        '\\': ['\\', '|'],
+        'caps': ['caps', null, 'left'],
+        'a': ['A'],
+        's': ['S'],
+        'd': ['D'],
+        'f': ['F'],
+        'g': ['G'],
+        'h': ['H'],
+        'j': ['J'],
+        'k': ['K'],
+        'l': ['L'],
+        ';': [';', ':'],
+        "'": ["'", '"'],
+        'enter': ['enter', null, 'right'],
+        'shift': ['shift', null, 'left'],
+        'z': ['Z'],
+        'x': ['X'],
+        'c': ['C'],
+        'v': ['V'],
+        'b': ['B'],
+        'n': ['N'],
+        'm': ['M'],
+        ',': [',', '<'],
+        '.': ['.', '>'],
+        '/': ['/', '?'],
+        'shift-r': ['shift', null, 'right'],
+        'ctrl': ['ctrl', null, 'left'],
+        'meta': ['meta', null, 'left'],
+        'alt': ['alt', null, 'left'],
+        'space': ['space', null, 'center'],
+        'alt-r': ['alt', null, 'right'],
+        'meta-r': ['meta', null, 'right'],
+        'ctrl-r': ['ctrl', null, 'right'],
+
+        'up': {
+            char: '▲',
+            desc: 'Up Arrow',
+            short: 'up',
+        },
+        'left': {
+            char: '◀',
+            desc: 'Left Arrow',
+            short: 'left',
+        },
+        'down': {
+            char: '▼',
+            desc: 'Down Arrow',
+            short: 'down',
+        },
+        'right': {
+            char: '▶',
+            desc: 'Right Arrow',
+            short: 'right',
+        },
+    } %}
+
+    {% set tag = tag | default('kbd') %}
+    {% set key_classes = ['c-keyboard__key'] | merge(classes | default([])) %}
+    {% set key_def = keyboard_keys[(key | lower)] %}
+
+    {% if key_def[0] | length > 1 or key_def.short %}
+        {% set key_classes = key_classes | merge([ (key_def[0] | default(key_def.short) | lower) ]) %}
+    {% endif %}
+
+    <{{ tag }}
+        class="{{ key_classes | join(' ') }}"
+        {% if key_def[1] %}data-shift="{{ key_def[1] | e }}"{% endif %}
+        {% if key_def[2] %}data-align="{{ key_def[2] }}"{% endif %}
+        {% if key_def.desc %}title="{{ key_def.desc }}"{% endif %}
+    >
+        <span
+            {% if key_def.desc %}aria-hidden="true" {% endif %}
+        >
+            {{- key_def[0] | default(key_def.char) -}}
+        </span>
+
+        {% if key_def.desc %}
+            <span class="sr-only">{{ key_def.desc }}</span>
+        {% endif %}
+    </{{ tag }}>
+{% endmacro %}
+
+{% macro _keyboard_generator(keys, active_keys, custom_class, key_tag) %}
+    {% from _self import keyboard_key %}
+
+    {% set class_prefix = 'c-keyboard' %}
+    {% set active_keys = active_keys | default([]) %}
+    {% set disabled = active_keys | length > 0 %}
+    {% set key_tag = key_tag ?? 'kbd' %}
+
+    <div class="{{ custom_class | default(class_prefix) }} {{ disabled ? class_prefix ~ '--disabled' : '' }}">
+        {% for row in keys %}
+            <div class="{{ class_prefix }}__row">
+                {% for key in row %}
+                    {% set classes = [] %}
+
+                    {% if (key | lower) in active_keys %}
+                        {% set classes = classes | merge([ class_prefix ~ '__key--active' ]) %}
+                    {% endif %}
+
+                    {{ keyboard_key(key, key_tag, classes) }}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+{% macro keyboard_full(active_keys) %}
+    {% from _self import _keyboard_generator %}
+
+    {% set keys = [
+        [
+            '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete'
+        ],
+        [
+            'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\',
+        ],
+        [
+            'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'enter',
+        ],
+        [
+            'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'shift-r',
+        ],
+        [
+            'ctrl', 'meta', 'alt', 'space', 'alt-r', 'meta-r', 'ctrl-r',
+        ],
+    ] %}
+
+    {{ _keyboard_generator(keys, active_keys | default([])) }}
+{% endmacro %}
+
+{% macro keyboard_arrows(active_keys) %}
+    {% from _self import _keyboard_generator %}
+
+    {% set keys = [
+        ['up'],
+        ['left', 'down', 'right'],
+    ] %}
+
+    {{ _keyboard_generator(keys, active_keys | default([]), 'c-keyboard-arrows') }}
+{% endmacro %}

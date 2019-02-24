@@ -1,0 +1,17 @@
+.c-hgroup {
+}
+
+.c-hgroup__title {
+    @include margin(b, 3);
+    @include margin(t, 0);
+
+    line-height: 1;
+}
+
+.c-hgroup__subtitle {
+    @include text-muted();
+
+    font-size: map-get($font-sizes, small);
+    font-weight: bold;
+    margin: 0;
+}

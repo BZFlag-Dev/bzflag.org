@@ -1,0 +1,233 @@
+{% from '_macros/keyboard_utils.html.twig' import keyboard_key, keyboard_full, keyboard_arrows %}
+{% from '_macros/mouse_utils.html.twig' import mouse %}
+
+<section>
+    <h2 id="controls" class="c-page-split">Controls</h2>
+
+    <div class="text-center my-5 hide-xs show-xl">
+        <div class="d-flex align-items-end justify-content-center">
+            {# Hide these from screenreaders because it's just a visual aid #}
+
+            <div class="px-2" aria-hidden="true">
+                {{ keyboard_full(
+                    ['1', '2', '3', 'tab', 'w', 'i', 's', 'enter', 'n', 'm', ',', '.', 'space',]
+                ) }}
+            </div>
+
+            <div class="px-3" aria-hidden="true">
+                {{ keyboard_arrows() }}
+            </div>
+        </div>
+    </div>
+
+    <p>
+        Here are some of the basic controls. These can be customized in the <code>Options</code> &gt; <code>Input Settings</code> &gt; <code>Change Key Mapping</code> menu.
+    </p>
+
+    <p>
+        The full list of keys can be viewed in the Help menu in-game or in the Change Key Mapping menu.
+    </p>
+
+    <article class="mb-4">
+        <h3 id="tank-controls" class="border-b pb-1 mb-3">Tank Controls</h3>
+
+        <p>Basic controls for moving your tank and playing.</p>
+
+        <div class="c-well my-3">
+            <div class="row text-center">
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Movement</p>
+                        <div class="controls">
+                            <div class="control">
+                                {{ keyboard_arrows() }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Spawn</p>
+
+                        <div class="controls">
+                            <div class="control">
+                                {{ keyboard_key('i') }}
+                            </div>
+                            <div class="control">
+                                {{ mouse('right') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Shoot</p>
+                        <div class="controls">
+                            <div class="control">
+                                {{ keyboard_key('enter') }}
+                            </div>
+                            <div class="control">
+                                {{ mouse('left') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">Jump</p>
+                        <div class="controls">
+                            <div class="control">
+                                {{ keyboard_key('tab') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mb-4">
+                    <div class="kb-control-group">
+                        <p class="title">
+                            Identify / Lock On
+                            <span class="tooltip" title="with Guided Missile flag">*</span>
+                            player
+                        </p>
+                        <div class="controls">
+                            <div class="control">
+                                {{ keyboard_key('i') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="kb-control-group">
+                        <p class="title">Drop Flag</p>
+                        <div class="controls">
+                            <div class="control">
+                                {{ keyboard_key('space') }}
+                            </div>
+                            <div class="control">
+                                {{ mouse('middle') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div class="row">
+        <div class="col-md-6">
+            <article>
+                <h3 id="hud-controls" class="border-b pb-1 mb-3">Heads Up Display (HUD)</h3>
+
+                <p>
+                    The text and visual components that appear in front of the 3D view.
+                </p>
+
+                <div class="c-well my-3">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Radar Zoom</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('1') }}
+                                        {{ keyboard_key('2') }}
+                                        {{ keyboard_key('3') }}
+
+                                        <p class="my-3 text-center">or</p>
+
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            {{ keyboard_key('shift') }}
+                                            <span class="px-2">+</span>
+                                            {{ mouse('scroll') }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Toggle Scoreboard</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('s') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-6">
+            <article>
+                <h3 id="messaging-controls" class="border-b pb-1 mb-3">Messaging</h3>
+
+                <p>
+                    Be able to communicate with your teammates for excellent teamwork.
+                </p>
+
+                <div class="c-well my-3">
+                    <div class="row">
+                        <div class="col-sm-6 mb-4 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Send Chat to All</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('n') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-4 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">Send Chat to Teammates</p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('m') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-4 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">
+                                    Send Chat to <span class="tooltip" title="last player that was killed by or killed you">Nemesis</span>
+                                </p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key(',') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-4 mb-sm-0 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">
+                                    Send Chat to <span class="tooltip" title="last person that was messaged by or messaged you">Recipient</span>
+                                </p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('.') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">
+                                    Toggle <span class="tooltip" title="also known as the Control Panel">Console</span>
+                                </p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('w') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
