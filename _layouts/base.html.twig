@@ -30,7 +30,7 @@
                 {% include "_includes/navigation.html.twig" %}
 
                 <img src="{{ url(this.jumbotron.image) }}"
-                     alt="{{ this.jumbotron.alt }}"
+                     alt="{{ this.jumbotron.alt | escape }}"
                      class="page-jumbotron__image"
                 >
             </section>
