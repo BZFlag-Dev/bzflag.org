@@ -10,7 +10,7 @@
 
             <div class="px-2" aria-hidden="true">
                 {{ keyboard_full(
-                    ['1', '2', '3', 'tab', 'i', 's', 'enter', 'n', 'm', ',', '.', 'space',]
+                    ['1', '2', '3', 'tab', 'w', 'i', 's', 'enter', 'n', 'm', ',', '.', 'space',]
                 ) }}
             </div>
 
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 mb-4 mb-sm-0 text-center">
+                        <div class="col-sm-6 mb-4 text-center">
                             <div class="kb-control-group">
                                 <p class="title">
                                     Send Chat to <span class="tooltip" title="last player that was killed by or killed you">Nemesis</span>
@@ -201,7 +201,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 text-center">
+                        <div class="col-sm-6 mb-4 mb-sm-0 text-center">
                             <div class="kb-control-group">
                                 <p class="title">
                                     Send Chat to <span class="tooltip" title="last person that was messaged by or messaged you">Recipient</span>
@@ -209,6 +209,18 @@
                                 <div class="controls">
                                     <div class="control">
                                         {{ keyboard_key('.') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-center">
+                            <div class="kb-control-group">
+                                <p class="title">
+                                    Toggle <span class="tooltip" title="also known as the Control Panel">Console</span>
+                                </p>
+                                <div class="controls">
+                                    <div class="control">
+                                        {{ keyboard_key('w') }}
                                     </div>
                                 </div>
                             </div>
