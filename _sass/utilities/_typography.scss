@@ -9,6 +9,13 @@
     line-height: 1;
 }
 
+abbr[title],
+.tooltip[title] {
+    border-bottom: 0;
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
 b,
 strong,
 .strong {
