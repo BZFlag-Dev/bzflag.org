@@ -1,3 +1,6 @@
+{% from '_macros/keyboard_utils.html.twig' import keyboard_key, keyboard_full, keyboard_arrows %}
+{% from '_macros/mouse_utils.html.twig' import mouse %}
+
 <section>
     <h2 id="controls" class="c-page-split">Controls</h2>
 
@@ -6,16 +9,13 @@
             {# Hide these from screenreaders because it's just a visual aid #}
 
             <div class="px-2" aria-hidden="true">
-                {% include '_includes/keyboard.html.twig' with {
-                    active_keys: [
-                        '1', '2', '3', 'tab', 'I', 'S', 'enter', 'N', 'M', ',', '.', 'space',
-                    ],
-                    disabled: true,
-                } %}
+                {{ keyboard_full(
+                    ['1', '2', '3', 'tab', 'i', 's', 'enter', 'n', 'm', ',', '.', 'space',]
+                ) }}
             </div>
 
             <div class="px-3" aria-hidden="true">
-                {% include '_includes/keyboard_arrows.html.twig' %}
+                {{ keyboard_arrows() }}
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                         <p class="title">Movement</p>
                         <div class="controls">
                             <div class="control">
-                                {% include '_includes/keyboard_arrows.html.twig' %}
+                                {{ keyboard_arrows() }}
                             </div>
                         </div>
                     </div>
@@ -51,10 +51,10 @@
 
                         <div class="controls">
                             <div class="control">
-                                <kbd class="c-keyboard__key">I</kbd>
+                                {{ keyboard_key('i') }}
                             </div>
                             <div class="control">
-                                {% include '_includes/mouse.html.twig' with { pressed: 'right' } %}
+                                {{ mouse('right') }}
                             </div>
                         </div>
                     </div>
@@ -64,12 +64,10 @@
                         <p class="title">Shoot</p>
                         <div class="controls">
                             <div class="control">
-                                <kbd class="c-keyboard__key enter" data-align="right">
-                                    enter
-                                </kbd>
+                                {{ keyboard_key('enter') }}
                             </div>
                             <div class="control">
-                                {% include '_includes/mouse.html.twig' with { pressed: 'left' } %}
+                                {{ mouse('left') }}
                             </div>
                         </div>
                     </div>
@@ -79,9 +77,7 @@
                         <p class="title">Jump</p>
                         <div class="controls">
                             <div class="control">
-                                <kbd class="c-keyboard__key tab" data-align="left">
-                                    tab
-                                </kbd>
+                                {{ keyboard_key('tab') }}
                             </div>
                         </div>
                     </div>
@@ -96,7 +92,7 @@
                         </p>
                         <div class="controls">
                             <div class="control">
-                                <kbd class="c-keyboard__key">I</kbd>
+                                {{ keyboard_key('i') }}
                             </div>
                         </div>
                     </div>
@@ -106,10 +102,10 @@
                         <p class="title">Drop Flag</p>
                         <div class="controls">
                             <div class="control">
-                                <kbd class="c-keyboard__key space" data-align="center">space</kbd>
+                                {{ keyboard_key('space') }}
                             </div>
                             <div class="control">
-                                {% include '_includes/mouse.html.twig' with { pressed: 'middle' } %}
+                                {{ mouse('middle') }}
                             </div>
                         </div>
                     </div>
@@ -134,16 +130,16 @@
                                 <p class="title">Radar Zoom</p>
                                 <div class="controls">
                                     <div class="control">
-                                        <kbd class="c-keyboard__key" data-shift="!">1</kbd>
-                                        <kbd class="c-keyboard__key" data-shift="@">2</kbd>
-                                        <kbd class="c-keyboard__key" data-shift="#">3</kbd>
+                                        {{ keyboard_key('1') }}
+                                        {{ keyboard_key('2') }}
+                                        {{ keyboard_key('3') }}
 
                                         <p class="my-3 text-center">or</p>
 
                                         <div class="d-flex align-items-center justify-content-center">
-                                            <kbd class="c-keyboard__key shift" data-align="left">shift</kbd>
+                                            {{ keyboard_key('shift') }}
                                             <span class="px-2">+</span>
-                                            {% include '_includes/mouse.html.twig' with { pressed: 'scroll' } %}
+                                            {{ mouse('scroll') }}
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +150,7 @@
                                 <p class="title">Toggle Scoreboard</p>
                                 <div class="controls">
                                     <div class="control">
-                                        <kbd class="c-keyboard__key">S</kbd>
+                                        {{ keyboard_key('s') }}
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +175,7 @@
                                 <p class="title">Send Chat to All</p>
                                 <div class="controls">
                                     <div class="control">
-                                        <kbd class="c-keyboard__key">N</kbd>
+                                        {{ keyboard_key('n') }}
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +185,7 @@
                                 <p class="title">Send Chat to Teammates</p>
                                 <div class="controls">
                                     <div class="control">
-                                        <kbd class="c-keyboard__key">M</kbd>
+                                        {{ keyboard_key('m') }}
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +197,7 @@
                                 </p>
                                 <div class="controls">
                                     <div class="control">
-                                        <kbd class="c-keyboard__key" data-shift="<">,</kbd>
+                                        {{ keyboard_key(',') }}
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +209,7 @@
                                 </p>
                                 <div class="controls">
                                     <div class="control">
-                                        <kbd class="c-keyboard__key" data-shift=">">.</kbd>
+                                        {{ keyboard_key('.') }}
                                     </div>
                                 </div>
                             </div>
