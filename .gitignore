@@ -1,7 +1,7 @@
 /_site/*
 /.stakx-cache/*
 /_data/privacy.yaml
-/_data/piwik.yaml
+/_data/matomo.yaml
 /.idea/
 *.dll
 *.dylib

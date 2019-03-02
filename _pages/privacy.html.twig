@@ -26,14 +26,15 @@ permalink: /privacy/
         - **Browser Information** - We collect and store information about the user's browser, which can include the browser name and version, as well as basic information about the operating system. This is information that every browser sends to every website, and is generally recorded automatically in the web server logs.
         - **User Generated Content** - Users are able to post user generated content that could include personal information in the form of text or files (such as images). Except in cases of private messages between users, this would generally be publically available.
 
-        {% if data.piwik %}
-            ## Website Analytics
+        {% if data.matomo %}
 
-            We make use of a self-hosted copy of [Matomo](https://matomo.org/), an open-source web analytics platform. This platform records information such as IP addresses, browser information, and usernames, and it uses a tracking cookie with a unique ID to detect unique users between multiple browsing sessions. Because we host this software ourselves, we are not handing analytics data to a third-party company or organization. We may, however, publically release anonymized or aggregated statistics about visits and site activity.
+        ## Website Analytics
 
-            There are a number of ways to opt-out of the tracking. In web browsers other than Internet Explorer, the platform respects the [Do Not Track (DNT)](https://www.eff.org/issues/do-not-track) preference. So, if your browser supports and is configured to send a DNT header indicating you do not wish to be tracked, and you are not using Internet Explorer, Piwik will not track you. Alternative methods to opt-out would be to run a browser extension such as [Privacy Badger](https://www.eff.org/privacybadger) or to use the opt-out checkbox below (that requires setting a cookie so that Piwik knows not to track you).
+        We make use of a self-hosted copy of [Matomo](https://matomo.org/), an open-source web analytics platform. This platform records information such as IP addresses, browser information, and usernames, and it uses a tracking cookie with a unique ID to detect unique users between multiple browsing sessions. Because we host this software ourselves, we are not handing analytics data to a third-party company or organization. We may, however, publically release anonymized or aggregated statistics about visits and site activity.
 
-            <iframe style="margin: 0 1em 1em; border: 2px solid black; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 5px; height: 120px; width: 740px;" src="{{ data.piwik.baseURL }}index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite={{ data.piwik.siteID }}&amp;language=en"></iframe>
+        There are a number of ways to opt-out of the tracking. In web browsers other than Internet Explorer, the platform respects the [Do Not Track (DNT)](https://www.eff.org/issues/do-not-track) preference. So, if your browser supports and is configured to send a DNT header indicating you do not wish to be tracked, and you are not using Internet Explorer, Matomo will not track you. Alternative methods to opt-out would be to run a browser extension such as [Privacy Badger](https://www.eff.org/privacybadger) or to use the opt-out checkbox below (that requires setting a cookie so that Matomo knows not to track you).
+
+        <iframe style="margin: 0 1em 1em; border: 2px solid black; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; padding: 5px; height: 120px; width: 740px;" src="{{ data.matomo.baseURL }}index.php?module=CoreAdminHome&amp;action=optOut&amp;idsite={{ data.matomo.siteID }}&amp;language=en"></iframe>
         {% endif %}
 
         ## Information Disclosure
@@ -52,9 +53,8 @@ permalink: /privacy/
         - images.bzflag.org
         - my.bzflag.org
         - wiki.bzflag.org
-        {% if data.piwik %}
-          - apps.porteighty.org (covering only the Piwik analytics platform for the above sites)
-        {% endif %}
+        {% if data.matomo %}- {{ data.matomo.baseURL|split('//')[1]|split('/')[0] }} (covering only the Matomo analytics platform for the above sites){% endif %}
+
 
         Game servers for BZFlag are not run by the project and are thus not covered under our privacy policy. Game server may or may not have their own privacy policy.
 
