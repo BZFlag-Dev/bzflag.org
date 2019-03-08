@@ -5,5 +5,9 @@
         <div class="py-3 px-md-3">
             {% block content %}{% endblock %}
         </div>
+
+        {% if this.editable %}
+            {% include "_includes/edit_me.html.twig" %}
+        {% endif %}
     </main>
 {% endblock %}
