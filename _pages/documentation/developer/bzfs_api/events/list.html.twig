@@ -11,22 +11,22 @@ parent:
 {% set events = collections.bzfs_api_events | group('category') %}
 {% set categories = events | keys | sort %}
 
+{% block introduction %}
+    <h1 class="mt-0">BZFS API Events</h1>
+    <p>These API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
+{% endblock %}
+
 {% block aside %}
-    <div class="position-sticky position-top-1">
-        <h2 class="mt-0">Categories</h2>
-        <ul>
-            {% for category in categories %}
-                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="../">Back to bzfs API</a>
-    </div>
+    <h2 class="mt-0">Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="#{{ category | slug }}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="../">Back to bzfs API</a>
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-0">BZFS API Events</h1>
-    <p>These API events are bzfs callbacks that plugins can listen for in response to specific actions or changes in the state of the server. Events exist for nearly all actions that occur during a game of BZFlag.</p>
-
     {% for category in categories %}
         <h2 id="{{ category | slug }}">{{ category }}</h2>
         <ul>

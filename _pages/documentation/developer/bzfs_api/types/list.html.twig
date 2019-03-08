@@ -11,26 +11,24 @@ parent:
 {% set types = collections.bzfs_api_types | group('category') %}
 {% set categories = types | keys | sort %}
 
+{% block introduction %}
+    <h1 class="mt-0">BZFS API Types</h1>
+    <p>
+        The bzfs API types consist of enumerations and objects. Enumerations are used to define the possible choices that can be passed around, such as the possible teams. Objects are used for storing information and are used throughout the API to ensure compatability across the DLL boundary.
+    </p>
+{% endblock %}
+
 {% block aside %}
-    <div class="position-sticky position-top-1">
-        <h2 class="mt-0">Categories</h2>
-        <ul>
-            {% for category in categories %}
-                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="../">Back to bzfs API</a>
-    </div>
+    <h2 class="mt-0">Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="#{{ category | slug }}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="../">Back to bzfs API</a>
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-0">BZFS API Types</h1>
-    <p>
-        The bzfs API types consist of enumerations and objects. Enumerations are used to define the possible choices that
-        can be passed around, such as the possible teams. Objects are used for storing information and are used
-        throughout the API to ensure compatability across the DLL boundary.
-    </p>
-
     {% for category in categories %}
         <h2 id="{{ category | slug }}">{{ category }}</h2>
         <ul>

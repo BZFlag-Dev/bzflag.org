@@ -11,22 +11,22 @@ parent:
 {% set functions = collections.bzfs_api_functions | group('category') %}
 {% set categories = functions | keys | sort %}
 
+{% block introduction %}
+    <h1 class="mt-0">BZFS API Functions</h1>
+    <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
+{% endblock %}
+
 {% block aside %}
-    <div class="position-sticky position-top-1 scrollable-sidebar">
-        <h2 class="mt-0">Categories</h2>
-        <ul>
-            {% for category in categories %}
-                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
-            {% endfor %}
-        </ul>
-        <a href="../">Back to bzfs API</a>
-    </div>
+    <h2 class="mt-0">Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li><a href="#{{ category | slug }}">{{ category }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="../">Back to bzfs API</a>
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-0">BZFS API Functions</h1>
-    <p>These API functions are allow plug-in developers to interact with the current game state and players.</p>
-
     {% for category in categories %}
         <h2 id="{{ category | slug }}">{{ category }}</h2>
         <ul>

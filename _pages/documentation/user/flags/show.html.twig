@@ -12,6 +12,12 @@ parent:
 
 {% set flags = collections.flags | where('type', '==', this.type) %}
 
+{% block introduction %}
+    <h1 class="mt-0">{{ this.name }} Flag</h1>
+
+    <p>Abbreviation: {{ this.abbreviation }}</p>
+{% endblock %}
+
 {% block aside %}
     <h2 class="mt-0">{{ this.type }} Flags</h2>
     <ul>
@@ -30,10 +36,6 @@ parent:
 {% endblock %}
 
 {% block content %}
-    <h1 class="mt-0">{{ this.name }} Flag</h1>
-
-    <p>Abbreviation: {{ this.abbreviation }}</p>
-
     {{ this.content | markdown }}
 
     {% if this.video %}

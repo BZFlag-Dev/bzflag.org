@@ -1,0 +1,36 @@
+.l-sidebar {
+    @include respond-up(lg) {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+        -ms-grid-rows: min-content 1fr min-content;
+        grid-template-rows: min-content 1fr min-content;
+    }
+}
+
+.l-sidebar__introduction,
+.l-sidebar__body,
+.l-sidebar__footer {
+    @include padding(l, 3, lg);
+
+    @include respond-up(lg) {
+        border-left: $border-default;
+    }
+}
+
+.l-sidebar__sidebar {
+    @include respond-up(lg) {
+        -ms-grid-column: 1;
+        grid-column: 1;
+
+        // A bug within scssphp causes division not to be escape within #{}, so we
+        // can use unquote() instead. If not escaped, Sass will calculate this value
+        // as a math equation and give you 0.333.
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 3;
+        grid-row: 1 / span 3;
+
+        position: relative;
+    }
+}
