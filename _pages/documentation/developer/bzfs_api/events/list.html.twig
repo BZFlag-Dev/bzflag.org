@@ -17,18 +17,30 @@ parent:
 {% endblock %}
 
 {% block aside %}
-    <h2 class="mt-0">Categories</h2>
-    <ul>
-        {% for category in categories %}
-            <li><a href="#{{ category | slug }}">{{ category }}</a></li>
-        {% endfor %}
-    </ul>
+    <h2
+        class="mt-0 c-accordion__header"
+        data-role="accordion"
+        data-target="#sidebar-toc"
+        data-breakpoint="lg"
+    >
+        Categories
+    </h2>
+
+    <div id="sidebar-toc" class="c-accordion__body">
+        <ul>
+            {% for category in categories %}
+                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
     <a href="../">Back to bzfs API</a>
 {% endblock %}
 
 {% block content %}
     {% for category in categories %}
         <h2 id="{{ category | slug }}">{{ category }}</h2>
+
         <ul>
             {% for event in events[category] | order('filename') %}
                 <li>
