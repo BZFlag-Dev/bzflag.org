@@ -3,6 +3,8 @@ section: documentation
 sectiontitle: Developer Docs
 permalink: /documentation/developer/bzfs_api/types/
 title: bzfs API Types
+navigation:
+    prev: bzfs API
 parent:
 ---
 
@@ -19,13 +21,22 @@ parent:
 {% endblock %}
 
 {% block aside %}
-    <h2 class="mt-0">Categories</h2>
-    <ul>
-        {% for category in categories %}
-            <li><a href="#{{ category | slug }}">{{ category }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="../">Back to bzfs API</a>
+    <h2
+        class="mt-0 c-accordion__header"
+        data-role="accordion"
+        data-target="#sidebar-toc"
+        data-breakpoint="lg"
+    >
+        Categories
+    </h2>
+
+    <div id="sidebar-toc" class="c-accordion__body">
+        <ul class="m-0">
+            {% for category in categories %}
+                <li><a href="#{{ category | slug }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 
 {% block content %}

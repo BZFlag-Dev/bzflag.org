@@ -5,6 +5,8 @@ section: documentation
 sectiontitle: Flags
 permalink: /documentation/flags/%basename/
 title: %name Flag
+navigation:
+    prev: Flags
 parent:
 ---
 
@@ -19,20 +21,28 @@ parent:
 {% endblock %}
 
 {% block aside %}
-    <h2 class="mt-0">{{ this.type }} Flags</h2>
-    <ul>
-        {% for flag in flags | order('filename') %}
-            <li>
-                <a href="{{ url(flag) }}"
-                   class="text-decoration-none"
-                >
-                    {{- flag.name -}}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+    <h2
+        class="mt-0 c-accordion__header"
+        data-role="accordion"
+        data-target="#sidebar-toc"
+        data-breakpoint="lg"
+    >
+        {{ this.type }} Flags
+    </h2>
 
-    <p><a href="{{ url(pages['Flags']) }}">Back to Flags</a></p>
+    <div id="sidebar-toc" class="c-accordion__body">
+        <ul class="m-0">
+            {% for flag in flags | order('filename') %}
+                <li>
+                    <a href="{{ url(flag) }}"
+                       class="text-decoration-none"
+                    >
+                        {{- flag.name -}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 
 {% block content %}
