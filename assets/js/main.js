@@ -127,8 +127,10 @@
         this.target = this.element.getAttribute('data-target');
         this.body = document.querySelector(this.target);
 
+        // If there is no breakpoint defined, then that means this should be an accordion all the times regardless of
+        // the viewport width.
         let breakpoint = this.element.getAttribute('data-breakpoint');
-        this.breakpoint = (BREAKPOINTS[breakpoint] - 0.02) || 0;
+        this.breakpoint = (BREAKPOINTS[breakpoint] - 0.02) || null;
 
         this.clickCallback = (function (e) {
             let shouldProceed = false;
@@ -164,7 +166,7 @@
      * current breakpoint.
      */
     Accordion.prototype.makeAccordion = function () {
-        if (!this.isActiveOnCurrentBreakpoint()) {
+        if (this.breakpoint !== null && !this.isActiveOnCurrentBreakpoint()) {
             this.disableAccordion();
             return;
         }

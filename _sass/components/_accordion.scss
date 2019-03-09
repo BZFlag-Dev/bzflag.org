@@ -1,35 +1,43 @@
+@mixin accordion-ui() {
+    cursor: pointer;
+
+    &[aria-expanded="false"] {
+        &::before {
+            content: '\25B6';
+        }
+
+        & + .c-accordion__body {
+            display: none;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        &::before {
+            content: '\25BC';
+        }
+
+        & + .c-accordion__body {
+            display: block;
+        }
+    }
+}
+
 .js {
     .c-accordion__header {
-        $_breakpoints: map-keys($breakpoints);
-
         &::before {
             font-size: 1rem;
         }
 
+        &:not([data-breakpoint]) {
+            @include accordion-ui;
+        }
+
+        $_breakpoints: map-keys($breakpoints);
+
         @each $bp in $_breakpoints {
             @include respond-down($bp) {
                 &[data-breakpoint="#{$bp}"] {
-                    cursor: pointer;
-
-                    &[aria-expanded="false"] {
-                        &::before {
-                            content: '\25B6';
-                        }
-
-                        & + .c-accordion__body {
-                            display: none;
-                        }
-                    }
-
-                    &[aria-expanded="true"] {
-                        &::before {
-                            content: '\25BC';
-                        }
-
-                        & + .c-accordion__body {
-                            display: block;
-                        }
-                    }
+                    @include accordion-ui();
                 }
             }
         }
