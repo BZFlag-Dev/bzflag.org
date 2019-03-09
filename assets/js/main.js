@@ -126,6 +126,7 @@
         this.element = element;
         this.target = this.element.getAttribute('data-target');
         this.body = document.querySelector(this.target);
+        this.isAccordion = false;
 
         // If there is no breakpoint defined, then that means this should be an accordion all the times regardless of
         // the viewport width.
@@ -171,6 +172,11 @@
             return;
         }
 
+        // Don't reset attributes if we're already an accordion
+        if (this.isAccordion) {
+            return;
+        }
+
         this.element.setAttribute('aria-expanded', 'false');
         this.element.setAttribute('aria-controls', this.target);
         this.element.setAttribute('role', 'tab');
@@ -180,6 +186,8 @@
         this.element.addEventListener('keydown', this.clickCallback);
 
         this.body.setAttribute('role', 'tabpanel');
+
+        this.isAccordion = true;
     };
 
     /**
@@ -194,7 +202,9 @@
         this.element.removeEventListener('click', this.clickCallback);
         this.element.removeEventListener('keydown', this.clickCallback);
 
-        this.body.removeAttribute('role')
+        this.body.removeAttribute('role');
+
+        this.isAccordion = false;
     };
 
     // Register all of the accordions on this page
