@@ -11,6 +11,18 @@
                 <aside class="l-sidebar__sidebar">
                     <div class="position-sticky position-top-1 scrollable-sidebar">
                         {% block aside %}{% endblock %}
+
+                        {% if this.navigation.prev %}
+                            {% set target = pages[this.navigation.prev] %}
+
+                            {% if target %}
+                                <div class="l-sidebar__nav">
+                                    <a href="{{ url(target) }}" class="l-sidebar__nav__link">
+                                        Back to {{ target.title }}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endif %}
                     </div>
                 </aside>
 
