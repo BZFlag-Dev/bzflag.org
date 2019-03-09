@@ -1,5 +1,5 @@
 (function () {
-    "use strict";
+    'use strict';
 
     const KB_Keys = {
         tab:   9,
@@ -26,7 +26,7 @@
      *
      * @returns {number}
      */
-    function currentBreakpoint() {
+    function respondDownBreakpoint() {
         for (let i = 0; i < BREAKPOINT_NAMES.length; i++) {
             const name = BREAKPOINT_NAMES[i];
             const breakpoint = BREAKPOINTS[name];
@@ -104,7 +104,6 @@
     //
 
     const menuToggle = document.querySelector('#menu-toggle');
-    const navigation = document.querySelector('#navigation');
 
     if (menuToggle) {
         menuToggle.addEventListener('click', function () {
@@ -116,8 +115,13 @@
     // Accordion elements
     //
 
-    const accordionHeaders = document.querySelectorAll('[data-role="accordion"]');
-
+    /**
+     * A "progressive enhancement" accordion that is accessible and mobile-responsive ready.
+     *
+     * @constructor
+     *
+     * @param {Element} element The element to classify as an accordion.
+     */
     const Accordion = function (element) {
         this.element = element;
         this.target = this.element.getAttribute('data-target');
@@ -144,12 +148,23 @@
         }).bind(this);
     };
 
-    Accordion.prototype.isActiveBreakpoint = function () {
-        return currentBreakpoint() !== -1 && currentBreakpoint() <= this.breakpoint;
+    /**
+     * Is this element configured to behave as an accordion with the current breakpoint.
+     *
+     * @returns {boolean}
+     */
+    Accordion.prototype.isActiveOnCurrentBreakpoint = function () {
+        return respondDownBreakpoint() !== -1 && respondDownBreakpoint() <= this.breakpoint;
     };
 
+    /**
+     * Add the necessary attributes to this element to make it into an accordion.
+     *
+     * This method will also disable the accordion attributes if this accordion is not configured to work with the
+     * current breakpoint.
+     */
     Accordion.prototype.makeAccordion = function () {
-        if (!this.isActiveBreakpoint()) {
+        if (!this.isActiveOnCurrentBreakpoint()) {
             this.disableAccordion();
             return;
         }
@@ -165,6 +180,9 @@
         this.body.setAttribute('role', 'tabpanel');
     };
 
+    /**
+     * Remove all of the attributes that added to this element to make it accordion ready.
+     */
     Accordion.prototype.disableAccordion = function () {
         this.element.removeAttribute('aria-expanded');
         this.element.removeAttribute('aria-controls');
@@ -177,13 +195,16 @@
         this.body.removeAttribute('role')
     };
 
+    // Register all of the accordions on this page
+
+    const accordionHeaders = document.querySelectorAll('[data-role="accordion"]');
     const accordions = [];
 
     for (let i = 0; i < accordionHeaders.length; i++) {
-        const acc = new Accordion(accordionHeaders[i]);
-        acc.makeAccordion();
+        const accordion = new Accordion(accordionHeaders[i]);
+        accordion.makeAccordion();
 
-        accordions.push(acc);
+        accordions.push(accordion);
     }
 
     window.addEventListener('resize', function () {
