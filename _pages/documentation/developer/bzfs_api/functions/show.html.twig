@@ -32,7 +32,7 @@ parent:
         {% endmarkdown %}
 
         {% if overload is not empty %}
-            <table>
+            <table class="c-parameter-table">
                 <thead>
                     <tr>
                         <th colspan="3" class="text-left">Parameters</th>
@@ -41,9 +41,15 @@ parent:
                 <tbody>
                     {% for p in overload if not p.hide %}
                         <tr>
-                            <td class="method-docs__datatype">{{ api_object(p.dataType) }}</td>
-                            <td><code>{{ p. name }}</code></td>
-                            <td>{{ p.description | markdown }}</td>
+                            <td class="data-type">
+                                {{ api_object(p.dataType) }}
+                            </td>
+                            <td class="param-name">
+                                <code>{{ p. name }}</code>
+                            </td>
+                            <td class="description">
+                                {{ p.description | markdown }}
+                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>

@@ -1,0 +1,54 @@
+.c-parameter-table {
+    .data-type {
+        font-family: $font-stack-monospace;
+    }
+
+    .param-name {
+    }
+
+    .description {
+    }
+
+    @include respond-down(lg) {
+        thead {
+            display: none;
+        }
+
+        tbody {
+            display: block;
+        }
+
+        tr {
+            @include padding(b, 3);
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+
+            // We need a high specificity for this one
+            &:nth-child(even),
+            &:nth-child(odd) {
+                background-color: transparent;
+            }
+        }
+
+        td {
+            @include padding(y, 2);
+
+            border: 0;
+        }
+
+        .data-type,
+        .param-name {
+            background-color: rgba(#fff, 0.05);
+            border-bottom: $border-default;
+        }
+
+        .param-name {
+            flex-grow: 1;
+        }
+
+        .description {
+            width: 100%;
+        }
+    }
+}
