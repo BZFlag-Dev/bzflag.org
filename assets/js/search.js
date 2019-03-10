@@ -92,6 +92,30 @@
 
             return text;
         };
+
+        /**
+         * Filter the description of search results to only include sentences that contain the found keywords.
+         *
+         * @param {string} string
+         *
+         * @returns {string}
+         */
+        this.formatDescription = function(string) {
+            const output = [];
+
+            let content = this.wrapKeywords(string, 'content');
+            let sentences = content.split(/\.\s+?/);
+
+            for (let i = 0; i < sentences.length; i++) {
+                const sentence = sentences[i];
+
+                if (sentence.indexOf('<span>') >= 0) {
+                    output.push(sentence);
+                }
+            }
+
+            return output.join('. ');
+        };
     };
 
     /**
@@ -109,7 +133,7 @@
 
         // Document description
         const desc = node.querySelector('.c-search-result__description');
-        desc.innerHTML = this.wrapKeywords(this.document.content, 'content');
+        desc.innerHTML = this.formatDescription(this.document.content);
 
         // Show the document permalink
         const permalink = node.querySelector('.c-search-result__permalink');
@@ -119,7 +143,6 @@
     };
 
     // UI functionality
-
 
     /**
      * Get a parameter from the query string.
