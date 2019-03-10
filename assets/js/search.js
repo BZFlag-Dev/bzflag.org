@@ -64,27 +64,77 @@
 
     // UI functionality
 
-    const searchForm = document.querySelector('#search-field');
+
+    /**
+     * Get a parameter from the query string.
+     *
+     * @param {string} name The name of the parameter
+     * @param {string} [url] The URL to parse
+     *
+     * @see https://stackoverflow.com/a/901144/1239484
+     *
+     * @returns {string|null} Empty string or null when parameter doesn't exist
+     */
+    function getParameterByName(name, url) {
+        if (!url) {
+            url = window.location.href;
+        }
+
+        name = name.replace(/[\[\]]/g, '\\$&');
+
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+
+        if (!results) {
+            return null;
+        }
+
+        if (!results[2]) {
+            return '';
+        }
+
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    /**
+     * Load search results into the dom.
+     *
+     * @param {string} query
+     */
+    function performSearch(query) {
+        if (!query) {
+            return;
+        }
+
+        searchResults.innerHTML = '';
+
+        const results = idx.search(query);
+        const maxResults = Math.max(results.length, 10);
+
+        for (let i = 0; i < maxResults; i++) {
+            const result = new SearchResult(results[i]);
+
+            if (!result.valid) {
+                continue;
+            }
+
+            searchResults.appendChild(result.makeNode());
+        }
+    }
+
     const searchResults = document.querySelector('#search-results');
+    const searchForm = document.querySelector('#search-field');
 
     searchForm.addEventListener('keyup', function (e) {
         const query = e.currentTarget.value.trim();
 
-        if (query) {
-            searchResults.innerHTML = '';
-
-            const results = idx.search(query);
-            const maxResults = Math.max(results.length, 10);
-
-            for (let i = 0; i < maxResults; i++) {
-                const result = new SearchResult(results[i]);
-
-                if (!result.valid) {
-                    continue;
-                }
-
-                searchResults.appendChild(result.makeNode());
-            }
-        }
+        performSearch(query);
     });
+
+    window.onload = function () {
+        const query = getParameterByName('query').trim();
+
+        searchForm.value = query;
+        performSearch(query);
+    };
 })();
