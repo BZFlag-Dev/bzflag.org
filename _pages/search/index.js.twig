@@ -1,0 +1,19 @@
+---
+title: Lunr Index
+permalink: /search/index.js
+---
+
+const LunrIndex = [
+    {% set uid = 0 %}
+    {% for collection in site.collections %}
+        {% for item in collections[collection.name] %}
+            {
+                id: '{{ uid }}',
+                title: '{{ item.title }}',
+                content: '{{ item.content | striptags | replace({'\n': ' '}) | escape('html') }}',
+                permalink: '{{ url(item) }}',
+            },
+            {%- set uid = uid + 1 -%}
+        {% endfor %}
+    {% endfor %}
+];

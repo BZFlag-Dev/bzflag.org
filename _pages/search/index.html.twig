@@ -1,0 +1,34 @@
+---
+permalink: /search/
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block content %}
+    <h1>Search</h1>
+
+    <form action="{{ url(this) }}" method="get">
+        <label for="search-field" class="sr-only">
+            Enter the terms you wish to search for
+        </label>
+        <input type="text" name="search" id="search-field">
+    </form>
+
+    <div id="search-results"></div>
+
+    <template id="search-result">
+        <article class="c-search-result">
+            <p class="c-search-result__title">
+                <a href=""></a>
+            </p>
+            <p class="c-search-result__description"></p>
+            <p class="c-search-result__permalink"></p>
+        </article>
+    </template>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url(pages['Lunr Index']) }}"></script>
+    <script src="{{ url('/assets/js/lunr.js') }}"></script>
+    <script src="{{ url('/assets/js/search.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,13 @@
+.c-search-result {
+
+}
+
+.c-search-result__title {
+    font-size: map-get($font-sizes, h4);
+}
+
+.c-search-result__permalink {
+    @include text-muted();
+
+    font-size: map-get($font-sizes, small);
+}
