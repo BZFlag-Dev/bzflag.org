@@ -33,9 +33,65 @@
         }
 
         this.id = result.ref;
-        this.metadata = result.matchData.metadata;
-        this.document = LunrIndex[this.id];
         this.valid = true;
+        this.metadata = result.matchData.metadata;
+        this.keywords = Object.keys(this.metadata);
+        this.document = LunrIndex[this.id];
+
+        /**
+         * Insert a string at the specified index.
+         *
+         * @param {string} string
+         * @param {number} index
+         * @param {string} insert
+         *
+         * @returns {string}
+         */
+        this.strInsert = function(string, index, insert) {
+            return string.substr(0, index) + insert + string.substr(index);
+        };
+
+        /**
+         * Wrap the keywords inside of a string with a prefix and suffix.
+         *
+         * @param {string} string The string to search in to wrap Lunr keywords
+         * @param {string} field The field of the Lunr result that we'll be wrapping
+         *
+         * @returns {string}
+         */
+        this.wrapKeywords = function(string, field) {
+            const prefix = '<span>';
+            const suffix = '</span>';
+
+            let text = string;
+            let offset = 0;
+
+            for (let i = 0; i < this.keywords.length; i++) {
+                const keyword = this.keywords[i];
+
+                if (text.toLowerCase().indexOf(keyword) >= 0) {
+                    const resultField = this.metadata[keyword][field];
+
+                    if (typeof resultField === 'undefined') {
+                        break;
+                    }
+
+                    const positions = resultField.position;
+
+                    for (let j = 0; j < positions.length; j++) {
+                        const position = positions[j];
+
+                        text = this.strInsert(text, position[0] + offset, prefix);
+                        offset += prefix.length;
+
+                        text = this.strInsert(text, position[0] + position[1] + offset, suffix);
+                        offset += suffix.length;
+                    }
+                }
+            }
+
+            return text;
+        };
     };
 
     /**
@@ -49,11 +105,11 @@
         // Set up the link for the search result
         const link = node.querySelector('.c-search-result__title a');
         link.setAttribute('href', this.document.permalink);
-        link.innerText = this.document.title;
+        link.innerHTML = this.wrapKeywords(this.document.title, 'title');
 
         // Document description
         const desc = node.querySelector('.c-search-result__description');
-        desc.innerHTML = this.document.content;
+        desc.innerHTML = this.wrapKeywords(this.document.content, 'content');
 
         // Show the document permalink
         const permalink = node.querySelector('.c-search-result__permalink');
