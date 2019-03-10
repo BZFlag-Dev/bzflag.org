@@ -10,103 +10,150 @@ screenshots:
           author: Zechariah
           images:
               - filename: dantes_inferno_01
+                caption: Aerial view of a circular pit with multiple rings at different heights
               - filename: dantes_inferno_02
+                caption: Aerial view of the map with multiple tanks exploding at the same time
               - filename: dantes_inferno_03
+                caption: Blue tank falling as a red tank explodes
         - name: A*A Bridge Crossing
           author: Teppic
           images:
               - filename: aa_bridge_crossing_01
+                caption: Pathway under a stone bridge with a broken down truck
               - filename: aa_bridge_crossing_02
+                caption: A window overseeing the bridge crossing
               - filename: aa_bridge_crossing_03
+                caption: Bridge through a mountain range covered in fog
         - name: Channel Crossing
           author: LouMan
           images:
               - filename: channel_crossing_01
+                caption: A metal bridge crossing a river
               - filename: channel_crossing_02
+                caption: A bunker for tanks built into a plateau with the red team base
               - filename: channel_crossing_03
+                caption: An underground subway station with vending machines
         - name: Churchyard
           author: LouMan
           images:
               - filename: churchyard_01
+                caption: The inside of a church scene from outside a barred gate
               - filename: churchyard_02
+                caption: Aerial view of pews and an alter inside a church
               - filename: churchyard_03
+                caption: A graveyard located outside a church
         - name: Clay Hills
           author: ahs3
           images:
               - filename: clay_hills_01
+                caption: Multiple hills with a windmill in the distance
               - filename: clay_hills_02
+                caption: A windmill in front of a building
               - filename: clay_hills_03
+                caption: A deep river flowing through hills
         - name: Collaborator 2010
           caption: A collaboration between <a href="https://forums.bzflag.org/viewtopic.php?f=64&t=16835">a bunch of players</a>.
           images:
               - filename: collaborator_2010_01
+                caption: A toxic spill in a secret facility with Russian crates
         - name: Delirious City
           author: KTL
           images:
               - filename: delirious_city_01
+                caption: A circular ring of player callsigns floating on a platform with a map outline in the background
               - filename: delirious_city_02
+                caption: Pyramid shaped structures made of rectagular structures with purple outlines
               - filename: delirious_city_03
+                caption: A lot of map objects outline in neon green
               - filename: delirious_city_04
+                caption: A platform outlined in purple connecting several pyramid shaped structures
               - filename: delirious_city_05
+                caption: Orange outlined pyramid with neon colored clouds flowing through the map
               - filename: delirious_city_06
+                caption: Map structures outlined with neon yellow edges and cyan swirls on the ground
         - name: Desert War
           author: The Purple Panzer
           images:
               - filename: desert_war_01
+                caption: Abandoned buildings in the middle of a desert with an oasis in the distance
         - name: Gamma Quadrant
           author: LouMan
           images:
               - filename: gamma_quadrant_01
+                caption: A space station with super flags spread throughout its floor
               - filename: gamma_quadrant_02
+                caption: A miniature platform in space with a planet and a nebula in the background
         - name: H2O
           author: LouMan
           images:
               - filename: h2o_01
+                caption: Four metallic bridges converging to an octagonal platform with a red jewel in the middle
               - filename: h2o_02
+                caption: A yellow shockwave originating from the red jewel in the middle of the map
               - filename: h2o_03
+                caption: Aerial view of the map from the purple team base on an octagonal platform
               - filename: h2o_04
+                caption: Guided missiles being fired from a red jewel surrounded with teleporters
               - filename: h2o_05
+                caption: A warning sign posted newer a red jewel warning about electrostatic discharge
         - name: High Rise Havoc
           author: LouMan
           images:
               - filename: high_rise_havoc_01
+                caption: Two high rises under construction connected by a bridge with a crane
         - name: Home Sweet Home
           author: LouMan
           images:
               - filename: home_sweet_home_01
+                caption: A map with a desk with a monitor displaying BZFlag
               - filename: home_sweet_home_02
+                caption: The entrance to a house with an open door
         - name: Japanese Castles
           author: krungthai
           images:
               - filename: japanese_castles_01
+                caption: Two castles with Japanese architecture split by a river
         - name: Metropolis
           author: LouMan
           images:
               - filename: metropolis_01
+                caption: A city road surrounded by buildings with windows
         - name: Mystic Valley
           author: LouMan
           images:
               - filename: mystic_valley_01
+                caption: Parts of an abandoned tank on fire with a forrest in the distance
               - filename: mystic_valley_02
+                caption: A stone bridge connecting two riverbanks
         - name: Pandemonium
           author: LouMan
           images:
               - filename: pandemonium_01
+                caption: Aerial view of a stone castle with stone pillars supporting a conveyor belt
               - filename: pandemonium_02
+                caption: The end of a conveyor belt leading to a deadly laser fence
               - filename: pandemonium_03
+                caption: A wooden conveyor belt supported by stone pillars
         - name: The Battle of Midway Island
           author: Jefenry
           images:
               - filename: the_battle_of_midway_island_01
+                caption: An island in the middle of the sea surrounded by battle ships
               - filename: the_battle_of_midway_island_02
+                caption: Battleships at war in the Pacific near the Midway Islands
               - filename: the_battle_of_midway_island_04
+                caption: A battleship firing bullets from the perspective of an island
         - name: Space Invaders
           author: Mari Iijima
           images:
               - filename: space_invaders_01
+                caption: A light green grid in space
         - name: Xenon
           author: LouMan
           images:
               - filename: xenon_ctf_01
+                caption: A base for the green team on a pillar above a pit of acid
               - filename: xenon_ctf_02
+                caption: Several curved platforms with rods with bolts of electricity
               - filename: xenon_ctf_03
+                caption: Curved platforms above a river of acid through a rocky terrain

@@ -1,6 +1,8 @@
 .c-media-screenshot {
     figcaption {
-        text-align: center;
+        @include padding(null, 3);
+
+        background-color: rgba(#000, 0.2);
     }
 
     img {

@@ -21,7 +21,7 @@ permalink: /media/
             >
                 <img src="{{ url(data.media.screenshots.url_formats.thumbnail | format(screenshot.filename)) }}"
                      itemprop="thumbnail"
-                     alt="{{ screenshot.caption | striptags }}"
+                     alt="{{ screenshot.caption | striptags | e }}"
                 />
             </a>
 
@@ -35,9 +35,7 @@ permalink: /media/
 {% block content %}
     <h1>Map Gallery</h1>
     <p class="mb-3">
-        The BZFlag community consists of talented map designers whom take
-        advantage of BZFlag's open map system allowing for a wide variety of
-        styles.
+        The BZFlag community consists of talented map designers whom take advantage of BZFlag's open map system allowing for a wide variety of styles.
     </p>
 
     <div class="js-screenshots" itemscope itemtype="http://schema.org/ImageGallery">
