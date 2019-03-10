@@ -25,6 +25,10 @@
     </head>
 
     <body>
+        <a href="#main-content" class="sr-only sr-only-focusable position-fixed p-3">
+            Skip to Content
+        </a>
+
         {% if this.jumbotron %}
             <section class="page-jumbotron">
                 {% include "_includes/navigation.html.twig" %}
@@ -50,7 +54,9 @@
             {% include "_includes/navigation.html.twig" %}
         {% endif %}
 
-        {% block content_root %}{% endblock %}
+        <div id="main-content">
+            {% block content_root %}{% endblock %}
+        </div>
 
         {% include "_includes/footer.html.twig" %}
 
