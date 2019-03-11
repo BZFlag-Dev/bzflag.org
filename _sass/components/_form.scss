@@ -1,0 +1,9 @@
+.c-form__input {
+    @include padding(x, 3);
+    @include padding(y, 2);
+
+    background-color: $color-primary;
+    border: $border-default;
+    border-radius: $border-radius;
+    color: $color-text-primary;
+}
