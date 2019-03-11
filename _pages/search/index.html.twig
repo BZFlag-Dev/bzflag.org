@@ -8,12 +8,23 @@ disableDocScope: true
 {% block content %}
     <h1>Search</h1>
 
-    <form action="{{ url(this) }}" method="get">
-        <label for="search-field" class="sr-only">
-            Enter the terms you wish to search for
-        </label>
-        <input type="text" name="query" id="search-field" autocomplete="off">
-    </form>
+    <div class="hide-js">
+        <div class="c-alert c-alert--error">
+            <p class="c-alert__title">
+                <strong>JavaScript Required</strong>
+            </p>
+            <p>Oops. This page requires you have JavaScript enabled.</p>
+        </div>
+    </div>
+
+    <div class="show-js">
+        <form action="{{ url(this) }}" method="get">
+            <label for="search-field" class="sr-only">
+                Enter the terms you wish to search for
+            </label>
+            <input type="text" name="query" id="search-field" autocomplete="off">
+        </form>
+    </div>
 
     <div id="search-results"></div>
 

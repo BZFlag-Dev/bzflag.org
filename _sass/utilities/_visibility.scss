@@ -11,3 +11,8 @@
         }
     }
 }
+
+.no-js .show-js,
+.js .hide-js {
+    display: none;
+}
