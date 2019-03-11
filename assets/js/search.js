@@ -188,7 +188,7 @@
         searchResults.innerHTML = '';
 
         const results = idx.search(query);
-        const maxResults = Math.max(results.length, 10);
+        const maxResults = Math.min(results.length, 10);
 
         for (let i = 0; i < maxResults; i++) {
             const result = new SearchResult(results[i]);
