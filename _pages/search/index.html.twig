@@ -8,14 +8,14 @@ disableDocScope: true
 {% block content %}
     <h1>Search</h1>
 
-    <div class="hide-js">
+    <noscript>
         <div class="c-alert c-alert--error">
             <p class="c-alert__title">
                 <strong>JavaScript Required</strong>
             </p>
             <p>Oops. This page requires you have JavaScript enabled.</p>
         </div>
-    </div>
+    </noscript>
 
     <div class="show-js">
         <form action="{{ url(this) }}" method="get">
