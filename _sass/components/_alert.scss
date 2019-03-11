@@ -1,0 +1,51 @@
+.c-alert {
+    @include padding(x, 3);
+    @include padding(y, 2);
+
+    border: 2px solid rgba(#fff, 0.3);
+    border-radius: $border-radius;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-alert__title {
+    @include margin(b, 2);
+
+    &::before {
+        @include margin(r, 2);
+    }
+}
+
+.c-alert--error {
+    background-color: rgba(187, 0, 0, 0.7);
+
+    .c-alert__title::before {
+        content: '\2715';
+    }
+}
+
+.c-alert--warning {
+    background-color: rgba(187, 137, 0, 0.7);
+
+    .c-alert__title::before {
+        content: '\26A0';
+    }
+}
+
+.c-alert--success {
+    background-color: rgba(18, 98, 0, 0.7);
+
+    .c-alert__title::before {
+        content: '\2713';
+    }
+}
+
+.c-alert--info {
+    background-color: rgba(0, 134, 187, 0.7);
+
+    .c-alert__title::before {
+        content: '\2139'
+    }
+}
