@@ -10,7 +10,7 @@ const SearchIndex = [
             {
                 id: {{ uid }},
                 title: '{{ item.title }}',
-                content: '{{ item.content | striptags | replace({'\n': ' '}) | escape('html') }}',
+                content: "{{ item.content | striptags | replace({'\n': ' '}) | escape('js') }}",
                 permalink: '{{ url(item) }}'
             },
             {%- set uid = uid + 1 -%}
