@@ -1,18 +1,17 @@
 (function () {
-    // Build the Lunr.js search index with the `LunrIndex` global array defined in `/search/index.js`
-    const idx = lunr(function () {
-        this.field('title', { boost: 1.3 });
-        this.field('content', { boost: 0.8 });
-        this.metadataWhitelist = ['position'];
-
-        for (let i = 0; i < LunrIndex.length; i++) {
-            let document = LunrIndex[i];
-
-            this.add(document);
+    // Build the search index with the `SearchIndex` global array defined in `/search/index.js`
+    const idx = new FlexSearch({
+        doc: {
+            id: 'id',
+            field: [
+                "title",
+                "content"
+            ]
         }
     });
+    idx.add(SearchIndex);
 
-    const srTemplate = document.querySelector('#search-result').content;
+    const srTemplate = document.getElementById('search-result').content;
 
     if (!srTemplate) {
         console.error('Search result template was not found on this page.');
@@ -26,71 +25,33 @@
      *
      * @param result
      */
-    const SearchResult = function (result) {
-        if (typeof result === 'undefined' || !result.ref) {
+    const SearchResult = function (result, keywords) {
+        if (typeof result === 'undefined' || !result.id) {
             this.valid = false;
             return;
         }
 
-        this.id = result.ref;
+        this.id = result.id;
         this.valid = true;
-        this.metadata = result.matchData.metadata;
-        this.keywords = Object.keys(this.metadata);
-        this.document = LunrIndex[this.id];
-
-        /**
-         * Insert a string at the specified index.
-         *
-         * @param {string} string
-         * @param {number} index
-         * @param {string} insert
-         *
-         * @returns {string}
-         */
-        this.strInsert = function(string, index, insert) {
-            return string.substr(0, index) + insert + string.substr(index);
-        };
+        this.keywords = keywords;
+        this.document = SearchIndex[this.id];
 
         /**
          * Wrap the keywords inside of a string with a prefix and suffix.
          *
-         * @param {string} string The string to search in to wrap Lunr keywords
-         * @param {string} field The field of the Lunr result that we'll be wrapping
+         * @param {string} string The string to search in to wrap keywords
+         * @param {array} keywords The keywords that we'll be wrapping
          *
          * @returns {string}
          */
-        this.wrapKeywords = function(string, field) {
-            const prefix = '<span>';
-            const suffix = '</span>';
-
-            let text = string;
-            let offset = 0;
-
-            for (let i = 0; i < this.keywords.length; i++) {
-                const keyword = this.keywords[i];
-
-                if (text.toLowerCase().indexOf(keyword) >= 0) {
-                    const resultField = this.metadata[keyword][field];
-
-                    if (typeof resultField === 'undefined') {
-                        break;
-                    }
-
-                    const positions = resultField.position;
-
-                    for (let j = 0; j < positions.length; j++) {
-                        const position = positions[j];
-
-                        text = this.strInsert(text, position[0] + offset, prefix);
-                        offset += prefix.length;
-
-                        text = this.strInsert(text, position[0] + position[1] + offset, suffix);
-                        offset += suffix.length;
-                    }
-                }
+        this.wrapKeywords = function(string, keywords) {
+            for (let i = 0; i < keywords.length; i++) {
+                keywords[i] = keywords[i].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
             }
 
-            return text;
+            const regexpStr = '(' + keywords.join('|') + ')';
+            const regex = new RegExp(regexpStr, "g");
+            return string.replace(regex, '<span>$1</span>');
         };
 
         /**
@@ -103,7 +64,7 @@
         this.formatDescription = function(string) {
             const output = [];
 
-            let content = this.wrapKeywords(string, 'content');
+            let content = this.wrapKeywords(string, this.keywords);
             let sentences = content.split(/\.\s+?/);
 
             for (let i = 0; i < sentences.length; i++) {
@@ -129,7 +90,7 @@
         // Set up the link for the search result
         const link = node.querySelector('.c-search-result__title a');
         link.setAttribute('href', this.document.permalink);
-        link.innerHTML = this.wrapKeywords(this.document.title, 'title');
+        link.innerHTML = this.wrapKeywords(this.document.title, this.keywords);
 
         // Document description
         const desc = node.querySelector('.c-search-result__description');
@@ -161,7 +122,7 @@
 
         name = name.replace(/[\[\]]/g, '\\$&');
 
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
             results = regex.exec(url);
 
         if (!results) {
@@ -181,39 +142,44 @@
      * @param {string} query
      */
     function performSearch(query) {
+        searchResults.innerHTML = '';
+
         if (!query) {
             return;
         }
 
-        searchResults.innerHTML = '';
+        const results = idx.search(query, 10);
 
-        const results = idx.search(query);
-        const maxResults = Math.min(results.length, 10);
+        if (results.length > 0) {
+            const keywords = query.split(/\W+/);
 
-        for (let i = 0; i < maxResults; i++) {
-            const result = new SearchResult(results[i]);
+            for (let i = 0; i < results.length; i++) {
+                const result = new SearchResult(results[i], keywords);
 
-            if (!result.valid) {
-                continue;
+                if (!result.valid) {
+                    continue;
+                }
+
+                searchResults.appendChild(result.makeNode());
             }
-
-            searchResults.appendChild(result.makeNode());
         }
     }
 
-    const searchResults = document.querySelector('#search-results');
-    const searchForm = document.querySelector('#search-field');
+    const searchResults = document.getElementById('search-results');
+    const searchForm = document.getElementById('search-field');
 
-    searchForm.addEventListener('keyup', function (e) {
+    searchForm.addEventListener('input', function (e) {
         const query = e.currentTarget.value.trim();
 
         performSearch(query);
     });
 
     window.onload = function () {
-        const query = getParameterByName('query').trim();
+        const query = getParameterByName('query');
 
-        searchForm.value = query;
-        performSearch(query);
+        if (query) {
+            searchForm.value = query.trim();
+            performSearch(searchForm.value);
+        }
     };
 })();

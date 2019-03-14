@@ -1,17 +1,17 @@
 ---
-title: Lunr Index
+title: Search Index
 permalink: /search/index.js
 ---
 
-const LunrIndex = [
+const SearchIndex = [
     {% set uid = 0 %}
     {% for collection in site.collections %}
         {% for item in collections[collection.name] %}
             {
-                id: '{{ uid }}',
+                id: {{ uid }},
                 title: '{{ item.title }}',
                 content: '{{ item.content | striptags | replace({'\n': ' '}) | escape('html') }}',
-                permalink: '{{ url(item) }}',
+                permalink: '{{ url(item) }}'
             },
             {%- set uid = uid + 1 -%}
         {% endfor %}
