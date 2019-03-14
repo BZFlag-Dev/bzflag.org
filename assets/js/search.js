@@ -11,6 +11,7 @@
     });
     idx.add(SearchIndex);
 
+    const originalTitle = document.title;
     const srTemplate = document.getElementById('search-result').content;
 
     if (!srTemplate) {
@@ -177,8 +178,23 @@
     const searchResults = document.getElementById('search-results');
     const searchForm = document.getElementById('search-field');
 
+    function getTitle(query) {
+        if (query) {
+            return 'Search - ' + query + ' - BZFlag';
+        }
+
+        return originalTitle;
+    }
+
+    function setTitle(title) {
+        document.title = title;
+    }
+
     function pushHistory(query) {
-        history.pushState({}, 'Search - ' + query + ' - BZFlag', '/search/' + ((query.length)?'?query=' + encodeURIComponent(query):''));
+        const title = getTitle(query);
+
+        history.pushState({}, title, '/search/' + ((query.length) ? '?query=' + encodeURIComponent(query) : ''));
+        setTitle(title);
     }
 
     let pushHistoryTimeout;
@@ -193,6 +209,8 @@
 
     function pullFromQueryString() {
         const query = getParameterByName('query');
+
+        setTitle(getTitle(query));
 
         if (query) {
             searchForm.value = query.trim();
