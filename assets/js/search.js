@@ -4,8 +4,8 @@
         doc: {
             id: 'id',
             field: [
-                "title",
-                "content"
+                'title',
+                'content'
             ]
         }
     });
@@ -50,7 +50,7 @@
             }
 
             const regexpStr = '(' + keywords.join('|') + ')';
-            const regex = new RegExp(regexpStr, "gi");
+            const regex = new RegExp(regexpStr, 'gi');
             return string.replace(regex, '<span>$1</span>');
         };
 
@@ -136,13 +136,22 @@
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
 
+
+    /**
+     * Clear search results.
+     *
+     */
+    function clearResults() {
+        searchResults.innerHTML = '';
+    }
+
     /**
      * Load search results into the dom.
      *
      * @param {string} query
      */
     function performSearch(query) {
-        searchResults.innerHTML = '';
+        clearResults();
 
         if (!query) {
             return;
@@ -168,18 +177,32 @@
     const searchResults = document.getElementById('search-results');
     const searchForm = document.getElementById('search-field');
 
+    function pushHistory(query) {
+        history.pushState({}, 'Search - ' + query + ' - BZFlag', '/search/' + ((query.length)?'?query=' + encodeURIComponent(query):''));
+    }
+
+    let pushHistoryTimeout;
     searchForm.addEventListener('input', function (e) {
         const query = e.currentTarget.value.trim();
 
         performSearch(query);
+
+        clearTimeout(pushHistoryTimeout);
+        pushHistoryTimeout = setTimeout(pushHistory, 500, query);
     });
 
-    window.onload = function () {
+    function pullFromQueryString() {
         const query = getParameterByName('query');
 
         if (query) {
             searchForm.value = query.trim();
             performSearch(searchForm.value);
         }
-    };
+        else {
+            performSearch('');
+        }
+    }
+
+    window.addEventListener('load', pullFromQueryString);
+    window.addEventListener('popstate', pullFromQueryString);
 })();
