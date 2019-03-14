@@ -50,7 +50,7 @@
             }
 
             const regexpStr = '(' + keywords.join('|') + ')';
-            const regex = new RegExp(regexpStr, "g");
+            const regex = new RegExp(regexpStr, "gi");
             return string.replace(regex, '<span>$1</span>');
         };
 
