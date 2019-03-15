@@ -37,6 +37,17 @@ $_sidebar-breakpoint: lg;
     }
 }
 
+.l-sidebar__scrollable {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+
+    @include respond-up($_sidebar-breakpoint) {
+        max-height: 95vh;
+        overflow: auto;
+    }
+}
+
 .l-sidebar__nav {
     @include margin(t, 3, $_sidebar-breakpoint);
     @include padding(y, 3, $_sidebar-breakpoint);
