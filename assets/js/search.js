@@ -24,7 +24,8 @@
      *
      * @constructor
      *
-     * @param result
+     * @param {Object} result The search index item that was matched
+     * @param {string[]} keywords An array of keywords that were searched for
      */
     const SearchResult = function (result, keywords) {
         if (typeof result === 'undefined' || !result.id) {
@@ -41,7 +42,7 @@
          * Wrap the keywords inside of a string with a prefix and suffix.
          *
          * @param {string} string The string to search in to wrap keywords
-         * @param {array} keywords The keywords that we'll be wrapping
+         * @param {string[]} keywords The keywords that we'll be wrapping
          *
          * @returns {string}
          */
