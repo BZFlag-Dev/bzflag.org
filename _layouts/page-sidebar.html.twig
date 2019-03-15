@@ -12,6 +12,23 @@
                     <div class="position-sticky position-top-1 scrollable-sidebar">
                         {% block aside %}{% endblock %}
 
+                        {% if not this.disableSearch %}
+                            <div class="c-search-widget border-t pt-2 my-3 hide-xs show-lg">
+                                <form action="{{ url(pages['Search']) }}" method="get">
+                                    <label for="search-form" class="strong">
+                                        Search Docs
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="query"
+                                        id="search-form"
+                                        class="c-form__input w-100"
+                                        autocomplete="off"
+                                    >
+                                </form>
+                            </div>
+                        {% endif %}
+
                         {% if this.navigation.prev %}
                             {% set target = pages[this.navigation.prev] %}
 
