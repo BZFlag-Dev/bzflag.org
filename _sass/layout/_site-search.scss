@@ -24,6 +24,7 @@
     border-bottom: $border-default;
     border-radius: $border-radius;
     color: $color-text-primary;
+    font-size: 0.9rem;
     flex-grow: 1;
     transition: 0.4s width;
 
@@ -33,6 +34,9 @@
 
     @include respond-up(lg) {
         padding: 0;
+        position: absolute;
+        right: map-get($spacing, 3);
+        top: calc(100% + 2rem);
         width: 0;
 
         &:focus {
@@ -41,6 +45,16 @@
 
             width: 190px;
         }
+    }
+
+    @include respond-up(xl) {
+        position: static;
+    }
+}
+
+.page-jumbotron .site-search__input {
+    @include respond-up(lg) {
+        top: calc(100% + 1rem);
     }
 }
 
