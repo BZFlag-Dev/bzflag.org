@@ -20,6 +20,32 @@
 
             <nav class="col-lg site-navigation">
                 <ul id="navigation" class="site-navigation__links">
+                    <li class="site-search">
+                        <form
+                            class="site-search__form"
+                            action="{{ url(pages['Search']) }}"
+                            method="get"
+                        >
+                            <label for="global-search" class="site-search__label">
+                                <img
+                                    src="{{ url('/assets/images/magnifying-glass.svg') }}"
+                                    alt="Search icon"
+                                    class="site-search__icon"
+                                    aria-hidden="true"
+                                >
+                                <span class="sr-only">Search Site</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="query"
+                                id="global-search"
+                                class="site-search__input"
+                                autocomplete="off"
+                            >
+                        </form>
+                    </li>
+
                     {% for link in data.navigation.links %}
                         {%- set url = link.url[0] == '/' ? url(link.url) : link.url -%}
                         <li>
