@@ -1,3 +1,9 @@
+.skip-to-content {
+    background-color: $color-dark;
+    position: fixed;
+    z-index: 10;
+}
+
 .site-header {
     background: $color-dark;
     width: 100%;
