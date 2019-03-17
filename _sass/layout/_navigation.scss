@@ -10,7 +10,8 @@ $_default-nav-breakpoint: 'lg';
     }
 
     &[aria-expanded='true'] ~ nav .site-navigation__links {
-        display: block;
+        display: -ms-flexbox;
+        display: flex;
     }
 }
 
@@ -19,32 +20,34 @@ $_default-nav-breakpoint: 'lg';
 }
 
 .site-navigation__links {
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-end;
     list-style: none;
     margin: 0;
     padding: 0;
 
     @include respond-down($_default-nav-breakpoint) {
-        margin-top: 15px;
+        -ms-flex-direction: column;
+        flex-direction: column;
         text-align: left;
     }
 
     @include respond-up($_default-nav-breakpoint) {
-        display: block !important;
+        display: flex !important;
     }
 
     li {
         @include respond-down($_default-nav-breakpoint) {
-            border-top: $border-default;
+            &:nth-child(n+2) {
+                border-top: $border-default;
+            }
         }
 
         @include respond-up($_default-nav-breakpoint) {
             display: inline-block;
             font-size: 1.1em;
             margin-left: 15px;
-        }
-
-        &:first-child {
-            margin-left: 0;
         }
     }
 

@@ -1,0 +1,53 @@
+---
+permalink: /search/
+disableDocScope: true
+title: Search
+---
+
+{% extends '_layouts/page.html.twig' %}
+
+{% block content %}
+    <h1>Search</h1>
+
+    <noscript>
+        <div class="c-alert c-alert--error">
+            <p class="c-alert__title">
+                <strong>JavaScript Required</strong>
+            </p>
+            <p>Oops. This page requires you have JavaScript enabled.</p>
+        </div>
+    </noscript>
+
+    <div class="show-js">
+        <form action="{{ url(this) }}" method="get">
+            <label for="search-field" class="sr-only">
+                Enter the terms you wish to search for
+            </label>
+            <input
+                type="text"
+                name="query"
+                id="search-field"
+                class="c-form__input w-100"
+                autocomplete="off"
+            >
+        </form>
+    </div>
+
+    <div id="search-results"></div>
+
+    <template id="search-result">
+        <article class="c-search-result">
+            <p class="c-search-result__title">
+                <a href=""></a>
+            </p>
+            <p class="c-search-result__permalink"></p>
+            <p class="c-search-result__description"></p>
+        </article>
+    </template>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url(pages['Search Index']) }}"></script>
+    <script src="{{ url('/assets/js/flexsearch.min.js') }}"></script>
+    <script src="{{ url('/assets/js/search.js') }}"></script>
+{% endblock %}

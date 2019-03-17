@@ -1,0 +1,29 @@
+.c-search-result {
+    @include margin(y, 3);
+
+    border-bottom: $border-default;
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.c-search-result__title {
+    font-size: map-get($font-sizes, h4);
+    margin-bottom: 0;
+}
+
+.c-search-result__permalink {
+    @include text-muted();
+
+    font-size: map-get($font-sizes, small);
+    margin-bottom: 0;
+}
+
+.c-search-result__description {
+    @include margin(t, 3);
+}

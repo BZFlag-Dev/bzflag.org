@@ -11,3 +11,15 @@
         }
     }
 }
+
+.no-js .show-js {
+    display: none;
+}
+
+.sr-only {
+    @include sr-only();
+}
+
+.sr-only-focusable {
+    @include sr-only-focusable();
+}
