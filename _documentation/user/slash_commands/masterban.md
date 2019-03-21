@@ -1,5 +1,5 @@
 ---
-title: masterban
+command: masterban
 syntax: "<flush | reload | list>"
 since: 2.4.0
 category: Admin

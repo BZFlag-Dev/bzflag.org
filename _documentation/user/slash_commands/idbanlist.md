@@ -1,5 +1,5 @@
 ---
-title: idbanlist
+command: idbanlist
 syntax: ~
 since: 2.4.0
 category: Admin

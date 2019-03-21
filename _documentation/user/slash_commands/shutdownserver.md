@@ -1,5 +1,5 @@
 ---
-title: shutdownserver
+command: shutdownserver
 syntax: ~
 since: 2.4.0
 category: Server Owner

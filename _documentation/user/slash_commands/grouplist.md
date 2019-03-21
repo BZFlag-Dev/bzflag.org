@@ -1,5 +1,5 @@
 ---
-title: grouplist
+command: grouplist
 syntax: ~
 since: 2.4.0
 category: Player

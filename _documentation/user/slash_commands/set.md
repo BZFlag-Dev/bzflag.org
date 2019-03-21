@@ -1,5 +1,5 @@
 ---
-title: set
+command: set
 syntax: "[variable] [value]"
 since: 2.4.0
 category: Server Owner

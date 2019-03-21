@@ -1,5 +1,5 @@
 ---
-title: idban
+command: idban
 syntax: "<slot# | callsign | +bzid> <duration> <reason>"
 since: 2.4.0
 category: Admin

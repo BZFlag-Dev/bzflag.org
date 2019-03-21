@@ -1,5 +1,5 @@
 ---
-title: hostunban
+command: hostunban
 syntax: "<hostname>"
 since: 2.4.0
 category: Admin

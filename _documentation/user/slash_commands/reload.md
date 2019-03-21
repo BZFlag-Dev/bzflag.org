@@ -1,5 +1,5 @@
 ---
-title: reload
+command: reload
 syntax: "<all | groups | bans | helpfiles | badwords>"
 since: 2.4.0
 category: Server Owner

@@ -1,5 +1,5 @@
 ---
-title: unmute
+command: unmute
 syntax: "<slot# | callsign>"
 since: 2.4.0
 category: Admin

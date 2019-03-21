@@ -1,5 +1,5 @@
 ---
-title: mute
+command: mute
 syntax: "<slot# | callsign>"
 since: 2.4.0
 category: Admin

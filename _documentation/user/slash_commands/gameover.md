@@ -1,5 +1,5 @@
 ---
-title: gameover
+command: gameover
 syntax: ~
 since: 2.4.0
 category: Server Owner

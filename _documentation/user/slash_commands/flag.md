@@ -1,5 +1,5 @@
 ---
-title: flag
+command: flag
 syntax: "..."
 since: 2.4.0
 category: Admin

@@ -1,5 +1,5 @@
 ---
-title: time
+command: time
 syntax: ~
 since: 2.4.0
 category: Player

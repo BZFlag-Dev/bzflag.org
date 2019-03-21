@@ -1,5 +1,5 @@
 ---
-title: groupperms
+command: groupperms
 syntax: "[group]"
 since: 2.4.0
 category: Player

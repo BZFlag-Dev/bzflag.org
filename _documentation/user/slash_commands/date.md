@@ -1,5 +1,5 @@
 ---
-title: date
+command: date
 syntax: ~
 since: 2.4.0
 category: Player

@@ -1,5 +1,5 @@
 ---
-title: banlist
+command: banlist
 syntax: "[filter]"
 since: 2.4.0
 category: Admin

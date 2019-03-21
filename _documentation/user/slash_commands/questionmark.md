@@ -1,5 +1,5 @@
 ---
-title: "?"
+command: "?"
 syntax: ~
 since: 2.4.0
 category: Player

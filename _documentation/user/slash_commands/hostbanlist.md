@@ -1,5 +1,5 @@
 ---
-title: hostbanlist
+command: hostbanlist
 syntax: "[filter]"
 since: 2.4.0
 category: Admin

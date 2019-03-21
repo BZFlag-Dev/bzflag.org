@@ -1,5 +1,5 @@
 ---
-title: idlestats
+command: idlestats
 syntax: ~
 since: 2.4.0
 category: Player

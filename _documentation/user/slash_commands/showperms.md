@@ -1,5 +1,5 @@
 ---
-title: showperms
+command: showperms
 syntax: "[callsign]"
 since: 2.4.0
 category: Player

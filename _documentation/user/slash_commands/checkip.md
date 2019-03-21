@@ -1,5 +1,5 @@
 ---
-title: checkip
+command: checkip
 syntax: "<ip address>"
 since: 2.4.0
 category: Admin

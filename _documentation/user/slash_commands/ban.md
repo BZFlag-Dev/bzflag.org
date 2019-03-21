@@ -1,5 +1,5 @@
 ---
-title: ban
+command: ban
 syntax: "<slot# | callsign | ip address> <duration> <reason>"
 since: 2.4.0
 category: Admin

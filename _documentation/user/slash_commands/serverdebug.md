@@ -1,5 +1,5 @@
 ---
-title: serverdebug
+command: serverdebug
 syntax: "<level>"
 since: 2.4.0
 category: Server Owner

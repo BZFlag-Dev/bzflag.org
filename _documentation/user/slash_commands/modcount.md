@@ -1,5 +1,5 @@
 ---
-title: modcount
+command: modcount
 syntax: "<+seconds | -seconds>"
 since: 2.4.0
 category: Admin

@@ -1,5 +1,5 @@
 ---
-title: jitterdrop
+command: jitterdrop
 syntax: "[value]"
 since: 2.4.0
 category: Server Owner

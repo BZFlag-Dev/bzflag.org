@@ -1,5 +1,5 @@
 ---
-title: flaghistory
+command: flaghistory
 syntax: ~
 since: 2.4.0
 category: Player

@@ -1,5 +1,5 @@
 ---
-title: part
+command: part
 syntax: "[message]"
 since: 2.4.0
 category: Player

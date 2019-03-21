@@ -1,5 +1,5 @@
 ---
-title: idunban
+command: idunban
 syntax: "<bzid>"
 since: 2.4.0
 category: Admin

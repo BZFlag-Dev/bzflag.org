@@ -1,5 +1,5 @@
 ---
-title: idlist
+command: idlist
 syntax: ~
 since: 2.4.0
 category: Admin

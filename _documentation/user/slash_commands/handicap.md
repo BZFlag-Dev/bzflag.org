@@ -1,5 +1,5 @@
 ---
-title: handicap
+command: handicap
 syntax: ~
 since: 2.4.0
 category: Server Owner

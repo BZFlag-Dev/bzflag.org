@@ -1,5 +1,5 @@
 ---
-title: showgroup
+command: showgroup
 syntax: "[callsign]"
 since: 2.4.0
 category: Player

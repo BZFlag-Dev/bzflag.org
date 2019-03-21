@@ -1,5 +1,5 @@
 ---
-title: poll
+command: poll
 syntax: "<flagreset | kill | kick | ban | ...> [target]"
 since: 2.4.0
 category: Player

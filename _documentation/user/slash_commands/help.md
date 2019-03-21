@@ -1,5 +1,5 @@
 ---
-title: help
+command: help
 syntax: "[page]"
 since: 2.4.0
 category: Player

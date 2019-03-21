@@ -1,5 +1,5 @@
 ---
-title: kill
+command: kill
 syntax: "<slot# | callsign> [reason]"
 since: 2.4.0
 category: Admin

@@ -1,5 +1,5 @@
 ---
-title: viewreports
+command: viewreports
 syntax: ~
 since: 2.4.0
 category: Admin

@@ -1,5 +1,5 @@
 ---
-title: kick
+command: kick
 syntax: "<slot# | callsign> [reason]"
 since: 2.4.0
 category: Admin

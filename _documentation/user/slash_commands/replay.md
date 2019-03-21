@@ -1,5 +1,5 @@
 ---
-title: replay
+command: replay
 syntax: "..."
 since: 2.4.0
 category: Admin

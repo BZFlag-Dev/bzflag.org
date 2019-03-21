@@ -1,5 +1,5 @@
 ---
-title: hostban
+command: hostban
 syntax: "<hostname> <duration> <reason>"
 since: 2.4.0
 category: Admin

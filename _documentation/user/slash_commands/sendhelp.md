@@ -1,5 +1,5 @@
 ---
-title: sendhelp
+command: sendhelp
 syntax: "<slot# | callsign> <help file name>"
 since: 2.4.0
 category: Admin

@@ -1,5 +1,5 @@
 ---
-title: highlight
+command: highlight
 syntax: "[pattern]"
 since: 2.4.0
 category: Player

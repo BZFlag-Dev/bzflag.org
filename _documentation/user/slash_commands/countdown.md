@@ -1,5 +1,5 @@
 ---
-title: countdown
+command: countdown
 syntax: "[seconds | pause | resume | cancel]"
 since: 2.4.0
 category: Admin

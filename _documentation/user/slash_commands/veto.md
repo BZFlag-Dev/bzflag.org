@@ -1,5 +1,5 @@
 ---
-title: veto
+command: veto
 syntax: ~
 since: 2.4.0
 category: Admin

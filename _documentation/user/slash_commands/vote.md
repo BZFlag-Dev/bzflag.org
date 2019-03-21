@@ -1,5 +1,5 @@
 ---
-title: vote
+command: vote
 syntax: "<yes | no>"
 since: 2.4.0
 category: Player

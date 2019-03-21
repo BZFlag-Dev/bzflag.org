@@ -1,5 +1,5 @@
 ---
-title: playerlist
+command: playerlist
 syntax: ~
 since: 2.4.0
 category: Admin
