@@ -1,0 +1,67 @@
+---
+collection: slash_commands
+editable: true
+section: documentation
+sectiontitle: Slash Commands
+permalink: /documentation/slash-commands/%basename/
+title: %command Command
+navigation:
+  prev: Slash Commands
+parent:
+---
+
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% set commands = collections.slash_commands| where('category', '==', this.category) %}
+
+{% block introduction %}
+    <h1 class="mt-0">/{{ this.title }}</h1>
+
+    <dl class="border-y py-3">
+        <dt><strong>Syntax</strong></dt>
+        <dd>
+            <code>/{{ this.command }} {{ this.syntax }}</code>
+        </dd>
+
+        <dt><strong>Available Since</strong></dt>
+        <dd>
+            {{ this.since }}
+        </dd>
+
+        {% if this.permissions %}
+            <dt><strong>Related Permissions</strong></dt>
+            <dd>
+                {{ this.permissions | join(', ') }}
+            </dd>
+        {% endif %}
+    </dl>
+{% endblock %}
+
+{% block aside %}
+    <h2
+        class="mt-0 c-accordion__header"
+        data-role="accordion"
+        data-target="#sidebar-toc"
+        data-breakpoint="lg"
+    >
+        Other Commands
+    </h2>
+
+    <div id="sidebar-toc" class="c-accordion__body">
+        <ul class="m-0">
+            {% for command in commands | order('filename') %}
+                <li>
+                    <a href="{{ url(command) }}"
+                       class="text-decoration-none"
+                    >
+                        /{{- command.command -}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {{ this.content | markdown }}
+{% endblock %}
