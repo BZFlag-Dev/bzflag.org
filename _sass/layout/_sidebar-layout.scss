@@ -17,6 +17,8 @@ $_sidebar-breakpoint: lg;
 .l-sidebar__footer {
     @include padding(l, 3, $_sidebar-breakpoint);
 
+    overflow: hidden;
+
     @include respond-up($_sidebar-breakpoint) {
         border-left: $border-default;
     }

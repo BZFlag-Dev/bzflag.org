@@ -5,8 +5,8 @@ docpath: /
 
 ## Player
 
-- [Flags](/documentation/flags/)
-- [Slash Commands](/documentation/slash_commands/)
+- [Flags]({{ url(pages['Flags']) }})
+- [Slash Commands]({{ url(pages['Slash Commands']) }})
 
 ## Developer
 
