@@ -125,12 +125,11 @@ opengraph:
             {% set super_flags = [
                 {
                     inverted: false,
+                    assetFilename: 'laser',
                     preview: {
-                        image: 'https://placehold.it/550x350',
                         description: 'Tank shooting a laser beam from long distance',
                     },
                     shot_type: {
-                        image: 'blue_laser.png',
                         description: 'Blue team laser beam',
                     },
                     heading: 'Lasers',
@@ -142,12 +141,11 @@ opengraph:
                 },
                 {
                     inverted: true,
+                    assetFilename: 'guided-missile',
                     preview: {
-                        image: 'https://placehold.it/550x350',
                         description: 'Tank shooting a guided missile',
                     },
                     shot_type: {
-                        image: 'guided_missile.png',
                         description: 'Guided missile shot type',
                     },
                     heading: 'Guided Missiles',
@@ -159,12 +157,11 @@ opengraph:
                 },
                 {
                     inverted: false,
+                    assetFilename: 'super-bullet',
                     preview: {
-                        image: 'https://placehold.it/550x350',
                         description: 'A super bullet going through builds',
                     },
                     shot_type: {
-                        image: 'blue_super_bolt.png',
                         description: 'Super bullet shot type',
                     },
                     heading: 'Super Bullets',
@@ -179,15 +176,23 @@ opengraph:
                 <article class="my-5">
                     <div class="row">
                         <div class="col-md mb-3 mb-lg-0 text-center">
-                            <img src="{{ flag.preview.image }}"
-                                class="mx-auto img-fluid"
-                                alt="{{ flag.preview.description }}">
+                            <video width="536"
+                                   height="338"
+                                   loop="loop"
+
+                                   muted="muted"
+                                   poster="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-poster.jpg') }}"
+                                   class="flag-video"
+                            >
+                                <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.mp4') }}" type="video/mp4" />
+                                <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.webm') }}" type="video/webm" />
+                            </video>
                         </div>
                         <div class="col-md {% if flag.inverted %}order-lg-first{% endif %}">
                             <div class="d-flex align-items-center h-100">
                                 <div>
                                     <div class="d-flex align-items-center">
-                                        <img src="{{ url('/assets/images/home/' ~ flag.shot_type.image) }}"
+                                        <img src="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-icon.png') }}"
                                              class="mr-3"
                                              alt="{{ flag.shot_type.description }}"
                                         >
@@ -209,7 +214,8 @@ opengraph:
 {% block scripts %}
     <script src="{{ url('/assets/js/plyr.js') }}"></script>
     <script>
-        const player = new Plyr('#teaser', {
+    (function() {
+        new Plyr('#teaser', {
             iconUrl: '{{ url("/assets/images/plyr.svg") }}',
             blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
             controls: [
@@ -217,5 +223,16 @@ opengraph:
             ],
             disableContextMenu: false
         });
+
+        Array.from(document.querySelectorAll('.flag-video')).map(
+            p => new Plyr(p, {
+                iconUrl: '{{ url("/assets/images/plyr.svg") }}',
+                blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
+                controls: [],
+                clickToPlay: false,
+                disableContextMenu: false
+            })
+        );
+    })();
     </script>
 {% endblock %}
