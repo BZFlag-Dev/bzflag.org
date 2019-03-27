@@ -176,17 +176,20 @@ opengraph:
                 <article class="my-5">
                     <div class="row">
                         <div class="col-md mb-3 mb-lg-0 text-center">
-                            <video width="536"
-                                   height="338"
-                                   loop="loop"
-                                   autoplay="autoplay"
-                                   muted="muted"
-                                   poster="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-poster.jpg') }}"
-                                   class="flag-video"
-                            >
-                                <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.mp4') }}" type="video/mp4" />
-                                <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.webm') }}" type="video/webm" />
-                            </video>
+                            <div class="c-video-player">
+                                <video
+                                    width="536"
+                                    height="338"
+                                    loop="loop"
+                                    autoplay="autoplay"
+                                    muted="muted"
+                                    poster="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-poster.jpg') }}"
+                                    class="js-flag-video"
+                                >
+                                    <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.mp4') }}" type="video/mp4" />
+                                    <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.webm') }}" type="video/webm" />
+                                </video>
+                            </div>
                         </div>
                         <div class="col-md {% if flag.inverted %}order-lg-first{% endif %}">
                             <div class="d-flex align-items-center h-100">
@@ -224,7 +227,7 @@ opengraph:
             disableContextMenu: false
         });
 
-        Array.from(document.querySelectorAll('.flag-video')).map(
+        Array.from(document.querySelectorAll('.js-flag-video')).map(
             p => new Plyr(p, {
                 iconUrl: '{{ url("/assets/images/plyr.svg") }}',
                 blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
