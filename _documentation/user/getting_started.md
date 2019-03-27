@@ -28,6 +28,7 @@ To install the (possibly outdated) distribution packages:
 - For RedHat-based distributions, such as CentOS or Fedora: `yum install bzflag` or `dnf install bzflag`
 - For openSUSE: `zypper install bzflag`
 - For Arch linux: `pacman -S bzflag`
+- For Gentoo linux: `emerge bzflag`
 
 ## Optionally register a callsign
 
