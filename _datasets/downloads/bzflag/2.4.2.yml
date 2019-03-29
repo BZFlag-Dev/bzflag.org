@@ -1,39 +1,41 @@
 version: 2.4.2
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=18156'
 codename: 'Doomsday Edition'
 changesummary: |
-  This is a very minor update with no major features. The primary goal for the release is to have a new package for the Debian maintainers to use in Debian and Ubuntu based Linux distributions.
-  - Options chat on the left and radar on the right.
-  - Lagging and leading shot lines on radar.
-  - Support for Joystick hats in Linux, SDL, and Windows.
-  - UPnP setup option for servers that can be enabled at build time.
-  - Inclusion of the fairCTF, autoFlagReset, and FastMap plugins.
-  - BZadmin on windows has colors like the Linux one.
+    This is a very minor update with no major features. The primary goal for the release is to have a new package for the Debian maintainers to use in Debian and Ubuntu based Linux distributions.
+
+    - Options chat on the left and radar on the right.
+    - Lagging and leading shot lines on radar.
+    - Support for Joystick hats in Linux, SDL, and Windows.
+    - UPnP setup option for servers that can be enabled at build time.
+    - Inclusion of the fairCTF, autoFlagReset, and FastMap plugins.
+    - BZadmin on windows has colors like the Linux one.
 changelog: |
-  * Added UPnP option to configure server networking - Alfredo Tupone
-  * Added an option to have both leading and lagging radar shot lines - David Anderson
-  * Prevent prohibited solo bots from joining, rather than kick afterward - Scott Wichser, Jeff Makey
-  * Add thiefControl plugin which prevents stealing flags from teammates - Bernt Hansen, Scott Wichser
-  * Preserve shot-limited flag behavior on final shot - David Anderson
-  * Remove the -zoom command line option from bzflag - Jeff Makey
-  * Provide observer team chat in OpenFFA mode - David Anderson
-  * Add fairCTF plugin - Chris Wible
-  * Allow plugins to specify a color when firing world weapons - Chris Wible
-  * Add option for chat on the left and radar on the right - Kyle Mills
-  * Add autoFlagReset plugin - Chris Wible
-  * Allow joystick hats as input on Evdev, SDL, and Windows platforms - Kyle Mills and Jeffery Myers
-  * Added Fastmap Plugin - Jeffery Myers
+    * Added UPnP option to configure server networking - Alfredo Tupone
+    * Added an option to have both leading and lagging radar shot lines - David Anderson
+    * Prevent prohibited solo bots from joining, rather than kick afterward - Scott Wichser, Jeff Makey
+    * Add thiefControl plugin which prevents stealing flags from teammates - Bernt Hansen, Scott Wichser
+    * Preserve shot-limited flag behavior on final shot - David Anderson
+    * Remove the -zoom command line option from bzflag - Jeff Makey
+    * Provide observer team chat in OpenFFA mode - David Anderson
+    * Add fairCTF plugin - Chris Wible
+    * Allow plugins to specify a color when firing world weapons - Chris Wible
+    * Add option for chat on the left and radar on the right - Kyle Mills
+    * Add autoFlagReset plugin - Chris Wible
+    * Allow joystick hats as input on Evdev, SDL, and Windows platforms - Kyle Mills and Jeffery Myers
+    * Added Fastmap Plugin - Jeffery Myers
 date: '2012-07-28'
 downloads:
     windows:
-        -
-            filename: bzflag-2.4.2_32Bit.exe
+        - filename: bzflag-@VER@_32Bit.exe
+          sha256: 2e840c624a6157875f78925cbf0cd5e34f4a289c0fe0e56f0220cf2090a81bf2
     macos:
-        -
-            filename: BZFlag-2.4.2.zip
+        - filename: BZFlag-@VER@.zip
+          sha256: 4ce7f007cb7c78a5243ced84d310c37637a2aa8fe9569231edd2dbc45286e293
     source:
-        -
-            filename: bzflag-2.4.2.tar.gz
-        -
-            filename: bzflag-2.4.2.tar.bz2
-        -
-            filename: bzflag-2.4.2.zip
+        - filename: bzflag-@VER@.tar.gz
+          sha256: 8bfe229b7ab2f8c68eeb2d5759f0ebeb6cde735eb97f0dbca71d1fdbc4e8dda0
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: 4f7bc52284cc4b39fc352855e555b2b064c1de6a18f7474e249073070762c811
+        - filename: bzflag-@VER@.zip
+          sha256: dbb73101966d5698b3facba63c853ba22cd7be1ed4ba3b748a3e5c8e3bc0ddc6

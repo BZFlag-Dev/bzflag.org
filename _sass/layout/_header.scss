@@ -1,0 +1,42 @@
+.skip-to-content {
+    background-color: $color-dark;
+    position: fixed;
+    z-index: 10;
+}
+
+.site-header {
+    background: $color-dark;
+    width: 100%;
+    z-index: 1;
+
+    a {
+        text-shadow: $text-shadow;
+    }
+}
+
+.site-header__brand {
+    align-items: center;
+    display: flex;
+
+    img {
+        margin-right: 5px;
+        width: 160px;
+
+        @include respond-up(md) {
+            width: 200px;
+        }
+    }
+
+    span {
+        font-size: 1.5em;
+    }
+}
+
+// Only use a fancy gradient when
+.page-jumbotron .site-header {
+    position: absolute;
+
+    @include respond-up(lg) {
+        background: scrim-gradient();
+    }
+}

@@ -1,0 +1,7 @@
+.github/           @allejo @blast007
+_data/             @blast007
+_datasets/         @allejo @blast007
+_documentation/    @allejo @blast007 @jwmelto
+
+*.scss    @allejo
+*.twig    @allejo @blast007

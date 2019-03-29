@@ -1,0 +1,62 @@
+<header class="site-header py-3">
+    <div class="container">
+        <div class="row align-items-center flex-column flex-lg-row position-relative">
+            <div class="col-lg-auto site-header__brand">
+                <a href="{{ url('/') }}">
+                    <img src="{{ url('/assets/images/bzflag-logo-combo.svg') }}"
+                         alt="BZFlag"
+                    >
+                </a>
+            </div>
+
+            <button id="menu-toggle"
+                    class="c-hamburger c-hamburger--htx"
+                    aria-expanded="false"
+                    aria-controls="navigation"
+            >
+                <span></span>
+                <span class="sr-only">Mobile menu</span>
+            </button>
+
+            <nav class="col-lg site-navigation">
+                <ul id="navigation" class="site-navigation__links">
+                    <li class="site-search">
+                        <form
+                            class="site-search__form"
+                            action="{{ url(pages['Search']) }}"
+                            method="get"
+                        >
+                            <label for="global-search" class="site-search__label">
+                                <img
+                                    src="{{ url('/assets/images/magnifying-glass.svg') }}"
+                                    alt="Search icon"
+                                    class="site-search__icon"
+                                    aria-hidden="true"
+                                >
+                                <span class="sr-only">Search Site</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                name="query"
+                                id="global-search"
+                                class="site-search__input"
+                                autocomplete="off"
+                                placeholder="Search terms..."
+                            >
+                        </form>
+                    </li>
+
+                    {% for link in data.navigation.links %}
+                        {%- set url = link.url[0] == '/' ? url(link.url) : link.url -%}
+                        <li>
+                            <a href="{{ url }}">
+                                {{- link.name -}}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

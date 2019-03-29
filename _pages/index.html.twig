@@ -2,27 +2,239 @@
 title: Home
 section: home
 permalink: /
-metadescription: BZFlag is a free 3D online multi-player multi-platform tank battle game.
+jumbotron:
+    image: /assets/images/home/jumbotron.jpg
+    alt: '"Apocalypse" map by Planet Mo-Fo'
+opengraph:
+    title: BZFlag
+    description: BZFlag is a free 3D online multi-player tank battle game available on Linux, macOS, and Windows.
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/base.html.twig" %}
 
-{% block head %}
-  <style>#content{padding-bottom:1.5em;}.plyr__play-large{cursor:pointer;}div.plyr__controls{display:none;}</style>
-  <link rel="stylesheet" href="/css/plyr.css" />
-{% endblock %}
+{% block content_root %}
+    <section class="container">
+        <div class="my-5">
+            {% include "_includes/latest_downloads.html.twig" %}
+        </div>
+    </section>
 
-{% block content %}
-    <p>BZFlag is a free 3D online multi-player multi-platform tank battle game. It runs on Windows, macOS, Linux, BSD, and other platforms. It was one of the most popular games ever on Silicon Graphics machines and continues to be developed and improved to this day.</p>
-    <div id="teaserdiv">
-      <video id="teaser" width="720" height="400" loop="loop" preload="none" poster="/images/videothumb/bzteaser.jpg" controls="controls">
-        <source src="/vid/bzteaser.mp4" type="video/mp4" />
-        <source src="/vid/bzteaser.webm" type="video/webm" />
-      </video>
+    <div class="container">
+        <section class="my-5">
+            <h2 class="sr-only">Gameplay Trailer</h2>
+
+            <div class="mx-sm-3 mx-md-5">
+                <div class="c-video-player">
+                    <video id="teaser"
+                           width="720"
+                           height="400"
+                           loop="loop"
+                           preload="none"
+                           poster="{{ url('/assets/images/home/bzteaser.jpg') }}"
+                           controls="controls"
+                    >
+                        <source src="{{ url('/assets/videos/home/bzteaser.mp4') }}" type="video/mp4" />
+                        <source src="{{ url('/assets/videos/home/bzteaser.webm') }}" type="video/webm" />
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <h2 class="mb-3 mb-md-5 text-center">Project News</h2>
+
+            <div>
+                <div class="row">
+                    {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
+                        <article class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                            <a href="{{ announcement.url }}"
+                               class="c-hover-card"
+                            >
+                                <img class="c-hover-card__thumbnail"
+                                     src="{{ url('/assets/images/announcements/' ~ announcement.basename) }}.jpg"
+                                     alt=""
+                                >
+                                <div class="c-hover-card__body">
+                                    <p class="c-hover-card__date">
+                                        <small>
+                                            <time datetime="{{ announcement.date | date("Y-m-d\\TH:i\\Z", 'UTC') }}">
+                                                {{- announcement.date | date('F d, Y', 'UTC') -}}
+                                            </time>
+                                        </small>
+                                    </p>
+                                    <h3 class="c-hover-card__title">{{ announcement.title }}</h3>
+                                    <p class="c-hover-card__meta">
+                                        <small>
+                                            by {{ announcement.author }}
+                                            &bull;
+                                            {{ announcement.category }}
+                                        </small>
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="my-5">
+        <div class="c-theater">
+            <div class="c-theater__image">
+                <img src="{{ url('/assets/images/home/flying_tank.jpg') }}"
+                     alt="">
+            </div>
+
+            <div class="container">
+                <div class="c-theater__stage">
+                    <div class="c-hgroup">
+                        <p class="c-hgroup__subtitle">A bird? A plane? Nope!</p>
+                        <h2 class="c-hgroup__title">It's a Flying Tank</h2>
+                    </div>
+
+                    <p class="mb-0">
+                        The M1 Abrams comes in weighing approximately 62 metric tons. Our tanks? Well, they're light as
+                        a feather! There's no obstacle you won't be able to jump. Need to jump even higher? We've got
+                        you covered. Our tanks can have wings letting you jump while in mid-air! Who needs to be bullet
+                        proof when you can jump out of the way?
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="my-5">
+            <header class="row">
+                <div class="col-lg-7">
+                    <div class="c-hgroup">
+                        <p class="c-hgroup__subtitle">Okay, so imagine this</p>
+                        <h2 class="c-hgroup__title">Tanks with Super Powers</h2>
+                    </div>
+
+                    <p>
+                        Everyone knows that having a tank that can <em>just</em> fly is pretty boring. What if we told
+                        you tanks could be equipped with super powers? You'd think we're crazy, right? We were so busy
+                        thinking on how we could, that we didn't stop to think whether or not we should. Super powers for
+                        all your tanks!
+                    </p>
+                </div>
+            </header>
+
+            {% set super_flags = [
+                {
+                    inverted: false,
+                    assetFilename: 'laser',
+                    preview: {
+                        description: 'Tank shooting a laser beam from long distance',
+                    },
+                    shot_type: {
+                        description: 'Blue team laser beam',
+                    },
+                    heading: 'Lasers',
+                    description: "
+                        It's not camping, it's strategic placement. When was the last time you saw a sniper be the first
+                        to run into battle? Your tanks can be equiped with lasers capable of firing across the entire
+                        map to kill enemies instantly.
+                    ",
+                },
+                {
+                    inverted: true,
+                    assetFilename: 'guided-missile',
+                    preview: {
+                        description: 'Tank shooting a guided missile',
+                    },
+                    shot_type: {
+                        description: 'Guided missile shot type',
+                    },
+                    heading: 'Guided Missiles',
+                    description: "
+                        You can hide but you can't run. Good luck trying to evade guided missiles. See a tank trying to
+                        run away? Lock on. And fire! Guided missiles will follow your target until it hits something or
+                        is outmaneuvered.
+                    ",
+                },
+                {
+                    inverted: false,
+                    assetFilename: 'super-bullet',
+                    preview: {
+                        description: 'A super bullet going through builds',
+                    },
+                    shot_type: {
+                        description: 'Super bullet shot type',
+                    },
+                    heading: 'Super Bullets',
+                    description: "
+                        You can run but you can't hide. With a powerful radar displaying enemy positions and bullets
+                        that go through walls, there's no enemy you can't hit and no place you can safely hide.
+                    ",
+                }
+            ] %}
+
+            {% for flag in super_flags %}
+                <article class="my-5">
+                    <div class="row">
+                        <div class="col-md mb-3 mb-lg-0 text-center">
+                            <div class="c-video-player">
+                                <video
+                                    width="536"
+                                    height="338"
+                                    loop="loop"
+                                    autoplay="autoplay"
+                                    poster="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-poster.jpg') }}"
+                                    class="js-flag-video"
+                                >
+                                    <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.mp4') }}" type="video/mp4" />
+                                    <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.webm') }}" type="video/webm" />
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-md {% if flag.inverted %}order-lg-first{% endif %}">
+                            <div class="d-flex align-items-center h-100">
+                                <div>
+                                    <div class="d-flex align-items-center">
+                                        <img src="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-icon.png') }}"
+                                             class="mr-3"
+                                             alt="{{ flag.shot_type.description }}"
+                                        >
+
+                                        <h3 class="my-0">{{ flag.heading }}</h3>
+                                    </div>
+
+                                    <p>{{ flag.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
     </div>
 {% endblock %}
 
 {% block scripts %}
-  <script src="/js/plyr.js"></script>
-  <script>const player = new Plyr('#teaser', {iconUrl:'/images/plyr.svg',blankVideo:'/vid/blank.mp4',controls:['play-large'],disableContextMenu:false});</script>
+    <script src="{{ url('/assets/js/plyr.js') }}"></script>
+    <script>
+    (function() {
+        new Plyr('#teaser', {
+            iconUrl: '{{ url("/assets/images/plyr.svg") }}',
+            blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
+            controls: [
+                'play-large'
+            ],
+            disableContextMenu: false
+        });
+
+        Array.from(document.querySelectorAll('.js-flag-video')).map(
+            p => new Plyr(p, {
+                iconUrl: '{{ url("/assets/images/plyr.svg") }}',
+                blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
+                controls: [],
+                clickToPlay: false,
+                disableContextMenu: false
+            })
+        );
+    })();
+    </script>
 {% endblock %}

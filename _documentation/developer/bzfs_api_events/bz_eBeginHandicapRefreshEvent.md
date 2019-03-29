@@ -1,6 +1,9 @@
 ---
-dataType: ''
-since: 2.4.12
+dataType:
+    current: ''
+    since: 2.4.12
+    legacy: ~
+category: Handicap
 plugins: ~
 parameters: []
 ---

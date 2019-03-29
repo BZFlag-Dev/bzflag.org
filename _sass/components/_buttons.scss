@@ -1,0 +1,62 @@
+.c-button-group,
+.c-button {
+    background-color: $color-text-anchor;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+.c-button {
+    @include padding(x, 4);
+    @include padding(y, 2);
+
+    color: $color-primary;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+    }
+}
+
+.c-button--inverse {
+    background-color: transparent;
+    border: 1px solid $color-text-anchor;
+    color: $color-text-primary;
+}
+
+.c-button--skinny {
+    @include padding(y, 1);
+}
+
+.c-button-group {
+    .c-button {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+
+        &:nth-child(n + 2) {
+            border-left: 1px solid rgba(#000, 0.5);
+        }
+    }
+}
+
+// Special overrides for anchors that use the .c-button class. This is necessary
+// since anchors have rules that supersede classes due to specificity.
+a {
+    &.c-button {
+        &,
+        &:focus,
+        &:hover {
+            color: $color-primary;
+            text-decoration: none;
+        }
+    }
+
+    &.c-button--inverse {
+        &,
+        &:focus,
+        &:hover {
+            color: $color-text-anchor;
+        }
+    }
+}

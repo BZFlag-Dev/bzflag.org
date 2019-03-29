@@ -1,0 +1,20 @@
+<div class="c-terminal" data-auto-os="{{ os ? 'false' : 'true' }}" data-os="{{ os | lower }}">
+    <div class="c-terminal__header">
+        <span class="c-terminal__button"></span>
+        <span class="c-terminal__button"></span>
+        <span class="c-terminal__button"></span>
+    </div>
+
+    <div class="c-terminal__body">
+        {% if command %}
+            <span
+                class="c-terminal__prompt"
+                {% if folder %}data-folder="{{ folder }}"{% endif %}
+                {% if admin %}data-admin="true"{% endif %}
+                aria-hidden="true"
+            ></span>{{ command }}
+        {% else %}
+            {{ body | raw }}
+        {% endif %}
+    </div>
+</div>

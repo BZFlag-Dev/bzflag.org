@@ -1,0 +1,81 @@
+---
+collection: flags
+editable: true
+section: documentation
+sectiontitle: Flags
+permalink: /documentation/flags/%basename/
+title: %name Flag
+navigation:
+    prev: Flags
+parent:
+---
+
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% set flags = collections.flags | where('type', '==', this.type) %}
+
+{% block introduction %}
+    <h1 class="mt-0">{{ this.name }} Flag</h1>
+
+    <p>Abbreviation: {{ this.abbreviation }}</p>
+{% endblock %}
+
+{% block aside %}
+    <h2
+        class="mt-0 c-accordion__header"
+        data-role="accordion"
+        data-target="#sidebar-toc"
+        data-breakpoint="lg"
+    >
+        {{ this.type }} Flags
+    </h2>
+
+    <div id="sidebar-toc" class="c-accordion__body">
+        <ul class="m-0">
+            {% for flag in flags | order('filename') %}
+                <li>
+                    <a href="{{ url(flag) }}"
+                       class="text-decoration-none"
+                    >
+                        {{- flag.name -}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    {{ this.content | markdown }}
+
+    {% if this.video %}
+        <div class="c-video-player">
+            <video id="video"
+                   style="width: 100%"
+                   loop="loop"
+                   preload="none"
+                   poster="{{ url('/assets/images/documentation/flags/' ~ this.basename ~ '.jpg') }}"
+                   controls="controls"
+            >
+                <source src="{{ url('/assets/videos/documentation/flags/' ~ this.basename ~ '.mp4') }}" type="video/mp4" />
+                <source src="{{ url('/assets/videos/documentation/flags/' ~ this.basename ~ '.webm') }}" type="video/webm" />
+            </video>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block scripts %}
+    {% if this.video %}
+    <script src="{{ url('/assets/js/plyr.js') }}"></script>
+    <script>
+        const player = new Plyr('#video', {
+            iconUrl: '{{ url("/assets/images/plyr.svg") }}',
+            blankVideo: '{{ url("/assets/videos/blank.mp4") }}',
+            controls: [
+                'play', 'progress', 'fullscreen'
+            ],
+            disableContextMenu: false
+        });
+    </script>
+    {% endif %}
+{% endblock %}

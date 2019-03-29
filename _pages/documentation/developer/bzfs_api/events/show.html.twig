@@ -1,0 +1,122 @@
+---
+collection: bzfs_api_events
+editable: true
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/events/%basename/
+title: %basename
+parent:
+---
+
+{% extends "_layouts/page.html.twig" %}
+{% from "_includes/api_utils.html.twig" import api_object %}
+
+{% block content %}
+    <h1>{{ this.basename }}</h1>
+
+    {{ this.content | markdown }}
+
+    {% if this.dataType %}
+        <h2 id="object-type">Data Object Type</h2>
+        <p>
+            <span class="code text-sans-serif"
+                  title="Available since"
+            >
+                {{- this.dataType.since -}}
+            </span>
+
+            <span>{{ this.dataType.current }}</span>
+        </p>
+
+        {% if this.dataType.legacy %}
+            <h3 id="deprecated-object-type" class="h4">Deprecated Types</h3>
+            <p>These data object types have been deprecated in favor of more recent versions, which contain more or corrected information.</p>
+            <ul>
+                {% for legacy_version in this.dataType.legacy %}
+                    <li>
+                        <span class="code text-sans-serif" title="Available since">
+                            {{- legacy_version.since -}}
+                        </span>
+
+                        {{ legacy_version.dataType }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h2 id="parameters">Parameters</h2>
+        <p>These are the values accessible in the <code>bz_EventData</code> variable that's made available in the <code>Event</code> method.</p>
+        <table class="c-parameter-table">
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for param in this.parameters %}
+                    <tr>
+                        <td class="data-type">
+                            {{- api_object(param.dataType) -}}
+                        </td>
+                        <td class="param-name">
+                            <code>{{- param.name -}}</code>
+                        </td>
+                        <td class="description">
+                            {% markdown %}
+                                {{- param.description -}}
+
+                                {% if param.since %}
+                                    <small>
+                                        (_available since {{ param.since }} of the event_)
+                                    </small>
+                                {% endif %}
+                            {% endmarkdown %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2 id="plug-in-usage">Plug-in Usage</h2>
+
+        {% if this.plugins %}
+            <p>Here's a list of plug-ins part of the official distribution that makes use of this event:</p>
+
+            <ul>
+                {% for plugin in this.plugins %}
+                    <li><a href="https://github.com/{{ site.github.dev_repo }}/tree/{{ site.github.dev_branch }}/plugins/{{ plugin }}/">{{ plugin }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no plug-ins in the official distribution that make use of this event. Browse the <a href="https://forums.bzflag.org/viewforum.php?f=79">Plug-in Releases</a> forum for plug-ins which may make use of this event.</p>
+        {% endif %}
+
+        <h2 id="example">Plug-in Example</h2>
+        {% markdown %}
+        This block of code can be used to get started when implementing the `Event()` function of your plug-in.
+
+        ```cpp
+        {{ this.dataType.current }}* dataObject = ({{ this.dataType.current }}*)eventData;
+
+        // Data
+        // ---
+        {% for param in this.parameters -%}
+        // {{ "(%-13s" | format(param.dataType ~ ')') }} {{ param.name }} - {{ param.description }}
+        {% endfor %}
+        ```
+        {% endmarkdown %}
+    {% endif %}
+
+    <h2>Other {{ this.category }} Events</h2>
+    <ul>
+        {% for event in collections.bzfs_api_events | where('category', '==', this.category) | where('basename', '!=', this.basename) | order('filename') %}
+            <li><a href="{{ url(event) }}">{{ event.basename }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="{{ url(pages['bzfs API Events']) }}">Back to bzfs API Events</a>
+    </p>
+{% endblock %}

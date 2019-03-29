@@ -1,0 +1,60 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block content_root %}
+    <div class="container background-dark">
+        <div class="py-3 px-md-3">
+            <div class="l-sidebar">
+                <div class="l-sidebar__introduction s-documentation">
+                    {% block introduction %}{% endblock %}
+                </div>
+
+                <aside class="l-sidebar__sidebar">
+                    <div class="l-sidebar__scrollable">
+                        {% block aside %}{% endblock %}
+
+                        {% if not this.disableSearch %}
+                            <div class="c-search-widget border-t pt-2 my-3 hide-xs show-lg">
+                                <form action="{{ url(pages['Search']) }}" method="get">
+                                    <label for="search-form" class="strong">
+                                        Search Docs
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="query"
+                                        id="search-form"
+                                        class="c-form__input w-100"
+                                        autocomplete="off"
+                                    >
+                                </form>
+                            </div>
+                        {% endif %}
+
+                        {% if this.navigation.prev %}
+                            {% set target = pages[this.navigation.prev] %}
+
+                            {% if target %}
+                                <div class="l-sidebar__nav">
+                                    <a href="{{ url(target) }}" class="l-sidebar__nav__link">
+                                        Back to {{ target.title }}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                </aside>
+
+                <div class="l-sidebar__body">
+                    <main class="s-documentation">
+                        {% block content %}{% endblock %}
+                    </main>
+                </div>
+
+                {% if this.editable %}
+                    <div class="l-sidebar__footer">
+                        {% include "_includes/edit_me.html.twig" %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

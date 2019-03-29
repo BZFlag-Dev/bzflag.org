@@ -1,0 +1,13 @@
+{% extends '_layouts/base.html.twig' %}
+
+{% block content_root %}
+    <main class="container background-dark {% if not this.disableDocScope %}s-documentation{% endif %}">
+        <div class="py-3 px-md-3">
+            {% block content %}{% endblock %}
+        </div>
+
+        {% if this.editable %}
+            {% include "_includes/edit_me.html.twig" %}
+        {% endif %}
+    </main>
+{% endblock %}

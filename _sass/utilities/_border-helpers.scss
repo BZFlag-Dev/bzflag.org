@@ -1,0 +1,27 @@
+@each $bp in map-keys($breakpoints) {
+    $infix: if($bp == 'xs', '', '-' + $bp);
+
+    @include respond-up($bp) {
+        .border#{$infix} {
+            border: $border-default !important;
+        }
+
+        .border#{$infix}-none {
+            border: none !important;
+        }
+
+        @each $d_abbv, $rules in $spacing_directions {
+            .border#{$infix}-#{$d-abbv} {
+                @each $rule in $rules {
+                    border-#{$rule}: $border-default !important;
+                }
+            }
+
+            .border#{$infix}-#{$d_abbv}-none {
+                @each $rules in $rules {
+                    border-#{$rules}: none !important;
+                }
+            }
+        }
+    }
+}

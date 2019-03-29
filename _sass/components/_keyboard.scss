@@ -1,0 +1,110 @@
+.c-keyboard {
+    background-color: #4e4e4e;
+    border-radius: $border-radius;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 5px;
+
+    .c-keyboard__key {
+        &.ctrl,
+        &.delete,
+        &.tab {
+            width: $keyboard-key-size * 1.5;
+        }
+
+        &.space {
+            color: transparent;
+            width: 330px;
+        }
+
+        &.alt,
+        &.meta,
+        &.enter,
+        &.caps,
+        &.shift {
+            flex-grow: 1;
+            width: auto;
+        }
+    }
+}
+
+.c-keyboard--disabled {
+    .c-keyboard__key {
+        opacity: 0.5;
+    }
+
+    .c-keyboard__key--active {
+        opacity: 1;
+    }
+}
+
+.c-keyboard__row {
+    display: flex;
+    margin-bottom: $keyboard-buffer;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-keyboard__key {
+    height: $keyboard-key-size;
+    width: $keyboard-key-size;
+
+    background-color: $color-dark;
+    border-radius: $border-radius;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: $keyboard-buffer;
+    padding: $keyboard-key-padding;
+    position: relative;
+    text-align: center;
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.c-keyboard__key[data-shift] {
+    &::before {
+        content: attr(data-shift);
+        font-size: 0.6rem;
+        position: absolute;
+        top: $keyboard-key-padding;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.c-keyboard__key {
+    &.ctrl,
+    &.delete,
+    &.tab,
+    &.space,
+    &.alt,
+    &.meta,
+    &.enter,
+    &.caps,
+    &.shift {
+        width: 80px;
+    }
+
+    &[data-align] {
+        font-size: 0.8em;
+    }
+
+    @each $direction in (left, center, right) {
+        &[data-align="#{$direction}"] {
+            text-align: $direction;
+        }
+    }
+}
+
+.c-keyboard-arrows {
+    display: inline-block;
+
+    .c-keyboard__key.up {
+        margin: 0 auto;
+    }
+}

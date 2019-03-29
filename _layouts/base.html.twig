@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js os-unknown">
+    <head>
+        {%- set page_description = this.opengraph.description | default(site.description) | escape('html') -%}
+        {%- set page_title -%}
+            {%- spaceless -%}
+                {%- if this.title %}{{ this.title }} - {% endif -%}
+                {%- if this.sectiontitle %}{{ this.sectiontitle }} - {% endif -%}
+                BZFlag
+            {%- endspaceless -%}
+        {%- endset -%}
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{{ page_description }}" />
+
+        {% include "_includes/open_graph.html.twig" %}
+
+        <link rel="stylesheet" href="{{ url('/assets/css/styles.css') }}{% if not site.debug %}?cache_busting={{ 'now' | date('U') }}{% endif %}" />
+        <link rel="canonical" href="https://www.bzflag.org{{ url(this.permalink) }}" />
+
+        <title>{{ page_title }}</title>
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <div class="skip-to-content">
+            <a href="#main-content" class="sr-only sr-only-focusable p-3 d-block">
+                Skip to Content
+            </a>
+        </div>
+
+        {% if this.jumbotron %}
+            <section class="page-jumbotron">
+                {% include "_includes/navigation.html.twig" %}
+
+                <div class="page-jumbotron__wrapper">
+                    <img src="{{ url(this.jumbotron.image) }}"
+                         alt="{{ this.jumbotron.alt | escape }}"
+                         class="page-jumbotron__image"
+                    >
+
+                    {% if this.jumbotron.title %}
+                        <div class="page-jumbotron__title">
+                            <h1>{{ this.jumbotron.title }}</h1>
+
+                            {% if this.jumbotron.subtitle %}
+                                <p class="text-muted">{{ this.jumbotron.subtitle }}</p>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </section>
+        {% else %}
+            {% include "_includes/navigation.html.twig" %}
+        {% endif %}
+
+        <div id="main-content">
+            {% block content_root %}{% endblock %}
+        </div>
+
+        {% include "_includes/footer.html.twig" %}
+
+        {% block scripts %}{% endblock %}
+
+        <script src="{{ url('/assets/js/main.js') }}{% if not site.debug %}?cache_busting={{ 'now' | date('U') }}{% endif %}"></script>
+
+        {% if data.matomo %}
+            <!-- Matomo -->
+            <script type="text/javascript">
+                var _paq = window._paq || [];
+                _paq.push(['setDocumentTitle', document.domain + '/' + document.title]);
+                _paq.push(['setCookieDomain', "{{ data.matomo.cookieDomain }}"]);
+                _paq.push(['setDomains', ["{{ data.matomo.domains | join('", "') }}"]]);
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+
+                (function() {
+                    var u="{{ data.matomo.baseURL }}";
+                    _paq.push(['setTrackerUrl', u+'matomo.php']);
+                    _paq.push(['setSiteId', '{{ data.matomo.siteID }}']);
+                    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+                })();
+            </script>
+            <!-- End Matomo Code -->
+        {% endif %}
+    </body>
+</html>

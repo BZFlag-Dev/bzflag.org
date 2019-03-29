@@ -3,5 +3,5 @@ changesummary: 'Preliminary open source release'
 date: '2000-01-01'
 downloads:
     source:
-        -
-            filename: bzflag-1.7c.src.tar.gz
+        - filename: bzflag-@VER@.src.tar.gz
+          sha256: f3e1577bce4ce604b8918e2b6c484ed89e565e468bc34d3eaabd25bc22bdd73f

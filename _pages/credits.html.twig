@@ -4,36 +4,41 @@ section: credits
 permalink: /credits/
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 
 {% block content %}
-    <p>This website uses various third-party resources. These are documented here.</p>
+    {% markdown %}
+        # Credits
 
-    <h2>Graphics</h2>
+        This website uses various third-party resources. These are documented here.
 
-    <ul>
-      <li>The BZFlag logo (the red tank icon) and the favicon (the blue tank icon) is copyright Tim Riker and licensed under the LGPL.</li>
-      <li><a href="http://subtlepatterns.com/?p=944">Iron Grip</a> by <a href="http://www.tonykinard.net/">Tony Kinard</a> - <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0 Unported</a> License</li>
-      <li><a href="http://subtlepatterns.com/?p=319">Random Grey Variations</a> by Stefan Aleksi&#x107; - <a href="https://creativecommons.org/licenses/by/3.0/">CC-BY 3.0 Unported</a> License</li>
-      <li>Source code icon from <a href="https://web.archive.org/web/20170102220803/http://www.icon-king.com/projects/nuvola/">Nuvola</a> - LGPL 2.1 License</li>
-      <li>macOS icon from <a href="https://www.everaldo.com/crystal/">Crystal Project</a> - LGPL 2.1 License</li>
-      <li>Windows icon from <a href="https://sourceforge.net/projects/openiconlibrary/">Open Icon Library</a> - Public Domain</li>
-      <li>Operating system logos are copyright and/or trademark their respective owners.</li>
-    </ul>
+        ## Graphics
 
-    <h2>JavaScript</h2>
+        - The BZFlag logo, the weapon images, and the favicon (the blue tank icon) are copyright Tim Riker and licensed under the GNU LGPL 2.1.
+        - [Megaphone by Creative Stall](https://thenounproject.com/icon/147531/) from the Noun Project - CC-BY 3.0 US License
+        - [debug by Lemon Liu](https://thenounproject.com/icon/83827/) from the Noun Project - CC-BY 3.0 US License
+        - [Book by Deemak Daksina](https://thenounproject.com/icon/1230262/) from the Noun Project - CC-BY 3.0 US License
+        - [FAQ by ProSymbols](https://thenounproject.com/icon/790491/) from the Noun Project - CC-BY 3.0 US License
+        - [chat icon](https://thenounproject.com/icon/888687/) from the Starter Icons Collection from the Noun Project - Public Domain
+        - [Magnifying Glass](https://thenounproject.com/icon/888719/) from the Starter Icons Collection from the Noun Project - Public Domain
+        - [Apple by zidney](https://thenounproject.com/term/apple/1426926/) from the Noun Project - CC-BY 3.0 US License
+        - [Windows Logo](https://commons.wikimedia.org/wiki/File:Windows_logo_-_2012.svg) - Public Domain
+        - Operating system logos are copyright and/or trademark their respective owners.
 
-    <ul>
-      <li><a href="https://mootools.net/">MooTools</a> - MIT License</li>
-      <li><a href="http://ryanflorence.com/slideshow/">MooTools SlideShow</a> - MIT License</li>
-      <li><a href="https://mootools.net/forge/p/loop">Loop</a> - MIT License</li>
-      <li><a href="https://web.archive.org/web/20150916150833/http://reghellin.com:80/milkbox/">Milkbox</a> - MIT License</li>
-      <li><a href="https://github.com/selz/plyr">Plyr</a> - MIT License</li>
-    </ul>
+        ## JavaScript
 
-    <h2>Other</h2>
+        - [PhotoSwipe](http://photoswipe.com/) by Dmitry Semenov - MIT License (with one exception: "Do not create a public WordPress plugin based on it")
+        - [Plyr](https://github.com/selz/plyr) - MIT License
+        - [getOS function](https://stackoverflow.com/a/38241481) by [Vladyslav Turak](https://stackoverflow.com/users/4815056/vladyslav-turak) - CC BY-SA 3.0 Unported
+        - [FlexSearch](https://github.com/nextapps-de/flexsearch/) - Apache License 2.0
 
-    <ul>
-      <li><a href="https://highlightjs.org/">highlight.js (just the monokai.css file for styling)</a> - BSD 3-Clause "New" or "Revised" License</li>
-    </ul>
+        ## CSS/SCSS
+
+        - [Bootstrap](https://getbootstrap.com/) - MIT License
+        - [Animated Hamburger Icons](https://github.com/callmenick/Animating-Hamburger-Icons) by Call Me Nick - MIT License
+        - [Sass Boilerplate](https://github.com/HugoGiraudel/sass-boilerplate) by Hugo Giraudel - MIT License
+        - [Scrim Gradient SCSS Mixin](https://codepen.io/joeyquarters/pen/dWJYdV/?editors=0100) by Joey Nichols - [MIT license](https://blog.codepen.io/legal/licensing/)
+        - [SassyStrings](https://github.com/HugoGiraudel/SassyStrings) by Hugo Giraudel - MIT License
+        - [highlight.js (just the monokai.css file for styling)](https://highlightjs.org/) - BSD 3-Clause "New" or "Revised" License
+    {% endmarkdown %}
 {% endblock %}

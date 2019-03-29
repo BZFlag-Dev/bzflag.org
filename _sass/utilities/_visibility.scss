@@ -1,0 +1,25 @@
+@each $breakpoint in map-keys($breakpoints) {
+    .hide-#{$breakpoint} {
+        @include respond-up($breakpoint) {
+            display: none !important;
+        }
+    }
+
+    .show-#{$breakpoint} {
+        @include respond-up($breakpoint) {
+            display: block !important;
+        }
+    }
+}
+
+.no-js .show-js {
+    display: none;
+}
+
+.sr-only {
+    @include sr-only();
+}
+
+.sr-only-focusable {
+    @include sr-only-focusable();
+}

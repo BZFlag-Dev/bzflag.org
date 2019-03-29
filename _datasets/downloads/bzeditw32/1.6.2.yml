@@ -3,8 +3,8 @@ changelog: ''
 date: '2004-01-20'
 downloads:
     windows:
-        -
-            filename: BZEdit_1.6.2_Installer.exe
+        - filename: BZEdit_@VER@_Installer.exe
+          sha256: 81645579c195e452e7c95291fb63e8f7d930cb01dec8ecd602b0ac72183d9f4b
     source:
-        -
-            filename: bzeditWin321.6.2_source.zip
+        - filename: bzeditWin32@VER@_source.zip
+          sha256: 66c12d8cde046eb3c0414e88865a6d3cc9b3691d628a4aac9df46b4366f8a4bd

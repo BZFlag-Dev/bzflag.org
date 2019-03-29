@@ -1,50 +1,50 @@
 version: '1.7e4'
 changelog: |
-  * ::memset() instead of bzero() - Björn Augustsson
-  * win32 audio thread fix for win2k - crs
-  * send to nemesis - Dave Brosius, Frank Thilo
-  * USB joystick support - Nick Sayer
-  * new (faster?) radar jamming code - Mathias Gumz
-  * sort by score - Colin Bayer, Dave Brosius, Tim Riker
-  * world file rad -> deg - Tim Riker
-  * add player flag display to HUD - Tim Riker (prompted by Colin Bayer)
-  * random height pyramids too - Tim Riker
-  * dim rogue color when blind - Colin Bayer
-  * colorize shots on radar - Colin Bayer
-  * keyboard movement - Pier Donini
-  * win32 connect thread - Valery Fouques
-  * new sounds - Dave Brosius
-  * warnings - Dave Brosius
-  * safer placement - Frank Thilo
-  * don't color shots when CB - Valery Fouques
-  * jump while typing - Valery Fouques
-  * don't lock on paused or not responding - Valery Fouques
-  * -lagdrop server option - Colin Bayer
-  * fix team flag display - Colin Bayer
-  * add rogue team and radar colors to config - Valery Fouques
-  * Shots as lines on radar - Valery Fouques, Tim Riker
-  * CTF world from file - Colin Bayer, Tim Riker
-  * patch playerIds to prepare for one tcp port - Tim Riker
-  * missile sound effect - Dave Brosius
-  * udp first then multicast, IRIX fix? (use -i <> for multicast) - Tim Riker
-  * enhanced radar - Jeremiah Moss
-  * don't relay read in player read - Frank Thilo, Tim Riker
-  * -fb flags on box buildings - Tim Riker, Colin Bayer
-  * networking code fixes - Tim Riker, Frank Thilo, etc.
-  * new admin commands - Tim Riker
-  * enhance SR - Tim Riker, Dave Brosius
-  * rotated/elevated bases - David Trowbridge, Tim Riker
-  * GM lock alert msg/sound - Tim Riker (prompted by Colin Bayer)
+    * ::memset() instead of bzero() - Björn Augustsson
+    * win32 audio thread fix for win2k - crs
+    * send to nemesis - Dave Brosius, Frank Thilo
+    * USB joystick support - Nick Sayer
+    * new (faster?) radar jamming code - Mathias Gumz
+    * sort by score - Colin Bayer, Dave Brosius, Tim Riker
+    * world file rad -&gt; deg - Tim Riker
+    * add player flag display to HUD - Tim Riker (prompted by Colin Bayer)
+    * random height pyramids too - Tim Riker
+    * dim rogue color when blind - Colin Bayer
+    * colorize shots on radar - Colin Bayer
+    * keyboard movement - Pier Donini
+    * win32 connect thread - Valery Fouques
+    * new sounds - Dave Brosius
+    * warnings - Dave Brosius
+    * safer placement - Frank Thilo
+    * don't color shots when CB - Valery Fouques
+    * jump while typing - Valery Fouques
+    * don't lock on paused or not responding - Valery Fouques
+    * -lagdrop server option - Colin Bayer
+    * fix team flag display - Colin Bayer
+    * add rogue team and radar colors to config - Valery Fouques
+    * Shots as lines on radar - Valery Fouques, Tim Riker
+    * CTF world from file - Colin Bayer, Tim Riker
+    * patch playerIds to prepare for one tcp port - Tim Riker
+    * missile sound effect - Dave Brosius
+    * udp first then multicast, IRIX fix? (use -i &lt;&gt; for multicast) - Tim Riker
+    * enhanced radar - Jeremiah Moss
+    * don't relay read in player read - Frank Thilo, Tim Riker
+    * -fb flags on box buildings - Tim Riker, Colin Bayer
+    * networking code fixes - Tim Riker, Frank Thilo, etc.
+    * new admin commands - Tim Riker
+    * enhance SR - Tim Riker, Dave Brosius
+    * rotated/elevated bases - David Trowbridge, Tim Riker
+    * GM lock alert msg/sound - Tim Riker (prompted by Colin Bayer)
 date: '2001-11-27'
 downloads:
     windows:
-        -
-            filename: bzflag17e4.exe
+        - filename: bzflag17e4.exe
+          sha256: a3184c1e10ca892d044d559e06f33063615508e7fa3a8350151351f18999a8c0
     irix:
-        -
-            filename: bzflag.17e4_o32.tardist
-        -
-            filename: bzflag.17e4_n32.tardist
+        - filename: bzflag.17e4_o32.tardist
+          sha256: fa48f1c8cb2cd0ee01046c7a702ef00cdff1976456e283c2017b970785259527
+        - filename: bzflag.17e4_n32.tardist
+          sha256: ba720a2d55280c86dd959aa30397d1cb20b6bb3b035ceb72a6bf22454d91d95d
     source:
-        -
-            filename: bzflag-1.7e4.tgz
+        - filename: bzflag-@VER@.tgz
+          sha256: 5194839f4ea1645be5fcd06e7e6928d0c70f679ecc7460f80bef15e1bf1b4111

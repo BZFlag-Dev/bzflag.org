@@ -1,30 +1,31 @@
 version: 2.0.16
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=16149'
 codename: "No Foolin'"
 changelog: |
-  * Fix command line options in Windows launcher - Scott Wichser
-  * Fix regression in protocol handling by server - Jeff Makey, Scott Wichser
-  * Add bullet tails as seen out the viewport - trepan
-  * Add observer mouse controls for roaming and tracking modes - trepan
-  * Add the /forceradar client-side command for observers - trepan
-  * Minor cleanup of source and build system - Jeff Makey
-  * Explicitly link to the dl library when needed - Jeff Makey
-  * Remove unused dependency on Xi library - Jeff Makey
-  * Clarify copyright assignment terms for developers - Jeff Myers
-  * Allow only one Enter message per player instance - Jeff Makey
-  * Add TimeLimit plugin - Steven Mertens
-  * Remove broken vocaliser and obsolete torBlock plugins - Jeff Myers
+    * Fix command line options in Windows launcher - Scott Wichser
+    * Fix regression in protocol handling by server - Jeff Makey, Scott Wichser
+    * Add bullet tails as seen out the viewport - trepan
+    * Add observer mouse controls for roaming and tracking modes - trepan
+    * Add the /forceradar client-side command for observers - trepan
+    * Minor cleanup of source and build system - Jeff Makey
+    * Explicitly link to the dl library when needed - Jeff Makey
+    * Remove unused dependency on Xi library - Jeff Makey
+    * Clarify copyright assignment terms for developers - Jeff Myers
+    * Allow only one Enter message per player instance - Jeff Makey
+    * Add TimeLimit plugin - Steven Mertens
+    * Remove broken vocaliser and obsolete torBlock plugins - Jeff Myers
 date: '2010-04-01'
 downloads:
     windows:
-        -
-            filename: bzflag-2.0.16.exe
+        - filename: bzflag-@VER@.exe
+          sha256: cd17118864ec1dddc105bd65bf3b3eee378deffa3cafa79b762bb00d0b66a6fe
     macos:
-        -
-            filename: BZFlag-2.0.16.dmg
+        - filename: BZFlag-@VER@.dmg
+          sha256: 4c898665be83c14d09dd43f08a998f002338a0d94bcd0f03ba516112b6e3d45e
     source:
-        -
-            filename: bzflag-2.0.16.tar.bz2
-        -
-            filename: bzflag-2.0.16.tar.gz
-        -
-            filename: bzflag-2.0.16.zip
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: fe6fa0b89e7f950950111b118ee8534cd54917d2c7f9215c1f3215ece38a608f
+        - filename: bzflag-@VER@.tar.gz
+          sha256: 378ac1d761546ddcfa05958e2ba1ceaac57f5882881e46cfad356794d9d307ea
+        - filename: bzflag-@VER@.zip
+          sha256: 92fd7e0db10c7ad054bd223e8eae8de65abf8d5404b1bd3e721d4ee471246be5

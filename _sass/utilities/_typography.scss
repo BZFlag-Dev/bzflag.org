@@ -1,0 +1,35 @@
+@each $key, $val in $font-sizes {
+    #{$key},
+    .#{$key} {
+        font-size: $val;
+    }
+}
+
+.line-height-1 {
+    line-height: 1;
+}
+
+abbr[title],
+.tooltip[title] {
+    border-bottom: 0;
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+b,
+strong,
+.strong {
+    font-weight: bolder;
+}
+
+.text-monospace {
+    font-family: $font-stack-monospace !important;
+}
+
+.text-sans-serif {
+    font-family: $font-stack-sans-serif !important;
+}
+
+.text-muted {
+    @include text-muted(true);
+}

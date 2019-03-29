@@ -1,21 +1,21 @@
 version: 1.10.8
 codename: 'lightning strikes back - list server returns'
 changelog: |
-  * New list server URL
-  * Added admin message sounds - Cameron Mandrake, Sean Morrison
-  * Throw away bad or early links in world files - Tim Riker
+    * New list server URL
+    * Added admin message sounds - Cameron Mandrake, Sean Morrison
+    * Throw away bad or early links in world files - Tim Riker
 date: '2004-10-05'
 downloads:
     windows:
-        -
-            filename: bzflag-1.10.8.W32.exe
+        - filename: bzflag-@VER@.W32.exe
+          sha256: c7e0fd6cecb11cfeddf070e27f14237380cc58d41194ebc895c97cf8428321a6
     macos:
-        -
-            filename: BZFlag_1.10.8.dmg
+        - filename: BZFlag_@VER@.dmg
+          sha256: 425873686ed0a95a5514ea5428ef3d560b8f6ddf01f9c26a94256134cfa9e41c
     source:
-        -
-            filename: bzflag-1.10.8.20041007.tar.gz
-        -
-            filename: bzflag-1.10.8.20041005.zip
-        -
-            filename: bzflag-1.10.8.20041007.tar.bz2
+        - filename: bzflag-@VER@.20041007.tar.gz
+          sha256: 014bab4892b988fe2fd0c96622741129f1508228a2bcc305df9c593dd8b2bfab
+        - filename: bzflag-@VER@.20041005.zip
+          sha256: 6d8350ec43831c8a539dd07fdd4d1c414dc94c5042560ac77d1aef85c39e3e48
+        - filename: bzflag-@VER@.20041007.tar.bz2
+          sha256: be1d47c94c0e0c145221058e5f331c514138481d0d711e6b41bee04a2cf7b82b

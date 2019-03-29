@@ -1,29 +1,55 @@
 target: _site
 
 data:
-  - _data
+    - _data
 
 datasets:
-  - name: downloads_bzflag
-    folder: _datasets/downloads/bzflag
-  - name: downloads_bzeditw32
-    folder: _datasets/downloads/bzeditw32
+    - name: announcements
+      folder: _datasets/announcements
+    - name: projects
+      folder: _datasets/projects
+    - name: downloads_bzflag
+      folder: _datasets/downloads/bzflag
+    - name: downloads_bzeditw32
+      folder: _datasets/downloads/bzeditw32
 
 pageviews:
-  - _pages
+    - _pages
 
 collections:
-  - name: user_documentation
-    folder: _documentation/user
-  - name: bzfs_api_events
-    folder: _documentation/developer/bzfs_api_events
+    - name: user_documentation
+      folder: _documentation/user/pages
+    - name: flags
+      folder: _documentation/user/flags
+    - name: slash_commands
+      folder: _documentation/user/slash_commands
+    - name: developer_documentation
+      folder: _documentation/developer/pages
+    - name: bzfs_api_events
+      folder: _documentation/developer/bzfs_api_events
+    - name: bzfs_api_functions
+      folder: _documentation/developer/bzfs_api_functions
+    - name: bzfs_api_types
+      folder: _documentation/developer/bzfs_api_types
 
 exclude:
-  - COPYING
-  - README.md
+    - COPYING
+    - LICENSES.md
+    - README.md
+    - /\.sh$/
 
 debug: false
 
+url: https://www.bzflag.org
+baseurl: /
+description: BZFlag is a free 3D online multi-player multi-platform tank battle game.
 github:
-  dev_repo: BZFlag-Dev/bzflag
-  dev_branch: 2.4
+    # For the site source
+    site_repo: BZFlag-Dev/bzflag.org
+    site_branch: redesign
+
+    # For the core project
+    dev_repo: BZFlag-Dev/bzflag
+    dev_branch: 2.4
+opengraph:
+    image: /assets/images/opengraph.jpg

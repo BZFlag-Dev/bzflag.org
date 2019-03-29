@@ -1,0 +1,64 @@
+@mixin accordion-ui() {
+    @include padding(x, 2);
+    @include padding(y, 1);
+
+    border: $border-default;
+    cursor: pointer;
+    font-size: map-get($font-sizes, h4);
+
+    &[aria-expanded="false"] {
+        &::before {
+            content: '\25B6';
+        }
+
+        & + .c-accordion__body {
+            display: none;
+        }
+    }
+
+    &[aria-expanded="true"] {
+        margin-bottom: 0;
+
+        &::before {
+            content: '\25BC';
+        }
+
+        & + .c-accordion__body {
+            @include padding(null, 3);
+            @include margin(b, 3);
+
+            border: $border-default;
+            border-top: 0;
+            display: block;
+        }
+    }
+}
+
+.js {
+    .c-accordion__header {
+        @include margin(b, 3);
+
+        align-items: center;
+        display: flex;
+
+        &::before {
+            @include margin(r, 2);
+
+            font-size: 1rem;
+        }
+
+        &:not([data-breakpoint]) {
+            @include accordion-ui;
+        }
+
+        $_breakpoints: map-keys($breakpoints);
+
+        @each $bp in $_breakpoints {
+            @include respond-down($bp) {
+                &[data-breakpoint="#{$bp}"] {
+                    @include accordion-ui();
+                }
+            }
+        }
+    }
+}

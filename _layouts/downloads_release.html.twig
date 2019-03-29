@@ -1,0 +1,76 @@
+{% extends "_layouts/page.html.twig" %}
+
+{% set sectiontitle = 'Download Archive' %}
+{% set title = title ~ ' ' ~ this.version %}
+
+{% set download_keys = {
+    windows: 'Windows',
+    macos: 'macOS',
+    irix: 'IRIX',
+    source: 'Source',
+} %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <dl>
+        {% if this.date %}
+            <dt>Release Date</dt>
+            <dd>
+                <time datetime="{{ this.date | date('Y-m-d') }}">{{ this.date | date('F d, Y') }}</time>
+            </dd>
+        {% endif %}
+
+        {% if this.codename %}
+            <dt>Release Name</dt>
+            <dd>
+                {{ this.title }} "{{ this.codename }}"
+            </dd>
+        {% endif %}
+    </dl>
+
+    {% if this.changesummary %}
+        <section>
+            <h2 id="change-summary">Change Summary</h2>
+
+            {{ this.changesummary | markdown }}
+        </section>
+    {% endif %}
+
+    {% if this.changelog -%}
+        <section>
+            <h2 id="changelog">Change Log</h2>
+
+            {{ this.changelog | markdown }}
+        </section>
+    {% endif -%}
+
+    <section class="mb-2">
+        <h2 id="downloads">Downloads</h2>
+
+        {% for platform, files in this.downloads if download_keys[platform] %}
+            <h3 class="h4 mb-1">{{ download_keys[platform] | default(platform) }}</h3>
+            <ul>
+                {% for file in files %}
+                    <li>
+                        {% set file_url -%}
+                            {%- if file.url -%}
+                                {{ file.url }}
+                            {%- else -%}
+                                https://download.bzflag.org/{{ project }}/{{ platform }}/{{ this.version }}/{{ file.filename | replace({'@VER@': this.version}) }}
+                            {%- endif -%}
+                        {%- endset %}
+
+                        <a href="{{ file_url }}">
+                            {{ file.filename | replace({'@VER@': this.version}) }}
+                        </a>
+
+                        {% if file.sha256 %}
+                            - {{ file.sha256 }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </section>
+{% endblock %}

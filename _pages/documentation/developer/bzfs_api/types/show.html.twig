@@ -1,0 +1,132 @@
+---
+collection: bzfs_api_types
+editable: true
+section: documentation
+sectiontitle: Plug-in API
+permalink: /documentation/developer/bzfs_api/types/%basename/
+title: %basename
+parent:
+---
+
+{% extends "_layouts/page.html.twig" %}
+{% from "_includes/api_utils.html.twig" import api_object %}
+
+{% block content %}
+    <h1>{{ this.basename }}</h1>
+    <p><span class="code text-sans-serif">Available since {{ this.since }}</span></p>
+
+    {{ this.content }}
+
+    {% if this.category == 'Enumerations' %}
+        <h2 id="enumerations">Enumerations</h2>
+        <ul>
+            {% for e in this.enumerations %}
+                <li>{{ e }}</li>
+            {% endfor %}
+        </ul>
+    {% elseif this.category == 'Objects' %}
+        {% if this.constructor %}
+            <h2 id="constructors">Constructors</h2>
+
+            {% markdown %}
+                ```cpp
+                {% for c in this.constructor -%}
+                    {{ this.basename }} ({{ c | join(', ') }})
+                {% endfor %}
+                ```
+            {% endmarkdown %}
+        {% endif %}
+
+        {% if this.operators %}
+            <h2 id="operators">Operators</h2>
+
+            {% for o in this.operators %}
+                <h3 class="text-monospace">{{ o.operator }}</h3>
+                <p><strong>Return type</strong>: <code>{{ o.returnType }}</code></p>
+                <p><strong>Supported data types</strong>:</p>
+                    {% for p in o.params %}
+                        {% markdown %}
+                            ```cpp
+                            {{ p }}
+                            ```
+                        {% endmarkdown %}
+                    {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        {% if this.attributes %}
+            <h2 id="data">Data</h2>
+            <p>These are public data attributes available in this class</p>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for a in this.attributes %}
+                    <tr>
+                        <td>{{ api_object(a.dataType) }}</td>
+                        <td><code>{{ a.name }}</code></td>
+                        <td>{{ a.description | markdown }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+
+        {% if this.functions %}
+            <h2 id="methods">Methods</h2>
+
+            {% for f in this.functions %}
+                {%- set types = f.params | default([]) | select('dataType', false, false) -%}
+                {%- set names = f.params | default([]) | select('name', false, false) -%}
+
+                <article id="method_{{ f.name }}">
+                    {% markdown %}
+                        ```cpp
+                        {{ f.returnType }} {{ f.name }}({{- types | zip(names, ' ') | join(', ') -}})
+                        ```
+                    {% endmarkdown %}
+
+                    <section class="method-docs">
+                        <p>{{ f.description }}</p>
+
+                        {% if f.params %}
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th class="text-left" colspan="3">Parameters</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for p in f.params if not p.hide %}
+                                    <tr>
+                                        <td class="method-docs__datatype">{{ api_object(p.dataType) }}</td>
+                                        <td><code>{{ p. name }}</code></td>
+                                        <td>{{ p.description | markdown }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    </section>
+                </article>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+
+    <h2>Other {{ this.category }}</h2>
+    <ul>
+        {% for type in collections.bzfs_api_types | where('category', '==', this.category) | where('basename', '!=', this.basename) | order('filename') %}
+            <li><a href="{{ url(type) }}">{{ type.basename }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="{{ url(pages['bzfs API Types']) }}">Back to bzfs API Types</a>
+    </p>
+{% endblock %}

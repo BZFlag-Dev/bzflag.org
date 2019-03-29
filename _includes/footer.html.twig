@@ -1,0 +1,21 @@
+<footer class="site-footer border-t">
+    <div class="container background-dark py-4 text-center">
+        <div>
+            <p class="m-0"><strong>{{ data.footer.copyright | escape }}</strong></p>
+            <p class="m-0">
+                <small>Copyright &copy; {{ 'now' | date('Y') }}</small>
+            </p>
+        </div>
+
+        <ul class="site-footer__links mb-0">
+            {% for link in data.footer.links %}
+                {%- set url = link.url[0] == '/' ? url(link.url) : link.url -%}
+                <li>
+                    <a href="{{ url }}">
+                        {{- link.name -}}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</footer>

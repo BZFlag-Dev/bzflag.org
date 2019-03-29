@@ -3,8 +3,8 @@ changelog: ''
 date: '2005-07-08'
 downloads:
     windows:
-        -
-            filename: BZEditW32_1.6.5.exe
+        - filename: BZEditW32_@VER@.exe
+          sha256: 84d1bda5dbf814742898a2e1c0e4bc793e9bc1fba4b7a93d59a7ef12bd0fd802
     source:
-        -
-            filename: BZEditW32_1.6.5_Source.zip
+        - filename: BZEditW32_@VER@_Source.zip
+          sha256: 25eb48ea219dd4b2faa54f354dfe9abd41d64cf9acd402d2fbd3c4282e31241b

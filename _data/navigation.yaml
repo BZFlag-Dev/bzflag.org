@@ -1,0 +1,13 @@
+links:
+    - url: /media/
+      name: Media
+    - url: /getting-started/
+      name: Getting Started
+    - url: /downloads/
+      name: Downloads
+    - url: https://forums.bzflag.org
+      name: Forums
+    - url: /documentation/
+      name: Documentation
+    - url: /help/
+      name: Help

@@ -1,0 +1,13 @@
+.c-media-screenshot {
+    figcaption {
+        @include padding(null, 3);
+
+        background-color: rgba(#000, 0.2);
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}

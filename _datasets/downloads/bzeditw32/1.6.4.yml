@@ -3,8 +3,8 @@ changelog: ''
 date: '2005-03-11'
 downloads:
     windows:
-        -
-            filename: BZEditW32_1.6.4-1_Installer.exe
+        - filename: BZEditW32_@VER@-1_Installer.exe
+          sha256: 987e1653861f3f4178f6e1179eb15b96ab47a81bb04336180b00730349d35355
     source:
-        -
-            filename: BZEditW32_1.6.4_Source.zip
+        - filename: BZEditW32_@VER@_Source.zip
+          sha256: 7045a121910e583290009a45e4daf04ebc7622e857d25b6b868a2e4d48eb46a0

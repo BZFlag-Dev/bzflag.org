@@ -1,0 +1,73 @@
+.s-documentation {
+    h1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    h2 {
+        @include padding(b, 1);
+        @include margin(t, 4);
+        @include margin(b, 3);
+
+        border-bottom: $border-default;
+    }
+
+    p,
+    table {
+        @include margin(y, 3);
+    }
+
+    table {
+        // Don't add any unnecessary spacing to paragraphs inside of tables
+        // because there's already padding.
+        p:first-of-type {
+            margin-top: 0;
+        }
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    kbd {
+        background-color: white;
+        border: 1px solid black;
+        border-radius: $border-radius;
+        color: black;
+        display: inline-block;
+        font-family: $font-stack-sans-serif;
+        font-weight: bold;
+        padding: 0 0.5em;
+        white-space: nowrap;
+    }
+
+    .code,
+    code,
+    pre {
+        background-color: $color-dark;
+        font-family: $font-stack-monospace;
+    }
+
+    .code,
+    code {
+        @include padding(x, 1);
+
+        border-radius: $border-radius;
+        color: $color-secondary;
+    }
+
+    pre {
+        @include margin(b, 3);
+        @include padding(null, 3);
+
+        white-space: pre;
+        word-wrap: break-word;
+
+        code {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 0;
+            white-space: pre;
+        }
+    }
+}

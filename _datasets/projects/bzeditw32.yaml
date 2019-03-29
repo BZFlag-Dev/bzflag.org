@@ -1,0 +1,7 @@
+name: BZEditW32
+active: false
+short_description: An old map editor for BZFlag 1.7 world format.
+description: |
+    BZEditW32 is an old map editor created for editing BZFlag worlds. It only
+    map features that existed in BZFlag 1.7, so it is lacking support for mesh
+    objects, options block, groups, and any other features added since 1.7.

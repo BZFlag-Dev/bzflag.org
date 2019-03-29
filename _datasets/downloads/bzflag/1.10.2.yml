@@ -1,44 +1,44 @@
 version: 1.10.2
 changelog: |
-  * improved transparent proxy support for server - Frank Thilo, Alfredo Tupone
-  * Stop infinite spawn loop with complex worlds containing big pyramids
-  * Misc Swear processing fixes - Sean Morrison
-  * Allow banfile to be empty or not exist
-  * Don't let zoned tanks flatten Burrowed tanks
-  * Don't spawn in multiple locations based on multiple r-clicks
-  * Don't get speed kicked ejecting from buildings due to expansion
-  * Fix game style menu position
-  * Take flipz collisions in account for pyramids
-  * Fix Respawning after non-shot kills (Geno, Self Destruct, etc)
-  * More caching of BZBD vars - Frank Thilo
-  * ServerList uses strict http/1.1 - Frank Thilo
-  * Fix playercounts in rabbit mode
-  * GM now tracks player in slot 0
-  * Relax kick tolerances and soften kick messages - Sean Morrison
-  * Better lag stats - Frank Thilo
-  * Server-side Autoteam - Sean Morrison, Tupone Alfredo, Frank Thilo
-  * Remove bad lite effects with Thief steal
-  * Protect against crashes due to bad shot ids
-  * Better key binding - Tupone Alfredo, Dave Brosius
-  * Relax flag drop time for speed checking - Sean Morrison
-  * Better unresponsive player removal messages
-  * added kill messages as an option to bzadmin - Lars Luthman
-  * let genocided players spawn again - Lars Luthman
-  * auto team is now handled solely in the server - Frank Thilo
-  * increase averaging for jitter and loss values in lagstats - Frank Thilo
-  * mrtg script updated - Tim Riker
+    * improved transparent proxy support for server - Frank Thilo, Alfredo Tupone
+    * Stop infinite spawn loop with complex worlds containing big pyramids
+    * Misc Swear processing fixes - Sean Morrison
+    * Allow banfile to be empty or not exist
+    * Don't let zoned tanks flatten Burrowed tanks
+    * Don't spawn in multiple locations based on multiple r-clicks
+    * Don't get speed kicked ejecting from buildings due to expansion
+    * Fix game style menu position
+    * Take flipz collisions in account for pyramids
+    * Fix Respawning after non-shot kills (Geno, Self Destruct, etc)
+    * More caching of BZBD vars - Frank Thilo
+    * ServerList uses strict http/1.1 - Frank Thilo
+    * Fix playercounts in rabbit mode
+    * GM now tracks player in slot 0
+    * Relax kick tolerances and soften kick messages - Sean Morrison
+    * Better lag stats - Frank Thilo
+    * Server-side Autoteam - Sean Morrison, Tupone Alfredo, Frank Thilo
+    * Remove bad lite effects with Thief steal
+    * Protect against crashes due to bad shot ids
+    * Better key binding - Tupone Alfredo, Dave Brosius
+    * Relax flag drop time for speed checking - Sean Morrison
+    * Better unresponsive player removal messages
+    * added kill messages as an option to bzadmin - Lars Luthman
+    * let genocided players spawn again - Lars Luthman
+    * auto team is now handled solely in the server - Frank Thilo
+    * increase averaging for jitter and loss values in lagstats - Frank Thilo
+    * mrtg script updated - Tim Riker
 date: '2003-12-23'
 downloads:
     windows:
-        -
-            filename: bzflag-1.10.2-1.W32.exe
+        - filename: bzflag-@VER@-1.W32.exe
+          sha256: f281586081737549591c726aaba46fc490a9e94780b55e776874955930bc22a3
     macos:
-        -
-            filename: BZFlag_1.10.2.dmg
+        - filename: BZFlag_@VER@.dmg
+          sha256: 7a062156a7ddfd9b55c5ab08fea06b38fe2585ea1b292e5a063faa9dbeb971ff
     source:
-        -
-            filename: bzflag-1.10.2.zip
-        -
-            filename: bzflag-1.10.2.tar.gz
-        -
-            filename: bzflag-1.10.2.tar.bz2
+        - filename: bzflag-@VER@.zip
+          sha256: 0dfc0f7b0363b9b2a9817a434175beecb6dc753884568a45c1a4531e092c5cff
+        - filename: bzflag-@VER@.tar.gz
+          sha256: 16118551c3f6dca219edd10010e040c12623823c5dbb2ddf4c61a9dcc7d522a0
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: ec3a12f5c718ddae38a55081b517e23972143e4647724cb8644341a699f0b5f9

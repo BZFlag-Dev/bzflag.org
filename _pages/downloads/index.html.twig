@@ -1,0 +1,82 @@
+---
+title: Downloads
+section: downloads
+permalink: /downloads/
+jumbotron:
+    image: /assets/images/downloads/jumbotron.jpg
+    alt: ~
+opengraph:
+    description: BZFlag is available as a free download. Pre-built packages are available for Windows and macOS.
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% block content %}
+    <div class="row mb-3">
+        <div class="col-md-8 offset-md-2">
+            <div class="show-macos">
+                <p class="text-center">
+                    If you use <a href="https://brew.sh/">Homebrew</a> on macOS, you may download BZFlag via the
+                    <code>brew</code> command. Alternatively, you may download our binary below and drag the .app into
+                    your Applications directory.
+                </p>
+
+                {% include "_includes/terminal.html.twig" with { command: 'brew cask install bzflag', os: 'macos' } %}
+            </div>
+
+            <div class="show-linux">
+                <p>
+                    If you use <a href="https://flatpak.org/">Flatpak</a> on your Linux system, you may install BZFlag
+                    through the <code>flatpak</code> command. Alternatively, you may install from your package manager
+                    or compile from source. Note that some distribution packages may automatically run a game server.
+                </p>
+
+                {% include "_includes/terminal.html.twig" with { command: 'flatpak install flathub org.bzflag.BZFlag', os: 'linux' } %}
+            </div>
+
+            {# Since we're not officially maintaining the Chocolatey version yet; let's not officially advertise it #}
+            {# @todo uncomment once we've taken it over #}
+            {#
+            <div class="show-windows">
+                <p class="text-center">
+                    If you use <a href="https://chocolatey.org/">Chocolatey</a> on your machine, you may download BZFlag
+                    via the <code>choco</code> command.
+                </p>
+
+                {% include "_includes/terminal.html.twig" with { command: 'choco install bzflag', os: 'windows' } %}
+            </div>
+            #}
+        </div>
+    </div>
+
+    {% include "_includes/latest_downloads.html.twig" %}
+
+    {% set latest_release = data.downloads_bzflag | order('date', 'DESC') | first %}
+
+    {% markdown %}
+        ## Release Summary
+
+        {{ latest_release.changesummary }}
+
+        {% if latest_release.discussion -%}
+            [Join the discussion &raquo;]({{ latest_release.discussion }})
+        {%- endif %}
+
+        ## Changelog
+
+        {{ latest_release.changelog }}
+
+        ## Licensing
+
+        BZFlag is licensed under the [LGPL 2.1 and MPL 2.0](https://raw.githubusercontent.com/BZFlag-Dev/bzflag/2.4/COPYING)
+        and is free to use/distribute/modify as long as the terms of the license are followed.
+
+        ## Other Releases
+
+        The source code repository is available on GitHub for [BZFlag](https://github.com/BZFlag-Dev/bzflag) and our
+        [related sub-projects](https://github.com/BZFlag-Dev).
+
+        Previous releases are available in the [download archive]({{ url(pages['Download Archive']) }}) and on
+        [GitHub](https://github.com/BZFlag-Dev/bzflag/releases).
+    {% endmarkdown %}
+{% endblock %}

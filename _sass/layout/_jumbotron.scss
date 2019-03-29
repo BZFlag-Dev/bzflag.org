@@ -1,0 +1,47 @@
+.page-jumbotron {
+}
+
+.page-jumbotron__wrapper {
+    background-color: rgba(41, 45, 60, 0.7);
+    overflow: hidden;
+    position: relative;
+}
+
+.page-jumbotron__image {
+    height: 300px;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
+
+    @include respond-up(md) {
+        height: 400px;
+    }
+
+    @include respond-up(lg) {
+        height: 500px;
+    }
+}
+
+.page-jumbotron__title {
+    @include padding(x, 3);
+
+    bottom: 20px;
+    position: absolute;
+    text-align: center;
+    text-shadow: $text-shadow;
+    width: 100%;
+
+    @include respond-up(md) {
+        bottom: 80px;
+    }
+
+    h1 {
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+        margin-top: 5px;
+    }
+}

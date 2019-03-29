@@ -1,0 +1,18 @@
+---
+collection: developer_documentation
+section: documentation
+sectiontitle: Developer Documentation
+permalink: /documentation/developer/%docpath/
+parent:
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% block content %}
+    <h1>{{ this.title }}</h1>
+    {% if this.parent %}<div><a href="/documentation/developer/{{ this.parent.docpath }}/">{{ this.parent.title }}</a></div>{% endif %}
+
+    {{ this.content }}
+
+    {% include "_includes/edit_me.html.twig" %}
+{% endblock %}

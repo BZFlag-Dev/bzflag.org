@@ -1,0 +1,7 @@
+.c-well {
+    @include padding(null, 3);
+
+    background-color: rgba(54, 64, 99, 0.5);
+    border: $border-default;
+    border-radius: $border-radius;
+}

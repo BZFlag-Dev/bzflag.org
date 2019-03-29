@@ -1,0 +1,26 @@
+<section class="border-t mt-4 py-4 text-center">
+    <div>
+        <p class="mt-0 mb-2 text-muted">
+            <small>This content is maintained on GitHub. We welcome any feedback and improvements!</small>
+        </p>
+    </div>
+
+    {# All hail our GitHub overlords! #}
+    {# https://help.github.com/articles/about-automation-for-issues-and-pull-requests-with-query-parameters/ #}
+    {% set gh_params = {
+        title: 'Feedback on "%s" page' | format(this.title),
+        body: 'File: %s\nURL: %s' | format(this.filePath, url(this.permalink, absolute=true))
+    } %}
+
+    <a href="https://github.com/{{ site.github.site_repo }}/issues/new?{{ gh_params | url_encode }}"
+       class="c-button c-button--inverse c-button--skinny small mx-2 mb-2 mb-md-0 d-block d-md-inline"
+    >
+        Give us Feedback
+    </a>
+
+    <a href="https://github.com/{{ site.github.site_repo }}/blob/{{ site.github.site_branch }}/{{ this.filePath }}"
+       class="c-button c-button--inverse c-button--skinny small mx-2 d-block d-md-inline"
+    >
+        Edit this Page
+    </a>
+</section>

@@ -4,56 +4,127 @@ section: media
 permalink: /media/
 ---
 
-{% extends "_layouts/layout.twig" %}
+{% extends "_layouts/page.html.twig" %}
 
-{% block head %}
-  <link rel="stylesheet" href="/css/milkbox.css" />
-{% endblock %}
+{% from _self import media_screenshot_block %}
+
+{% macro media_screenshot_block(screenshot) %}
+    <div class="col-md-6 col-lg-4">
+        <figure class="c-media-screenshot"
+                itemprop="associatedMedia"
+                itemscope
+                itemtype="http://schema.org/ImageObject"
+        >
+            <a href="{{ url(data.media.screenshots.url_formats.full | format(screenshot.filename)) }}"
+               itemprop="contentUrl"
+               data-size="1920x1200"
+            >
+                <img src="{{ url(data.media.screenshots.url_formats.thumbnail | format(screenshot.filename)) }}"
+                     itemprop="thumbnail"
+                     alt="{{ screenshot.caption | striptags | e }}"
+                />
+            </a>
+
+            {% if screenshot.caption %}
+                <figcaption itemprop="caption description">{{ screenshot.caption }}</figcaption>
+            {% endif %}
+        </figure>
+    </div>
+{% endmacro %}
 
 {% block content %}
-   <h2>Screenshots</h2>
+    <h1>Map Gallery</h1>
+    <p class="mb-3">
+        The BZFlag community consists of talented map designers whom take advantage of BZFlag's open map system allowing for a wide variety of styles.
+    </p>
 
-    <div class="screenshots" itemscope itemtype="http://schema.org/ImageGallery">
+    <div class="js-screenshots" itemscope itemtype="http://schema.org/ImageGallery">
+        {% for map in data.media.screenshots.maps %}
+            <div>
+                <h2>{{ map.name }}</h2>
 
-      {% for screenshot in data.media.screenshots.items -%}
-      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="{{ data.media.screenshots.url_formats.full|format(screenshot) }}" itemprop="contentUrl" data-milkbox="media">
-          <img src="{{ data.media.screenshots.url_formats.thumbnail|format(screenshot) }}" itemprop="thumbnail" alt="" />
-        </a>
-      </figure>
-      {%- endfor %}
+                {%- if map.author -%}
+                    <p class="mb-3"><strong>Author:</strong> {{ map.author }}</p>
+                {%- endif -%}
+
+                {% if map.caption %}
+                    {{ map.caption | markdown }}
+                {% endif %}
+
+                <div class="row">
+                    {% for screenshot in map.images %}
+                        {{ media_screenshot_block(screenshot) }}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+            <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+
+                <div class="pswp__top-bar">
+
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+
+                    <div class="pswp__counter"></div>
+
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
-{% endblock %}
 
-{% block scripts %}
-  <script src="/js/mootools-core-1.6.0-compressed.js"></script>
-  <script src="/js/mootools-more-1.6.0-compressed.js"></script>
-  <script src="/js/milkbox-yc.js"></script>
-  <script>
-    var milkbox;
-    Milkbox = new Class({
-      Extends: Milkbox,
-      checkFileType:function(file,type){
-        if (type === "html") {
-          var href = (typeOf(file) !== 'string') ? file.href : file;
-          if (href.test(/(youtube-nocookie|youtube)\.com\/embed/))
-            return true;
-        }
-
-        return this.parent(file, type);
-      }
-    });
-
-    MilkboxGallery = new Class({
-      Extends: MilkboxGallery,
-      check_extension:function(string){
-        return (string.test(/(youtube-nocookie|youtube)\.com\/embed/) || this.parent(string));
-      }
-    });
-
-    window.addEvent('domready', function(){
-      milkbox = new Milkbox({ centered:true });
-    });
-  </script>
+    <script src="/assets/js/photoswipe.min.js"></script>
+    <script src="/assets/js/photoswipe-ui-default.min.js"></script>
+    <script src="/assets/js/screenshots.js"></script>
 {% endblock %}

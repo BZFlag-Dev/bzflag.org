@@ -1,0 +1,24 @@
+---
+permalink: /downloads/archive/
+title: Download Archive
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% block content %}
+    <h1>{{ this.title }}</h1>
+
+    {% set official_projects = data.projects | group('active') %}
+
+    {% for active, projects in official_projects | reverse %}
+        {% set heading %}{{ active == 'true' ? 'Active' : 'Legacy' }} Projects{% endset %}
+
+        <h2 id="{{ heading | slug }}">{{ heading }}</h2>
+
+        <ul>
+            {% for shortname, project in projects %}
+                <li><a href="/downloads/archive/{{ shortname }}/">{{ project.name }}</a> - {{ project.short_description }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}

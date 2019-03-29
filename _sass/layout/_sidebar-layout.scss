@@ -1,0 +1,66 @@
+// The breakpoint where the sidebar layout is activated
+$_sidebar-breakpoint: lg;
+
+.l-sidebar {
+    @include respond-up($_sidebar-breakpoint) {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+        -ms-grid-rows: min-content 1fr min-content;
+        grid-template-rows: min-content 1fr min-content;
+    }
+}
+
+.l-sidebar__introduction,
+.l-sidebar__body,
+.l-sidebar__footer {
+    @include padding(l, 3, $_sidebar-breakpoint);
+
+    overflow: hidden;
+
+    @include respond-up($_sidebar-breakpoint) {
+        border-left: $border-default;
+    }
+}
+
+.l-sidebar__sidebar {
+    @include respond-up($_sidebar-breakpoint) {
+        @include padding(r, 3);
+
+        -ms-grid-column: 1;
+        grid-column: 1;
+
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 3;
+        grid-row: 1 / span 3;
+
+        position: relative;
+    }
+}
+
+.l-sidebar__scrollable {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+
+    @include respond-up($_sidebar-breakpoint) {
+        max-height: 95vh;
+        overflow: auto;
+    }
+}
+
+.l-sidebar__nav {
+    @include margin(t, 3, $_sidebar-breakpoint);
+    @include padding(y, 3, $_sidebar-breakpoint);
+
+    @include respond-up($_sidebar-breakpoint) {
+        border-top: $border-default;
+    }
+
+    .l-sidebar__nav__link::before {
+        @include margin(r, 1);
+
+        content: '\00AB';
+    }
+}

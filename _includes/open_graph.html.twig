@@ -1,0 +1,32 @@
+{# ========================================================================================================== #}
+{#  Open Graph Markup  #}
+{#    reference: https://dev.twitter.com/cards/types/summary #}
+{#    reference: https://developers.facebook.com/docs/sharing/webmasters #}
+{# ========================================================================================================== #}
+
+{# If no Open Graph data is defined, let's define some default information #}
+{%- set opengraph_default = {
+    'og:url': url(this.permalink, absolute=true),
+    'og:type': 'website',
+    'og:title': this.opengraph.title | default(page_title),
+    'og:description': page_description,
+    'og:image': this.opengraph.image | default(url(site.opengraph.image, absolute=true)),
+    'twitter:card': 'summary',
+} -%}
+{%- set opengraph_fallbacks = {
+    'twitter:title': 'og:title',
+    'twitter:image': 'og:image',
+    'twitter:description': 'og:description'
+} -%}
+
+{%- set og_attrs = opengraph_default | merge(opengraph | default({})) -%}
+{%- set og_fallbacks = opengraph_fallbacks | merge(fallbacks | default({})) -%}
+
+{# This attributes will take the same value as their OpenGraph fallbacks #}
+{%- for attr in og_fallbacks | keys -%}
+    {%- set og_attrs = og_attrs | merge({ (attr): og_attrs[og_fallbacks[attr]] }) -%}
+{%- endfor -%}
+
+{%- for attr in og_attrs | keys -%}
+    <meta property="{{ attr }}" content="{{ og_attrs[attr] | raw }}">
+{% endfor -%}

@@ -1,0 +1,13 @@
+.c-video-player {
+    @include padding(null, 3);
+    @include padding(null, 4, md);
+
+    background-color: rgba(#000, 0.2);
+    box-shadow: $box-shadow;
+}
+
+// plyr overrides
+
+.plyr__control--overlaid {
+    background: rgba(#000, 0.7);
+}

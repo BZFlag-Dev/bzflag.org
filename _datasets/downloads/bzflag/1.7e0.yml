@@ -1,26 +1,26 @@
 version: '1.7e0'
 changelog: |
-  * Tim Riker now maintainer
-  * build now 3 digits so alpha sorts work (until we hit 1.10? ;-)
-  * copyright and naming changes
-  * save flaghelp and score state
-  * FreeBSD patch - Eric Anholt
-  * world creation reordering to support world from file
-  * compilation with VC++6 - Jeremiah Moss
-  * world from a file - Daniel Léonard
-  * travel underneath floating buildings - Jeremiah Moss
-  * radar update to not hide teleporters under buildings - Jeremiah Moss
-  * teleporter player positioning - Jeremiah Moss
-  * bottoms on floating buildings - Jeremiah Moss
-  * Windows highest refresh rate on program switch - Jeremiah Moss
-  * dns lookups on list server for faster server lists
-  * non-blocking I/O for bzfs and name lookups - crs
-  * phantom player fix - Frank Siegert
+    * Tim Riker now maintainer
+    * build now 3 digits so alpha sorts work (until we hit 1.10? ;-)
+    * copyright and naming changes
+    * save flaghelp and score state
+    * FreeBSD patch - Eric Anholt
+    * world creation reordering to support world from file
+    * compilation with VC++6 - Jeremiah Moss
+    * world from a file - Daniel Léonard
+    * travel underneath floating buildings - Jeremiah Moss
+    * radar update to not hide teleporters under buildings - Jeremiah Moss
+    * teleporter player positioning - Jeremiah Moss
+    * bottoms on floating buildings - Jeremiah Moss
+    * Windows highest refresh rate on program switch - Jeremiah Moss
+    * dns lookups on list server for faster server lists
+    * non-blocking I/O for bzfs and name lookups - crs
+    * phantom player fix - Frank Siegert
 date: '2001-01-26'
 downloads:
     windows:
-        -
-            filename: bzflag17e0.exe
+        - filename: bzflag17e0.exe
+          sha256: 93ae7d58542ac2559dcddd5926f047d439fd4ddb85a88bc26e6397fdbd83393a
     source:
-        -
-            filename: bzflag-1.7e0.tgz
+        - filename: bzflag-@VER@.tgz
+          sha256: c10e7b34f93e861aab2dce22af066413ea29467c6fdd940eabaa3416a1ded016

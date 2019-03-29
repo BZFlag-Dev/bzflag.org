@@ -1,0 +1,5 @@
+cookieDomain: "*.example.com"
+domains:
+    - "*.example.com"
+baseURL: https://example.com/matomo/
+siteID: 1006

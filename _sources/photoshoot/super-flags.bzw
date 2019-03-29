@@ -1,0 +1,8 @@
+options
+  +f US{1}
+  -mp 0,0,1,0,0,10
+
+  # We're using the green team, so we gotta do a blue screen
+  -set _mirror blue
+  -set _skyColor blue
+end

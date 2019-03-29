@@ -1,0 +1,38 @@
+---
+section: documentation
+sectiontitle: User Docs
+permalink: /documentation/flags/
+title: Flags
+parent:
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% set flags = collections.flags | group('type') %}
+{% set types = ['Good', 'Bad'] %}
+
+{% block content %}
+    <h1>Flags</h1>
+    <p>There are two types of flags in BZFlag: team flags and super flags. Team flags only show up in the Capture The Flag game mode.</p>
+    <p>Super flags come in both a good and bad variety. Servers can choose to include specific flags, and many do not include any bad flags at all. Some servers may not have any flags.</p>
+
+    {% for type in types %}
+        <h2>{{ type }} Flags</h2>
+        {% if type == 'Good' %}
+        <p>Good super flags provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile.</p>
+        {% elseif type == 'Bad' %}
+        <p>Bad super flags disable parts of the tank or reduce performance of the tank.</p>
+        {% endif %}
+        <ul>
+            {% for flag in flags[type] | order('filename') %}
+                <li>
+                    <a href="{{ url(flag) }}"
+                       class="text-decoration-none"
+                    >
+                        {{- flag.name -}}
+                    </a> - {{ flag.summary -}}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
