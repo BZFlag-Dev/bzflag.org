@@ -26,6 +26,6 @@ There are several ways of killing a burrowed player. Besides the GM flag, the [S
 
 ## Server Settings
 
-- `_burrowAngularAd` - A multiplier for the turning speed of a burrowed tank
+- `_burrowAngularAd` - A multiplier that controls the turning speed of a burrowed tank
 - `_burrowDepth` - This is the depth that a burrowed tank will sink to
-- `_burrowSpeedAd` - A multiplier for the velocity of a burrowed tank
+- `_burrowSpeedAd` - A multiplier that controls the velocity of a burrowed tank
