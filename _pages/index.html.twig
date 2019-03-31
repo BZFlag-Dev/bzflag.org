@@ -181,8 +181,10 @@ opengraph:
                                     width="536"
                                     height="338"
                                     loop="loop"
-                                    autoplay="autoplay"
+                                    muted="muted"
+                                    preload="none"
                                     poster="{{ url('/assets/images/home/' ~ flag.assetFilename ~ '-poster.jpg') }}"
+                                    controls="controls"
                                     class="js-flag-video"
                                 >
                                     <source src="{{ url('/assets/videos/home/' ~ flag.assetFilename ~ '.mp4') }}" type="video/mp4" />
@@ -237,6 +239,14 @@ opengraph:
                 disableContextMenu: false
             });
         }
+
+        window.addEventListener('scroll', function() {
+            if (flagVideos[0].getBoundingClientRect().top < (window.innerHeight || document.documentElement.clientHeight) + 500) {
+                for (let i = 0; i < flagVideos.length; i++)
+                    flagVideos[i].play();
+                window.removeEventListener('scroll', arguments.callee);
+            }
+        });
     })();
     </script>
 {% endblock %}
