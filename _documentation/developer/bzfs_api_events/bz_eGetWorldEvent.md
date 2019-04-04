@@ -14,7 +14,7 @@ parameters:
       description: This value represents the game state being a Capture the Flag (CTF) type
       name: ctf
     - dataType: bool
-      description: This value represents the game state being a Rabbit Hunt type game.
+      description: This value represents the game state being a Rabbit Chase type game.
       name: rabbit
     - dataType: bool
       description: This value represents the game state being a Free For All type game.

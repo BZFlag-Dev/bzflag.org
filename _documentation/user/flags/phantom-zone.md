@@ -13,4 +13,4 @@ Whiled Zoned, the tank shoots Zoned bullets. Such bullets are only capable of ki
 
 ## Tactics
 
-Phantom Zone can be utilized as a means of quick navigation or for escaping purposes. The former is viable when attempting to directly reach a certain destination, such as the opponent's team flag, a zone filled with desirable flags, or a viable battle position. The latter can be considered at the rabbit hunt game mode to escape as a rabbit for an extended period of time.
+Phantom Zone can be utilized as a means of quick navigation or for escaping purposes. The former is viable when attempting to directly reach a certain destination, such as the opponent's team flag, a zone filled with desirable flags, or a viable battle position. The latter can be considered at the Rabbit Chase game mode to escape as a rabbit for an extended period of time.
