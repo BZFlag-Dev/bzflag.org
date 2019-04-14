@@ -28,41 +28,29 @@ Download the [latest development library .dmg file][sdl] and open it.  Drag the 
 Download the [latest GLEW .tgz source release][glew] and extract the contents. Open a Terminal and `cd` into the glew
 directory that was just created by extracting. Then run the following commands:
 
-<div class="c-terminal" data-auto-os="false" data-os="macos">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command  = [
+  { folder: '~/glew', command: 'export MACOSX_DEPLOYMENT_TARGET=10.7' },
+  { folder: '~/glew', command: 'export GLEW_DEST=/usr/local' },
+  { folder: '~/glew', command: 'make glew.lib' },
+  { folder: '~/glew', command: 'sudo make install' },
+  { folder: '~/glew', command: 'sudo rm /usr/local/lib/libGLEW*.dylib' },
+]%}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/glew"></span>export MACOSX_DEPLOYMENT_TARGET=10.7<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/glew"></span>export GLEW_DEST=/usr/local<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/glew"></span>make glew.lib<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/glew"></span>sudo make install<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/glew"></span>sudo rm /usr/local/lib/libGLEW*.dylib
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'macos' } %}
 
 ### c-ares
 
 Download the [latest c-ares source release][c-ares] and extract the contents. Open a terminal and `cd` into the c-ares
 directory that was just created by extracting. Then run the following commands:
 
-<div class="c-terminal" data-auto-os="false" data-os="macos">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command = [
+  { folder: '~/c-ares', command: 'export MACOSX_DEPLOYMENT_TARGET=10.7' },
+  { folder: '~/c-ares', command: './configure --disable-shared' },
+  { folder: '~/c-ares', command: 'make' },
+  { folder: '~/c-ares', command: 'sudo make install' },
+] %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/c-ares"></span>export MACOSX_DEPLOYMENT_TARGET=10.7<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/c-ares"></span>./configure --disable-shared<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/c-ares"></span>make<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~/c-ares"></span>sudo make install
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'macos' } %}
 
 ## Obtaining the code
 
@@ -71,31 +59,19 @@ directory that was just created by extracting. Then run the following commands:
 Either download and extract the specific release source .tar.gz or .tar.bz2 from our
 [downloads archive](/downloads/archive/bzflag/) or use Git to download the current 2.4 branch.
 
-<div class="c-terminal" data-auto-os="false" data-os="macos">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command %}
+git clone --branch 2.4 https://github.com/BZFlag-Dev/bzflag.git
+{% endset %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~"></span>git clone --branch 2.4 https://github.com/BZFlag-Dev/bzflag.git
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'macos', folder: '~' } %}
 
 **For BZFlag master (2.5):**
 
-<div class="c-terminal" data-auto-os="false" data-os="macos">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command %}
+git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
+{% endset %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="~"></span>git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'macos', folder: '~' } %}
 
 ## Building the code
 

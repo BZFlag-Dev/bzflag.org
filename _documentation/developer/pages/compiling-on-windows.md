@@ -38,35 +38,23 @@ option.
 
 **For BZFlag 2.4:**
 
-<div class="c-terminal" data-auto-os="false" data-os="windows">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command = [
+  { folder: '', command: 'mkdir \\code' },
+  { folder: '', command: 'cd \\code' },
+  { folder: 'code', command: 'git clone --branch 2.4 https://github.com/BZFlag-Dev/bzflag-dependencies.git' },
+] %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true"></span>mkdir \code<br />
-        <span class="c-terminal__prompt" aria-hidden="true"></span>cd \code<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="code"></span>git clone --branch 2.4 https://github.com/BZFlag-Dev/bzflag-dependencies.git
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'windows' } %}
 
 **For BZFlag master (2.5):**
 
-<div class="c-terminal" data-auto-os="false" data-os="windows">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command = [
+  { folder: '', command: 'mkdir \\code' },
+  { folder: '', command: 'cd \\code' },
+  { folder: 'code', command: 'git clone --branch master https://github.com/BZFlag-Dev/bzflag-dependencies.git' },
+] %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true"></span>mkdir \code<br />
-        <span class="c-terminal__prompt" aria-hidden="true"></span>cd \code<br />
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="code"></span>git clone --branch master https://github.com/BZFlag-Dev/bzflag-dependencies.git
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'windows' } %}
 
 Once the repository is cloned, navigate to the directory and run the buildVC2017.bat file. This will take a bit to run
 but should result in successful builds.
@@ -96,31 +84,19 @@ output-* and licenses directories to the dependencies directory in the BZFlag so
 Either download and extract the specific release source .zip from our [downloads archive](/downloads/archive/bzflag/)
 or use Git to download the current 2.4 branch.
 
-<div class="c-terminal" data-auto-os="false" data-os="windows">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command %}
+git clone --branch 2.4 https://github.com/BZFlag-Dev/bzflag.git
+{% endset %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="code"></span>git clone --branch 2.4 https://github.com/BZFlag-Dev/bzflag.git
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'windows', folder: 'code' } %}
 
 **For BZFlag master (2.5):**
 
-<div class="c-terminal" data-auto-os="false" data-os="windows">
-    <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-    </div>
+{% set command %}
+git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
+{% endset %}
 
-    <div class="c-terminal__body">
-        <span class="c-terminal__prompt" aria-hidden="true" data-folder="code"></span>git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
-    </div>
-</div>
+{% include '_includes/terminal.html.twig' with { command: command, os: 'windows', folder: 'code' } %}
 
 ## Building the code
 

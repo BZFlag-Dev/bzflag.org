@@ -7,12 +7,24 @@
 
     <div class="c-terminal__body">
         {% if command %}
-            <span
-                class="c-terminal__prompt"
-                {% if folder %}data-folder="{{ folder }}"{% endif %}
-                {% if admin %}data-admin="true"{% endif %}
-                aria-hidden="true"
-            ></span>{{ command }}
+            {% if command is iterable %}
+                {% for cmd in command %}
+                    <span
+                        class="c-terminal__prompt"
+                        aria-hidden="true"
+                        {% if cmd.folder %}data-folder="{{ cmd.folder }}"{% endif %}
+                        {% if cmd.admin %}data-admin="true"{% endif %}
+                    ></span>{{ cmd.command }}
+                    {% if not loop.last %}<br />{% endif %}
+                {% endfor %}
+            {% else %}
+                <span
+                    class="c-terminal__prompt"
+                    aria-hidden="true"
+                    {% if folder %}data-folder="{{ folder }}"{% endif %}
+                    {% if admin %}data-admin="true"{% endif %}
+                ></span>{{ command }}
+            {% endif %}
         {% else %}
             {{ body | raw }}
         {% endif %}
