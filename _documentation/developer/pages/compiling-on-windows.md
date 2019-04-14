@@ -1,6 +1,6 @@
 ---
 title: Compiling on Windows
-docpath: compiling/windows
+docpath: compiling/windows/
 ---
 
 ## Dependencies

@@ -1,6 +1,6 @@
 ---
 title: Compiling on macOS
-docpath: compiling/macos
+docpath: compiling/macos/
 ---
 
 ## Note

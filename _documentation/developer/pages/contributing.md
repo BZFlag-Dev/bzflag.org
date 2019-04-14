@@ -1,6 +1,6 @@
 ---
 title: Contributing
-docpath: contributing
+docpath: contributing/
 ---
 
 ## Reporting Bugs/Issues

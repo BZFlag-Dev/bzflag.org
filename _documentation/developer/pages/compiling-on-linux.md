@@ -1,6 +1,6 @@
 ---
 title: Compiling on Linux
-docpath: compiling/linux
+docpath: compiling/linux/
 ---
 
 ## Dependencies
