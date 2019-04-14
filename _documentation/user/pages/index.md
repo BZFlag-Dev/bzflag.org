@@ -10,9 +10,11 @@ docpath: /
 
 ## Developer
 
+{% set dev_docs = collections.developer_documentation %}
+
 - Compiling on:
-  - [Windows](/documentation/developer/compiling/windows)
-  - [Linux](/documentation/developer/compiling/linux)
-  - [macOS](/documentation/developer/compiling/macos)
-- [bzfs API](/documentation/developer/bzfs_api)
-- [Contributing to the project](/documentation/developer/contributing)
+  - [Windows]({{ url(dev_docs['compiling-on-windows']) }})
+  - [Linux]({{ url(dev_docs['compiling-on-linux']) }})
+  - [macOS]({{ url(dev_docs['compiling-on-macos']) }})
+- [bzfs API]({{ url(pages['bzfs API']) }})
+- [Contributing to the project]({{ url(dev_docs['contributing']) }})
