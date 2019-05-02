@@ -11,4 +11,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Unbans specified host, based on `hostmask` provided.

@@ -23,4 +23,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Bans the host of specified user for the `duration` and `reason` provided.

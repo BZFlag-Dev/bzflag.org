@@ -23,4 +23,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Bans the IP of the user `playerIndex` with `reason` and `duration`.

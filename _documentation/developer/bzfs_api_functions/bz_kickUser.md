@@ -19,4 +19,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Specified user is kicked with notification of reason being optional.

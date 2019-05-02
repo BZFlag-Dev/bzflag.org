@@ -4,23 +4,23 @@ category: Misc
 signatures:
     - - dataType: int
         name: playerID
-        description: ~
+        description: The ID of player to be killed.
         default: ~
       - dataType: bool
         name: spawnOnBase
-        description: ~
+        description: If `true`, the killed player will respawn on their base.
         default: ~
       - dataType: int
         name: killerID
-        description: ~
+        description: The ID of the killer. If -1, `ServerPlayer` will be used.
         default: ~
       - dataType: const char*
         name: flagID
-        description: ~
+        description: If not `NULL`, the killed player will be killed with `flagID`.
         default: ~
 returns:
     dataType: bool
-    description: ~
+    description: "`true` if the player was killed, otherwise `false`."
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+The player with the specified ID `playerID` is killed by the player with ID `killerID` using the optional flag `flagID`.
