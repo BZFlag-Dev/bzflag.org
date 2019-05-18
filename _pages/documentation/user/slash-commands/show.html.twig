@@ -20,7 +20,7 @@ parent:
     <dl class="border-y py-3">
         <dt><strong>Syntax</strong></dt>
         <dd>
-            <code>/{{ this.command }} {{ this.syntax }}</code>
+            <code>/{{ this.command }} {{ this.syntax | escape('html') }}</code>
         </dd>
 
         <dt><strong>Available Since</strong></dt>
