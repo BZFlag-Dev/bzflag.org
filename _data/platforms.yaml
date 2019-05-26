@@ -1,5 +1,9 @@
 flatpak:
-    desc: Linux (via Flatpak)
+    desc: Linux (Flatpak)
+    os: linux
+
+snapcraft:
+    desc: Linux (Snapcraft)
     os: linux
 
 macos:

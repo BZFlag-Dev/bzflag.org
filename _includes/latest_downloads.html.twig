@@ -2,11 +2,12 @@
     windows: data.downloads_bzflag | where('downloads.windows', '!=', null) | order('date', 'DESC') | first,
     macos: data.downloads_bzflag | where('downloads.macos', '!=', null) | order('date', 'DESC') | first,
     flatpak: data.downloads_bzflag | where('downloads.flatpak', '!=', null) | order('date', 'DESC') | first,
+    snapcraft: data.downloads_bzflag | where('downloads.snapcraft', '!=', null) | order('date', 'DESC') | first,
     source: data.downloads_bzflag | where('downloads.source', '!=', null) | order('date', 'DESC') | first,
 } %}
 
 <div class="text-center">
-    {% for platform in ['macos', 'windows', 'flatpak'] %}
+    {% for platform in ['macos', 'windows', 'flatpak', 'snapcraft'] %}
         {% set platform_name = data.platforms[platform] %}
         {% set download_list = latest_releases[platform].downloads[platform] %}
 

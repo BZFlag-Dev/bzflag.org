@@ -26,12 +26,14 @@ opengraph:
 
             <div class="show-linux">
                 <p>
-                    If you use <a href="https://flatpak.org/">Flatpak</a> on your Linux system, you may install BZFlag
-                    through the <code>flatpak</code> command. Alternatively, you may install from your package manager
-                    or compile from source. Note that some distribution packages may automatically run a game server.
+                    If you use <a href="https://flatpak.org/">Flatpak</a> or <a href="https://snapcraft.io/">Snapcraft</a> on your Linux system, you may install BZFlag through the <code>flatpak</code> or <code>snap</code> command.
+                </p>
+                <p>
+                    Alternatively, you may install from your package manager or compile from source. Note that some distribution packages may automatically run a game server.
                 </p>
 
                 {% include "_includes/terminal.html.twig" with { command: 'flatpak install flathub org.bzflag.BZFlag', os: 'linux' } %}
+                {% include "_includes/terminal.html.twig" with { command: 'snap install bzflag', os: 'linux' } %}
             </div>
 
             {# Since we're not officially maintaining the Chocolatey version yet; let's not officially advertise it #}
