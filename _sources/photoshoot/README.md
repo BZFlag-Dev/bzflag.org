@@ -11,3 +11,11 @@ Each SSG configuration must have two comments at the top of the file:
 
 - The `roampos` values so we can replicate the photos again in the future
 - The `bzfs` values contains the additional cli flags needed to be passed to set up the photoshoot server. Be sure to load the SSG plugin and configuration file in addition to the options listed in this section
+
+## Taking Screenshots
+
+When taking screenshots, it may be helpful to hide your client's GUI, which can be achieved with `/localset`:
+
+```
+/localset noGUI 1
+```
