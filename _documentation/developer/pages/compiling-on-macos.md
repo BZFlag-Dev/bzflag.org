@@ -3,12 +3,6 @@ title: Compiling on macOS
 docpath: compiling/macos/
 ---
 
-## Note
-
-As of SDL 2.0.9, a bug still exists when building on newer macOS and Xcode versions (such as macOS 10.13 and Xcode 9)
-that [prevents minimizing a fullscreen window][sdlbug1] We have success building on Mac OS X 10.10 with Xcode 7. We are
-looking into a workaround that may allow building on modern macOS/Xcode.
-
 ## Dependencies
 
 BZFlag uses Xcode and a several third-party dependencies to build on macOS.
