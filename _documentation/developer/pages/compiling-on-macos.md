@@ -16,7 +16,7 @@ BZFlag uses Xcode and a several third-party dependencies to build on macOS.
 
 As an alternative to manual installation of the various dependencies,
 the [homebrew][brew] package manager can simplify installing external
-packages, if you have it installed
+packages, if you have it installed.
 
 {% set command %}
 brew install sdl2 glew c-ares
