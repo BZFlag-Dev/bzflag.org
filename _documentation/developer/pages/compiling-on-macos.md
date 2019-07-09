@@ -12,6 +12,18 @@ BZFlag uses Xcode and a several third-party dependencies to build on macOS.
 * GLEW
 * c-ares
 
+### Homebrew
+
+As an alternative to manual installation of the various dependencies,
+the [homebrew][brew] package manager can simplify installing external
+packages, if you have it installed.
+
+{% set command %}
+brew install sdl2 glew c-ares
+{% endset %}
+
+{% include '_includes/terminal.html.twig' with { command: command, os: 'macos' } %}
+
 ### SDL
 
 Download the [latest development library .dmg file][sdl] and open it.  Drag the SDL2.framework file into your
@@ -90,6 +102,7 @@ right arrow at the bottom right corner of the path to reveal the application in 
 
 For more information, review the README.MacOSX and DEVINFO files from the source.
 
+[brew]: https://brew.sh
 [sdlbug1]: https://bugzilla.libsdl.org/show_bug.cgi?id=4177
 [sdl]: https://www.libsdl.org/download-2.0.php
 [glew]: https://github.com/nigels-com/glew/releases/latest
