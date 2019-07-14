@@ -13,7 +13,7 @@ With Git and GitHub, contributing to a project is reasonably easy, but we'll try
 
 1. You will need to fork our GitHub repository the first time you want to contribute changes. You can use this same fork for later changes. Sign in to your GitHub account, go to our [GitHub repository](https://github.com/BZFlag-Dev/bzflag), and click the Fork button.
 1. Now that you have a fork of our code, you need to clone it to your computer so you can work on it. Run:<br />`git clone https://github.com/Your_User_Name/bzflag`
-1. You will be working from within the `bzflag.org` directory from now on. Run:<br />`cd bzflag.org`
+1. You will be working from within the `bzflag` directory from now on. Run:<br />`cd bzflag`
 1. In order to later merge changes from our official repository, add an upstream remote:<br />`git remote add upstream https://github.com/BZFlag-Dev/bzflag`
 1. Next, check out the upstream branch you are intending to submit changes to.<br><code>git checkout **master**</code>
 1. **Do not** work directly in the branches that the official repository has created (such as 2.4 or master). Instead, create your own topic branch that describes the change you are trying to make. For instance, if you were trying to add an improved user interface, your branch could be called **feature/betterui**. Create and checkout that new branch with:<br /><code>git checkout -b **feature/betterui**</code>
