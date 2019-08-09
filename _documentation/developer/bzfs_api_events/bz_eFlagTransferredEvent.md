@@ -9,10 +9,10 @@ plugins:
     - thiefControl
 parameters:
     - dataType: int
-      description: The ID of the player that stole the flag
+      description: The ID of the player whose flag was stolen
       name: fromPlayerID
     - dataType: int
-      description: The ID of the player whose flag was stolen
+      description: The ID of the player that stole the flag
       name: toPlayerID
     - dataType: const char*
       description: The flag code of the stolen flag
