@@ -17,22 +17,44 @@ parent:
     <p>Super flags come in both a good and bad variety. Servers can choose to include specific flags, and many do not include any bad flags at all. Some servers may not have any flags.</p>
 
     {% for type in types %}
-        <h2>{{ type }} Flags</h2>
+        <h2 id="{{ type | slug }}-flags">{{ type }} Flags</h2>
+
         {% if type == 'Good' %}
-        <p>Good super flags provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile.</p>
+            <p>Good super flags provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile.</p>
         {% elseif type == 'Bad' %}
-        <p>Bad super flags disable parts of the tank or reduce performance of the tank.</p>
+            <p>Bad super flags disable parts of the tank or reduce performance of the tank.</p>
         {% endif %}
-        <ul>
-            {% for flag in flags[type] | order('filename') %}
-                <li>
-                    <a href="{{ url(flag) }}"
-                       class="text-decoration-none"
-                    >
-                        {{- flag.name -}}
-                    </a> - {{ flag.summary -}}
-                </li>
-            {% endfor %}
-        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <abbr title="Abbreviation">Abbr</abbr>
+                    </th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for flag in flags[type] | order('filename') %}
+                    <tr>
+                        <td class="text-center">
+                            {{- flag.abbreviation -}}
+                        </td>
+                        <td>
+                            <a href="{{ url(flag) }}"
+                               class="text-decoration-none"
+                            >
+                                {{- flag.name -}}
+                            </a>
+                        </td>
+                        <td>
+                            {{ flag.summary -}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     {% endfor %}
 {% endblock %}
