@@ -28,4 +28,4 @@ parameters:
       name: eventTime
 ---
 
-This event is called each time the server needs a new spawn postion
+This event is called each time the server needs a new spawn position.
