@@ -45,7 +45,7 @@ functions:
           - dataType: const char*
             description: A string that may contain format specifiers
             name: fmt
-          - dataType: ...
+          - dataType: '...'
             description: Depending on `fmt`, the function may expect a sequence of additional arguments to replace a format specifier
             hide: true
     - returnType: void
