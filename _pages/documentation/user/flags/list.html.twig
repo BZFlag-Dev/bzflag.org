@@ -7,54 +7,63 @@ parent:
 ---
 
 {% extends "_layouts/page.html.twig" %}
+{% from _self import flag_list %}
+
+{% macro flag_list(flags) -%}
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <abbr title="Abbreviation">Abbr</abbr>
+            </th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+            {% for flag in flags | order('filename') %}
+                <tr>
+                    <td class="text-center">
+                        {{- flag.abbreviation -}}
+                    </td>
+                    <td>
+                        <a href="{{ url(flag) }}"
+                           class="text-decoration-none"
+                        >
+                            {{- flag.name -}}
+                        </a>
+                    </td>
+                    <td>
+                        {{ flag.summary -}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{%- endmacro %}
 
 {% set flags = collections.flags | group('type') %}
 {% set types = ['Good', 'Bad'] %}
 
 {% block content %}
-    <h1>Flags</h1>
-    <p>There are two types of flags in BZFlag: team flags and super flags. Team flags only show up in the Capture The Flag game mode.</p>
-    <p>Super flags come in both a good and bad variety. Servers can choose to include specific flags, and many do not include any bad flags at all. Some servers may not have any flags.</p>
+    {% markdown %}
+        # Flags
 
-    {% for type in types %}
-        <h2 id="{{ type | slug }}-flags">{{ type }} Flags</h2>
+        There are two types of flags in BZFlag: team flags and super flags. Team flags only show up in the Capture The Flag game mode.
 
-        {% if type == 'Good' %}
-            <p>Good super flags provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile.</p>
-        {% elseif type == 'Bad' %}
-            <p>Bad super flags disable parts of the tank or reduce performance of the tank.</p>
-        {% endif %}
+        Super flags come in both a good and bad variety. Servers can choose to include specific flags, and many do not include any bad flags at all. Some servers may not have any flags.
 
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        <abbr title="Abbreviation">Abbr</abbr>
-                    </th>
-                    <th>Name</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
+        ## Good Flags
 
-            <tbody>
-                {% for flag in flags[type] | order('filename') %}
-                    <tr>
-                        <td class="text-center">
-                            {{- flag.abbreviation -}}
-                        </td>
-                        <td>
-                            <a href="{{ url(flag) }}"
-                               class="text-decoration-none"
-                            >
-                                {{- flag.name -}}
-                            </a>
-                        </td>
-                        <td>
-                            {{ flag.summary -}}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% endfor %}
+        Good super flags provide some additional benefit, such as faster movement, a smaller tank, or different weapons like laser or guided missile.
+
+        {{ flag_list(flags.Good) }}
+
+        ## Bad Flags
+
+        Bad super flags disable parts of the tank or reduce performance of the tank.
+
+        {{ flag_list(flags.Bad) }}
+    {% endmarkdown %}
 {% endblock %}
