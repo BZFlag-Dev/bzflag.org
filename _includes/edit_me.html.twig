@@ -9,7 +9,7 @@
     {# https://help.github.com/articles/about-automation-for-issues-and-pull-requests-with-query-parameters/ #}
     {% set gh_params = {
         title: 'Feedback on "%s" page' | format(this.title),
-        body: 'File: %s\nURL: %s' | format(this.filePath, url(this.permalink, absolute=true))
+        body: '**File**: `%s`\n**URL**: %s' | format(this.filePath, url(this.permalink, absolute=true)) | replace({ '\\': '/' })
     } %}
 
     <a href="https://github.com/{{ site.github.site_repo }}/issues/new?{{ gh_params | url_encode }}"
