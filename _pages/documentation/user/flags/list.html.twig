@@ -10,31 +10,34 @@ parent:
 {% from _self import flag_list %}
 
 {% macro flag_list(flags) -%}
-    <table>
+    {%- set col_1 = "col-3 col-md-2 col-lg-auto text-center" -%}
+    {%- set col_2 = "col-9 col-md-10 col-lg-auto border-r-none border-lg-r" -%}
+
+    <table class="responsive-lg">
         <thead>
-        <tr>
-            <th>
-                <abbr title="Abbreviation">Abbr</abbr>
-            </th>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
+            <tr>
+                <th class="{{ col_1 }}">
+                    <abbr title="Abbreviation">Abbr</abbr>
+                </th>
+                <th class="{{ col_2 }}">Name</th>
+                <th class="hide-xs show-lg">Description</th>
+            </tr>
         </thead>
 
         <tbody>
             {% for flag in flags | order('filename') %}
                 <tr>
-                    <td class="text-center">
+                    <td class="{{ col_1 }}">
                         {{- flag.abbreviation -}}
                     </td>
-                    <td>
+                    <td class="{{ col_2 }}">
                         <a href="{{ url(flag) }}"
-                           class="text-decoration-none"
+                           class="text-decoration-none text-nowrap"
                         >
                             {{- flag.name -}}
                         </a>
                     </td>
-                    <td>
+                    <td class="border-t border-lg-t-none col-12">
                         {{ flag.summary -}}
                     </td>
                 </tr>
