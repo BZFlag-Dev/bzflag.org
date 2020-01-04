@@ -4,10 +4,6 @@ table {
     border-collapse: collapse;
     width: 100%;
 
-    @include respond-up(lg) {
-        width: 90%;
-    }
-
     thead tr {
         background-color: rgba(#000, 0.2);
     }
@@ -15,11 +11,7 @@ table {
     td, th {
         @include padding(null, 3);
 
-        border: $border-default;
-
-        &:first-child {
-            border-left-color: transparent;
-        }
+        border-right: $border-default;
 
         &:last-child {
             border-right-color: transparent;
@@ -31,12 +23,26 @@ table {
     }
 
     tr {
+        border-top: $border-default;
+
         &:last-child td {
             border-bottom-color: transparent;
         }
 
         &:nth-child(even) {
             background-color: rgba(#fff, 0.05);
+        }
+    }
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+    @include respond-down($breakpoint) {
+        table.responsive-#{$breakpoint} {
+            tr {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
         }
     }
 }
