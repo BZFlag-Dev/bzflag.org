@@ -51,6 +51,16 @@ jumbotron:
             getting_started_content
         ) }}
 
+        {% set docs_content %}
+            <p>The game is documented via a series of manual pages (or man pages).</p>
+        {% endset %}
+        {{ card_block(
+            'book',
+            'Documentation',
+            '/documentation/',
+            docs_content
+        ) }}
+
         {% set forums_content %}
             <p>BZFlag hosts a forum for registered users. This also serves as a player registration system for the game.</p>
         {% endset %}
@@ -61,29 +71,16 @@ jumbotron:
             forums_content
         ) }}
 
-        {% set irc_content %}
-            <p>BZFlag has the following IRC channels on Freenode (irc.freenode.net):</p>
-
-            <ul>
-                <li><a href="https://webchat.freenode.net/?channels=bzflag">#BZFlag</a> (development and support)</li>
-                <li><a href="https://webchat.freenode.net/?channels=bzflag-chat">#BZFlag-chat</a> (general player talk)</li>
-            </ul>
+        {% set chat_content %}
+            <p>BZFlag has chat rooms on Freenode IRC and Matrix.org (which are bridged to IRC).</p>
+            <p>For support and development discussions, use <a href="https://webchat.freenode.net/#bzflag">#bzflag on IRC</a> or <a href="https://matrix.to/#/#bzflag:matrix.org">#bzflag on Matrix</a>.</p>
+            <p>For general chat, use <a href="https://webchat.freenode.net/#bzflag-chat">#bzflag-chat on IRC</a> or <a href="https://matrix.to/#/#bzflag-chat:matrix.org">#bzflag-chat on Matrix</a>.</p>
         {% endset %}
         {{ card_block(
             'chat-bubbles',
-            'IRC',
-            'https://webchat.freenode.net/',
-            irc_content
-        ) }}
-
-        {% set docs_content %}
-            <p>The game is documented via a series of manual pages (or man pages).</p>
-        {% endset %}
-        {{ card_block(
-            'book',
-            'Documentation',
-            '/documentation/',
-            docs_content
+            'Chat',
+            'https://webchat.freenode.net/#bzflag',
+            chat_content
         ) }}
 
         {% set bug_tracker_content %}
