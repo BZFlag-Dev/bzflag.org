@@ -13,6 +13,9 @@
 .c-alert__title {
     @include margin(b, 2);
 
+    font-weight: bold;
+    margin-top: 0;
+
     &::before {
         @include margin(r, 2);
     }
