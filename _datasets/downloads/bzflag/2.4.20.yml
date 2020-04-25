@@ -42,6 +42,10 @@ downloads:
         - filename: bzflag-@VER@.exe
           requirements: 'Windows Vista/7/8.1/10'
           sha256: e02a9740b675c15d2596754a1351f8c41ea4dfd26c3a6fbecc23cb801f7314fb
+    macos:
+        - filename: BZFlag-@VER@-macOS.zip
+          requirements: '10.7+ Intel only'
+          sha256: c20c5ed67a68017e8e65bef1f1581fe7019ecfc203ec370f9484beabe5e14f45
     source:
         - filename: bzflag-@VER@.tar.bz2
           sha256: 62c9c6175d805b4ac65d328eba8daefa56cc17931f46b42891e4fbe82aee7999
