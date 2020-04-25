@@ -2,7 +2,7 @@ version: 2.4.20
 discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=20395'
 codename: 'Do You See What I See?'
 changesummary: |
-    This release added several new functions/events to the bzfs API and reorganized the menus to improve usability.
+    This release added several new functions/events to the bzfs API and reorganized the client menus to improve usability.
 changelog: |
     * Reorganization of the menus to improve usability - Scott Wichser
     * Add bz_isWithinWorldBoundaries to API - Vladimir Jimenez
