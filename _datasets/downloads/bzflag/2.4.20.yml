@@ -46,6 +46,14 @@ downloads:
         - filename: BZFlag-@VER@-macOS.zip
           requirements: '10.7+ Intel only'
           sha256: c20c5ed67a68017e8e65bef1f1581fe7019ecfc203ec370f9484beabe5e14f45
+    flatpak:
+        - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
+          requirements: null
+          sha256: null
+    snapcraft:
+        - url: 'https://snapcraft.io/bzflag'
+          requirements: null
+          sha256: null
     source:
         - filename: bzflag-@VER@.tar.bz2
           sha256: 62c9c6175d805b4ac65d328eba8daefa56cc17931f46b42891e4fbe82aee7999
