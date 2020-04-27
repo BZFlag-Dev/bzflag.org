@@ -48,3 +48,7 @@ parameters:
 ---
 
 This event is called each time a tank is killed.
+
+The `killerID` attribute can changed by a plug-in to reassign the credit for a kill. This is useful when a world weapon is shot on behalf of a player and the kills belong to a player. Be careful, any number of plug-ins can reassign kills so be sure to only reassign kills under clear conditions for your plugin.
+
+The [`bz_ePlayerDeathFinalizedEvent`]({{ url(collections.bzfs_api_events['bz_ePlayerDeathFinalizedEvent']) }}) is fired after all plug-ins after finished reassigning any kills.
