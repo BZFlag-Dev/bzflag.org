@@ -15,4 +15,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Set the world boundary size when generating a map via the plug-in API. This function will **only** have an effect when called before the world is defined in BZFS. 
