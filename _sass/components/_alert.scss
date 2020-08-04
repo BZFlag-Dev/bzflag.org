@@ -22,7 +22,7 @@
 }
 
 .c-alert--error {
-    background-color: rgba(187, 0, 0, 0.7);
+    background-color: #800000;
 
     .c-alert__title::before {
         content: '\2715';
@@ -30,7 +30,12 @@
 }
 
 .c-alert--warning {
-    background-color: rgba(187, 137, 0, 0.7);
+    background-color: #80601b;
+
+    a {
+        color: #ffed00;
+        text-decoration: underline;
+    }
 
     .c-alert__title::before {
         content: '\26A0';
@@ -38,7 +43,7 @@
 }
 
 .c-alert--success {
-    background-color: rgba(18, 98, 0, 0.7);
+    background-color: #1D5419;
 
     .c-alert__title::before {
         content: '\2713';
@@ -46,7 +51,7 @@
 }
 
 .c-alert--info {
-    background-color: rgba(0, 134, 187, 0.7);
+    background-color: #1B4F73;
 
     .c-alert__title::before {
         content: '\2139'
