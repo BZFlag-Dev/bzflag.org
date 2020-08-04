@@ -66,6 +66,11 @@
 
         {% include "_includes/footer.html.twig" %}
 
+        <script>
+            // Global variables that our scripts can access
+            const SITE_GH_REPO = "{{ site.github.site_repo }}";
+        </script>
+
         {% block scripts %}{% endblock %}
 
         <script src="{{ url('/assets/js/main.js') }}{% if not site.debug %}?cache_busting={{ 'now' | date('U') }}{% endif %}"></script>

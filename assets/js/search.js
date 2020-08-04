@@ -155,13 +155,23 @@
     function performSearch(query) {
         clearResults();
 
+        const noResultsFound = document.getElementById('no-results');
+        const landingContent = document.getElementById('landing-content');
+
         if (!query) {
+            noResultsFound.classList.add('d-none');
+            landingContent.classList.remove('d-none');
+
             return;
         }
+
+        landingContent.classList.add('d-none');
 
         const results = idx.search(query, 10);
 
         if (results.length > 0) {
+            noResultsFound.classList.add('d-none');
+
             const keywords = query.split(/\W+/);
 
             for (let i = 0; i < results.length; i++) {
@@ -173,6 +183,20 @@
 
                 searchResults.appendChild(result.makeNode());
             }
+        } else {
+            noResultsFound.classList.remove('d-none');
+
+            // We <3 our GitHub overlords
+            // https://help.github.com/articles/about-automation-for-issues-and-pull-requests-with-query-parameters/
+            const ghParams = new URLSearchParams({
+                title: 'Feedback on searching for "' + query + '"',
+                template: 'feedback_search_template.md'
+            });
+
+            const url = 'https://github.com/' + SITE_GH_REPO + '/issues/new?' + ghParams.toString();
+            const feedbackURL = document.getElementById('gh-feedback');
+
+            feedbackURL.setAttribute('href', url);
         }
     }
 

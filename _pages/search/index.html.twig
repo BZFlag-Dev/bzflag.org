@@ -24,16 +24,34 @@ title: Search
                 Enter the terms you wish to search for
             </label>
             <input
-                type="text"
+                type="search"
                 name="query"
                 id="search-field"
                 class="c-form__input w-100"
                 autocomplete="off"
+                placeholder="e.g. Guided Missile, compiling, bz_killPlayer"
             >
         </form>
-    </div>
 
-    <div id="search-results"></div>
+        <div id="search-results"></div>
+
+        <div id="landing-content" class="mt-4">
+            <p>Search for what you're looking for. Here's what our search engine will look through:</p>
+            <ul>
+                <li>Flag documentation</li>
+                <li>Plug-in API</li>
+                <li>Map making documentation</li>
+                <li>User guides</li>
+            </ul>
+        </div>
+
+        <div id="no-results" class="c-alert c-alert--warning mb-3 mt-4 d-none">
+            <p class="c-alert__title"><strong>No Results Found</strong></p>
+            <p>
+                We couldn't find what you were looking for. <a id="gh-feedback" href="#">Give us feedback</a> on what you were looking for!
+            </p>
+        </div>
+    </div>
 
     <template id="search-result">
         <article class="c-search-result">
