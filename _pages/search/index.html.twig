@@ -47,7 +47,7 @@ title: Search
 {% endblock %}
 
 {% block scripts %}
-    <script src="{{ url(pages['Search Index']) }}"></script>
-    <script src="{{ url('/assets/js/flexsearch.min.js') }}"></script>
-    <script src="{{ url('/assets/js/search.js') }}"></script>
+    <script src="{{ url(pages['Search Index']) }}{{ cache_busting }}"></script>
+    <script src="{{ url('/assets/js/flexsearch.min.js') }}{{ cache_busting }}"></script>
+    <script src="{{ url('/assets/js/search.js') }}{{ cache_busting }}"></script>
 {% endblock %}

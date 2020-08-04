@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js os-unknown">
     <head>
+        {%- set cache_busting -%}
+            {%- if not site.debug %}?cache_busting={{ 'now' | date('U') }}{% endif -%}
+        {%- endset -%}
+
         {%- set page_description = this.opengraph.description | default(site.description) | escape('html') -%}
         {%- set page_title -%}
             {%- spaceless -%}
@@ -16,7 +20,7 @@
 
         {% include "_includes/open_graph.html.twig" %}
 
-        <link rel="stylesheet" href="{{ url('/assets/css/styles.css') }}{% if not site.debug %}?cache_busting={{ 'now' | date('U') }}{% endif %}" />
+        <link rel="stylesheet" href="{{ url('/assets/css/styles.css') }}{{ cache_busting }}" />
         <link rel="canonical" href="https://www.bzflag.org{{ url(this.permalink) }}" />
 
         <title>{{ page_title }}</title>
