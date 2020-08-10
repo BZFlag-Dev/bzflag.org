@@ -1,0 +1,91 @@
+#origin {
+    margin: 10px auto;
+    padding: 10px;
+    width: 50%;
+
+    background-color: rgba(#000, 0.2);
+    box-shadow: $box-shadow;
+
+    blockquote {
+        height: 6em;
+        overflow: hidden;
+
+        p:first-child:before {
+            content: '\201F';
+            font-weight: bold;
+            color: #d48900;
+            margin-right: 3px;
+        }
+
+        p:last-child:after {
+            content: '\201D';
+            font-weight: bold;
+            color: #d48900;
+            margin-left: 3px;
+        }
+    }
+
+    cite:before {
+        content: '-';
+    }
+}
+
+.origin-expanded {
+    display: none;
+}
+
+#origin:target {
+    width: auto;
+    margin: 10px;
+
+    blockquote {
+        height: auto;
+        overflow: auto;
+    }
+
+    .origin-expanded {
+        display: inline;
+    }
+
+    .origin-collapsed {
+        display: none;
+    }
+}
+
+.history-line {
+    margin: 0 auto;
+    width: 0;
+    height: 80px;
+    border-left: 5px dotted #d48900;
+}
+
+.history-year {
+    margin: 10px auto;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.history-milestone {
+    background-color: rgba(#000, 0.2);
+    box-shadow: $box-shadow;
+}
+
+#milestones {
+    margin: 0 auto 1em;
+    width: 500px;
+
+    .milestone-date {
+        font-size: 10pt;
+    }
+
+    .history-milestone {
+        padding: 10px;
+        width: 400px;
+        margin: 10px 0;
+
+        &.even {
+            margin-left: 80px;
+        }
+    }
+}

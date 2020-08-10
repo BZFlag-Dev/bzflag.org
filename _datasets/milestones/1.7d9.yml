@@ -1,0 +1,6 @@
+title: 1.7d9
+date: '2000-01-01'
+summary: |
+    * License changed to GNU GPL 2
+    * Improved sound system to add better directional attenuation and inter-aural delay to enhance stereo separation
+    * First version to support listing public servers

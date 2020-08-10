@@ -1,0 +1,6 @@
+title: '1.7e6'
+date: '2002-06-19'
+summary: |
+    * Redesigned the HUD (user interface)
+    * Early support for observer mode
+    * Last version with an SGI IRIX 5 build
