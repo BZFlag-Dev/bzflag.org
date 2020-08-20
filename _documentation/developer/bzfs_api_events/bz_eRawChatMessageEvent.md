@@ -20,7 +20,7 @@ parameters:
       description: The team the message is for if it not for an individual or a broadcast. If it is not a team message the team will be eNoTeam.
       name: team
     - dataType: bz_ApiString
-      description: The filtered final text of the message.
+      description: The original content of the message before any filtering happens.
       name: message
     - dataType: bz_eMessageType
       description: The type of message being sent
