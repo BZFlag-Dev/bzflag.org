@@ -4,7 +4,7 @@ The [stakx](https://github.com/stakx-io/stakx) source files used to build the st
 
 ## Building the site
 
-This website uses features available in stakx 0.2.x. At the time of writing this, stakx 0.2.x is still in development so be sure to use the latest master branch or the [latest 0.2 beta executable](https://github.com/stakx-io/stakx/releases).
+This website is built with stakx 0.2.x and typically makes use of the latest development features.
 
 ```bash
 git clone https://github.com/BZFlag-Dev/bzflag.org
