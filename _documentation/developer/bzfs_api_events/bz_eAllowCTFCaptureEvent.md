@@ -10,10 +10,10 @@ parameters:
       description: The ID of the player making the capture
       name: playerCapping
     - dataType: bz_eTeamType
-      description: The team making the capture
+      description: The team whose flag is being captured
       name: teamCapped
     - dataType: bz_eTeamType
-      description: The team whose flag is being captured
+      description: The team making the capture
       name: teamCapping
     - dataType: float[3]
       description: The position of the player
