@@ -4,11 +4,11 @@ category: Server Debugging
 signatures:
     - - dataType: int
         name: debugLevel
-        description: ~
+        description: The debug level to output.
         default: ~
       - dataType: const char*
         name: fmt
-        description: ~
+        description: The message to output as debug message.
         default: ~
       - dataType: ...
         description: ~
@@ -18,4 +18,9 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Sends formatted debug message at specified debug level. 
+
+**Notes**
+
+- If debug level is set to `0`, debug messages will appear regardless of debug settings. 
+- Otherwise they will appear at or below the specified debug level.

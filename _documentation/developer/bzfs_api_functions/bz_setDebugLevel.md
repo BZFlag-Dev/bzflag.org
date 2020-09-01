@@ -4,11 +4,11 @@ category: Server Debugging
 signatures:
     - - dataType: int
         name: debugLevel
-        description: ~
+        description: Value of debug level to set to.
         default: ~
 returns:
     dataType: int
-    description: ~
+    description: Returns specified debug value if successful, otherwise current debug value.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Sets the debug level.

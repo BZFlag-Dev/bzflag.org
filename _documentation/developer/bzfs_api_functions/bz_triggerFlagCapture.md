@@ -4,19 +4,19 @@ category: Game Mode Management
 signatures:
     - - dataType: int
         name: playerID
-        description: ~
+        description: Player capturing flag.
         default: ~
       - dataType: bz_eTeamType
         name: teamCapping
-        description: ~
+        description: Team capturing flag.
         default: ~
       - dataType: bz_eTeamType
         name: teamCapped
-        description: ~
+        description: Team whose flag was captured.
         default: ~
 returns:
     dataType: bool
-    description: ~
+    description: Returns true if successful.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Triggers a team flag capture.
