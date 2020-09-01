@@ -5,7 +5,7 @@ signatures:
     - []
 returns:
     dataType: int
-    description: ~
+    description: The current debug level value.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Gets the current debug level.

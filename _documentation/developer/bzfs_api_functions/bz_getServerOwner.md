@@ -5,7 +5,7 @@ signatures:
     - []
 returns:
     dataType: const char*
-    description: ~
+    description: The registered server owner callsign.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Gets the registered server owner callsign.
