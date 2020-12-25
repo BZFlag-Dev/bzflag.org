@@ -1,0 +1,61 @@
+---
+title: About
+section: about
+permalink: /about/
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% from _self import card_block %}
+
+{% macro card_block(image, header, link, content) %}
+    <div class="col-md-6 col-lg-4 mb-5 mb-md-4 mb-lg-3">
+        <article class="c-card">
+            <header class="background-light mb-2">
+                <img src="{{ url('/assets/images/about/' ~ image ~ '.svg') }}"
+                     alt="{{ image | capitalize }} icon"
+                >
+            </header>
+            <div>
+                <h2 class="mt-0 mb-2">
+                    {% if link %}
+                        {%- set url = (link.permalink or link[0] == '/') ? url(link) : link -%}
+                        <a href="{{- url -}}">{{- header -}}</a>
+                    {% else %}
+                        {{- header -}}
+                    {% endif %}
+                </h2>
+                {% spaceless %}{{ content }}{% endspaceless %}
+            </div>
+        </article>
+    </div>
+{% endmacro %}
+
+{% block content %}
+    <h1>Help</h1>
+    <p class="mb-5">
+        BZFlag has been around for almost 30 years. Learn about the project history or visit some of our community sites.
+    </p>
+
+    <div class="row">
+        {% set project_history_content %}
+            <p>BZFlag's history dates back to 1992. Read about the origin of the game and milestones throughout the years.</p>
+        {% endset %}
+        {{ card_block(
+            'history',
+            'Project History',
+            pages['Project History'],
+            project_history_content
+        ) }}
+
+        {% set links_content %}
+            <p>Check out some other sites run by members of our community.</p>
+        {% endset %}
+        {{ card_block(
+            'community',
+            'Community Sites',
+            pages['Community Sites'],
+            links_content
+        ) }}
+    </div>
+{% endblock %}

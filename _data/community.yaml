@@ -1,0 +1,37 @@
+links:
+    - url: https://leaguesunited.org/
+      name: Leagues United
+      description: Leagues United is the main competitive league for BZFlag. It is the result of a merger of three other leagues (Ducati, GU, and OpenLeague).
+    - url: https://bzlist.net/
+      name: The Noah's BZList
+      description: A site that shows a list of public BZFlag servers and online players, and supports adding favorite servers and friends. Uses the BZFlag web login system so you won't need another account.
+    - url: http://bzstats.strayer.de/
+      name: Strayer's BZstats
+      description: Another site that shows a list of public servers and online players, and also supports creating a friends list to see when your friends are online. This one also has graphs and historical data, and links to other player data such as BZFlag accounts and Leagues United profiles.
+    - url: https://the-noah.github.io/bzfs-plugins/
+      name: The Noah's BZFlag server plugins page
+      description: You will find a compilation of BZFlag server (bzfs) plugins from many authors. These are specifically ones that aren't included with the official BZFlag distribution. Server plugins can add new mechanics, new flags, new game modes, or features for administration.
+    - url: https://bzflag-plugin-starter.allejo.org/
+      name: allejo's BZFlag Plug-in Starter
+      description: This tool generates the skeleton for BZFlag 2.4 compatible server plugins.
+    - urls:
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-1/
+            name: Chapter 1 - Getting Started
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-2/
+            name: Chapter 2 - Player Records and Modification API Events
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-3/
+            name: Chapter 3 - Custom Slash Commands
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-4/
+            name: Chapter 4 - Stateful Data
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-5/
+            name: Chapter 5 - Configuration Files
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-6/
+            name: Chapter 6 - URL Calls (for talking to web servers from your plugin)
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-7/
+            name: Chapter 7 - Custom Map Objects
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-8/
+            name: Chapter 8 - Tick Event
+          - url: https://allejo.io/blog/bzflag-plug-ins-for-dummies-chapter-9/
+            name: Chapter 9 - Custom Flags
+      name: allejo's BZFlag Plug-ins for Dummies Tutorials
+      description: A tutorial series for creating BZFlag server plugins.

@@ -1,0 +1,35 @@
+---
+title: Community Sites
+section: about
+sectiontitle: About
+permalink: /about/community/
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% block content %}
+    <h1>Community Links</h1>
+    <p class="mb-3">
+        There are many community created sites for BZFlag. Here are a handful of them.
+    </p>
+
+    {% for link in data.community.links %}
+        <h2>{{- link.name }}</h2>
+        {{ link.description | markdown }}
+        {% if link.urls %}
+        <ul>
+            {% for url in link.urls %}
+            <li>
+                <a href="{{ url.url }}">
+                    {{- url.name -}}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+            <a href="{{ link.url }}" rel="noopener" target="_blank">
+                {{- link.name -}}
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
