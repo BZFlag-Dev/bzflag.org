@@ -52,6 +52,11 @@
     }
 }
 
+#milestones {
+    margin: 0 auto 1em;
+    width: 500px;
+}
+
 .history-line {
     margin: 0 auto;
     width: 0;
@@ -66,26 +71,40 @@
     text-align: center;
 }
 
+.history-image img {
+
+}
+
+.history-screenshot {
+    figcaption {
+        display: none;
+    }
+
+    img {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+
+        background-color: rgba(#000, 0.2);
+        box-shadow: $box-shadow;
+    }
+}
+
+
 .history-milestone {
+    margin: 10px 0;
+    padding: 10px;
+    width: 400px;
+
     background-color: rgba(#000, 0.2);
     box-shadow: $box-shadow;
-}
 
-#milestones {
-    margin: 0 auto 1em;
-    width: 500px;
-
-    .milestone-date {
-        font-size: 10pt;
-    }
-
-    .history-milestone {
-        padding: 10px;
-        width: 400px;
-        margin: 10px 0;
-
-        &.even {
-            margin-left: 80px;
-        }
+    &.even {
+        margin-left: 80px;
     }
 }
+
+.milestone-date {
+    font-size: 10pt;
+}
+

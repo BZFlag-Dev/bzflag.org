@@ -33,7 +33,7 @@ permalink: /history/
                 <p class="text-center mb-0"><a href="#origin" class="origin-collapsed">Read More</a><a href="#" class="origin-expanded">Read Less</a></p>
             </div>
 
-            <div id="milestones">
+            <div id="milestones" class="js-screenshots">
                 {% set lastYearLine = 0 %}
                 {% for i, milestone in attribute(data, 'milestones') | order('date', 'ASC') %}
                     {% set thisYearLine = milestone.date | date('Y') // yearStep * yearStep %}
@@ -41,6 +41,28 @@ permalink: /history/
                         {% set lastYearLine = thisYearLine %}
                     <div class="history-line"></div>
                     <div class="history-year">{{ thisYearLine }}</div>
+                    {% endif %}
+                    {% if milestone.image %}
+                    <div class="history-line"></div>
+                    <figure class="history-screenshot"
+                            itemprop="associatedMedia"
+                            itemscope
+                            itemtype="http://schema.org/ImageObject"
+                    >
+                        <a href="{{ url('assets/images/about/milestones/' ~ milestone.image.full) }}"
+                           itemprop="contentUrl"
+                           data-size="{{ milestone.image.fullSize }}"
+                        >
+                            <img src="{{ url('assets/images/about/milestones/' ~ milestone.image.thumb) }}"
+                                 itemprop="thumbnail"
+                                 alt="{{ milestone.image.caption | striptags | e }}"
+                            />
+                        </a>
+
+                        {% if milestone.image.caption %}
+                            <figcaption itemprop="caption description">{{ milestone.image.caption }}</figcaption>
+                        {% endif %}
+                    </figure>
                     {% endif %}
                     <div class="history-line"></div>
                     <div class="history-milestone{% if i % 2 == 0 %} even{% endif %}">
@@ -53,6 +75,6 @@ permalink: /history/
             </div>
         </div>
 
-        {% include "_includes/edit_me.html.twig" %}
+        {% include "_includes/screenshots.html.twig" %}
     </main>
 {% endblock %}
