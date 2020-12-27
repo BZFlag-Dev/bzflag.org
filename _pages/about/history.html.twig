@@ -16,7 +16,7 @@ permalink: /about/history/
             <p class="mb-3">
                 BZFlag has been around in one form or another for over 25 years! Here's a bit of background on how it all started, and some milestones along the way.
             </p>
-            <div class="history-origin" id="origin">
+            <div id="origin">
                 <h2>Origin</h2>
                 <p class="origin-collapsed font-italic">As told by Chris Schoeneman, the original author</p>
                 <blockquote>
@@ -45,7 +45,7 @@ permalink: /about/history/
                     {% endif %}
                     {% if milestone.image %}
                     <div class="history-line"></div>
-                    <figure class="history-screenshot"
+                    <figure class="history-image"
                             itemprop="associatedMedia"
                             itemscope
                             itemtype="http://schema.org/ImageObject"
@@ -66,7 +66,7 @@ permalink: /about/history/
                     </figure>
                     {% endif %}
                     <div class="history-line"></div>
-                    <div class="history-milestone{% if i % 2 == 0 %} even{% endif %}">
+                    <div class="history-milestone col-xl-5 col-lg-6 col-md-9 {% if i % 2 == 1 %}offset-xl-3 offset-lg-2{% else %}offset-xl-4 offset-lg-4 offset-md-3{% endif %}">
                         <h2>{{ milestone.title }}</h2>
                         <p class="milestone-date">{{ milestone.date | date('M j, Y') }}</p>
 

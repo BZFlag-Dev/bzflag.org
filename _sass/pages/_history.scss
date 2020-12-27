@@ -1,10 +1,16 @@
-#origin {
-    margin: 10px auto;
-    padding: 10px;
-    width: 50%;
-
+#origin, .history-image img, .history-milestone {
+    @include padding(null, 2);
     background-color: rgba(#000, 0.2);
     box-shadow: $box-shadow;
+}
+
+#origin {
+    @include margin(x, auto);
+    @include margin(y, 2);
+
+    @include respond-up(lg) {
+        width: 50%;
+    }
 
     blockquote {
         height: 6em;
@@ -36,7 +42,7 @@
 
 #origin:target {
     width: auto;
-    margin: 10px;
+    @include margin(y, 2);
 
     blockquote {
         height: auto;
@@ -52,59 +58,31 @@
     }
 }
 
-#milestones {
-    margin: 0 auto 1em;
-    width: 500px;
-}
-
 .history-line {
-    margin: 0 auto;
+    @include margin(x, auto);
+    @include margin(y, 2);
     width: 0;
     height: 80px;
     border-left: 5px dotted #d48900;
 }
 
 .history-year {
-    margin: 10px auto;
     font-size: 16pt;
     font-weight: bold;
     text-align: center;
 }
 
-.history-image img {
-
-}
-
-.history-screenshot {
+.history-image {
     figcaption {
         display: none;
     }
 
     img {
         display: block;
-        margin: 10px auto;
-        padding: 10px;
-
-        background-color: rgba(#000, 0.2);
-        box-shadow: $box-shadow;
-    }
-}
-
-
-.history-milestone {
-    margin: 10px 0;
-    padding: 10px;
-    width: 400px;
-
-    background-color: rgba(#000, 0.2);
-    box-shadow: $box-shadow;
-
-    &.even {
-        margin-left: 80px;
+        @include margin(x, "auto");
     }
 }
 
 .milestone-date {
     font-size: 10pt;
 }
-
