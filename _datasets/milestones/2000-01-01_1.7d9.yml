@@ -1,0 +1,11 @@
+title: 1.7d9
+date: '2000-01-01'
+image:
+    caption: A screenshot of 1.7d9 showing the old style Heads-Up Display
+    thumb: 1.7d9_thumb.jpg
+    full: 1.7d9.jpg
+    fullSize: 1280x1024
+summary: |
+    * License changed to GNU GPL 2
+    * Improved sound system to add better directional attenuation and inter-aural delay to enhance stereo separation
+    * First version to support listing public servers

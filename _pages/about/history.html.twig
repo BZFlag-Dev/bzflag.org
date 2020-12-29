@@ -1,0 +1,93 @@
+---
+title: Project History
+section: about
+sectiontitle: About
+permalink: /about/history/
+---
+
+{% extends "_layouts/base.html.twig" %}
+
+{% set yearStep = 5 %}
+
+{% block content_root %}
+    <main class="container">
+        <div class="py-3 px-md-3">
+            <h1>Project History</h1>
+            <p class="mb-3">
+                BZFlag has been around in one form or another for over 25 years! Here's a bit of background on how it all started, and some milestones along the way.
+                <ul class="list-inline">
+                    <li class="list-inline-item">Jump to year:</li>
+                {% set lastYearLine = 0 %}
+                {% for i, milestone in attribute(data, 'milestones') | order('date', 'ASC') %}
+                    {% set thisYearLine = milestone.date | date('Y') // yearStep * yearStep %}
+                    {% if lastYearLine < thisYearLine %}
+                        {% set lastYearLine = thisYearLine %}
+                    <li class="list-inline-item"><a href="#{{ thisYearLine }}">{{ thisYearLine }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            </p>
+            <div id="origin">
+                <h2>Origin</h2>
+                <p class="origin-collapsed font-italic">As told by Chris Schoeneman, the original author</p>
+                <blockquote>
+                    <p>BZFlag began back in 1992 while I was a Masters student at the Cornell Program of Computer Graphics. I was an intern at SGI for the summers of '90 and '91, working on a prototype Indigo during the second summer which was a blast. So by 1992, IRIS GL was an old friend.</p>
+                    <p>At the Cornell PCG, essentially the only computers available were HP 700 series workstations. While CRX-24Z graphics wasn't too bad (around XS24-Z performance), HP's graphics library, Starbase, wasn't quite as easy to use as IRIS GL. In the words of fellow student Rick Pasetto, "Starbase sucks rocks." As a result, very few students wrote interactive graphics tools to assist their research. If you wanted to make an image you usually had to at least ray trace it.</p>
+                    <p>So Rick and I wrote an IRIS GL-like layer on top of Starbase which we called WM (for reasons lost in the mists of time). To encourage the other students to use it I wrote a number of small demo programs, small being the key word here. The fact that you could open a window and render to it with only a dozen lines of code ensured WM's success. I believe it's still used today on the HP's, but will hopefully step aside for OpenGL.</p>
+                    <p>I began to write BZFlag as a simple demo but soon abandoned it after producing a program that was supposed to let you drive around a virtual world but instead had a bizarre warping effect because I goofed up the order of my transformations. I had by then also realized how much more work was involved and had other stuff to do.</p>
+                    <p>So there it sat, unused, for a few months until another student browsing the WM demo directory found it and said it looked cool and that I should finish it. So in a week long marathon of programming BZFlag took shape. The earliest complete version had two notable bugs. The first was that each player had his very own random world; it was soon discovered that hiding behind a pyramid didn't work because the pyramid wasn't even there in the other player's world. Once that was fixed, the second bug became clear: it was impossible to play. I had tried to base the BZFlag world on the real world, so the playing field was 10km on a side and shots moved at around Mach 1. It took forever to get from one end of the board to the other and you couldn't even see a shot before it hit you. So we scrapped some realism in favor of playability. After a few more tweaks, we had a pretty fun game.</p>
+                    <p>At this point the game resembled bz by Chris Fouts. This is no surprise because both games are based on the old Atari arcade game BattleZone. In fact, BZFlag was called bz back then because no one in the PCG knew of the existence of Chris Fouts' bz. Yes, that's right, BZFlag was written with no knowledge of bz. The two games share no code and were designed and written independently. They owe their similarities to their BattleZone heritage.</p>
+                    <p>It didn't take too long to get bored with the basic shoot-'em-up game. We quickly came up with the capture-the-flag mode and designed the new world it's played in. This kept our interest for quite a while (it's still my favorite mode). Strategy now played a role. You still needed good tactics to keep yourself alive, but you had to have a team strategy to excel.</p>
+                    <p>After one of the students hacked the code to make his tank super-powerful (blatantly so; he wasn't trying to fool us) we invented superflags. The first four super flags were: high speed, quick turn, rapid fire, and oscillation overthruster. Originally, there was one of each flag and each had an identifying mark so you knew what it was before you grabbed it. When more superflag ideas came up (including the concept of bad flags) we dropped the marks and made the flags appear randomly. This was around May 1993 and the game has remained substantially the same ever since.</p>
+                    <p>I rewrote the game in C++ (from C) for SGI's third IndiZone contest. BZFlag won in the Reality Engine category, earning me a nice little home computer (a Indigo2 200MHz R4400, with a 20" monitor, 64MB, a CD-ROM, DAT, 2GB disk, and High Impact graphics with 4 TRAMs).</p>
+                </blockquote>
+                <cite class="origin-expanded">Chris Schoeneman, ~1997</cite>
+                <p class="text-center mb-0"><a href="#origin" class="origin-collapsed">Read More</a><a href="#" class="origin-expanded">Read Less</a></p>
+            </div>
+
+            <div id="milestones" class="js-screenshots">
+                {% set lastYearLine = 0 %}
+                {% for i, milestone in attribute(data, 'milestones') | order('date', 'ASC') %}
+                    {% set thisYearLine = milestone.date | date('Y') // yearStep * yearStep %}
+                    {% if lastYearLine < thisYearLine %}
+                        {% set lastYearLine = thisYearLine %}
+                    <div class="history-line"></div>
+                    <div class="history-year" id="{{ thisYearLine }}">{{ thisYearLine }}</div>
+                    {% endif %}
+                    {% if milestone.image %}
+                    <div class="history-line"></div>
+                    <figure class="history-image"
+                            itemprop="associatedMedia"
+                            itemscope
+                            itemtype="http://schema.org/ImageObject"
+                    >
+                        <a href="{{ url('assets/images/about/milestones/' ~ milestone.image.full) }}"
+                           itemprop="contentUrl"
+                           data-size="{{ milestone.image.fullSize }}"
+                        >
+                            <img src="{{ url('assets/images/about/milestones/' ~ milestone.image.thumb) }}"
+                                 itemprop="thumbnail"
+                                 alt="{{ milestone.image.caption | striptags | e }}"
+                            />
+                        </a>
+
+                        {% if milestone.image.caption %}
+                            <figcaption itemprop="caption description">{{ milestone.image.caption }}</figcaption>
+                        {% endif %}
+                    </figure>
+                    {% endif %}
+                    <div class="history-line"></div>
+                    <div class="history-milestone col-xl-5 col-lg-6 col-md-9 {% if i % 2 == 1 %}offset-xl-3 offset-lg-2{% else %}offset-xl-4 offset-lg-4 offset-md-3{% endif %}">
+                        <h2>{{ milestone.title }}</h2>
+                        <p class="milestone-date">{{ milestone.date | date('M j, Y') }}</p>
+
+                        {{ milestone.summary | markdown }}
+                        {% if milestone.url %}<a href="{{ milestone.url }}" rel="noopener" target="_blank">{{ milestone.urltext }}</a>{% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% include "_includes/screenshots.html.twig" %}
+    </main>
+{% endblock %}

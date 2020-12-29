@@ -11,3 +11,5 @@ links:
       name: Documentation
     - url: /help/
       name: Help
+    - url: /about/
+      name: About

@@ -12,6 +12,8 @@ datasets:
       folder: _datasets/downloads/bzflag
     - name: downloads_bzeditw32
       folder: _datasets/downloads/bzeditw32
+    - name: milestones
+      folder: _datasets/milestones
 
 pageviews:
     - _pages

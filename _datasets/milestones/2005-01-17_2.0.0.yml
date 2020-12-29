@@ -1,0 +1,8 @@
+title: 2.0.0
+date: '2005-01-17'
+summary: |
+    * New Flags: Wings, Agility, Reverse Controls, Forward Only, Reverse Only, No Jumping, and Trigger Happy
+    * Mesh world objects for free-form world design
+    * Centralized user registration/authentication system
+    * Replay system for recording and replaying gameplay
+    * Server-fired world weapons

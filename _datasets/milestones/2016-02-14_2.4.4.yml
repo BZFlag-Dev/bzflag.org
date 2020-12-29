@@ -1,0 +1,6 @@
+title: 2.4.4
+date: '2016-02-14'
+summary: |
+    * HTTPS used with authentication/list server
+    * Cleanup of many bugs that had caused crashes or glitches
+    * Many additions to the server plugin API

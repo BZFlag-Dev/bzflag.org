@@ -1,0 +1,88 @@
+#origin, .history-image img, .history-milestone {
+    @include padding(null, 2);
+    background-color: rgba(#000, 0.2);
+    box-shadow: $box-shadow;
+}
+
+#origin {
+    @include margin(x, auto);
+    @include margin(y, 2);
+
+    @include respond-up(lg) {
+        width: 50%;
+    }
+
+    blockquote {
+        height: 6em;
+        overflow: hidden;
+
+        p:first-child:before {
+            content: '\201F';
+            font-weight: bold;
+            color: #d48900;
+            margin-right: 3px;
+        }
+
+        p:last-child:after {
+            content: '\201D';
+            font-weight: bold;
+            color: #d48900;
+            margin-left: 3px;
+        }
+    }
+
+    cite:before {
+        content: '-';
+    }
+}
+
+.origin-expanded {
+    display: none;
+}
+
+#origin:target {
+    width: auto;
+    @include margin(y, 2);
+
+    blockquote {
+        height: auto;
+        overflow: auto;
+    }
+
+    .origin-expanded {
+        display: inline;
+    }
+
+    .origin-collapsed {
+        display: none;
+    }
+}
+
+.history-line {
+    @include margin(x, auto);
+    @include margin(y, 2);
+    width: 0;
+    height: 80px;
+    border-left: 5px dotted #d48900;
+}
+
+.history-year {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.history-image {
+    figcaption {
+        display: none;
+    }
+
+    img {
+        display: block;
+        @include margin(x, "auto");
+    }
+}
+
+.milestone-date {
+    font-size: 10pt;
+}
