@@ -15,6 +15,17 @@ permalink: /about/history/
             <h1>Project History</h1>
             <p class="mb-3">
                 BZFlag has been around in one form or another for over 25 years! Here's a bit of background on how it all started, and some milestones along the way.
+                <ul class="list-inline">
+                    <li class="list-inline-item">Jump to year:</li>
+                {% set lastYearLine = 0 %}
+                {% for i, milestone in attribute(data, 'milestones') | order('date', 'ASC') %}
+                    {% set thisYearLine = milestone.date | date('Y') // yearStep * yearStep %}
+                    {% if lastYearLine < thisYearLine %}
+                        {% set lastYearLine = thisYearLine %}
+                    <li class="list-inline-item"><a href="#{{ thisYearLine }}">{{ thisYearLine }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
             </p>
             <div id="origin">
                 <h2>Origin</h2>
@@ -41,7 +52,7 @@ permalink: /about/history/
                     {% if lastYearLine < thisYearLine %}
                         {% set lastYearLine = thisYearLine %}
                     <div class="history-line"></div>
-                    <div class="history-year">{{ thisYearLine }}</div>
+                    <div class="history-year" id="{{ thisYearLine }}">{{ thisYearLine }}</div>
                     {% endif %}
                     {% if milestone.image %}
                     <div class="history-line"></div>
