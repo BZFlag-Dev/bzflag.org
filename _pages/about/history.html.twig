@@ -82,6 +82,7 @@ permalink: /about/history/
                         <p class="milestone-date">{{ milestone.date | date('M j, Y') }}</p>
 
                         {{ milestone.summary | markdown }}
+                        {% if milestone.url %}<a href="{{ milestone.url }}" rel="noopener" target="_blank">{{ milestone.urltext }}</a>{% endif %}
                     </div>
                 {% endfor %}
             </div>
