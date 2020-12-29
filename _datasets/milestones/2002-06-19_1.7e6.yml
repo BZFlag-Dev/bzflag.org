@@ -1,5 +1,10 @@
 title: '1.7e6'
 date: '2002-06-19'
+image:
+    caption: A screenshot of 1.7d9 showing the new style Heads-Up Display that is very similar to our current design
+    thumb: 1.7e6_thumb.jpg
+    full: 1.7e6.jpg
+    fullSize: 1280x1024
 summary: |
     * Redesigned the HUD (user interface)
     * Early support for observer mode
