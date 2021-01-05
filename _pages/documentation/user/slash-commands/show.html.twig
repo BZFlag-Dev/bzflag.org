@@ -4,7 +4,7 @@ editable: true
 section: documentation
 sectiontitle: Slash Commands
 permalink: /documentation/slash-commands/%basename/
-title: %command Command
+title: /%command Command
 navigation:
   prev: Slash Commands
 parent:
@@ -15,7 +15,7 @@ parent:
 {% set commands = collections.slash_commands| where('category', '==', this.category) %}
 
 {% block introduction %}
-    <h1 class="mt-0">/{{ this.title }}</h1>
+    <h1 class="mt-0">{{ this.title }}</h1>
 
     <dl class="border-y py-3">
         <dt><strong>Syntax</strong></dt>
