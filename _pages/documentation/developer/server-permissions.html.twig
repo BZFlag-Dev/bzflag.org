@@ -10,11 +10,15 @@ parent:
 
 {% from _self import slash_command_link %}
 
-{% macro slash_command_link(slash_command, no_link) %}
-    {% if no_link %}
-        /{{ slash_command }}
+{% macro slash_command_link(permission) %}
+    {% if permission['no-link'] %}
+        /{{ permission['slash-command'] }}
     {% else %}
-        <a href="/documentation/slash-commands/{{ slash_command | split(" ")[0] }}/">/{{ slash_command }}</a>
+        {% set fragment = permission['html-id'] ? '#' ~ permission['html-id'] : '' %}
+
+        <a href="{{ url(collections.slash_commands[permission['slash-command']]) }}{{ fragment }}">
+            /{{ permission['extended-command'] ?? permission['slash-command'] }}
+        </a>
     {% endif %}
 {% endmacro %}
 
@@ -55,9 +59,9 @@ parent:
                 <td>{{ permission.permission }}</td>
                 <td>
                     {% if permission["slash-commands"] %}
-                        {{ permission["slash-commands"] | map(p => slash_command_link(p["slash-command"])) | join(" ") }}
+                        {{ permission["slash-commands"] | map(p => slash_command_link(p)) | join(" ") }}
                     {% else %}
-                        {{ slash_command_link(permission["slash-command"], permission["no-link"]) }}
+                        {{ slash_command_link(permission) }}
                     {% endif %}
                 </td>
             </tr>
@@ -75,10 +79,11 @@ parent:
             </tr>
         </thead>
         <tbody>
-        {% for permission in data.server_permissions if permission["immunity-for"] %}
+        {% for immunity_permission in data.server_permissions if immunity_permission["immunity-for"] %}
+            {% set permission = data.server_permissions | where('permission', '==', immunity_permission["immunity-for"]) | first %}
             <tr>
-                <td>{{ permission.permission }}</td>
-                <td>{{ slash_command_link(permission["immunity-for"]) }}</td>
+                <td>{{ immunity_permission.permission }}</td>
+                <td>{{ slash_command_link(permission) }}</td>
             </tr>
         {% endfor %}
         </tbody>

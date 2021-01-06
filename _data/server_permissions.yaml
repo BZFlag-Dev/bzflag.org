@@ -78,18 +78,23 @@
   slash-command: playerlist
 - permission: plugins
   slash-command: listplugins
-- permission: poll
-  slash-command: poll
 - permission: pollBan
-  slash-command: poll ban
+  slash-command: poll
+  html-id: ban-a-player
+  extended-command: poll ban
 - permission: pollFlagReset
-  slash-command: poll flagreset
+  slash-command: poll
+  html-id: flag-reset
+  extended-command: poll flagreset
 - permission: pollKick
-  slash-command: poll kick
+  slash-command: poll
+  html-id: kick-a-player
+  extended-command: poll kick
 - permission: pollKill
-  slash-command: poll kill
+  slash-command: poll
+  html-id: kill
+  extended-command: poll kill
 - permission: pollSet
-  slash-command: poll set
   no-link: true
 - permission: record
   slash-command: record
@@ -137,8 +142,8 @@
 - permission: antipoll
   immunity-for: poll
 - permission: antipollban
-  immunity-for: poll ban
+  immunity-for: pollBan
 - permission: antipollkick
-  immunity-for: poll kick
+  immunity-for: pollKick
 - permission: antipollkill
-  immunity-for: poll kill
+  immunity-for: pollKill
