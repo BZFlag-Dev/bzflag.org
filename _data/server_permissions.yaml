@@ -78,6 +78,8 @@
   slash-command: playerlist
 - permission: plugins
   slash-command: listplugins
+- permission: poll
+  slash-command: poll
 - permission: pollBan
   slash-command: poll
   html-id: ban-a-player
