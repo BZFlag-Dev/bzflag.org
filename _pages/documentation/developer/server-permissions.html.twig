@@ -1,0 +1,86 @@
+---
+section: documentation
+sectiontitle: Developer Documentation
+permalink: /documentation/developer/server-permissions/
+title: Server Permissions
+parent:
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% from _self import slash_command_link %}
+
+{% macro slash_command_link(slash_command, no_link) %}
+    {% if no_link %}
+        /{{ slash_command }}
+    {% else %}
+        <a href="/documentation/slash-commands/{{ slash_command | split(" ")[0] }}/">/{{ slash_command }}</a>
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+    <h1>Server Permissions</h1>
+    <p class="mb-3">
+        Permissions can be assigned to groups and individual players on a server. These permissions control what a player may or may not do on the server. Many of the permissions control which <a href="/documentation/slash-commands/">commands</a> can be used by players.
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permission in data.server_permissions if permission.description %}
+            <tr>
+                <td>{{ permission.permission }}</td>
+                <td>{{ permission.description | markdown}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 id="commands">Commands</h2>
+    <p>Some commands require a permission to use them.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Granted Command(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permission in data.server_permissions if permission["slash-command"] or permission["slash-commands"] %}
+            <tr>
+                <td>{{ permission.permission }}</td>
+                <td>
+                    {% if permission["slash-commands"] %}
+                        {{ permission["slash-commands"] | map(p => slash_command_link(p["slash-command"])) | join(" ") }}
+                    {% else %}
+                        {{ slash_command_link(permission["slash-command"], permission["no-link"]) }}
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 id="command-immunity">Command Immunity</h2>
+    <p>Each permission provides immunity to a specific command.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Immune to Command</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permission in data.server_permissions if permission["immunity-for"] %}
+            <tr>
+                <td>{{ permission.permission }}</td>
+                <td>{{ slash_command_link(permission["immunity-for"]) }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

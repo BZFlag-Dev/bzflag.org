@@ -38,7 +38,7 @@ Welcome to the BZFlag documentation! We have documentation targeting new and exp
 
             BZFlag exposes an API via it's server process to allow for custom behavior and game modes to exist on maps.
 
-            ### [Server Permissions]({{ url(dev_docs['server-permissions']) }})
+            ### [Server Permissions]({{ url(pages['Server Permissions']) }})
 
             BZFlag allows you to set what players are allowed to do and what commands they may use.
 
