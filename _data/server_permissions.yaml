@@ -1,151 +1,217 @@
 # general permissions
+
 - permission: adminMessageReceive
   description: Receives messages sent to the admin channel
+
 - permission: adminMessageSend
   description: Allows sending messages to the admin channel
+
 - permission: hideAdmin
   description: Doesn't show `@`
+
 - permission: info
   description:
+
 - permission: privateMessage
   description: Allows sending private messages with `.`
+
 - permission: rejoin
   description: Allows rejoining instantly, regardless of `_rejoinTime`
+
 - permission: removePerms
   description: Allows removing permissions from players
+
 - permission: requireIdentify
   description: Requires callsign to identify before allowed to spawn
+
 - permission: setPerms
   description: Allows granting permissions to players
+
 - permission: shortBan
   description: Allows bans with limited duration only
+
 - permission: showAdmin
   description: Gives player an `@` regardless of having the `shortban` or `ban` permission; the `hideAdmin` permission supersedes the `showAdmin` permission
+
 - permission: spawn
   description: Allows joining the game as a player; observers don't need this permission
+
 - permission: talk
   description: Allows sending messages
 
 # slash commands
+
 - permission: actionMessage
   slash-command: me
+
 - permission: ban
   slash-command: ban
+
 - permission: banlist
   slash-command: banlist
+
 - permission: clientquery
   slash-command: clientquery
   no-link: true
+
 - permission: countdown
   slash-command: countdown
 - permission: date
   slash-command: date
+
 - permission: endGame
   slash-command: gameover
+
 - permission: flagHistory
   slash-command: flaghistory
+
 - permission: flagMaster
   slash-command: flag
+
 - permission: flagMod
   slash-command: flag reset
+
 - permission: idlestats
   slash-command: idlestats
+
 - permission: jitterwarn
   slash-command: jitterwarn
+
 - permission: kick
   slash-command: kick
+
 - permission: kill
   slash-command: kill
+
 - permission: lagstats
   slash-command: lagstats
+
 - permission: lagwarn
   slash-command: lagwarn
+
 - permission: listPerms
   slash-command: showperms
+
 - permission: listPlugins
   slash-command: listplugins
+
 - permission: loadPlugin
   slash-command: loadplugin
+
 - permission: masterban
   slash-command: masterban
+
 - permission: modcount
   slash-command: modcount
+
 - permission: mute
   slash-command: mute
+
 - permission: packetlosswarn
   slash-command: packetlosswarn
+
 - permission: playerList
   slash-command: playerlist
+
 - permission: plugins
   slash-command: listplugins
+
 - permission: poll
   slash-command: poll
+
 - permission: pollBan
   slash-command: poll
   html-id: ban-a-player
   extended-command: poll ban
+
 - permission: pollFlagReset
   slash-command: poll
   html-id: flag-reset
   extended-command: poll flagreset
+
 - permission: pollKick
   slash-command: poll
   html-id: kick-a-player
   extended-command: poll kick
+
 - permission: pollKill
   slash-command: poll
   html-id: kill
   extended-command: poll kill
+
 - permission: pollSet
   no-link: true
+
 - permission: record
   slash-command: record
+
 - permission: replay
   slash-command: replay
+
 - permission: report
   slash-command: report
+
 - permission: say
   slash-command: say
+
 - permission: sendHelp
   slash-command: sendhelp
+
 - permission: setAll
   slash-commands:
     - slash-command: set
     - slash-command: reload
     - slash-command: serverdebug
+
 - permission: setVar
   slash-command: set
+
 - permission: showOthers
   slash-command: showgroup
+
 - permission: shutdownServer
   slash-command: shutdownserver
+
 - permission: superkill
   slash-command: superkill
+
 - permission: unban
   slash-command: unban
+
 - permission: unloadPlugin
   slash-command: unloadplugin
+
 - permission: unmute
   slash-command: unmute
+
 - permission: veto
   slash-command: veto
+
 - permission: viewReports
   slash-command: viewreports
+
 - permission: vote
   slash-command: vote
 
 # command immunity
+
 - permission: antiban
   immunity-for: ban
+
 - permission: antikick
   immunity-for: kick
+
 - permission: antikill
   immunity-for: kill
+
 - permission: antipoll
   immunity-for: poll
+
 - permission: antipollban
   immunity-for: pollBan
+
 - permission: antipollkick
   immunity-for: pollKick
+
 - permission: antipollkill
   immunity-for: pollKill
