@@ -70,8 +70,6 @@ slash_commands:
 
   - permission: lagwarn
 
-  - permission: listPerms
-
   - permission: listPlugins
 
   - permission: masterban
