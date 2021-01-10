@@ -77,8 +77,6 @@ slash_commands:
 
   - permission: listPlugins
 
-  - permission: loadPlugin
-
   - permission: masterban
 
   - permission: modcount
@@ -134,8 +132,6 @@ slash_commands:
   - permission: superkill
 
   - permission: unban
-
-  - permission: unloadPlugin
 
   - permission: unmute
 
