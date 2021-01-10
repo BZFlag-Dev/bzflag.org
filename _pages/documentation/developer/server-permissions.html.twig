@@ -10,15 +10,31 @@ parent:
 
 {% from _self import slash_command_link %}
 
-{% macro slash_command_link(permission) %}
+{% macro slash_command_link(permission, fm_key = 'permissions') %}
     {% if permission['no-link'] %}
         /{{ permission['slash-command'] }}
     {% else %}
-        {% set fragment = permission['html-id'] ? '#' ~ permission['html-id'] : '' %}
+        {% set commands = collections.slash_commands | where(fm_key, '_=', permission['permission']) %}
+        {% set has_multiple = (commands | length) > 1 %}
 
-        <a href="{{ url(collections.slash_commands[permission['slash-command']]) }}{{ fragment }}">
-            /{{ permission['extended-command'] ?? permission['slash-command'] }}
-        </a>
+        {% if has_multiple %}<ul class="mb-0">{% endif %}
+        {% for command in commands %}
+            {% if has_multiple %}<li>{% endif %}
+
+            {% if permission['immunity-for'] %}
+                {% set overload_permission = data.server_permissions.slash_commands | where('permission', '_=', permission['immunity-for']) | first %}
+            {% endif %}
+
+            {% set _permission = overload_permission ?? permission %}
+            {% set fragment = _permission['html-id'] ? '#' ~ _permission['html-id'] : '' %}
+
+            <a href="{{ url(command) }}{{ fragment }}">
+                /{{ _permission['slash-command'] ?? command['command'] }}
+            </a>
+
+            {% if has_multiple %}</li>{% endif %}
+        {% endfor %}
+        {% if has_multiple %}</ul>{% endif %}
     {% endif %}
 {% endmacro %}
 
@@ -35,7 +51,7 @@ parent:
             </tr>
         </thead>
         <tbody>
-        {% for permission in data.server_permissions if permission.description %}
+        {% for permission in data.server_permissions.general_permissions %}
             <tr>
                 <td>{{ permission.permission }}</td>
                 <td>{{ permission.description | markdown}}</td>
@@ -54,15 +70,11 @@ parent:
             </tr>
         </thead>
         <tbody>
-        {% for permission in data.server_permissions if permission["slash-command"] or permission["slash-commands"] %}
+        {% for permission in data.server_permissions.slash_commands %}
             <tr>
                 <td>{{ permission.permission }}</td>
                 <td>
-                    {% if permission["slash-commands"] %}
-                        {{ permission["slash-commands"] | map(p => slash_command_link(p)) | join(" ") }}
-                    {% else %}
-                        {{ slash_command_link(permission) }}
-                    {% endif %}
+                    {{ slash_command_link(permission) }}
                 </td>
             </tr>
         {% endfor %}
@@ -79,11 +91,10 @@ parent:
             </tr>
         </thead>
         <tbody>
-        {% for immunity_permission in data.server_permissions if immunity_permission["immunity-for"] %}
-            {% set permission = data.server_permissions | where('permission', '==', immunity_permission["immunity-for"]) | first %}
+        {% for immunity_permission in data.server_permissions.command_immunity %}
             <tr>
                 <td>{{ immunity_permission.permission }}</td>
-                <td>{{ slash_command_link(permission) }}</td>
+                <td>{{ slash_command_link(immunity_permission, 'immunity') }}</td>
             </tr>
         {% endfor %}
         </tbody>

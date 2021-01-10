@@ -5,6 +5,8 @@ since: 2.4.0
 category: Admin
 permissions:
   - kick
+immunity:
+  - antikick
 ---
 
 The kick command will remove a specific player from the server. This is typically used after a verbal warning. Either the slot # or callsign is required, optionally followed by a kick reason.

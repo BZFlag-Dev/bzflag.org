@@ -1,217 +1,164 @@
-# general permissions
+general_permissions:
+  - permission: adminMessageReceive
+    description: Receives messages sent to the admin channel
 
-- permission: adminMessageReceive
-  description: Receives messages sent to the admin channel
+  - permission: adminMessageSend
+    description: Allows sending messages to the admin channel
 
-- permission: adminMessageSend
-  description: Allows sending messages to the admin channel
+  - permission: hideAdmin
+    description: Doesn't show `@`
 
-- permission: hideAdmin
-  description: Doesn't show `@`
+  - permission: info
+    description:
 
-- permission: info
-  description:
+  - permission: privateMessage
+    description: Allows sending private messages with `.`
 
-- permission: privateMessage
-  description: Allows sending private messages with `.`
+  - permission: rejoin
+    description: Allows rejoining instantly, regardless of `_rejoinTime`
 
-- permission: rejoin
-  description: Allows rejoining instantly, regardless of `_rejoinTime`
+  - permission: removePerms
+    description: Allows removing permissions from players
 
-- permission: removePerms
-  description: Allows removing permissions from players
+  - permission: requireIdentify
+    description: Requires callsign to identify before allowed to spawn
 
-- permission: requireIdentify
-  description: Requires callsign to identify before allowed to spawn
+  - permission: setPerms
+    description: Allows granting permissions to players
 
-- permission: setPerms
-  description: Allows granting permissions to players
+  - permission: shortBan
+    description: Allows bans with limited duration only
 
-- permission: shortBan
-  description: Allows bans with limited duration only
+  - permission: showAdmin
+    description: Gives player an `@` regardless of having the `shortban` or `ban` permission; the `hideAdmin` permission supersedes the `showAdmin` permission
 
-- permission: showAdmin
-  description: Gives player an `@` regardless of having the `shortban` or `ban` permission; the `hideAdmin` permission supersedes the `showAdmin` permission
+  - permission: spawn
+    description: Allows joining the game as a player; observers don't need this permission
 
-- permission: spawn
-  description: Allows joining the game as a player; observers don't need this permission
+  - permission: talk
+    description: Allows sending messages
 
-- permission: talk
-  description: Allows sending messages
+slash_commands:
+  - permission: actionMessage
 
-# slash commands
+  - permission: ban
 
-- permission: actionMessage
-  slash-command: me
+  - permission: banlist
 
-- permission: ban
-  slash-command: ban
+  - permission: clientquery
+    slash-command: clientquery
+    no-link: true
 
-- permission: banlist
-  slash-command: banlist
+  - permission: countdown
 
-- permission: clientquery
-  slash-command: clientquery
-  no-link: true
+  - permission: date
 
-- permission: countdown
-  slash-command: countdown
-- permission: date
-  slash-command: date
+  - permission: endGame
 
-- permission: endGame
-  slash-command: gameover
+  - permission: flagHistory
 
-- permission: flagHistory
-  slash-command: flaghistory
+  - permission: flagMaster
 
-- permission: flagMaster
-  slash-command: flag
+  - permission: flagMod
 
-- permission: flagMod
-  slash-command: flag reset
+  - permission: idlestats
 
-- permission: idlestats
-  slash-command: idlestats
+  - permission: jitterwarn
 
-- permission: jitterwarn
-  slash-command: jitterwarn
+  - permission: kick
 
-- permission: kick
-  slash-command: kick
+  - permission: kill
 
-- permission: kill
-  slash-command: kill
+  - permission: lagstats
 
-- permission: lagstats
-  slash-command: lagstats
+  - permission: lagwarn
 
-- permission: lagwarn
-  slash-command: lagwarn
+  - permission: listPerms
 
-- permission: listPerms
-  slash-command: showperms
+  - permission: listPlugins
 
-- permission: listPlugins
-  slash-command: listplugins
+  - permission: loadPlugin
 
-- permission: loadPlugin
-  slash-command: loadplugin
+  - permission: masterban
 
-- permission: masterban
-  slash-command: masterban
+  - permission: modcount
 
-- permission: modcount
-  slash-command: modcount
+  - permission: mute
 
-- permission: mute
-  slash-command: mute
+  - permission: packetlosswarn
 
-- permission: packetlosswarn
-  slash-command: packetlosswarn
+  - permission: playerList
 
-- permission: playerList
-  slash-command: playerlist
+  - permission: plugins
 
-- permission: plugins
-  slash-command: listplugins
+  - permission: poll
 
-- permission: poll
-  slash-command: poll
+  - permission: pollBan
+    html-id: ban-a-player
+    slash-command: poll ban
 
-- permission: pollBan
-  slash-command: poll
-  html-id: ban-a-player
-  extended-command: poll ban
+  - permission: pollFlagReset
+    html-id: flag-reset
+    slash-command: poll flagreset
 
-- permission: pollFlagReset
-  slash-command: poll
-  html-id: flag-reset
-  extended-command: poll flagreset
+  - permission: pollKick
+    html-id: kick-a-player
+    slash-command: poll kick
 
-- permission: pollKick
-  slash-command: poll
-  html-id: kick-a-player
-  extended-command: poll kick
+  - permission: pollKill
+    html-id: kill
+    slash-command: poll kill
 
-- permission: pollKill
-  slash-command: poll
-  html-id: kill
-  extended-command: poll kill
+  - permission: pollSet
+    slash-command: poll set
+    no-link: true
 
-- permission: pollSet
-  no-link: true
+  - permission: record
 
-- permission: record
-  slash-command: record
+  - permission: replay
 
-- permission: replay
-  slash-command: replay
+  - permission: report
 
-- permission: report
-  slash-command: report
+  - permission: say
 
-- permission: say
-  slash-command: say
+  - permission: sendHelp
 
-- permission: sendHelp
-  slash-command: sendhelp
+  - permission: setAll
 
-- permission: setAll
-  slash-commands:
-    - slash-command: set
-    - slash-command: reload
-    - slash-command: serverdebug
+  - permission: setVar
 
-- permission: setVar
-  slash-command: set
+  - permission: showOthers
 
-- permission: showOthers
-  slash-command: showgroup
+  - permission: shutdownServer
 
-- permission: shutdownServer
-  slash-command: shutdownserver
+  - permission: superkill
 
-- permission: superkill
-  slash-command: superkill
+  - permission: unban
 
-- permission: unban
-  slash-command: unban
+  - permission: unloadPlugin
 
-- permission: unloadPlugin
-  slash-command: unloadplugin
+  - permission: unmute
 
-- permission: unmute
-  slash-command: unmute
+  - permission: veto
 
-- permission: veto
-  slash-command: veto
+  - permission: viewReports
 
-- permission: viewReports
-  slash-command: viewreports
+  - permission: vote
 
-- permission: vote
-  slash-command: vote
+command_immunity:
+  - permission: antiban
 
-# command immunity
+  - permission: antikick
 
-- permission: antiban
-  immunity-for: ban
+  - permission: antikill
 
-- permission: antikick
-  immunity-for: kick
+  - permission: antipoll
 
-- permission: antikill
-  immunity-for: kill
+  - permission: antipollban
+    immunity-for: pollBan
 
-- permission: antipoll
-  immunity-for: poll
+  - permission: antipollkick
+    immunity-for: pollKick
 
-- permission: antipollban
-  immunity-for: pollBan
-
-- permission: antipollkick
-  immunity-for: pollKick
-
-- permission: antipollkill
-  immunity-for: pollKill
+  - permission: antipollkill
+    immunity-for: pollKill

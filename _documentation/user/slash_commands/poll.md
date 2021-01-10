@@ -3,12 +3,17 @@ command: poll
 syntax: "<flagreset | kill | kick | ban | ...> [target]"
 since: 2.4.0
 category: Player
-permissions: 
+permissions:
   - poll
   - pollBan
   - pollFlagReset
   - pollKick
   - pollKill
+immunity:
+  - antiPoll
+  - antiPollBan
+  - antiPollKick
+  - antiPollKill
 ---
 
 To allow players to remove problem players from a server when an admin is not around, the game provides a poll system. Generally this is restricted registered users only to limit abuse. To start a poll, there must be a minimum number of players that are able to vote. By default, 3 players (counting the one starting the poll) must be able to vote for a poll to be started. The default poll duration is 60 seconds, and the default percentage of "yes" votes required to pass the poll is 50.1%. Additionally, by default, a individual player is only able to run a poll once every 5 minutes.

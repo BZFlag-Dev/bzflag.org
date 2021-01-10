@@ -6,6 +6,8 @@ category: Admin
 permissions:
   - ban
   - shortBan
+immunity:
+  - antiban
 ---
 
 The ban command is typically used after a player has been verbally warned and then kicked. It will prevent them from rejoining. The ban target is specified as a callsign (with quotes if they have spaces in their name), a slot # or an IP address. Banning by callsign will only work if the player is still on the server. It is recommended to avoid banning by slot # because the target player may leave and someone else that joins make be placed into that slot as the ban is issued, causing the wrong player to be banned. A ban duration is also required.
