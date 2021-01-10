@@ -14,14 +14,8 @@ general_permissions:
   - permission: rejoin
     description: Allows rejoining instantly, regardless of `_rejoinTime`
 
-  - permission: removePerms
-    description: Allows removing permissions from players
-
   - permission: requireIdentify
     description: Requires callsign to identify before allowed to spawn
-
-  - permission: setPerms
-    description: Allows granting permissions to players
 
   - permission: shortBan
     description: Allows bans with limited duration only
