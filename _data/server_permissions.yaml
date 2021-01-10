@@ -9,7 +9,7 @@ general_permissions:
     description: Doesn't show `@`
 
   - permission: privateMessage
-    description: Allows sending private messages with `.`
+    description: Allows sending private messages directly to other players. Players will be able to message admins (players with an `@`) regardless of this permission.
 
   - permission: rejoin
     description: Allows rejoining instantly, regardless of `_rejoinTime`
