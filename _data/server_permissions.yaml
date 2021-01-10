@@ -8,9 +8,6 @@ general_permissions:
   - permission: hideAdmin
     description: Doesn't show `@`
 
-  - permission: info
-    description:
-
   - permission: privateMessage
     description: Allows sending private messages with `.`
 
