@@ -1,0 +1,42 @@
+---
+title: Terms of Use
+section: terms-of-use
+permalink: /terms-of-use/
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% block content %}
+    {% markdown %}
+        # {{ this.title }}
+
+        The BZFlag project provides several online resources, including, but not limited to:
+        - The #bzflag and #bzflag-chat IRC and Matrix chat rooms
+        - The BZFlag main site
+        - The BZFlag forums
+        - A server listing and player authentication/authorization system
+        - Source code repositories and issue trackers on GitHub
+
+        Access to these resources is a privilege, not a right, and is subject to the discretion of the developers and project administrators.
+        Abuse on or towards the services we run may result in losing access to some or all of our services. Additionally, abuse on or against community services, such as game servers or fan/league sites, can also result in the BZFlag project leadership taking action to block the abuse.
+
+        Examples of abuse that will not be tolerated:
+        - Derogatory statements with regard to race, color, creed, gender or other bigotry
+        - Extreme profanity
+        - Using BZFlag resources as a personal political soapbox
+        - Threats of any kind against us or any member of the community
+        - Network-based attacks
+        - Use of cheats on public game servers running on official protocol versions
+
+        BZFlag has a small, but strong community that will defend itself from abuse. The BZFlag project leaders also support and protect this community.
+
+        Additionally, for publicly listed game servers, there are additional forms of abuse that will not be tolerated:
+        - Artificial inflation of server list position through the use of bots or spoofed numbers
+        - Profanity or abusive text in the public server description or address
+
+        Individual game servers will have their own rules for conduct on the game server itself and will have their own administrative team.
+
+        For third-party websites that wish to allow BZFlag players to sign in with their bzflag.org login credentials, they should make use of our weblogin system. Third-party sites should **not** request the username and password of BZFlag accounts, and those that do may be blocked from accessing our services.
+    {% endmarkdown %}
+
+{% endblock %}
