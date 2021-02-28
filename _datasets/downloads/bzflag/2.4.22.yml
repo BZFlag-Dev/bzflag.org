@@ -1,0 +1,29 @@
+version: 2.4.22
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=20480'
+codename: 'Eyes are windows to your SDL'
+changesummary: |
+    This release fixes several issues with SDL 2 window management. This fixed a lot of edge cases, mainly with macOS and Linux. There were also a few other minor fixes with plugins and the handling of autopilot and bots.
+changelog: |
+    * Fix many issues with SDL 2 window management - Joshua Bodine, Scott Wichser
+    * The playHistoryTracker plugin now tracks kills correctly - Scott Wichser
+    * Local shotID was not being set in bz_eShotFiredEvent - Agatha
+    * Send active autopilot statuses to a joining player - Scott Wichser
+    * Fix solo bots being kicked when rejoining to a server - Scott Wichser
+    * Fix the backspace key not working on the bzadmin Curses menu - Scott Wichser
+date: '2021-02-27'
+downloads:
+    windows:
+        - filename: bzflag-@VER@.exe
+          requirements: 'Windows Vista/7/8.1/10'
+          sha256: 17df61347cfc2cb08da4ed5974189df40ce26ebb94605ef928cd40f43b935ae7
+    flatpak:
+        - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
+          requirements: null
+          sha256: null
+    source:
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: 9e64653302b657bd8b5f96fe1150a9ff80a1d53a6d7e8a35138c6b1b02006a4d
+        - filename: bzflag-@VER@.tar.gz
+          sha256: b96ed2a12cc309eecd3856bdd593117546503e26960450e4e6e43185e52da2a4
+        - filename: bzflag-@VER@.zip
+          sha256: d18cd601127346c2d1edcfd00a5230d51a4b4c12910e3aaa30ac1224d2ad0562
