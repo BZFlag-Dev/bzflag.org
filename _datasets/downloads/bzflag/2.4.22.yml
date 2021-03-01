@@ -20,6 +20,10 @@ downloads:
         - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
           requirements: null
           sha256: null
+    snapcraft:
+        - url: 'https://snapcraft.io/bzflag'
+          requirements: null
+          sha256: null
     source:
         - filename: bzflag-@VER@.tar.bz2
           sha256: 9e64653302b657bd8b5f96fe1150a9ff80a1d53a6d7e8a35138c6b1b02006a4d
