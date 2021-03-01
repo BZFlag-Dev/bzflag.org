@@ -29,7 +29,7 @@ parameters:
       name: kickReason
       since: V2
     - dataType: bz_ApiString
-      description: The message sent to the player that is not allowed to spawn if `allow` is false.
+      description: The message sent to the player that is not allowed to spawn if `allow` is false; this message is only sent to each player once.
       name: message
       since: V2
     - dataType: double
@@ -40,3 +40,5 @@ parameters:
 This event is called every time before a player spawns.
 
 By setting `allow` to false, the player will be kicked when they try to spawn; this can be prevented by setting `kickPlayer` to false as well. It's recommended you let the player know _why_ they're not allowed to spawn.
+
+Regarding the `message` attribute in V2, players will only be notified of this once to prevent spamming them. If you would like players to be notified of this again, you will need to manually use [`bz_setPlayerSpawnable`]({{ url(collections.bzfs_api_functions.bz_setPlayerSpawnable) }}) to set a player's spawnable status to `false`.
