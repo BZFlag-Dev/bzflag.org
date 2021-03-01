@@ -29,7 +29,7 @@ parameters:
       name: kickReason
       since: V2
     - dataType: bz_ApiString
-      description: The message sent to the player that is being kicked if `kickPlayer` is true.
+      description: The message sent to the player that is not allowed to spawn if `allow` is false.
       name: message
       since: V2
     - dataType: double
