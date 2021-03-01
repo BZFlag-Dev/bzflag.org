@@ -5,7 +5,17 @@ signatures:
     - []
 returns:
     dataType: bool
-    description: ~
+    description: Returns true if a countdown to a timed match is in progress.
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Check whether or not there is a countdown in progress to begin a timed game.
+
+Players will often see the server announce a countdown as a server message looking like the following,
+
+```
+SERVER: 5...
+SERVER: 4...
+SERVER: 3...
+SERVER: 2...
+SERVER: 1...
+```
