@@ -1,0 +1,149 @@
+general_permissions:
+  - permission: adminMessageReceive
+    description: Receives messages sent to the admin channel
+
+  - permission: adminMessageSend
+    description: Allows sending messages to the admin channel
+
+  - permission: hideAdmin
+    description: Doesn't show `@`
+
+  - permission: privateMessage
+    description: Allows sending private messages directly to other players. Players will be able to message admins (players with an `@`) regardless of this permission.
+
+  - permission: rejoin
+    description: Allows rejoining instantly, regardless of `_rejoinTime`
+
+  - permission: requireIdentify
+    description: Requires callsign to identify before allowed to spawn
+
+  - permission: shortBan
+    description: Allows bans with limited duration only
+
+  - permission: showAdmin
+    description: Gives player an `@` regardless of having the `shortban` or `ban` permission; the `hideAdmin` permission supersedes the `showAdmin` permission
+
+  - permission: spawn
+    description: Allows joining the game as a player; observers don't need this permission
+
+  - permission: talk
+    description: Allows sending messages
+
+slash_commands:
+  - permission: actionMessage
+
+  - permission: ban
+
+  - permission: banlist
+
+  - permission: clientquery
+    slash-command: clientquery
+    no-link: true
+
+  - permission: countdown
+
+  - permission: date
+
+  - permission: endGame
+
+  - permission: flagHistory
+
+  - permission: flagMaster
+
+  - permission: flagMod
+
+  - permission: idlestats
+
+  - permission: jitterwarn
+
+  - permission: kick
+
+  - permission: kill
+
+  - permission: lagstats
+
+  - permission: lagwarn
+
+  - permission: listPlugins
+
+  - permission: masterban
+
+  - permission: modcount
+
+  - permission: mute
+
+  - permission: packetlosswarn
+
+  - permission: playerList
+
+  - permission: plugins
+
+  - permission: poll
+
+  - permission: pollBan
+    html-id: ban-a-player
+    slash-command: poll ban
+
+  - permission: pollFlagReset
+    html-id: flag-reset
+    slash-command: poll flagreset
+
+  - permission: pollKick
+    html-id: kick-a-player
+    slash-command: poll kick
+
+  - permission: pollKill
+    html-id: kill
+    slash-command: poll kill
+
+  - permission: pollSet
+    slash-command: poll set
+    no-link: true
+
+  - permission: record
+
+  - permission: replay
+
+  - permission: report
+
+  - permission: say
+
+  - permission: sendHelp
+
+  - permission: setAll
+
+  - permission: setVar
+
+  - permission: showOthers
+
+  - permission: shutdownServer
+
+  - permission: superkill
+
+  - permission: unban
+
+  - permission: unmute
+
+  - permission: veto
+
+  - permission: viewReports
+
+  - permission: vote
+
+command_immunity:
+  - permission: antiban
+
+  - permission: antikick
+
+  - permission: antikill
+
+  - permission: antipoll
+
+  - permission: antipollban
+    immunity-for: pollBan
+
+  - permission: antipollkick
+    immunity-for: pollKick
+
+  - permission: antipollkill
+    immunity-for: pollKill

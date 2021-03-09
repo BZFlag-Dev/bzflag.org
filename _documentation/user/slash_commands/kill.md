@@ -5,6 +5,8 @@ since: 2.4.0
 category: Admin
 permissions:
   - kill
+immunity:
+  - antikill
 ---
 
 The kill command will cause the server to destroy a player's tank.

@@ -38,6 +38,10 @@ Welcome to the BZFlag documentation! We have documentation targeting new and exp
 
             BZFlag exposes an API via it's server process to allow for custom behavior and game modes to exist on maps.
 
+            ### [Server Permissions]({{ url(pages['Server Permissions']) }})
+
+            BZFlag allows you to set what players are allowed to do and what commands they may use.
+
             ### [Contributing to the project]({{ url(dev_docs['contributing']) }})
 
             We're an open source project meaning all pull requests are welcome! Here's how you can get started with your first pull request to start contributing to our game.

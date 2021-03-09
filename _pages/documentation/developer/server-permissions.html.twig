@@ -1,0 +1,102 @@
+---
+section: documentation
+sectiontitle: Developer Documentation
+permalink: /documentation/developer/server-permissions/
+title: Server Permissions
+parent:
+---
+
+{% extends "_layouts/page.html.twig" %}
+
+{% from _self import slash_command_link %}
+
+{% macro slash_command_link(permission, fm_key = 'permissions') %}
+    {% if permission['no-link'] %}
+        /{{ permission['slash-command'] }}
+    {% else %}
+        {% set commands = collections.slash_commands | where(fm_key, '_=', permission['permission']) %}
+        {% set has_multiple = (commands | length) > 1 %}
+
+        {% if has_multiple %}<ul class="mb-0">{% endif %}
+        {% for command in commands %}
+            {% if has_multiple %}<li>{% endif %}
+
+            {% if permission['immunity-for'] %}
+                {% set overload_permission = data.server_permissions.slash_commands | where('permission', '_=', permission['immunity-for']) | first %}
+            {% endif %}
+
+            {% set _permission = overload_permission ?? permission %}
+            {% set fragment = _permission['html-id'] ? '#' ~ _permission['html-id'] : '' %}
+
+            <a href="{{ url(command) }}{{ fragment }}">
+                /{{ _permission['slash-command'] ?? command['command'] }}
+            </a>
+
+            {% if has_multiple %}</li>{% endif %}
+        {% endfor %}
+        {% if has_multiple %}</ul>{% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+    <h1>Server Permissions</h1>
+    <p class="mb-3">
+        Permissions can be assigned to groups and individual players on a server. These permissions control what a player may or may not do on the server. Many of the permissions control which <a href="/documentation/slash-commands/">commands</a> can be used by players.
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permission in data.server_permissions.general_permissions %}
+            <tr>
+                <td>{{ permission.permission }}</td>
+                <td>{{ permission.description | markdown}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 id="commands">Commands</h2>
+    <p>Some commands require a permission to use them.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Granted Command(s)</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for permission in data.server_permissions.slash_commands %}
+            <tr>
+                <td>{{ permission.permission }}</td>
+                <td>
+                    {{ slash_command_link(permission) }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 id="command-immunity">Command Immunity</h2>
+    <p>These permissions provides immunity to a specific command.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Permission</th>
+                <th>Immune to Command</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for immunity_permission in data.server_permissions.command_immunity %}
+            <tr>
+                <td>{{ immunity_permission.permission }}</td>
+                <td>{{ slash_command_link(immunity_permission, 'immunity') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
