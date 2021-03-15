@@ -16,6 +16,10 @@ downloads:
         - filename: bzflag-@VER@.exe
           requirements: 'Windows Vista/7/8.1/10'
           sha256: 17df61347cfc2cb08da4ed5974189df40ce26ebb94605ef928cd40f43b935ae7
+    macos:
+        - filename: BZFlag-@VER@-macOS.zip
+          requirements: '10.7+ Intel only'
+          sha256: 3108313610c5e26fba5599aa83ef0ad1d276b7cebf9d38f04a1bc72a4c3c2060
     flatpak:
         - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
           requirements: null
