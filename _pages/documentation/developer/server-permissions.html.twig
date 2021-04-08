@@ -96,7 +96,7 @@ parent:
         {% for immunity_permission in data.server_permissions.command_immunity %}
             {% set permission_lit = immunity_permission.permission %}
             <tr>
-                <td id="{{ immunity_permission }}">{{ immunity_permission }}</td>
+                <td id="{{ permission_lit }}">{{ permission_lit }}</td>
                 <td>{{ slash_command_link(immunity_permission, 'immunity') }}</td>
             </tr>
         {% endfor %}
