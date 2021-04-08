@@ -29,7 +29,7 @@ parent:
             {% set fragment = _permission['html-id'] ? '#' ~ _permission['html-id'] : '' %}
 
             <a href="{{ url(command) }}{{ fragment }}">
-                /{{ _permission['slash-command'] ?? command['command'] }}
+                /{{ (_permission['slash-command'] ?? command['command']) | escape('html') }}
             </a>
 
             {% if has_multiple %}</li>{% endif %}

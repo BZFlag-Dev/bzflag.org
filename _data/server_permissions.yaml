@@ -49,8 +49,10 @@ slash_commands:
   - permission: flagHistory
 
   - permission: flagMaster
+    slash-command: flag <give | take>
 
   - permission: flagMod
+    slash-command: flag <up | show | reset>
 
   - permission: idlestats
 
