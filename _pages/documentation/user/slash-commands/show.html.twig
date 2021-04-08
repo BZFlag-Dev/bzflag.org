@@ -31,7 +31,12 @@ parent:
         {% if this.permissions %}
             <dt><strong>Related Permissions</strong></dt>
             <dd>
-                {{ this.permissions | join(', ') }}
+                {% for permission in this.permissions %}
+                    <a href="{{ url(pages['Server Permissions']) }}#{{ permission }}">
+                        {{ permission }}
+                    </a>
+                    {%- if not loop.last -%}, {% endif %}
+                {% endfor %}
             </dd>
         {% endif %}
     </dl>

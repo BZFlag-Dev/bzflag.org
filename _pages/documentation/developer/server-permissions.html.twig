@@ -52,8 +52,9 @@ parent:
         </thead>
         <tbody>
         {% for permission in data.server_permissions.general_permissions %}
+            {% set permission_lit = permission.permission %}
             <tr>
-                <td>{{ permission.permission }}</td>
+                <td id="{{ permission_lit }}">{{ permission_lit }}</td>
                 <td>{{ permission.description | markdown}}</td>
             </tr>
         {% endfor %}
@@ -71,8 +72,9 @@ parent:
         </thead>
         <tbody>
         {% for permission in data.server_permissions.slash_commands %}
+            {% set permission_lit = permission.permission %}
             <tr>
-                <td>{{ permission.permission }}</td>
+                <td id="{{ permission_lit }}">{{ permission_lit }}</td>
                 <td>
                     {{ slash_command_link(permission) }}
                 </td>
@@ -92,8 +94,9 @@ parent:
         </thead>
         <tbody>
         {% for immunity_permission in data.server_permissions.command_immunity %}
+            {% set permission_lit = immunity_permission.permission %}
             <tr>
-                <td>{{ immunity_permission.permission }}</td>
+                <td id="{{ immunity_permission }}">{{ immunity_permission }}</td>
                 <td>{{ slash_command_link(immunity_permission, 'immunity') }}</td>
             </tr>
         {% endfor %}
