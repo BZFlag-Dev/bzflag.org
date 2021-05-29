@@ -3,7 +3,14 @@
         "title": "BZFlag 2.4.22 released",
         "description": "BZFlag 2.4.22 is now available. Download now!",
         "author": "BZFlag Developers",
-        "pubDate": "Sat Feb 27, 2020 22:46:00 UTC",
+        "pubDate": "Sat Feb 27, 2021 22:46:00 UTC",
+        "version": "0.0"
+    },
+    {
+        "title": "Moving to Libera.Chat IRC",
+        "description": "Due to recent turmoil at Freenode, we have moved our IRC chat channels to Libera.Chat",
+        "author": "BZFlag Developers",
+        "pubDate": "Sat May 29, 2021 21:30:00 UTC",
         "version": "0.0"
     }
 ]
