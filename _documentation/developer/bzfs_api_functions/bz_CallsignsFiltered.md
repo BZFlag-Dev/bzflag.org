@@ -8,4 +8,4 @@ returns:
     description: ~
 ---
 
-Check if Callsigns are being filtered.
+Check if callsigns are being filtered. This is tied to the `-filterCallsigns` server option or to server settings set via [`bz_SetFiltering`]({{ url(collections.bzfs_api_functions['bz_SetFiltering']) }}).
