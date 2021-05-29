@@ -5,7 +5,7 @@ docpath: contributing/
 
 ## Reporting Bugs/Issues
 
-If you find a problem with the game you can report it to our development team. If you are unsure of the source of the problem, feel free to discuss the problem on our development/support IRC channel at [#BZFlag on the irc.freenode.net network](https://webchat.freenode.net/?channels=bzflag) or on our [public forums](https://forums.bzflag.org/). Otherwise, you can post the issue to our [BZFlag project issue tracker](https://github.com/BZFlag-Dev/bzflag/issues) on GitHub. There are also separate repositories and issue trackers for the other related projects such as our websites. You will find all our official projects at our [GitHub organization page](https://github.com/BZFlag-Dev/).
+If you find a problem with the game you can report it to our development team. If you are unsure of the source of the problem, feel free to discuss the problem on our development/support IRC channel at <a href="https://web.libera.chat/#bzflag" rel="noopener" target="_blank">#bzflag on the irc.libera.chat network</a> or on our [public forums](https://forums.bzflag.org/). Otherwise, you can post the issue to our [BZFlag project issue tracker](https://github.com/BZFlag-Dev/bzflag/issues) on GitHub. There are also separate repositories and issue trackers for the other related projects such as our websites. You will find all our official projects at our [GitHub organization page](https://github.com/BZFlag-Dev/).
 
 ## Contributing Changes
 
