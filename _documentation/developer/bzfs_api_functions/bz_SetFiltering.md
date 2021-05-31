@@ -15,4 +15,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Sets chat and callsign filtering. `true` means it will be filtered.
