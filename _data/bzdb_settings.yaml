@@ -1,0 +1,669 @@
+variables:
+    - name: _agilityAdVel
+      desc: The `_tankSpeed` multiplier used for acceleration speed for tanks holding the Agility flag.
+      since: 2.4.0
+      default: "2.25"
+    - name: _agilityTimeWindow
+      desc: The amount of time (in seconds) that the `_agilityAdVel` speed will remain in effect after acceleration for tanks holding the Agility flag.
+      since: 2.4.0
+      default: "1.0"
+    - name: _agilityVelDelta
+      desc: The duration of time (in seconds) that a tank holding the Agility flag will accelerate from stationary to `_agilityAdVel`.
+      since: 2.4.0
+      default: "0.3"
+    - name: _ambientLight
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _angleTolerance
+      desc: ~
+      since: 2.4.0
+      default: "0.05"
+    - name: _angularAd
+      desc: The `_tankAngVel` multiplier for how fast tanks can turn while holding the Quick Turn flag.
+      since: 2.4.0
+      default: "1.5"
+    - name: _avenueSize
+      desc: On randomly generated maps, the amount of space to leave between boxes.
+      since: 2.4.0
+      default: "2.0 * _boxBase"
+    - name: _baseSize
+      desc: On randomly generated CTF maps, the width and depth of square bases; the height of bases are constant.
+      since: 2.4.0
+      default: "60.0"
+    - name: _boxBase
+      desc: On randomly generated maps, the smallest width and depth sizes for boxes.
+      since: 2.4.0
+      default: "30.0"
+    - name: _boxHeight
+      desc: On randomly generated maps, the height of boxes in World Units (wu). When the "Random Heights" (i.e. the BZFS `-h` flag) is enabled, this is the starting value that is then used with random multipliers for each generated box.
+      since: 2.4.0
+      default: "6.0 * _muzzleHeight"
+    - name: _burrowAngularAd
+      desc: The `_tankAngVel` multiplier for how fast tanks can turn while burrowed with the Burrow flag.
+      since: 2.4.0
+      default: "0.55"
+    - name: _burrowDepth
+      desc: The Z-axis height in World Units (wu) of how far underground a burrowed tank will be.
+      since: 2.4.0
+      default: "-1.32"
+    - name: _burrowSpeedAd
+      desc: Thw `_tankSpeed` multiplier for a tank's speed while burrowed with the Burrow flag.
+      since: 2.4.0
+      default: "0.80"
+    - name: _coldetDepth
+      desc: ~
+      since: 2.4.0
+      default: "6"
+    - name: _coldetElements
+      desc: ~
+      since: 2.4.0
+      default: "4"
+    - name: _countdownResumeDelay
+      desc: The amount of seconds in the countdown before a paused timed game is resumed.
+      since: 2.4.0
+      default: "5"
+    - name: _cullDepth
+      desc: ~
+      since: 2.4.0
+      default: "6"
+    - name: _cullDist
+      desc: ~
+      since: 2.4.0
+      default: "fog"
+    - name: _cullElements
+      desc: ~
+      since: 2.4.0
+      default: "16"
+    - name: _cullOccluders
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _disableBots
+      desc: A true boolean value will disable autopilot and bots (created via the `-solo` option) on the server.
+      since: 2.4.0
+      default: "0"
+    - name: _disableSpeedChecks
+      desc: A true boolean value will disable rudimentary cheat detection for tanks moving too fast.
+      since: 2.4.0
+      default: "0"
+    - name: _disableHeightChecks
+      desc: A true boolean value will disable rudimentary cheat detection for tanks being located "too high" within a world.
+      since: 2.4.0
+      default: "0"
+    - name: _drawCelestial
+      desc: A boolean value to draw the stars, sun, and moon.
+      since: 2.4.0
+      default: "1"
+    - name: _drawClouds
+      desc: A boolean value to draw clouds.
+      since: 2.4.0
+      default: "1"
+    - name: _drawGround
+      desc: A boolean value to draw the ground plane.
+      since: 2.4.0
+      default: "1"
+    - name: _drawGroundLights
+      desc: A boolean value to draw light reflections on the ground, such as that produced by bullets.
+      since: 2.4.0
+      default: "1"
+    - name: _drawMountains
+      desc: A boolean value to draw surrounding mountains.
+      since: 2.4.0
+      default: "1"
+    - name: _drawSky
+      desc: A boolean value to draw the sky.
+      since: 2.4.0
+      default: "1"
+    - name: _enableDistanceCheck
+      desc: A boolean value to enable experimental cheat detection on player movements being too great between updates.
+      since: 2.4.0
+      default: "0"
+    - name: _endShotDetection
+      desc: The amount of "end shot" messages that can be sent without a corresponding death event.
+      since: 2.4.0
+      default: "5"
+    - name: _explodeTime
+      desc: The amount of time (in seconds) a player is unable to spawn after getting killed.
+      since: 2.4.0
+      default: "5.0"
+    - name: _flagAltitude
+      desc: The visual Z-axis height in World Units (wu), relative to a tank's position, that flags will fly up relative to its first clearance when dropped and the height at which flags will spawn (and subsequently fall).
+      since: 2.4.0
+      default: "11.0"
+    - name: _flagEffectTime
+      desc: The amount of time (in seconds) for a flag to go into effect after being grabbed. Additionally, this value is used as the duration between a tank spawning at its miniature size to its full size.
+      since: 2.4.0
+      default: "0.64"
+    - name: _flagHeight
+      desc: The Z-axis height in World Units (wu), relative to a tank's position, that a flag will be able to fly upwards before looking for a new clearance.
+      since: 2.4.0
+      default: "10.0"
+    - name: _flagPoleWidth
+      desc: The diameter in World Units (wu) of the flag's pole.
+      since: 2.4.0
+      default: "0.025"
+    - name: _flagPoleSize
+      desc: The height of flag poles in World Units (wu).
+      since: 2.4.0
+      default: "0.8"
+    - name: _flagRadius
+      desc: The radius distance in World Units (wu) a tank must be from a flag to pick it up.
+      since: 2.4.0
+      default: "2.5"
+    - name: _forbidHunting
+      desc: A true boolean value will prevent players from hunting each other.
+      since: 2.4.0
+      default: "0"
+    - name: _forbidIdentify
+      desc: A true boolean value will disallow players from identifying other players; this will disable messages such as "Looking at <player>" and will remove a player's callsign from Guided Missile's lock notifications.
+      since: 2.4.0
+      default: "0"
+    - name: _forbidMarkers
+      desc: A true boolean value will remove the large flag markers that indicate the location of your team flag(s).
+      since: 2.4.0
+      default: "0"
+    - name: _fogMode
+      desc: Valid values are, `linear`, `exp`, or `exp2`; if an invalid value is given, it will default to `exp`.
+      since: 2.4.0
+      default: "none"
+    - name: _fogDensity
+      desc: The density of the fog that will be rendered for players; only used for `exp` and `exp2` fog modes.
+      since: 2.4.0
+      default: "0.001"
+    - name: _fogStart
+      desc: Used for linear fog mode, the distance in World Units (wu) relative to a tank's position where fog will begin to occlude vision.
+      since: 2.4.0
+      default: "0.5 * _worldSize"
+    - name: _fogEnd
+      desc: Used for linear fog mode, the distance in World Units (wu) relative to a tank's position where fog will occlude everything.
+      since: 2.4.0
+      default: "_worldSize"
+    - name: _fogColor
+      desc: The color of the fog in the format of RGB (i.e. `RED GREEN BLUE`) values between 0.0 and 1.0. Additionally, supported color names (e.g. blue, teal, black, pink, gray3, etc.) are supported.
+      since: 2.4.0
+      default: "0.25 0.25 0.25"
+    - name: _fogNoSky
+      desc: A true boolean value will disable fog being drawn on the sky; by default, fog is drawn everywhere.
+      since: 2.4.0
+      default: "0"
+    - name: _friction
+      desc: When set to zero, tanks have normal friction. When set to a non-zero number, the closer the number is to zero (decimal values are valid), the longer it will take for a tank to accelerate and the more a tank will "slide" around after attempting to stop. The higher the number, the closer it is to "normal friction."
+      since: 2.4.0
+      default: "0"
+    - name: _gmActivationTime
+      desc: The amount of time (in seconds) it takes for a Guided Missile to become active after it is fired. Any contact under this time will not result in detonation; setting it too low could cause its owner to run into their own GM and be blown up!
+      since: 2.4.0
+      default: "0.5"
+    - name: _gmAdLife
+      desc: The `_shotRange` multiplier that determines the distance guided missiles will go.
+      since: 2.4.0
+      default: "0.95"
+    - name: _gmSize
+      desc: The size in World Units (wu) of the Guided Missiles shown to players with high graphic settings.
+      since: 2.4.0
+      default: "1.5"
+    - name: _gmTurnAngle
+      desc: The angle in radians at which a Guided Missile will turn to follow its target.
+      since: 2.4.0
+      default: "0.628319"
+    - name: _gravity
+      desc: The World Units (wu) a tank will fall or be kept from jumping measured in seconds squared; i.e. `<wu> / seconds ^ 2`.
+      since: 2.4.0
+      default: "-9.8"
+    - name: _handicapScoreDiff
+      desc: ~
+      since: 2.4.0
+      default: "50.0"
+    - name: _handicapVelAd
+      desc: ~
+      since: 2.4.0
+      default: "2.0"
+    - name: _handicapAngAd
+      desc: ~
+      since: 2.4.0
+      default: "1.5"
+    - name: _handicapShotAd
+      desc: ~
+      since: 2.4.0
+      default: "1.75"
+    - name: _hideFlagsOnRadar
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _hideTeamFlagsOnRadar
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _HTTPIndexResourceDir
+      desc: ~
+      since: 2.4.0
+      default: ""
+    - name: _identifyRange
+      desc: ~
+      since: 2.4.0
+      default: "50.0"
+    - name: _jumpVelocity
+      desc: ~
+      since: 2.4.0
+      default: "19.0"
+    - name: _laserAdLife
+      desc: ~
+      since: 2.4.0
+      default: "0.1"
+    - name: _laserAdRate
+      desc: ~
+      since: 2.4.0
+      default: "0.5"
+    - name: _laserAdVel
+      desc: ~
+      since: 2.4.0
+      default: "1000.0"
+    - name: _latitude
+      desc: ~
+      since: 2.4.0
+      default: "37.5"
+    - name: _lockOnAngle
+      desc: ~
+      since: 2.4.0
+      default: "0.15"
+    - name: _longitude
+      desc: ~
+      since: 2.4.0
+      default: "122"
+    - name: _lRAdRate
+      desc: ~
+      since: 2.4.0
+      default: "0.5"
+    - name: _maxBumpHeight
+      desc: ~
+      since: 2.4.0
+      default: "0.33"
+    - name: _maxFlagGrabs
+      desc: ~
+      since: 2.4.0
+      default: "4.0"
+    - name: _maxLOD
+      desc: ~
+      since: 2.4.0
+      default: "32767.0"
+    - name: _maxPlayerAddDelay
+      desc: ~
+      since: 2.4.0
+      default: "30"
+    - name: _mirror
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _momentumAngAcc
+      desc: ~
+      since: 2.4.0
+      default: "1.0"
+    - name: _momentumLinAcc
+      desc: ~
+      since: 2.4.0
+      default: "1.0"
+    - name: _momentumFriction
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _mGunAdLife
+      desc: ~
+      since: 2.4.0
+      default: "1.0 / _mGunAdRate"
+    - name: _mGunAdRate
+      desc: ~
+      since: 2.4.0
+      default: "10.0"
+    - name: _mGunAdVel
+      desc: ~
+      since: 2.4.0
+      default: "1.5"
+    - name: _muzzleFront
+      desc: ~
+      since: 2.4.0
+      default: "_tankRadius + 0.1"
+    - name: _muzzleHeight
+      desc: ~
+      since: 2.4.0
+      default: "1.57"
+    - name: _noClimb
+      desc: ~
+      since: 2.4.0
+      default: "1"
+    - name: _noShadows
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _noSmallPackets
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _notRespondingTime
+      desc: ~
+      since: 2.4.0
+      default: "5.0"
+    - name: _obeseFactor
+      desc: ~
+      since: 2.4.0
+      default: "2.5"
+    - name: _pauseDropTime
+      desc: ~
+      since: 2.4.0
+      default: "15.0"
+    - name: _positionTolerance
+      desc: ~
+      since: 2.4.0
+      default: "0.09"
+    - name: _pyrBase
+      desc: ~
+      since: 2.4.0
+      default: "4.0 * _tankHeight"
+    - name: _pyrHeight
+      desc: ~
+      since: 2.4.0
+      default: "5.0 * _tankHeight"
+    - name: _rainBaseColor
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _radarLimit
+      desc: ~
+      since: 2.4.0
+      default: "_worldSize"
+    - name: _rainRoofs
+      desc: ~
+      since: 2.4.0
+      default: "1"
+    - name: _rainDensity
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainEndZ
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainMaxPuddleTime
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainPuddleSpeed
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainPuddleColor
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainPuddleTexture
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainSpread
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainSpeed
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainSpeedMod
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainSpins
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainStartZ
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainTexture
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainTopColor
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rainType
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _rejoinTime
+      desc: ~
+      since: 2.4.0
+      default: "_explodeTime"
+    - name: _reloadTime
+      desc: ~
+      since: 2.4.0
+      default: "_shotRange / _shotSpeed"
+    - name: _rFireAdLife
+      desc: ~
+      since: 2.4.0
+      default: "1.0 / _rFireAdRate"
+    - name: _rFireAdRate
+      desc: ~
+      since: 2.4.0
+      default: "2.0"
+    - name: _rFireAdVel
+      desc: ~
+      since: 2.4.0
+      default: "1.5"
+    - name: _shieldFlight
+      desc: ~
+      since: 2.4.0
+      default: "2.7"
+    - name: _shockAdLife
+      desc: ~
+      since: 2.4.0
+      default: "0.2"
+    - name: _shockInRadius
+      desc: ~
+      since: 2.4.0
+      default: "_tankLength"
+    - name: _shockOutRadius
+      desc: ~
+      since: 2.4.0
+      default: "60.0"
+    - name: _shotTailLength
+      desc: ~
+      since: 2.4.0
+      default: "4.0"
+    - name: _shotRadius
+      desc: ~
+      since: 2.4.0
+      default: "0.5"
+    - name: _shotRange
+      desc: ~
+      since: 2.4.0
+      default: "350.0"
+    - name: _shotSpeed
+      desc: ~
+      since: 2.4.0
+      default: "100.0"
+    - name: _shotsKeepVerticalVelocity
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _skyColor
+      desc: ~
+      since: 2.4.0
+      default: "white"
+    - name: _spawnMaxCompTime
+      desc: ~
+      since: 2.4.0
+      default: "0.01"
+    - name: _spawnSafeRadMod
+      desc: ~
+      since: 2.4.0
+      default: "20"
+    - name: _spawnSafeSRMod
+      desc: ~
+      since: 2.4.0
+      default: "3"
+    - name: _spawnSafeSWMod
+      desc: ~
+      since: 2.4.0
+      default: "1.5"
+    - name: _speedChecksLogOnly
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _srRadiusMult
+      desc: ~
+      since: 2.4.0
+      default: "2.0"
+    - name: _squishFactor
+      desc: ~
+      since: 2.4.0
+      default: "1.0"
+    - name: _squishTime
+      desc: ~
+      since: 2.4.0
+      default: "1.0"
+    - name: _syncTime
+      desc: ~
+      since: 2.4.0
+      default: "-1.0"
+    - name: _syncLocation
+      desc: ~
+      since: 2.4.0
+      default: "0"
+    - name: _tankExplosionSize
+      desc: ~
+      since: 2.4.0
+      default: "3.5 * _tankLength"
+    - name: _tankAngVel
+      desc: ~
+      since: 2.4.0
+      default: "0.785398"
+    - name: _tankHeight
+      desc: ~
+      since: 2.4.0
+      default: "2.05"
+    - name: _tankLength
+      desc: ~
+      since: 2.4.0
+      default: "6.0"
+    - name: _tankRadius
+      desc: ~
+      since: 2.4.0
+      default: "0.72 * _tankLength"
+    - name: _tankSpeed
+      desc: ~
+      since: 2.4.0
+      default: "25.0"
+    - name: _tankWidth
+      desc: ~
+      since: 2.4.0
+      default: "2.8"
+    - name: _targetingAngle
+      desc: ~
+      since: 2.4.0
+      default: "0.3"
+    - name: _targetingDistance
+      desc: ~
+      since: 2.4.0
+      default: "300.00"
+    - name: _teleportBreadth
+      desc: ~
+      since: 2.4.0
+      default: "4.48"
+    - name: _teleportHeight
+      desc: ~
+      since: 2.4.0
+      default: "10.08"
+    - name: _teleportTime
+      desc: ~
+      since: 2.4.0
+      default: "1.0"
+    - name: _teleportWidth
+      desc: ~
+      since: 2.4.0
+      default: "1.12"
+    - name: _thiefAdLife
+      desc: ~
+      since: 2.4.0
+      default: "0.05"
+    - name: _thiefAdRate
+      desc: ~
+      since: 2.4.0
+      default: "12.0"
+    - name: _thiefAdShotVel
+      desc: ~
+      since: 2.4.0
+      default: "8.0"
+    - name: _thiefTinyFactor
+      desc: ~
+      since: 2.4.0
+      default: "0.5"
+    - name: _thiefVelAd
+      desc: ~
+      since: 2.4.0
+      default: "1.67"
+    - name: _thiefDropTime
+      desc: ~
+      since: 2.4.0
+      default: "_reloadTime * 0.5"
+    - name: _tinyFactor
+      desc: ~
+      since: 2.4.0
+      default: "0.4"
+    - name: _trackFade
+      desc: ~
+      since: 2.4.0
+      default: "3.0"
+    - name: _updateThrottleRate
+      desc: ~
+      since: 2.4.0
+      default: "30.0"
+    - name: _useLineRain
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _useRainPuddles
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _useRainBillboards
+      desc: ~
+      since: 2.4.0
+      default: "none"
+    - name: _velocityAd
+      desc: ~
+      since: 2.4.0
+      default: "1.5"
+    - name: _wallHeight
+      desc: ~
+      since: 2.4.0
+      default: "3.0 * _tankHeight"
+    - name: _weapons
+      desc: ~
+      since: 2.4.0
+      default: "1"
+    - name: _wideAngleAng
+      desc: ~
+      since: 2.4.0
+      default: "1.745329"
+    - name: _wingsGravity
+      desc: ~
+      since: 2.4.0
+      default: "_gravity"
+    - name: _wingsJumpCount
+      desc: ~
+      since: 2.4.0
+      default: "1"
+    - name: _wingsJumpVelocity
+      desc: ~
+      since: 2.4.0
+      default: "_jumpVelocity"
+    - name: _wingsSlideTime
+      desc: ~
+      since: 2.4.0
+      default: "0.0"
+    - name: _worldSize
+      desc: ~
+      since: 2.4.0
+      default: "800.0"
