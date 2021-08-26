@@ -212,27 +212,27 @@ variables:
       since: 2.4.0
       default: "-9.8"
     - name: _handicapScoreDiff
-      desc: ~
+      desc: The difference in score a player must have compared to the average of all players' scores to receive a handicap.
       since: 2.4.0
       default: "50.0"
     - name: _handicapVelAd
-      desc: ~
+      desc: The `_tankSpeed` multiplier for when a player is receiving a handicap.
       since: 2.4.0
       default: "2.0"
     - name: _handicapAngAd
-      desc: ~
+      desc: The `_angularAd` multiplier for when a player is receiving a handicap.
       since: 2.4.0
       default: "1.5"
     - name: _handicapShotAd
-      desc: ~
+      desc: The `_shotSpeed` multiplier for when a player is receiving a handicap.
       since: 2.4.0
       default: "1.75"
     - name: _hideFlagsOnRadar
-      desc: ~
+      desc: A boolean value to hide super flags on the radar; this setting does **not** affect team flags.
       since: 2.4.0
       default: "0"
     - name: _hideTeamFlagsOnRadar
-      desc: ~
+      desc: A boolean value to hide team flags on the radar; this setting does **not** affect super flags.
       since: 2.4.0
       default: "0"
     - name: _HTTPIndexResourceDir
@@ -240,51 +240,47 @@ variables:
       since: 2.4.0
       default: ""
     - name: _identifyRange
-      desc: ~
+      desc: The radius distance in World Units (wu) that a tank must be within in order for the Identify flag to work.
       since: 2.4.0
       default: "50.0"
     - name: _jumpVelocity
-      desc: ~
+      desc: The speed at which a tank moves vertically while jumping meausred in World Units per second.
       since: 2.4.0
       default: "19.0"
     - name: _laserAdLife
-      desc: ~
+      desc: The amount of seconds a laser remains on the field after being fired.
       since: 2.4.0
       default: "0.1"
     - name: _laserAdRate
-      desc: ~
+      desc: The `_rFireAdRate` mulitiplier to determine the firing rate for lasers.
       since: 2.4.0
       default: "0.5"
     - name: _laserAdVel
-      desc: ~
+      desc: The maximum length in World Units (wu) a laser can travel; they're not actually "infinite."
       since: 2.4.0
       default: "1000.0"
     - name: _latitude
-      desc: ~
+      desc: When `_syncLocation` is true, the latitude of where the map is located along with `_longitude` is used to determine the time of day to show to players (day or night).
       since: 2.4.0
       default: "37.5"
     - name: _lockOnAngle
-      desc: ~
+      desc: The angle, in radians, from a tank's heading (positive and negative) that will determine the scope of which tanks can be locked on for Guided Missiles.
       since: 2.4.0
       default: "0.15"
     - name: _longitude
-      desc: ~
+      desc: When `_syncLocation` is true, the longitude of where the map is located along with `_latitude` is used to determine the time of day to show to players (day or night).
       since: 2.4.0
       default: "122"
-    - name: _lRAdRate
-      desc: ~
-      since: 2.4.0
-      default: "0.5"
     - name: _maxBumpHeight
-      desc: ~
+      desc: The maximum allowed height difference in World Units (wu) between two uneven surfaces that will allow a tank to drive up to the object without being stopped by it.
       since: 2.4.0
       default: "0.33"
     - name: _maxFlagGrabs
-      desc: ~
+      desc: When a flag spawns, it is assigned a random number between 1 and `_maxFlagGrabs` known as "grab count." Each time a flag is grabbed, the grab count for the flag is reduced by one until it reaches zero. When zero is reached, the flag will respawn after it is dropped.
       since: 2.4.0
       default: "4.0"
     - name: _maxLOD
-      desc: ~
+      desc: The max level of detail to allow.
       since: 2.4.0
       default: "32767.0"
     - name: _maxPlayerAddDelay
@@ -292,7 +288,7 @@ variables:
       since: 2.4.0
       default: "30"
     - name: _mirror
-      desc: ~
+      desc: When given a valid color literal, a tinted mirror-like ground reflecting objects and tanks will be shown to players. When given an invalid color literal, the ground will display a mirror-like ground with no tint.
       since: 2.4.0
       default: "none"
     - name: _momentumAngAcc
