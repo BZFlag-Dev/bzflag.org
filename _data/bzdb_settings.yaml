@@ -292,43 +292,43 @@ variables:
       since: 2.4.0
       default: "none"
     - name: _momentumAngAcc
-      desc: ~
+      desc: The extra momentum added to a tank holding the Momentum flag while turning.
       since: 2.4.0
       default: "1.0"
     - name: _momentumLinAcc
-      desc: ~
+      desc: The extra momentum added to a tank holding the Momentum flag while moving forward and backwards.
       since: 2.4.0
       default: "1.0"
     - name: _momentumFriction
-      desc: ~
+      desc: The `_friction` applied to a tank holding the Momentum flag.
       since: 2.4.0
       default: "0"
     - name: _mGunAdLife
-      desc: ~
+      desc: The `_shotRange` multiplier to determine the distance Machine Gun bullets go.
       since: 2.4.0
       default: "1.0 / _mGunAdRate"
     - name: _mGunAdRate
-      desc: ~
+      desc: The divisor of `_reloadTime`, which results in how long Machine Gun bullets take to reload.
       since: 2.4.0
       default: "10.0"
     - name: _mGunAdVel
-      desc: ~
+      desc: The speed of Machine Gun bullets.
       since: 2.4.0
       default: "1.5"
     - name: _muzzleFront
-      desc: ~
+      desc: The distance of a tank's muzzle relative to the tank's center in World Units (wu); this affects bullets' starting location and player camera.
       since: 2.4.0
       default: "_tankRadius + 0.1"
     - name: _muzzleHeight
-      desc: ~
+      desc: The height of a tank's muzzle in World Units (wu); see `_muzzleFront`.
       since: 2.4.0
       default: "1.57"
     - name: _noClimb
-      desc: ~
+      desc: A boolean value that determines whether tanks can climb up slopes by jumping forward; a false value disallows tanks from climbing up slopes.
       since: 2.4.0
       default: "1"
     - name: _noShadows
-      desc: ~
+      desc: A boolean value to allow or disallow shadows being drawn on a map.
       since: 2.4.0
       default: "0"
     - name: _noSmallPackets
@@ -336,103 +336,103 @@ variables:
       since: 2.4.0
       default: "0"
     - name: _notRespondingTime
-      desc: ~
+      desc: The amount of times in seconds a player must be considered "non-responsive" before the server reports them as such to other players.
       since: 2.4.0
       default: "5.0"
     - name: _obeseFactor
-      desc: ~
+      desc: The `_tankWidth` multiplier used for tanks holding the Obese flag.
       since: 2.4.0
       default: "2.5"
     - name: _pauseDropTime
-      desc: ~
+      desc: The amount of time in seconds a player must be paused before they automatically drop the flag they are carrying.
       since: 2.4.0
       default: "15.0"
     - name: _positionTolerance
-      desc: ~
+      desc: The amount of World Units (wu) a tank must move before a new update is sent to all players on the server.
       since: 2.4.0
       default: "0.09"
     - name: _pyrBase
-      desc: ~
+      desc: The size in World Units (wu) of bases for pyramids that are added in randomly generated worlds.
       since: 2.4.0
       default: "4.0 * _tankHeight"
     - name: _pyrHeight
-      desc: ~
+      desc: The size in World Units (wu) of heights of pyramids that are added in randomly generated worlds.
       since: 2.4.0
       default: "5.0 * _tankHeight"
-    - name: _rainBaseColor
-      desc: ~
-      since: 2.4.0
-      default: "none"
     - name: _radarLimit
-      desc: ~
+      desc: The maximum width in World Units (wu) of the map that can be displayed on the radar when it's not rotated.
       since: 2.4.0
       default: "_worldSize"
-    - name: _rainRoofs
-      desc: ~
+    - name: _rainBaseColor
+      desc: When `_rainType` is set to `rain`, the color of the bottom half of raindrops.
       since: 2.4.0
-      default: "1"
+      default: "none"
     - name: _rainDensity
-      desc: ~
+      desc: The amount of drops that will exist in the space defined by `_rainSpread`.
       since: 2.4.0
       default: "none"
     - name: _rainEndZ
-      desc: ~
+      desc: The height above the ground where rain will end and form puddles.
       since: 2.4.0
       default: "none"
     - name: _rainMaxPuddleTime
-      desc: ~
+      desc: The amount of seconds a rain puddle should exist before disappearing.
       since: 2.4.0
       default: "none"
     - name: _rainPuddleSpeed
-      desc: ~
+      desc: The amount of seconds it will take for a rain puddle to spread out.
       since: 2.4.0
       default: "none"
     - name: _rainPuddleColor
-      desc: ~
+      desc: The color of rain puddles. A value of `none` means no puddles will be formed.
       since: 2.4.0
       default: "none"
     - name: _rainPuddleTexture
-      desc: ~
+      desc: The texture used for drawing rain puddles.
       since: 2.4.0
       default: "none"
-    - name: _rainSpread
-      desc: ~
+    - name: _rainRoofs
+      desc: Valid values are `0`, `1`, and `2` (`0` rain falls through everything; `1` rain hits buildings but puddles are only on the ground; `2` rain hits buildings and creates puddles on them).
       since: 2.4.0
-      default: "none"
+      default: "1"
     - name: _rainSpeed
-      desc: ~
+      desc: The speed at which rain drops will move. A negative speed will result in the rain falling from the sky whereas a positive speed will result in rain going up from the ground to the sky.
       since: 2.4.0
       default: "none"
     - name: _rainSpeedMod
-      desc: ~
+      desc: A modifier to `_rainSpeed` that will be added or subtracted from individual rain droplets to have a more natural look of droplets falling at different speeds.
+      since: 2.4.0
+      default: "none"
+    - name: _rainSpread
+      desc: The radius in World Units (wu) from the center of the map where rain will fall.
       since: 2.4.0
       default: "none"
     - name: _rainSpins
-      desc: ~
+      desc: Valid values are `0` or `1` (`0` will cause rain droplets to not spin as it falls; `1` will cause rain droplets to spin as they fall).
       since: 2.4.0
       default: "none"
     - name: _rainStartZ
-      desc: ~
+      desc: The height above the ground where rain will start falling from.
       since: 2.4.0
       default: "none"
     - name: _rainTexture
-      desc: ~
+      desc: The name of the texture (from the client's data directory) used for rain droplets; this value is only respectived when `_rainType` is set to `frog`, `particle`, `bubble`, `snow`, or `fatrain`
       since: 2.4.0
       default: "none"
     - name: _rainTopColor
-      desc: ~
+      desc: When `_rainType` is set to `rain`, the color of the top half of raindrops.
       since: 2.4.0
       default: "none"
     - name: _rainType
-      desc: ~
+      desc: Valid rain types are, `frog`, `particle`, `rain`, `bubble`, `snow`, or `fatrain`. When this value is changed in-game with the `/set` command, it will update respective `_rain*` settings automatically.
       since: 2.4.0
       default: "none"
     - name: _rejoinTime
-      desc: ~
+      desc: The number of seconds a player must wait before rejoining the game after they leave.
       since: 2.4.0
       default: "_explodeTime"
     - name: _reloadTime
-      desc: ~
+      desc: Time in seconds between shot reloads; changing this value may affect shot range.
       since: 2.4.0
       default: "_shotRange / _shotSpeed"
     - name: _rFireAdLife
