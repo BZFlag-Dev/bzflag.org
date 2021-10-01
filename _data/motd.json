@@ -1,5 +1,12 @@
 [
     {
+        "title": "List Server Connection Issues",
+        "description": "Having issues with the server list? Try upgrading your OS and check the forums",
+        "author": "BZFlag Developers",
+        "pubDate": "Fri Oct 1, 2021 04:05:00 UTC",
+        "version": "0.0"
+    },
+    {
         "title": "BZFlag 2.4.22 released",
         "description": "BZFlag 2.4.22 is now available. Download now!",
         "author": "BZFlag Developers",
