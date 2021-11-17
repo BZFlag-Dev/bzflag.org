@@ -15,4 +15,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Changes the Global Database (BZDB) string with the name `variable` to the value of string `val`.
