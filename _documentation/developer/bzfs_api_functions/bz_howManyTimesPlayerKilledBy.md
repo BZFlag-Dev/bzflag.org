@@ -15,4 +15,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Get the number of times `playerId` has been killed by `killerId`.
