@@ -1,9 +1,11 @@
 <footer class="site-footer border-t">
     <div class="container background-dark py-4 text-center">
         <div>
-            <p class="m-0"><strong>{{ data.footer.copyright | escape }}</strong></p>
             <p class="m-0">
-                <small>Copyright &copy; {{ 'now' | date('Y') }}</small>
+                <small>Website Copyright &copy; {{ 'now' | date('Y') }} {{ data.footer.copyright | escape }}</small>
+            </p>
+            <p class="m-0">
+                <small>BZFlag Copyright &copy; 1993-{{ 'now' | date('Y') }} Tim Riker</small>
             </p>
         </div>
 
