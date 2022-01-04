@@ -1,7 +1,7 @@
 #!/bin/sh
 
 mkdir -p assets/videos
-wget -O assets/videos/blank.mp4 https://github.com/sampotts/plyr/raw/master/dist/blank.mp4
+wget -O assets/videos/blank.mp4 https://cdn.plyr.io/static/blank.mp4
 
 mkdir -p assets/videos/home
 FILES="bzteaser laser super-bullet guided-missile"
