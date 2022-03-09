@@ -1,0 +1,32 @@
+version: 2.4.24
+discussion: 'https://forums.bzflag.org/viewtopic.php?f=62&t=20552'
+codename: 'Thank you for your input'
+changesummary: |
+    This release works around an event polling regression in SDL 2.0.20 that caused our game to appear unresponsive. There's a few other small changes as well.
+changelog: |
+    * Don't crash when removing the BZFS Cron server-side player - Scott Wichser
+    * Announce who adjusted the countdown with /modcount - Vladimir Jimenez
+    * Add support for Apple silicon builds - René Schwaiger, Joshua Bodine
+    * Work around an SDL 2.0.20 event handling regression - Alfredo Tupone
+    * Do not explicitly link to X11 when using SDL - Alfredo Tupone
+date: '2022-03-08'
+downloads:
+    windows:
+        - filename: bzflag-@VER@.exe
+          requirements: 'Windows Vista/7/8.1/10'
+          sha256: 4b380c9e924a8c2f91ffff9270a76705a9763292d2df695296a598da9667a21f
+    flatpak:
+        - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
+          requirements: null
+          sha256: null
+    snapcraft:
+        - url: 'https://snapcraft.io/bzflag'
+          requirements: null
+          sha256: null
+    source:
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: 5f8131beb7fc8ba51e323a06ecd7d8eab91537c342ce87a113e5eb6ea98ce3c4
+        - filename: bzflag-@VER@.tar.gz
+          sha256: 53ae480221845a7ca4cf5489c7cc409073a4ba4ab8a7c070ddea7b83da61ae82
+        - filename: bzflag-@VER@.zip
+          sha256: b7424797e95e9ed5288d592617010747af0b148c964ad4d15a111f1f8848c6be
