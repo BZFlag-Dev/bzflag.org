@@ -25,7 +25,7 @@ changelog: |
     * -tftimeout server option - Lars Luthman
     * put observers to the bottom of the scoreboard - Lars Luthman
     * resize mouse boxes - Frank Thilo
-    * choose [un]silence - Michael Hoffman, Tim Riker
+    * choose \[un\]silence - Michael Hoffman, Tim Riker
     * flag on radar/view on/off - Michael Hoffman, Tim Riker
     * -badword server support - Dave Brosius
     * resize radar/msg area - Frank Thilo

@@ -111,7 +111,7 @@ changelog: |
     * Added "report" permission - Vladimir Jimenez
     * Added bz_eGameResumeEvent and bz_eGamePauseEvent to the API - Vladimir Jimenez
     * Don't allow muted players with ADMINMESSAGESEND to send PMs to hidden admins - Konstantinos Kanavouras, Vladimir Jimenez
-    * Add [Reverse Score] scoreboard sort option - Konstantinos Kanavouras
+    * Add \[Reverse Score\] scoreboard sort option - Konstantinos Kanavouras
     * Track number of self-kills on the scoreboard - Konstantinos Kanavouras
     * Added menu option to pause chat window scrolling - Konstantinos Kanavouras
     * Added "noteam" option for "/flag reset" command - Konstantinos Kanavouras

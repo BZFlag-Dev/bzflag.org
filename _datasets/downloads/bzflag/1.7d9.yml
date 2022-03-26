@@ -94,7 +94,7 @@ changelog: |
     * added stacked stereo patch - Stea Greene
     * misc. changes for solaris - Björn Augustsson
     * changed u_int* to uint*
-    * replaced [ds]rand48() with [s]rand()
+    * replaced \[ds\]rand48() with \[s\]rand()
     * changed variable name `sun' with 'theSun'
     * changed ioctl FIONBIO to fcntl O_NDELAY
     * changed FNDELAY to O_NDELAY
