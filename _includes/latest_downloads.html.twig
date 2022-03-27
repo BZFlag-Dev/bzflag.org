@@ -1,111 +1,80 @@
 {% set latest_releases = {
     windows: data.downloads_bzflag | where('downloads.windows', '!=', null) | order('date', 'DESC') | first,
     macos: data.downloads_bzflag | where('downloads.macos', '!=', null) | order('date', 'DESC') | first,
-    flatpak: data.downloads_bzflag | where('downloads.flatpak', '!=', null) | order('date', 'DESC') | first,
-    snapcraft: data.downloads_bzflag | where('downloads.snapcraft', '!=', null) | order('date', 'DESC') | first,
+    linux: data.downloads_bzflag | where('downloads.linux', '!=', null) | order('date', 'DESC') | first,
     source: data.downloads_bzflag | where('downloads.source', '!=', null) | order('date', 'DESC') | first,
 } %}
 
-<div class="text-center">
-    {% for platform in ['macos', 'windows', 'flatpak', 'snapcraft'] %}
-        {% set platform_name = data.platforms[platform] %}
+<div class="d-flex flex-wrap justify-content-center">
+    {% for platform, platform_name in data.platforms %}
         {% set download_list = latest_releases[platform].downloads[platform] %}
 
         <div class="d-md-inline-block mb-3 {% if not loop.last %}mr-md-3{% endif %}">
-            <div class="d-flex justify-content-center c-button-group" role="group">
-                {% set downloads = download_list | select('filename') %}
-                {% set isSelfHosted = downloads is not empty %}
-
-                {# Self-hosting means we're hosting the files on our download server and we don't have to link #}
-                {# to a third-party service. #}
-                {% if isSelfHosted %}
-                    {% set filename  = downloads | first | replace({'@VER@': latest_releases[platform].version}) %}
-                    {% set extension = downloads | first | split('.') | slice(1) | join('.') %}
-
-                    {% set download_base -%}
-                        https://download.bzflag.org/bzflag/{{ platform }}/{{ latest_releases[platform].version }}
-                    {%- endset %}
-                    {% set download_url %}{{ download_base }}/{{ filename }}{% endset %}
-                {% else %}
-                    {# Third-party downloads use the 'url' attribute instead of 'filename' #}
-                    {% set downloads = download_list | select('url') %}
-
-                    {# Clear out these values so the values from the previous iteration don't persist #}
-                    {% set filename = '' %}
-                    {% set extension = '' %}
-
-                    {% set download_url %}{{ downloads | first }}{% endset %}
-                {% endif %}
-
-                <a href="{{ download_url }}" class="c-button d-block w-100">
+            <div class="d-flex justify-content-center" role="group">
+                <div class="d-block w-100 p-2">
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="text-center">
                             <div>
                                 <strong>
-                                    <span class="sr-only">Download for</span>
-
-                                    {{ platform_name.desc }}
-
-                                    {% if extension %}
-                                        (.{{ extension }})
-                                    {% endif %}
+                                    <span class="sr-only">Download {{ latest_releases[platform].version | default(latest_releases.source.version) }} for</span>
+                                    {{ platform_name }}
                                 </strong>
                             </div>
-                            <div class="line-height-1">
-                                <small>version {{ latest_releases[platform].version }}</small>
+                            <div class="line-height-1" aria-hidden="true">
+                                <small>version {{ latest_releases[platform].version | default(latest_releases.source.version) }}</small>
                             </div>
                         </div>
 
                         <div class="ml-3">
                             <img src="{{ url('/assets/images/' ~ platform ~ '.svg') }}"
-                                 alt="{{ platform_name.desc }} logo"
+                                 alt="{{ platform_name }} logo"
                                  class="d-block"
                                  style="width: 55px;"
                                  aria-hidden="true"
                             >
                         </div>
                     </div>
-                </a>
-
-                {# Third-party links don't have support for multiple file types; for now, at least #}
-                {% if isSelfHosted %}
-                    {% set other_downloads = downloads | slice(1) %}
-
-                    {% for od in other_downloads %}
-                        {% set extension = od | split('.') | slice(1) | join('') %}
-
-                        <a href="{{ download_base }}/{{ od | replace({'@VER@': latest_releases[platform].version}) }}"
-                           class="c-button d-flex align-items-center"
-                        >
-                            <span class="sr-only">Download as {{ extension }} for {{ platform_name }}</span>
-                            <strong aria-hidden="true">.{{- extension -}}</strong>
-                        </a>
-                    {% endfor %}
-                {% endif %}
+                </div>
             </div>
+            {% if platform == 'linux' %}
+            <div class="c-button-group mt-1">
+                <a href="https://flathub.org/apps/details/org.bzflag.BZFlag" class="c-button d-block">
+                    <span class="sr-only">Download for Linux using Flatpak</span>
+                    <span aria-hidden="true">Flatpak</span>
+                </a>
+            </div>
+            <div class="c-button-group mt-1">
+                <a href="https://snapcraft.io/bzflag" class="c-button d-block">
+                    <span class="sr-only">Download for Linux from Snapcraft</span>
+                    <span aria-hidden="true">Snapcraft</span>
+                </a>
+            </div>
+            {% endif %}
+            {% for download in download_list %}
+            <div class="c-button-group mt-1">
+                {% if download.url %}
+                    {% set download_url = download.url %}
+                    {% set download_label = download.label %}
+                {% else %}
+                    {% set download_url = 'https://download.bzflag.org/bzflag/' ~ platform ~ '/' ~ latest_releases[platform].version ~ '/' ~ download.filename | replace({'@VER@': latest_releases[platform].version}) %}
+                    {% if download.label %}
+                        {% set download_label = download.label %}
+                    {% else %}
+                        {% set download_label = '.' ~ download.filename | split('.') | slice(1) | join('.') %}
+                    {% endif %}
+                {% endif %}
+                <a href="{{ download_url }}" class="c-button d-block">
+                    <span class="sr-only">Download for {{ platform_name }} ({{ download_label }})</span>
+                    <span aria-hidden="true">{{ download_label }}</span>
+                </a>
+            </div>
+            {% endfor %}
         </div>
     {% endfor %}
 </div>
 
 <div class="mb-3">
-    <div class="text-center">
-        <p class="d-sm-inline mb-0 mr-sm-1">Download {{ latest_releases.source.version }} source as</p>
-        <ul class="d-inline list-inline">
-            {% for format in latest_releases.source.downloads.source | select('filename') %}
-                {% set download_base -%}
-                    https://download.bzflag.org/bzflag/source/{{ latest_releases.source.version }}
-                {%- endset %}
-                {% set filename  = format | replace({'@VER@': latest_releases.source.version}) %}
-                {% set extension = format | split('.') | slice(1) | join('.') %}
-                <li class="list-inline-item">
-                    <a href="{{ download_base }}/{{ filename }}">
-                        .{{ extension }}
-                    </a>
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
     <p class="m-0 text-center">
-        <small>Released on {{ latest_releases.source.date | date('F d, Y') }}</small>
+        <small>Version {{ latest_releases.source.version }} was released on {{ latest_releases.source.date | date('F d, Y') }}</small>
     </p>
 </div>

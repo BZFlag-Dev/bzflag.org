@@ -14,20 +14,12 @@ date: '2021-02-27'
 downloads:
     windows:
         - filename: bzflag-@VER@.exe
-          requirements: 'Windows Vista/7/8.1/10'
+          label: 'Windows Vista/7/8.1/10'
           sha256: 17df61347cfc2cb08da4ed5974189df40ce26ebb94605ef928cd40f43b935ae7
     macos:
         - filename: BZFlag-@VER@-macOS.zip
-          requirements: '10.7+ Intel only'
+          label: '10.7+ Intel only'
           sha256: 3108313610c5e26fba5599aa83ef0ad1d276b7cebf9d38f04a1bc72a4c3c2060
-    flatpak:
-        - url: 'https://flathub.org/apps/details/org.bzflag.BZFlag'
-          requirements: null
-          sha256: null
-    snapcraft:
-        - url: 'https://snapcraft.io/bzflag'
-          requirements: null
-          sha256: null
     source:
         - filename: bzflag-@VER@.tar.bz2
           sha256: 9e64653302b657bd8b5f96fe1150a9ff80a1d53a6d7e8a35138c6b1b02006a4d

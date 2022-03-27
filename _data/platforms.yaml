@@ -1,15 +1,4 @@
-flatpak:
-    desc: Linux (Flatpak)
-    os: linux
-
-snapcraft:
-    desc: Linux (Snapcraft)
-    os: linux
-
-macos:
-    desc: macOS
-    os: macos
-
-windows:
-    desc: Windows
-    os: windows
+macos: macOS
+windows: Windows
+linux: Linux
+source: Source
