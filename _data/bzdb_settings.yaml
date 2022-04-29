@@ -3,54 +3,78 @@ variables:
       desc: The `_tankSpeed` multiplier used for acceleration speed for tanks holding the Agility flag.
       since: 2.4.0
       default: "2.25"
+      category: Agility Flag
+      type: float
     - name: _agilityTimeWindow
       desc: The amount of time (in seconds) that the `_agilityAdVel` speed will remain in effect after acceleration for tanks holding the Agility flag.
       since: 2.4.0
       default: "1.0"
+      category: Agility Flag
+      type: float
     - name: _agilityVelDelta
       desc: The duration of time (in seconds) that a tank holding the Agility flag will accelerate from stationary to `_agilityAdVel`.
       since: 2.4.0
       default: "0.3"
+      category: Agility Flag
+      type: float
     - name: _ambientLight
       desc: ~
       since: 2.4.0
       default: "none"
     - name: _angleTolerance
-      desc: ~
+      desc: If a tank has turned more than it was expected to, plus this tolerance, a new update is sent so the other clients are aware of the change in heading.
       since: 2.4.0
       default: "0.05"
+      category: Server Settings
+      type: float
     - name: _angularAd
       desc: The `_tankAngVel` multiplier for how fast tanks can turn while holding the Quick Turn flag.
       since: 2.4.0
       default: "1.5"
+      category: Quick Turn Flag
+      type: float
     - name: _avenueSize
       desc: On randomly generated maps, the amount of space to leave between boxes.
       since: 2.4.0
       default: "2.0 * _boxBase"
+      category: Map Generation
+      type: float
     - name: _baseSize
       desc: On randomly generated CTF maps, the width and depth of square bases; the height of bases are constant.
       since: 2.4.0
       default: "60.0"
+      category: Map Generation
+      type: float
     - name: _boxBase
       desc: On randomly generated maps, the smallest width and depth sizes for boxes.
       since: 2.4.0
       default: "30.0"
+      category: Map Generation
+      type: float
     - name: _boxHeight
       desc: On randomly generated maps, the height of boxes in World Units (wu). When the "Random Heights" (i.e. the BZFS `-h` flag) is enabled, this is the starting value that is then used with random multipliers for each generated box.
       since: 2.4.0
       default: "6.0 * _muzzleHeight"
+      category: Map Generation
+      type: float
     - name: _burrowAngularAd
       desc: The `_tankAngVel` multiplier for how fast tanks can turn while burrowed with the Burrow flag.
       since: 2.4.0
       default: "0.55"
+      category: Burrow Flag
+      type: float
     - name: _burrowDepth
       desc: The Z-axis height in World Units (wu) of how far underground a burrowed tank will be.
       since: 2.4.0
       default: "-1.32"
+      category: Burrow Flag
+      type: float
     - name: _burrowSpeedAd
       desc: Thw `_tankSpeed` multiplier for a tank's speed while burrowed with the Burrow flag.
       since: 2.4.0
       default: "0.80"
+      category: Burrow Flag
+      type: float
     - name: _coldetDepth
       desc: ~
       since: 2.4.0
@@ -63,6 +87,8 @@ variables:
       desc: The amount of seconds in the countdown before a paused timed game is resumed.
       since: 2.4.0
       default: "5"
+      category: Timed Matches
+      type: integer
     - name: _cullDepth
       desc: ~
       since: 2.4.0
@@ -83,158 +109,236 @@ variables:
       desc: A true boolean value will disable autopilot and bots (created via the `-solo` option) on the server.
       since: 2.4.0
       default: "0"
+      category: Server Administration
+      type: boolean
     - name: _disableSpeedChecks
       desc: A true boolean value will disable rudimentary cheat detection for tanks moving too fast.
       since: 2.4.0
       default: "0"
+      category: Server Administration
+      type: boolean
     - name: _disableHeightChecks
       desc: A true boolean value will disable rudimentary cheat detection for tanks being located "too high" within a world.
       since: 2.4.0
       default: "0"
+      category: Server Administration
+      type: boolean
     - name: _drawCelestial
       desc: A boolean value to draw the stars, sun, and moon.
       since: 2.4.0
       default: "1"
+      category: World Appearance
+      type: boolean
     - name: _drawClouds
       desc: A boolean value to draw clouds.
       since: 2.4.0
       default: "1"
+      category: World Appearance
+      type: boolean
     - name: _drawGround
       desc: A boolean value to draw the ground plane.
       since: 2.4.0
       default: "1"
+      category: World Appearance
+      type: boolean
     - name: _drawGroundLights
       desc: A boolean value to draw light reflections on the ground, such as that produced by bullets.
       since: 2.4.0
       default: "1"
+      category: World Appearance
+      type: boolean
     - name: _drawMountains
       desc: A boolean value to draw surrounding mountains.
       since: 2.4.0
       default: "1"
+      category: World Appearance
+      type: boolean
     - name: _drawSky
       desc: A boolean value to draw the sky.
       since: 2.4.0
       default: "1"
+      category: World Appearance
+      type: boolean
     - name: _enableDistanceCheck
       desc: A boolean value to enable experimental cheat detection on player movements being too great between updates.
       since: 2.4.0
       default: "0"
+      category: Server Administration
+      type: boolean
     - name: _endShotDetection
       desc: The amount of "end shot" messages that can be sent without a corresponding death event.
       since: 2.4.0
       default: "5"
+      category: Server Administration
+      type: integer
     - name: _explodeTime
       desc: The amount of time (in seconds) a player is unable to spawn after getting killed.
       since: 2.4.0
       default: "5.0"
+      category: Gameplay
+      type: float
     - name: _flagAltitude
       desc: The visual Z-axis height in World Units (wu), relative to a tank's position, that flags will fly up relative to its first clearance when dropped and the height at which flags will spawn (and subsequently fall).
       since: 2.4.0
       default: "11.0"
+      category: Flag Settings
+      type: float
     - name: _flagEffectTime
       desc: The amount of time (in seconds) for a flag to go into effect after being grabbed. Additionally, this value is used as the duration between a tank spawning at its miniature size to its full size.
       since: 2.4.0
       default: "0.64"
+      category: Flag Settings
+      type: float
     - name: _flagHeight
       desc: The Z-axis height in World Units (wu), relative to a tank's position, that a flag will be able to fly upwards before looking for a new clearance.
       since: 2.4.0
       default: "10.0"
+      category: Flag Settings
+      type: float
     - name: _flagPoleWidth
       desc: The diameter in World Units (wu) of the flag's pole.
       since: 2.4.0
       default: "0.025"
+      category: Flag Settings
+      type: float
     - name: _flagPoleSize
       desc: The height of flag poles in World Units (wu).
       since: 2.4.0
       default: "0.8"
+      category: Flag Settings
+      type: float
     - name: _flagRadius
       desc: The radius distance in World Units (wu) a tank must be from a flag to pick it up.
       since: 2.4.0
       default: "2.5"
+      category: Flag Settings
+      type: float
     - name: _forbidHunting
       desc: A true boolean value will prevent players from hunting each other.
       since: 2.4.0
       default: "0"
+      category: Gameplay
+      type: boolean
     - name: _forbidIdentify
       desc: A true boolean value will disallow players from identifying other players; this will disable messages such as "Looking at <player>" and will remove a player's callsign from Guided Missile's lock notifications.
       since: 2.4.0
       default: "0"
+      category: Server Administration
+      type: boolean
     - name: _forbidMarkers
       desc: A true boolean value will remove the large flag markers that indicate the location of your team flag(s).
       since: 2.4.0
       default: "0"
+      category: Flag Settings
+      type: boolean
     - name: _fogMode
       desc: Valid values are, `linear`, `exp`, or `exp2`; if an invalid value is given, it will default to `exp`.
       since: 2.4.0
       default: "none"
+      category: World Appearance
+      type: linear | exp | exp2
     - name: _fogDensity
       desc: The density of the fog that will be rendered for players; only used for `exp` and `exp2` fog modes.
       since: 2.4.0
       default: "0.001"
+      category: World Appearance
+      type: float
     - name: _fogStart
       desc: Used for linear fog mode, the distance in World Units (wu) relative to a tank's position where fog will begin to occlude vision.
       since: 2.4.0
       default: "0.5 * _worldSize"
+      category: World Appearance
+      type: float
     - name: _fogEnd
       desc: Used for linear fog mode, the distance in World Units (wu) relative to a tank's position where fog will occlude everything.
       since: 2.4.0
       default: "_worldSize"
+      category: World Appearance
+      type: float
     - name: _fogColor
       desc: The color of the fog in the format of RGB (i.e. `RED GREEN BLUE`) values between 0.0 and 1.0. Additionally, supported color names (e.g. blue, teal, black, pink, gray3, etc.) are supported.
       since: 2.4.0
       default: "0.25 0.25 0.25"
+      category: World Appearance
+      type: RGB
     - name: _fogNoSky
       desc: A true boolean value will disable fog being drawn on the sky; by default, fog is drawn everywhere.
       since: 2.4.0
       default: "0"
+      category: World Appearance
+      type: boolean
     - name: _friction
       desc: When set to zero, tanks have normal friction. When set to a non-zero number, the closer the number is to zero (decimal values are valid), the longer it will take for a tank to accelerate and the more a tank will "slide" around after attempting to stop. The higher the number, the closer it is to "normal friction."
       since: 2.4.0
       default: "0"
+      category: Movement
+      type: float
     - name: _gmActivationTime
       desc: The amount of time (in seconds) it takes for a Guided Missile to become active after it is fired. Any contact under this time will not result in detonation; setting it too low could cause its owner to run into their own GM and be blown up!
       since: 2.4.0
       default: "0.5"
+      category: Guided Missile Flag
+      type: float
     - name: _gmAdLife
       desc: The `_shotRange` multiplier that determines the distance guided missiles will go.
       since: 2.4.0
       default: "0.95"
+      category: Guided Missile Flag
+      type: float
     - name: _gmSize
       desc: The size in World Units (wu) of the Guided Missiles shown to players with high graphic settings.
       since: 2.4.0
       default: "1.5"
+      category: Guided Missile Flag
+      type: float
     - name: _gmTurnAngle
       desc: The angle in radians at which a Guided Missile will turn to follow its target.
       since: 2.4.0
       default: "0.628319"
+      category: Guided Missile Flag
+      type: float
     - name: _gravity
       desc: The World Units (wu) a tank will fall or be kept from jumping measured in seconds squared; i.e. `<wu> / seconds ^ 2`.
       since: 2.4.0
       default: "-9.8"
+      category: Movement
+      type: float
     - name: _handicapScoreDiff
       desc: The difference in score a player must have compared to the average of all players' scores to receive a handicap.
       since: 2.4.0
       default: "50.0"
+      category: Handicaps
+      type: float
     - name: _handicapVelAd
       desc: The `_tankSpeed` multiplier for when a player is receiving a handicap.
       since: 2.4.0
       default: "2.0"
+      category: Handicaps
+      type: float
     - name: _handicapAngAd
       desc: The `_angularAd` multiplier for when a player is receiving a handicap.
       since: 2.4.0
       default: "1.5"
+      category: Handicaps
+      type: float
     - name: _handicapShotAd
       desc: The `_shotSpeed` multiplier for when a player is receiving a handicap.
       since: 2.4.0
       default: "1.75"
+      category: Handicaps
+      type: float
     - name: _hideFlagsOnRadar
       desc: A boolean value to hide super flags on the radar; this setting does **not** affect team flags.
       since: 2.4.0
       default: "0"
+      category: Flag Settings
+      type: boolean
     - name: _hideTeamFlagsOnRadar
       desc: A boolean value to hide team flags on the radar; this setting does **not** affect super flags.
       since: 2.4.0
       default: "0"
+      category: Flag Settings
+      type: boolean
     - name: _HTTPIndexResourceDir
       desc: ~
       since: 2.4.0
@@ -243,214 +347,320 @@ variables:
       desc: The radius distance in World Units (wu) that a tank must be within in order for the Identify flag to work.
       since: 2.4.0
       default: "50.0"
+      category: Identify Flag
+      type: float
     - name: _jumpVelocity
       desc: The speed at which a tank moves vertically while jumping meausred in World Units per second.
       since: 2.4.0
       default: "19.0"
+      category: Movement
+      type: float
     - name: _laserAdLife
       desc: The amount of seconds a laser remains on the field after being fired.
       since: 2.4.0
       default: "0.1"
+      category: Laser Flag
+      type: float
     - name: _laserAdRate
       desc: The `_rFireAdRate` mulitiplier to determine the firing rate for lasers.
       since: 2.4.0
       default: "0.5"
+      category: Laser Flag
+      type: float
     - name: _laserAdVel
       desc: The maximum length in World Units (wu) a laser can travel; they're not actually "infinite."
       since: 2.4.0
       default: "1000.0"
+      category: Laser Flag
+      type: float
     - name: _latitude
       desc: When `_syncLocation` is true, the latitude of where the map is located along with `_longitude` is used to determine the time of day to show to players (day or night).
       since: 2.4.0
       default: "37.5"
+      category: World Appearance
+      type: float
     - name: _lockOnAngle
       desc: The angle, in radians, from a tank's heading (positive and negative) that will determine the scope of which tanks can be locked on for Guided Missiles.
       since: 2.4.0
       default: "0.15"
+      category: Guided Missile Flag
+      type: float
     - name: _longitude
       desc: When `_syncLocation` is true, the longitude of where the map is located along with `_latitude` is used to determine the time of day to show to players (day or night).
       since: 2.4.0
       default: "122"
+      category: World Appearance
+      type: float
     - name: _maxBumpHeight
       desc: The maximum allowed height difference in World Units (wu) between two uneven surfaces that will allow a tank to drive up to the object without being stopped by it.
       since: 2.4.0
       default: "0.33"
+      category: Movement
+      type: float
     - name: _maxFlagGrabs
       desc: When a flag spawns, it is assigned a random number between 1 and `_maxFlagGrabs` known as "grab count." Each time a flag is grabbed, the grab count for the flag is reduced by one until it reaches zero. When zero is reached, the flag will respawn after it is dropped.
       since: 2.4.0
       default: "4.0"
+      category: Flag Settings
+      type: integer
     - name: _maxLOD
       desc: The max level of detail to allow.
       since: 2.4.0
       default: "32767.0"
+      category: World Appearance
+      type: integer
     - name: _maxPlayerAddDelay
       desc: ~
       since: 2.4.0
       default: "30"
+      category: Server Administration
+      type: integer
     - name: _mirror
       desc: When given a valid color literal, a tinted mirror-like ground reflecting objects and tanks will be shown to players. When given an invalid color literal, the ground will display a mirror-like ground with no tint.
       since: 2.4.0
       default: "none"
+      category: World Appearance
+      type: ColorLiteral
     - name: _momentumAngAcc
       desc: The extra momentum added to a tank holding the Momentum flag while turning.
       since: 2.4.0
       default: "1.0"
+      category: Momentum Flag
+      type: float
     - name: _momentumLinAcc
       desc: The extra momentum added to a tank holding the Momentum flag while moving forward and backwards.
       since: 2.4.0
       default: "1.0"
+      category: Momentum Flag
+      type: float
     - name: _momentumFriction
       desc: The `_friction` applied to a tank holding the Momentum flag.
       since: 2.4.0
       default: "0"
+      category: Momentum Flag
+      type: float
     - name: _mGunAdLife
       desc: The `_shotRange` multiplier to determine the distance Machine Gun bullets go.
       since: 2.4.0
       default: "1.0 / _mGunAdRate"
+      category: Machine Gun Flag
+      type: float
     - name: _mGunAdRate
       desc: The divisor of `_reloadTime`, which results in how long Machine Gun bullets take to reload.
       since: 2.4.0
       default: "10.0"
+      category: Machine Gun Flag
+      type: float
     - name: _mGunAdVel
       desc: The speed of Machine Gun bullets.
       since: 2.4.0
       default: "1.5"
+      category: Machine Gun Flag
+      type: float
     - name: _muzzleFront
       desc: The distance of a tank's muzzle relative to the tank's center in World Units (wu); this affects bullets' starting location and player camera.
       since: 2.4.0
       default: "_tankRadius + 0.1"
+      category: Shot Settings
+      type: float
     - name: _muzzleHeight
       desc: The height of a tank's muzzle in World Units (wu); see `_muzzleFront`.
       since: 2.4.0
       default: "1.57"
+      category: Shot Settings
+      type: float
     - name: _noClimb
       desc: A boolean value that determines whether tanks can climb up slopes by jumping forward; a false value disallows tanks from climbing up slopes.
       since: 2.4.0
       default: "1"
+      category: Movement
+      type: boolean
     - name: _noShadows
       desc: A boolean value to allow or disallow shadows being drawn on a map.
       since: 2.4.0
       default: "0"
+      category: World Appearance
+      type: boolean
     - name: _noSmallPackets
       desc: ~
       since: 2.4.0
       default: "0"
+      category: Server Settings
+      type: boolean
     - name: _notRespondingTime
       desc: The amount of times in seconds a player must be considered "non-responsive" before the server reports them as such to other players.
       since: 2.4.0
       default: "5.0"
+      category: Server Settings
+      type: integer
     - name: _obeseFactor
       desc: The `_tankWidth` multiplier used for tanks holding the Obese flag.
       since: 2.4.0
       default: "2.5"
+      category: Obese Flag
+      type: float
     - name: _pauseDropTime
       desc: The amount of time in seconds a player must be paused before they automatically drop the flag they are carrying.
       since: 2.4.0
       default: "15.0"
+      category: Flag Settings
+      type: integer
     - name: _positionTolerance
       desc: The amount of World Units (wu) a tank must move before a new update is sent to all players on the server.
       since: 2.4.0
       default: "0.09"
+      category: Server Settings
+      type: float
     - name: _pyrBase
       desc: The size in World Units (wu) of bases for pyramids that are added in randomly generated worlds.
       since: 2.4.0
       default: "4.0 * _tankHeight"
+      category: Map Generation
+      type: float
     - name: _pyrHeight
       desc: The size in World Units (wu) of heights of pyramids that are added in randomly generated worlds.
       since: 2.4.0
       default: "5.0 * _tankHeight"
+      category: Map Generation
+      type: float
     - name: _radarLimit
       desc: The maximum width in World Units (wu) of the map that can be displayed on the radar when it's not rotated.
       since: 2.4.0
       default: "_worldSize"
+      category: Gameplay
+      type: float
     - name: _rainBaseColor
       desc: When `_rainType` is set to `rain`, the color of the bottom half of raindrops.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: ColorLiteral
     - name: _rainDensity
       desc: The amount of drops that will exist in the space defined by `_rainSpread`.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: integer
     - name: _rainEndZ
       desc: The height above the ground where rain will end and form puddles.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainMaxPuddleTime
       desc: The amount of seconds a rain puddle should exist before disappearing.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainPuddleSpeed
       desc: The amount of seconds it will take for a rain puddle to spread out.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainPuddleColor
       desc: The color of rain puddles. A value of `none` means no puddles will be formed.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: ColorLiteral
     - name: _rainPuddleTexture
       desc: The texture used for drawing rain puddles.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: string
     - name: _rainRoofs
       desc: Valid values are `0`, `1`, and `2` (`0` rain falls through everything; `1` rain hits buildings but puddles are only on the ground; `2` rain hits buildings and creates puddles on them).
       since: 2.4.0
       default: "1"
+      category: Rain
+      type: boolean
     - name: _rainSpeed
       desc: The speed at which rain drops will move. A negative speed will result in the rain falling from the sky whereas a positive speed will result in rain going up from the ground to the sky.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainSpeedMod
       desc: A modifier to `_rainSpeed` that will be added or subtracted from individual rain droplets to have a more natural look of droplets falling at different speeds.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainSpread
       desc: The radius in World Units (wu) from the center of the map where rain will fall.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainSpins
       desc: Valid values are `0` or `1` (`0` will cause rain droplets to not spin as it falls; `1` will cause rain droplets to spin as they fall).
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: 0 | 1
     - name: _rainStartZ
       desc: The height above the ground where rain will start falling from.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: float
     - name: _rainTexture
       desc: The name of the texture (from the client's data directory) used for rain droplets; this value is only respectived when `_rainType` is set to `frog`, `particle`, `bubble`, `snow`, or `fatrain`
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: string
     - name: _rainTopColor
       desc: When `_rainType` is set to `rain`, the color of the top half of raindrops.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: ColorLiteral
     - name: _rainType
       desc: Valid rain types are, `frog`, `particle`, `rain`, `bubble`, `snow`, or `fatrain`. When this value is changed in-game with the `/set` command, it will update respective `_rain*` settings automatically.
       since: 2.4.0
       default: "none"
+      category: Rain
+      type: frog | particle | rain | bubble | snow | fatrain
     - name: _rejoinTime
       desc: The number of seconds a player must wait before rejoining the game after they leave.
       since: 2.4.0
       default: "_explodeTime"
+      category: Server Settings
+      type: float
     - name: _reloadTime
       desc: Time in seconds between shot reloads; changing this value may affect shot range.
       since: 2.4.0
       default: "_shotRange / _shotSpeed"
+      category: Shot Settings
+      type: float
     - name: _rFireAdLife
-      desc: ~
+      desc: The amount of seconds a Rapid Fire shot remains on the field after being fired.
       since: 2.4.0
       default: "1.0 / _rFireAdRate"
+      category: Rapid Fire Flag
+      type: float
     - name: _rFireAdRate
-      desc: ~
+      desc: The amount of seconds a Rapid Fire shot takes to reload.
       since: 2.4.0
       default: "2.0"
+      category: Rapid Fire Flag
+      type: float
     - name: _rFireAdVel
       desc: ~
       since: 2.4.0
       default: "1.5"
+      category: Rapid Fire Flag
+      type: float
     - name: _shieldFlight
       desc: ~
       since: 2.4.0
       default: "2.7"
+      category: Shield Flag
+      type: float
     - name: _shockAdLife
       desc: ~
       since: 2.4.0
