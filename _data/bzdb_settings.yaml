@@ -362,7 +362,7 @@ variables:
       category: Laser Flag
       type: float
     - name: _laserAdRate
-      desc: The `_rFireAdRate` mulitiplier to determine the firing rate for lasers.
+      desc: The `_rFireAdRate` multiplier to determine the firing rate for lasers.
       since: 2.4.0
       default: "0.5"
       category: Laser Flag
@@ -650,83 +650,89 @@ variables:
       category: Rapid Fire Flag
       type: float
     - name: _rFireAdVel
-      desc: ~
+      desc: The `_shotSpeed` multiplier used to determine the speed of rapid fire bullets.
       since: 2.4.0
       default: "1.5"
       category: Rapid Fire Flag
       type: float
     - name: _shieldFlight
-      desc: ~
+      desc: The amount of time in seconds the shield flag will fly in the air when dropped before falling to again.
       since: 2.4.0
       default: "2.7"
       category: Shield Flag
       type: float
     - name: _shockAdLife
-      desc: ~
+      desc: The amount of time in seconds a shockwave lasts.
       since: 2.4.0
       default: "0.2"
     - name: _shockInRadius
-      desc: ~
+      desc: The starting radius of a shockwave in world units. A negative value will result in a shockwave to first shrink and then expand.
       since: 2.4.0
       default: "_tankLength"
     - name: _shockOutRadius
-      desc: ~
+      desc: The outer radius of the shockwave in world units. If this value is greater than `_shockInRadius`, the shockwave expands outward; if the value is less than `_shockInRadius`, the shockwave will start big and shrink inward.
       since: 2.4.0
       default: "60.0"
+    - name: _shotRadius
+      desc: The radius of a shot in world units used to calculate collision detection; e.g. if a shot is 0.5 world units away from a tank, it will consider the tank as being hit.
+      since: 2.4.0
+      default: "0.5"
+    - name: _shotRange
+      desc: |
+        The distance in world units a normal shot can travel.
+
+        Note, if this value is changed during runtime, this value can be cut short by a cached `_reloadTime` value; be sure to run `/reset _reloadTime` after this value is changed via `/set`.
+      since: 2.4.0
+      default: "350.0"
+    - name: _shotSpeed
+      desc: |
+        The speed shots travel measured in world units per second.
+
+        Note, if this value is changed during runtime, it can lead to problems such as players not being able to shoot or shots not killing their targets. This is caused by a cached `_reloadTime` value so run `/reset _reloadTime` to recalculate a new value.
+      since: 2.4.0
+      default: "100.0"
+    - name: _shotsKeepVerticalVelocity
+      desc: When set to 0, shots will always move in parallel in relation to the ground. When set to 1, shots are affected vertically by the tank's speed, and can fly up and down; lasers are affected by this setting.
+      since: 2.4.0
+      default: "0"
     - name: _shotTailLength
       desc: ~
       since: 2.4.0
       default: "4.0"
-    - name: _shotRadius
-      desc: ~
-      since: 2.4.0
-      default: "0.5"
-    - name: _shotRange
-      desc: ~
-      since: 2.4.0
-      default: "350.0"
-    - name: _shotSpeed
-      desc: ~
-      since: 2.4.0
-      default: "100.0"
-    - name: _shotsKeepVerticalVelocity
-      desc: ~
-      since: 2.4.0
-      default: "0"
     - name: _skyColor
-      desc: ~
+      desc: The color the sky will be set to.
       since: 2.4.0
       default: "white"
     - name: _spawnMaxCompTime
-      desc: ~
+      desc: The maximum amount of seconds the server should take when calculating a safe spawn location for players. If this limit is exceeded, then the player will be dropped from a maximum height.
       since: 2.4.0
       default: "0.01"
     - name: _spawnSafeRadMod
-      desc: ~
+      desc: The minimum distance in world units that is considered a "safe distance" away from enemy tanks when calculating spawn locations.
       since: 2.4.0
       default: "20"
     - name: _spawnSafeSRMod
-      desc: ~
+      desc: The minimum distance in world units that is considered a "safe distance" away from tanks **with Steamroller** when calculating spawn locations.
       since: 2.4.0
       default: "3"
     - name: _spawnSafeSWMod
-      desc: ~
+      desc: The minimum distance in world units that is considered a "safe distance" away from tanks **with Shock Wave** when calculating spawn locations.
       since: 2.4.0
       default: "1.5"
     - name: _speedChecksLogOnly
-      desc: ~
+      desc: When set to 0, tanks are kicked from the server when they are detected to be moving too fast. When set to 1, instances of tanks moving too fast are simply logged to standard out instead of kicking them.
       since: 2.4.0
       default: "0"
     - name: _srRadiusMult
-      desc: ~
+      desc: The radius in world units that a Steam Roller flag will kill nearby tanks.
       since: 2.4.0
       default: "2.0"
     - name: _squishFactor
-      desc: ~
+      desc: The height in world units a tank becomes when they squish while landing.
       since: 2.4.0
       default: "1.0"
     - name: _squishTime
-      desc: ~
+      desc: The amount of seconds a tank is squished after landing.
       since: 2.4.0
       default: "1.0"
     - name: _syncTime
@@ -737,92 +743,92 @@ variables:
       desc: ~
       since: 2.4.0
       default: "0"
-    - name: _tankExplosionSize
-      desc: ~
-      since: 2.4.0
-      default: "3.5 * _tankLength"
     - name: _tankAngVel
-      desc: ~
+      desc: The speed of a tank's turning rate measured in world units per second.
       since: 2.4.0
       default: "0.785398"
+    - name: _tankExplosionSize
+      desc: The size of a tank's explosion measured in world units.
+      since: 2.4.0
+      default: "3.5 * _tankLength"
     - name: _tankHeight
-      desc: ~
+      desc: The height of a tank in world units.
       since: 2.4.0
       default: "2.05"
     - name: _tankLength
-      desc: ~
+      desc: The length of a tank in world units.
       since: 2.4.0
       default: "6.0"
     - name: _tankRadius
-      desc: ~
+      desc: The radius of a tank in world units.
       since: 2.4.0
       default: "0.72 * _tankLength"
     - name: _tankSpeed
-      desc: ~
+      desc: The speed of a tank measured in world units per second.
       since: 2.4.0
       default: "25.0"
     - name: _tankWidth
-      desc: ~
+      desc: The width of a tank in world units.
       since: 2.4.0
       default: "2.8"
     - name: _targetingAngle
-      desc: ~
+      desc: The number of radians a player can be offset in facing a tank to still target them with Identify or Guided Missile.
       since: 2.4.0
       default: "0.3"
     - name: _targetingDistance
-      desc: ~
+      desc: The distance in world units a player can be from a tank to still target them with Identify or Guided Missile.
       since: 2.4.0
       default: "300.00"
     - name: _teleportBreadth
-      desc: ~
+      desc: The horizontal width in world units for randomly generated teleporters.
       since: 2.4.0
       default: "4.48"
     - name: _teleportHeight
-      desc: ~
+      desc: The vertical height in world units for randomly generated teleporters.
       since: 2.4.0
       default: "10.08"
     - name: _teleportTime
-      desc: ~
+      desc: The maximum duration in seconds a tank can be teleporting before it is forced to stop teleporting.
       since: 2.4.0
       default: "1.0"
     - name: _teleportWidth
-      desc: ~
+      desc: The size of the teleporter borders in world units for randomly generated teleporters.
       since: 2.4.0
       default: "1.12"
     - name: _thiefAdLife
-      desc: ~
+      desc: The number of seconds a thief shot will live.
       since: 2.4.0
       default: "0.05"
     - name: _thiefAdRate
-      desc: ~
+      desc: The number of seconds it takes for a thief shot to reload.
       since: 2.4.0
       default: "12.0"
     - name: _thiefAdShotVel
-      desc: ~
+      desc: The speed measured in world units per second of a thief shot.
       since: 2.4.0
       default: "8.0"
     - name: _thiefTinyFactor
-      desc: ~
+      desc: The multiplier of a tank's size when they are holding a Thief flag.
       since: 2.4.0
       default: "0.5"
     - name: _thiefVelAd
-      desc: ~
+      desc: The multiplier of a tank's speed when they are holding a Thief flag.
       since: 2.4.0
       default: "1.67"
     - name: _thiefDropTime
-      desc: ~
+      desc: The number of seconds a tank must wait before being able to shoot after stealing a flag.
       since: 2.4.0
       default: "_reloadTime * 0.5"
     - name: _tinyFactor
-      desc: ~
+      desc: The multiplier of a tank's size when they are holding a Tiny flag.
       since: 2.4.0
       default: "0.4"
     - name: _trackFade
-      desc: ~
+      desc: The number of seconds a tank's tracks begin to fade after being drawn.
       since: 2.4.0
       default: "3.0"
     - name: _updateThrottleRate
-      desc: ~
+      desc: The maximum number of position updates clients will send every second. Higher values mean higher bandwidth consumption and more server processing time.
       since: 2.4.0
       default: "30.0"
     - name: _useLineRain
@@ -838,38 +844,41 @@ variables:
       since: 2.4.0
       default: "none"
     - name: _velocityAd
-      desc: ~
+      desc: The multiplier for `_tankSpeed` to determine a tank's speed while carrying the High Speed (V) flag.
       since: 2.4.0
       default: "1.5"
     - name: _wallHeight
-      desc: ~
+      desc: The outer wall's height.
       since: 2.4.0
       default: "3.0 * _tankHeight"
     - name: _weapons
-      desc: ~
+      desc: When set to `0`, no world weapons will be fired on the server. When set to `1`, world weapons will fire as expected.
       since: 2.4.0
       default: "1"
     - name: _wideAngleAng
-      desc: ~
+      desc: The multiplier applied to a tank's field of vision when holding a Wide Angle flag.
       since: 2.4.0
       default: "1.745329"
     - name: _wingsGravity
-      desc: ~
+      desc: The gravity of a tank while they are carrying the Wings flag.
       since: 2.4.0
       default: "_gravity"
     - name: _wingsJumpCount
-      desc: ~
+      desc: The number of times a tank can perform a jump while in midair before falling to the ground.
       since: 2.4.0
       default: "1"
     - name: _wingsJumpVelocity
-      desc: ~
+      desc: The initial velocity of a tank's jump while holding a Wings flag measured in world units per second.
       since: 2.4.0
       default: "_jumpVelocity"
     - name: _wingsSlideTime
-      desc: ~
+      desc: The number of seconds a tank will slide in midair while holding a Wings flag.
       since: 2.4.0
       default: "0.0"
     - name: _worldSize
-      desc: ~
+      desc: |
+        The size of the world in world units from one edge of the world to the opposite edge.
+
+        Note: This value is calculated as **double** of the `world` map object `size` property.
       since: 2.4.0
       default: "800.0"
