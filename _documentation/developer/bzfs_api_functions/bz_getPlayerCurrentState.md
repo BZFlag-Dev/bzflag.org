@@ -1,4 +1,5 @@
 ---
+draft: true # See https://github.com/BZFlag-Dev/bzflag/pull/311; this function doesn't actually exist
 since: 2.4.0
 category: Player State
 signatures:
