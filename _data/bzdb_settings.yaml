@@ -17,11 +17,6 @@ variables:
       default: "0.3"
       category: Agility Flag
       type: float
-    # TODO: It doesn't look this BZDB setting is used anywhere in the BZFlag codebase
-    # - name: _ambientLight
-    #   desc: ~
-    #   since: 2.4.0
-    #   default: "none"
     - name: _angleTolerance
       desc: If a tank has turned more than it was expected to, plus this tolerance, a new update is sent so the other clients are aware of the change in heading.
       since: 2.4.0
