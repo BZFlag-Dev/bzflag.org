@@ -1,0 +1,8 @@
+.tag {
+    @include padding(x, 2);
+
+    background-color: $color-dark;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.8rem;
+}

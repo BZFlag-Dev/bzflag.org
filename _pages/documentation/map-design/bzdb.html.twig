@@ -40,15 +40,21 @@ permalink: /documentation/map-design/bzdb/
         <section>
             <h2 id="{{ category | slug }}">{{ category }}</h2>
 
-            <ul>
+            <ul class="unstyled-list">
                 {% for variable in groupedVariables[category] | order('name') %}
-                    <li>
-                        <p>
-                            <strong>{{ variable.name }}</strong> <em>(default: {{ variable.default }})</em>
+                    <li class="{{ loop.last ?: 'border-b' }} mb-4">
+                        <p class="m-0">
+                            <strong>{{ variable.name }}</strong>
+                            <span class="tag">since {{ variable.since }}</span>
                         </p>
-                        <p>
-                            {{ variable.desc }}
+                        <p class="m-0 pl-3">
+                            <small>
+                                {{ variable.type }} &bull; default: <code>{{ variable.default }}</code>
+                            </small>
                         </p>
+                        <div class="mb-4 pl-3">
+                            {{ variable.desc | markdown }}
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
