@@ -42,7 +42,7 @@ permalink: /documentation/map-design/bzdb/
 
             <ul class="unstyled-list">
                 {% for variable in groupedVariables[category] | order('name') %}
-                    <li class="{{ loop.last ?: 'border-b' }} mb-4">
+                    <li id="{{ variable.name | slug }}" class="{{ loop.last ?: 'border-b' }} mb-4">
                         <p class="m-0">
                             <strong>{{ variable.name }}</strong>
                             <span class="tag">since {{ variable.since }}</span>

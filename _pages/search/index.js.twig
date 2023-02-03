@@ -3,8 +3,9 @@ title: Search Index
 permalink: /search/index.js
 ---
 
+{% set uid = 0 %}
+
 const SearchIndex = [
-    {% set uid = 0 %}
     {% for collection in site.collections %}
         {% for item in collections[collection.name] %}
             {
@@ -15,5 +16,16 @@ const SearchIndex = [
             },
             {%- set uid = uid + 1 -%}
         {% endfor %}
+    {% endfor %}
+
+    {# Add BZDB variables to our search index #}
+    {% for bzdb_variable in data.bzdb_settings.variables %}
+        {
+            id: {{ uid }},
+            title: '{{ bzdb_variable.name }}',
+            content: '{{ bzdb_variable.desc | markdown | striptags | replace({'\n': ' '}) | escape('js') }}',
+            permalink: '{{ url(pages['BZDB Variables']) }}#{{ bzdb_variable.name | slug }}',
+        },
+        {%- set uid = uid + 1 -%}
     {% endfor %}
 ];
