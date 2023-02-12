@@ -1,0 +1,63 @@
+---
+title: BZDB Variables
+permalink: /documentation/map-design/bzdb/
+---
+
+{% extends "_layouts/page-sidebar.html.twig" %}
+
+{% set groupedVariables = data.bzdb_settings.variables | group('category') %}
+{% set variableCategories = groupedVariables | keys | sort %}
+
+{% block aside %}
+    <h2
+        class="mt-0 c-accordion__header"
+        data-role="accordion"
+        data-target="#sidebar-toc"
+        data-breakpoint="lg"
+    >
+        Categories
+    </h2>
+
+    <div id="sidebar-toc" class="c-accordion__body">
+        <ul class="m-0">
+            {% for grouping in variableCategories %}
+                <li>
+                    <a href="#{{ grouping | slug }}">{{ grouping }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <h1>BZDB Variables</h1>
+
+    <p>
+        BZFlag Database Variables (BZDB variables) are a way to configure the behavior tanks experience on a given map, whether it's the tank speed, the shot speed, the amount of gravity, and even the sky color!
+    </p>
+
+    {% for category in variableCategories %}
+        <section>
+            <h2 id="{{ category | slug }}">{{ category }}</h2>
+
+            <ul class="unstyled-list">
+                {% for variable in groupedVariables[category] | order('name') %}
+                    <li id="{{ variable.name | slug }}" class="{{ loop.last ?: 'border-b' }} mb-4">
+                        <p class="m-0">
+                            <strong>{{ variable.name }}</strong>
+                            <span class="tag">since {{ variable.since }}</span>
+                        </p>
+                        <p class="m-0 pl-3">
+                            <small>
+                                {{ variable.type }} &bull; default: <code>{{ variable.default }}</code>
+                            </small>
+                        </p>
+                        <div class="mb-4 pl-3">
+                            {{ variable.desc | markdown }}
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endfor %}
+{% endblock %}

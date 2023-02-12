@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$defs": {
+        "setting": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "desc": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "since": {
+                    "type": "string",
+                    "pattern": "^\\d+\\.\\d+\\.\\d+$"
+                },
+                "default": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "desc",
+                "since",
+                "default",
+                "category",
+                "type"
+            ]
+        }
+    },
+    "type": "object",
+    "properties": {
+        "variables": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/setting"
+            }
+        }
+    },
+    "required": [
+        "variables"
+    ]
+}
