@@ -504,10 +504,10 @@ variables:
       category: Server Settings
       type: integer
     - name: _obeseFactor
-      desc: The `_tankWidth` multiplier used for tanks holding the Obese flag.
+      desc: The `_tankWidth` multiplier used for tanks holding the Obesity flag.
       since: 2.4.0
       default: "2.5"
-      category: Obese Flag
+      category: Obesity Flag
       type: float
     - name: _pauseDropTime
       desc: The amount of time in seconds a player must be paused before they automatically drop the flag they are carrying.

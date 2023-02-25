@@ -13,6 +13,7 @@ parent:
 {% extends "_layouts/page-sidebar.html.twig" %}
 
 {% set flags = collections.flags | where('type', '==', this.type) %}
+{% set settings = data.bzdb_settings.variables | where('category', '_=', this.name) %}
 
 {% block introduction %}
     <h1 class="mt-0">{{ this.name }} Flag</h1>
@@ -47,6 +48,19 @@ parent:
 
 {% block content %}
     {{ this.content | markdown }}
+
+    {% if settings | length > 0 %}
+        <h2 id="server-settings">Server Settings</h2>
+
+        <ul>
+            {% for setting in settings %}
+                <li>
+                    <code>{{ setting.name }}</code>
+                    {{ setting.desc | markdown }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     {% if this.video %}
         <div class="c-video-player">

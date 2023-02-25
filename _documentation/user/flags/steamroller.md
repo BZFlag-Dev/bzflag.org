@@ -3,8 +3,6 @@ name: Steamroller
 abbreviation: SR
 type: Good
 summary: Destroys tanks you touch but you have to get really close.
-bzdb:
-  - _srRadiusMult
 ---
 
 The Steamroller (SR) flag allows the player to kill tanks that get within a certain proximity of the holder; this proximity varies amongst maps.
@@ -20,7 +18,3 @@ The effect of the high radius also comes useful when attempting to kill opponent
 ### Caution
 
 High radius or sudden grabs of the Steamroller flag while in the proximity of teammates can result in unwanted teamkills, unless the server is configured to disallow team kills.
-
-## Server Settings
-
-- `_srRadiusMult` - radius of steamroller effect.
