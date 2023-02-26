@@ -8,4 +8,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Gets the amount of lag (in milliseconds) a player must have before sending a warning.

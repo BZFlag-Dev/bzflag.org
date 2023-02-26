@@ -11,4 +11,4 @@ returns:
     description: ~
 ---
 
-This function needs a description. Please feel free to contribute a description to this function.
+Gets the motto of a player with `playerID`.
