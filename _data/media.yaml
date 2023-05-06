@@ -62,7 +62,7 @@ screenshots:
               - filename: delirious_city_01
                 caption: A circular ring of player callsigns floating on a platform with a map outline in the background
               - filename: delirious_city_02
-                caption: Pyramid shaped structures made of rectagular structures with purple outlines
+                caption: Pyramid shaped structures made of rectangular structures with purple outlines
               - filename: delirious_city_03
                 caption: A lot of map objects outline in neon green
               - filename: delirious_city_04
@@ -122,7 +122,7 @@ screenshots:
           author: LouMan
           images:
               - filename: mystic_valley_01
-                caption: Parts of an abandoned tank on fire with a forrest in the distance
+                caption: Parts of an abandoned tank on fire with a forest in the distance
               - filename: mystic_valley_02
                 caption: A stone bridge connecting two riverbanks
         - name: Pandemonium
