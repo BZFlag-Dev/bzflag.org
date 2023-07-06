@@ -64,7 +64,7 @@ but should result in successful builds.
 Once you have either the pre-built binaries or you have compiled the dependencies, you need to ensure that BZFlag can
 find them.
 
-**For BZFlag 2.4.0 through 2.4.18:**
+**For BZFlag 2.4:**
 
 An environment variable called BZ_DEPS must point to the directory containing the various output directories. Navigate
 to the Environment Variables control panel. Create a new user environment variable called BZ_DEPS and point it to the
@@ -72,7 +72,7 @@ directory that contains the directory that contains the licenses, output-release
 In our example, this would be `C:\code\bzflag-dependencies\`. Once the environment variable has been created, log off
 and back on or reboot for the change to take effect.
 
-**For BZFlag 2.4.20+ and master (2.5):**
+**For BZFlag master (2.5):**
 
 Create a "dependencies" directory alongside the src and include directories in the source root of BZFlag. Copy the
 output-* and licenses directories to the dependencies directory in the BZFlag source root.
