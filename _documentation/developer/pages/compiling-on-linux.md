@@ -7,57 +7,54 @@ docpath: compiling/linux/
 
 BZFlag uses a number of third-party build tools and libraries to build on Linux. Much of this info will also apply to
 other *nix like operating systems such as the various BSDs.
-* GNU gcc/g++
+* C++11 compiler such as GNU gcc/g++
 * automake 1.6.0+
 * autoconf 2.68+
 * libtool 1.4.2+
 * make
 * c-ares
+* curl
 * glew
 * ncurses
-* SDL 1.2.10+ or 2.0.3+
+* SDL 2.0.9+
 * zlib
+
+BZFlag master (2.5) additionally requires:
+* glm
+* libpng
 
 ### Debian/Ubuntu (and other Debian-based distributions)
 
-**SDL 1.2.10+:**
+**For BZFlag 2.4:**
 
 {% set command %}
-apt-get install g++ automake autoconf libtool libgl1-mesa-dev libglu1-mesa-dev libcurl3-dev libc-ares-dev zlib1g-dev libncurses-dev libglew-dev make libsdl1.2-dev libsdl-sound1.2-dev
+apt install g++ automake autoconf libtool make libc-ares-dev libcurl3-dev libglew-dev libncurses-dev libsdl2-dev zlib1g-dev
 {% endset %}
 
 {% include '_includes/terminal.html.twig' with { command: command, admin: true, os: 'linux', folder: '~' } %}
 
-**SDL 2.0.3+:**
+**For BZFlag master (2.5):**
 
 {% set command %}
-apt-get install g++ automake autoconf libtool libgl1-mesa-dev libglu1-mesa-dev libcurl3-dev libc-ares-dev zlib1g-dev libncurses-dev libglew-dev make libsdl2-dev
+apt install g++ automake autoconf libtool make libc-ares-dev libcurl3-dev libglew-dev libncurses-dev libsdl2-dev zlib1g-dev libglm-dev libpng-dev
 {% endset %}
 
 {% include '_includes/terminal.html.twig' with { command: command, admin: true, os: 'linux', folder: '~' } %}
 
 ### Fedora
 
-**SDL 1.2.10+:**
+**For BZFlag 2.4:**
 
 {% set command %}
-dnf install gcc-c++ libtool c-ares-devel libcurl-devel mesa-libGL-devel mesa-libGLU-devel ncurses-devel zlib-devel SDL-devel
+dnf install gcc-c++ libtool c-ares-devel libcurl-devel glew-devel ncurses-devel SDL2-devel zlib-devel
 {% endset %}
 
 {% include '_includes/terminal.html.twig' with { command: command, admin: true, os: 'linux', folder: '~' } %}
 
-**SDL 2.0.3+:**
+**For BZFlag master (2.5):**
 
 {% set command %}
-dnf install gcc-c++ libtool c-ares-devel libcurl-devel mesa-libGL-devel mesa-libGLU-devel ncurses-devel zlib-devel SDL2-devel
-{% endset %}
-
-{% include '_includes/terminal.html.twig' with { command: command, admin: true, os: 'linux', folder: '~' } %}
-
-### CentOS
-
-{% set command %}
-yum install gcc-c++ libtool c-ares-devel libcurl-devel mesa-libGL-devel mesa-libGLU-devel ncurses-devel SDL-devel zlib-devel
+dnf install gcc-c++ libtool c-ares-devel libcurl-devel glew-devel ncurses-devel SDL2-devel zlib-devel glm-devel libpng-devel
 {% endset %}
 
 {% include '_includes/terminal.html.twig' with { command: command, admin: true, os: 'linux', folder: '~' } %}
@@ -85,7 +82,7 @@ git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
 
 ## Building the code
 
-First, change to the bzflag directory (adjusting if necessary) and then run our autogen.sh script. If you later modify
+First, change to the ```bzflag``` directory (adjusting if necessary) and then run our autogen.sh script. If you later modify
 any of the Makefile.am files, you must re-run the autogen.sh script (and configure).
 
 {% set command = [
