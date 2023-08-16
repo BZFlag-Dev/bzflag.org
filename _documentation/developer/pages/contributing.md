@@ -9,7 +9,7 @@ If you find a problem with the game you can report it to our development team. I
 
 ## Contributing Changes
 
-With Git and GitHub, contributing to a project is reasonably easy, but we'll try to walk you through best practices. This will allow you to work on multiple independent changes at the same time, keeping them in separate "topic branches". The example below assumes you want to contribute to the **master** branch and creates a new topic branch called **feature/betterui** in your fork.
+With Git and GitHub, contributing to a project is reasonably easy, but we will try to walk you through best practices. This will allow you to work on multiple independent changes at the same time, keeping them in separate "topic branches". The example below assumes you want to contribute to the **master** branch and creates a new topic branch called **feature/betterui** in your fork.
 
 1. You will need to fork our GitHub repository the first time you want to contribute changes. You can use this same fork for later changes. Sign in to your GitHub account, go to our [GitHub repository](https://github.com/BZFlag-Dev/bzflag), and click the Fork button.
 1. Now that you have a fork of our code, you need to clone it to your computer so you can work on it. Run:<br />`git clone https://github.com/Your_User_Name/bzflag`
@@ -27,7 +27,7 @@ With Git and GitHub, contributing to a project is reasonably easy, but we'll try
 As new changes are pushed to the official BZFlag project repositories, your fork will become outdated.  The steps below will allow you to update your fork and bring in any new changes. The branches **master** and **feature/betterui** below are examples, with feature/betterui being a branch off of master. If you are working with another base branch, such as 2.4, or you want to update multiple branches in your fork, adjust as necessary.
 
 1. Checkout the branch name matching the upstream branch you would like to update<br /><code>git checkout **master**</code>
-1. Fetch upstream changes<br />`git fetch upstream`
+1. Fetch changes from the upstream remote<br />`git fetch upstream`
 1. Merge upstream changes into your fork<br /><code>git merge --ff-only upstream/**master**</code>
 1. Push new changes to your fork<br /><code>git push origin **master**</code>
 1. Checkout your branch you wish to merge changes into<br /><code>git checkout **feature/betterui**</code>
@@ -39,12 +39,13 @@ As new changes are pushed to the official BZFlag project repositories, your fork
 ## More Information
 
 GitHub has some documentation and guides for forking GitHub repositories:
-* <a href="https://help.github.com/articles/fork-a-repo/" rel="nofollow">Fork a repo</a>
-* <a href="https://guides.github.com/activities/forking/" rel="nofollow">Forking projects</a>
+* <a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo" rel="nofollow">Fork a repo</a>
+* <a href="https://docs.github.com/en/get-started/quickstart/contributing-to-projects" rel="nofollow">Forking projects</a>
 
 There are various sites with tutorials and information about using Git:
-* <a href="https://try.github.io/" rel="nofollow">Resources to learn Git (GitHub)</a>
-* <a href="https://guides.github.com/" rel="nofollow">GitHub Guides</a>
+* <a href="https://docs.github.com/en/get-started/quickstart" rel="nofollow">GitHub Quickstart</a>
+* <a href="https://training.github.com/" rel="nofollow">GitHub Training Kit</a>
 * <a href="https://www.codecademy.com/learn/learn-git" rel="nofollow">Learn Git (Code Academy)</a>
+* <a href="https://docs.github.com/" rel="nofollow">GitHub Docs</a>
 
-There's also an online interactive site called <a href="https://learngitbranching.js.org/" rel="nofollow">Learn Git Branching</a>.
+There are also online interactive sites such as <a href="https://learngitbranching.js.org/" rel="nofollow">Learn Git Branching</a> and <a href="https://git-school.github.io/visualizing-git/" rel="nofollow">Visualizing Git</a>.
