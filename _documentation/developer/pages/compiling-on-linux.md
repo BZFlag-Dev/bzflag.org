@@ -119,10 +119,11 @@ of in a system-wide directory, which would mean it would not need root access to
 
 {% include '_includes/terminal.html.twig' with { command: command, os: 'linux', folder: '~/bzflag' } %}
 
-Once configured, just run:
+Once configured, just run the following to compile the source code. The example below makes use of ```nproc``` to fetch
+the number of CPU threads, subtracting up to two of them, and uses that to run multiple jobs at once.
 
 {% set command %}
-make
+make -j$(nproc --ignore=2)
 {% endset %}
 
 {% include '_includes/terminal.html.twig' with { command: command, os: 'linux', folder: '~/bzflag' } %}
