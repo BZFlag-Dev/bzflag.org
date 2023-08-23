@@ -8,28 +8,16 @@ docpath: compiling/windows/
 BZFlag uses Visual C++ 2017 (VC15), which is part of Visual Studio 2017. The
 [Community edition may be downloaded for free][msvc], though does require a (free) Microsoft account for continued use.
 Run the Visual Studio 2017 installer and choose to install "Desktop Development with C++". Additionally, since new
-versions of the Windows 10 SDK are constantly coming out, you either need to install the version we current target, or
-update the bzflag-dependencies build script and upgrade our project files to target the current version. As of this
-writing, we target "Windows 10 SDK (10.0.16299.0)".
+versions of the Windows SDK are constantly coming out, you may need to update the bzflag-dependencies build script and
+upgrade our project files to target the current version.
 
 The commands below assume the use of the command line git client from [Git for Windows][gitdl] with the Command Prompt.
 Using Git Bash will handle directory paths slightly different (affecting the `mkdir` and `cd` commands under "Compiling
 the dependencies") and using a Git GUI program will also deviate from our instructions.
 
-We provide a repository of third-party dependencies for building on Windows. We try to provide a binary download for
-each release of the game, but it's easy enough to build yourself. Additionally, if your intent is to build an installer,
-it is necessary to install [NSIS 3][nsis]. The installer will be built only from our fullbuild solution in Release mode.
-
-For now, let's start by getting the dependencies.  There are two methods: downloading pre-built binaries or compiling
-them yourself. If you are intending to work on the master branch of BZFlag, compiling the dependencies is the only
-option.
-
-### Downloading pre-built binaries
-
-1. Navigate to our [bzflag-dependencies releases](https://github.com/BZFlag-Dev/bzflag-dependencies/releases) page
-1. Find a release that matches your version of the game (though newer ones may work as well)
-1. Download the .7z
-1. Extract the .7z with 7zip
+We provide a repository of third-party dependencies for building on Windows. We provide a script to build these.
+Additionally, if your intent is to build an installer, it is necessary to install [NSIS 3][nsis]. The installer will be built only
+from our fullbuild solution in Release mode.
 
 ### Compiling the dependencies
 
@@ -61,8 +49,7 @@ but should result in successful builds.
 
 ### Using the dependencies
 
-Once you have either the pre-built binaries or you have compiled the dependencies, you need to ensure that BZFlag can
-find them.
+Once you have compiled the dependencies, you need to ensure that BZFlag can find them.
 
 **For BZFlag 2.4:**
 
@@ -100,7 +87,7 @@ git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
 
 ## Building the code
 
-The MSVC directory contains several Visual Studio solution files.
+The MSVC directory contains three Visual Studio solution files:
 * fullbuild.sln - Includes the game client, server, server plugins, installer, and bzadmin
 * bzflag.sln - Includes just the game client
 * bzfs.sln - Includes just the server and plugins
@@ -134,7 +121,7 @@ including a [good overview from the Visual C++ Team Blog][vcdebug].
 
 For more information, review the README.Windows and DEVINFO files from the source.
 
-[msvc]: https://www.visualstudio.com/downloads/
+[msvc]: https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15
 [gitdl]: https://git-scm.com/downloads
 [nsis]: https://nsis.sourceforge.io/Download
 [vcdebug]: https://blogs.msdn.microsoft.com/vcblog/2017/04/10/c-debugging-and-diagnostics/
