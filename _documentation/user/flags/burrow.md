@@ -17,4 +17,4 @@ Keeping some distance between the burrowed player and enemies is best. A normal 
 
 Some maps have obstacles that normal players cannot pass, but allow a burrowed tank to drive under. This can be used to make a quick escape when being pursued.
 
-There are several ways of killing a burrowed player. Besides the GM flag, the [Shockwave](../shockwave/) flag can also be used to kill a burrowed tank. Driving over a burrowed tank will also kill them. On servers where shots keep vertical velocity, shooting while falling can be used to hit a burrowed tank.
+There are several ways of killing a burrowed player. Besides the GM flag, the [Shockwave](../shock-wave/) flag can also be used to kill a burrowed tank. Driving over a burrowed tank will also kill them. On servers where shots keep vertical velocity, shooting while falling can be used to hit a burrowed tank.
