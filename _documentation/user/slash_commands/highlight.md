@@ -14,7 +14,7 @@ Highlight any line that contains "someword":
 /highlight someword
 ```
 
-Hightlight any line that contains either "genocide", "guided missile", or "laser":
+Highlight any line that contains either "genocide", "guided missile", or "laser":
 
 ```
 /highlight (genocide|guided missile|laser)
