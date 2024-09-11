@@ -18,13 +18,12 @@ permalink: /privacy/
 
         ## Personal information collected and how it is used
 
-        - **Username** - We collect and store a user created username (which could include part or all of the user's actual legal name), and is a unique identifier that the user creates, and is publicly shown. Additionally, a unique numeric identifier is associated with all accounts, and this is also publicly exposed.
+        - **Username** - We collect and store a user-created username (which could include part or all of the user's actual legal name) that is a unique identifier that the user creates and is publicly shown. Additionally, a unique numeric identifier is associated with all accounts, and this is also publicly exposed.
         - **Email Address** - We collect and store an email address in order to contact the user (with automated or manual methods), such as for password resets or message notifications. By default, it is not publicly shown, but it can be set to display to the public.
-        - **Date of Birth** - We collect and store the date of birth at registration in order to determine if the user is under the age of 13, in which case COPPA guidelines would apply.
+        - **Date of Birth** - We collect and store the date of birth at registration in order to determine if the user is under the age of 13, in which case COPPA guidelines apply.
         - **IM Contacts and Social Media** - Other contact methods (such as ICQ and Skype) and social network pages (such as Facebook, Twitter, YouTube) can be provided by the user, and these would be stored as well. These are publicly shown by default.
-        - **IP Address** - We collect and store the IP addresses that are used to access our services. These are used for administrative purposes and to aid in preventing or blocking abuse. These are not publicly exposed.
+        - **IP Address** - We collect and store the IP addresses that are used to access our services. These are used for administrative purposes and to aid in preventing or blocking abuse and are not publicly exposed.
         - **Browser Information** - We collect and store information about the user's browser, which can include the browser name and version, as well as basic information about the operating system. This is information that every browser sends to every website, and is generally recorded automatically in the web server logs.{% if data.matomo %} Additionally, our analytics platform (that we self-host and respects Do Not Track) collects screen resolution and device type/brand/model information.{% endif %}
-
         - **User Generated Content** - Users are able to post user generated content that could include personal information in the form of text or files (such as images). Except in cases of private messages between users, this would generally be publicly available.
 
         {% if data.matomo %}
@@ -57,8 +56,8 @@ permalink: /privacy/
         {% if data.matomo %}- {{ data.matomo.baseURL|split('//')[1]|split('/')[0] }} (covering only the Matomo analytics platform for the above sites){% endif %}
 
 
-        Game servers for BZFlag are not run by the project and are thus not covered under our privacy policy. Game server may or may not have their own privacy policy.
+        Game servers for BZFlag are not run by the project and are thus not covered under our privacy policy. Game servers may or may not have their own privacy policy.
 
-        Third-party leagues or fan sites are also not covered under our privacy policy, and they may have their own privacy policy.
+        Third-party leagues or fan sites are also not covered under our privacy policy, and may have their own privacy policy.
     {% endmarkdown %}
 {% endblock %}
