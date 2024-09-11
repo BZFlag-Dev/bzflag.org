@@ -10,9 +10,9 @@ There is also in-game help for the various server commands. Running `/?` by itse
 
 ```
 [SERVER->] /? - display the list of server-side commands
-[SERVER->] /ban <#slot|PlayerName|"Player Name"|ip> <duration> <reason>  - ban a player, IP or IP range off the server
+[SERVER->] /ban <#slot|PlayerName|"Player Name"|ip> <duration> <reason>  - ban a player, IP address or IP range off the server
 [SERVER->] /banlist [pattern] - List the IPs currently banned from this server
-[SERVER->] /checkip <ip> - check if an IP is banned and print corresponding ban info
+[SERVER->] /checkip <ip> - check if an IP address is banned and print corresponding ban info
 [SERVER->] /countdown - start the countdown sequence for a timed game
 [SERVER->] /date - display current server time
 [SERVER->] /flag <reset|up|show> - reset, remove or show the flags
