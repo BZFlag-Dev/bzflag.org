@@ -7,7 +7,3 @@ permissions: ~
 ---
 
 This command shows how long much time has elapsed since the game server was started.
-
-```
-/uptime
-```
