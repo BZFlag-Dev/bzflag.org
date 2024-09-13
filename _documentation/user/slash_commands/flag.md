@@ -123,7 +123,7 @@ The admin issuing the command would see:
 All the admins would see:
 
 ```
-[Admin] BobTheTank took flag L/70 from SomePlayer
+[Admin] SERVER: BobTheTank took flag L/70 from SomePlayer
 ```
 
 The player whose flag was taken does not see a message about who made them drop it.
