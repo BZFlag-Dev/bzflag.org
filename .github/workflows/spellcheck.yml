@@ -1,6 +1,6 @@
 name: Spell Checking
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   codespell:
