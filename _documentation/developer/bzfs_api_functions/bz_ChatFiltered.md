@@ -8,4 +8,4 @@ returns:
     description: ~
 ---
 
-Checks if chat is being fitered. This is tied to the `-filterChat` server option or to server settings set via [`bz_SetFiltering`]({{ url(collections.bzfs_api_functions['bz_SetFiltering']) }}).
+Checks if chat is being filtered. This is tied to the `-filterChat` server option or to server settings set via [`bz_SetFiltering`]({{ url(collections.bzfs_api_functions['bz_SetFiltering']) }}).
