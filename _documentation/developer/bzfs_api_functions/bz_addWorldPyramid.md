@@ -15,7 +15,7 @@ signatures:
         description: ~
         default: ~
       - dataType: bool
-        name: fliped
+        name: flipped
         description: ~
         default: ~
       - dataType: bz_WorldObjectOptions
