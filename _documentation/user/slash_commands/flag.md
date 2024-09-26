@@ -41,7 +41,7 @@ Here is an example of the output:
 [SERVER->] #9   i:V   p:-1  r:1  g:1  s:1  p:{-43.1, -134.5, 0.0}
 ```
 
-The `#` is the flag ID, which can be useful for resetting a single flag. The `i:` show the abbreviation of the flag. The `p:` shows the player slot number of the player that holds the flag, with -1 indicating that nobody is holding it. The `r:` shows if it is a required flag, meaning it is not one that was randomly picked to spawn. The `g:` shows how many "grabs" of the flag are left before it would respawn in a new location.
+The `#` is the flag ID, which can be useful for resetting a single flag. The `i:` shows the abbreviation of the flag. The `p:` shows the player slot number of the player that holds the flag, with -1 indicating that nobody is holding it. The `r:` shows if it is a required flag, meaning it is not one that was randomly picked to spawn. The `g:` shows how many "grabs" of the flag are left before it would respawn in a new location.
 
 The `s:` indicates the flag status, with:
 
@@ -98,7 +98,7 @@ Using the output of `/flag show`, it is possible to reset a single specific flag
 /flag reset <flag abbreviation>
 ```
 
-It is also possible to reset specific types of flags. By passing a flag abbreviation, it will reset any flag of that type. To reset team flags for a single team, use G* for Green, B* for Blue, R* for Red, and P* for Purple. A the list of flag abbreviations are on the [flags](/documentation/flags/) documentation page. For example, `/flag reset G*` would reset all the Green team flags.
+It is also possible to reset specific types of flags. By passing a flag abbreviation, it will reset any flag of that type. To reset team flags for a single team, use G\* for Green, B\* for Blue, R\* for Red, and P\* for Purple. A list of flag abbreviations are on the [flags](/documentation/flags/) documentation page. For example, `/flag reset G*` would reset all the Green team flags.
 
 ## Taking Players' Flags
 
@@ -106,7 +106,7 @@ It is also possible to reset specific types of flags. By passing a flag abbrevia
 /flag take <slot# | player name>
 ```
 
-The flag take command allows removing the flag that a player is carrying. It requires either the player's slot number or their callsign. It will cause the flag to drop where there are, and for non-team flags may cause the flag to respawn elsewhere on the map.
+The flag take command allows force-dropping the flag that a player is carrying. It requires either the player's slot number or their callsign. It will cause the flag to drop where it is, and for non-team flags may cause the flag to respawn elsewhere on the map.
 
 If this command is run:
 
@@ -118,6 +118,12 @@ The admin issuing the command would see:
 
 ```
 [SERVER->] BobTheTank took flag L/70 from SomePlayer
+```
+
+All the admins would see:
+
+```
+[Admin] SERVER: BobTheTank took flag L/70 from SomePlayer
 ```
 
 The player whose flag was taken does not see a message about who made them drop it.
