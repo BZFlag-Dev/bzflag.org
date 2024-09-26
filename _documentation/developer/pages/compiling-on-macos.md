@@ -81,7 +81,7 @@ git clone --branch master https://github.com/BZFlag-Dev/bzflag.git
 
 ## Building the code
 
-Nagivate to the Xcode directory of our source and open BZFlag.xcodeproj. This will launch Xcode.
+Navigate to the Xcode directory of our source and open BZFlag.xcodeproj. This will launch Xcode.
 
 By default we build in debug mode which leaves debugging symbols in the binaries and produces less optimized code. To
 change this, navigate to the Product menu, then to Scheme, and click on Edit Scheme. Then in the left sidebar click on
