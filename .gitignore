@@ -8,3 +8,4 @@
 *.mp4
 *.so
 *.webm
+!/assets/videos/blank.mp4

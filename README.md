@@ -10,18 +10,19 @@ This website is built with stakx 0.2.x and typically makes use of the latest dev
 git clone https://github.com/BZFlag-Dev/bzflag.org
 cd bzflag.org
 
+# Copy privacy.yaml.example to privacy.yaml and optionally do the same for matomo.yaml, then edit the contents of the
+# copies.
+cp _data/privacy.yaml.example _data/privacy.yaml
+cp _data/matomo.yaml.example _data/matomo.yaml
+
+# We host some additional assets, such as videos, outside the Git repository. To fetch those, run:
+php fetch-assets.php
+
 # Build for production
 ./path/to/stakx build
 
 # Build for development
 ./path/to/stakx build -c _config-dev.yml
-```
-
-## Fetching assets
-
-We host some additional assets, such as videos, outside of the Git repository. To fetch those, run:
-```
-./fetch-assets.sh
 ```
 
 ## Web Server Configuration
