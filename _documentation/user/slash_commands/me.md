@@ -7,7 +7,7 @@ permissions:
   - actionmessage
 ---
 
-This command sends an action message to chat. Unlike a normal chat message, an action message does not include a colon after the player name and does not color the message based on the player team.
+This command sends an action message to chat. Unlike a normal chat message, an action message does not include a colon after the player name and does not color the message based on the player's team.
 
 ```
 /me is tired
