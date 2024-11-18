@@ -1,21 +1,21 @@
-name: Spell Checking
+name: Spellcheck
 
 on: [push, pull_request]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
-  codespell:
-    name: Check spelling with codespell
+  spellcheck:
+    name: Spelling
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python 3.12
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.12
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install codespell
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Check spelling with codespell
-        run: codespell --ignore-words=.github/workflows/ignore-words.txt || exit 1
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        show-progress: true
+    - uses: codespell-project/actions-codespell@master
+      with:
+        path: _data, _datasets, _pages
+        ignore_words_file: .codespellignore
