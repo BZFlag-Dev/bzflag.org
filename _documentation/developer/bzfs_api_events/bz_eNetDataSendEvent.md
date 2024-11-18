@@ -7,7 +7,7 @@ category: Logging
 plugins: ~
 parameters:
     - dataType: bool
-      description: Whether data is sent or recieved
+      description: Whether data is sent or received
       name: send
     - dataType: bool
       description: Whether the packet is UDP
@@ -26,4 +26,4 @@ parameters:
       name: eventTime
 ---
 
-This event is called each time net data is sent
+This event is called each time net data is sent.
