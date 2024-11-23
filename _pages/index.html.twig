@@ -45,38 +45,18 @@ opengraph:
         <section class="my-5">
             <h2 class="mb-3 mb-md-5 text-center">Project News</h2>
 
-            <div>
-                <div class="row">
-                    {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
-                        <article class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                            <a href="{{ announcement.url }}"
-                               class="c-hover-card"
-                            >
-                                <img class="c-hover-card__thumbnail"
-                                     src="{{ url('/assets/images/announcements/' ~ announcement.basename) }}.jpg"
-                                     alt=""
-                                >
-                                <div class="c-hover-card__body">
-                                    <p class="c-hover-card__date">
-                                        <small>
-                                            <time datetime="{{ announcement.date | date("Y-m-d\\TH:i\\Z", 'UTC') }}">
-                                                {{- announcement.date | date('F d, Y', 'UTC') -}}
-                                            </time>
-                                        </small>
-                                    </p>
-                                    <h3 class="c-hover-card__title">{{ announcement.title }}</h3>
-                                    <p class="c-hover-card__meta">
-                                        <small>
-                                            by {{ announcement.author }}
-                                            &bull;
-                                            {{ announcement.category }}
-                                        </small>
-                                    </p>
-                                </div>
-                            </a>
-                        </article>
-                    {% endfor %}
-                </div>
+            <div class="row">
+                {% for announcement in data.announcements | order('date', 'DESC') | slice(0, 3) %}
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        {% include '_includes/announcement.html.twig' with { announcement: announcement } %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="pt-5 text-center h5">
+                <a href="{{ url('/news/') }}">
+                    Read older news <span aria-hidden="true">&raquo;</span>
+                </a>
             </div>
         </section>
     </div>

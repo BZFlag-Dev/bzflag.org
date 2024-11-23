@@ -1,0 +1,27 @@
+<article>
+    <a href="{{ announcement.url }}"
+        class="c-hover-card"
+    >
+        <img class="c-hover-card__thumbnail"
+              src="{{ url('/assets/images/announcements/' ~ announcement.basename) }}.jpg"
+              alt=""
+        >
+        <div class="c-hover-card__body">
+            <p class="c-hover-card__date">
+                <small>
+                    <time datetime="{{ announcement.date | date("Y-m-d\\TH:i\\Z", 'UTC') }}">
+                        {{- announcement.date | date('F d, Y', 'UTC') -}}
+                    </time>
+                </small>
+            </p>
+            <h3 class="c-hover-card__title">{{ announcement.title }}</h3>
+            <p class="c-hover-card__meta">
+                <small>
+                    by {{ announcement.author }}
+                    &bull;
+                    {{ announcement.category }}
+                </small>
+            </p>
+        </div>
+    </a>
+</article>
