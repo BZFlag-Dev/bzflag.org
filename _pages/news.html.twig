@@ -1,0 +1,32 @@
+---
+title: News
+section: news
+permalink: /news/
+opengraph:
+  title: BZFlag News
+  description: The latest and greatest news pertaining to everyone's favorite retro arcade tank game.
+---
+
+{% extends "_layouts/base.html.twig" %}
+
+{% block content_root %}
+  <div class="container">
+    <section class="py-3 px-md-3">
+      <h1>Project News</h1>
+
+      <div class="row">
+        {% for announcement in data.announcements | order('date', 'DESC') %}
+          {% if loop.first %}
+            {% set classes="col-12" %}
+          {% else %}
+            {% set classes="col-md-6" %}
+          {% endif %}
+
+          <div class="{{ classes }} mb-4 mb-lg-5 ">
+            {% include "_includes/announcement.html.twig" with { announcement: announcement } %}
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </section>
+{% endblock %}
