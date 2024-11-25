@@ -1,0 +1,117 @@
+.tabs {
+    --curve-size: 15px;
+    --manila-bg: hsl(34, 100%, 82%);
+    --paper-bg: hsl(0, 0%, 100%);
+
+    background-color: var(--manila-bg);
+    border-radius: 5px;;
+    overflow: hidden;
+    padding: 0.5rem;
+
+    .tablist[role="tablist"] {
+        display: grid;
+        gap: calc(var(--curve-size) * 2);
+        grid-auto-flow: column;
+        min-width: 100%;
+        padding: 0 var(--curve-size);
+    }
+
+    button[role="tab"],
+    button[role="tab"]:focus,
+    button[role="tab"]:hover {
+        appearance: none;
+        background: var(--paper-bg);
+        border: none;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: bold;
+        position: relative;
+        z-index: 2;
+
+        // We have the `.focus` element that will have an outline
+        outline: none;
+
+        &::after,
+        &::before {
+            background: var(--paper-bg);
+            bottom: 0;
+            content: '';
+            height: var(--curve-size);
+            position: absolute;
+            right: calc(-1 * var(--curve-size));
+            width: var(--curve-size);
+            z-index: 5;
+        }
+
+        &::before {
+            right: auto;
+            left: calc(-1 * var(--curve-size));
+        }
+
+        span::after,
+        span::before {
+            content: '';
+            height: calc(2 * var(--curve-size));
+            width: calc(2 * var(--curve-size));
+            background: var(--manila-bg);
+            position: absolute;
+            bottom: 0;
+            right: calc(-2 * var(--curve-size));
+            z-index: 7;
+            border-radius: 50%;
+        }
+
+        span::before {
+            right: auto;
+            left: calc(-2 * var(--curve-size));
+        }
+    }
+
+    [role="tab"][aria-selected="true"] {
+        padding: 2px 2px 4px;
+        margin-top: 0;
+        border-width: 2px;
+        border-top-width: 6px;
+        border-top-color: rgb(36 116 214);
+        border-bottom-color: hsl(220deg 43% 99%);
+        background: hsl(220deg 43% 99%);
+    }
+
+    [role="tab"][aria-selected="false"] {
+        border-bottom: 1px solid hsl(219deg 1% 72%);
+    }
+
+    [role="tab"] span.focus {
+        display: inline-block;
+        margin: 2px;
+        padding: 4px 6px;
+    }
+
+    [role="tab"]:hover span.focus,
+    [role="tab"]:focus span.focus,
+    [role="tab"]:active span.focus {
+        padding: 2px 4px;
+        border: 2px solid rgb(36 116 214);
+        border-radius: 3px;
+    }
+
+    [role="tabpanel"] {
+        padding: 5px;
+        border: 2px solid hsl(219deg 1% 72%);
+        border-radius: 0 5px 5px;
+        background: hsl(220deg 43% 99%);
+        min-height: 10em;
+        width: 100%;
+        overflow: auto;
+    }
+
+    [role="tabpanel"].is-hidden {
+        display: none;
+    }
+
+    [role="tabpanel"] p {
+        margin: 0;
+    }
+}
