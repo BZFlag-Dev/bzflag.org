@@ -1,0 +1,184 @@
+%manila-background {
+    background-blend-mode: multiply;
+    background-color: var(--manila-bg);
+    background-image: var(--paper-texture);
+}
+
+.tabs-container {
+    --folder-radius: 15px;
+    --manila-bg: hsl(34, 100%, 82%);
+    --paper-texture: url('/assets/images/paper_texture.png');
+    --selection-border-width: 2px;
+    --selection-color: rgb(36 116 214);
+    --selection-padding-x: 6px;
+    --selection-padding-y: 4px;
+    --tab-background-color: #fff;
+    --tab-bottom-radius: 30px;
+    --tab-top-radius: 10px;
+
+    .page-tab {
+        appearance: none;
+        align-items: center;
+        border: 0;
+        border-radius: var(--tab-top-radius) var(--tab-top-radius) 0 0;
+        border-top-color: transparent;
+        border-top-style: solid;
+        border-top-width: 5px;
+        color: #000;
+        display: inline-flex;
+        font-weight: bold;
+        height: 40px;
+        margin: 0 var(--tab-bottom-radius);
+        outline: none; // We have the `.focus` element that will have an outline
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 2;
+
+        &,
+        &::before,
+        &::after {
+            background-color: var(--tab-background-color);
+        }
+
+        &::before,
+        &::after {
+            bottom: 0;
+            clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 88.06% 99.69%, 76.94% 98.74%, 66.62% 97.14%, 57.10% 94.89%, 48.36% 91.96%, 40.39% 88.35%, 33.18% 84.04%, 26.71% 79.03%, 20.97% 73.29%, 15.96% 66.82%, 11.65% 59.61%, 8.04% 51.64%, 5.11% 42.90%, 2.86% 33.38%, 1.26% 23.06%, 0.31% 11.94%);
+            content: '';
+            height: var(--tab-bottom-radius);
+            position: absolute;
+            width: var(--tab-bottom-radius);
+        }
+
+        &::after {
+            right: calc(-1 * var(--tab-bottom-radius));
+        }
+        
+        &::before {
+            left: calc(-1 * var(--tab-bottom-radius));
+            transform: scale(-1, 1);
+        }
+
+        &[aria-selected="true"] {
+            border-top-color: var(--selection-color);
+        }
+    }
+
+    button.page-tab {
+        cursor: pointer;
+    
+        &:active,
+        &:focus,
+        &:hover {
+            span.focus {
+                border: var(--selection-border-width) solid var(--selection-color);
+                border-radius: 3px;
+                padding:
+                    calc(var(--selection-padding-y) - var(--selection-border-width))
+                    calc(var(--selection-padding-x) - var(--selection-border-width))
+                ;
+            }
+        }
+
+        span.focus {
+            display: block;
+            margin: 0 auto;
+            padding: var(--selection-padding-y) var(--selection-padding-x);
+        }
+    }
+
+    .tabs-backdrop {
+        --folder-height: 20px;
+        --tab-background-color: var(--manila-bg);
+
+        margin: 0 1rem;
+        padding-bottom: var(--folder-height);
+        padding-left: 1rem;
+        position: relative;
+
+        &::after {
+            @extend %manila-background;
+
+            border-top-left-radius: var(--folder-radius);
+            border-top-right-radius: var(--folder-radius);
+            bottom: 0;
+            content: '';
+            display: block;
+            height: var(--folder-height);
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        .page-tab {
+            &,
+            &::after,
+            &::before {
+                @extend %manila-background;
+            }
+
+            & :where(h1, h2, h3, h4, h5, h6) {
+                border: 0;
+                font-size: 1rem;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+
+    .tabs-body {
+        @extend %manila-background;
+        
+        --folder-padding: 1rem;
+    
+        border-radius: var(--folder-radius) var(--folder-radius) 0 0;
+        box-shadow: 6px -6px 6px 0px rgb(0 0 0 / 30%);
+        overflow: hidden;
+        padding: var(--folder-padding);
+        position: relative;
+
+        // The manila folder's bottom crease 
+        &::before,
+        &::after {
+            --multiplier: 2;
+    
+            bottom: calc(var(--multiplier) * var(--folder-padding));
+            box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.3);
+            content: '';
+            height: 5px;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    
+        &::after {
+            --multiplier: 3;
+        }
+
+        .tablist {
+            display: grid;
+            grid-auto-flow: column;
+            min-width: 100%;
+        }
+    
+        [role="tabpanel"] {
+            background: var(--paper-texture);
+            border-radius: 3px;
+            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+            min-height: 10em;
+            overflow: auto;
+            padding: 5px;
+            position: relative;
+            width: 100%;
+            z-index: 10;
+
+            &.is-hidden {
+                display: none;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
