@@ -5,6 +5,7 @@ permalink: /downloads/
 jumbotron:
     image: /assets/images/downloads/jumbotron.jpg
     alt: ~
+    title: Join our Ranks
 opengraph:
     description: BZFlag is available as a free download. Pre-built packages are available for Windows and macOS.
 ---
@@ -13,6 +14,14 @@ opengraph:
 
 {% block content %}
     <div class="row mb-3">
+        {% include "_includes/tabs.html.twig" with { 
+            class: 'w-100',
+            headers: [{ value: 'Windows', selected: true }, 'macOS', 'Linux'],
+            labelTag: 'h2',
+            title: 'Downloads',
+            tabs: ['Download me for windoze', 'and for macOS', 'peep, I linux'],
+        } %}
+
         <div class="col-md-8 offset-md-2">
             <div class="show-macos">
                 <p class="text-center">

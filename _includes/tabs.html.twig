@@ -1,0 +1,50 @@
+{% set tabID = 'tablist-' ~ random() %}
+
+<section class="tabs-container {{ class }}">
+  <div class="tabs-backdrop">
+    <div class="page-tab">
+      {% set _labelTag = labelTag | default('span') %}
+
+      <{{ _labelTag }} id="{{ tabID }}">
+          {{ title }}
+      </{{ _labelTag }}>
+    </div>
+  </div>
+
+  <div class="tabs-body {{ class }}">
+    <div
+      class="tablist show-js"
+      role="tablist"
+      {% if visibleLabel %}
+        aria-labelledby="{{ tabID }}"
+      {% else %}
+        aria-label="{{ title }}"
+      {% endif %}
+    >
+      {% for headerOrDef in headers %}
+        <button
+          id="{{ tabID }}-header-{{ loop.index }}"
+          type="button"
+          role="tab"
+          class="page-tab"
+          aria-selected="{{ headerOrDef.selected ? 'true' : 'false' }}"
+          aria-controls="{{ tabID }}-panel-{{ loop.index }}"
+        >
+          <span class="focus">
+            {{ headerOrDef.selected ? headerOrDef.value : headerOrDef }}
+          </span>
+        </button>
+      {% endfor %}
+    </div>
+
+    {% for tabBody in tabs %}
+      <div 
+        role="tabpanel"
+        id="{{ tabID }}-panel-{{ loop.index }}"
+        aria-labelledby="{{ tabID }}-header-{{ loop.index }}"
+      >
+        {{ tabBody }}
+      </div>
+    {% endfor %}
+  </div>
+</section>
