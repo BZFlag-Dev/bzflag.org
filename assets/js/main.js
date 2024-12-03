@@ -247,14 +247,20 @@
             this.tabs = Array.from(this.tablistNode.querySelectorAll('[role=tab]'));
             this.tabpanels = [];
 
+            let preOpenedTab = null;
+
             for (let i = 0; i < this.tabs.length; i += 1) {
                 const tab = this.tabs[i];
                 const tabpanel = document.getElementById(tab.getAttribute('aria-controls'));
 
+                if (!preOpenedTab && tab.getAttribute('aria-selected') === "true") {
+                    preOpenedTab = tab;
+                }
+
                 tab.tabIndex = -1;
                 tab.setAttribute('aria-selected', 'false');
                 this.tabpanels.push(tabpanel);
-        
+
                 tab.addEventListener('keydown', this.onKeydown.bind(this));
                 tab.addEventListener('click', this.onClick.bind(this));
         
@@ -265,7 +271,7 @@
                 this.lastTab = tab;
             }
       
-            this.setSelectedTab(this.firstTab);
+            this.setSelectedTab(preOpenedTab ? preOpenedTab : this.firstTab);
         }
       
         setSelectedTab(currentTab) {

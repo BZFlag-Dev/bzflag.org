@@ -31,7 +31,7 @@
           aria-controls="{{ tabID }}-panel-{{ loop.index }}"
         >
           <span class="focus">
-            {{ headerOrDef.selected ? headerOrDef.value : headerOrDef }}
+            {{ headerOrDef.value ? headerOrDef.value : headerOrDef }}
           </span>
         </button>
       {% endfor %}

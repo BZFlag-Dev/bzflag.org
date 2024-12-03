@@ -133,6 +133,7 @@
     
         border-radius: var(--folder-radius) var(--folder-radius) 0 0;
         box-shadow: 6px -6px 6px 0px rgb(0 0 0 / 30%);
+        color: var(--text-color-light-bg);
         overflow: hidden;
         padding: var(--folder-padding);
         position: relative;
@@ -162,12 +163,13 @@
         }
     
         [role="tabpanel"] {
+            @include padding(null, 3);
+
             background: var(--paper-texture);
             border-radius: 3px;
             box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
             min-height: 10em;
             overflow: auto;
-            padding: 5px;
             position: relative;
             width: 100%;
             z-index: 10;

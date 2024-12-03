@@ -1,5 +1,7 @@
 .c-terminal {
     @include margin(y, 3);
+
+    color: var(--text-color-dark-bg);
 }
 
 .c-terminal__button {
