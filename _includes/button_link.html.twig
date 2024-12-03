@@ -1,0 +1,24 @@
+<a 
+    class="c-button {{ class }}" 
+    href="{{ href }}"
+>
+    <span class="d-flex">
+        {% if icon %}
+            <span
+                aria-hidden="true"
+                class="d-block mr-3"
+            >
+                <img
+                    alt="{{ iconAlt }}"
+                    class="img-fluid"
+                    src="{{ icon }}"
+                    style="height: 40px"
+                />
+            </span>
+        {% endif %}
+
+        <span class="d-block">
+            {{ body }}
+        </span>
+    </span>
+</a>

@@ -12,59 +12,131 @@ opengraph:
 
 {% extends "_layouts/page.html.twig" %}
 
+{% macro download_buttons(platform, download) %}
+    {% for dl in download.downloads[platform] %}
+        {% include "_includes/download_button.html.twig" with {
+            platform: platform,
+            download: dl,
+            version: download.version,
+        } %}
+    {% endfor %}
+{% endmacro %}
+
 {% block content %}
     <div class="row mb-3">
-        {% include "_includes/tabs.html.twig" with { 
-            class: 'w-100',
-            headers: [{ value: 'Windows', selected: true }, 'macOS', 'Linux'],
-            labelTag: 'h2',
-            title: 'Downloads',
-            tabs: ['Download me for windoze', 'and for macOS', 'peep, I linux'],
-        } %}
+        {% set windows_download %}
+            {% set download = data.downloads_bzflag | where('downloads.windows', '!=', null) | order('date', 'DESC') | first %}
 
-        <div class="col-md-8 offset-md-2">
-            <div class="show-macos">
-                <p class="text-center">
-                    If you use <a href="https://brew.sh/">Homebrew</a> on macOS, you may download BZFlag via the
-                    <code>brew</code> command. Alternatively, you may download our binary below and drag the .app into
-                    your Applications directory. Then right/control click (or two finger tap) on the application and
-                    choose Open.
-                </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <h3 class="h4">One-Click Download</h3>
 
-                {% include "_includes/terminal.html.twig" with { command: 'brew install --cask --no-quarantine bzflag', os: 'macos' } %}
+                        <p class="mb-3">
+                            Download our executable, launch it, and you're ready to join a game!
+                        </p>
 
-                <div class="c-alert c-alert--warning mb-3">
-                    <div class="c-alert__title">Gatekeeper Warning</div>
+                        {{ _self.download_buttons('windows', download) }}
+                    </div>
 
-                    The <code>--no-quarantine</code> flag is required as of 2.4.20 to install via Homebrew as our executable is not currently signed.
+                    {# Since we're not officially maintaining the Chocolatey version yet; let's not officially advertise it #}
+                    {# @TODO uncomment once we've taken it over #}
+                    {#<div>
+                        <h3 class="h4">via Chocolatey</h3>
+
+                        <p>
+                            If you use <a href="https://chocolatey.org/">Chocolatey</a> on your machine, you may download BZFlag
+                            via the <code>choco</code> command.
+                        </p>
+
+                        {% include "_includes/terminal.html.twig" with { command: 'choco install bzflag', os: 'windows' } %}
+                    </div>#}
+                </div>
+                <div class="col-md-6">
+                    // TODO
                 </div>
             </div>
+        {% endset %}
 
-            <div class="show-linux">
-                <p>
-                    If you use <a href="https://flatpak.org/">Flatpak</a> or <a href="https://snapcraft.io/">Snapcraft</a> on your Linux system, you may install BZFlag through the <code>flatpak</code> or <code>snap</code> command.
-                </p>
-                <p>
-                    Alternatively, you may install from your package manager or compile from source. Note that some distribution packages may automatically run a game server.
-                </p>
+        {% set macos_download %}
+            {% set download = data.downloads_bzflag | where('downloads.macos', '!=', null) | order('date', 'DESC') | first %}
 
-                {% include "_includes/terminal.html.twig" with { command: 'flatpak install flathub org.bzflag.BZFlag', os: 'linux' } %}
-                {% include "_includes/terminal.html.twig" with { command: 'snap install bzflag', os: 'linux' } %}
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <h3 class="h4">One-Click Download</h3>
+
+                        <p class="mb-3">
+                            Download our Application like you would any other macOS app.
+                        </p>
+
+                        {{ _self.download_buttons('macos', download) }}
+                    </div>
+
+                    <div>
+                        <h3 class="h4">via Homebrew</h3>
+
+                        <p class="mb-3">
+                            If you use <a href="https://brew.sh/">Homebrew</a> on macOS, you may download BZFlag via the <code>brew</code> command.
+                        </p>
+
+                        {% include "_includes/terminal.html.twig" with { 
+                            command: 'brew install --cask --no-quarantine bzflag', 
+                            os: 'macos' 
+                        } %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    // TODO
+                </div>
             </div>
+        {% endset %}
 
-            {# Since we're not officially maintaining the Chocolatey version yet; let's not officially advertise it #}
-            {# @todo uncomment once we've taken it over #}
-            {#
-            <div class="show-windows">
-                <p class="text-center">
-                    If you use <a href="https://chocolatey.org/">Chocolatey</a> on your machine, you may download BZFlag
-                    via the <code>choco</code> command.
-                </p>
+        {% set linux_download %}
+            <h3 class="h4">via Flatpak</h3>
 
-                {% include "_includes/terminal.html.twig" with { command: 'choco install bzflag', os: 'windows' } %}
-            </div>
-            #}
-        </div>
+            <p class="mb-3">
+                If you use <a href="https://flatpak.org/">Flatpak</a> on your Linux system, install BZFlag via the <code>flatpak</code> command.
+            </p>
+
+            {% include "_includes/terminal.html.twig" with {
+                command: 'flatpak install flathub org.bzflag.BZFlag',
+                os: 'linux',
+            } %}
+
+            <h3 class="h4">via Snapcraft</h3>
+
+            <p class="mb-3">
+                If you use <a href="https://snapcraft.io/">Snapcraft</a> on your Linux system, install BZFlag through the <code>snap</code> command.
+            </p>
+
+            {% include "_includes/terminal.html.twig" with {
+                command: 'snap install bzflag',
+                os: 'linux',
+            } %}
+
+            <h3 class="h4">via a Package Manager</h3>
+
+            <p>
+                Alternatively, you may install from your package manager or compile from source. Note that some distribution packages may automatically run a game server.
+            </p>
+        {% endset %}
+
+        {% include "_includes/tabs.html.twig" with { 
+            class: 'w-100',
+            headers: [
+                { value: 'Windows', selected: false }, 
+                { value: 'macOS', selected: true },
+                { value: 'Linux', selected: false },
+            ],
+            labelTag: 'h2',
+            title: 'Downloads',
+            tabs: [
+                windows_download,
+                macos_download, 
+                linux_download,
+            ],
+        } %}
     </div>
 
     {% include "_includes/latest_downloads.html.twig" %}
