@@ -1,0 +1,29 @@
+{% if download.url %}
+    {% set download_url = download.url %}
+    {% set download_label = download.label %}
+{% else %}
+    {% set download_url = 'https://download.bzflag.org/bzflag/' ~ platform ~ '/' ~ version ~ '/' ~ download.filename | replace({'@VER@': version}) %}
+
+    {% if download.label %}
+        {% set download_label = download.label %}
+    {% else %}
+        {% set download_label = '.' ~ download.filename | split('.') | slice(1) | join('.') %}
+    {% endif %}
+{% endif %}
+
+{% set button_label %}
+    <strong class="d-block">
+        {{ download_label }}
+    </strong>
+    <small class="d-block">
+        v{{ version }}
+    </small>
+{% endset %}
+
+{% include "_includes/button_link.html.twig" with {
+    body: button_label,
+    class: 'd-block',
+    href: download_url,
+    icon: url('/assets/images/' ~ platform ~ '.svg'),
+    iconAlt: data.platforms[platform] ~ ' logo',
+} %}
