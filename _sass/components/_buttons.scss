@@ -2,19 +2,22 @@
 .c-button {
     background-color: $color-text-anchor;
     border-radius: $border-radius;
-    box-shadow: $box-shadow;
 }
 
 .c-button {
-    @include padding(x, 4);
+    @include padding(x, 3);
     @include padding(y, 2);
 
+    box-shadow:
+        hsl(39 100% 92% / 0.5) 0 2px 0 inset,
+        hsl(39 100% 22% / 0.4) 0 -2px 0 0 inset,
+        $box-shadow;
     color: $color-primary;
     text-decoration: none;
 
     &:focus,
     &:hover {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+        background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
     }
 }
 

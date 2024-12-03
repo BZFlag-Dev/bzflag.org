@@ -14,11 +14,13 @@ opengraph:
 
 {% macro download_buttons(platform, download) %}
     {% for dl in download.downloads[platform] %}
-        {% include "_includes/download_button.html.twig" with {
-            platform: platform,
-            download: dl,
-            version: download.version,
-        } %}
+        <div class="mb-3">
+            {% include "_includes/download_button.html.twig" with {
+                platform: platform,
+                download: dl,
+                version: download.version,
+            } %}
+        </div>
     {% endfor %}
 {% endmacro %}
 
