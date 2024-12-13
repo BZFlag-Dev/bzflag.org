@@ -6,4 +6,4 @@ category: Client
 permissions: ~
 ---
 
-Show or set the client debug level to `[level]`
+Show or set the client debug level to `[level]`.
