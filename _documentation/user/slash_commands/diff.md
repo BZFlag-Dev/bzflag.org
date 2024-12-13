@@ -6,4 +6,4 @@ category: Client
 permissions: ~
 ---
 
-List all BZDB server variables that are not set to the default value
+List all BZDB server variables that are not set to the default value.

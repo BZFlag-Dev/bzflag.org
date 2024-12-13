@@ -6,4 +6,4 @@ category: Client
 permissions: ~
 ---
 
-Dump a list of all set variables and their values to the standard output
+Dump a list of all set variables and their values to the standard output.

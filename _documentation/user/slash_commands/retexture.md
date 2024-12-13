@@ -6,4 +6,4 @@ category: Client
 permissions: ~
 ---
 
-Reload the textures of the game
+Reload the game's textures.

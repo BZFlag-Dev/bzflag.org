@@ -6,4 +6,4 @@ category: Client
 permissions: ~
 ---
 
-Force the radar to be displayed (only works for observers)
+Force the radar to be displayed on maps without radar (only works for observers)

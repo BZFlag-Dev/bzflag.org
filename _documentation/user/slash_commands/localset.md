@@ -23,7 +23,7 @@ Read a local variable or set it to `[value]`
 ```
 /localset linedradarshots 60
 ```
-*linedradarshots* sets how long shots are on the radar. While this option cane be set through the in-game GUI, you can only set this setting up to 10 via the GUI. You can hand-edit your config to give you longer shot lengths.
+*linedradarshots* sets how long shots are on the radar. While this option can be set through the in-game GUI, you can only set this setting up to 10 via the GUI. You can hand-edit your config to give longer shot lengths.
 
 &nbsp;
 ```
