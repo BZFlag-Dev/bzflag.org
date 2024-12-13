@@ -2,7 +2,7 @@
 command: quit
 syntax: "[message]"
 since: 2.4.0
-category: Player
+category: Client
 permissions: ~
 ---
 
