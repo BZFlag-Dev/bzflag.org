@@ -4,6 +4,18 @@
     color: var(--text-color-dark-bg);
 }
 
+.c-terminal__header {
+    display: flex;
+    position: relative;
+}
+
+.c-terminal__title {
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
 .c-terminal__button {
     position: relative;
 }

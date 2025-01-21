@@ -1,8 +1,17 @@
-<div class="c-terminal" data-auto-os="{{ os ? 'false' : 'true' }}" data-os="{{ os | lower }}">
+<div class="c-terminal" data-auto-os="{{ os ? 'false' : 'true' }}" data-os="{{ os | default('macOS') | lower }}">
     <div class="c-terminal__header">
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
-        <span class="c-terminal__button"></span>
+        <div>
+            <span class="c-terminal__button"></span>
+            <span class="c-terminal__button"></span>
+            <span class="c-terminal__button"></span>
+        </div>
+        {% if title %}
+            <div class="c-terminal__title">
+                <span aria-hidden="true">
+                    {{- title -}}
+                </span>
+            </div>
+        {% endif %}
     </div>
 
     <div class="c-terminal__body">
