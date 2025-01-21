@@ -17,6 +17,8 @@
     --tab-top-radius: 10px;
 
     .page-tab {
+        @extend .font-typewriter;
+
         appearance: none;
         align-items: center;
         border: 0;
@@ -26,6 +28,7 @@
         border-top-width: 5px;
         color: #000;
         display: inline-flex;
+        font-size: 1.1em;
         font-weight: bold;
         height: 40px;
         margin: 0 var(--tab-bottom-radius);
@@ -61,6 +64,11 @@
 
         &[aria-selected="true"] {
             border-top-color: var(--selection-color);
+        }
+
+        h2 {
+            font-size: 1.25em;
+            margin-bottom: 0;
         }
     }
 
@@ -116,13 +124,6 @@
             &::before {
                 @extend %manila-background;
             }
-
-            & :where(h1, h2, h3, h4, h5, h6) {
-                border: 0;
-                font-size: 1rem;
-                margin: 0;
-                padding: 0;
-            }
         }
     }
 
@@ -163,7 +164,7 @@
         }
     
         [role="tabpanel"] {
-            @include padding(null, 3);
+            @include padding(null, 4);
 
             background: var(--paper-texture);
             border-radius: 3px;
@@ -173,6 +174,13 @@
             position: relative;
             width: 100%;
             z-index: 10;
+
+            & :where(h1, h2, h3, h4, h5, h6) {
+                border: 0;
+                font-size: 2rem;
+                margin: 0;
+                padding: 0;
+            }
 
             &.is-hidden {
                 display: none;

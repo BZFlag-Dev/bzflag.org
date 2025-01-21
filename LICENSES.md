@@ -68,6 +68,8 @@ Documentation and video/image assets created for the website should be licensed 
 	- _sass/vendor/_plyr.scss
 
 ### Misc Licenses
+- assets/fonts/BigShouldersStencilDisplay-VariableFont_wght.ttf - [The Big Shoulders Project Authors](https://github.com/xotypeco/big_shoulders) - OFL 1.1
+- assets/fonts/SpecialElite-Regular.ttf - by Astigmatic - Apache 2.0
 - assets/images/help/megaphone.svg - [Megaphone by Creative Stall](https://thenounproject.com/icon/147531/) from the Noun Project - CC-BY 3.0 US License
 - assets/images/help/bug.svg - [debug by Lemon Liu](https://thenounproject.com/icon/83827/) from the Noun Project - CC-BY 3.0 US License
 - assets/images/help/book.svg - [Book by Deemak Daksina](https://thenounproject.com/icon/1230262/) from the Noun Project - CC-BY 3.0 US License

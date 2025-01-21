@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Big Shoulders Stencil Display';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url(/assets/fonts/BigShouldersStencilDisplay-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Special Elite';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/assets/fonts/SpecialElite-Regular.ttf) format('truetype');
+}
+
+.font-stencil {
+    font-family: 'Big Shoulders Stencil Display', 'Courier New', Courier, monospace;
+    font-variation-settings: 'wght' 700;
+}
+
+.font-typewriter {
+    font-family: 'Special Elite', 'Courier New', Courier, monospace;
+    letter-spacing: 0.05em;
+}
