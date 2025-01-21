@@ -18,20 +18,26 @@ changelog: |
 date: '2022-11-20'
 downloads:
     windows:
-        - filename: bzflag-@VER@.exe
+        - id: exe
+          filename: bzflag-@VER@.exe
           label: 'Windows 7+'
           sha256: 3c84287e41c4ed697f13a2116bdd05f11098d2c4e262be0f080e0c019edbd96b
     macos:
-        - filename: BZFlag-@VER@-macOS-x86_64.zip
+        - id: intel
+          filename: BZFlag-@VER@-macOS-x86_64.zip
           label: '10.9+ Intel'
           sha256: 44871299283a509ad5190e99125282fac83574ddc1d76f8e47c8ceaabaae9b67
-        - filename: BZFlag-@VER@-macOS-arm64.zip
+        - id: arm
+          filename: BZFlag-@VER@-macOS-arm64.zip
           label: '11.0+ Apple Silicon'
           sha256: df072233b9823d4b2ce5650ec8b519f3610e7ce3ccd3567b942f32f596ecc5cf
     source:
-        - filename: bzflag-@VER@.tar.bz2
+        - id: tar_bz2
+          filename: bzflag-@VER@.tar.bz2
           sha256: 01830405ff26ad1dc595a7e0695c824c2786e678868d9ff822aeb14ac7481014
-        - filename: bzflag-@VER@.tar.gz
+        - id: tar_gz
+          filename: bzflag-@VER@.tar.gz
           sha256: e82ed881ab37b22763ba666f599b95b3fb2cb30f4aeb9104ac9b56f1671618cb
-        - filename: bzflag-@VER@.zip
+        - id: zip
+          filename: bzflag-@VER@.zip
           sha256: e72607e655b2d559eaed01f64528c07274dce95caf1ff32e3cbf2edcb8d129d9

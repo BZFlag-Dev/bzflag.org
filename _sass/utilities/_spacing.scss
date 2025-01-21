@@ -21,3 +21,19 @@
         }
     }
 }
+
+@each $s_abbv, $value in $spacing {
+    @if $s_abbv != 'auto' {
+        .gap-#{$s_abbv} {
+            gap: $value !important;
+        }
+
+        .gap-x-#{$s_abbv} {
+            column-gap: $value !important;
+        }
+
+        .gap-y-#{$s_abbv} {
+            row-gap: $value !important;
+        }
+    }
+}

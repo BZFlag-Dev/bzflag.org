@@ -1,0 +1,11 @@
+{% macro download_url(platform, version, filename) -%}
+    https://download.bzflag.org/bzflag/{{ platform }}/{{ version }}/{{ filename | replace({'@VER@': version}) }}
+{%- endmacro %}
+
+{% macro latest_download_url(platform, download_id) -%}
+    {%- set platform = platform | lower -%}
+    {%- set latest_download = data.downloads_bzflag | where('downloads.' ~ platform, '!=', null) | order('date', 'DESC') | first -%}
+    {%- set download = latest_download.downloads[platform] | where('id', '==', download_id) | first -%}
+
+    {{- _self.download_url(platform, latest_download.version, download.filename) -}}
+{%- endmacro %}

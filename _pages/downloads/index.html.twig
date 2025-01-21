@@ -2,6 +2,7 @@
 title: Downloads
 section: downloads
 permalink: /downloads/
+disableDocScope: true
 jumbotron:
     image: /assets/images/downloads/jumbotron.jpg
     alt: ~
@@ -11,6 +12,7 @@ opengraph:
 ---
 
 {% extends "_layouts/page.html.twig" %}
+{% from "_includes/urls.html.twig" import latest_download_url, download_url %}
 
 {% macro download_buttons(platform, download) %}
     {% for dl in download.downloads[platform] %}
@@ -141,7 +143,38 @@ opengraph:
         } %}
     </div>
 
-    {% include "_includes/latest_downloads.html.twig" %}
+    {% set source_archives %}
+        {% set download = data.downloads_bzflag | where('downloads.source', '!=', null) | order('date', 'DESC') | first %}
+
+        <h3 class="h3">
+            <span aria-hidden="true" class="no-events">#</span> Download our Code
+        </h3>
+
+        <p>Our game is open source meaning all of our code is public, you can build your own copy or even hack on it to make it better! We also welcome and encourage pull requests :)</p>
+
+        <div class="mb-3">
+            <a class="c-ascii-button" href="#">
+                View us on GitHub
+            </a>
+        </div>
+
+        <p>Or, download archives of our latest release.</p>
+
+        <div class="d-flex gap-3">
+            <a class="c-ascii-button" href="{{ latest_download_url('source', 'tar_bz2') }}">
+                .tar.bz2
+            </a>
+
+            <a class="c-ascii-button" href="{{ latest_download_url('source', 'tar_gz') }}">
+                .tar.gz
+            </a>
+
+            <a class="c-ascii-button" href="{{ latest_download_url('source', 'zip') }}">
+                .zip
+            </a>
+        </div>
+    {% endset %}
+    {% include "_includes/terminal.html.twig" with { body: source_archives, title: 'README.md' } %}
 
     {% set latest_release = data.downloads_bzflag | order('date', 'DESC') | first %}
 

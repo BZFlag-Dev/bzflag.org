@@ -63,3 +63,31 @@ a {
         }
     }
 }
+
+.c-ascii-button {
+    --dash-color: currentColor;
+    --dash-gap: 15%;
+    --dash-height: 1px;
+    --dash-size: 1ch;
+
+    --_dash-calc: calc(100% - var(--dash-gap));
+
+    @function dash($direction) {
+      @return linear-gradient(
+        to #{$direction},
+        var(--dash-color) var(--_dash-calc),
+        transparent var(--dash-gap)
+      );
+    }
+
+    background-image: dash(right), dash(right), dash(bottom), dash(bottom);
+    background-position: left top, left bottom, left top, right top;
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size:
+      var(--dash-size) var(--dash-height),
+      var(--dash-size) var(--dash-height),
+      var(--dash-height) 1rem,
+      var(--dash-height) 1rem;
+    display: inline-block;
+    padding: 1ch 2ch;
+}
