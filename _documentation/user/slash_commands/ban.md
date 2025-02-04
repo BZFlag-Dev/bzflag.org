@@ -40,4 +40,4 @@ There are two ways to ban a range of addresses: using an asterisk (\*) wildcard 
 
 `/ban 172.16.0.0/26 30d Excessive profanity.` (This bans 172.16.0.0 - 172.16.0.63)
 
-Range bans have a higher possibility of banning innocent players as it is banning a (sometimes large) chunk of the Internet. So, in some cases it may be necessary to work with the server owner to fine tune the range bans or to whitelist innocent player accounts.
+Range bans have a higher possibility of banning innocent players as it is banning a (sometimes large) chunk of the Internet. So, in some cases it may be necessary to work with the server owner to fine-tune the range bans or to whitelist innocent player accounts.
