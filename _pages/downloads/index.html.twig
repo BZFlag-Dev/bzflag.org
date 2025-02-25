@@ -18,17 +18,10 @@ opengraph:
                 <p class="text-center">
                     If you use <a href="https://brew.sh/">Homebrew</a> on macOS, you may download BZFlag via the
                     <code>brew</code> command. Alternatively, you may download our binary below and drag the .app into
-                    your Applications directory. Then right/control click (or two finger tap) on the application and
-                    choose Open.
+                    your Applications directory.
                 </p>
 
-                {% include "_includes/terminal.html.twig" with { command: 'brew install --cask --no-quarantine bzflag', os: 'macos' } %}
-
-                <div class="c-alert c-alert--warning mb-3">
-                    <div class="c-alert__title">Gatekeeper Warning</div>
-
-                    The <code>--no-quarantine</code> flag is required as of 2.4.20 to install via Homebrew as our executable is not currently signed.
-                </div>
+                {% include "_includes/terminal.html.twig" with { command: 'brew install --cask bzflag', os: 'macos' } %}
             </div>
 
             <div class="show-linux">
