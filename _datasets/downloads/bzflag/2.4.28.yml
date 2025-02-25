@@ -29,7 +29,7 @@ downloads:
     windows:
         - filename: bzflag-@VER@.exe
           label: 'Windows 7+'
-          sha256: 689f625ca50d8782ba09ebf2f88a005d2feeb70e3699b1b0f95649f41b5946eb
+          sha256: 6ad8956bb02f319a31b27f7a1c65753a42da8ebb42a2c5b853df4784efc9b5bb
     macos:
         - filename: BZFlag-@VER@-macOS.zip
           label: '10.13+ Universal'
