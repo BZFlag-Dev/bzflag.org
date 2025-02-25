@@ -1,0 +1,43 @@
+version: 2.4.28
+discussion: 'https://forums.bzflag.org/viewtopic.php?t=20812'
+codename: 'Full of Dangers'
+changesummary: |
+    This release includes various improvements to the game client and a container for game servers:
+    * Improved game controller support, including a range limit, deadzones, ramp types, and corner stretching for controllers that don't map to a square
+    * Better capture support in software such as OBS
+    * Ability to paste text from the clipboard in the game client
+    * CGNAT support when used with both an updated client and server
+    * Dockerfile to build a container for running game servers, with support for custom plugins
+
+    The macOS release is a universal build for Intel 64-bit and Apple Silicon, and is signed and notarized.
+
+changelog: |
+    * Improved joystick support - Joshua Bodine
+    * Cleaned up and updated the Xcode project file - Joshua Bodine
+    * Fixed yet another SDL2 window management regression on macOS - Joshua Bodine
+    * Remove non-SDL2 platform code and add SDL2 controller rumble support - Scott Wichser
+    * Fix authentication when behind CGNAT (requires updated client and server) - Tim Riker, Scott Wichser
+    * Fix libcurl deprecation warnings - Alfredo Tupone
+    * Fix c-ares deprecation warnings - Alfredo Tupone
+    * Add Dockerfile for bzfs container - Vladimir Jimenez, Scott Wichser
+    * Fix various memory leaks, crashes, buffer overflows, divide by zero errors - Alfredo Tupone
+    * Fix skewed textures that occurred when the window size changed - Scott Wichser
+    * Add support for pasting text into text inputs - Scott Wichser
+    * Kick all replay viewers when an incompatible replay is loaded - Scott Wichser
+date: '2024-02-24'
+downloads:
+    windows:
+        - filename: bzflag-@VER@.exe
+          label: 'Windows 7+'
+          sha256: 689f625ca50d8782ba09ebf2f88a005d2feeb70e3699b1b0f95649f41b5946eb
+    macos:
+        - filename: BZFlag-@VER@-macOS.zip
+          label: '10.13+ Universal'
+          sha256: f6d1b39a9262bd1338570cad1260d84b8e3bc4009026b4230219a46a718998b0
+    source:
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: 5dd3a4a92ba934e620954123aebb4bf05ad20cf3ff744fd4e1e8c723bc5cabcd
+        - filename: bzflag-@VER@.tar.gz
+          sha256: 927e13403b6d0a0b9fd143201565dc411251300ebb1c4f88d30921f6a25daf74
+        - filename: bzflag-@VER@.zip
+          sha256: 713f04b4a26a4fd6b82f919872d3453d1affb66cde88784b6ca83b7a6e8ece3f
