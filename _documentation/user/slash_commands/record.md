@@ -29,7 +29,7 @@ The record save command will save the current recording buffer to the specified 
 [SERVER->] Record buffer saved to: recordings\manualsave
 ```
 
-It is also possible to save a recent portion of the recording buffer by specifying a number of seconds after the filename. For example, to save the last 30 seconds, use `/record save somefile 30`. Because of how the recording system works, this will generally save a slightly larger duration.
+It is also possible to save a recent portion of the recording buffer by specifying a number of seconds after the filename. For example, to save the last 30 seconds, use `/record save somefile 30`. Because of how the recording system works, this will generally save with a slightly longer duration.
 
 ## Canceling an Active Recording
 
@@ -50,7 +50,7 @@ This command will begin writing a recording to a specific file. This can exceed 
 ## Set Size of Recording Buffer
 
 ```
-/record size <Megabytes>
+/record size <megabytes>
 ```
 
 This command will change the buffer size in memory. The minimum size is 1MB, and the default is 16MB. It is typically set on the server from the command line or the configuration file using the `-recbuf` parameter.
@@ -61,7 +61,7 @@ This command will change the buffer size in memory. The minimum size is 1MB, and
 /record rate <seconds>
 ```
 
-This controls how often a full set of states (variables, teams, flags, players, rabbit, game time) is written to the replay file. This defaults to 10 seconds, and supports a value between 1 and 30 seconds. A lower value use more storage but may help when seeking through replays.
+This controls how often a full set of states (variables, teams, flags, players, rabbit, game time) is written to the replay file. This defaults to 10 seconds, and supports a value between 1 and 30 seconds. A lower value will use more storage but may help when seeking through replays.
 
 ## Replay Stats
 
