@@ -7,7 +7,7 @@ permissions:
   - replay
 ---
 
-The replay command is only for a replay servers, which are servers are dedicated to the purpose of playing back game replays. The replay command has several subcommands to list, load, and control playback of a replay file.
+The replay command is only for replay servers, which are servers dedicated to the purpose of playing back games. The replay command has several subcommands to list, load, and control playback of a replay file.
 
 ## Listing Replays
 
@@ -15,7 +15,7 @@ The replay command is only for a replay servers, which are servers are dedicated
 /replay list [-t | -n | --] [pattern]
 ```
 
-The replay list command will display a list of available replay files to play back. Passing -t will sort by time and -n will sort by name. A search pattern can also be provided. If the pattern needs to start with hyphen, -- can be provided before the pattern to indicate that it is the end of the options. For example, `/replay list -- -something-to-search-for`. Here is an example of the output:
+The replay list command will display a list of available replay files to play back. Passing -t will sort by time and -n will sort by name. A search pattern can also be provided. If the pattern needs to start with hyphens, -- can be provided before the pattern to indicate that it is the end of the options. For example, `/replay list -- -something-to-search-for`. Here is an example of the output:
 
 ```
 [SERVER->] dir:  recordings\
@@ -49,7 +49,7 @@ SERVER: Please rejoin or face the consequences (client crashes)
 /replay play
 ```
 
-This starts the playback of replay file. It make take several seconds before activity appears.
+This starts the playback of replay file. It may take several seconds before activity appears.
 
 ### Looping a Replay
 
