@@ -12,7 +12,7 @@ signatures:
         default: ~
 returns:
     dataType: bool
-    description: qqq
+    description: Returns true if the flag exists or false if it does not exist
 ---
 
 Move the specified flag to a new location. If a player is carrying the flag, it will be dropped and then moved.
