@@ -1,0 +1,27 @@
+version: 2.4.30
+discussion: 'https://forums.bzflag.org/viewtopic.php?t=20821'
+codename: 'All Is Clear'
+changesummary: |
+    This version just reverts a change to 2.4.28 that caused the menu to sometimes look strange in at least the medium quality level.
+
+    The macOS release is a universal build for Intel 64-bit and Apple Silicon, and is signed and notarized.
+
+changelog: |
+    * Revert a change that caused menu transparency issues in medium quality - Scott Wichser
+date: '2025-03-16'
+downloads:
+    windows:
+        - filename: bzflag-@VER@.exe
+          label: 'Windows 8+'
+          sha256: ffaed59ed35902ed50959a0c21eab2a68144d02427c0e1cd7ee07eb47c758999
+    macos:
+        - filename: BZFlag-@VER@-macOS.zip
+          label: '10.13+ Universal'
+          sha256: 4a63f7ef575bb8e3e6507d8f999cbd43e9ccb92fcf4ebfb877d3c9ccb4bbc2b2
+    source:
+        - filename: bzflag-@VER@.tar.bz2
+          sha256: bb78b750e7bce7aa7c11bd35906bb08a49acc7c50bf29629af380eecd153894d
+        - filename: bzflag-@VER@.tar.gz
+          sha256: 30bf76e8c154beac82582ed4ce29ce14dc951231c69dab297c6677add8f7ed09
+        - filename: bzflag-@VER@.zip
+          sha256: 15975cc965627f6bbc2b4acc671cbbfaf0c3b893787eddd563f172302aedc3b3
