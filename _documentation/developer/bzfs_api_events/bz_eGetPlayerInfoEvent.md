@@ -17,10 +17,10 @@ parameters:
       description: The IPv4 address for the player. (not set in 2.4.0, fixed in 2.4.1.)
       name: ipAddress
     - dataType: bz_eTeamType
-      description: The team the player is current only.
+      description: The team the player is currently on.
       name: team
     - dataType: bool
-      description: The admin permision state of the player, indicating if they will be displayed with an '@' symbol in the scoreboard.
+      description: The admin permission state of the player, indicating if they will be displayed with an '@' symbol in the scoreboard.
       name: admin
     - dataType: bool
       description: The authentication state of the player, indicating if they will be displayed with an '+' symbol in the scoreboard.
@@ -33,4 +33,4 @@ parameters:
       name: eventTime
 ---
 
-This event is called each time the server sends out a player info update message to a remote player
+This event is called each time the server sends out a player info update message to a remote player.

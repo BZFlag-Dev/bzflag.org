@@ -7,4 +7,4 @@ permissions:
   - superkill
 ---
 
-This command removes every player from the server (including the admin that issued it).
+This command kicks every player from the server (including the admin that issued it).

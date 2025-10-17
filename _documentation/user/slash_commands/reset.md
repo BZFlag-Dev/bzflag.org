@@ -8,4 +8,4 @@ permissions:
   - setVar
 ---
 
-This command resets BZDB variables, server settings which control aspects of the gameplay. It must be passed either a specific variable or an asterisk (*), the latter of which would reset *all\* variables.
+This command resets BZDB variables, server settings which control aspects of the gameplay. It must be passed either a specific variable or an asterisk (\*), the latter of which would reset *all* variables.
