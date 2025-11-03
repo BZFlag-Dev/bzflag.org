@@ -49,7 +49,7 @@ parent:
         <p>{{ category.desc }}</p>
 
         <ul>
-            {% for command in commands[category.title] | order('filename') %}
+            {% for command in commands[category.title] | order('command') %}
                 <li>
                     <a href="{{ url(command) }}">
                         /{{ command.command }}
