@@ -14,7 +14,7 @@ parent:
 {% set categories = [
     {
         title: 'Player',
-        desc: 'There commands are generally available to normal players, though some servers may restrict some of them to registered players.',
+        desc: 'These commands are generally available to normal players, though some servers may restrict some of them to registered players.',
     },
     {
         title: 'Admin',
@@ -49,7 +49,7 @@ parent:
         <p>{{ category.desc }}</p>
 
         <ul>
-            {% for command in commands[category.title] %}
+            {% for command in commands[category.title] | order('command') %}
                 <li>
                     <a href="{{ url(command) }}">
                         /{{ command.command }}
