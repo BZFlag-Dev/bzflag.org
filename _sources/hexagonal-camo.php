@@ -37,7 +37,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // https://mathopenref.com/coordpolycalc.html
 // https://www.redblobgames.com/grids/hexagons/
 
-// Inspiration: Hexatal Camo Concept -Seamless -PSD by black-light-studio
+// Inspiration: Hexatal Camo Consept -Seamless -PSD by black-light-studio
 // https://www.deviantart.com/black-light-studio/art/Hexatal-Camo-Consept-Seamless-PSD-429483689
 
 function getRegularPolygonVertices($cx, $cy, $sides, $radius, $rot = 0)
