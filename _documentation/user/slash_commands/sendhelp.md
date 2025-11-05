@@ -12,13 +12,13 @@ The sendhelp command allows sending a help topic to a specific user. It will sho
 Example command:
 
 ```
-/sendhelp SomePlayer rules
+/sendhelp someplayer rules
 ```
 
-Example output for the admin running the command:
+Example output for the player running the command:
 
 ```
-[Admin] SERVER: Help topic rules were sent to SomePlayer by BobTheTank.
+[Admin] SERVER: Help topic rules was sent to SomePlayer by BobTheTank.
 ```
 
 And SomePlayer would see, for example:
