@@ -15,7 +15,7 @@ Example command:
 /sendhelp someplayer rules
 ```
 
-Example output for the one running the command:
+Example output for the player running the command:
 
 ```
 [Admin] SERVER: Help topic rules was sent to SomePlayer by BobTheTank.
